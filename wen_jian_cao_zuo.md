@@ -236,6 +236,9 @@ fs.watchFile('./class1.js', function (curr, prev) {
 
 13.createReadStream
 
+
+createReadStream方法往往用於打開大型的文本文件，創建一個讀取操作的數據流。所謂大型文本文件，指的是文本文件的體積很大，讀取操作的緩存裝不下，只能分成幾次發送，每次發送會觸發一個data事件，發送結束會觸發end事件。
+
 ```
 
 var fs = require('fs');
@@ -270,4 +273,145 @@ data.toString('utf-8',0,10);
 
 ```
 電腦裡有很多檔案其實不是文字檔案來的。實際上，大部分我們開啟的檔案都是二進制檔案，例如圖片檔案，音訊檔案，簡報等，所有檔案裡的資料其實都是以二進制表示的。所以我們就用Buffer物件去表示檔案的內容，和方便我們閱讀檔案資料的每個位元組。
+```
+```
+1	fs.rename(oldPath, newPath, callback)
+異步 rename().回調函數沒有參數，但可能拋出異常。
+2	fs.ftruncate(fd, len, callback)
+異步 ftruncate().回調函數沒有參數，但可能拋出異常。
+3	fs.ftruncateSync(fd, len)
+同步 ftruncate()
+4	fs.truncate(path, len, callback)
+異步 truncate().回調函數沒有參數，但可能拋出異常。
+5	fs.truncateSync(path, len)
+同步 truncate()
+6	fs.chown(path, uid, gid, callback)
+異步 chown().回調函數沒有參數，但可能拋出異常。
+7	fs.chownSync(path, uid, gid)
+同步 chown()
+8	fs.fchown(fd, uid, gid, callback)
+異步 fchown().回調函數沒有參數，但可能拋出異常。
+9	fs.fchownSync(fd, uid, gid)
+同步 fchown()
+10	fs.lchown(path, uid, gid, callback)
+異步 lchown().回調函數沒有參數，但可能拋出異常。
+11	fs.lchownSync(path, uid, gid)
+同步 lchown()
+12	fs.chmod(path, mode, callback)
+異步 chmod().回調函數沒有參數，但可能拋出異常。
+13	fs.chmodSync(path, mode)
+同步 chmod().
+14	fs.fchmod(fd, mode, callback)
+異步 fchmod().回調函數沒有參數，但可能拋出異常。
+15	fs.fchmodSync(fd, mode)
+同步 fchmod().
+16	fs.lchmod(path, mode, callback)
+異步 lchmod().回調函數沒有參數，但可能拋出異常。Only available on Mac OS X.
+17	fs.lchmodSync(path, mode)
+同步 lchmod().
+18	fs.stat(path, callback)
+異步 stat(). 回調函數有兩個參數 err, stats，stats 是 fs.Stats 對像。
+19	fs.lstat(path, callback)
+異步 lstat(). 回調函數有兩個參數 err, stats，stats 是 fs.Stats 對像。
+20	fs.fstat(fd, callback)
+異步 fstat(). 回調函數有兩個參數 err, stats，stats 是 fs.Stats 對像。
+21	fs.statSync(path)
+同步 stat(). 返回 fs.Stats 的實例。
+22	fs.lstatSync(path)
+同步 lstat(). 返回 fs.Stats 的實例。
+23	fs.fstatSync(fd)
+同步 fstat(). 返回 fs.Stats 的實例。
+24	fs.link(srcpath, dstpath, callback)
+異步 link().回調函數沒有參數，但可能拋出異常。
+25	fs.linkSync(srcpath, dstpath)
+同步 link().
+26	fs.symlink(srcpath, dstpath[, type], callback)
+異步 symlink().回調函數沒有參數，但可能拋出異常。 type 參數可以設置為 'dir', 'file', 或 'junction' (默認為 'file') 。
+27	fs.symlinkSync(srcpath, dstpath[, type])
+同步 symlink().
+28	fs.readlink(path, callback)
+異步 readlink(). 回調函數有兩個參數 err, linkString。
+29	fs.realpath(path[, cache], callback)
+異步 realpath(). 回調函數有兩個參數 err, resolvedPath。
+30	fs.realpathSync(path[, cache])
+同步 realpath()。返回絕對路徑。
+31	fs.unlink(path, callback)
+異步 unlink().回調函數沒有參數，但可能拋出異常。
+32	fs.unlinkSync(path)
+同步 unlink().
+33	fs.rmdir(path, callback)
+異步 rmdir().回調函數沒有參數，但可能拋出異常。
+34	fs.rmdirSync(path)
+同步 rmdir().
+35	fs.mkdir(path[, mode], callback)
+S異步 mkdir(2).回調函數沒有參數，但可能拋出異常。 mode defaults to 0777.
+36	fs.mkdirSync(path[, mode])
+同步 mkdir().
+37	fs.readdir(path, callback)
+異步 readdir(3). 讀取目錄的內容。
+38	fs.readdirSync(path)
+同步 readdir().返回文件數組列表。
+39	fs.close(fd, callback)
+異步 close().回調函數沒有參數，但可能拋出異常。
+40	fs.closeSync(fd)
+同步 close().
+41	fs.open(path, flags[, mode], callback)
+異步打開文件。
+42	fs.openSync(path, flags[, mode])
+同步 version of fs.open().
+43	fs.utimes(path, atime, mtime, callback)
+ 
+44	fs.utimesSync(path, atime, mtime)
+修改文件時間戳，文件通過指定的文件路徑。
+45	fs.futimes(fd, atime, mtime, callback)
+ 
+46	fs.futimesSync(fd, atime, mtime)
+修改文件時間戳，通過文件描述符指定。
+47	fs.fsync(fd, callback)
+異步 fsync.回調函數沒有參數，但可能拋出異常。
+48	fs.fsyncSync(fd)
+同步 fsync.
+49	fs.write(fd, buffer, offset, length[, position], callback)
+將緩衝區內容寫入到通過文件描述符指定的文件。
+50	fs.write(fd, data[, position[, encoding]], callback)
+通過文件描述符 fd 寫入文件內容。
+51	fs.writeSync(fd, buffer, offset, length[, position])
+同步版的 fs.write()。
+52	fs.writeSync(fd, data[, position[, encoding]])
+同步版的 fs.write().
+53	fs.read(fd, buffer, offset, length, position, callback)
+通過文件描述符 fd 讀取文件內容。
+54	fs.readSync(fd, buffer, offset, length, position)
+同步版的 fs.read.
+55	fs.readFile(filename[, options], callback)
+異步讀取文件內容。
+56	fs.readFileSync(filename[, options])
+57	fs.writeFile(filename, data[, options], callback)
+異步寫入文件內容。
+58	fs.writeFileSync(filename, data[, options])
+同步版的 fs.writeFile。
+59	fs.appendFile(filename, data[, options], callback)
+異步追加文件內容。
+60	fs.appendFileSync(filename, data[, options])
+The 同步 version of fs.appendFile.
+61	fs.watchFile(filename[, options], listener)
+查看文件的修改。
+62	fs.unwatchFile(filename[, listener])
+停止查看 filename 的修改。
+63	fs.watch(filename[, options][, listener])
+查看 filename 的修改，filename 可以是文件或目錄。返回 fs.FSWatcher 對像。
+64	fs.exists(path, callback)
+檢測給定的路徑是否存在。
+65	fs.existsSync(path)
+同步版的 fs.exists.
+66	fs.access(path[, mode], callback)
+測試指定路徑用戶權限。
+67	fs.accessSync(path[, mode])
+同步版的 fs.access。
+68	fs.createReadStream(path[, options])
+返回ReadStream 對像。
+69	fs.createWriteStream(path[, options])
+返回 WriteStream 對像。
+70	fs.symlink(srcpath, dstpath[, type], callback)
+異步 symlink().回調函數沒有參數，但可能拋出異常。
 ```
