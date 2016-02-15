@@ -148,4 +148,23 @@ Other (訪客) = 4 + 0 + 1 = 5
 
 所以 Owner Group Other = 755
 ```
+8.readFile是異步的
+```
 
+var fs = require('fs');
+
+fs.readFile('./class1.js','UTF-8' ,function (err, data) {
+  if (err) throw err;
+  console.log(data);
+});
+fs.readFile('./class2.js','UTF-8' ,function (err, data) {
+  if (err) throw err;
+  console.log(data);
+});
+fs.readFile('./class3.js','UTF-8' ,function (err, data) {
+  if (err) throw err;
+  console.log(data);
+});
+```
+多嘗試幾次，發現console的讀取順序不固定
+9.
