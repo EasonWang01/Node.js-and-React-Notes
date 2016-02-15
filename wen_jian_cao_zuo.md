@@ -191,4 +191,65 @@ fs.readdir(dir, function (err, files) {
 ```
 會返回一個檔案名稱產生的陣列
 
-11.
+11.查看檔案詳細資訊
+
+fs.stat(path, callback)
+
+```
+
+var fs = require('fs');
+
+dir="./as";
+fs.readdir(dir, function (err, files) {
+  if (err) {
+   
+    return;
+  };
+
+  console.log(files);
+
+  files.forEach( function (file) {
+    fs.stat('./as/' + file, function (err, stats) {
+      if (err) throw err;
+    console.log(stats);
+   });
+});
+
+});
+```
+
+12.監聽文件
+
+watchfile()，unwatchfile()
+
+```
+
+var fs = require('fs');
+
+fs.watchFile('./class1.js', function (curr, prev) {
+  console.log('the current mtime is: ' + curr.mtime);
+  console.log('the previous mtime was: ' + prev.mtime);
+});
+
+```
+執行node class後在class1.js寫上東西後按儲存即會在console顯示訊息
+
+13.createReadStream
+
+```
+
+var fs = require('fs');
+
+var input = fs.createReadStream('./class1.js');
+
+input.on('data', function(data) {
+console.log(data);
+
+	});
+```
+會發現得到的是一個buffer
+
+```
+console.log(data.toString());
+```
+加上後轉乘string
