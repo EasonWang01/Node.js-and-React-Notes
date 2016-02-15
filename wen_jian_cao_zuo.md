@@ -252,4 +252,17 @@ console.log(data);
 ```
 console.log(data.toString());
 ```
-加上後轉乘string
+加上後轉為string
+
+另外
+
+```
+data.toString(); 
+//還可以指定字元集，預設utf-8
+data.toString('ascii');
+//更可以Base64 Encode
+data.toString('base64'); 
+//可以只把部分的資料變成String
+data.toString('utf-8',0,10); 
+
+```
