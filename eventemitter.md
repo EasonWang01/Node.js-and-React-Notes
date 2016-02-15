@@ -44,3 +44,62 @@ f()
 Socket.io就是使用這個概念
 
 2.
+Node.js預設最多只能設定10個具有on的回調參數
+```
+var EventEmitter = require('events').EventEmitter;
+var oneEvent = new EventEmitter();
+
+oneEvent.on('an Event', function () {
+  console.log('event has occured');
+});
+oneEvent.on('an Event', function () {
+  console.log('event has occured');
+});
+oneEvent.on('an Event', function () {
+  console.log('event has occured');
+});
+oneEvent.on('an Event', function () {
+  console.log('event has occured');
+});
+oneEvent.on('an Event', function () {
+  console.log('event has occured');
+});
+oneEvent.on('an Event', function () {
+  console.log('event has occured');
+});
+oneEvent.on('an Event', function () {
+  console.log('event has occured');
+});
+oneEvent.on('an Event', function () {
+  console.log('event has occured');
+});
+oneEvent.on('an Event', function () {
+  console.log('event has occured');
+});
+oneEvent.on('an Event', function () {
+  console.log('event has occured');
+});
+oneEvent.on('an Event', function () {
+  console.log('event has occured');
+});
+function f() {
+  console.log('start');
+  oneEvent.emit('an Event');
+  console.log('end');
+}
+
+f()
+// start
+// event has occured
+// end
+```
+代碼改成上面後會發現console出現提醒訊息
+
+
+但
+
+我們可以加入一行來手動增加監聽器on的數量
+
+```
+oneEvent.setMaxListeners(20);
+```
