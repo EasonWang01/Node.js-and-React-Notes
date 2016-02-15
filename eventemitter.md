@@ -103,3 +103,43 @@ f()
 ```
 oneEvent.setMaxListeners(20);
 ```
+
+2.可以在emit傳入參數
+```
+var EventEmitter = require('events').EventEmitter;
+var myEmitter = new EventEmitter;
+
+var connection = function(id,ad){
+  console.log('client id: ' + id+ad);
+};
+
+myEmitter.on('connection', connection);
+myEmitter.emit('connection', 6,8);
+```
+
+3.
+任何其他的函式都可以使用EventEmitter
+
+只要將它繼承即可
+
+```
+var EventEmitter = require('events').EventEmitter;
+
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.__proto__ = EventEmitter.prototype;
+// 另一種寫法
+// Dog.prototype = Object.create(EventEmitter.prototype);
+
+var simon = new Dog('simon');
+
+simon.on('bark', function(){
+  console.log(this.name + ' barked');
+});
+
+setInterval(function(){
+  simon.emit('bark');
+}, 500);
+```
