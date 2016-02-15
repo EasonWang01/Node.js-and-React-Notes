@@ -1,4 +1,6 @@
 # EventEmitter
+1.
+
 剛才在操作檔案時，看到類似這樣的東西
 ```
 fs.on('open', function () {
@@ -20,15 +22,15 @@ fs.on("open")接到他的通知
 
 ```
 var EventEmitter = require('events').EventEmitter;
-var ee = new EventEmitter();
+var oneEvent = new EventEmitter();
 
-ee.on('someEvent', function () {
+oneEvent.on('an Event', function () {
   console.log('event has occured');
 });
 
 function f() {
   console.log('start');
-  ee.emit('someEvent');
+  oneEvent.emit('an Event');
   console.log('end');
 }
 
@@ -37,3 +39,8 @@ f()
 // event has occured
 // end
 ```
+一個emit發出一個用on接收
+
+Socket.io就是使用這個概念
+
+2.
