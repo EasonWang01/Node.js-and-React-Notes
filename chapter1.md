@@ -125,3 +125,14 @@ var counter1 = require('./as');
 }
  ```
  之後即可將index.js改名為class1，而之後就算require的路徑為資料夾，只要其下有package.json檔案，且有指定main(預設開啟檔案)，即可
+ 
+ 9.指定require資料夾路徑但其下需載入多個js檔
+ ```
+ 使用require將每個js擋在入口js內載入即可
+ ```
+ 
+ 10.Build a command tool
+ 
+ http://blog.npmjs.org/post/118810260230/building-a-simple-command-line-tool-with-npm
+ 
+ http://www.ruanyifeng.com/blog/2015/05/command-line-with-node.html
