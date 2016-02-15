@@ -93,3 +93,33 @@ console.log(util.isRegExp({}));
 #util.isDate(object)
 
 查看是不是日期格式
+
+```
+var util = require('util');
+
+console.log(util.isDate(new Date()));
+
+console.log(util.isDate(Date())); //沒有new會返回字串
+
+console.log(util.isDate({}));
+
+
+
+```
+
+6.
+
+#util.isError(object)
+
+查看是不是錯誤對象
+
+```
+var util = require('util');
+
+util.isError(new Error())
+  // true
+util.isError(new TypeError())
+  // true
+util.isError({ name: 'Error', message: 'an error occurred' })
+  // false
+```
