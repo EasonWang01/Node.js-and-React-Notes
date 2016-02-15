@@ -143,3 +143,104 @@ setInterval(function(){
   simon.emit('bark');
 }, 500);
 ```
+或者
+
+你也可以用util模組(內建)去做繼承
+```
+var util = require('util');
+var EventEmitter = require('events').EventEmitter;
+
+var Radio = function(station) {
+
+    var self = this;
+    console.log(this);
+    setTimeout(function() {
+       console.log(this);
+    }, 0);
+
+    setTimeout(function() {
+       console.log(this);
+    }, 5000);
+
+    this.on('newListener', function(listener) {
+        console.log('Event Listener: ' + listener);
+    });
+
+};
+
+util.inherits(Radio, EventEmitter);
+
+var station = {
+  freq: '80.16',
+  name: 'Rock N Roll Radio',
+};
+
+var radio = new Radio(station);
+
+radio.on('open', function(station) {
+  console.log('OPEN', station.name, station.freq);
+ 
+});
+
+radio.on('close', function(station) {
+  console.log('CLOSE', station.name, station.freq);
+});
+
+```
+4.
+EventEmitter 原始的事件
+
+newListener事件：添加新的回調函式時觸發。
+removeListener事件：移除回調函式時觸發。
+```
+
+var EventEmitter = require('events').EventEmitter;
+var Event = new EventEmitter;///////記得require後要產生實例
+
+Event.on("newListener", function (evtName){
+  console.log("New Listener: " + evtName);
+});
+
+Event.on("removeListener", function (evtName){
+  console.log("Removed Listener: " + evtName);
+});
+
+
+function foo (){} ///放一個空的function
+
+Event.on("this is on", foo);
+Event.removeListener("this is on", foo);
+```
+
+5.once方法
+
+```
+和on使用方式相同，但他只會監聽一次即移除
+
+```
+
+6.一次移除所有監聽
+```
+var EventEmitter = require('events').EventEmitter;
+
+var emitter = new EventEmitter;
+
+emitter.removeAllListeners();
+```
+7.尋找某個事件擁有的回調函式
+
+listener方法
+```
+var EventEmitter = require('events').EventEmitter;
+
+var ee = new EventEmitter;
+
+function onlyOnce () {
+
+}
+
+ee.on("firstConnection", onlyOnce)
+ee.emit("firstConnection");
+
+console.log(ee.listeners("firstConnection"));
+```
