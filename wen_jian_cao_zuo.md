@@ -167,4 +167,28 @@ fs.readFile('./class3.js','UTF-8' ,function (err, data) {
 });
 ```
 多嘗試幾次，發現console的讀取順序不固定
-9.
+9.同步讀取
+```
+mkdirSync()，writeFileSync()，readFileSync()
+```
+10.讀取目錄內檔案
+```
+
+var fs = require('fs');
+
+dir="./as";
+fs.readdir(dir, function (err, files) {
+  if (err) {
+    console.log(err);
+    return;
+  };
+
+  console.log(files);
+
+
+});
+
+```
+會返回一個檔案名稱產生的陣列
+
+11.
