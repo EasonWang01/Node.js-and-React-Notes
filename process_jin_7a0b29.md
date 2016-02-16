@@ -72,3 +72,12 @@ console.log(process.execArgv);
 執行 node --harmony class.js
 ```
 將返回--harmony
+
+另外
+
+試試
+
+```
+console.log(process.env);
+```
+
