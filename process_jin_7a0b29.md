@@ -1,5 +1,7 @@
 # Process (進程)
 
+process.stdout和process.stdin都是stream的實例
+
 ```
  process.stdout.write("ass");
 
