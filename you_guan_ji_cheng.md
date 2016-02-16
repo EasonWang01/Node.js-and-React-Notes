@@ -115,3 +115,14 @@ Function.name
 Function.prototype
 ```
 #使用prototype指定屬性後要用new出新物件後才可使用
+
+--------------------
+#delete可用來刪除函式中的方法
+```
+delete User.save;
+```
+如果要刪除prototype加上prototype即可，其子代的該方法也被一併刪除
+```
+delete User.prototype.save; 
+
+```
