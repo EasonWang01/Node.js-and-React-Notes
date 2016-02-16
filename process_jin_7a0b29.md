@@ -80,4 +80,15 @@ console.log(process.execArgv);
 ```
 console.log(process.env);
 ```
-
+以及
+```
+process.chdir()：切換工作目錄到指定目錄。
+process.cwd()：返回運行當前腳本的工作目錄的路徑。
+process.exit()：退出當前進程。
+process.getgid()：返回當前進程的組ID（數值）。
+process.getuid()：返回當前進程的用戶ID（數值）。
+process.nextTick()：指定回調函數在當前執行棧的尾部、下一次Event Loop之前執行。
+process.on()：監聽事件。
+process.setgid()：指定當前進程的組，可以使用數字ID，也可以使用字符串ID。
+process.setuid()：指定當前進程的用戶，可以使用數字ID，也可以使用字符串ID。
+```
