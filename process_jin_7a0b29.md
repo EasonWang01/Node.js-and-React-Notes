@@ -159,3 +159,4 @@ process.on('uncaughtException', function (err) {
 throw new Error('something wrong'); 
 
 ```
+uncaughtException事件，是免於Node進程終止的最後措施，否則Node就要執行process.exit()。
