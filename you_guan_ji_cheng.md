@@ -104,4 +104,14 @@ function Daaog(as) {
 };
 console.log(Daaog.name);///沒有name但一樣會有console
 ```
+其他預設屬性也不要使用，拿來命名屬性
+```
+Function.arguments
+Function.arity
+Function.caller
+Function.displayName
+Function.length
+Function.name
+Function.prototype
+```
 #使用prototype指定屬性後要用new出新物件後才可使用
