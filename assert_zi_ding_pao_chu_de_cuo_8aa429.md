@@ -60,3 +60,16 @@ assert.doesNotThrow(function() {///預期不會拋出，但拋出了，所以產
 　　throw new Error("I lived in the ocean way before Nemo");
 });
 ```
+
+#assert.fail(21, 21, 'Testtest Failed', '###');不管怎樣都會拋出異常
+
+將上面例子改成如下
+```
+var assert = require('assert');
+assert.throws(function() {///預期會拋出
+　　assert.fail(21, 21, 'Testtest Failed', '###');
+});
+assert.doesNotThrow(function() {///預期不會拋出，但拋出了，所以產生異常訊息
+　　assert.fail(21, 21, 'Test Failed', '###');
+});
+```
