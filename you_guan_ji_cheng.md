@@ -51,7 +51,7 @@ Dog.prototype= EventEmitter.prototype;
  Dog.prototype = Object.create(EventEmitter.prototype);
 
 ```
-想要讀到建構子跟後來定義的prototype只能用以下這個方法
+想要繼承到建構子跟後來定義的prototype只能用以下這個方法
 ```
 Dog.prototype =new EventEmitter();
 ```
