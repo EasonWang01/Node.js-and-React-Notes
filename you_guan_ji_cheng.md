@@ -96,3 +96,11 @@ var aaa = new Dog();
 console.log(aaa.name);
 
 ```
+#避免將函式內的屬性設為name
+```
+
+function Daaog(as) {
+	
+};
+console.log(Daaog.name);///沒有name但依樣會有console
+```
