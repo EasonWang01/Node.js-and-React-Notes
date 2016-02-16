@@ -134,3 +134,13 @@ process.nextTick(function () {
   console.log('沒有其他延遲的話我通常最後執行！');
 }, 0)
 ```
+#uncaughtException
+當前進程拋出一個沒有被catch的錯誤時，會觸發uncaughtException事件。
+
+```
+process.on('uncaughtException', function (err) {
+  console.error('An uncaught error occurred!');
+  console.error(err.stack);
+  throw new Error('產生錯誤');
+});
+```
