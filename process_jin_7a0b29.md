@@ -60,3 +60,15 @@ console.log("argv: ",process.argv);
 執行 node class 123
 ```
 返回一個陣列，參數從process.argv[2]開始
+
+
+另外
+
+```
+console.log(process.execArgv);
+```
+
+```
+執行 node --harmony class.js
+```
+將返回--harmony
