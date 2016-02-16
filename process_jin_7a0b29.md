@@ -92,3 +92,45 @@ process.on()：監聽事件。
 process.setgid()：指定當前進程的組，可以使用數字ID，也可以使用字符串ID。
 process.setuid()：指定當前進程的用戶，可以使用數字ID，也可以使用字符串ID。
 ```
+#process.nextTick()
+非同步的幫手
+其類似
+```
+setTimeout(function () {
+  console.log('沒有其他延遲的話我通常最後執行！');
+}, 0)
+ console.log('執行！');
+ console.log('執行！');
+ console.log('執行！');
+ console.log('執行！');
+ console.log('執行！');
+```
+```
+
+process.nextTick(function () {
+  console.log('沒有其他延遲的話我通常最後執行！');
+}, 0)
+
+ console.log('執行！');
+ console.log('執行！');
+ console.log('執行！');
+ console.log('執行！');
+ console.log('執行！');
+
+```
+如果nextTick跟setTimeout 放一起nextTick會先執行
+```
+
+setTimeout(function () {
+  console.log('沒有其他延遲的話我通常最後執行setTimeout！');
+}, 0)
+ console.log('執行！');
+ console.log('執行！');
+ console.log('執行！');
+ console.log('執行！');
+ console.log('執行！');
+
+process.nextTick(function () {
+  console.log('沒有其他延遲的話我通常最後執行！');
+}, 0)
+```
