@@ -50,3 +50,13 @@ process.stdin.pipe(process.stdout)
 ```
 process.stdin.setEncoding('utf8');
 ```
+
+取得檔案位置
+```
+console.log("argv: ",process.argv);
+```
+如果在後面加上參數呢?
+```
+執行 node class 123
+```
+返回一個陣列，參數從process.argv[2]開始
