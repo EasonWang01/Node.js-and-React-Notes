@@ -102,5 +102,6 @@ console.log(aaa.name);
 function Daaog(as) {
 	
 };
-console.log(Daaog.name);///沒有name但依樣會有console
+console.log(Daaog.name);///沒有name但一樣會有console
 ```
+#使用prototype指定屬性後要用new出新物件後才可使用
