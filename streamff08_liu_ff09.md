@@ -118,3 +118,38 @@ aa+=chunk;
  })
 
 ```
+如何讓他暫停不要結束?
+
+pause();
+
+```
+var Readable = require('stream').Readable;
+var aa;
+var rs = new Readable;
+rs.setEncoding('utf8');
+rs.push('Hi ');
+
+rs.push('Hello\n');
+
+rs.push('World\n');
+rs.push(null);
+
+rs.on('data', function(chunk) {
+aa+=chunk;
+});
+
+rs.pause();
+
+ rs.on('end',function(){
+ 	console.log(aa);
+ })
+```
+如何確認是不是暫停?
+
+```
+console.log(rs.isPaused());
+```
+暫停後如何繼續?
+```
+readable.resume();
+```
