@@ -144,3 +144,18 @@ process.on('uncaughtException', function (err) {
   throw new Error('產生錯誤');
 });
 ```
+非常正常，沒有產生任何訊息
+
+
+改成下面
+```
+
+process.on('uncaughtException', function (err) {
+  console.error('An uncaught error occurred!');
+  console.error(err.stack);
+  throw new Error('產生錯誤');
+});
+
+throw new Error('something wrong'); 
+
+```
