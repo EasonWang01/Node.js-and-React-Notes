@@ -78,3 +78,21 @@ console.log(aaa.aa);
 
 
 ```
+#而使用Dog.prototype= DDog.prototype;也不會覆蓋原本的Dog建構子
+```
+
+function Dog(name) {
+	
+  this.name = "name";
+};
+function DDog(name) {
+	
+  this.aabb = "ass";
+};
+DDog.prototype.aa="aaaaa";
+Dog.prototype= DDog.prototype;
+
+var aaa = new Dog();
+console.log(aaa.name);
+
+```
