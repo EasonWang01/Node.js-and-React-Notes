@@ -26,3 +26,27 @@ fs.createReadStream('./class1.js')
   .pipe(process.stdout);
 
 ```
+
+基本
+```
+
+process.stdin.on('data', function(chunk) {
+
+    process.stdout.write('data: ' + chunk);
+  
+});
+
+process.stdin.on('end', function() {
+  process.stdout.write('end');
+});
+```
+
+使用流
+```
+process.stdin.pipe(process.stdout)
+```
+
+設定編碼格式
+```
+process.stdin.setEncoding('utf8');
+```
