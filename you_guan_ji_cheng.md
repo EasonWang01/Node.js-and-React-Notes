@@ -42,10 +42,39 @@ EventEmitter.prototype.xxx="bbb"
 去定義的，而不是一開始的建構子
 ----------------
 
-而下面這兩個，只讀的到後來用EventEmitter.prototype.xxx定義的東西
+而下面這三個，只讀的到後來用EventEmitter.prototype.xxx定義的東西
 ```
 Dog.prototype.__proto__ = EventEmitter.prototype;
-// 另一种写法
-// Dog.prototype = Object.create(EventEmitter.prototype);
+
+Dog.prototype= EventEmitter.prototype;
+
+ Dog.prototype = Object.create(EventEmitter.prototype);
+
+```
+想要讀到建構子跟後來定義的prototype只能用以下這個方法
+```
+Dog.prototype =new EventEmitter();
+```
+
+
+#可看下面的範例
+```
+
+var EventEmitter = require('events').EventEmitter;
+
+function Dog(name) {
+	
+  this.name = "name";
+};
+function DDog(name) {
+	
+  this.aabb = "ass";
+};
+DDog.prototype.aa="aaaaa";
+Dog.prototype=new DDog();
+
+var aaa = new Dog();
+console.log(aaa.aa);
+
 
 ```
