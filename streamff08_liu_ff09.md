@@ -1,5 +1,7 @@
 # Stream（流）
 
+具有readable、writable、drain、data、end、close等事件
+
 一個讀檔案的簡單server為例
 
 ```
@@ -151,5 +153,56 @@ console.log(rs.isPaused());
 ```
 暫停後如何繼續?
 ```
-readable.resume();
+rs.resume();
 ```
+讀進buffer後如何寫出?
+```
+fs.writeFile(filename, data, [encoding], [callback])
+```
+範例
+```
+var Readable = require('stream').Readable;
+var fs = require('fs');
+
+var rs = new Readable;
+
+rs.push('Hi ');
+rs.push(null);
+
+rs.on('data', function(chunk) {
+ 	console.log(chunk);
+ 	fs.writeFile('./class1.js',chunk)
+});
+
+```
+
+有更高級的寫法嗎?
+
+使用write的stream方法
+
+```
+var Readable = require('stream').Readable;
+var fs = require('fs');
+
+var rs = new Readable;
+
+rs.push('Hi ');
+rs.push(null);
+
+rs.on('data', function(chunk) {
+ 	console.log(chunk);
+ 	fs.createWriteStream('./class1.js').write(chunk);
+});
+
+```
+將
+```
+fs.createWriteStream('./class1.js').write(chunk);
+```
+
+改成
+
+```
+console.log(fs.createWriteStream('./class1.js').write(chunk))
+```
+猜看看會出現什麼?
