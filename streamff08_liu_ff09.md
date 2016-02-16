@@ -93,3 +93,28 @@ rs.on('data', function(chunk) {
  
 
 ```
+
+上面是開啟監聽data，如果想在結束後才一次讀出呢?
+
+監聽end
+
+```
+var Readable = require('stream').Readable;
+var aa;
+var rs = new Readable;
+rs.setEncoding('utf8');
+rs.push('Hi ');
+
+rs.push('Hello\n');
+
+rs.push('World\n');
+rs.push(null);
+
+rs.on('data', function(chunk) {
+aa+=chunk;
+});
+ rs.on('end',function(){
+ 	console.log(aa);
+ })
+
+```
