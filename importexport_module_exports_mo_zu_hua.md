@@ -19,7 +19,14 @@ http://www.2ality.com/2014/09/es6-modules-final.html
  import * as lib from 'lib';
 ```
 #CommonJS
+```
+exports.foo = function () { ... };
 
+module.exports = config;
+
+var a = require('a');
+
+```
 
 
 
