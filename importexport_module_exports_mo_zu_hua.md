@@ -1,8 +1,9 @@
 # import_export_module.exports 模組化
 參考至
+
 http://www.2ality.com/2014/09/es6-modules-final.html
 
-### ES6 module
+# ES6 module
 
 
 ```
@@ -17,5 +18,8 @@ http://www.2ality.com/2014/09/es6-modules-final.html
 ```
  import * as lib from 'lib';
 ```
+#CommonJS
+
+
 
 
