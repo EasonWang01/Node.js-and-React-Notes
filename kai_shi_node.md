@@ -47,6 +47,9 @@ package.json
 https://edwardsamuel.wordpress.com/2015/11/01/react-syntax-error-unexpected-token/
 
 http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/
+
+More about Babel
+https://www.npmjs.com/package/babel-loader
 ```
 {
   "name": "class1webpack",
