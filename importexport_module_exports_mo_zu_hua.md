@@ -3,6 +3,8 @@
 
 http://www.2ality.com/2014/09/es6-modules-final.html
 
+http://es6.ruanyifeng.com/#docs/module
+
 # ES6 module
 
 
