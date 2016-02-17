@@ -63,10 +63,42 @@ document.body.appendChild(component());
   </body>
 </html>
 ```
+##如何讓它不要每次改完都要輸入webpack在編譯一次呢?
 
+在package.json加上
+```
+{
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
+  }
+}
+```
+最後 npm run dev
+
+http://localhost:8080
+
+##如何不要重新整理網頁呢
+
+webpack.config.js
+```
+var path = require('path');
+
+module.exports = {
+    entry: [
+      'webpack/hot/dev-server',
+      'webpack-dev-server/client?http://localhost:8080',
+      path.resolve(__dirname, 'app/main.js')
+    ],
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: 'bundle.js',
+    },
+};
+```
 ------------------------------
 
-#In order to use BabelJS 6 with React and ES6, we need to use babel-preset-react and babel-preset-es2015 
+#為了要用 BabelJS 6 with React and ES6，我們要加入 babel-preset-react and babel-preset-es2015 
 詳細
 https://edwardsamuel.wordpress.com/2015/11/01/react-syntax-error-unexpected-token/
 
