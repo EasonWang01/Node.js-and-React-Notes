@@ -106,6 +106,13 @@ http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/
 
 More about Babel
 https://www.npmjs.com/package/babel-loader
+
+##使用
+```
+npm install babel-loader babel-core babel-preset-es2015 babel-preset-react --save-dev
+
+```
+##更改package.json
 ```
 {
   "name": "class1webpack",
