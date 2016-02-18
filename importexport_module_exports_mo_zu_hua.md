@@ -29,6 +29,14 @@ module.exports = config;
 var a = require('a');
 
 ```
+使用import的格式
+```
+import {Hello} from './component.jsx';
+```
 
-
+但為什麼react在webpack可以用? (因為react是用 export default 進行輸出)
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+```
 
