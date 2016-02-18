@@ -26,4 +26,4 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
 http://es6.ruanyifeng.com/#docs/class
 
-
+https://gist.github.com/sebmarkbage/d7bce729f38730399d28
