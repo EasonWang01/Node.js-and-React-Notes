@@ -104,3 +104,48 @@ function main() {
 }
 
 ```
+
+#有關react引入jsx
+使用commonjs的寫法require時
+```
+function main() {
+    ReactDOM.render(<Hllo />, document.getElementById('app'));
+}
+```
+其中<Hllo />是指向
+```
+var hllo = require('aaa.jsx')
+```
+ 也就是指向命名的var跟你原本元件的名稱沒關係
+ 
+ 所以如果你想在一個jsx寫入多個元件會較麻煩，需要使用多個jsx檔案每個寫一個元件，再全部require到一個主jsx內
+ 
+ ###所以推薦使用ES6的import，下面hllo直接指到目標檔案的元件名稱，所以可以在一個jsx檔案內放多個元件
+ 
+ ```
+ import {Hllo} from './component.jsx';
+
+main();
+
+function main() {
+    ReactDOM.render(<Hllo />, document.getElementById('app'));
+}
+ ```
+ ```
+export class Hello extends React.Component {
+  render() {
+    return <h1 style={style1}>Hello world,{this.props.name}</h1>;
+  }
+};
+
+export class Hllo extends React.Component {
+  render() {
+    return <h1 style={style1}>Hello,{this.props.name}</h1>;
+  }
+}
+export class Hllo extends React.Component {
+  render() {
+    return <h1 style={style1}>Hello,{this.props.name}</h1>;
+  }
+}
+ ```
