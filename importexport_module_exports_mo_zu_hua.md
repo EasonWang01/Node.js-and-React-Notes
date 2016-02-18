@@ -34,9 +34,11 @@ var a = require('a');
 import {Hello} from './component.jsx';
 ```
 
-但為什麼react在webpack可以用? (因為react是用 export default 進行輸出)
+但為什麼react在webpack可以用?
+
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
 ```
 
+(因為react是用 export default 進行輸出)
