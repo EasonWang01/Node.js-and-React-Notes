@@ -122,6 +122,8 @@ var hllo = require('aaa.jsx')
  
  ##所以推薦使用ES6的import，下面hllo直接指到目標檔案的元件名稱，所以可以在一個jsx檔案內放多個元件
  
+
+ 
  ```
  import {Hllo} from './component.jsx';
 
@@ -149,3 +151,5 @@ export class Hllo extends React.Component {
   }
 }
  ```
+ 
+ 原因是ES6的import可以使用{}如果使用會直接引入檔案內的object，如果沒用則是引入export default 或module.exports的檔案
