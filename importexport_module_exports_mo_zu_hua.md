@@ -153,3 +153,36 @@ export class Hllo extends React.Component {
  ```
  
  原因是ES6的import可以使用{}如果使用會直接引入檔案內的object，如果沒用則是引入export default 或module.exports的檔案
+ 
+ 
+ #或是使用ES6 的exports 記得 require後加上  ".屬性"
+ 
+ ```
+import React from 'react';
+
+var style1 = {
+  background: 'yellow'
+};
+
+exports.a =  class Hello extends React.Component {
+  render() {
+    return <h1 style={style1}>Hello world,{this.props.name}</h1>;
+  }
+};
+exports.b =  class Hello extends React.Component {
+  render() {
+    return <h1 style={style1}> world,{this.props.name}</h1>;
+  }
+};
+```
+ 
+ ```
+import React from 'react';
+import ReactDOM from 'react-dom';
+var Hello = require('./component.jsx').b;
+main();
+console.log(Hello);
+function main() {
+    ReactDOM.render(<Hello />, document.getElementById('app'));
+}
+ ```
