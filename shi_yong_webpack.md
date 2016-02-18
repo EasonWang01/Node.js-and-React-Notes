@@ -162,3 +162,11 @@ var config = {
 
 module.exports = config;
 ```
+
+
+有三篇完整的教學文章
+1.https://christianalfoni.github.io/react-webpack-cookbook/Getting-started.html
+
+2.http://www.christianalfoni.com/articles/2015_10_01_Taking-the-next-step-with-react-and-webpack
+
+3.http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
