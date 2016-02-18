@@ -120,7 +120,7 @@ var hllo = require('aaa.jsx')
  
  所以如果你想在一個jsx寫入多個元件會較麻煩，需要使用多個jsx檔案每個寫一個元件，再全部require到一個主jsx內
  
- ###所以推薦使用ES6的import，下面hllo直接指到目標檔案的元件名稱，所以可以在一個jsx檔案內放多個元件
+ ##所以推薦使用ES6的import，下面hllo直接指到目標檔案的元件名稱，所以可以在一個jsx檔案內放多個元件
  
  ```
  import {Hllo} from './component.jsx';
