@@ -263,3 +263,19 @@ app.all('/', function (req, res, next) {
   next(); 
 });
 ```
+區別
+```
+app.use:
+
+1.inject middlware to your front controller configuring for instance: header, cookies, sessions, etc.
+
+2.must be written before app[http_method] otherwise there will be not executed.
+
+3.only one callback
+-----------------------------------------
+app.all:
+
+for configuring routes' controllers,"all" means it applies on all http methods.
+
+several callback
+```
