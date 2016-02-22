@@ -254,7 +254,9 @@ app.route('/fruit')
 Express 支援下列的 HTTP路由方法：get、 post、put、head、delete、options、 trace、copy、lock、mkcol、move、purge、propfind、proppatch、unlock、report、mkactivity、checkout、merge、m-search、notify、subscribe、unsubscribe、patch、search， connect。
 
 
-可使用，all來接受所有方法和app.use類似，但app.use必須放在你要用到的東西前面
+可使用，app.all來接受所有方法
+
+和app.use類似，但app.use必須放在你要用到的東西前面
 ```
 app.all('/', function (req, res, next) {
   console.log('all method');
