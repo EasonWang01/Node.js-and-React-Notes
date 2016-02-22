@@ -202,3 +202,30 @@ http://localhost:8080/user/0
 ```
 I am next
 ```
+#整理路徑router
+1.index.js
+```
+
+var fruit = require('./fruit');
+app.use('/fruit', fruit);
+```
+2.設定router檔案
+```
+var express = require('express');
+var fruit = express.Router();
+
+fruit.use(function timeLog(req, res, next) {
+  console.log('Time: ', Date.now());
+  next();
+});
+
+fruit.get('/', function(req, res) {
+  res.send('Birds home page');
+});
+
+fruit.get('/about', function(req, res) {
+  res.send('About birds');
+});
+
+module.exports = fruit;
+```
