@@ -272,6 +272,8 @@ app.use:
 2.must be written before app[http_method] otherwise there will be not executed.
 
 3.only one callback
+
+4.比app.all先執行
 -----------------------------------------
 app.all:
 
