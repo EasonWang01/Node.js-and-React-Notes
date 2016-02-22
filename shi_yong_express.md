@@ -19,10 +19,17 @@ npm install express --save
 var express = require('express');
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
 
 app.listen(8080);
 ```
+##但下面這是什麼?
+```
+app.use(express.static(__dirname + '/public'));
+```
+##試著把你剛才創的index.js複製一個到public資料夾，之後在網址打上http://localhost:8080/index.js
+
+
 
 
 一個簡單的範例
