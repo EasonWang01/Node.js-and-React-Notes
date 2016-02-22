@@ -29,6 +29,26 @@ app.use(express.static(__dirname + '/public'));
 ```
 ##試著把你剛才創的index.js複製一個到public資料夾，之後在網址打上http://localhost:8080/index.js
 
+4.我們在index.js 內加入下面，再執行看看
+```
+app.get('/', function (req, res) {
+  res.send('Hello world!');
+});
+app.get('/hi', function (req, res) {
+  res.send('Hello world!');
+});
+```
+##每次修改完都要重新啟動server覺得很麻煩
+
+所以我們要安裝一個套件:forever
+
+```
+npm install forever --save
+```
+
+```
+forever --watch index.js
+```
 
 
 
