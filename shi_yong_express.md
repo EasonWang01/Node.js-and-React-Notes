@@ -281,3 +281,15 @@ for configuring routes' controllers,"all" means it applies on all http methods.
 
 several callback
 ```
+# express 的set 方法
+```
+app.set("views", __dirname + "/views");
+
+app.set("view engine", "handlebars");
+```
+最常看見上面這兩種寫法，但他其實只是為你的前面的參數的值指定為第二個參數
+```
+app.set('Fruit', 'I am banana');
+console.log(app.settings.Fruit);///需使用app.settings去讀取
+
+```
