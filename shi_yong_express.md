@@ -14,7 +14,15 @@ npm init
 ```
 npm install express --save
 ```
-先創建一個
+先創建一個index.js
+```
+var express = require('express');
+var app = express();
+
+app.use(express.static(__dirname + '/public'));
+
+app.listen(8080);
+```
 
 
 一個簡單的範例
