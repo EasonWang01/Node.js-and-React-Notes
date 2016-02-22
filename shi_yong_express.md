@@ -161,6 +161,10 @@ app.use('/user/:id', function (req, res, next) {
 
 指定如果url的params = 條件的話跳過其下逗點後的function直接進行next middleware
 ```
+var express = require('express');
+var app = express();
+var router = require('./routes/index.js')(app);
+app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
 app.get('/user/:id', function (req, res, next) {
   // 如果id參數為0跳到下面的middleware
   if (req.params.id == 0) next('route');
@@ -169,11 +173,32 @@ app.get('/user/:id', function (req, res, next) {
 }, function (req, res, next) {
   
   console.log("I am this")
+  next(); 
 });
 
 // handler for the /user/:id path, which renders a special page
-app.get('/user/:id', function (req, res, next) {
+app.get('/user/:d', function (req, res, next) {
   
   console.log("I am next")
+  next();
 });
+app.listen(8080);
+```
+發現如果url為
+```
+http://localhost:8080/user/hi
+```
+將console出 
+```
+I am this 
+
+I am next
+```
+如果url為
+```
+http://localhost:8080/user/0
+```
+將console出 
+```
+I am next
 ```
