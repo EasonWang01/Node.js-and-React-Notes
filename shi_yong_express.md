@@ -45,12 +45,70 @@ app.get('/hi', function (req, res) {
 ```
 npm install forever --save
 ```
-
+開始監控
 ```
 forever --watch index.js
 ```
 
+----------------------
+5.接著我們加入更多路由功能
+```
+app.get('/', function (req, res) {
+  res.send('Hello wogd!');
+});
+app.get('/hi', function (req, res) {
+  res.send('Hiiii!');
+});
+ app.get('/', function (req, res) {
+    res.send('Hello world');
+  });
+  app.get('/customer', function(req, res){
+    res.send('customer page');
+  });
+  app.get('/admin', function(req, res){
+    res.send('admin page');
+  });
+```
+但發現這樣會很雜亂，所以我們新建一個目錄叫routes
 
+裡面放入一個檔案index.js
+```
+module.exports = function (app) {
+app.get('/', function (req, res) {
+  res.send('Hello wogd!');
+});
+app.get('/hi', function (req, res) {
+  res.send('Hiiii!');
+});
+ app.get('/', function (req, res) {
+    res.send('Hello world');
+  });
+  app.get('/customer', function(req, res){
+    res.send('customer page');
+  });
+  app.get('/admin', function(req, res){
+    res.send('admin page');
+  });
+
+};
+```
+而 原本的檔案改為
+```
+var express = require('express');
+var app = express();
+var router = require('./routes/index.js')(app);
+app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
+
+app.listen(8080);
+```
+這時我們試著把
+```
+var router = require('./routes/index.js')(app);
+改為
+var router = require('./routes')(app);
+
+```
+發現還是可以，原因是require如果指定為資料夾，他會預設去找下面的index檔案
 
 一個簡單的範例
 
