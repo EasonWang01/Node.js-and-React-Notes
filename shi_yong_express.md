@@ -168,11 +168,12 @@ app.get('/user/:id', function (req, res, next) {
   else next(); 
 }, function (req, res, next) {
   
-  res.render('regular');
+  console.log("I am this")
 });
 
 // handler for the /user/:id path, which renders a special page
 app.get('/user/:id', function (req, res, next) {
-  res.render('special');
+  
+  console.log("I am next")
 });
 ```
