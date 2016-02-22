@@ -110,6 +110,13 @@ var router = require('./routes')(app);
 ```
 發現還是可以，原因是require如果指定為資料夾，他會預設去找下面的index檔案
 
+express 是一個架構在http上的框架
+
+#middleware
+
+
+
+
 一個簡單的範例
 
 ```
