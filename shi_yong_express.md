@@ -203,6 +203,8 @@ http://localhost:8080/user/0
 I am next
 ```
 #整理路徑router
+
+###第一個方法
 1.index.js
 ```
 
@@ -232,4 +234,19 @@ module.exports = fruit;
 之後可以使用，以下連結瀏覽
 ```
 http://localhost:8080/fruit/banana
+```
+
+##第二個方法
+```
+
+app.route('/fruit')
+  .get(function(req, res) {
+    res.send('Get a random fruit');
+  })
+  .post(function(req, res) {
+    res.send('Add a fruit');
+  })
+  .put(function(req, res) {
+    res.send('Update the fruit');
+  });
 ```
