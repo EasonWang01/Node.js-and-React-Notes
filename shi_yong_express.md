@@ -6,11 +6,17 @@ mkdir expressExample
 
 cd expressExample
 ```
+2.初始化
+```
+npm init
+```
+3.
+```
+npm install express --save
+```
+先創建一個
 
 
-```
-npm install express -g --save
-```
 一個簡單的範例
 
 ```
