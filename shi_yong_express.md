@@ -219,13 +219,17 @@ fruit.use(function timeLog(req, res, next) {
   next();
 });
 
-fruit.get('/', function(req, res) {
+fruit.get('/banana', function(req, res) {
   res.send('Birds home page');
 });
 
-fruit.get('/about', function(req, res) {
+fruit.get('/apple', function(req, res) {
   res.send('About birds');
 });
 
 module.exports = fruit;
+```
+之後可以使用，以下連結瀏覽
+```
+http://localhost:8080/fruit/banana
 ```
