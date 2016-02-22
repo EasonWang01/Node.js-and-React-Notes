@@ -114,6 +114,7 @@ express 是一個架構在http上的框架
 
 #middleware
 
+接收http請求，並對其進行加工
 ```
 function IamMiddleware(req, res, next) {
   next();
