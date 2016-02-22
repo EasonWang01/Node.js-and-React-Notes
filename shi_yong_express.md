@@ -29,6 +29,14 @@ app.use(express.static(__dirname + '/public'));
 ```
 ##試著把你剛才創的index.js複製一個到public資料夾，之後在網址打上http://localhost:8080/index.js
 
+
+可以設定多個靜態目錄
+```
+app.use(express.static('public'));
+app.use(express.static('img'));
+app.use(express.static('pdf'));
+```
+
 4.我們在index.js 內加入下面，再執行看看
 ```
 app.get('/', function (req, res) {
