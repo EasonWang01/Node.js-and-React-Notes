@@ -128,3 +128,51 @@ function IamMiddleware(req, res, next) {
   next();
 }
 ```
+有哪些種類?
+```
+應用程式層次的中介軟體
+路由器層次的中介軟體
+錯誤處理中介軟體
+內建中介軟體
+協力廠商中介軟體
+```
+應用程式層次的中介軟體，將下面code貼在我們的index.js看看
+```
+app.use(function (req, res, next) {
+  console.log('現在時間:', Date.now());
+  next();
+});
+```
+限定指定路徑使用
+```
+app.get('/user/:id', function (req, res, next) {
+  console.log('Request Type:', req.method);
+  next();
+});
+```
+```
+app.use('/user/:id', function (req, res, next) {
+  console.log('Request Type:', req.method);
+  console.log(req.params.id);
+  next();
+});
+```
+我們可以指定條件再middleware，先在原本middleware後加入一個function，
+
+指定如果url的params = 條件的話跳過其下逗點後的function直接進行next middleware
+```
+app.get('/user/:id', function (req, res, next) {
+  // 如果id參數為0跳到下面的middleware
+  if (req.params.id == 0) next('route');
+   
+  else next(); 
+}, function (req, res, next) {
+  
+  res.render('regular');
+});
+
+// handler for the /user/:id path, which renders a special page
+app.get('/user/:id', function (req, res, next) {
+  res.render('special');
+});
+```
