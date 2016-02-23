@@ -26,4 +26,4 @@ https://mongolab.com/
 
 2.設定一下相關database url、port、username、password(database的，不是你帳戶的)
 
-3.點選左下Test
+3.點選左下Test，如成功即可點選save，並進行connect
