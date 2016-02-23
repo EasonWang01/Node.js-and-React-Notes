@@ -60,3 +60,37 @@ db.open(function(err, client) {
     });
 });
 ```
+完成後如下，如在terminal中出現connect success 即表示成功連線
+```
+var express = require('express');
+var bodyParser = require('body-parser')
+////
+var mongo = require('mongodb');
+var Server = mongo.Server;
+var Db = mongo.Db;
+
+var server = new Server('ds013898.mongolab.com',13898, {auto_reconnect : true});
+var db = new Db('forclass', server);
+
+
+db.open(function(err, client) {
+    client.authenticate('forclass1', 'test123', function(err, success) {
+        if(success){
+        console.log("connect success")
+      }else{
+      	console.log("client.authenticate error")
+      };
+
+    });
+});
+
+////
+var app = express();
+var router = require('./routes/index.js')(app);
+app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
+
+
+
+
+app.listen(8080);
+```
