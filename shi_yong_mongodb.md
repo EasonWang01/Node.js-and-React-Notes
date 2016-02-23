@@ -323,6 +323,12 @@ Timestamp	17
 
 如果為參數1代表讀到一個document，如果為五代表讀前五個document
 ```
-     var cursor = db.collection('apple').find().limit(1);
+var cursor = db.collection('apple').find().limit(1);
+       
+```
+#使用skip
+與limit相反，跳過skip參數個document，都是從前面往後數
+```
+var cursor = db.collection('apple').find().skip(2);
        
 ```
