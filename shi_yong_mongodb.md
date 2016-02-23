@@ -63,7 +63,7 @@ db.open(function(err, client) {
 完成後如下，啟動server後如在terminal中出現connect success 即表示成功連線
 ```
 var express = require('express');
-var bodyParser = require('body-parser')
+
 ////
 var mongo = require('mongodb');
 var Server = mongo.Server;
@@ -107,3 +107,66 @@ function                                   function ( )
 stored procedure                           mapreduce 
 ```
 
+1.先根據官方範例在MongoLab引入一個範例collection名為apple,而裡面的document如下
+```
+{
+  "address": {
+     "building": "1007",
+     "coord": [ -73.856077, 40.848447 ],
+     "street": "Morris Park Ave",
+     "zipcode": "10462"
+  },
+  "borough": "Bronx",
+  "cuisine": "Bakery",
+  "grades": [
+     { "date": { "$date": 1393804800000 }, "grade": "A", "score": 2 },
+     { "date": { "$date": 1378857600000 }, "grade": "A", "score": 6 },
+     { "date": { "$date": 1358985600000 }, "grade": "A", "score": 10 },
+     { "date": { "$date": 1322006400000 }, "grade": "A", "score": 9 },
+     { "date": { "$date": 1299715200000 }, "grade": "B", "score": 14 }
+  ],
+  "name": "Morris Park Bake Shop",
+  "restaurant_id": "30075445"
+}
+```
+接著回到index.js將code改成如下，應可看到query 出整個collection內容
+```
+var express = require('express');
+
+////
+var mongo = require('mongodb');
+var Server = mongo.Server;
+var Db = mongo.Db;
+
+var server = new Server('ds013898.mongolab.com',13898, {auto_reconnect : true});
+var db = new Db('forclass', server);
+
+
+db.open(function(err, client) {
+    client.authenticate('forclass1', 'test123', function(err, success) {
+        if(success){
+        console.log("connect success")
+       var cursor = db.collection('apple').find();
+       
+        cursor.each(function(err, doc) {
+    
+         console.log(doc);
+     
+   });
+      }else{
+      	console.log("client.authenticate error")
+      };
+
+    });
+});
+
+////
+var app = express();
+var router = require('./routes/index.js')(app);
+app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
+
+
+
+
+app.listen(8080);
+```
