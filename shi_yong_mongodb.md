@@ -106,3 +106,4 @@ Relation DataBase                         MongoDB
 function                                   function ( )
 stored procedure                           mapreduce 
 ```
+
