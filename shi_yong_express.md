@@ -298,6 +298,30 @@ bodyParser
 
 範例:https://www.youtube.com/watch?v=C3G3N4LMJeE
 ```
+```
+var express = require('express')
+var bodyParser = require('body-parser')
+ 
+var app = express()
+ 
+// create application/json parser 
+var jsonParser = bodyParser.json()
+ 
+// create application/x-www-form-urlencoded parser 
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+ 
+// POST /login gets urlencoded bodies 
+app.post('/login', urlencodedParser, function (req, res) {
+  if (!req.body) return res.sendStatus(400)
+  res.send('welcome, ' + req.body.username)
+})
+ 
+// POST /api/users gets JSON bodies 
+app.post('/api/users', jsonParser, function (req, res) {
+  if (!req.body) return res.sendStatus(400)
+  // create user in req.body 
+})
+```
 但如果post的編碼類型是multipart/form-data呢?(ex:上傳檔案)
 ```
 使用multer middleware
@@ -315,5 +339,6 @@ app.set("view engine", "handlebars");
 ```
 app.set('Fruit', 'I am banana');
 console.log(app.settings.Fruit);///需使用app.settings去讀取
+console.log(app.get('Fruit'));或app.get
 
 ```
