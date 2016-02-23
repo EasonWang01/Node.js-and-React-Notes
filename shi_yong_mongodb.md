@@ -19,3 +19,7 @@ https://mongolab.com/
 ##如何測試剛創好的資料庫?
 
 使用Robomongo  https://robomongo.org/
+
+點選Download，選最下面的免費選項下載
+
+1.下載完後開啟，先點選左上方的create 
