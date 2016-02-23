@@ -15,3 +15,7 @@ https://mongolab.com/
 4.創建database內的collection
 
 5.在collection內加入document
+
+##如何測試剛創好的資料庫?
+
+使用Robomongo  https://robomongo.org/
