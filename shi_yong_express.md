@@ -298,6 +298,10 @@ bodyParser
 
 範例:https://www.youtube.com/watch?v=C3G3N4LMJeE
 ```
+但如果post的編碼類型是multipart/form-data呢?(ex:上傳檔案)
+```
+使用multer middleware
+```
 
 更多可參考http://expressjs.com/zh-tw/resources/middleware.html
 
