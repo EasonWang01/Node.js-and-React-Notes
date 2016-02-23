@@ -1,9 +1,9 @@
 # 使用MongoDB
 
 ```
-資料庫 > collection >document
+Mongo資料庫 > collection >document
 
-資料庫       >        資料表
+SQL資料庫       >        資料表
 ```
 
 使用MongoLab 當練習範例
