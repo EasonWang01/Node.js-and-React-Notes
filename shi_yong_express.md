@@ -281,6 +281,12 @@ for configuring routes' controllers,"all" means it applies on all http methods.
 
 several callback
 ```
+#錯誤處理middleware
+錯誤處理中介軟體函數的定義方式，與其他中介軟體函數相同，差別在於錯誤處理函數的參數是四個，而非三個，而錯誤處理通常在其他 app.use() 和路由呼叫之後，最後才定義錯誤處理中介軟體
+
+
+
+
 # express 的set 方法
 ```
 app.set("views", __dirname + "/views");
