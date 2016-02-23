@@ -36,3 +36,27 @@ https://mongolab.com/
 ```
 npm install mongodb
 ```
+```
+var mongo = require('mongodb');
+var Server = mongo.Server;
+var Db = mongo.Db;
+```
+設定server及資料庫
+```
+var server = new Server('ds013898.mongolab.com',13898, {auto_reconnect : true});
+var db = new Db('forclass', server);
+
+```
+設定database中user帳號及密碼(不是MongoLab的登入帳密)
+```
+db.open(function(err, client) {
+    client.authenticate('forclass1', 'test123', function(err, success) {
+        if(success){
+        console.log("connect success")
+      }else{
+      	console.log("client.authenticate error")
+      };
+
+    });
+});
+```
