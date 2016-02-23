@@ -23,3 +23,7 @@ https://mongolab.com/
 點選Download，選最下面的免費選項下載
 
 1.下載完後開啟，先點選左上方的create 
+
+2.設定一下相關database url、port、username、password(database的，不是你帳戶的)
+
+3.點選左下Test
