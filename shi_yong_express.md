@@ -57,6 +57,10 @@ npm install forever --save
 ```
 forever --watch index.js
 ```
+結束監控
+```
+開啟另一個terminal 輸入 forever stopall
+```
 如果使用forever發現無法下指令關掉，可直接從os的工作管理員結束掉node.exe的程序即可
 ----------------------
 5.接著我們加入更多路由功能
