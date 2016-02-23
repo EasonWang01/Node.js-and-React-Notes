@@ -134,7 +134,7 @@ function IamMiddleware(req, res, next) {
 路由器層次的中介軟體
 錯誤處理中介軟體
 內建中介軟體
-協力廠商中介軟體
+外部中介軟體
 ```
 應用程式層次的中介軟體，將下面code貼在我們的index.js看看
 ```
@@ -282,10 +282,13 @@ for configuring routes' controllers,"all" means it applies on all http methods.
 several callback
 ```
 #錯誤處理middleware
-錯誤處理中介軟體函數的定義方式，與其他中介軟體函數相同，差別在於錯誤處理函數的參數是四個，而非三個，而錯誤處理通常在其他 app.use() 和路由呼叫之後，最後才定義錯誤處理中介軟體
+錯誤處理中介軟體函數的定義方式，與其他中介軟體函數相同，差別在於錯誤處理函數的參數是四個，而非三個，而錯誤處理通常在其他 app.use() 和路由呼叫之後，最後才定義錯誤處理中介軟體。
 
 
 
+#外部middleware
+
+可參考http://expressjs.com/zh-tw/resources/middleware.html
 
 # express 的set 方法
 ```
