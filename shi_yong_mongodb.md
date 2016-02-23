@@ -151,7 +151,7 @@ db.open(function(err, client) {
         cursor.each(function(err, doc) {
     
          console.log(doc);
-     
+        db.close();
    });
       }else{
       	console.log("client.authenticate error")
