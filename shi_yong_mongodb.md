@@ -250,3 +250,29 @@ db.open(function(err, client) {
     });
 });
 ```
+接著改成查詢的code如下
+```
+
+db.open(function(err, client) {
+    client.authenticate('forclass1', 'test123', function(err, success) {
+        if(success){
+        console.log("connect success")
+       var cursor = db.collection('apple').find({"likes" : {$gt : 100}});
+       
+        cursor.each(function(err, doc) {
+    
+         console.log(doc);
+     db.close();
+   });
+      }else{
+      	console.log("client.authenticate error")
+      };
+
+    });
+});
+```
+
+# $gt代表大於
+#$lt代表小於
+#$gte大於等於
+#$lte小於等於
