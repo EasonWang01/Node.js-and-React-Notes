@@ -60,7 +60,7 @@ db.open(function(err, client) {
     });
 });
 ```
-完成後如下，如在terminal中出現connect success 即表示成功連線
+完成後如下，啟動server後如在terminal中出現connect success 即表示成功連線
 ```
 var express = require('express');
 var bodyParser = require('body-parser')
