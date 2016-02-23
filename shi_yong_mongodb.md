@@ -197,7 +197,7 @@ var cursor = db.collection('apple').remove({});
 ```
 ##新增document
 ```
-       var cursor = db.collection('apple').insert({
+ var cursor = db.collection('apple').insert({
     title: 'web課程', 
     description: 'test ',
     by: 'eason',
