@@ -299,6 +299,7 @@ db.open(function(err, client) {
     });
 });
 ```
+type的值，數字對照表
 ```
 Double	1	 
 String	2	 
@@ -316,4 +317,12 @@ JavaScript (with scope)	15
 32-bit integer	16	 
 Timestamp	17	 
 64-bit integer	18	 
+```
+
+#使用limit
+
+如果為參數1代表讀到一個document，如果為五代表讀前五個document
+```
+     var cursor = db.collection('apple').find().limit(1);
+       
 ```
