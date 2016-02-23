@@ -190,3 +190,19 @@ var cursor = db.collection('apple').find({ "borough": "Bronx" });
 ```
 { "_id" : 5, "type" : "food", "item" : "aaa", "ratings" : [ 5, 8, 9 ] }
 ```
+##移除document
+```
+var cursor = db.collection('apple').remove({});
+       
+```
+##新增document
+```
+       var cursor = db.collection('apple').insert({
+    title: 'web課程', 
+    description: 'test ',
+    by: 'eason',
+    url: 'hi',
+    tags: ['hello'],
+    likes: 200
+});
+```
