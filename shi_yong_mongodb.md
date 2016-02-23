@@ -94,3 +94,15 @@ app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
 
 app.listen(8080);
 ```
+#開始操作資料庫
+```
+Relation DataBase                         MongoDB
+------------------------------------------------------------
+資料庫(Database)                           DataBase
+資料表(Table)                              Collection
+資料(Record/Row)                           Document
+欄位(Column)                               Field
+主索引(PK)                                 _id
+function                                   function ( )
+stored procedure                           mapreduce 
+```
