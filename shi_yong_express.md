@@ -57,7 +57,7 @@ npm install forever --save
 ```
 forever --watch index.js
 ```
-
+如果使用forever發現無法下指令關掉，可直接從os的工作管理員結束掉node.exe的程序即可
 ----------------------
 5.接著我們加入更多路由功能
 ```
@@ -287,6 +287,13 @@ several callback
 
 
 #外部middleware
+
+較常見為
+```
+cookie-parser
+
+bodyParser
+```
 
 可參考http://expressjs.com/zh-tw/resources/middleware.html
 
