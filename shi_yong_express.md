@@ -299,7 +299,7 @@ bodyParser
 範例:https://www.youtube.com/watch?v=C3G3N4LMJeE
 ```
 
-可參考http://expressjs.com/zh-tw/resources/middleware.html
+更多可參考http://expressjs.com/zh-tw/resources/middleware.html
 
 # express 的set 方法
 ```
