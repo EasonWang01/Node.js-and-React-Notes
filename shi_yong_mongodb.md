@@ -27,3 +27,7 @@ https://mongolab.com/
 2.設定一下相關database url、port、username、password(database的，不是你帳戶的)
 
 3.點選左下Test，如成功即可點選save，並進行connect
+
+可參考http://www.codedata.com.tw/database/mongodb-tutorial-1-setting-up-cloud-env/
+
+#如何用Node.js連線到MongoLab?
