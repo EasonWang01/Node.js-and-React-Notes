@@ -319,16 +319,22 @@ Timestamp	17
 64-bit integer	18	 
 ```
 
-#使用limit
+#使用limit()
 
 如果為參數1代表讀到一個document，如果為五代表讀前五個document
 ```
 var cursor = db.collection('apple').find().limit(1);
        
 ```
-#使用skip
+#使用skip()
 與limit相反，跳過skip參數個document，都是從前面往後數
 ```
 var cursor = db.collection('apple').find().skip(2);
+       
+```
+#使用sort()
+根據name的值去排列，而不是根據document的index順序
+```
+var cursor = db.collection('apple').find().sort({"likes":-1})
        
 ```
