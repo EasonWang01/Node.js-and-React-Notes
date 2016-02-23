@@ -31,3 +31,8 @@ https://mongolab.com/
 可參考http://www.codedata.com.tw/database/mongodb-tutorial-1-setting-up-cloud-env/
 
 #如何用Node.js連線到MongoLab?
+
+先使用npm 安裝
+```
+npm install mongodb
+```
