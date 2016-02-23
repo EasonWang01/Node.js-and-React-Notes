@@ -206,3 +206,47 @@ var cursor = db.collection('apple').remove({});
     likes: 200
 });
 ```
+##運用operator
+
+以下參考至http://www.runoob.com/mongodb/mongodb-operators.html
+
+先輸入三組document
+```
+
+db.open(function(err, client) {
+    client.authenticate('forclass1', 'test123', function(err, success) {
+        if(success){
+        console.log("connect success")
+
+    db.collection('apple').insert({
+    title: 'web課程', 
+    description: 'test ',
+    by: 'eason',
+    url: 'hi',
+    tags: ['hello'],
+    likes: 50
+});
+        db.collection('apple').insert({
+    title: 'web課程', 
+    description: 'test ',
+    by: 'eason',
+    url: ['hi'],
+    tags: 'hello',
+    likes: 100
+});
+         db.collection('apple').insert({
+    title: 'web課程', 
+    description: 'test ',
+    by: 'eason',
+    url: true,
+    tags: ['hello'],
+    likes: 200
+});
+ 
+      }else{
+      	console.log("client.authenticate error")
+      };
+
+    });
+});
+```
