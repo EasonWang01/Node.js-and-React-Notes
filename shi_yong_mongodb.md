@@ -170,3 +170,23 @@ app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
 
 app.listen(8080);
 ```
+2.如果在find()，裡面放入參數，會query出所有符合的document
+```
+var cursor = db.collection('apple').find({ "borough": "Bronx" });
+       
+```
+
+舉例:
+假設有個inventory collection裡面有三個collection如下`
+
+```
+{ _id: 5, type: "food", item: "aaa", ratings: [ 5, 8, 9 ] }
+{ _id: 6, type: "food", item: "bbb", ratings: [ 5, 9 ] }
+{ _id: 7, type: "food", item: "ccc", ratings: [ 9, 5, 8 ] }
+```
+執行 db.inventory.find( { ratings: [ 5, 8, 9 ] } )
+
+將返回
+```
+{ "_id" : 5, "type" : "food", "item" : "aaa", "ratings" : [ 5, 8, 9 ] }
+```
