@@ -272,7 +272,48 @@ db.open(function(err, client) {
 });
 ```
 
-# $gt代表大於
+#$gt代表大於
 #$lt代表小於
 #$gte大於等於
 #$lte小於等於
+--------------------------------
+ 
+##使用type操作
+```
+
+db.open(function(err, client) {
+    client.authenticate('forclass1', 'test123', function(err, success) {
+        if(success){
+        console.log("connect success")
+       var cursor = db.collection('apple').find({"url" : {$type : 8}});
+       
+        cursor.each(function(err, doc) {
+    
+         console.log(doc);
+     db.close();
+   });
+      }else{
+      	console.log("client.authenticate error")
+      };
+
+    });
+});
+```
+```
+Double	1	 
+String	2	 
+Object	3	 
+Array	4	 
+Binary data	5	 
+Object id	7	 
+Boolean	8	 
+Date	9	 
+Null	10	 
+Regular Expression	11	 
+JavaScript	13	 
+Symbol	14	 
+JavaScript (with scope)	15	 
+32-bit integer	16	 
+Timestamp	17	 
+64-bit integer	18	 
+```
