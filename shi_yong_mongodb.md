@@ -3,7 +3,7 @@
 ```
 Mongo資料庫 > collection >document
 
-SQL資料庫       >        資料表
+SQL資料庫       >          資料表
 ```
 
 使用MongoLab 當練習範例
