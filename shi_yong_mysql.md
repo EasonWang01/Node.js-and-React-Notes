@@ -54,7 +54,6 @@ connection.query('CREATE TABLE Food (' +
                 'Food_kind VARCHAR(100),'+
                 'PRIMARY KEY(Food_id))', function(err, result){
 
-                    // Case there is an error during the creation
                     if(err) {
                         console.log(err);
                     }
@@ -72,7 +71,14 @@ connection.query("ALTER table apple add column (code varchar(255))" ,function(er
     console.log(result.insertId);
 });
 ```
+##insert row
+```
+connection.query("INSERT INTO apple SET ?",{seed:22,seed12:22} ,function(err, result) {
+    if (err) throw err;
 
+    console.log(result.insertId);
+});
+```
 
 
 
