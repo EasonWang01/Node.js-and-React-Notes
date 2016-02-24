@@ -40,3 +40,17 @@ app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
 
 app.listen(8080);
 ```
+3.成功連線後可插入資料或到下面網址管理資料庫
+https://www.db4free.net/phpMyAdmin
+
+#操控資料庫
+
+1.插入資料insert
+
+
+
+
+
+參考至:
+
+https://www.npmjs.com/package/mysql#getting-the-id-of-an-inserted-row
