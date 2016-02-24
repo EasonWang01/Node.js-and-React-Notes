@@ -45,7 +45,36 @@ https://www.db4free.net/phpMyAdmin
 
 #操控資料庫
 
-1.插入資料insert
+##insert TABLE
+```
+connection.query('CREATE TABLE Food (' +             
+                'Food_id int,'+
+                'Food_name VARCHAR(100),'+
+                'Food_prize VARCHAR(100),'+
+                'Food_kind VARCHAR(100),'+
+                'PRIMARY KEY(Food_id))', function(err, result){
+
+                    // Case there is an error during the creation
+                    if(err) {
+                        console.log(err);
+                    }
+                    else{
+                        console.log("Table Food Created");
+                    }
+                });
+```
+
+##insert column
+```
+connection.query("ALTER table apple add column (code varchar(255))" ,function(err, result) {
+    if (err) throw err;
+
+    console.log(result.insertId);
+});
+```
+
+
+
 
 
 
