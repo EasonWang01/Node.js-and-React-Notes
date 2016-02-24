@@ -263,7 +263,7 @@ db.open(function(err, client) {
     client.authenticate('forclass1', 'test123', function(err, success) {
         if(success){
         console.log("connect success")
-       var cursor = db.collection('apple').find({"likes" : {$gt : 100}});
+       var cursor = db.collection('apple').find({likes : {$gt : 100}});
        
         cursor.each(function(err, doc) {
     
@@ -291,7 +291,7 @@ db.open(function(err, client) {
     client.authenticate('forclass1', 'test123', function(err, success) {
         if(success){
         console.log("connect success")
-       var cursor = db.collection('apple').find({"url" : {$type : 8}});
+       var cursor = db.collection('apple').find({url : {$type : 8}});
        
         cursor.each(function(err, doc) {
     
@@ -344,3 +344,5 @@ var cursor = db.collection('apple').find().skip(2);
 var cursor = db.collection('apple').find().sort({"likes":-1})
        
 ```
+
+參考至:http://calvert.logdown.com/posts/159792-sql-to-mongodb-mapping-chart
