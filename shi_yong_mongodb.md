@@ -344,7 +344,7 @@ var cursor = db.collection('apple').find().skip(2);
 var cursor = db.collection('apple').find().sort({"likes":-1})
        
 ```
-#比較這兩個
+#比較這兩個Find()
 ```
 var cursor = db.collection('apple').find({},{likes:1, _id: 0});
 var cursor = db.collection('apple').find({likes : {$gt : 100}},{likes:1, _id: 0});
