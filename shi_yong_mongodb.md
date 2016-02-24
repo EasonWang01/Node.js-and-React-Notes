@@ -355,4 +355,17 @@ var cursor = db.collection('apple').find({likes : {$gt : 100}},{likes:1, _id: 0}
 
 第二個參數中物件的值只有0和1，指定其他數和指定1的效果相同，0為不顯示
 
-參考至:http://calvert.logdown.com/posts/159792-sql-to-mongodb-mapping-chart
+參考至:
+
+中文:
+
+http://calvert.logdown.com/posts/159792-sql-to-mongodb-mapping-chart
+
+英文:官方doc:
+
+https://docs.mongodb.org/manual/reference/method/db.collection.createIndex/#db.collection.createIndex
+     
+英文:官方github.io:
+
+http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOne
+       
