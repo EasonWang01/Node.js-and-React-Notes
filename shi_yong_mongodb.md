@@ -344,5 +344,15 @@ var cursor = db.collection('apple').find().skip(2);
 var cursor = db.collection('apple').find().sort({"likes":-1})
        
 ```
+#比較這兩個
+```
+var cursor = db.collection('apple').find({},{likes:1, _id: 0});
+var cursor = db.collection('apple').find({likes : {$gt : 100}},{likes:1, _id: 0});
+```
+發現find()的第一個參數代表:我們要從哪個地方去找東西
+
+第二個參數代表:從那個地方要找那些東西出來
+
+第二個參數中物件的值只有0和1，指定其他數和指定1的效果相同，0為不顯示
 
 參考至:http://calvert.logdown.com/posts/159792-sql-to-mongodb-mapping-chart
