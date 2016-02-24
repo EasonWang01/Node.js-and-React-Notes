@@ -73,9 +73,10 @@ connection.query("ALTER table apple add column (code varchar(255))" ,function(er
 ```
 ##insert row
 ```
-connection.query("INSERT INTO apple SET ?",{seed:22,seed12:22} ,function(err, result) {
+connection.query("INSERT INTO Food SET ?",{Food_id:01,Food_name:'Noodle',Food_prize:200,Food_kind:'chinese'
+} ,function(err, result) {
     if (err) throw err;
-
+    console.log(result);
     console.log(result.insertId);
 });
 ```
