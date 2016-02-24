@@ -14,7 +14,7 @@
 * [開始Node](kai_shi_node.md)
 * [使用express](shi_yong_express.md)
 * [使用MongoDB](shi_yong_mongodb.md)
-* [使用Mysql](shi_yong_mysql.md)
+* [使用MySQL](shi_yong_mysql.md)
 * 使用PostgreSQL
 * [React](react.md)
 * [import_export_module.exports 模組化](importexport_module_exports_mo_zu_hua.md)
