@@ -28,4 +28,8 @@
 
 
 
-參考至:http://www.postgresql.org/docs/8.3/static/tutorial-table.html
+參考至:
+
+http://www.postgresql.org/docs/8.3/static/tutorial-table.html
+
+中文版:http://twpug.net/docs/postgresql-doc-8.0-zh_TW/tutorial-populate.html
