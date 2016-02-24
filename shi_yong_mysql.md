@@ -80,7 +80,14 @@ connection.query("INSERT INTO Food SET ?",{Food_id:01,Food_name:'Noodle',Food_pr
     console.log(result.insertId);
 });
 ```
+##Read data
+```
+connection.query('SELECT * FROM Food',function(err,rows){
+  if(err) throw err;
 
+  console.log(rows);
+});
+```
 
 
 
