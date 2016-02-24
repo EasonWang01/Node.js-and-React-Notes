@@ -137,3 +137,5 @@ connection.end();
 參考至:
 
 https://www.npmjs.com/package/mysql#getting-the-id-of-an-inserted-row
+
+http://www.sitepoint.com/using-node-mysql-javascript-client/
