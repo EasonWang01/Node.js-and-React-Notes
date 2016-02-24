@@ -84,7 +84,10 @@ connection.query("INSERT INTO Food SET ?",{Food_id:01,Food_name:'Noodle',Food_pr
 
 
 
-
+#使用完記得關閉
+```
+connection.end();
+```
 
 
 參考至:
