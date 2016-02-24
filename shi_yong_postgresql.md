@@ -21,14 +21,20 @@
 指令如同Mysql的SQL指令
 ```
 
+------------------------------
+#Node.js與PostgreSQL
+
+```
+npm install pg --save
+```
+
+https://github.com/brianc/node-postgres
 
 
 
 
 
-
-
-
+-----------------------
 
 參考至:
 
