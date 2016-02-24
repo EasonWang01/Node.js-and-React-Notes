@@ -9,3 +9,15 @@
 數據庫=>架構=>數據表
 
 2.使用SQL shell(psql)
+
+
+
+
+
+
+
+
+
+
+
+參考至:http://www.postgresql.org/docs/8.3/static/tutorial-table.html
