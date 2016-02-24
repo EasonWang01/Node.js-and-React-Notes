@@ -63,7 +63,7 @@ connection.query('CREATE TABLE Food (' +
                     }
                 });
 ```
-
+記得每段分行要用+號，因為javascript分行要用字串聯接
 ##insert column
 ```
 connection.query("ALTER table apple add column (code varchar(255))" ,function(err, result) {
