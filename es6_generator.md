@@ -127,3 +127,43 @@ for (let v of foo()) {
 }());
 ```
 即可順利遍歷*foo()
+
+#yield*
+
+在generator函式中插入另一個generator函式時
+用到
+
+```
+function* foo() {
+  yield 'a';
+  yield 'b';
+}
+
+function* bar() {
+  yield 'x';
+  foo();
+  yield 'y';
+}
+
+for (let v of bar()){
+  console.log(v);
+}
+```
+印出x,y
+```
+function* foo() {
+  yield 'a';
+  yield 'b';
+}
+
+function* bar() {
+  yield 'x';
+  yield* foo();
+  yield 'y';
+}
+
+for (let v of bar()){
+  console.log(v);
+}
+```
+印出x,a,b,y
