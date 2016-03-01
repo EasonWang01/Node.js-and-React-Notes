@@ -167,3 +167,23 @@ for (let v of bar()){
 }
 ```
 印出x,a,b,y
+
+##yield*類似for of
+```
+function* foo() {
+  yield 'a';
+  yield 'b';
+}
+
+function* bar() {
+  yield 'x';
+  for(let v of foo()){
+  console.log(v);
+  };
+  yield 'y';
+}
+
+for (let v of bar()){
+  console.log(v);
+}
+```
