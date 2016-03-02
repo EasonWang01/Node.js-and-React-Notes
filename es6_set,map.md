@@ -21,7 +21,15 @@ Object.keys(obj).forEach(function(key) {
 
 #ES6 的新數據結構Set Map
 -----
-##
+##Set
+可接受一個array來初始化，set類似array但每個成員的值不會相等，使用強型別
+````
+var set = new Set([1, 2, 3, 4, 4])
+```
+輸入set 將得到
+```
+Set {1, 2, 3, 4}
+```
 
 
 
