@@ -1,8 +1,10 @@
-# ES6-Set,Map
+
+#前情提要
+-----
 
 for of =>可用在array，Set，Map返回value
 
-for in =>可用在object，array，返回index(不建議使用)
+for in =>可用在object，array，返回index(在array可能被擴充的情況下不建議使用)
 
 forEach =>均可遍歷，但無法break離開遍歷(可用some或是every)
 http://www.jsnoob.com/2013/11/26/how-to-break-the-foreach/
@@ -17,7 +19,8 @@ Object.keys(obj).forEach(function(key) {
 });
 ```
 
-
+#ES6 的新數據結構Set Map
+-----
 
 Set的遍歷方法
 ```
