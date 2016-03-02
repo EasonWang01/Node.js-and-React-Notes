@@ -22,5 +22,5 @@
 * [使用webpack](shi_yong_webpack.md)
 * [ES6 Generator](es6_generator.md)
 * [ES6 Set,Map](es6_set,map.md)
-* ES6 Promise
+* [ES6 Promise](es6_promise.md)
 
