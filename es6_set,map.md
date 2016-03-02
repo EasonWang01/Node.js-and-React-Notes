@@ -1,4 +1,4 @@
-# ES6 Set,Map
+# ES6-Set,Map
 
 for of =>可用在array，Set，Map返回value
 
