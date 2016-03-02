@@ -151,6 +151,10 @@ entries()：返回index and value
 forEach()：使用callback附上參數
 ```
 #實際使用
+```
+使用[...]轉為陣列結構
+```
+
 1.
 ```
  map = new Map([
@@ -170,4 +174,24 @@ fruit.set(apple, "content")
 ```
 ```
 [...fruit.keys()][0].price
+```
+------
+```
+陣列轉為Map
+```
+1.
+```
+new Map([[true, 7], [{foo: 3}, ['abc']]])
+```
+```
+陣列轉為JSON
+```
+1.
+```
+function mapToArrayJson(map) {
+  return JSON.stringify([...map]);
+}
+
+let myMap = new Map().set(true, 7).set({foo: 3}, ['abc']);
+mapToArrayJson(myMap)
 ```
