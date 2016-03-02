@@ -10,6 +10,7 @@ forEach =>均可遍歷，但無法break離開遍歷(可用some或是every)
 http://www.jsnoob.com/2013/11/26/how-to-break-the-foreach/
 
 
+
 ##如何遍歷object內的value?
 ```
 var obj = { first: "John", last: "Doe" };
