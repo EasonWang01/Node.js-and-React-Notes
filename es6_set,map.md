@@ -82,3 +82,20 @@ b = [3,4,5,6,7,8,9]
 
 banana = new Set([...a,...b])
 ```
+3.快速找到array中共同的元素(交集)
+```
+var a = [1, 2, 3];
+var b = new Set([1,3,4,5,8,9]);
+
+
+banana = new Set([...a].filter(x => b.has(x)));
+```
+4.快速找到a陣列有但b陣列沒有的元素(差集)
+```
+var a = [1, 2, 3];
+var b = new Set([1,3,4,5,8,9]);
+
+
+banana = new Set([...a].filter(x => !b.has(x)));
+```
+#Map
