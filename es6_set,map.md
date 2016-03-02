@@ -142,3 +142,10 @@ has(key)         查看擁有
 delete(key)      清除單一
 clear()          清除所有
 ```
+##Map的遍歷方法
+```
+keys()：返回index
+values()：返回value
+entries()：返回index and value
+forEach()：使用callback附上參數
+```
