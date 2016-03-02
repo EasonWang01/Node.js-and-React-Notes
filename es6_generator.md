@@ -298,3 +298,5 @@ Map.prototype[Symbol.iterator]
 
 Object.prototype[Symbol.iterator] 
 ```
+#有[Symbol.iterator]的方法都可用[...名字]去遍歷
+只有object無法
