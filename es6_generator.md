@@ -237,7 +237,20 @@ for(v of car){console.log(v)}
 ```
 發現物件對象無法用for of遍歷
 
-於是我們改成
+於是我們再輸入，幫他加入iterator
 ```
-
+car[Symbol.iterator] = function* () {
+    yield 1;
+    yield 2;
+    yield 3;
+};
 ```
+這時輸入
+```
+for(v of car){console.log(v)}
+```
+以及
+```
+[...car]
+```
+均可
