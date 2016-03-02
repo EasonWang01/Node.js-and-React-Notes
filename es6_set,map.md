@@ -99,3 +99,16 @@ var b = new Set([1,3,4,5,8,9]);
 banana = new Set([...a].filter(x => !b.has(x)));
 ```
 #Map
+
+```
+var fruit = new Map();
+var apple = {price: "20"};
+
+fruit.set(apple, "content")
+```
+取得值
+```
+fruit.get(apple);
+fruit.get({price: "20"}); //undefine
+
+```
