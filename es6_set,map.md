@@ -149,3 +149,24 @@ values()：返回value
 entries()：返回index and value
 forEach()：使用callback附上參數
 ```
+#實際使用
+1.
+```
+ map = new Map([
+  ['F', 'no'],
+  ['T',  'yes'],
+]);
+```
+```
+[...map.keys()][0]
+```
+2.
+```
+var fruit = new Map();
+var apple = {price: "20"};
+
+fruit.set(apple, "content")
+```
+```
+[...fruit.keys()][0].price
+```
