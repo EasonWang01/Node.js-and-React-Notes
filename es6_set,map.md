@@ -30,14 +30,23 @@ var set = new Set([1, 2, 3, 4, 4])
 ```
 Set {1, 2, 3, 4}
 ```
-##set 操作方法
+##Set 操作方法
 ```
 add(value)：添加value，返回Set本身。
 delete(value)：删除value，返回boolean。
 has(value)：返回boolean，表示該value是否為set中成員。
 clear()：清除所有成員，没有返回值。
 ```
+1.
+```
+var a = new Set
 
+a.add(1);
+```
+2.
+```
+a.add("1")
+```
 
 ##Set的遍歷方法
 ```
@@ -46,4 +55,14 @@ keys()：返回index
 values()：返回value
 entries()：返回index and value
 forEach()：使用callback附上參數
+```
+###想用array的操作方法來操作Set呢?
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype
+
+可將
+
+將Set轉為arrray
+```
+var items = new Set([1, 2, 3, 4, 5]);
+var array = Array.from(items);
 ```
