@@ -254,3 +254,36 @@ for(v of car){console.log(v)}
 [...car]
 ```
 均可
+
+但輸入next還是不行
+```
+car.next()
+```
+所以我們生成一個b
+```
+var b = car[Symbol.iterator]()
+
+```
+之輸入b.next()，即可順利印出
+```
+b.next()
+Object {value: 1, done: false}
+b.next()
+Object {value: 2, done: false}
+b.next()
+Object {value: 3, done: false}
+```
+但如果改成
+```
+var b = car[Symbol.iterator]
+```
+之後輸入
+```
+b().next()
+Object {value: 1, done: false}
+b().next()
+Object {value: 1, done: false}
+b().next()
+Object {value: 1, done: false}
+```
+發現第一個完後即無法在往下
