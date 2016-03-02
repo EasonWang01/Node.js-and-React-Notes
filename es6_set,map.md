@@ -66,3 +66,19 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 var items = new Set([1, 2, 3, 4, 5]);
 var array = Array.from(items);
 ```
+
+#實際使用
+1.快速刪除array重複的元素
+```
+var arr = [3, 5, 2, 2, 5, 5];
+var apple = [...new Set(arr)];
+
+console.log(apple);
+```
+2.快速合併陣列，刪除重複元素
+```
+a = [1,2,3,4,5,6]
+b = [3,4,5,6,7,8,9]
+
+banana = new Set([...a,...b])
+```
