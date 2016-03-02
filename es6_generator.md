@@ -287,3 +287,14 @@ b().next()
 Object {value: 1, done: false}
 ```
 發現第一個完後即無法在往下
+
+#查看一個數組有沒有iterator
+```
+Set.prototype[Symbol.iterator]
+
+Array.prototype[Symbol.iterator]
+
+Map.prototype[Symbol.iterator]
+
+Object.prototype[Symbol.iterator] 
+```
