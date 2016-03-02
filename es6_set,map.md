@@ -4,7 +4,8 @@ for of =>可用在array，Set，Map返回value
 
 for in =>可用在object，array，返回index
 
-
+forEach =>均可遍歷，但無法break離開遍歷(可用some或是every)
+http://www.jsnoob.com/2013/11/26/how-to-break-the-foreach/
 
 
 ##如何遍歷object內的value?
