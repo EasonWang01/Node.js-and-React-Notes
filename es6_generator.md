@@ -187,3 +187,57 @@ for (let v of bar()){
   console.log(v);
 }
 ```
+
+處理callback
+
+原本
+```
+step1(function (value1) {
+  step2(value1, function(value2) {
+    step3(value2, function(value3) {
+      step4(value3, function(value4) {
+        // Do something with value4
+      });
+    });
+  });
+  
+});
+```
+使用generator
+```
+function* longRunningTask() {
+  try {
+    var value1 = yield step1();
+    var value2 = yield step2(value1);
+    var value3 = yield step3(value2);
+    var value4 = yield step4(value3);
+    // Do something with value4
+  } catch (e) {
+    // Handle any error from step1 through step4
+  }
+}
+```
+為任意對象加入Iterator後即可用next()
+```
+var arry = ["a","b"]
+```
+```
+var hi = arry[Symbol.iterator](); //S記得大寫
+```
+```
+hi.next();
+```
+##測試一個物件對象
+```
+var car = {type:"sport", model:"500", color:"white"};
+```
+接著輸入
+```
+for(v of car){console.log(v)}
+```
+發現物件對象無法用for of遍歷
+
+於是我們改成
+```
+
+```
