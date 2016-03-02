@@ -109,6 +109,27 @@ fruit.set(apple, "content")
 取得值
 ```
 fruit.get(apple);
-fruit.get({price: "20"}); //undefine
+fruit.get({price: "20"}); //undefined
 
 ```
+#Map為了避免index衝突，須將index先指定給變數
+除了數字，字串和boolean
+```
+var map = new Map();
+
+var apple1 = ['a'];
+var apple2 = ['a'];
+
+map
+.set(apple1, 111)
+.set(apple2, 222);
+
+map.get(apple1) 
+map.get(apple2) 
+```
+但
+```
+map.get(['a']) 
+```
+
+為undefined
