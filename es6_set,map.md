@@ -30,10 +30,16 @@ var set = new Set([1, 2, 3, 4, 4])
 ```
 Set {1, 2, 3, 4}
 ```
+##set 操作方法
+```
+add(value)：添加value，返回Set本身。
+delete(value)：删除value，返回boolean。
+has(value)：返回boolean，表示該value是否為set中成員。
+clear()：清除所有成員，没有返回值。
+```
 
 
-
-Set的遍歷方法
+##Set的遍歷方法
 ```
 
 keys()：返回index
