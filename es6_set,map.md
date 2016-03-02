@@ -112,8 +112,8 @@ fruit.get(apple);
 fruit.get({price: "20"}); //undefined
 
 ```
-#Map為了避免index衝突，須將index先指定給變數
-除了數字，字串和boolean
+#Map為了避免index衝突，須將index先指定給變數(除了數字，字串和boolean)
+
 ```
 var map = new Map();
 
@@ -133,3 +133,12 @@ map.get(['a'])
 ```
 
 為undefined
+
+##Map的操作方法
+```
+set(key, value)  設值
+get(key)         取值
+has(key)         查看擁有
+delete(key)      清除單一
+clear()          清除所有
+```
