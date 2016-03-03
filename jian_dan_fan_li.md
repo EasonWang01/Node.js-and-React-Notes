@@ -69,3 +69,5 @@ app.get('/hi', function (req, res) {
 };
 ```
 public資料夾為空
+
+#使用Handlebars
