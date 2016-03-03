@@ -3,6 +3,7 @@
 延續前兩章
 
 現在專案目錄如下
+```
 
  index.js
 
@@ -13,6 +14,7 @@
 || public
 
 || routes----index.js
+```
     
 根目錄的index.js為
 ```
@@ -109,3 +111,28 @@ app.set('view engine', 'handlebars');
 </html>
 ```
 資料夾名稱必須為views，因為那是express預設的模板資料夾
+
+重啟server即可看到畫面。
+
+##之後我們試著讓render時傳入參數
+routes內的index.js改為
+```
+ app.get('/', function (req, res) {
+    res.render('main',{title:"I'm Title"});
+ 
+  });
+```
+views內的main.handlebars改為
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    <p>Welcome to Handlebars</p>
+  </body>
+</html>
+```
