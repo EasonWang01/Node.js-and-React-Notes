@@ -4,7 +4,7 @@
 var s = 5
 ```
 ```
-()=> s
+()=> s  //相同於function(){return s};
 ```
 
 ```
