@@ -110,3 +110,4 @@ r.table('authors').update({type: "fictional"}).
 在另一個CMD執行server，發現兩個CMD都有console出現
 
 
+參考至:https://www.rethinkdb.com/docs/guide/javascript/
