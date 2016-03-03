@@ -7,8 +7,8 @@
 
 npm install 
 
-npm install  -g
-
+npm install  -g (使用後可在cmd的任何路徑輸入package名稱執行，但如果是在js檔內使用require的話，要再把環境變數加上才行)
+![](df.png)
 npm install  --save
 
 npm uninstall
