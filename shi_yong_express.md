@@ -255,6 +255,34 @@ app.route('/fruit')
     res.send('Update the fruit');
   });
 ```
+##第三個方法
+輸出router檔案
+```
+module.exports = function (app) {
+
+app.get('/hi', function (req, res) {
+  res.send('Hiiii!');
+});
+ app.get('/', function (req, res) {
+    res.send('Helloo worldd');
+ 
+  });
+  app.get('/customer', function(req, res){
+    res.send('customer page');
+  });
+  app.get('/admin', function(req, res){
+    res.send('admin page');
+  });
+
+};
+
+
+```
+index.js
+```
+var app = express();
+require('./routes/index.js')(app);//引用router檔案，傳入express實例
+```
 Express 支援下列的 HTTP路由方法：get、 post、put、head、delete、options、 trace、copy、lock、mkcol、move、purge、propfind、proppatch、unlock、report、mkactivity、checkout、merge、m-search、notify、subscribe、unsubscribe、patch、search， connect。
 
 
