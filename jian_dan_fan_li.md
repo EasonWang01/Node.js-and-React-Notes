@@ -204,3 +204,42 @@ title1的false改為true看看
   </body>
 </html>
 ```
+##測試ES6的[...]方法
+```
+module.exports = function (app) {
+var people= [
+    "Yehuda Katz",
+    "Alan Johnson",
+    "Charles Jolley"
+  ];
+
+  console.log([...people]);
+
+
+
+app.get('/hi', function (req, res) {
+  res.send('Hiiii!');
+});
+ app.get('/', function (req, res) {
+    res.render('main',{title:"I'm fhTitle", people: [
+    "Yehuda Katz",
+    "Alan Johnson",
+    "Charles Jolley"
+  ]});
+ 
+  });
+  app.get('/customer', function(req, res){
+    res.send('customer page');
+  });
+  app.get('/admin', function(req, res){
+    res.send('admin page');
+  });
+
+};
+```
+發現直接執行會錯誤，所以要改為
+```
+node --harmony index
+```
+有關Node.js目前支援的ES6方法可參考
+https://nodejs.org/en/docs/es6/
