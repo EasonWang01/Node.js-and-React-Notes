@@ -49,7 +49,7 @@ var Db = mongo.Db;
 ```
 設定server及資料庫
 ```
-var server = new Server('ds013898.mongolab.com',13898, {auto_reconnect : true});
+var server = new Server('ds013898.mlab.com',13898, {auto_reconnect : true});
 var db = new Db('forclass', server);
 
 ```
@@ -75,7 +75,7 @@ var mongo = require('mongodb');
 var Server = mongo.Server;
 var Db = mongo.Db;
 
-var server = new Server('ds013898.mongolab.com',13898, {auto_reconnect : true});
+var server = new Server('ds013898.mlab.com',13898, {auto_reconnect : true});
 var db = new Db('forclass', server);
 
 
@@ -144,7 +144,7 @@ var mongo = require('mongodb');
 var Server = mongo.Server;
 var Db = mongo.Db;
 
-var server = new Server('ds013898.mongolab.com',13898, {auto_reconnect : true});
+var server = new Server('ds013898.mlab.com',13898, {auto_reconnect : true});
 var db = new Db('forclass', server);
 
 
