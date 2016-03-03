@@ -243,3 +243,29 @@ node --harmony index
 ```
 有關Node.js目前支援的ES6方法可參考
 https://nodejs.org/en/docs/es6/
+
+#render時加入function
+```
+ app.get('/', function (req, res) {
+    res.render('main',{title:"I'm fhTitle", people:(function(){return 5})() });
+ 
+  });
+```
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+
+  </head>
+  <body>
+
+    <li>{{people}}</li>
+ 
+
+    <h1>{{title}}</h1>
+   
+    <p>Welcome to Handlebars</p>
+  </body>
+</html>
+```
