@@ -11,6 +11,7 @@ var s = 5
 (()=> s)()
 ```
 ##return is implicit under some circumstances
+###(return在箭頭函數內有時可省略)
 
 ```
 // returns: undefined
