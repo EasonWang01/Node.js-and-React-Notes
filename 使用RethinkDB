@@ -1,2 +1,11 @@
 # RethinkDB
 
+https://www.rethinkdb.com/docs/quickstart/
+
+```
+brew update && brew install rethinkdb
+```
+windows直接下載後點擊exe，在前往
+```
+http://localhost:8080/
+```
