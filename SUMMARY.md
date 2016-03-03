@@ -18,7 +18,7 @@
 * [簡單範例](jian_dan_fan_li.md)
 * [使用MySQL](shi_yong_mysql.md)
 * [使用PostgreSQL](shi_yong_postgresql.md)
-* RethinkDB
+* [RethinkDB](使用RethinkDB)
 * [React](react.md)
 * [import_export_module.exports 模組化](importexport_module_exports_mo_zu_hua.md)
 * [使用webpack](shi_yong_webpack.md)
