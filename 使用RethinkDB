@@ -111,3 +111,5 @@ r.table('authors').update({type: "fictional"}).
 
 
 參考至:https://www.rethinkdb.com/docs/guide/javascript/
+
+https://www.rethinkdb.com/docs/cookbook/javascript/
