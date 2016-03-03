@@ -11,7 +11,7 @@ SQL資料庫   >   資料表   > 資料列
 !!注意，MongoLab於2016二月底改名為mLab，連結的資料庫路徑也改了
 
 ```
-https://mongolab.com/
+https://mlab.com/home
 ```
 
 1.先註冊帳號
