@@ -86,3 +86,11 @@ var exphbs  = require('express-handlebars');
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 ```
+最後再把routes中的index.html裡面的這段改為
+```
+ app.get('/', function (req, res) {
+    res.render('main');///從send改為render
+ 
+  });
+
+```
