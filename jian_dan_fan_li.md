@@ -70,4 +70,19 @@ app.get('/hi', function (req, res) {
 ```
 public資料夾為空
 
-#使用Handlebars
+#使用Handlebars 當模板引擎
+```
+npm install express-handlebars
+```
+在根目錄的index.js加入
+```
+
+var exphbs  = require('express-handlebars');
+
+```
+之後再下面再加入(記得加在var app = express();後)
+```
+
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+```
