@@ -137,3 +137,70 @@ views內的main.handlebars改為
 </html>
 ```
 即可看到，產生的畫面資料變為render提供的第二個物件參數的值
+
+##使用簡單的條件判斷render
+
+先在routes的index.js
+```
+ app.get('/', function (req, res) {
+    res.render('main',{title:"I'm fhTitle",title1:false});
+ 
+  });
+ 
+```
+main.handlebars
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+
+  </head>
+  <body>
+
+  {{#if title1}}
+    <h1>It's true</h1>
+  {{else}}
+    <h1>It's false</h1>
+  {{/if}}
+
+    <h1>{{title}}</h1>
+   
+    <p>Welcome to Handlebars</p>
+  </body>
+</html>
+```
+之在在把
+```
+res.render('main',{title:"I'm fhTitle",title1:false});
+```
+title1的false改為true看看
+
+##使用each再render時 去遍歷陣列
+
+```
+ app.get('/', function (req, res) {
+    res.render('main',{title:"I'm fhTitle", people: [
+    "Yehuda Katz",
+    "Alan Johnson",
+    "Charles Jolley"
+  ]});
+```
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+
+  </head>
+  <body>
+ {{#each people}}
+    <li>{{this}}</li>
+  {{/each}}
+
+    <h1>{{title}}</h1>
+   
+    <p>Welcome to Handlebars</p>
+  </body>
+</html>
+```
