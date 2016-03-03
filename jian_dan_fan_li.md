@@ -86,7 +86,7 @@ var exphbs  = require('express-handlebars');
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 ```
-最後再把routes中的index.html裡面的這段改為
+再把routes中的index.html裡面的這段改為
 ```
  app.get('/', function (req, res) {
     res.render('main');///從send改為render
@@ -94,3 +94,18 @@ app.set('view engine', 'handlebars');
   });
 
 ```
+最後創建views資料夾於根目錄，裡面放入main.handlebars
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+
+  </head>
+  <body>
+    <h1>title</h1>
+    <p>Welcome to Handlebars</p>
+  </body>
+</html>
+```
+資料夾名稱必須為views，因為那是express預設的模板資料夾
