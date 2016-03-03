@@ -8,6 +8,8 @@ SQL資料庫   >   資料表   > 資料列
 
 使用MongoLab 當練習範例
 
+!!注意，MongoLab於2016二月底改名為mLab，連結的資料庫路徑也改了
+
 ```
 https://mongolab.com/
 ```
