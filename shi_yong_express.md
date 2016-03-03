@@ -213,7 +213,7 @@ I am next
 ```
 
 var fruit = require('./fruit');
-app.use('/fruit', fruit);
+app.use('/fruit', fruit); ///路徑為/fruit時使用express.Router
 ```
 2.設定router檔案
 ```
