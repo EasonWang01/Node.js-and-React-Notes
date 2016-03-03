@@ -136,3 +136,4 @@ views內的main.handlebars改為
   </body>
 </html>
 ```
+即可看到，產生的畫面資料變為render提供的第二個物件參數的值
