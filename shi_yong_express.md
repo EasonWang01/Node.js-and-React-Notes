@@ -164,6 +164,8 @@ app.use('/user/:id', function (req, res, next) {
 我們可以指定條件再middleware，先在原本middleware後加入一個function，
 
 指定如果url的params = 條件的話跳過其下逗點後的function直接進行next middleware
+
+呼叫 next('route')，來略過其餘的路由回呼。如果沒有理由繼續處理現行路由，您可以使用這項機制，在路由中強制施行前置條件，然後將控制權傳遞給後續的路由。
 ```
 var express = require('express');
 var app = express();
