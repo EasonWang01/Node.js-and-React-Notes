@@ -187,6 +187,13 @@ app.get('/user/:d', function (req, res, next) {
   next();
 });
 app.listen(8080);
+
+##next() 跟next("router")的差別?
+```
+app.get('/forum/:fid', middleware1, middleware2, function(){
+  // ...
+})
+middleware1() 可以使用 next() 去執行 middleware2, 或使用 next(route) 跳過後面，直接傳給下一個app實例
 ```
 發現如果url為
 ```
