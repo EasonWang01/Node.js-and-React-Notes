@@ -430,7 +430,6 @@ mongoose.connect('mongodb://user:pass@host:port/dbs');
 
 第一個參數為collection的名稱
 
-3.
 ```
 var Cat = mongoose.model('Cat', {
   name: String,
@@ -438,13 +437,13 @@ var Cat = mongoose.model('Cat', {
   age: Number,
 });
 ```
-4.存入資料
+3.存入資料(產生實體)
 ```
 var kitty = new Cat({ name: 'Zildjian', friends: ['tom', 'jerry']});
 kitty.age = 3;
 
 ```
-5.使用save才真的存入
+4.使用save才真的存入
 ```
 kitty.save(function (err) {
   if (err) // ...
@@ -477,5 +476,37 @@ kitty.age = 3;
 kitty.save(function (err) {
   if (err) // ...
   console.log('meow');
+});
+```
+#查詢資料
+```
+var Cat = mongoose.model('Cat', {
+  name: String,
+  friends: [String],
+  age: Number,
+});
+Cat.find({},function(err,doc){
+
+	console.log(doc);
+});
+```
+得知必須使用先前定義好Model才能查找
+
+但如果改成下面呢?
+```
+var Cat = mongoose.model('Cat', {});
+Cat.find({},function(err,doc){
+
+	console.log(doc);
+});
+```
+發現一樣可查找，而上面的例子我們將Schema留空，於是我們知道，可以只提供collection的參數即可，後面Schema參數如果不寫會報錯，但其可接受空的物件當參數。
+
+
+###其他查找方法和原生相似
+```
+Cat.find({},{_id:1},function(err,doc){
+
+	console.log(doc);
 });
 ```
