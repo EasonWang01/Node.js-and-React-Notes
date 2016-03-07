@@ -418,6 +418,17 @@ http://mongodb.github.io/node-mongodb-native/driver-articles/mongoclient.html
 
 #使用Mongoose
 
+
+介紹
+```
+Schema  ：  描述數據結構
+
+Model   ：  由Schema生成的模型
+
+Entity  ：  由Model創建的實體
+```
+開始使用
+
 1.
 ```
 var mongoose = require('mongoose');
@@ -510,3 +521,90 @@ Cat.find({},{_id:1},function(err,doc){
 	console.log(doc);
 });
 ```
+
+##我們也可先定義Schema在把他compile到model內
+
+```
+var kittySchema = mongoose.Schema({
+    name: String
+});
+
+var Kitten = mongoose.model('cats', kittySchema);
+```
+這樣和上面直接將schema在model內定義是相同的，不同之處在於有了例外定義的Schema，我們可以幫Schema指定方法
+
+但記得使用methods函式指定方法的話，要放在model實例化之前
+```
+kittySchema.methods.speak = function () {
+  var greeting = this.name
+    ? "Meow name is " + this.name
+    : "I don't have a name";
+  console.log(greeting);
+}
+```
+完整版
+```
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://forclass1:test123@ds013898.mlab.com:13898/forclass');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("connect");
+});
+var kittySchema = mongoose.Schema({
+    name: String
+});
+
+kittySchema.methods.speak = function () {
+  var greeting = this.name
+    ? "Meow name is " + this.name
+    : "I don't have a name";
+  console.log(greeting);
+}
+//////////method要定義在model實例化之前
+var Kitten = mongoose.model('cats', kittySchema);
+
+var fluffy = new Kitten({ name: 'fluffy' });
+fluffy.speak(); // "Meow name is fluffy"
+```
+##有另外一個幫Schema指定方法的方式嗎?
+
+使用static
+
+
+
+```
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://forclass1:test123@ds013898.mlab.com:13898/forclass');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("connect");
+});
+var kittySchema = mongoose.Schema({
+    name: String
+});
+
+kittySchema.statics.speak = function () {
+  var greeting = this.name
+    ? "Meow name is " + this.name
+    : "I don't have a name";
+  console.log(greeting);
+}
+
+var Kitten = mongoose.model('cats', kittySchema);
+
+Kitten.speak(); 
+```
+發現兩種的區別為
+```
+methods:為定義好後給Entity使用的方法
+
+statics:為定義好後給model使用的方法
+
+
+ps:(字尾記得+S)
+
+````
