@@ -607,4 +607,7 @@ statics:為定義好後給model使用的方法
 
 ps:(字尾記得+S)
 
-````
+參考至:http://mongoosejs.com/docs/2.7.x/docs/methods-statics.html
+```
+
+參考至:https://cnodejs.org/topic/504b4924e2b84515770103dd
