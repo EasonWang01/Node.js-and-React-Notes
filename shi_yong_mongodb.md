@@ -418,16 +418,19 @@ http://mongodb.github.io/node-mongodb-native/driver-articles/mongoclient.html
 
 #使用Mongoose
 
-
+1.
 ```
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://user:pass@host:port/dbs');
 
 ```
-定義model(這裡省略先定義scheme，直接定義在MODEL內)
+2.
+定義model(這裡省略先定義schema，直接定義在MODEL內)
 
 
 第一個參數為collection的名稱
+
+3.
 ```
 var Cat = mongoose.model('Cat', {
   name: String,
@@ -435,7 +438,22 @@ var Cat = mongoose.model('Cat', {
   age: Number,
 });
 ```
+4.存入資料
+```
+var kitty = new Cat({ name: 'Zildjian', friends: ['tom', 'jerry']});
+kitty.age = 3;
 
+```
+5.使用save才真的存入
+```
+kitty.save(function (err) {
+  if (err) // ...
+  console.log('meow');
+});
+```
+ps:如果存入資料的欄位不在schema內則不會顯示，但可正常存入該筆資料
+
+ps:如省略某些欄位沒寫，則不會顯示，亦可正常存入
 ```
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://forclass1:test123@ds013898.mlab.com:13898/forclass');
