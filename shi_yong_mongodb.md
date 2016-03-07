@@ -371,3 +371,93 @@ https://docs.mongodb.org/manual/reference/method/db.collection.createIndex/#db.c
 
 http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOne
        
+       
+##如果是下載到local端啟用
+       
+       1.先到你的Mongo資料庫下bin的外面創建資料夾
+       2.cd到bin裡面把路徑複製
+       3.使用admin開起cmd在cd到剛複製的路徑
+       4.執行mongod --dbpath ../資料夾名稱/
+       5.即可使用robomongo連線
+
+
+1.建造database
+```
+use 資料庫名稱  //如不存在即會創建新的
+```
+ps:用Robomongo執行以上指令如發現沒出現，需要點選新連線，才會出現
+
+
+2.建造collection
+```
+db.createCollection("apple")
+```
+
+#Node.js 連接
+```
+var MongoClient = require('mongodb').MongoClient
+  , assert = require('assert');
+
+// Connection URL
+var url = 'mongodb://localhost:27017/myproject';
+// Use connect method to connect to the Server
+MongoClient.connect(url, function(err, db) {
+  assert.equal(null, err);
+  console.log("Connected correctly to server");
+
+  db.close();
+});
+```
+#Mongo有新增的連接方法，參考下面文章
+
+主要是寫關於require('mongodb').Db和require('mongodb').MongoClient的區別
+(其告知MongoClient為較新的方法，推薦使用)
+
+http://mongodb.github.io/node-mongodb-native/driver-articles/mongoclient.html
+
+
+#使用Mongoose
+
+
+```
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://user:pass@host:port/dbs');
+
+```
+定義model(這裡省略先定義scheme，直接定義在MODEL內)
+
+
+第一個參數為collection的名稱
+```
+var Cat = mongoose.model('Cat', {
+  name: String,
+  friends: [String],
+  age: Number,
+});
+```
+
+```
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://forclass1:test123@ds013898.mlab.com:13898/forclass');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("connect");
+});
+var Cat = mongoose.model('Cat', {
+  name: String,
+  friends: [String],
+  age: Number,
+});
+
+
+var kitty = new Cat({ name: 'Zildjian', friends: ['tom', 'jerry']});
+kitty.age = 3;
+
+//使用save方法後才會存入
+kitty.save(function (err) {
+  if (err) // ...
+  console.log('meow');
+});
+```
