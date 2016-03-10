@@ -669,7 +669,7 @@ Cat.remove({},function(err){
 ```
 #更新document
 
-(一定要放入callback否則不會update)
+(參數一定要放入callback否則不會update)
 ```
 Cat.update({_id:req.body.id[0]},{time:req.body.event[0],name:req.body.event[1]},function(err){
 		if(err){
