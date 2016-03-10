@@ -435,6 +435,25 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://user:pass@host:port/dbs');
 
 ```
+如何抓取連線時的錯誤
+```
+mongoose.connect('mongodb://forclass1:test123@ds013898.mlab.com:13898/forclass',function(err){
+	if(err){throw err};
+});
+```
+如何抓取正確連線到資料庫的訊息
+```
+
+db.once('open', function() {
+  console.log("connect mongo")
+});
+```
+如何抓取連線後執行時的錯誤
+```
+db.on('error', console.error.bind(console, 'connection error:'));
+```
+
+
 2.
 定義model(這裡省略先定義schema，直接定義在MODEL內)
 
