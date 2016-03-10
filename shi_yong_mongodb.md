@@ -557,11 +557,11 @@ Cat.find({},{_id:1},function(err,doc){
 ```
 find()
 
-第一個參數為要搜尋哪些document
+1.第一個參數為要搜尋哪些document
 
-第二個參數為要顯示document內的那些資料
+2.第二個參數為要顯示document內的那些資料(1代表要，0代表不要)
 
-第三個參數為一個function(err,doc)
+3.第三個參數為一個function(err,doc)
 ，讀取到的資料會顯示在doc這
 
 ```
