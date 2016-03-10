@@ -452,9 +452,24 @@ db.once('open', function() {
 ```
 db.on('error', console.error.bind(console, 'connection error:'));
 ```
-
+完整
+```
+var mongoose = require("mongoose");
+mongoose.connect('mongodb://forclass1:test123@ds013898.mlab.com:13898/forclasss',function(err){
+	if(err){throw err};
+});
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("connect mongo")
+});
+```
+(存入資料時如collection名稱不存在則會自動建立)
 
 2.
+
+
+
 定義model(這裡省略先定義schema，直接定義在MODEL內)
 
 
