@@ -667,6 +667,16 @@ Cat.remove({},function(err){
 	if(err){throw err};
 });
 ```
+#更新document
+
+(一定要放入callback否則不會update)
+```
+Cat.update({_id:req.body.id[0]},{time:req.body.event[0],name:req.body.event[1]},function(err){
+		if(err){
+		console.log(err);
+	     }
+	});
+```
 
 參考至:
 http://mongoosejs.com/docs/2.7.x/docs/methods-statics.html
