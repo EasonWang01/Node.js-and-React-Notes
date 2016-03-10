@@ -1,6 +1,58 @@
 # 簡單範例
+#使用post傳送資料
+1.加入express
+```
+var express = require("express");
+var app = express();
 
-延續前兩章
+```
+2.加入模板引擎Handlebars
+```
+var exphbs  = require('express-handlebars');
+app.engine('hbs', exphbs());
+app.set('view engine', 'hbs');
+```
+3.設定監聽port與簡單路由
+
+```
+
+app.get("/",function(req,res){
+
+res.render('home');
+});
+app.post("/signup",function(req,res){
+req.on("data",function(data){
+	console.log(data.toString());
+});
+});
+
+app.listen("3000",function(){
+	console.log("listening3000");
+});
+```
+根目錄下建造一個views資料夾
+裡面放入home.hbs
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example App</title>
+</head>
+<body>
+
+    <form id="signup" method="POST" action="http://localhost:3000/signup">  
+      <label>使用者名稱：</label><input type="text" id="username" name="username" /><br>  
+      <label>電子郵件：</label><input type="text" id="email" name="email" /><br>  
+      <input type="submit" value="註冊我的帳號" /><br>  
+    </form> 
+</body>
+</html>
+```
+
+
+
+#延續前兩章
 
 現在專案目錄如下
 ```
