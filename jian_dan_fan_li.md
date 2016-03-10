@@ -1,5 +1,5 @@
 # 簡單範例
-#使用post傳送資料
+#使用表單post傳送資料
 1.加入express
 ```
 var express = require("express");
@@ -51,6 +51,22 @@ app.listen("3000",function(){
 ```
 點擊按鈕後即可看到console
 
+使用bodyParser
+```
+var bodyParser = require('body-parser')
+```
+不用使用on去監聽
+```
+app.post("/signup",function(req,res){
+console.log(req.body);
+res.end();
+});
+```
+記得導回頁面，和結束回應
+```
+res.redirect('/')
+res.end();
+```
 
 
 #延續前兩章
