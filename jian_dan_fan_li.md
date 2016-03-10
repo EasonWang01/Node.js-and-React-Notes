@@ -49,6 +49,7 @@ app.listen("3000",function(){
 </body>
 </html>
 ```
+點擊按鈕後即可看到console
 
 
 
