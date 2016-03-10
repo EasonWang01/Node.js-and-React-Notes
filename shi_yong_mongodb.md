@@ -555,7 +555,22 @@ Cat.find({},{_id:1},function(err,doc){
 	console.log(doc);
 });
 ```
+find()
 
+第一個參數為要搜尋哪些document
+
+第二個參數為要顯示document內的那些資料
+
+第三個參數為一個function(err,doc)
+，讀取到的資料會顯示在doc這
+
+```
+
+var find = Cat.find({},{time:1,_id:0},function(err,doc){
+res.render("home",{text:doc});
+
+});
+```
 ##我們也可先定義Schema在把他compile到model內
 
 ```
@@ -640,8 +655,20 @@ statics:為定義好後給model使用的方法
 
 
 ps:(字尾記得+S)
+```
+#刪除document
+```
+var Cat = mongoose.model('Dog', {
+  name: String,
+  time: String
+});
 
-參考至:http://mongoosejs.com/docs/2.7.x/docs/methods-statics.html
+Cat.remove({},function(err){
+	if(err){throw err};
+});
 ```
 
-參考至:https://cnodejs.org/topic/504b4924e2b84515770103dd
+參考至:
+http://mongoosejs.com/docs/2.7.x/docs/methods-statics.html
+
+https://cnodejs.org/topic/504b4924e2b84515770103dd
