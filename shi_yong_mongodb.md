@@ -94,8 +94,7 @@ db.open(function(err, client) {
 
 ////
 var app = express();
-var router = require('./routes/index.js')(app);
-app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
+
 
 
 
@@ -677,7 +676,13 @@ Cat.update({_id:req.body.id[0]},{time:req.body.event[0],name:req.body.event[1]},
 	     }
 	});
 ```
+第二個參數前可放入運作子
+https://docs.mongodb.org/manual/reference/operator/update/
 
+
+
+
+---
 參考至:
 http://mongoosejs.com/docs/2.7.x/docs/methods-statics.html
 
