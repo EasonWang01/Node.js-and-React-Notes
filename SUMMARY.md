@@ -27,4 +27,5 @@
 * [ES6 Promise](es6_promise.md)
 * [ES6 Arrow function](es6_arrow_function.md)
 * [Handlebars.js](handlebarsjs.md)
+* Node ajax
 
