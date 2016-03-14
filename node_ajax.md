@@ -1,6 +1,6 @@
 # Node ajax
 
-
+Server side
 ```
 app.post("/login",function(req,res){
     console.log(req.body);//console出ajax.data的內容
@@ -9,7 +9,7 @@ app.post("/login",function(req,res){
 	
 });
 ```
-
+Client side
 ```
 <!DOCTYPE html>
 <html lang="en">
