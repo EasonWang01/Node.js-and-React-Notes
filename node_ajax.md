@@ -50,7 +50,7 @@ Client side
 //取消表單行為
 
   $('#form1').on('submit', function(e){
-    // validation code here
+   
     return false;
     
   });
