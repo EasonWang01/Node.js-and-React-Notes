@@ -42,7 +42,6 @@ Client side
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" id="login" class="btn btn-default">登入</button>
-        <p>{{message}}</p>
       </div>
     </div>
   </form>
