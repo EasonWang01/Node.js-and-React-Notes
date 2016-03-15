@@ -326,3 +326,7 @@ eslint 檔案名稱.js
 SublimeLinter-eslint
 ```
 
+
+參考至
+http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/
+
