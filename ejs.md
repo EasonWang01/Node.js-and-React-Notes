@@ -4,6 +4,10 @@
 
 好處為語法即為javascript使用上較為直覺
 
+http://www.embeddedjs.com/
+https://www.npmjs.com/package/ejs
+https://github.com/tj/ejs
+
 ##使用
 
 安裝好Express後用
