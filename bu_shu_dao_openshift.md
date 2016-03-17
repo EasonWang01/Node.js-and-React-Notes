@@ -47,7 +47,7 @@ app.listen(app.get('port') ,app.get('ip'), function () {
 https://www.youtube.com/watch?v=dZwngyEtWmU
 
 必須先用git等工具產生ssh key 
-如果登入錯誤，可重新產生putty的ppk file即可，記得用private的
+如果登入錯誤，可重新從puttygen產生putty的ppk file即可，記得用private的
 
 host name的格式如下
 ```
