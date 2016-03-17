@@ -18,9 +18,11 @@ https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-s
 
 6.新建一個資料夾，先git init後git clone加上poenshift產生給你的ssh url，(注意:如果詢問yes/no時，要輸入yes，不可直接按enter)
 
-7.確認package.json中的dependencies都有寫上，_node_module都以安裝在local資料夾(不可是全域)
+7.刪掉clone下來資料夾內的全部內容，貼上你自己的
 
-8.記得將原本server.js中的app.listen改為
+8.確認package.json中的dependencies都有寫上，node_module都已安裝在local資料夾(不可是全域)
+
+9.記得將原本server.js中的app.listen改為
 ```
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3002);
 app.set('ip', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
@@ -32,12 +34,14 @@ app.listen(app.get('port') ,app.get('ip'), function () {
 });
 ```
 
-9.cd到server.js下使用git bash上傳
+10.cd到server.js下使用git bash上傳
+```
+git add .
+git commit -m "save"
+git push
+```
 
 
-```
-你剛新建的資料夾--->nodejs資料夾
-```
 
 
 #如果上傳出現無法連到8080port，則使用ssh連到openshift進行Debug
@@ -54,8 +58,16 @@ host name的格式如下
 56ea4f4889f5cfa5c700010a@forclass-yicheng01.rhcloud.com
 ```
 2.
-登入後進入app-root--->runtime---->repo
+登入後檔案存放在
+```
+app-root--->runtime---->repo   以及
+app-root---->repo
+```
+如果要看log
+```
+app-root/logs/nodejs.log
+```
 
 參考至:https://blog.openshift.com/run-your-nodejs-projects-on-openshift-in-two-simple-steps/
 
-(PS:官網範例的step2的code block中的listen括號寫錯位置，需自行更改)
+(PS:上面官網範例的step2的code block中的listen括號寫錯位置，需自行更改)
