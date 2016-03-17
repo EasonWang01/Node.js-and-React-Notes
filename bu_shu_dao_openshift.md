@@ -58,3 +58,4 @@ host name的格式如下
 
 參考至:https://blog.openshift.com/run-your-nodejs-projects-on-openshift-in-two-simple-steps/
 
+(PS:官網範例的step2的code block中的listen括號寫錯位置，需自行更改)
