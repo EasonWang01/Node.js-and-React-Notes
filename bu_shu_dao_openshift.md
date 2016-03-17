@@ -1,0 +1,2 @@
+# 部屬到OpenShift
+
