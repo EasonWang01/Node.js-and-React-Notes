@@ -57,8 +57,9 @@ host name的格式如下
 ```
 56ea4f4889f5cfa5c700010a@forclass-yicheng01.rhcloud.com
 ```
-2.
-登入後檔案存放在
+
+
+2.登入後檔案存放在
 ```
 app-root--->runtime---->repo   以及
 app-root---->repo
@@ -68,6 +69,8 @@ app-root---->repo
 app-root/logs/nodejs.log
 ```
 
+
+----
 參考至:https://blog.openshift.com/run-your-nodejs-projects-on-openshift-in-two-simple-steps/
 
 (PS:上面官網範例的step2的code block中的listen括號寫錯位置，需自行更改)
