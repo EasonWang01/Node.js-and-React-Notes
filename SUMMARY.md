@@ -30,5 +30,5 @@
 * [Node ajax](node_ajax.md)
 * [ESLint](eslint.md)
 * [EJS](ejs.md)
-* 部屬到OpenShift
+* [部屬到OpenShift](bu_shu_dao_openshift.md)
 
