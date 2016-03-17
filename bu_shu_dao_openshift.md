@@ -42,7 +42,7 @@ app.listen(app.get('port') ,app.get('ip'), function () {
 
 #如果上傳出現無法連到8080port，則使用ssh連到openshift進行Debug
 -----
-
+1.
 使用putty登入openshift:
 https://www.youtube.com/watch?v=dZwngyEtWmU
 
@@ -53,8 +53,8 @@ host name的格式如下
 ```
 56ea4f4889f5cfa5c700010a@forclass-yicheng01.rhcloud.com
 ```
-
-登入後進app-root--->repo
+2.
+登入後進入app-root--->runtime---->repo
 
 參考至:https://blog.openshift.com/run-your-nodejs-projects-on-openshift-in-two-simple-steps/
 
