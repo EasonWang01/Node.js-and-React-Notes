@@ -349,4 +349,6 @@ var bodyParser = require('body-parser');
 
 app.engine('hbs', exphbs());
 app.set('view engine', 'hbs');
+
+app.use(bodyParser.urlencoded({ extended: false }))
 ```
