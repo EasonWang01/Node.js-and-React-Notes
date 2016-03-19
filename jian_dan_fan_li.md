@@ -337,4 +337,15 @@ https://nodejs.org/en/docs/es6/
     <p>Welcome to Handlebars</p>
   </body>
 </html>
+
+
+#簡單範例part2
+```
+var express = require("express");
+var app = express();
+var exphbs  = require('express-handlebars');
+var bodyParser = require('body-parser');
+
+app.engine('hbs', exphbs());
+app.set('view engine', 'hbs');
 ```
