@@ -432,3 +432,59 @@ app.listen("3000",function(){
 	console.log("listening3000");
 });
 ```
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Example App</title>
+</head>
+<body>
+
+    <form id="signup" method="POST" action="http://localhost:3000/signup">  
+      <label>事件：</label><input type="text" id="username" name="username" /><br>  
+      <label>時間：</label><input type="text" id="email" name="email" /><br>  
+      <input type="submit" value="加入計畫" /><br>  
+      
+    </form> 
+
+	 <form method="POST" action="http://localhost:3000/updatelist">
+    	<label>要更改的計畫：<br></label>時間:<input type="text" id="changelist1" name="event" /><input type="text" id="changeid" name="id" readonly/><br>
+	   
+	   事件:<input type="text" id="changelist2" name="event" /><input type="text" id="changeid1" name="id" readonly/><br>
+	   <input type="submit" value="更改計畫" /><br>   
+    </form>
+
+
+
+
+    <form method="POST" action="http://localhost:3000/deletelist">
+    	<label>要移除的計畫：</label><input type="text" id="deletelist1" name="event" readonly/><input type="text" id="deleteid1" name="id" readonly/><br>
+	   <input type="submit" value="移除計畫" /><br>  
+    </form>
+
+    <div style="position:absolute;right:50px;top:20px;">
+    <select onchange="deletelist(this.options[this.selectedIndex].value,this.options[this.selectedIndex].id)">
+    {{#each text}}
+    <option id="{{_id}}">時間:{{time}}事件:{{name}}</option>
+    {{/each}}
+    </select>
+    </div>
+
+
+    <script>
+    
+    function deletelist(value,id){
+    	document.getElementById("changelist1").value = value.slice(3,value.lastIndexOf("件")-1);
+    	document.getElementById("changelist2").value = value.slice(value.lastIndexOf(":")+1);
+    	document.getElementById("changeid").value = id;
+    	document.getElementById("changeid1").value = id;
+    	document.getElementById("deletelist1").value = value;
+    	document.getElementById("deleteid1").value = id;
+    	
+    };
+    </script>
+</body>
+</html>
+```
