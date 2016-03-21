@@ -73,3 +73,41 @@ xhr.onload = function() {
 };
 xhr.send('idtoken=' + id_token);
 ```
+##進階認證
+10.但，使用者可能得到你的post位置後，直接傳入此位置一個他人的(id_token)，為了避免這樣的情況，我們可以在server端再次傳送id_token給google提供的endpoint做認證
+```
+https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=XYZ123
+```
+使用get方式傳給上述地址，而把id_token改為你要傳的id_token即可
+
+12.把我們剛才從網頁console下來的id_token直接加在上面的網址後然後貼到瀏覽器進入該網址
+
+如token正確會得到如下
+```
+{
+ "iss": "accounts.google.com",
+ "at_hash": "dbsgpEnVYbBAAcK26BpfFQ",
+ "aud": "983030382510-41cact207f2o56qom6olv7tcmii6dec0.apps.googleusercontent.com",
+ "sub": "109448103595744637928",
+ "email_verified": "true",
+ "azp": "983030382510-41cact207f2o56qom6olv7tcmii6dec0.apps.googleusercontent.com",
+ "email": "jason40115@yahoo.com.tw",
+ "iat": "1458539812",
+ "exp": "1458543412",
+ "name": "王 Eason",
+ "picture": "https://lh5.googleusercontent.com/-xNteCuZu18Y/AAAAAAAAAAI/AAAAAAAAB34/GMVL_ZFIxwU/s96-c/photo.jpg",
+ "given_name": "王",
+ "family_name": "Eason",
+ "locale": "zh-TW",
+ "alg": "RS256",
+ "kid": "d220a8d3bdfa6164d320e1e0910db0380d45c073"
+}
+```
+如錯誤會得到如下
+```
+{
+ "error_description": "Invalid Value"
+}
+```
+
+最後再檢查上面的aud是否與你自己在google dev console註冊到的用戶端 ID相同即可
