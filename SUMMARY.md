@@ -32,4 +32,5 @@
 * [EJS](ejs.md)
 * [部屬到OpenShift](bu_shu_dao_openshift.md)
 * [OpenStack](openstack.md)
+* google oauth
 
