@@ -63,4 +63,13 @@ function onSignIn(googleUser) {
 ```
 eyJhbGciOiJSUzI1NiIsImtpZCI6ImQyMjBhOGQzYmRmYTYxNjRkMzIwZTFlMDkxMGRiMDM4MGQ0NWMwNzMifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXRfaGFzaCI6ImRic2dwRW5WWWJCQUFjSzI2QnBmRlEiLCJhdWQiOiI5ODMwMzAzODI1MTAtNDFjYWN0MjA3ZjJvNTZxb202b2x2N3RjbWlpNmRlYzAuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDk0NDgxMDM1OTU3NDQ2Mzc5MjgiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXpwIjoiOTgzMDMwMzgyNTEwLTQxY2FjdDIwN2YybzU2cW9tNm9sdjd0Y21paTZkZWMwLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiZW1haWwiOiJqYXNvbjQwMTE1QHlhaG9vLmNvbS50dyIsImlhdCI6MTQ1ODUzOTgxMiwiZXhwIjoxNDU4NTQzNDEyLCJuYW1lIjoi546LIEVhc29uIiwicGljdHVyZSI6Imh0dHBzOi8vbGg1Lmdvb2dsZXVzZXJjb250ZW50LmNvbS8teE50ZUN1WnUxOFkvQUFBQUFBQUFBQUkvQUFBQUFBQUFCMzQvR01WTF9aRkl4d1Uvczk2LWMvcGhvdG8uanBnIiwiZ2l2ZW5fbmFtZSI6IueOiyIsImZhbWlseV9uYW1lIjoiRWFzb24
 ```
-傳送這個給database即可
+9.從client傳送這個給server即可
+```
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://yourbackend.example.com/tokensignin');
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.onload = function() {
+  console.log('Signed in as: ' + xhr.responseText);
+};
+xhr.send('idtoken=' + id_token);
+```
