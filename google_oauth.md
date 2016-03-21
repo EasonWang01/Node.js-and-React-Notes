@@ -1,4 +1,4 @@
-# google oauth
+# google OAuth
 1.先到dev console申請帳號和註冊應用程式
 https://console.developers.google.com/project/_/apiui/apis/library
 
