@@ -24,10 +24,15 @@ npm ls -l
 npm update -g
 
 npm update
-
-安裝到devDependencies
+##為了避免部屬後環境module過大，可不必安裝dev用的module
+一開始開發時將套件安裝到devDependencies
+```
 npm install --save-dev
-
+```
+部屬時安裝
+```
+use npm install --production or set the NODE_ENV environment variable to production
+```
 
 更多可參考
 https://docs.npmjs.com/
