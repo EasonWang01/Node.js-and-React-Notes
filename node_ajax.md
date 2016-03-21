@@ -65,6 +65,7 @@ var account = $("#account").val();
     data:{account:account},
     success:function(result){console.log(result)},
     dataType:'json'
+    //如果指定datatype則傳送和返回的data如不符合，則不顯示
     
    
   });
