@@ -111,3 +111,13 @@ https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=XYZ123
 ```
 
 最後再檢查上面的aud是否與你自己在google dev console註冊到的用戶端 ID相同即可
+
+###另外google提供的Google API Client Library
+(有興趣可參考)
+
+https://developers.google.com/api-client-library/javascript/dev/dev_jscript#setting-credentials
+
+
+---
+參考至:
+https://developers.google.com/identity/sign-in/web/sign-in#before_you_begin
