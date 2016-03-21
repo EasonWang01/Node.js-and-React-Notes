@@ -112,6 +112,21 @@ https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=XYZ123
 
 最後再檢查上面的aud是否與你自己在google dev console註冊到的用戶端 ID相同即可
 
+範例:
+```
+app.post("/signin",function(req,res){
+console.log(req.body);
+
+request('https://www.googleapis.com/oauth2/v3/tokeninfo?id_token='+req.body.idtoken, function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log(body) // Show the HTML for the Google homepage. 
+    var isLogin = true;
+		  }
+		});
+
+});
+```
+
 ###另外google提供的Google API Client Library
 (有興趣可參考)
 
