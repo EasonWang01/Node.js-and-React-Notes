@@ -25,6 +25,8 @@ npm update -g
 
 npm update
 
+安裝到devDependencies
+npm install --save-dev
 
 
 更多可參考
