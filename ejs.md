@@ -4,9 +4,16 @@
 
 好處為語法即為javascript使用上較為直覺
 
+Client Side ejs (始祖)
 http://www.embeddedjs.com/
-https://www.npmjs.com/package/ejs
+
+第一版server side ejs
 https://github.com/tj/ejs
+
+第二版server side ejs
+https://github.com/mde/ejs
+
+https://www.npmjs.com/package/ejs
 
 ##使用
 
@@ -57,7 +64,31 @@ app.use(express.static('views'));
 
 ```
 
-##使用TJ的EJS用在CLIENT端
+###使用TJ的EJS用在CLIENT端
 可參考他的範例
 https://github.com/tj/ejs/issues/39
 但目前EJS要寫在HTML的SCRIPT標籤內，無法使用EJS外部路徑
+
+
+
+
+#用法
+##1.Include
+在ejs2.0可使用include加上傳入data
+```
+  <%- include('post', {content: 52}) %>
+```
+1.0不可傳入data，但1.0的include寫法在2.0仍適用
+```
+<% include post %>
+```
+##2.模板內的js只讀的到用<%%>包起來的js
+
+```
+//在script標籤內寫var a = true 無效，必須用<%%>包起來
+
+<% var a = true %>
+  <% if(a){ %>
+    <%- include('post') %>
+  <% }; %>
+```
