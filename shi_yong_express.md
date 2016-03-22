@@ -395,3 +395,7 @@ res.render('land');
 
 });
 ```
+讀取
+```
+console.log(req.cookies);//記得加S
+```
