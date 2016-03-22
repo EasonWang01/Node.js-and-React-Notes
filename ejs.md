@@ -82,6 +82,18 @@ https://github.com/tj/ejs/issues/39
 ```
 <% include post %>
 ```
+include模板時傳入資料第二個方法:
+
+使用`app.locals`設定
+```
+app.locals({
+  title: 'Extended Express Example'
+});
+```
+```
+   <h1><a href="/"><%= title %></a></h1>
+```
+
 ##2.模板內的js只讀的到用<%%>包起來的js
 
 ```
