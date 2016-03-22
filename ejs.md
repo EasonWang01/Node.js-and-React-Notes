@@ -90,6 +90,7 @@ app.locals({
   title: 'Extended Express Example'
 });
 ```
+view.ejs
 ```
    <h1><a href="/"><%= title %></a></h1>
 ```
