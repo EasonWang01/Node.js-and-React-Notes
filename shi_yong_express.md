@@ -124,6 +124,14 @@ var router = require('./routes')(app);
 
 express 是一個架構在http上的框架
 
+##設定全局變數
+
+除了用script設定變數外，我們還可用app.locals或res.locals設定變數
+
+app.locals可給所有render後的views使用
+
+而res.locals只有當次request生效
+
 #middleware
 
 接收http請求，並對其進行加工，記得調用next，表示繼續往下加工
