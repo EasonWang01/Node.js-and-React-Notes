@@ -383,3 +383,15 @@ console.log(app.settings.Fruit);///需使用app.settings去讀取
 console.log(app.get('Fruit'));或app.get
 
 ```
+##設定cookie
+```
+cookieParser = require('cookie-parser')
+
+app.use(cookieParser());
+
+app.get("/",function(req,res){
+res.cookie('cookieName',12, { maxAge: 900000, httpOnly: true });
+res.render('land');
+
+});
+```
