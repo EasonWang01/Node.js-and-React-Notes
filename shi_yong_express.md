@@ -131,6 +131,15 @@ express 是一個架構在http上的框架
 app.locals可給所有render後的views使用
 
 而res.locals只有當次request生效
+```
+app.locals({
+  title: 'Extended Express Example'
+});
+```
+
+```
+<%= title %>
+```
 
 #middleware
 
