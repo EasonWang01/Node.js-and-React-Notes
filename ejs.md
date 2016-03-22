@@ -27,3 +27,21 @@ app.set('view engine', 'ejs');
 <% %>同一行有HTML tag 則加等號 <%= %>
 
 ```
+
+##使用client端EJS
+(此與tj的ejs不同)
+http://www.embeddedjs.com/
+
+所以你如果要用在client不可直接使用npm安裝的ejs，要另外從他們官網下載(上面網址)
+
+之後使用時因為要render所以要找views目錄，但又要找ejs.js，
+所以折衷的方法為，將ejs.js放入views資料夾，然後
+```
+app.use(express.static('views'));
+```
+
+或是使用兩個靜態目錄
+```
+app.use(express.static('scripts'));
+app.use(express.static('views'));
+```
