@@ -45,3 +45,19 @@ app.use(express.static('views'));
 app.use(express.static('scripts'));
 app.use(express.static('views'));
 ```
+最後
+
+```
+ var fragment = new EJS({url:'userprofile.ejs'}).render();//需使用舊版ejs非tj
+ 
+ 亦可塞入data
+ 
+   var data = { title: "Try EJS!" };
+   var fragment = new EJS({url: 'template.ejs'}).render(data);
+
+```
+
+##使用TJ的EJS用在CLIENT端
+可參考他的範例
+https://github.com/tj/ejs/issues/39
+但目前EJS要寫在HTML的SCRIPT標籤內，無法使用EJS外部路徑
