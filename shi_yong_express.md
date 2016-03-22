@@ -399,3 +399,9 @@ res.render('land');
 ```
 console.log(req.cookies);//記得加S
 ```
+##設定檔案目錄
+如果render html後想在該html裡面讀取某個js檔案，必須用
+```
+app.use(express.static(__dirname + '/public/'));
+```
+否則你的server找不到該檔案
