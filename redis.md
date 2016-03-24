@@ -13,6 +13,8 @@ cd到目錄後執行` redis-server.exe`
 
 3.再開一個terminal一樣cd 到redis路徑
 輸入`redis-cli`可產生client端
-3.試著在client端輸入 `set food noodle`後`get food`
+
+4.
+試著在client端輸入 `set food noodle`後`get food`
 
 
