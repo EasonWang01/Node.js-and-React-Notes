@@ -34,4 +34,5 @@
 * [OpenStack](openstack.md)
 * [google oauth](google_oauth.md)
 * [facebook oauth](facebook_oauth.md)
+* redis
 
