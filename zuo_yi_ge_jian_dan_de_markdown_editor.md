@@ -123,3 +123,13 @@ window.onload = function() {
 };
 ```
 此時輸入 node server 可看到兩個框框，在左邊那個框輸入markdown試試
+
+
+#讓他成為共筆的markdown
+```
+npm install --save share@0.6.3
+npm install --save redis
+```
+
+https://github.com/showdownjs
+https://www.npmjs.com/package/showdown
