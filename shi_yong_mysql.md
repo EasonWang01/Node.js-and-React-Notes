@@ -239,6 +239,37 @@ var sql = "SELECT * FROM ?? WHERE ?? = ?";
 ```
 connection.query("UPDATE ?? SET title = ? WHERE id = ?",["articles","Hell",1]
 ```
+#使用escape，防止injection
+可達到的效果
+```
+Numbers are left untouched
+Booleans are converted to true / false
+Date objects are converted to 'YYYY-mm-dd HH:ii:ss' strings
+Buffers are converted to hex strings, e.g. X'0fa5'
+Strings are safely escaped
+Arrays are turned into list, e.g. ['a', 'b'] turns into 'a', 'b'
+Nested arrays are turned into grouped lists (for bulk inserts), e.g. [['a', 'b'], ['c', 'd']] turns into ('a', 'b'), ('c', 'd')
+Objects are turned into key = 'val' pairs for each enumerable property on the object. If the property's value is a function, it is skipped; if the property's value is an object, toString() is called on it and the returned value is used.
+undefined / null are converted to NULL
+NaN / Infinity are left as-is. MySQL does not support these, and trying to insert them as values will trigger MySQL errors until they implement support.
+```
+##1.
+
+escape()
+```
+var userId = 'some user provided value';
+var sql    = 'SELECT * FROM users WHERE id = ' + connection.escape(userId);
+connection.query(sql, function(err, results) {
+  // ... 
+});
+```
+跟`?`作用相同
+```
+connection.query('SELECT * FROM users WHERE id = ?', [userId], function(err, results) {
+  // ... 
+});
+```
+
 
 ##複習sql語法
 ```
