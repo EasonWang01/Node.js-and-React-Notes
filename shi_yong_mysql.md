@@ -299,7 +299,15 @@ connection.query(sql,"articles" ,function(err, results) {
   console.error(results);
 });
 ```
+#insert資料時傳回該筆insert id
+```
+connection.query('INSERT INTO articles SET ?', {author:'test',title: 'test',body:'test'}, function(err, result) {
+  if (err) throw err;
+ 
+  console.log(result.insertId);
+});
 
+```
 
 ##複習sql語法
 ```
