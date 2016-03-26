@@ -65,7 +65,7 @@ connection.query('CREATE TABLE Food (' +
 ```
 記得每段分行要用+號，因為javascript分行要用字串聯接
 
-或是
+###或是
 
 使用ES6 的新字元串` ` `，可跨行連接字段
 ```
@@ -85,6 +85,7 @@ var query = connection.query(a, function (err, result) {
 });
 
 ```
+如要使用變數記得用`${}`
 
 
 ##insert column
@@ -103,6 +104,34 @@ connection.query("INSERT INTO Food SET ?",{Food_id:01,Food_name:'Noodle',Food_pr
     console.log(result);
     console.log(result.insertId);
 });
+```
+另一種方式
+
+```
+
+//留著當Schema
+var a = (`CREATE TABLE articles (
+  id     INT PRIMARY KEY AUTO_INCREMENT,
+  author VARCHAR(100) NOT NULL,
+  title  VARCHAR(100) NOT NULL,
+  body   TEXT         NOT NULL
+)`);
+
+
+var article = {
+  author: 'eason',
+  title: 'HI',
+  body: 'this'
+};
+
+var query = connection.query('insert into articles set ?', article, function (err, result) {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.error(result);
+});
+
 ```
 ##Read data
 ```
@@ -150,8 +179,29 @@ app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
 
 app.listen(8080);
 ```
+#UPDATE
+```
 
+var query = connection.query("UPDATE articles SET title = ? ","Hello M",function (err, result) {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.error(result);
+});
 
+```
+加上where，限制要更新的row
+```
+
+var query = connection.query("UPDATE articles SET title = ? WHERE id = 1","Hello MyS",function (err, result) {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.error(result);
+});
+```
 #使用完記得關閉
 ```
 connection.end();
