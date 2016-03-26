@@ -1,4 +1,4 @@
-# 使用Mysql
+#使用MYSQL
 
 
 臨時免費信箱:http://www.yopmail.com/zh/
