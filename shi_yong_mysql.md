@@ -4,7 +4,7 @@
 臨時免費信箱:http://www.yopmail.com/zh/
 
 測試用免費mysql:https://www.db4free.net/
-(預設一個資料庫，不可再增加)
+(預設一個資料庫，不可再增加或修改)
 
 1.申請好mysql hosting後使用npm安裝mysql
 ```
