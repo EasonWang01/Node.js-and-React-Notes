@@ -46,7 +46,7 @@ https://www.db4free.net/phpMyAdmin
 
 #操控資料庫
 
-##insert TABLE
+##CREATE TABLE
 ```
 connection.query('CREATE TABLE Food (' +             
                 'Food_id int,'+
