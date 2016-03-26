@@ -287,7 +287,7 @@ connection.query(sql, function(err, results) {
 ```
 使用`??`一樣效果
 
-(??是給mysql module 內的function解析的，所以他不是變數，不用字串包住前後)
+(`??`是給mysql module 內的function解析的，所以他不是變數，不用字串包住前後)
 ```
 
 var sql    = 'SELECT * FROM ?? WHERE id = 1' ;
