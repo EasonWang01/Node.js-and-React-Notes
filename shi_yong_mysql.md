@@ -269,6 +269,34 @@ connection.query('SELECT * FROM users WHERE id = ?', [userId], function(err, res
   // ... 
 });
 ```
+##如果要excape的是name
+
+使用escapeId()
+```
+
+var a = 'articles';
+var sql    = 'SELECT * FROM' + connection.escapeId(a)+ 'WHERE id = 1' ;
+connection.query(sql, function(err, results) {
+   if (err) {
+    console.error(err);
+    return;
+  }
+  console.error(results);
+});
+
+```
+使用`??`一樣效果
+```
+
+var sql    = 'SELECT * FROM ?? WHERE id = 1' ;
+connection.query(sql,"articles" ,function(err, results) {
+   if (err) {
+    console.error(err);
+    return;
+  }
+  console.error(results);
+});
+```
 
 
 ##複習sql語法
