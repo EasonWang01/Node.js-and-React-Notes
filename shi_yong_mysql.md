@@ -32,7 +32,7 @@ connection.connect(function(err) {
 });
 ////
 var app = express();
-var router = require('./routes/index.js')(app);
+
 app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
 
 
