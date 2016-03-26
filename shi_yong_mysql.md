@@ -299,7 +299,7 @@ connection.query(sql,"articles" ,function(err, results) {
   console.error(results);
 });
 ```
-#insert資料時傳回該筆insert id
+#insert資料時傳回該筆insert id(主鍵)
 ```
 connection.query('INSERT INTO articles SET ?', {author:'test',title: 'test',body:'test'}, function(err, result) {
   if (err) throw err;
