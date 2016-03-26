@@ -67,7 +67,7 @@ connection.query('CREATE TABLE Food (' +
 
 或是
 
-使用ES6 的新字元串` ` `
+使用ES6 的新字元串` ` `，可跨行連接字段
 ```
 var a = (`CREATE TABLE articles (
   id     INT PRIMARY KEY AUTO_INCREMENT,
