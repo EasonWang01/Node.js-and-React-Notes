@@ -145,13 +145,15 @@ render(
 `<App/>`即為我們的react元件
 
 6.在components資料夾中新增App.js
+
+此即為我們第一個react元件
 ```
 import React, { Component } from 'react'
 
 class App extends Component {
 
   render() {
-    return <div>This is definitely a React app now!</div>
+    return <div>I'm Banana!</div>
   }
 
 }
