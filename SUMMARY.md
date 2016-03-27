@@ -38,4 +38,5 @@
 * [做一個簡單的markdown editor](zuo_yi_ge_jian_dan_de_markdown_editor.md)
 * [socket.io](socketio.md)
 * [rethinkdb](rethinkdb.md)
+* Sublime 安裝套件
 
