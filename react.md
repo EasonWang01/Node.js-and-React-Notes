@@ -27,8 +27,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 http://es6.ruanyifeng.com/#docs/class
 
 https://gist.github.com/sebmarkbage/d7bce729f38730399d28
-
-#新建一個資料夾
+#開始使用React
+##建立環境
 裡面放入package.json
 ```
 {
@@ -65,5 +65,25 @@ forclass
     --client
     --components
     --server
-    
+    package.json
+ ```
+ 接著在server目錄下新增server.js
+ ```
+ var express = require('express');
+var path = require('path');
+
+var app = express();
+
+app.use(express.static('./dist'));
+
+app.use('/', function (req, res) {
+    res.sendFile(path.resolve('client/index.html'));
+});
+
+var port = 3000;
+
+app.listen(port, function(error) {
+  if (error) throw error;
+  console.log("Express server listening on port", port);
+});
  ```
