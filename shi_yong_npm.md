@@ -10,6 +10,11 @@ npm install
 npm install  -g (使用後可在cmd的任何路徑輸入package名稱執行，但如果是想在js檔內直接使用require的話，要再把環境變數加上才行)(如此即可不用在每個專案資料夾個別安裝package))
 (記得名稱要是NODE_PATH)
 ![](df.png)
+所以共有兩個環境變數:
+一個是node_modules  =>給require用
+
+一個是`C:\Users\Jason\AppData\Roaming\npm`給在cmd直接輸入module名稱用
+
 npm install  --save
 
 npm uninstall
