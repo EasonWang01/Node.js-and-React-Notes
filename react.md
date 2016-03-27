@@ -29,7 +29,7 @@ http://es6.ruanyifeng.com/#docs/class
 https://gist.github.com/sebmarkbage/d7bce729f38730399d28
 #開始使用React
 ##建立環境
-裡面放入package.json
+1.裡面放入package.json
 ```
 {
   "name": "react-todo-list",
@@ -67,7 +67,7 @@ forclass
     --server
     package.json
  ```
- 接著在server目錄下新增server.js
+ 2.接著在server目錄下新增server.js
  ```
  var express = require('express');
 var path = require('path');
@@ -87,3 +87,74 @@ app.listen(port, function(error) {
   console.log("Express server listening on port", port);
 });
  ```
+3.在client資料夾內加入index.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React Todo List</title>
+</head>
+<body>
+  <h1>This is not a React app yet!</h1>
+  <div id="app"></div>
+  <script src="bundle.js"></script>
+</body>
+</html>
+```
+4.新增webpack 配置文件webpack.config.js
+```
+module.exports = {
+  devtool: 'inline-source-map',
+  entry: ['./client/client.js'],
+  output: {
+    path: './dist',
+    filename: 'bundle.js',
+    publicPath: '/'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['react', 'es2015']
+        }
+      }
+    ]
+  }
+}
+```
+什麼是source map
+
+可以看chrome dev tool 裡的setting即有此選項
+http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html
+
+5.在client資料夾中新增client.js
+```
+import React from 'react'
+import { render } from 'react-dom'
+import App from '../components/App'
+
+render(
+  <App/>,
+  document.getElementById('app')
+)
+```
+`<App/>`即為我們的react元件
+
+6.在components資料夾中新增App.js
+```
+import React, { Component } from 'react'
+
+class App extends Component {
+
+  render() {
+    return <div>This is definitely a React app now!</div>
+  }
+
+}
+
+export default App
+```
