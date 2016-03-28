@@ -170,3 +170,7 @@ module.exports = config;
 2.http://www.christianalfoni.com/articles/2015_10_01_Taking-the-next-step-with-react-and-webpack
 
 3.http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
+
+
+##有關plugin
+http://rhadow.github.io/2015/05/30/webpack-loaders-and-plugins/
