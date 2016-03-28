@@ -255,6 +255,8 @@ app.listen(port, function(error) {
 現在我們可以直接用server.js去compile 我們的webpack config檔案，不用再輸入指令compile
 
 最後因為我們剛才有用hot middle所以我們可以使用--hot去讓他自動reload網頁，但我們不想在指令輸入，所以可以把他加在webpack config內
+
+webpack.config.js
 ```
 var webpack = require('webpack');
 
@@ -288,3 +290,7 @@ module.exports = {
   }
 }
 ```
+現在執行
+`npm run serve`
+
+再去更改app.js內的字，可以看到不用重新啟動伺服器，也不用按網頁的重新整理，即可更新
