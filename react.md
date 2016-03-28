@@ -177,6 +177,7 @@ export default App
 在package.json內加入
 
 1.不用重新整理網頁
+(讓我們不用使用webpack-dev-server也有-hot的指令)
 ```
 "webpack-hot-middleware": "^2.6.4"
 ```
@@ -252,3 +253,38 @@ app.listen(port, function(error) {
 });
 ```
 現在我們可以直接用server.js去compile 我們的webpack config檔案，不用再輸入指令compile
+
+最後因為我們剛才有用hot middle所以我們可以使用--hot去讓他自動reload網頁，但我們不想在指令輸入，所以可以把他加在webpack config內
+```
+var webpack = require('webpack');
+
+module.exports = {
+  devtool: 'inline-source-map',
+  entry: [
+    'webpack-hot-middleware/client',
+    './client/client.js'
+  ],
+  output: {
+    path: require("path").resolve("./dist"),
+    filename: 'bundle.js',
+    publicPath: '/'
+  },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['react', 'es2015', 'react-hmre']
+        }
+      }
+    ]
+  }
+}
+```
