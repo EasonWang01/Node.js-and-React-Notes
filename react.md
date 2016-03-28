@@ -172,3 +172,83 @@ export default App
 之後即可重新啟動伺服器，並觀看改變
 `npm run serve`(寫在package.json中的scripts內)
 
+
+##讓我們不用重新整理網頁
+在package.json內加入
+
+1.不用重新整理網頁
+```
+"webpack-hot-middleware": "^2.6.4"
+```
+2.讓hot middleware知道react的class
+```
+ "babel-preset-react-hmre": "^1.1.0",
+```
+以及上webpack跑在我們架設的express server上
+```
+ "webpack-dev-middleware": "^1.5.1"
+```
+完整版
+```
+{
+  "name": "react-todo-list",
+  "version": "1.0.0",
+  "description": "A simple todo list app built with React, Redux and Webpack",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon server/server.js --ignore components"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kweiberth/react-todo-list.git"
+  },
+  "author": "Kurt Weiberth",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.1.0",
+    "express": "^4.13.4",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "webpack": "^1.12.13",
+    "webpack-dev-middleware": "^1.5.1",
+    "webpack-hot-middleware": "^2.6.4"
+  }
+}
+```
+npm install後
+
+接著更改剛才server資料夾下的 server.js
+
+```
+var express = require('express');
+var path = require('path');
+var config = require('../webpack.config.js');
+var webpack = require('webpack');
+var webpackDevMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
+
+var app = express();
+
+var compiler = webpack(config);
+
+app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
+app.use(webpackHotMiddleware(compiler));
+
+app.use(express.static('./dist'));
+
+app.use('/', function (req, res) {
+    res.sendFile(path.resolve('client/index.html'));
+});
+
+var port = 3000;
+
+app.listen(port, function(error) {
+  if (error) throw error;
+  console.log("Express server listening on port", port);
+});
+```
+現在我們可以直接用server.js去compile 我們的webpack config檔案，不用再輸入指令compile
