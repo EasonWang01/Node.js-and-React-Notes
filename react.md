@@ -294,3 +294,98 @@ module.exports = {
 `npm run serve`
 
 再去更改app.js內的字，可以看到不用重新啟動伺服器，也不用按網頁的重新整理，即可更新
+
+##第二階段
+開始新增其他react元件
+
+在components下，新增一個檔案
+`TextDisplay.js`
+```
+import React, {Component} from 'react'
+
+class TextDisplay extend Component{
+
+}
+
+export default TextDisplay
+```
+上面是引用react後建造一個空的class後將他輸出
+
+接著我們要在class內寫入東西
+
+```
+import React, {Component} from 'react'
+//JSX要看到import了React 才可以編譯 
+class TextDisplay extends Component{
+
+	render() {
+		return (
+			<div>
+			<div> THis is text display</div>
+			<div> if we have two div we need to wrap it.</div>
+			</div>
+
+		)};
+
+}
+
+export default TextDisplay
+```
+使著將最外層的div刪掉，會出現錯誤，因為一個元件要有東西包住最外層。
+
+之後讓原來的App.js引用他
+```
+import React, { Component } from 'react'
+import TextDisplay from './TextDisplay'
+class App extends Component {
+
+  render() {
+    return (
+    <div>
+    <div>This is definitely a React app now!</div>
+    <TextDisplay/>
+    </div>
+  )}
+
+}
+export default App
+
+
+```
+使用state
+
+TextDisplay.js
+```
+import React, { Component } from 'react'
+import TextDisplay from './TextDisplay'
+
+class TextInput extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      inputText: ' sdxt'
+    }
+  }
+
+
+
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          placeholder="This is going to be text"
+          value={this.state.inputText}
+         
+        />
+    
+      </div>
+    )
+  }
+
+}
+
+export default TextInput
+```
+記得重新整理網頁，才會作用
