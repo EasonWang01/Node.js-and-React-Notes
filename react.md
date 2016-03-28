@@ -463,7 +463,7 @@ class TextInput extends Component {
 
 export default TextInput
 ```
-另一種寫法，是直接在DOM 的onchange中綁
+另一種寫法，是直接在DOM 的onchange中綁，但官方推薦綁在constructor
 ```
 onChange={this.handleChange.bind(this)}
 ```
