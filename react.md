@@ -170,3 +170,5 @@ export default App
 會自動產生dist資料夾，裡面包含bundle.js檔案
 
 之後即可重新啟動伺服器，並觀看改變
+`npm run serve`(寫在package.json中的scripts內)
+
