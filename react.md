@@ -29,6 +29,9 @@ http://es6.ruanyifeng.com/#docs/class
 https://gist.github.com/sebmarkbage/d7bce729f38730399d28
 #開始使用React
 ##建立環境
+
+npm install webpack -g
+
 1.裡面放入package.json
 ```
 {
@@ -160,3 +163,7 @@ class App extends Component {
 
 export default App
 ```
+輸入`webpack --config webpack.config.js`
+會自動產生dist資料夾，裡面包含bundle.js檔案
+
+之後即可重新啟動伺服器，並觀看改變
