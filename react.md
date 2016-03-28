@@ -32,6 +32,9 @@ https://gist.github.com/sebmarkbage/d7bce729f38730399d28
 
 npm install webpack -g
 
+npm install nodemon -g
+(在更改程式時自動執行server，而forever為遇到錯誤也不會停止)
+
 1.裡面放入package.json
 ```
 {
