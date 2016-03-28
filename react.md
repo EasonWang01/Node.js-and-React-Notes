@@ -467,3 +467,42 @@ export default TextInput
 ```
 onChange={this.handleChange.bind(this)}
 ```
+####!每次改動constructor記得都要重新整理，就算有用Hot reload
+
+#2.在class內所有的this都是指到那個class
+
+所以要取得onchange時input內的value必須用e.target
+，因為這裡不是DOM
+```
+import React, { Component } from 'react'
+import TextDisplay from './TextDisplay'
+
+class TextInput extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      inputText: ' sdst'
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+ handleChange(e){
+ 	console.log(e.target.value);
+ 	console.log(this);
+ 	//this.setState({inputText:12});
+ }
+
+  render() {
+    return (
+      <div>
+        
+    	<input onChange={this.handleChange} />
+      </div>
+    )
+  }
+
+}
+
+export default TextInput
+```
