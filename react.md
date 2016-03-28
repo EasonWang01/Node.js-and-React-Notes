@@ -427,3 +427,43 @@ class TextInput extends Component {
 export default TextInput
 ```
 ##在class中的方法如果有this的話他會不知道this是什麼，所以要在class 的constructor中把該方法綁進來
+```
+import React, { Component } from 'react'
+import TextDisplay from './TextDisplay'
+
+class TextInput extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      inputText: ' sdsxt'
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+ handleChange(){
+ 	this.setState({inputText:12});
+ }
+
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          placeholder="This is going to be text"
+          value={this.state.inputText}
+          onChange={this.handleChange}
+        />
+    
+      </div>
+    )
+  }
+
+}
+
+export default TextInput
+```
+另一種寫法，是直接在DOM 的onchange中綁
+```
+onChange={this.handleChange.bind(this)}
+```
