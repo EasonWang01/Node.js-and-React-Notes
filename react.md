@@ -336,7 +336,7 @@ export default TextDisplay
 之後讓原來的App.js引用他
 ```
 import React, { Component } from 'react'
-import TextDisplay from './TextDisplay'
+
 class App extends Component {
 
   render() {
@@ -357,7 +357,7 @@ export default App
 TextDisplay.js
 ```
 import React, { Component } from 'react'
-import TextDisplay from './TextDisplay'
+
 
 class TextInput extends Component {
 
@@ -393,7 +393,7 @@ export default TextInput
 #為元件加入方法
 ```
 import React, { Component } from 'react'
-import TextDisplay from './TextDisplay'
+
 
 class TextInput extends Component {
 
@@ -429,7 +429,7 @@ export default TextInput
 ##在class中的方法如果有this的話他會不知道this是什麼，所以要在class 的constructor中把該方法綁進來
 ```
 import React, { Component } from 'react'
-import TextDisplay from './TextDisplay'
+
 
 class TextInput extends Component {
 
@@ -475,7 +475,7 @@ onChange={this.handleChange.bind(this)}
 ，因為這裡不是DOM
 ```
 import React, { Component } from 'react'
-import TextDisplay from './TextDisplay'
+
 
 class TextInput extends Component {
 
@@ -506,3 +506,53 @@ class TextInput extends Component {
 
 export default TextInput
 ```
+#Prop
+即為HTML tag中的屬性
+
+新增一個元件為Propest.js
+```
+import React, { Component } from 'react'
+
+class Proptest extends Component {
+	render(){
+		return <div> {this.props.text}</div>
+	}
+}
+export default Proptest
+```
+TextDisplay.js
+```
+import React, { Component } from 'react'
+import Proptest from "./Proptest"
+
+class TextInput extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      inputText: ' sdst'
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+ handleChange(e){
+ 	console.log(e.target.value);
+ 	
+ 	this.setState({inputText:e.target.value});
+ }
+
+  render() {
+    return (
+      <div>
+        
+    	<input onChange={this.handleChange} />
+    	<Proptest text="123"/>
+      </div>
+    )
+  }
+
+}
+
+export default TextInput
+```
+即可看到Proptest的props顯示出
