@@ -178,6 +178,17 @@ app.use('/user/:id', function (req, res, next) {
   next();
 });
 ```
+#注意
+
+(不要使用如下，因為有/hi,/as都會先跑過下面這行)
+```
+
+app.use('/', function (req, res) {
+//相當於app.use(全部)
+}
+```
+
+
 我們可以指定條件再middleware，先在原本middleware後加入一個function，
 
 指定如果url的params = 條件的話跳過其下逗點後的function直接進行next middleware
