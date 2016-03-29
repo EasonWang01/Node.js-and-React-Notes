@@ -18,6 +18,54 @@ class HelloMessage extends React.Component {
 
 ReactDOM.render(<HelloMessage name="Sebastian" />, mountNode);
 ```
+其他方法之簡單整理
+```
+
+class baseComponent extends React.Component{
+    // 建構子
+    constructor(props){
+        super(props);
+    }
+    // ...其他公用代碼,方法等封装
+}    
+//定義另一類別，繼承baseComponent
+class App extends baseComponent{
+    // 建構子
+    constructor(props){
+        super(props);
+    }
+    // 初始化state,替代原getInitialState, 注意前面沒有static
+    state = {
+        showMenu:false
+    };
+    // 替代原propTypes 属性,注意前面有static,屬於靜態方法.
+    static propTypes = {
+        autoPlay: React.PropTypes.bool.isRequired
+    }
+    // 默認defaultProps,替代原getDefaultProps方法, 注意前面有static
+    static defaultProps = {
+        loading:false
+    };
+    // 這以用箭頭函數箭頭函數不會改變this的指向,否則函數內,this指的就不是當前對象了
+    // React.CreatClass方式React會自動綁定this,ES6寫法不會.
+    handleClick = (e)=>{
+        this.setState();//
+    };
+    componentDidMount() {
+        // React内置的周期 ,這裡要顯示所繼承父類的相同function,
+        // 否則一旦父類中有封裝,子類會把和父類相同的function覆蓋,不會執行父類的function.
+        // 但...父類如果本身沒有寫出componentDidMount,在子類寫出的話就會錯誤,
+        
+        if (super.componentDidMount) {
+            super.componentDidMount();
+        }
+        // do something yourself...
+    }
+}
+
+```
+
+
 更多有關ES5 react to ES6 or ES7
 http://cheng.logdown.com/posts/2015/09/29/converting-es5-react-to-es6
 
@@ -556,3 +604,4 @@ class TextInput extends Component {
 export default TextInput
 ```
 即可看到Proptest的props顯示出
+
