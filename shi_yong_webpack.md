@@ -174,7 +174,63 @@ module.exports = config;
 
 ##有關plugin
 
+1.`CommonsChunkPlugin`
+
+讓我們共用的module再一開始即載入病進入cache，不要每次重新網頁又重新載入
+
+```
+var webpack = require('webpack');
+
+module.exports = {
+  devtool: 'inline-source-map',
+  entry: {
+    app:[
+    'webpack-hot-middleware/client',
+    './client/client.js'
+  ],
+  vendor:['react','react-dom']
+},
+
+  output: {
+    path: require("path").resolve("./dist"),
+    filename: 'bundle.js',
+    publicPath: '/'
+  },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'react-hot',
+        loader:'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['react', 'es2015', 'react-hmre']
+        }
+      }
+    ]
+  }
+}
+```
+之後再index.html加上
+```
+<script src="vendor.bundle.js"></script>
+  <script src="bundle.js"></script>
+```
+即可
+
+
+----
+
 http://rhadow.github.io/2015/05/30/webpack-loaders-and-plugins/
+
+
+
 
 官方解說
 https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin
