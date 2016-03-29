@@ -937,7 +937,7 @@ render((
 ```
 到路徑http://localhost:3000/#/about
 
-即可看到
+即可看到，元件的切換
 
-頁面切換元件很快速，我們以前要做到這樣必須用AJAX，或模板引擎內的動態compile(一樣是AJAX加載)，
-但React沒用到ajax完全都在client更改
+(頁面切換元件很快速，我們以前要做到這樣必須用AJAX，或模板引擎內的動態compile(一樣是AJAX加載)，
+但React沒用到ajax完全都在client更改)
