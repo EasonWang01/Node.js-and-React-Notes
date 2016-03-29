@@ -515,6 +515,15 @@ export default TextInput
 ```
 onChange={this.handleChange.bind(this)}
 ```
+第三種寫法(ES6的箭頭函數，最方便，因為會直接幫你綁定)
+
+```
+_handleClick = (e) => {
+    // 使用箭头函数(arrow function)
+    console.log(this);
+}
+```
+
 ####!每次改動constructor記得都要重新整理，就算有用Hot reload
 
 #2.在class內所有的this都是指到那個class
