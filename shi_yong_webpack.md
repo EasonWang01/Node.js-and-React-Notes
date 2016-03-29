@@ -176,7 +176,8 @@ module.exports = config;
 
 1.`CommonsChunkPlugin`
 
-讓我們共用的module再一開始即載入病進入cache，不要每次重新網頁又重新載入(缺點為一開始打包時間換長一點，但之後每次重整網頁節省許多速度)
+讓我們共用的module再一開始即載入病進入cache，不要每次重新網頁又重新載入
+(缺點為一開始打包時間會長一點，但之後每次重整網頁節省許多速度)
 
 ```
 var webpack = require('webpack');
