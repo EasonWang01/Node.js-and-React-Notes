@@ -566,7 +566,7 @@ export default TextInput
 #Prop
 即為HTML tag中的屬性
 
-新增一個元件為Propest.js
+1.新增一個元件為Propest.js
 ```
 import React, { Component } from 'react'
 
@@ -613,4 +613,135 @@ class TextInput extends Component {
 export default TextInput
 ```
 即可看到Proptest的props顯示出
+
+2.讓子代的view啟動父代的method
+
+Proptest.js
+```
+import React, { Component } from 'react'
+
+class Proptest extends Component {
+
+	constructor(){
+		super()
+		
+	}
+
+
+	render(){
+		return( 
+
+		<div> 
+			<button onClick={this.props.deleteLetter}> </button>
+
+		</div>
+	)}
+}
+export default Proptest
+```
+TestDisplay.js
+```
+import React, { Component } from 'react'
+import Proptest from "./Proptest"
+
+class TextInput extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      inputText: ' sdst'
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.deleteLetter = this.deleteLetter.bind(this);
+  }
+
+ handleChange(e){
+ 	console.log(e.target.value);
+ 	
+ 	this.setState({inputText:e.target.value});
+ }
+ deleteLetter(){
+ 	console.log(this);
+ }
+
+  render() {
+    return (
+      <div>
+        
+    	<input onChange={this.handleChange} />
+    	<Proptest deleteLetter={this.deleteLetter}/>
+      </div>
+    )
+  }
+
+}
+
+export default TextInput
+```
+
+進階(點擊button更改state)
+```
+import React, { Component } from 'react'
+import Proptest from "./Proptest"
+
+class TextInput extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      inputText: ' sdst'
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.deleteLetter = this.deleteLetter.bind(this);
+  }
+
+ handleChange(e){
+ 	console.log(e.target.value);
+ 	
+ 	this.setState({inputText:e.target.value});
+ }
+ deleteLetter(){
+ 	this.setState({
+ 		inputText:this.state.inputText.substring(0,this.state.inputText.length-1)
+ 	});
+ }
+
+  render() {
+    return (
+      <div>
+        
+    	<input    value={this.state.inputText}     onChange={this.handleChange} />
+    	<Proptest text={this.state.inputText} deleteLetter={this.deleteLetter}/>
+      </div>
+    )
+  }
+
+}
+
+export default TextInput
+```
+
+```
+import React, { Component } from 'react'
+
+class Proptest extends Component {
+
+	constructor(){
+		super()
+		
+	}
+
+
+	render(){
+		return( 
+
+		<div> 
+			<p>{this.props.text}</p>
+			<button onClick={this.props.deleteLetter}> </button>
+
+		</div>
+	)}
+}
+export default Proptest
+```
 
