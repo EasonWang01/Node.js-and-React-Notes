@@ -894,3 +894,26 @@ class TextInput extends Component {
 export default TextInput
 
 ```
+
+#使用React router
+
+`npm install react-router`
+
+之後開啟client.js
+
+改為下面，看是否仍正常啟動
+
+```
+import React from 'react'
+import { render } from 'react-dom'
+import App from '../components/App'
+import { Router, Route, hashHistory } from 'react-router'
+
+render(( 
+	<Router history={hashHistory}>
+     <Route path="/" component={App}/>
+    </Router> 
+  ),document.getElementById('app'))
+
+
+```
