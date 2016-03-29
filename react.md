@@ -947,6 +947,9 @@ render((
 (發現頁面切換元件很快速，我們以前要做到這樣必須用AJAX，或模板引擎內的動態compile(一樣是AJAX加載)，
 但React沒用到ajax，完全都在client端計算更改的virtual DOM後更新到DOM上)
 
+---
+接著可到webpack那章，加上commonchunk plugin，加速我們每次網頁重新整理的速度
 
+---
 
 
