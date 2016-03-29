@@ -69,6 +69,8 @@ class App extends baseComponent{
 更多有關ES5 react to ES6 or ES7
 http://cheng.logdown.com/posts/2015/09/29/converting-es5-react-to-es6
 
+http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8
+
 有關class用法
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
@@ -745,3 +747,62 @@ class Proptest extends Component {
 export default Proptest
 ```
 
+#在元件內使用條件判斷
+```
+import React, { Component } from 'react'
+import Proptest from "./Proptest"
+
+
+
+class TextInput extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      inputText: ' sdst'
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.deleteLetter = this.deleteLetter.bind(this);
+  }
+
+ handleChange(e){
+ 	console.log(e.target.value);
+ 	
+ 	this.setState({inputText:e.target.value});
+ }
+ deleteLetter(){
+ 	this.setState({
+ 		inputText:this.state.inputText.substring(0,this.state.inputText.length-1)
+ 	});
+ }
+
+
+
+
+
+
+  render() {
+  	var checkFalse = true;
+  	if(checkFalse){
+  		checkFalse =  <Proptest text={this.state.inputText} deleteLetter={this.deleteLetter}/>;
+ 	}else{
+  		checkFalse = <p>This is false</p>
+  	}
+
+
+
+    return (
+      <div>
+        
+    	<input    value={this.state.inputText}     onChange={this.handleChange} />
+    	
+    	{checkFalse}
+
+      </div>
+    )
+  }
+
+}
+
+export default TextInput
+```
