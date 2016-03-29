@@ -917,3 +917,27 @@ render((
 
 
 ```
+再改為下面看看
+
+```
+import React from 'react'
+import { render } from 'react-dom'
+import App from '../components/App'
+import Proptest from '../components/Proptest'
+import { Router, Route, hashHistory } from 'react-router'
+
+render(( 
+	<Router history={hashHistory}>
+	<Route path="/" component={App}/>
+     <Route path="/about" component={Proptest}/>
+    </Router> 
+  ),document.getElementById('app'))
+
+
+```
+到路徑http://localhost:3000/#/about
+
+即可看到
+
+頁面切換元件很快速，我們以前要做到這樣必須用AJAX，或模板引擎內的動態compile(一樣是AJAX加載)，
+但React沒用到ajax完全都在client更改
