@@ -20,6 +20,7 @@
 * [使用PostgreSQL](shi_yong_postgresql.md)
 * [使用RethinkDB](使用RethinkDB)
 * [React](react.md)
+* React router
 * [import_export_module.exports 模組化](importexport_module_exports_mo_zu_hua.md)
 * [使用webpack](shi_yong_webpack.md)
 * [ES6 Generator](es6_generator.md)
@@ -39,5 +40,4 @@
 * [socket.io](socketio.md)
 * [rethinkdb](rethinkdb.md)
 * [Sublime 安裝套件](sublime_an_zhuang_tao_jian.md)
-* React router
 
