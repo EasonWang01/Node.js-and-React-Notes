@@ -959,7 +959,9 @@ render((
  ```
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">```
  
- 之後把class改為className即可
+ 之後在用這個轉換網站轉換後貼上即可，記得外面要包著div
+ 
+ http://facebook.github.io/react/html-jsx.html
   
   
 
