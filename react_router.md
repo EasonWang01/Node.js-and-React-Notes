@@ -244,7 +244,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 ```
 <Router history={browserHistory}>
 ```
-之後點選link發現url後不再出現`#`，但點選後這時按F5，發現出現了`Can not get`
+之後點選link發現url後不再出現`#`，但點選後這時按F5，發現出現了`Cannot get`
 
 
 
