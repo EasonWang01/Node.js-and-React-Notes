@@ -105,6 +105,7 @@ export default App
 
 ```
 ，因為今天兩個component再route下為App.js的子代，所以要用` {this.props.children}`去顯示
+(更改後記得重新整理)
 
 
 
