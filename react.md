@@ -952,5 +952,16 @@ render((
 
 ---
 
+#加上Bootstrap
+ 雖然有react-bootstrap，但我們也可用原本的方式
+ 
+ 在client.js加上
+ ```
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">```
+ 
+ 之後把class改為className即可
+  
+  
+
 
 
