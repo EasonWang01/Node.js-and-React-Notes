@@ -28,7 +28,9 @@ render((
 
 進入另一個元件
 
-2.接著到App.js加上
+2.Link
+
+接著到App.js加上
 
 ```
 import React, { Component } from 'react'
@@ -53,7 +55,7 @@ export default App
 
 
 ```
-
+即可看到點選li跳至不同元件，及更改了url
 
 
 
