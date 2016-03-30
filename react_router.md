@@ -57,6 +57,60 @@ export default App
 ```
 即可看到點選li跳至不同元件，及更改了url
 
+3.我們現在想讓App.js變成一個nav然後點選後App.js不動，在他的下面render不同的component，所以我們要把route改為巢狀
+
+client.js
+```
+import React from 'react'
+import { render } from 'react-dom'
+import App from '../components/App'
+import Proptest from '../components/Proptest'
+import TextDisplay from '../components/TextDisplay'
+import { Router, Route, hashHistory } from 'react-router'
+
+render(( 
+	<Router history={hashHistory}>
+		<Route path="/" component={App}>
+		     <Route path="/Proptest" component={Proptest}/>
+		     <Route path="/TextDisplay" component={TextDisplay}/>
+	    </Route>
+    </Router> 
+  ),document.getElementById('app'))
+
+
+```
+App.js
+```
+import React, { Component } from 'react'
+import TextDisplay from './TextDisplay'
+import { Link } from 'react-router'
+
+class App extends Component {
+
+  render() {
+    return (
+    <div>
+     <ul role="nav">
+          <li><Link to="/TextDisplay">TextDisplay</Link></li>
+          <li><Link to="/Proptest">Proptest</Link></li>
+        </ul>
+         {this.props.children}
+    
+    </div>
+  )}
+
+}
+export default App
+
+
+```
+，因為今天兩個component再route下為App.js的子代，所以要用` {this.props.children}`去顯示
+
+
+
+
+
+
 
 
 參考至
