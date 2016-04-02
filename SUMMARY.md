@@ -21,7 +21,7 @@
 * [使用RethinkDB](使用RethinkDB)
 * [React](react.md)
 * [React router](react_router.md)
-* Redux
+* [Redux](redux.md)
 * [import_export_module.exports 模組化](importexport_module_exports_mo_zu_hua.md)
 * [使用webpack](shi_yong_webpack.md)
 * [ES6 Generator](es6_generator.md)
