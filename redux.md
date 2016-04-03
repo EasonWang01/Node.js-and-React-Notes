@@ -1,4 +1,6 @@
 # Redux
+source code
+https://cdnjs.cloudflare.com/ajax/libs/redux/3.3.1/redux.js
 
 action => reducer => store
 
