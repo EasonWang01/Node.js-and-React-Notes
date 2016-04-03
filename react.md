@@ -972,3 +972,12 @@ render((
 `ref={(c) => this._input = c}`
 
 再用`this._input`即可選定該元素
+
+或是
+
+`<input ref="myInput" />`
+
+```
+var input = this.refs.myInput;
+var inputValue = input.value;
+```
