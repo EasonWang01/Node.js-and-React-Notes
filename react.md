@@ -966,4 +966,9 @@ render((
   
 
 
+#選取元素
+在元素內放入下面的property
 
+`ref={(c) => this._input = c}`
+
+再用`this._input`即可選定該元素
