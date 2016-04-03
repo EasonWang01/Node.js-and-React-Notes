@@ -22,6 +22,7 @@ Object.assign({},a,{"v":14})
 
 ```
 function todoApp(state = initialState, action) {}
+//有了 = 符號
 //如果沒有傳入state參數(第一個參數)，則會字動找initialState變數指定給function 內的state變數
 ```
 
