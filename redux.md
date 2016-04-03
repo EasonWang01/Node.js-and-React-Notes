@@ -1,9 +1,10 @@
 # Redux
 source code
 https://cdnjs.cloudflare.com/ajax/libs/redux/3.3.1/redux.js
-
+#概念
 action => reducer => store
 
+#簡單範例
 ```
 <!DOCTYPE html>
 <html>
@@ -77,7 +78,7 @@ Reducer
         })
 ```
 
-#使用React
+#使用React連結Redux
 https://github.com/reactjs/redux/tree/master/examples/counter
 
 建立counter的元件(原本的HTML)
@@ -197,4 +198,106 @@ function decrement(text) {
     //text
   };
 }
+```
+#另一個稍為更詳細的範例
+
+###流程:
+
+
+1.定義一個action物件
+```
+let  actions ={ 
+	addTodo:(text)=>{
+		return ({
+            type:'ADD_TODO',
+            text:text})
+  }
+}
+
+
+export default actions
+```
+2.定義reducer(對應不同action型態做不同處理)
+
+```
+function getId(state){
+	return state.todos.reduce((maxId,todo)=>{
+		return Math.max(todo.id,maxId)
+	},-1) + 1
+
+}
+
+
+export default function reducer(state,action){
+	switch(action.type){
+		case 'ADD_TODO':
+			
+			return(	Object.assign({},state,{
+				todos:[{
+				  text:action.text,
+				  completed:false,
+				  id:getId(state)
+
+				},...state.todos]
+			})
+			)
+		default:
+			return state;
+
+	}
+
+}
+```
+
+3.綁定reducer給createStore
+```
+import {applyMiddleware,compose,createStore} from "redux"
+import reducer from './reducer'
+import logger from 'redux-logger'
+//下面為，使我們再console可以看到action發出的logger
+let finalCreateStore = compose(
+	applyMiddleware(logger())
+	)(createStore)
+
+export default function configureStore(initialState = { todos:[]}){
+	return finalCreateStore(reducer,initialState)
+
+}
+
+```
+4.view發出dispatch(action) 傳給reducer再更新store
+```
+import React, { Component } from 'react'
+import TodoInput from './TodoInput.js'
+import TodoList from './TodoList.js'
+import {connect} from 'react-redux'
+class App extends Component {
+
+  render() {
+    return (
+      <div>
+        <h1>Todo list</h1>
+        <TodoInput dispatch={this.props.dispatch}/>
+        <TodoList dispatch={this.props.dispatch} todos={this.props.todos}/>
+      </div>
+    )
+  }
+
+}
+function  mapStateToProps(state){
+
+	return state
+}
+
+
+export default connect(mapStateToProps)(App)
+
+
+```
+
+5.Store傳回給view
+```
+使用connect後connect擁有store (顯示為state)
+
+使用connect(mapStateToProps)(App)  將connect的store傳入App元件 為其props
 ```
