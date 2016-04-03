@@ -16,3 +16,13 @@ Object.assign({},a,{"v":14})
    第二個會新建一個物件，但不會改變定義好的參數。
    
 但，新建物件Object.assign後面的參數如有相同值都會覆蓋前面的值。
+
+
+##預設參數屬性
+
+```
+function todoApp(state = initialState, action) {}
+//如果沒有傳入state參數(第一個參數)，則會字動找initialState變數指定給function 內的state變數
+```
+
+
