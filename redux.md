@@ -171,3 +171,28 @@ export default function counter(state = 0, action) {
   }
 }
 ```
+完成
+
+----
+上例我們沒有直接去定義action.js而是直接指定action的type
+
+我們可改寫成
+```
+      onIncrement={() => store.dispatch(increment(text))}
+      onDecrement={() => store.dispatch(decrement(text))}
+```
+action.js
+```
+function increment(text) {
+  return {
+    type: INCREMENT,
+    //text
+  };
+}
+function decrement(text) {
+  return {
+    type: DECREMENT,
+    //text
+  };
+}
+```
