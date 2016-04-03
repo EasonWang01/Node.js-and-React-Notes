@@ -41,4 +41,5 @@
 * [socket.io](socketio.md)
 * [rethinkdb](rethinkdb.md)
 * [Sublime 安裝套件](sublime_an_zhuang_tao_jian.md)
+* ES6 Object
 
