@@ -21,7 +21,9 @@ http://sublimelinter.readthedocs.org/en/latest/installation.html
 https://github.com/roadhump/SublimeLinter-eslint
 
 ##安裝Babel jsx的syntax
-一樣在package control 輸入bable安裝
+一樣在package control 輸入babel安裝
+
+再安裝`npm install babel-eslint -g`
 
 之後在view--syntax--Babel--javscript(Babel)即可
 
