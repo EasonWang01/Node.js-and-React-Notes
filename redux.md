@@ -540,3 +540,6 @@ class TodoList extends Component {
 export default TodoList
 
 ```
+完整版:(於master branch)
+
+https://github.com/EasonWang01/Redux-tutorial 
