@@ -230,6 +230,17 @@ module.exports = {
 
 http://rhadow.github.io/2015/05/30/webpack-loaders-and-plugins/
 
+#使用ES7
+```
+npm install stage-0
+```
+webpack.config.js 加上
+```
+query: {
+          presets: ['react', 'es2015','stage-0', 'react-hmre']
+        }
+```
+
 
 
 
