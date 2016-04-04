@@ -231,6 +231,8 @@ module.exports = {
 http://rhadow.github.io/2015/05/30/webpack-loaders-and-plugins/
 
 #使用ES7
+
+如:解構賦值
 ```
 npm install stage-0
 ```
