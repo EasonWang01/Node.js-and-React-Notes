@@ -477,6 +477,7 @@ class TextInput extends Component {
 export default TextInput
 ```
 ##在class中的方法如果有this的話他會不知道this是什麼，所以要在class 的constructor中把該方法綁進來
+1.
 ```
 import React, { Component } from 'react'
 
@@ -513,13 +514,13 @@ class TextInput extends Component {
 
 export default TextInput
 ```
-另一種寫法，是直接在DOM 的onchange中綁，但官方推薦綁在constructor
+2.另一種寫法，是直接在DOM 的onchange中綁，但官方推薦綁在constructor
 ```
 onChange={this.handleChange.bind(this)}
 ```
 但後來發現如果想傳入參數還是要在html tag中寫bind才會傳入
 
-第三種寫法(ES6的箭頭函數，最方便，因為會直接幫你綁定)
+3.第三種寫法(ES6的箭頭函數，最方便，因為會直接幫你綁定)
 
 ```
 _handleClick = (e) => {
