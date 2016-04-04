@@ -517,6 +517,8 @@ export default TextInput
 ```
 onChange={this.handleChange.bind(this)}
 ```
+但後來發現如果想傳入參數還是要在html tag中寫bind才會傳入
+
 第三種寫法(ES6的箭頭函數，最方便，因為會直接幫你綁定)
 
 ```
@@ -525,6 +527,10 @@ _handleClick = (e) => {
     console.log(this);
 }
 ```
+```
+ <button onClick={()=>this.handleSubmit()}>Submit</button>
+```
+好處是不用再用bind
 
 ####!每次改動constructor記得都要重新整理，就算有用Hot reload
 
