@@ -203,30 +203,218 @@ function decrement(text) {
 
 ###流程:
 
-
+```
 1.定義一個action物件
+
+
+2.定義reducer(對應不同action型態做不同處理)
+
+
+3.綁定reducer給createStore
+
+
+4.view發出dispatch(action) 傳給reducer再更新store
+
+
+5.Store傳回給view
+```
+##實做:
+1.
+
+package.json
+```
+{
+  "name": "react-todo-list",
+  "version": "1.0.0",
+  "description": "A simple todo list app built with React, Redux and Webpack",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon server/server.js --ignore components"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kweiberth/react-todo-list.git"
+  },
+  "author": "Kurt Weiberth",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.1.0",
+    "express": "^4.13.4",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "redux-logger": "^2.6.1",
+    "webpack": "^1.12.13",
+    "webpack-dev-middleware": "^1.5.1",
+    "webpack-hot-middleware": "^2.6.4"
+  }
+}
+
+```
+新增後輸入`npm install`
+
+2.
+
+webpack.config.js
+```
+var webpack = require('webpack');
+
+module.exports = {
+  devtool: 'inline-source-map',
+  entry: [
+    'webpack-hot-middleware/client',
+    './client/client.js'
+  ],
+  output: {
+    path: require("path").resolve("./dist"),
+    filename: 'bundle.js',
+    publicPath: '/'
+  },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['react', 'es2015', 'react-hmre']
+        }
+      }
+    ]
+  }
+}
+
+```
+3.
+
+新增server 資料夾，裡面放入server.js
+```
+var express = require('express');
+var path = require('path');
+var config = require('../webpack.config.js');
+var webpack = require('webpack');
+var webpackDevMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
+
+var app = express();
+
+var compiler = webpack(config);
+
+app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
+app.use(webpackHotMiddleware(compiler));
+
+app.use(express.static('./dist'));
+
+app.use('/', function (req, res) {
+    res.sendFile(path.resolve('client/index.html'));
+});
+
+var port = 3000;
+
+app.listen(port, function(error) {
+  if (error) throw error;
+  console.log("Express server listening on port", port);
+});
+
+```
+4.
+  
+新client資料夾，裡面放入index.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React Todo List</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="bundle.js"></script>
+</body>
+</html>
+
+```
+以及，client.js
+```
+import React from 'react'
+import { render } from 'react-dom'
+import App from '../components/App'
+import configureStore from '../redux/store'
+import {Provider} from 'react-redux'
+
+let initialState = {
+	todos:[{
+		id:0,
+		completed: false,
+		text:'initial for demo'
+
+	}]
+}
+let store = configureStore(initialState);
+
+render(
+  <Provider store={store} >
+  <App/>
+  </Provider>,
+  document.getElementById('app')
+)
+
+```
+Provider用來連結react即redux的store
+
+
+5.
+
+新增redux資料夾
+
+裡面放入三個檔案
+
+`store.js`  `action.js`  `reducer.js`
+
+store.js
+
+```
+import {applyMiddleware,compose,createStore} from "redux"
+import reducer from './reducer'
+import logger from 'redux-logger'
+
+let finalCreateStore = compose(
+	applyMiddleware(logger())
+	)(createStore)
+
+export default function configureStore(initialState = { todos:[]}){
+	return finalCreateStore(reducer,initialState)
+
+}
+```
+這裡我們加入了中間件logger
+
+而store的必要參數為reducer，我們用`import reducer from './reducer'`傳入
+
+action.js
 ```
 let  actions ={ 
 	addTodo:(text)=>{
 		return ({
-            type:'ADD_TODO',
-            text:text})
-  }
+	type:'ADD_TODO',
+	text:text})
+}
 }
 
 
 export default actions
 ```
-2.定義reducer(對應不同action型態做不同處理)
-
+reducer.js
 ```
-function getId(state){
-	return state.todos.reduce((maxId,todo)=>{
-		return Math.max(todo.id,maxId)
-	},-1) + 1
-
-}
-
+let getId = 1 ;
 
 export default function reducer(state,action){
 	switch(action.type){
@@ -236,7 +424,7 @@ export default function reducer(state,action){
 				todos:[{
 				  text:action.text,
 				  completed:false,
-				  id:getId(state)
+				  id:getId++
 
 				},...state.todos]
 			})
@@ -248,24 +436,11 @@ export default function reducer(state,action){
 
 }
 ```
+最後建立component資料夾
 
-3.綁定reducer給createStore
-```
-import {applyMiddleware,compose,createStore} from "redux"
-import reducer from './reducer'
-import logger from 'redux-logger'
-//下面為，使我們再console可以看到action發出的logger
-let finalCreateStore = compose(
-	applyMiddleware(logger())
-	)(createStore)
+裡面放入`App.js` `TodoInput.js`  `TodoList.js`
 
-export default function configureStore(initialState = { todos:[]}){
-	return finalCreateStore(reducer,initialState)
-
-}
-
-```
-4.view發出dispatch(action) 傳給reducer再更新store
+App.js
 ```
 import React, { Component } from 'react'
 import TodoInput from './TodoInput.js'
@@ -292,12 +467,76 @@ function  mapStateToProps(state){
 
 export default connect(mapStateToProps)(App)
 
+```
+從chrome React dev tool可以看到如果使用connect
+
+App元件可以接到從store來的state且轉成他的props
+
+TodoInput.js
+```
+import React, { Component } from 'react'
+import action from '../redux/actions.js'
+class TodoInput extends Component {
+
+  constructor(props, context) {
+    super(props, context)
+ 
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+
+ 
+  handleSubmit(){
+    event.preventDefault()
+    //this.props.dispatch()
+    console.log(this._input.value);
+    this.props.dispatch(action.addTodo(this._input.value));
+  }
+
+
+
+
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+
+          placeholder="Type in your tode"
+     
+          ref={(c) => this._input = c}
+        />
+        <button onClick={this.handleSubmit}>Submit</button>
+      </div>
+    )
+  }
+
+}
+
+export default TodoInput
 
 ```
-
-5.Store傳回給view
+TodoList.js
 ```
-使用connect後connect擁有store (顯示為state)
+import React, { Component } from 'react'
 
-使用connect(mapStateToProps)(App)  將connect的store傳入App元件 為其props
+class TodoList extends Component {
+
+  render() {
+    return (
+      <ul>
+        {
+          this.props.todos.map((todo)=>{
+            return <li key={todo.id}> {todo.text}  </li>
+          })
+        }
+
+      </ul>
+    )
+  }
+
+}
+
+export default TodoList
+
 ```
