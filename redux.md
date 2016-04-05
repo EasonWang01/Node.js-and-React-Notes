@@ -659,3 +659,36 @@ class TodoList extends Component {
 export default TodoList
 
 ```
+完整版在 branch toggle
+
+#接著加入三個選項，分別顯示all,active,completed
+
+1.新增FilterLink.js
+```
+import React, { Component } from 'react'
+import action from '../redux/actions.js'
+import store from '../redux/store'
+class FliterLink extends Component {
+
+	render(){
+
+
+	return	<a  href='#'
+			onClick={e=>{
+				e.preventDefault();
+				//console.log(this.props.filter)
+				store.dispatch(action.FilterTodo(this.props.filter))
+										
+			}}
+					
+		>
+			{this.props.children}
+		</a>
+	}
+
+
+
+}
+
+export default FliterLink
+```
