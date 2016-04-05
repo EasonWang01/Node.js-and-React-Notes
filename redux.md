@@ -1001,7 +1001,7 @@ class TodoList extends Component {
         return this.props.todos.todos;
       }
     }.bind(this)
-    filtered();
+    
    
     return (
       <div>
