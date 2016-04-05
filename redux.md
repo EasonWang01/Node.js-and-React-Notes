@@ -849,3 +849,5 @@ var filtered = (this.props.todos).filter(function(state){
 });
 console.log(filtered)
 ```
+(filter()接受一個function的運算且return一個值，為true或false)
+(對array每個index做遍歷，如果為true則繼續保留在array)
