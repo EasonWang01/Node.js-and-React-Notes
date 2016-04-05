@@ -1000,13 +1000,6 @@ class TodoList extends Component {
     }.bind(this)
     filtered();
    
-/*
-var filtered = (this.props.todos).filter(function(state){
-  return state.completed==false
-
-});*/
-//console.log(filtered)
-
     return (
       <div>
       <ul>
