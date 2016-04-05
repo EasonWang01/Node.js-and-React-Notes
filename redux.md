@@ -1045,3 +1045,4 @@ class TodoList extends Component {
 export default TodoList
 
 ```
+使用bind是因為我們在function內想取得class的執行環境，所以把他綁到this
