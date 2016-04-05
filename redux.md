@@ -543,3 +543,119 @@ export default TodoList
 完整版:(於master branch)
 
 https://github.com/EasonWang01/Redux-tutorial 
+
+#接著幫他加上toggle
+使點選後判斷完成了沒，來讓事項有一橫線
+
+1.先在action.js
+```
+let  actions ={ 
+	addTodo:(text)=>{
+		return ({
+	type:'ADD_TODO',
+	text:text})
+},
+	toggleTodo:(id)=>{
+		return({
+	type:'TOGGLE_TODO',
+	id:id,
+	})
+
+	}
+}
+
+
+export default actions
+```
+2.reducer.js
+
+```
+let getId = 1 ;
+
+export default function reducer(state,action){
+	switch(action.type){
+		case 'ADD_TODO':
+			
+			return(	Object.assign({},state,{
+				todos:[{
+				  text:action.text,
+				  completed:false,
+				  id:getId++
+
+				},...state.todos]
+			})
+			)
+		case 'TOGGLE_TODO':
+
+      return Object.assign({},state,{todos:state.todos.map(function(state){
+                if(state.id!==action.id){
+                return  state
+                };
+
+                return {...state,completed:!state.completed}
+           
+			}) }
+      )
+
+
+	
+
+				
+
+		default:
+			return state;
+
+	}
+
+}
+```
+最後在TodoList.js
+```
+import React, { Component } from 'react'
+import action from '../redux/actions.js'
+import store from '../redux/store'
+class TodoList extends Component {
+
+   constructor(props, context) {
+    super(props, context)
+ 
+  }
+
+
+
+
+
+  liClick(a){
+   
+      store.dispatch(action.toggleTodo(a.id));
+
+  }
+
+
+
+
+  render() {
+    return (
+      <ul>
+        {
+          this.props.todos.map((todo)=>{
+            return <li 
+            key={todo.id} 
+            onClick={()=>this.liClick(todo)} 
+            style= {{textDecoration:todo.completed?'line-through':'none'}}  
+            >
+             {todo.text}  
+
+             </li>
+          })
+        }
+
+      </ul>
+    )
+  }
+
+}
+
+export default TodoList
+
+```
