@@ -835,6 +835,17 @@ export default function reducer(state,action){
 }
 ```
 
-此時多了三個選項，且點擊會發出action
+(此時多了三個選項，且點擊會發出action)
 
 3.接著我們幫他加入發出action後所要做的事
+
+我們會使用array的filter方法，過濾出state.todos中completed為false的方法
+
+(給點擊active按鈕用)反之為給completed按鈕用
+```
+var filtered = (this.props.todos).filter(function(state){
+  return state.completed==false
+
+});
+console.log(filtered)
+```
