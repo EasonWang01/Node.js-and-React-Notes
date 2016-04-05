@@ -1046,3 +1046,143 @@ export default TodoList
 
 ```
 使用bind是因為我們在function內想取得class的執行環境，所以把他綁到this
+
+3.接著
+
+讓點擊後的link變黑色，無法重複點擊
+
+所以先幫FilterLink加上一個props
+```
+import React, { Component } from 'react'
+import action from '../redux/actions.js'
+import store from '../redux/store'
+import FilterLink from './FilterLink.js'
+
+class TodoList extends Component {
+
+   constructor(props, context) {
+    super(props, context)
+ 
+  }
+
+
+
+
+
+  liClick(a){
+   
+      store.dispatch(action.toggleTodo(a.id));
+
+  }
+
+
+
+
+  render() {
+   
+    var filtered  = function(){
+       
+      switch(this.props.todos.visbility){
+
+      case "SHOW_ALL":
+        return this.props.todos.todos;
+
+      case "SHOW_ACTIVE":
+        return (this.props.todos.todos).filter(function(state){
+                    return state.completed==false
+
+               });
+
+      case "SHOW_COMPLETED":
+        return (this.props.todos.todos).filter(function(state){
+                    return state.completed==true
+
+               });
+      default:
+        return this.props.todos.todos;
+      }
+    }.bind(this)
+   
+   
+/*
+var filtered = (this.props.todos).filter(function(state){
+  return state.completed==false
+
+});*/
+//console.log(filtered)
+
+    return (
+      <div>
+      <ul>
+        {
+          filtered(
+            ).map((todo)=>{
+            return <li 
+            key={todo.id} 
+            onClick={()=>this.liClick(todo)} 
+            style= {{textDecoration:todo.completed?'line-through':'none'}}  
+            >
+             {todo.text}  
+
+             </li>
+          })
+        }
+
+      </ul>
+      <p>
+          {"Show: "}
+
+          <FilterLink filter="SHOW_ALL"currentFilter={this.props.todos.visbility}>
+         All
+          </FilterLink>
+          {"  ,  "}
+          <FilterLink filter="SHOW_ACTIVE"currentFilter={this.props.todos.visbility}>
+         Active
+          </FilterLink>
+          {"  ,  "}
+          <FilterLink filter="SHOW_COMPLETED"currentFilter={this.props.todos.visbility}>
+         Completed
+          </FilterLink>
+
+      </p>
+      </div>
+    )
+  }
+
+}
+
+export default TodoList
+
+```
+之後點擊link後去偵測，這個link的filter props和當前store的filter屬性如符合的話，則只回傳普通的文字
+```
+import React, { Component } from 'react'
+import action from '../redux/actions.js'
+import store from '../redux/store'
+class FliterLink extends Component {
+
+	render(){
+		if(this.props.currentFilter==this.props.filter){
+			return <span> {this.props.children}</span>
+		}
+
+	return	<a  href='#'
+			onClick={e=>{
+				e.preventDefault();
+				//console.log(this.props.filter)
+				store.dispatch(action.FilterTodo(this.props.filter))
+										
+			}}
+					
+		>
+			{this.props.children}
+		</a>
+	}
+
+
+
+}
+
+export default FliterLink
+```
+
