@@ -692,3 +692,149 @@ class FliterLink extends Component {
 
 export default FliterLink
 ```
+2.將他加入TodoList.js
+
+```
+import React, { Component } from 'react'
+import action from '../redux/actions.js'
+import store from '../redux/store'
+import FilterLink from './FilterLink.js'
+
+class TodoList extends Component {
+
+   constructor(props, context) {
+    super(props, context)
+ 
+  }
+
+
+
+
+
+  liClick(a){
+   
+      store.dispatch(action.toggleTodo(a.id));
+
+  }
+
+
+
+
+  render() {
+    return (
+      <div>
+      <ul>
+        {
+          this.props.todos.map((todo)=>{
+            return <li 
+            key={todo.id} 
+            onClick={()=>this.liClick(todo)} 
+            style= {{textDecoration:todo.completed?'line-through':'none'}}  
+            >
+             {todo.text}  
+
+             </li>
+          })
+        }
+
+      </ul>
+      <p>
+          {"Show: "}
+          
+          <FilterLink filter="SHOW_ALL">
+         All
+          </FilterLink>
+          {"  ,  "}
+          <FilterLink filter="SHOW_ACTIVE">
+         Active
+          </FilterLink>
+          {"  ,  "}
+          <FilterLink filter="SHOW_COMPLETED">
+         Completed
+          </FilterLink>
+
+      </p>
+      </div>
+    )
+  }
+
+}
+
+export default TodoList
+
+
+```
+更改action.js
+```
+let  actions ={ 
+	addTodo:(text)=>{
+		return ({
+	type:'ADD_TODO',
+	text:text})
+},
+	toggleTodo:(id)=>{
+		return({
+	type:'TOGGLE_TODO',
+	id:id,
+	})
+
+	},
+	FilterTodo:(filter)=>{
+		return({
+	type:'SET_VISBILITY_FILTER',
+	filter:filter		
+
+		})
+	}
+}
+
+
+export default actions
+```
+以及reducer.js
+```
+let getId = 1 ;
+
+export default function reducer(state,action){
+	switch(action.type){
+		case 'ADD_TODO':
+			
+			return(	Object.assign({},state,{
+				todos:[{
+				  text:action.text,
+				  completed:false,
+				  id:getId++
+
+				},...state.todos]
+			})
+			)
+		case 'TOGGLE_TODO':
+
+      return Object.assign({},state,{todos:state.todos.map(function(state){
+                if(state.id!==action.id){
+                return  state
+                };
+
+                return {...state,completed:!state.completed}
+           
+			}) }
+      )
+
+      	case 'SET_VISBILITY_FILTER':
+
+      	return state
+	
+
+				
+
+		default:
+			return state;
+
+	}
+
+}
+```
+
+此時多了三個選項，且點擊會發出action
+
+3.接著我們幫他加入發出action後所要做的事
