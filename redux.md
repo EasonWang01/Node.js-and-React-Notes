@@ -946,6 +946,9 @@ export default connect(mapStateToProp)(App)
 
 最後
 
+(把原本傳入最後return要map的物件先做過濾)
+
+
 TodoList.js
 
 ```
