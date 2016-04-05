@@ -8,7 +8,7 @@ action => reducer => store =>回傳state給views=>views發出action
 
 2.讓views得到store中state的方法
 ```
-1.使用connect讓最上層元件取得Provider中的store，在用props傳下去
+1.使用connect讓最上層元件取得Provider中的store，再用props傳下去
 
 2.使用store.getState
 ```
