@@ -247,6 +247,8 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 之後點選link發現url後不再出現`#`，但點選後這時按F5，發現出現了`Cannot get`
 
 
+解決方法:參考
+https://github.com/reactjs/react-router/blob/master/docs/guides/Histories.md#configuring-your-server
 
 
 
@@ -259,6 +261,9 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
 
 
+
+
+---
 參考至
 
 https://github.com/reactjs/react-router-tutorial/tree/master/lessons/02-rendering-a-route
