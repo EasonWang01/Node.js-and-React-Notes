@@ -2,7 +2,16 @@
 source code
 https://cdnjs.cloudflare.com/ajax/libs/redux/3.3.1/redux.js
 #概念
-action => reducer => store
+action => reducer => store =>回傳state給views=>views發出action
+
+1.state統一由store保存，任何更新state都要告知store
+
+2.讓views得到store中state的方法
+```
+1.使用connect讓最上層元件取得Provider中的store，在用props傳下去
+
+2.使用store.getState
+```
 
 #簡單範例
 ```
