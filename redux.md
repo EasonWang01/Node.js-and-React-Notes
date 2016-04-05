@@ -2,7 +2,7 @@
 source code
 https://cdnjs.cloudflare.com/ajax/libs/redux/3.3.1/redux.js
 #概念
-action => reducer => store =>回傳state給views
+views點擊=>action => reducer => store =>回傳state給views
 
 1.state統一由store保存，任何更新state都要告知store
 
@@ -860,3 +860,192 @@ console.log(filtered)
 ```
 (filter()讓array中每個元素接受一個function的運算且return一個值，為true或false)
 (如果為true則繼續保留在array)
+
+但
+
+在這之前
+
+我們先幫reducer加上一個狀態
+```
+let getId = 1 ;
+
+export default function reducer(state,action){
+	switch(action.type){
+		case 'ADD_TODO':
+			
+			return(	Object.assign({},state,{
+				todos:[{
+				  text:action.text,
+				  completed:false,
+				  id:getId++
+
+				},...state.todos]
+			})
+			)
+		case 'TOGGLE_TODO':
+
+      return Object.assign({},state,{todos:state.todos.map(function(state){
+                if(state.id!==action.id){
+                return  state
+                };
+
+                return {...state,completed:!state.completed}
+           
+			}) }
+      )
+
+      	case 'SET_VISBILITY_FILTER':
+
+      	return Object.assign({},state,{visbility:action.filter}) 
+	
+
+				
+
+		default:
+			return state;
+
+	}
+
+}
+```
+接著將App.js改為
+```
+import React, { Component } from 'react'
+import TodoInput from './TodoInput.js'
+import TodoList from './TodoList.js'
+import {connect} from 'react-redux'
+
+
+
+
+class App extends Component {
+
+  render() {
+    return (
+      <div>
+        <h1>Todo list</h1>
+        <TodoInput />
+        <TodoList  todos={this.props}/>
+     
+  
+      </div>
+    )
+  }
+
+}
+function  mapStateToProp(state){
+
+	return state
+}
+
+
+export default connect(mapStateToProp)(App)
+
+```
+(因為我們現在state裡不只一個state，所以先傳入整包，於子代再做取出)
+
+最後
+
+TodoList.js
+
+```
+import React, { Component } from 'react'
+import action from '../redux/actions.js'
+import store from '../redux/store'
+import FilterLink from './FilterLink.js'
+
+class TodoList extends Component {
+
+   constructor(props, context) {
+    super(props, context)
+ 
+  }
+
+
+
+
+
+  liClick(a){
+   
+      store.dispatch(action.toggleTodo(a.id));
+
+  }
+
+
+
+
+  render() {
+   
+    var filtered  = function(){
+       
+      switch(this.props.todos.visbility){
+
+      case "SHOW_ALL":
+        return this.props.todos.todos;
+
+      case "SHOW_ACTIVE":
+        return (this.props.todos.todos).filter(function(state){
+                    return state.completed==false
+
+               });
+
+      case "SHOW_COMPLETED":
+        return (this.props.todos.todos).filter(function(state){
+                    return state.completed==true
+
+               });
+      default:
+        return this.props.todos.todos;
+      }
+    }.bind(this)
+    filtered();
+   
+/*
+var filtered = (this.props.todos).filter(function(state){
+  return state.completed==false
+
+});*/
+//console.log(filtered)
+
+    return (
+      <div>
+      <ul>
+        {
+          filtered().map((todo)=>{
+            return <li 
+            key={todo.id} 
+            onClick={()=>this.liClick(todo)} 
+            style= {{textDecoration:todo.completed?'line-through':'none'}}  
+            >
+             {todo.text}  
+
+             </li>
+          })
+        }
+
+      </ul>
+      <p>
+          {"Show: "}
+
+          <FilterLink filter="SHOW_ALL">
+         All
+          </FilterLink>
+          {"  ,  "}
+          <FilterLink filter="SHOW_ACTIVE">
+         Active
+          </FilterLink>
+          {"  ,  "}
+          <FilterLink filter="SHOW_COMPLETED">
+         Completed
+          </FilterLink>
+
+      </p>
+      </div>
+    )
+  }
+
+}
+
+export default TodoList
+
+```
