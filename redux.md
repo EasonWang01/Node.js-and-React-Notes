@@ -2,7 +2,7 @@
 source code
 https://cdnjs.cloudflare.com/ajax/libs/redux/3.3.1/redux.js
 #概念
-action => reducer => store =>回傳state給views=>views發出action
+action => reducer => store =>回傳state給views
 
 1.state統一由store保存，任何更新state都要告知store
 
