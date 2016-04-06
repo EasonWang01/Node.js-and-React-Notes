@@ -1186,3 +1186,41 @@ class FliterLink extends Component {
 export default FliterLink
 ```
 
+#中間件ActionCreator
+
+原本App.js的props裡只有Provider傳下來的dispatch方法，而使用這個後，dispatch被取代為actions
+
+App.js加上
+```
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+```
+1.
+
+原本父元件使用`this.props.dispatch`將dispatch方法傳下去，現在改為用`this.props.actions`
+
+2.
+
+而VIEW發送ACTION的方式從
+```
+  handleSubmit(event) {
+    event.preventDefault()
+    this.props.dispatch(actions.addTodo(this.state.inputText))
+  }
+```
+改為
+```
+  handleSubmit(event) {
+    event.preventDefault()
+    this.props.addTodo(this.state.inputText)
+  }
+```
+
+但
+
+如果你是直接把STORE在每個元件引入的話，每個元件就直接知道有DISPATCH這個方法，所以也不用往下傳遞PROPS教導，所以也不用使用這個方法
