@@ -1223,4 +1223,4 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 但
 
-如果你是直接把STORE在每個元件引入的話，每個元件就直接知道有DISPATCH這個方法，所以也不用往下傳遞PROPS教導，所以也不用使用這個方法
+如果你是直接把STORE在每個元件引入的話，每個元件就直接知道有DISPATCH這個方法，所以也不用往下傳遞PROPS教導，所以也不用使用ACTIONCreator這個方法
