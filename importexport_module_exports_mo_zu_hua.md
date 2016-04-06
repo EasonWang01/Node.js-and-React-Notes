@@ -23,6 +23,31 @@ http://es6.ruanyifeng.com/#docs/module
 ```
  import * as lib from 'lib';
 ```
+舉例:
+```
+export function addTodo(text) {
+  return {
+    type: 'ADD_TODO',
+    text
+  };
+}
+
+export function removeTodo(id) {
+  return {
+    type: 'REMOVE_TODO',
+    id
+  };
+}
+```
+傳回的東西是一個物件
+```
+import * as TodoActionCreators from './TodoActionCreators';
+console.log(TodoActionCreators);
+// {
+//   addTodo: Function,
+//   removeTodo: Function
+// }
+```
 #CommonJS
 ```
 exports.foo = function () { ... };
