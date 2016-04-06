@@ -529,6 +529,10 @@ onChange={this.handleChange.bind(this)}
 ```
  <button onClick={()=>this.handleSubmit()}>Submit</button>
 ```
+如要傳入事件，記得兩邊()都要傳入
+```
+ <form onSubmit={(e)=>this.handleSubmit(e)}>
+```
 好處是不用再用bind
 
 參考:http://egorsmirnov.me/2015/08/16/react-and-es6-part3.html
