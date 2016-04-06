@@ -525,12 +525,7 @@ onChange={this.handleChange.bind(this)}
 
 3.第三種寫法(ES6的箭頭函數，最方便，因為會直接幫你綁定)
 
-```
-_handleClick = (e) => {
-    // 使用箭头函数(arrow function)
-    console.log(this);
-}
-```
+
 ```
  <button onClick={()=>this.handleSubmit()}>Submit</button>
 ```
