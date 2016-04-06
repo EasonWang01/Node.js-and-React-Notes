@@ -531,6 +531,8 @@ onChange={this.handleChange.bind(this)}
 ```
 好處是不用再用bind
 
+參考:http://egorsmirnov.me/2015/08/16/react-and-es6-part3.html
+
 ####!每次改動constructor記得都要重新整理，就算有用Hot reload
 
 #2.在class內所有的this都是指到那個class
