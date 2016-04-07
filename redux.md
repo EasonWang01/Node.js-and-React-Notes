@@ -1326,6 +1326,7 @@ const rootReducer = combineReducers({
   todos,
 })
 ```
+>在多人合作中，我們會把reducer每個function放在不同檔案，以減少conflict
 
 #中間件ActionCreator
 
