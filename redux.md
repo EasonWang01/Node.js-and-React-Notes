@@ -1252,7 +1252,7 @@ function reducer (state,action){
 
 export default reducer
 ```
-
+(上面，我們將reducer寫成兩個function)
 
 
 #中間件ActionCreator
