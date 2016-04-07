@@ -1312,7 +1312,7 @@ const rootReducer = combineReducers({
 
 export default rootReducer
 ```
-三個重點
+兩個重點
 ```
 1. combineReducers 沒有丟預設state進去所以，我們要用ES6的寫法幫function寫上預設參數(Line 4 and 35)
 2. function內一開始傳進去的的不再是整個state而是取key後的state，所以裡面也須更改(Line 27.17.43)
