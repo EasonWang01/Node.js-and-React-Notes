@@ -1268,7 +1268,7 @@ function todos(state=[],action){
 				  completed:false,
 				  id:getId++
 
-				},...state.todos]
+				},...state]
 			
 		case 'TOGGLE_TODO':
 
@@ -1315,7 +1315,16 @@ export default rootReducer
 兩個重點
 ```
 1. combineReducers 沒有丟預設state進去所以，我們要用ES6的寫法幫function寫上預設參數(Line 4 and 35)
-2. function內一開始傳進去的的不再是整個state而是取key後的state，所以裡面也須更改(Line 27.17.43)
+2. function內一開始傳進去的的不再是整個state而是取key後的state，所以裡面也須更改(Line 13. 27.17.43)
+```
+最後，在ES6在物件的key跟value名稱相同時可省略
+
+所以寫成
+```
+const rootReducer = combineReducers({
+  visbility,
+  todos,
+})
 ```
 
 #中間件ActionCreator
