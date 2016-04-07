@@ -1185,6 +1185,76 @@ class FliterLink extends Component {
 
 export default FliterLink
 ```
+#使用combined reduecer
+
+在這之前，我們先改變我們reducer的寫法
+
+```
+
+let getId = 1 ;
+
+function todos(state,action){
+	switch(action.type){
+		case 'ADD_TODO':
+			
+			return [{
+				  text:action.text,
+				  completed:false,
+				  id:getId++
+
+				},...state.todos]
+			
+		case 'TOGGLE_TODO':
+
+      return state.todos.map(function(state){
+                if(state.id!==action.id){
+                return  state
+                };
+
+                return {...state,completed:!state.completed}
+           
+			}) 
+
+		default:
+			return state.todos;
+
+	}
+
+}
+
+
+
+function visbility(state,action){
+	switch(action.type){
+		case 'SET_VISBILITY_FILTER':
+
+      	return action.filter
+	
+
+		default:
+			return state.visbility;
+ }
+}
+
+
+
+
+
+function reducer (state,action){
+  return	Object.assign({},state,{
+				visbility:visbility(state,action),
+				todos:todos(state,action)
+
+	});
+
+}
+
+
+export default reducer
+```
+
+
+
 
 #中間件ActionCreator
 
@@ -1224,3 +1294,5 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 但
 
 如果你是直接把STORE在每個元件引入的話，每個元件就直接知道有DISPATCH這個方法，所以也不用往下傳遞PROPS教導，所以也不用使用ACTIONCreator這個方法
+
+參考:https://camsong.github.io/redux-in-chinese/docs/api/bindActionCreators.html
