@@ -1189,7 +1189,7 @@ export default FliterLink
 
 在這之前，我們先改變我們reducer的寫法
 
-```
+```javascript
 
 let getId = 1 ;
 
@@ -1252,7 +1252,6 @@ function reducer (state,action){
 
 export default reducer
 ```
-
 
 
 
