@@ -1334,6 +1334,11 @@ const rootReducer = combineReducers({
 
 App.js加上
 ```
+import { bindActionCreators } from 'redux';
+import actions from '../redux/actions.js'
+
+```
+```
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(actions, dispatch)
@@ -1342,6 +1347,8 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
 ```
+即可發現點選React devtool中App的props的dispatch變為actions物件
+
 1.
 
 原本父元件使用`this.props.dispatch`將dispatch方法傳下去，現在改為用`this.props.actions`
