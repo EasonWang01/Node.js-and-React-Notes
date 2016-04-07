@@ -1254,6 +1254,69 @@ export default reducer
 ```
 (上面，我們將reducer寫成兩個function)
 
+combined reducer即是這個概念，所以我們把reducer.js 改為如下
+```javascript
+import { combineReducers } from 'redux'
+let getId = 1 ;
+
+function todos(state=[],action){
+	switch(action.type){
+		case 'ADD_TODO':
+			
+			return [{
+				  text:action.text,
+				  completed:false,
+				  id:getId++
+
+				},...state.todos]
+			
+		case 'TOGGLE_TODO':
+
+      return state.map(function(state){
+                if(state.id!==action.id){
+                return  state
+                };
+
+                return {...state,completed:!state.completed}
+           
+			}) 
+
+		default:
+			return state;
+
+	}
+
+}
+
+
+
+function visbility(state="SHOW_ALL",action){
+	switch(action.type){
+		case 'SET_VISBILITY_FILTER':
+
+      	return action.filter
+	
+
+		default:
+			return state;
+ }
+}
+
+
+
+const rootReducer = combineReducers({
+  visbility: visbility,
+  todos:todos
+})
+
+
+export default rootReducer
+```
+三個重點
+```
+1. combineReducers 沒有丟預設state進去所以，我們要用ES6的寫法幫function寫上預設參數(Line 4 and 35)
+2. function內一開始傳進去的的不再是整個state而是取key後的state，所以裡面也須更改(Line 27.17.43)
+```
 
 #中間件ActionCreator
 
