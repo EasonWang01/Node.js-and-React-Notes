@@ -1375,3 +1375,66 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 如果你是直接把STORE在每個元件引入的話，每個元件就直接知道有DISPATCH這個方法，所以也不用往下傳遞PROPS教導，所以也不用使用ACTIONCreator這個方法
 
 參考:https://camsong.github.io/redux-in-chinese/docs/api/bindActionCreators.html
+
+
+#操作非同步動作(Async)
+例如:
+>我們今天有一個按鈕，點擊後發出action去跟server要資料，回傳資料後再觸發一個action去更新state
+
+###使用Redux-thunk 
+
+`npm install redux-thunk`
+
+將store.js改為
+```
+import {applyMiddleware,compose,createStore} from "redux"
+import reducer from './reducer'
+import logger from 'redux-logger'
+import thunk from 'redux-thunk'
+
+let initialState = {
+	visbility:'SHOW_ALL',
+	todos:[{
+		id:0,
+		completed: false,
+		text:'initial for demo'
+
+	}]
+}
+
+
+let finalCreateStore = compose(
+	applyMiddleware(thunk,logger())
+	)(createStore)
+
+function configureStore(initialState){
+	return finalCreateStore(reducer,initialState)
+
+}
+
+let store = configureStore(initialState)
+
+export default store
+```
+之後我們action.js裡面寫的方法不只可以return物件，還可以return function
+
+這個function就是用來寫非同步API，最後拿回資料再寫return，之後即會送到reducer處理
+
+例如:
+```
+	FilterTodo:(filter)=>{
+		return({
+	type:'SET_VISBILITY_FILTER',
+	filter:filter		
+
+		})
+	},
+///上面是一般的action，下面是thunk的action
+
+	con:()=>{
+		return (dispatch,getState)=>{
+			console.log(getState())
+		}
+	}
+```
+
