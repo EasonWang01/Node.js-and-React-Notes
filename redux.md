@@ -1437,4 +1437,4 @@ export default store
 		}
 	}
 ```
-
+在action.js內可以直接調用store的所有方法
