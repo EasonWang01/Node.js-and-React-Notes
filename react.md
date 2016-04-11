@@ -994,6 +994,8 @@ var inputValue = input.value;
 ```
 
 Style React
+
+把style放在物件裡面
 ```
   <button style={style.submit} onClick={()=>this.handleSubmit()}>Submit</button>
   
