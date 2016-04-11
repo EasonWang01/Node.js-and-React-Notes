@@ -36,49 +36,26 @@ https://github.com/roadhump/SublimeLinter-eslint
 範例:
 ```
  {
-   "snippets":{
+
+"snippets":{
 	
 		"html":{
 			"snippets":{
 
-				"a":"<a href=\"\"></a>"
-				
-		},
-			"snippets":{
+				"css":"<link rel='stylesheet' type='text/css' href='' />",
+				"js":"<script>   </script>",
+				"e":"<%   %>",
+				"ajax":"var xhttp = new XMLHttpRequest();\nxhttp.open('POST', '/ajax');\nxhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');\nxhttp.onreadystatechange = function() {\nif (xhttp.readyState == 4 && xhttp.status == 200) {console.log(xhttp.responseText);}}\nxhttp.send();"
 
-				"css":"<link rel='stylesheet' type='text/css' href='' />"
-				
 
 		},
-			"snippets":{
-
-				"js":"<script>   </script>"
-				
-
-		},
-			"snippets":{
-
-				"e":"<%   %>"
-				
-
-		},			
-		"snippets":{
-
-			"ajax":"var xhttp = new XMLHttpRequest();\nxhttp.open('POST', '/ajax');xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');xhttp.onreadystatechange = function() {if (xhttp.readyState == 4 && xhttp.status == 200) {console.log(xhttp.responseText);}}xhttp.send();"
-				
-
-		},
-			"snippets":{
-
-				"b":"<button style=\"width:50px;height:50px\"> </button>"
-				
-
-		},
+		
     }
 
- }
+  }
 
 }
+
 
 
 ```
