@@ -248,3 +248,27 @@ query: {
 
 官方解說
 https://webpack.github.io/docs/list-of-plugins.html#occurrenceorderplugin
+
+
+#多個HTML檔案分別引入不同bundle
+
+
+4
+```
+//For many entry points use arrays as a value of entry property:
+
+entry: {
+  app: ['./app/main.js', '.lib/index.js'],
+  vendors: ['react']
+}
+```
+app and vendors are arrays, so you can put there as many file paths, as you need.
+
+For output case it is so easy that I found it hard to be true :D
+```
+output: {
+  path: staticPath,
+  filename: '[name].js'
+}
+The [name] is taken from entry properties, so if we have app and vendors as properties, we got 2 output files - app.js and vendors.js.
+```
