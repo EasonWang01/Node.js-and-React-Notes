@@ -992,3 +992,12 @@ render((
 var input = this.refs.myInput;
 var inputValue = input.value;
 ```
+
+Style React
+```
+  <button style={style.submit} onClick={()=>this.handleSubmit()}>Submit</button>
+  
+  var style = {
+  submit:{background:"green"}
+}
+```
