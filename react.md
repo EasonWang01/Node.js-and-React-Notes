@@ -1007,7 +1007,20 @@ Style React
 ###使用其他庫
 
 1.Radium
-``
+```
+1.import Radium from 'radium'
+
+2.export default Radium(TodoInput) //class名稱
+
+3.var style = {
+  submit:{
+        ':hover': {
+              backgroundColor: 'red'
+            }
+  }
+}
+```
+http://stack.formidable.com/radium/
 
 2.Material-ui
 
@@ -1019,3 +1032,4 @@ import RaisedButton from 'material-ui/lib/raised-button';
 
  <RaisedButton label="Submit"onClick={()=>this.handleSubmit()} />
 ```
+http://www.material-ui.com/#/customization/inline-styles
