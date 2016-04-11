@@ -28,6 +28,67 @@ https://github.com/roadhump/SublimeLinter-eslint
 之後在view--syntax--Babel--javscript(Babel)即可
 
 
+##安裝Emmet
+
+安裝後於Package-setting=>Emmet=>Setting-User
+輸入設定檔案
+
+範例:
+```
+ {
+   "snippets":{
+	
+		"html":{
+			"snippets":{
+
+				"a":"<a href=\"\"></a>"
+				
+		},
+			"snippets":{
+
+				"css":"<link rel='stylesheet' type='text/css' href='' />"
+				
+
+		},
+			"snippets":{
+
+				"js":"<script>   </script>"
+				
+
+		},
+			"snippets":{
+
+				"e":"<%   %>"
+				
+
+		},			
+		"snippets":{
+
+			"ajax":"var xhttp = new XMLHttpRequest();\nxhttp.open('POST', '/ajax');xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');xhttp.onreadystatechange = function() {if (xhttp.readyState == 4 && xhttp.status == 200) {console.log(xhttp.responseText);}}xhttp.send();"
+				
+
+		},
+			"snippets":{
+
+				"b":"<button style=\"width:50px;height:50px\"> </button>"
+				
+
+		},
+    }
+
+ }
+
+}
 
 
+```
+如果要用多行
+```
+\　：區隔"
+\n ：斷行
+\t ：向後空一格
+```
+
+可參考
+http://phoenote.blogspot.tw/2015/10/emmet-sublime-plugin.html
 
