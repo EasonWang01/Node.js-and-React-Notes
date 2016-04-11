@@ -1,100 +1,92 @@
 # 使用webpack
 
+###用途:可以在js檔案中使用require、 import，並將css 圖片 js打包為單一js檔案
 
-1.創造如下結構
+
+官方有webpack-dev-server但，我們未來部屬後還是要用自己的server
+
+以下為範例，分別設定server.js 與 webpack.config.js
+
+server.js
 ```
-/app
-  main.js
-  component.js
-/build
-   index.html
-   
+var express = require('express');
+var path = require('path');
+var config = require('../webpack.config.js');
+var webpack = require('webpack');
+var webpackDevMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
+
+var app = express();
+
+var compiler = webpack(config);
+
+app.use(webpackDevMiddleware(compiler, {noInfo:true,publicPath: config.output.publicPath}));
+app.use(webpackHotMiddleware(compiler));
+
+app.use(express.static('./dist'));
+
+
+app.post('/ajax',function(req,res){
+	
+	res.end("success");
+})
+
+app.get('*', function (req, res) {
+    res.sendFile(path.resolve('client/index.html'));
+
+
+});
+
+
+
+var port = 3000;
+
+app.listen(port, function(error) {
+  if (error) throw error;
+  console.log("Express server listening on port", port);
+});
+
+```
+
 webpack.config.js
 ```
-2.npm init
-
-3.npm install webpack --save-dev
-
-4.設定webpack.config.js
-```
-var path = require('path');
-
+var webpack = require('webpack');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'app/main.js'),
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js',
-    },
-};
-```
-5.設定app/component.js
-```
-'use strict';
+  devtool: 'inline-source-map',
+  entry: {
+    app:[
+    'webpack-hot-middleware/client',
+    './client/client.js'
+  ],
+  vendor:['react','react-dom']
+},
 
-
-module.exports = function () {
-    var element = document.createElement('h1');
-
-    element.innerHTML = 'Hello world';
-
-    return element;
-};
-```
-6.設定app/main.js
-```
-'use strict';
-var component = require('./component.js');
-
-
-document.body.appendChild(component());
-```
-7.在terminal 輸入  webpack，發現多了bundle.js檔案
-
-8.在bundle.js同層加上index.html
-```
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8"/>
-  </head>
-  <body>
-    <script src="bundle.js"></script>
-  </body>
-</html>
-```
-##如何讓它不要每次改完都要輸入webpack在編譯一次呢?
-
-在package.json加上
-```
-{
-  "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
+  output: {
+    path: require("path").resolve("./dist"),
+    filename: 'bundle.js',
+    publicPath: '/'
+  },
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['react', 'es2015','stage-0', 'react-hmre']
+        }
+      }
+    ]
   }
 }
-```
-最後 npm run dev
 
-http://localhost:8080
-
-##如何不要重新整理網頁呢
-
-webpack.config.js
-```
-var path = require('path');
-
-module.exports = {
-    entry: [
-      'webpack/hot/dev-server',
-      'webpack-dev-server/client?http://localhost:8080',
-      path.resolve(__dirname, 'app/main.js')
-    ],
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js',
-    },
-};
 ```
 ------------------------------
 
