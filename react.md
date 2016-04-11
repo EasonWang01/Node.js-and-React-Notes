@@ -995,6 +995,7 @@ var inputValue = input.value;
 
 Style React
 
+###一般寫法:
 把style放在物件裡面
 ```
   <button style={style.submit} onClick={()=>this.handleSubmit()}>Submit</button>
@@ -1002,4 +1003,19 @@ Style React
   var style = {
   submit:{background:"green"}
 }
+```
+###使用其他庫
+
+1.Radium
+``
+
+2.Material-ui
+
+`npm install material-ui`
+
+都是個別引入
+```
+import RaisedButton from 'material-ui/lib/raised-button';
+
+ <RaisedButton label="Submit"onClick={()=>this.handleSubmit()} />
 ```
