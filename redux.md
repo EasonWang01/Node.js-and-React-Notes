@@ -1440,4 +1440,97 @@ export default store
 PS:
 
 在action.js內可以直接調用store的所有方法，因為我們action是由store發出的
-ex:`store.dispatch(action.toggleTodo(a.id));`
+ex:`store.dispatch(action.toggleTodo(a.id));```
+
+#React-router-redux
+
+>用途:將Redux結合react-router
+
+
+安裝
+`npm install --save react-router-redux`
+
+
+1.在使用combind reducer的地方加上
+
+```
+import {routerReducer} from 'react-router-redux'
+
+
+const rootReducer = combineReducers({
+  visbility,
+  todos,
+  routing: routerReducer,
+})
+
+```
+
+2.將client.js加上
+```
+import { Router, Route, browserHistory } from 'react-router'
+import { syncHistoryWithStore} from 'react-router-redux'
+
+const history = syncHistoryWithStore(browserHistory, store)
+
+```
+完整版
+```
+import React from 'react'
+import { render } from 'react-dom'
+import App from '../components/App'
+import store from '../redux/store'
+import {Provider} from 'react-redux'
+import { Router, Route, browserHistory } from 'react-router'
+import { syncHistoryWithStore} from 'react-router-redux'
+import TodoList from '../components/TodoList.js'
+import TodoInput from '../components/TodoInput.js'
+
+const history = syncHistoryWithStore(browserHistory, store)
+
+render(
+  <Provider store={store} >
+     <Router history={history}>
+      <Route path="/" foo="bar" component={App}>
+         <Route path="/as" component={TodoList}/>
+         <Route path="/ass" component={TodoInput}/>
+      </Route>
+    </Router> 
+  </Provider>,
+  document.getElementById('app')
+)
+
+```
+
+最後將App.js改為
+```
+import React, { Component } from 'react'
+import TodoInput from './TodoInput.js'
+import TodoList from './TodoList.js'
+import {connect} from 'react-redux'
+
+class App extends Component {
+
+  render() {
+    return (
+      <div>
+        <h1>Todo list</h1>
+      
+     {React.cloneElement(this.props.children, { todos:this.props })}
+  
+      </div>
+    )
+  }
+
+}
+function  mapStateToProp(state){
+
+	return state
+}
+
+
+export default connect(mapStateToProp)(App)
+
+```
+使用`React.cloneElement`原因為，原本react-router要顯示子帶router必須用{this.props.children}但這樣原本的prop沒辦法往下傳
+
+所以使用`React.cloneElement`即可在子代傳入props
