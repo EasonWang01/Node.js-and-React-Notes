@@ -1036,6 +1036,7 @@ http://www.material-ui.com/#/customization/inline-styles
 
 #####PS:如果使用click相關的元件沒反應的話
 `npm install react-tap-event-plugin`
+
 ```
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
