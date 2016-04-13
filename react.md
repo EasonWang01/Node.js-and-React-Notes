@@ -1006,7 +1006,7 @@ Style React
 ```
 ###使用其他庫
 
-1.Radium
+###1.Radium
 ```
 1.import Radium from 'radium'
 
@@ -1022,7 +1022,7 @@ Style React
 ```
 http://stack.formidable.com/radium/
 
-2.Material-ui
+###2.Material-ui
 
 `npm install material-ui`
 
@@ -1033,3 +1033,15 @@ import RaisedButton from 'material-ui/lib/raised-button';
  <RaisedButton label="Submit"onClick={()=>this.handleSubmit()} />
 ```
 http://www.material-ui.com/#/customization/inline-styles
+
+#####PS:如果使用click相關的元件沒反應的話
+```
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+  constructor(props) {
+    super(props);
+   
+    injectTapEventPlugin();
+  }
+```
+參考:https://github.com/callemall/material-ui#react-tap-event-plugin
