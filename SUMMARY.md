@@ -28,6 +28,7 @@
 * [ES6 Set,Map](es6_set,map.md)
 * [ES6 Promise](es6_promise.md)
 * [ES6 Arrow function](es6_arrow_function.md)
+* [ES6 Object](es6_object.md)
 * [Handlebars.js](handlebarsjs.md)
 * [Node ajax](node_ajax.md)
 * [ESLint](eslint.md)
@@ -41,5 +42,4 @@
 * [socket.io](socketio.md)
 * [rethinkdb](rethinkdb.md)
 * [Sublime 安裝套件](sublime_an_zhuang_tao_jian.md)
-* [ES6 Object](es6_object.md)
 
