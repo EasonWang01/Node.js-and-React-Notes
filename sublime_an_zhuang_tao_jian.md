@@ -69,3 +69,17 @@ https://github.com/roadhump/SublimeLinter-eslint
 可參考
 http://phoenote.blogspot.tw/2015/10/emmet-sublime-plugin.html
 
+##安裝LiveStyle
+
+(不用儲存檔案即可及時看css效果)
+
+1.於sublime安裝LiveStyle
+
+2.於Chrome的dev tool安裝LiveStyle
+
+3.新增一個css檔案於html中(不是用於inline style)
+
+4.開啟chrome dev tool並點選LiveStyle查看是否載入
+
+5.記得，開著chrome dev tool 才可使用
+
