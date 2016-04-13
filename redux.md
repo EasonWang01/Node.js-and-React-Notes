@@ -1534,3 +1534,54 @@ export default connect(mapStateToProp)(App)
 使用`React.cloneElement`原因為，原本react-router要顯示子帶router必須用{this.props.children}但這樣原本的prop沒辦法往下傳
 
 所以使用`React.cloneElement`即可在子代傳入props
+
+###記得加條件限制
+
+但是，如果url為http://localhost:3000/
+
+這時
+`{React.cloneElement(this.props.children, { todos:this.props })}`
+
+中的`this.props.children`為null，所以會報錯
+
+須改為
+
+```
+import React, { Component } from 'react'
+import TodoInput from './TodoInput.js'
+import TodoList from './TodoList.js'
+import {connect} from 'react-redux'
+
+class App extends Component {
+
+
+checkIfRouteHasChild(props){
+ 	if(props.children!=null){
+ 		return React.cloneElement(props.children, { todos:props})
+ 	}else{			
+ 		return
+ 	}};
+
+
+render() {
+
+
+    return (
+      <div>
+        <h1>Todo list</h1>
+        {(()=>this.checkIfRouteHasChild(this.props))()}
+     
+      </div>
+    )
+  }
+
+}
+function  mapStateToProp(state){
+
+	return state
+}
+
+
+export default connect(mapStateToProp)(App)
+
+```
