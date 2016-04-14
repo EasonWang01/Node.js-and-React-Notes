@@ -2,9 +2,19 @@
 
 ###用途:可以在js檔案中使用require、 import，並將css 圖片 js打包為單一js檔案
 
+>可將webpack.config.js中寫的entry file內寫入許多require，之後輸入`webpack`即可將所有引入的東西打包成一份js
 
-官方有webpack-dev-server但，我們未來部屬後還是要用自己的server
 
+官方有webpack-dev-server但，我們未來部屬後還是要用自己的server，如果只是要開發靜態頁面可用
+
+1.`npm install  webpack-dev-server`
+
+2.`npm install css-loader style-loader`
+
+
+
+
+#使用自己的server
 以下為範例，分別設定server.js 與 webpack.config.js
 
 server.js
