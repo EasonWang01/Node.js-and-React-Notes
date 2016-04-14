@@ -19,6 +19,7 @@
 * [使用MySQL](shi_yong_mysql.md)
 * [使用PostgreSQL](shi_yong_postgresql.md)
 * [使用RethinkDB](使用RethinkDB)
+* [rethinkdb](rethinkdb.md)
 * [React](react.md)
 * [React router](react_router.md)
 * [Redux](redux.md)
@@ -40,6 +41,5 @@
 * [redis](redis.md)
 * [做一個簡單的markdown editor](zuo_yi_ge_jian_dan_de_markdown_editor.md)
 * [socket.io](socketio.md)
-* [rethinkdb](rethinkdb.md)
 * [Sublime 安裝套件](sublime_an_zhuang_tao_jian.md)
 
