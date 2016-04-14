@@ -333,3 +333,29 @@ output: {
 }
 The [name] is taken from entry properties, so if we have app and vendors as properties, we got 2 output files - app.js and vendors.js.
 ```
+
+#webpack.config.js說明
+
+```
+module.loader: 其中test是正則表達式，對符合的文件名使用相應的加載器. 
+
+/.css$/會匹配 xx.css文件，但是並不適用於xx.sass或者xx.css.zip文件.
+
+url-loader 它會將樣式中引用到的圖片轉為模塊來處理; 配置信息的參數“?limit=8192”表示將所有小於8kb的圖片都轉為base64形式。
+
+entry 模塊的入口文件。依賴項數組中所有的文件會按順序打包，每個文件進行依賴的查找，直到所有模塊都被打成包；
+
+output：模塊的輸出文件，其中有如下參數：
+
+filename: 打包後的文件名
+
+path: 打包文件存放的絕對路徑。
+
+publicPath: 網站運行時的訪問路徑。
+
+relolve.extensions: 自動擴展文件的後綴名，比如我們在require模塊的時候，可以不用寫後綴名的。
+
+relolve.alias: 模塊別名定義，方便後續直接引用別名，無須多寫長長的地址
+
+plugins 附加插件;
+```
