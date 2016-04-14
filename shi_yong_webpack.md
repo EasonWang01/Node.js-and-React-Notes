@@ -1,20 +1,76 @@
+
 # 使用webpack
 
 ###用途:可以在js檔案中使用require、 import，並將css 圖片 js打包為單一js檔案
 
 >可將webpack.config.js中寫的entry file內寫入許多require，之後輸入`webpack`即可將所有引入的東西打包成一份js
 
-
+##開發時
 官方有webpack-dev-server但，我們未來部屬後還是要用自己的server，如果只是要開發靜態頁面可用
-
+###1.靜態頁面基本開發環境
 1.`npm install  webpack-dev-server`
 
 2.`npm install css-loader style-loader`
 
+```
+var webpack = require('webpack');
+var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;//壓縮bundle.js
 
 
+module.exports = {
+  entry: './main.js',
+  output: {
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders:[
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+    ]
+  },
+  plugins: [
+    new uglifyJsPlugin({
+      compress: {
+      warnings: false
+      }}),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+};
+```
+之後輸入webpack-dev-server
+>注意!如果hotModule寫在config裡，執行時就不要加-hot，不然會出錯
 
-#使用自己的server
+
+####讓不同html引入不同bundle
+```
+var webpack = require('webpack');
+var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;//壓縮bundle.js
+
+
+module.exports = {
+  entry: {
+    bundle1: './main.js',
+    bundle2: './main1.js'
+  },
+  output: {
+    filename: '[name].js'
+  },
+  module: {
+    loaders:[
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+    ]
+  },
+  plugins: [
+    new uglifyJsPlugin({
+      compress: {
+      warnings: false
+      }}),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+};
+```
+>1.記得不可對config中寫為entry的js檔案使用require
+>2.通常寫在config中的entry檔案裡面不會寫邏輯，只會寫require了那些js檔案
+#2.使用自己的server
 以下為範例，分別設定server.js 與 webpack.config.js
 
 server.js
