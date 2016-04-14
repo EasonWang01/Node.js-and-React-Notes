@@ -69,7 +69,10 @@ module.exports = {
 };
 ```
 >1.記得不可對config中寫為entry的js檔案使用require
->2.通常寫在config中的entry檔案裡面不會寫邏輯，只會寫require了那些js檔案
+
+>2.通常寫在config中的entry檔案裡面不會寫邏輯，只會寫require了那些js檔案(稱為index檔案)
+
+
 #2.使用自己的server
 以下為範例，分別設定server.js 與 webpack.config.js
 
