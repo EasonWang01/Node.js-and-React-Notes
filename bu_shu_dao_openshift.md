@@ -85,7 +85,7 @@ app-root/logs/nodejs.log
 參考至:https://blog.openshift.com/run-your-nodejs-projects-on-openshift-in-two-simple-steps/
 
 (PS:上面官網範例的step2的code block中的listen括號寫錯位置，需自行更改)
-#如果有用到wbsocket
+#如果有用到websocket
 openShift預設讓websocket監聽8000port
 
 以socket.io為例
