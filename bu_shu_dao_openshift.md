@@ -43,12 +43,15 @@ app.listen(app.get('port') ,app.get('ip'), function () {
 ```
 
 10.cd到你的application名稱的資料夾內使用git bash上傳
+
+(記得，要進入application名稱資料夾，而不是原本clone用的資料夾)
 ```
 git add .
 git commit -m "save"
 git push
 ```
-
+PS:因為openshift會自動看你的package.json幫你安裝module
+所以不用把node_modules加入
 
 
 
