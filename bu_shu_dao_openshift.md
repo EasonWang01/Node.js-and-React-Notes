@@ -21,7 +21,7 @@ https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-s
 ```
 之後點選setting填入你的public ssh 的內容
 ```
-最上方點setting=>右方框複製你產生的.pub內容後貼上
+最上方點setting=>於右方框，複製你電腦產生的.pub內容後貼上
 ```
 
 6.新建一個資料夾，先git init後git clone openshift產生的url，(注意:如果詢問yes/no時，要輸入yes，不可直接按enter)
