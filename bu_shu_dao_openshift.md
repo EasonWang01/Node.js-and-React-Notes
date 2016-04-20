@@ -85,3 +85,12 @@ app-root/logs/nodejs.log
 參考至:https://blog.openshift.com/run-your-nodejs-projects-on-openshift-in-two-simple-steps/
 
 (PS:上面官網範例的step2的code block中的listen括號寫錯位置，需自行更改)
+#如果有用到wbsocket
+openShift預設讓websocket監聽8000port
+
+以socket.io為例
+
+```
+ var socket = io.connect("http://chat-yicheng01.rhcloud.com:8000");
+
+```
