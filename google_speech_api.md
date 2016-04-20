@@ -7,7 +7,7 @@ msg.text = 'Hello World';
 
 var voices = window.speechSynthesis.getVoices();
 
-msg.voice = voices[19]; 
+msg.voice = voices[19]; //更換語言
 
 speechSynthesis.speak(msg);
 ```
