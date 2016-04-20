@@ -42,7 +42,7 @@ app.listen(app.get('port') ,app.get('ip'), function () {
 });
 ```
 
-10.cd到server.js下使用git bash上傳
+10.cd到你的application名稱的資料夾內使用git bash上傳
 ```
 git add .
 git commit -m "save"
