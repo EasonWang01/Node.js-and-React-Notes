@@ -14,7 +14,9 @@
 4.使用git工具產生ssh key，之後會有兩個檔案其中有.pub後檔名的為public key
 https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 
-5.在openshift上建立新的application並填入你的public ssh 的內容
+5.在openshift上建立新的application並
+
+之後點選setting填入你的public ssh 的內容
 ```
 首頁=>My account=>web console=>Add application
 =>選最右下角的Node.js
