@@ -15,8 +15,12 @@
 https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 
 5.在openshift上建立新的application並填入你的public ssh 的內容
+```
+首頁=>My account=>web console=>Add application
+=>選最右下角的Node.js
+```
 
-6.新建一個資料夾，先git init後git clone加上poenshift產生給你的ssh url，(注意:如果詢問yes/no時，要輸入yes，不可直接按enter)
+6.新建一個資料夾，先git init後git clone加上openshift產生的url，(注意:如果詢問yes/no時，要輸入yes，不可直接按enter)
 
 7.刪掉clone下來資料夾內的全部內容，貼上你自己的
 
