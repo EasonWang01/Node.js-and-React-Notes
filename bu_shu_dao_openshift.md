@@ -20,7 +20,7 @@ https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-s
 =>選最右下角的Node.js
 ```
 
-6.新建一個資料夾，先git init後git clone加上openshift產生的url，(注意:如果詢問yes/no時，要輸入yes，不可直接按enter)
+6.新建一個資料夾，先git init後git clone openshift產生的url，(注意:如果詢問yes/no時，要輸入yes，不可直接按enter)
 
 7.刪掉clone下來資料夾內的全部內容，貼上你自己的
 
