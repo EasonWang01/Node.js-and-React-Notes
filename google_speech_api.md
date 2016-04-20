@@ -1,5 +1,4 @@
-# Google  api
-
+ #Google  api
 ```
 var msg = new SpeechSynthesisUtterance();
 
@@ -7,7 +6,7 @@ msg.text = 'Hello World';
 
 var voices = window.speechSynthesis.getVoices();
 
-msg.voice = voices[19]; //更換語言
+msg.voice = voices[19]; //設定語言
 
 speechSynthesis.speak(msg);
 ```
