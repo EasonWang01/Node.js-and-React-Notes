@@ -559,7 +559,7 @@ onChange={this.handleChange.bind(this)}
 ```
  <button onClick={()=>this.handleSubmit()}>Submit</button>
 ```
-以及
+或是
 ```
 import React, { Component } from 'react'
 import action from '../redux/actions.js'
