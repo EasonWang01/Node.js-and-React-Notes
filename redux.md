@@ -1585,3 +1585,26 @@ function  mapStateToProp(state){
 export default connect(mapStateToProp)(App)
 
 ```
+
+#Redux Devtools
+
+1.到chrome extension 下載Redux Devtools
+
+2.在程式的store.js中改為如下
+```
+let finalCreateStore = compose(
+	applyMiddleware(thunk,logger()),window.devToolsExtension ? window.devToolsExtension() : f => f
+	)(createStore)
+
+function configureStore(initialState){
+	return finalCreateStore(reducer,initialState)
+
+}
+
+let store = configureStore(initialState)
+
+export default store
+
+```
+
+3.開啟網頁即可看到chrome extension的redux devtools亮起，即可點選開啟
