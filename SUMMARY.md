@@ -44,4 +44,5 @@
 * [Sublime 安裝套件](sublime_an_zhuang_tao_jian.md)
 * [Google  api](google_speech_api.md)
    * speech api
+* Babel
 
