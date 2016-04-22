@@ -2,7 +2,7 @@
 
 >前言:1.我們在webpack寫入babel後可使用es6功能，但在entry file外就無法使用es6功能
 >
->2.Node.js的--harmony不包含module
+>2.Node.js的--harmony不包含module功能
 
 1. 所以要在Node.js使用ES6 的export default 須另外寫一個.babelrc檔案
 ```
