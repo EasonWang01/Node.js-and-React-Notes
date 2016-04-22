@@ -25,7 +25,7 @@
 * [Redux](redux.md)
 * [import_export_module.exports 模組化](importexport_module_exports_mo_zu_hua.md)
 * [使用webpack](shi_yong_webpack.md)
-* [Babel](babel.md)
+* [使用Babel](babel.md)
 * [ES6 Generator](es6_generator.md)
 * [ES6 Set,Map](es6_set,map.md)
 * [ES6 Promise](es6_promise.md)
