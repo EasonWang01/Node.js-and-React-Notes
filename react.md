@@ -559,6 +559,30 @@ onChange={this.handleChange.bind(this)}
 ```
  <button onClick={()=>this.handleSubmit()}>Submit</button>
 ```
+以及
+```
+import React, { Component } from 'react'
+import action from '../redux/actions.js'
+import store from '../redux/store'
+class ReadMongo extends Component {
+//下面如果寫成 sendSave(){.....} 會找不到this
+	sendSave=()=>{
+		console.log(this.refs.myInput)
+	}
+
+
+
+	render(){
+		return  <div>
+				<input ref="myInput" />
+				<button onClick={this.sendSave}>確定</button>
+				</div>
+	}
+}
+
+
+export default ReadMongo
+```
 如要傳入事件，記得兩邊()都要傳入
 ```
  <form onSubmit={(e)=>this.handleSubmit(e)}>
