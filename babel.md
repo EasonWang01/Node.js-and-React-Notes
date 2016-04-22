@@ -4,7 +4,7 @@
 >
 >2.Node.js的--harmony不包含module
 
-1. 所以要在Node.js使用ES6 的export default 須寫一個.babelrc檔案
+1. 所以要在Node.js使用ES6 的export default 須另外寫一個.babelrc檔案
 ```
 {
    "presets": ["es2015"]
