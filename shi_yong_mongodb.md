@@ -434,6 +434,7 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://user:pass@host:port/dbs');
 
 ```
+(可點選mLab的tools標籤，看相關連線資料)
 如何抓取連線時的錯誤
 ```
 mongoose.connect('mongodb://forclass1:test123@ds013898.mlab.com:13898/forclass',function(err){
