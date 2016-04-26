@@ -55,6 +55,8 @@ app.use(express.static('views'));
 最後
 
 ```
+<script src="ejs.js"></script>
+
  var fragment = new EJS({url:'userprofile.ejs'}).render();//需使用舊版ejs非tj
  
  亦可塞入data
