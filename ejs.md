@@ -72,8 +72,26 @@ app.use(express.static('views'));
 
 function articleFragment () {document.getElementById('post').innerHTML =  new EJS({url:'article.ejs'}).render()};
 
-(但在article.ejs 內寫script沒反應)
 ```
+
+(但是，發現在article.ejs 內寫script沒反應)
+
+原因是因為，在div內的script無法作用，我們要加上
+```
+function articleFragment() {document.getElementById('post').innerHTML =  new EJS({url:'article.ejs'}).render()
+
+//執行div內的所有script標籤
+MyDiv = document.getElementById('post')
+var arr = MyDiv.getElementsByTagName('script')
+for (var n = 0; n < arr.length; n++)
+    eval(arr[n].innerHTML)
+
+
+
+};
+
+```
+
 
 ###使用TJ的EJS用在CLIENT端
 可參考他的範例
