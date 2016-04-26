@@ -65,6 +65,15 @@ app.use(express.static('views'));
    var fragment = new EJS({url: 'template.ejs'}).render(data);
 
 ```
+#SPA example
+```
+  <li><a onclick="articleFragment()
+">顯示文章</a></li>
+
+function articleFragment () {document.getElementById('post').innerHTML =  new EJS({url:'article.ejs'}).render()};
+
+
+```
 
 ###使用TJ的EJS用在CLIENT端
 可參考他的範例
