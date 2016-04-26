@@ -72,7 +72,7 @@ app.use(express.static('views'));
 
 function articleFragment () {document.getElementById('post').innerHTML =  new EJS({url:'article.ejs'}).render()};
 
-
+(但在article.ejs 內寫script沒反應)
 ```
 
 ###使用TJ的EJS用在CLIENT端
