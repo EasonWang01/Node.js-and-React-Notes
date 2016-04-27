@@ -63,6 +63,7 @@ http://nuclide.io/docs/platforms/react-native/#buck-integration
 
 ####4.flowconfig
 http://flowtype.org/
+` Flow is not supported on Windows, so this integration is not yet available on that platform.`
 #3.implement Redux
 
 範例連結:
@@ -84,4 +85,7 @@ import App from './app/containers/app.js';
 AppRegistry.registerComponent('AwesomeProject', () => App);
 
 ```
+目前專案結構長為這樣
+
+![](021.png)
 
