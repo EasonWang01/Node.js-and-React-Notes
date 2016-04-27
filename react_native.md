@@ -64,7 +64,7 @@ http://nuclide.io/docs/platforms/react-native/#buck-integration
 ####4.flowconfig
 http://flowtype.org/
 ` Flow is not supported on Windows, so this integration is not yet available on that platform.`
-#3.implement Redux
+#3.Implement with Redux
 
 範例連結:
 https://github.com/alinz/example-react-native-redux
