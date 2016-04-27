@@ -36,6 +36,8 @@ app.set('view engine', 'ejs');
 ```
 
 ##使用client端EJS
+https://github.com/mde/ejs/issues/158#issuecomment-215120752
+
 (此與tj的ejs不同)
 http://www.embeddedjs.com/
 
