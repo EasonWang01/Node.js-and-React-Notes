@@ -58,6 +58,11 @@ AppRegistry.registerComponent('AwesomeProject', () => App);
 
 在native中，和一般node專案一樣使用npm安裝套件，接著再跟目錄創建app資料夾，將專案相關文件都寫於裡面
 
+####3.buckconfig(給IOS用)
+http://nuclide.io/docs/platforms/react-native/#buck-integration
+
+####4.flowconfig
+http://flowtype.org/
 #3.implement Redux
 
 範例連結:
@@ -79,3 +84,4 @@ import App from './app/containers/app.js';
 AppRegistry.registerComponent('AwesomeProject', () => App);
 
 ```
+
