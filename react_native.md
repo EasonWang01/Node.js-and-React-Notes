@@ -1,7 +1,7 @@
 # React Native
 ----
 
-###windows環境建置
+###1.windows環境建置
 >需求安裝:
 >
 >1.JDK   
@@ -32,7 +32,7 @@
 
 
 
-#React native專案檔案介紹
+#2.React native專案檔案介紹
 
 ####1.index.android.js
 
@@ -58,7 +58,7 @@ AppRegistry.registerComponent('AwesomeProject', () => App);
 
 在native中，和一般node專案一樣使用npm安裝套件，接著再跟目錄創建app資料夾，將專案相關文件都寫於裡面
 
-#implement Redux
+#3.implement Redux
 
 範例連結:
 https://github.com/alinz/example-react-native-redux
