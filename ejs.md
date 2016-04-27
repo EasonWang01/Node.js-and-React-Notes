@@ -74,7 +74,7 @@ function articleFragment () {document.getElementById('post').innerHTML =  new EJ
 
 ```
 
-(但是，發現在article.ejs 內寫script沒反應)
+####(但是，發現在article.ejs 內寫script沒反應)
 
 原因是因為，在div內的script無法作用，我們要加上
 ```
@@ -91,6 +91,25 @@ for (var n = 0; n < arr.length; n++)
 };
 
 ```
+####將server render附帶的data於client端用js儲存
+```
+原先res.render(abc.ejs,{data})
+
+這個data只使用<% data %＞讀出，無法用一般js取操
+作
+
+
+```
+
+所以我們可以在client端把它存成一般的variable
+
+```
+<script>
+
+b =  <%= JSON.stringify(res)%> ;
+</script>
+```
+
 
 
 ###使用TJ的EJS用在CLIENT端
