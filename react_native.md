@@ -29,3 +29,53 @@
 7.於cmd輸入 react-native start ，之後於genymotino點選Reload JS即可
 
 8.正常啟動後，可點選index.android.js修改，之後點genymotion的右側menu，設定hot reload   `儲存後即立刻更改畫面`
+
+
+
+#React native專案檔案介紹
+
+####1.index.android.js
+
+我們一般會在該檔案，寫為如下
+```
+'use strict';
+
+import React, { AppRegistry } from 'react-native';
+import App from './app/containers/app.js';
+
+AppRegistry.registerComponent('AwesomeProject', () => App); 
+
+```
+特別要注意的地方為
+
+`AppRegistry.registerComponent('AwesomeProject', () => App); `
+
+`registerComponent`第一個參數要跟資料夾名稱相同，第二個參數要跟你的component enrty相同
+
+####2.app目錄
+
+我們假設你已經學過React跟redux的基礎，以下我們稱react-native簡稱為native
+
+在native中，和一般node專案一樣使用npm安裝套件，接著再跟目錄創建app資料夾，將專案相關文件都寫於裡面
+
+#implement Redux
+
+範例連結:
+https://github.com/alinz/example-react-native-redux
+
+下載後
+
+1.將app資料夾放入你的project
+
+2.`npm install redux react-redux redux-thunk --save`
+
+3..將`index.android.js`改為如下即可運行
+```
+'use strict';
+
+import React, { AppRegistry } from 'react-native';
+import App from './app/containers/app.js';
+
+AppRegistry.registerComponent('AwesomeProject', () => App);
+
+```
