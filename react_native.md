@@ -27,3 +27,5 @@
 6.在cmd輸入react-native run-android(記得開好genymotion)，正常跑完會出現紅色底字，這時因為我們還沒啟動react-native的server
 
 7.於cmd輸入 react-native start ，之後於genymotino點選Reload JS即可
+
+8.正常啟動後，可點選index.android.js修改，之後點genymotion的右側menu，設定hot reload   `儲存後即立刻更改畫面`
