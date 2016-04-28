@@ -74,3 +74,9 @@ var account = $("#account").val();
 </body>
 </html>
 ```
+#xmlhttp.send() 格式
+
+```
+xhttp.send('_id ='+ this.getAttribute('dataid'));
+```
+必須寫為 =，如果寫:型態會出現格式問題
