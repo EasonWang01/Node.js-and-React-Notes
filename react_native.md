@@ -30,6 +30,16 @@
 
 8.正常啟動後，可點選index.android.js修改，之後點genymotion的右側menu，設定hot reload   `儲存後即立刻更改畫面`
 
+```
+未來啟動順序必須為
+
+1. cd 專案資料夾根目錄
+
+2.react-native run-android
+
+3.react-native start
+```
+
 
 
 #2.React native專案檔案介紹
