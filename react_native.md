@@ -40,6 +40,12 @@
 3.react-native start
 ```
 
+####可能的問題解決方案
+```
+1.確保node.js的版本
+2.確定watchmanconfig檔案存在(於一開始build時)
+3.npm install
+```
 
 
 #2.React native專案檔案介紹
