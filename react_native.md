@@ -113,4 +113,11 @@ AppRegistry.registerComponent('AwesomeProject', () => App);
 ![](021.png)
 
 
+#4.Layout
 
+###1.flex介紹
+
+1.父元素要有flex屬性，子元素flex才有作用
+
+2.flex數字越高，占的空間越大
+(主要為同一層元素之flex數字間的比例關係)
