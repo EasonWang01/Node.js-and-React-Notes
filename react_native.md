@@ -193,3 +193,26 @@ class nativereact extends Component {
   }
 }
 ```
+3.其他layout方法與CSS 的flexbox屬性用法相同
+```
+在container中的style
+justifyContent:'center',
+alignItems: 'center'
+
+分別負責垂直及水平置中
+
+```
+#內建基本元件
+
+####1.View
+
+用作container使用，包在其他元件外
+
+####2.Text
+
+產生文字
+
+####3.Image
+source 屬性 可指定來源
+
+style中的`resizeMode:Image.resizeMode.contain`可讓圖片解析固定
