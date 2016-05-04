@@ -121,3 +121,75 @@ AppRegistry.registerComponent('AwesomeProject', () => App);
 
 2.flex數字越高，占的空間越大
 (主要為同一層元素之flex數字間的比例關係)
+
+1.基本範例
+```
+
+
+import React, {
+  AppRegistry,
+  Component,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+
+class nativereact extends Component {
+  render() {
+    return (
+      <View style={{flex:1}}>
+              <View style={styles.style_0}>
+
+               </View>
+                <View style={styles.style_1}>
+
+                </View>
+                <View style={{flex:100}}>
+
+                </View>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  style_0:{
+            flex:20,
+            height:40,
+            borderWidth: 1,  
+            borderColor: 'blue',
+        },
+   style_1:{
+            flex:30,
+            height:40,
+            borderWidth: 1,  
+            borderColor: 'green',
+        }
+});
+
+AppRegistry.registerComponent('nativereact', () => nativereact);
+
+```
+
+2.改變layout 方向(flexDirection)
+
+於父元素加入該屬性，其子元素會改變layout排列方向
+```
+class nativereact extends Component {
+  render() {
+    return (
+      <View style={{flex:1,flexDirection: 'row'}}>
+              <View style={styles.style_0}>
+
+               </View>
+                <View style={styles.style_1}>
+
+                </View>
+                <View style={{flex:100}}>
+
+                </View>
+      </View>
+    );
+  }
+}
+```
