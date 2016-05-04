@@ -204,15 +204,60 @@ alignItems: 'center'
 ```
 #內建基本元件
 
+須先於上方import進入js檔案
+
 ####1.View
-
+```
 用作container使用，包在其他元件外
-
+```
 ####2.Text
-
+```
 產生文字
-
+```
 ####3.Image
+```
 source 屬性 可指定來源
 
 style中的`resizeMode:Image.resizeMode.contain`可讓圖片解析固定
+```
+####4.Touchable事件
+**1.TouchableOpacity**
+```
+點擊時改變透明度
+```
+**
+2.TouchableHighlight**
+```
+點擊時改變透明度、顏色，及其他(為TouchableOpacity的加強版)
+```
+PS:記得要有onPress屬性，才會有效果
+```
+ onPress={() => console.log('custom THW text - highlight')}
+```
+####5.DrawerLayoutAndroid
+
+類似於隱藏選單，從邊緣拉入後顯示
+
+```
+render() {
+
+     var navigationView = (
+    <View style={{flex: 1, backgroundColor: '#fff'}}>
+      <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>I'm in the Drawer!</Text>
+    </View>
+  );
+
+return (  <DrawerLayoutAndroid
+      drawerWidth={300}
+      drawerPosition={DrawerLayoutAndroid.positions.Left}
+      renderNavigationView={() => navigationView}>
+
+        <View>
+
+        </View>
+  </DrawerLayoutAndroid>
+    );
+  }
+}
+```
+於最外層view外面加入DrawerLayoutAndroid Tag，且從`renderNavigationView`屬性寫出Drawer的外觀
