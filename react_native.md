@@ -50,7 +50,7 @@
 1.確保node.js的版本
 2.確定watchmanconfig檔案存在(於一開始build時)
 3.npm install in admin
-4.如果沒有hot reload儲存沒反應，可先從emulator離開app重新進入，即可
+4.如果沒有hot reload儲存沒反應，可先從emulator按上一頁，之後點選app重新進入，即可
 5.如果hot reload跳出app或是無法reload JS，需重新compile app
 ```
 
