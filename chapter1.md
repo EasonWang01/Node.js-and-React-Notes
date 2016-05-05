@@ -1,4 +1,4 @@
-1.下載Node.js
+#1.下載Node.js
 
 使用sublime，atom或任何編輯器創造如下檔案
 
@@ -13,7 +13,7 @@ hello();
 
 輸入node class
 
-2.模組
+#2.模組
 export
 
 新增一個class1.js
@@ -33,7 +33,7 @@ function hello() {
 hello();
 x.hello1();
 ```
-3.module.exports
+#3.module.exports
 
 class1.js
 ```
@@ -54,7 +54,7 @@ hello();
 x();
 ```
 
-4.一個模組中的JS代碼僅在模組第一次被使用時執行一次，並在執行過程中初始化模組的導出對像。之後，緩存起來的導出對像被重複利用。
+#4.一個模組中的JS代碼僅在模組第一次被使用時執行一次，並在執行過程中初始化模組的導出對像。之後，緩存起來的導出對像被重複利用。
 
 class1.js
 ```
@@ -75,7 +75,7 @@ console.log(counter1.count());
 console.log(counter2.count());
 console.log(counter2.count());
 ```
-5.預設載入路徑(如給予相對路徑沒/)
+#5.預設載入路徑(如給予相對路徑沒/)
 
 class.js
 ```
