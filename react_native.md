@@ -261,3 +261,86 @@ return (  <DrawerLayoutAndroid
 }
 ```
 於最外層view外面加入DrawerLayoutAndroid Tag，且從`renderNavigationView`屬性寫出Drawer的外觀
+####6.ListView
+許多列組成的畫面
+```
+     <ListView
+        dataSource={this.state.dataSource}
+        renderRow={this.renderMovie}
+        style={styles.listView}
+      />
+      
+      datasource為資料來源
+      renderRow為每列用資料產生的畫面
+```
+EX:
+```
+
+var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+
+class nativereact extends Component {
+ constructor(props) {
+    super(props);
+    this.state = {
+      dataSource: new ListView.DataSource({
+        rowHasChanged: (row1, row2) => row1 !== row2,
+      }),
+      loaded: false,
+    };
+  }
+  componentDidMount() {
+    this.fetchData();
+  }
+   fetchData() {
+    fetch(REQUEST_URL)
+      .then((response) => response.json())
+      .then((responseData) => {
+        this.setState({
+          dataSource: this.state.dataSource.cloneWithRows(responseData.movies),
+          loaded: true,
+        });
+      })
+      .done();
+  }
+
+/////////  
+  render() {
+    console.log(this.state)
+    if (!this.state.loaded) {
+      return this.renderLoadingView();
+    }
+  return (
+      <ListView
+        dataSource={this.state.dataSource}
+        renderRow={this.renderMovie}
+        style={styles.listView}
+      />
+    );
+  }
+
+  renderLoadingView() {
+    return (
+      <View style={styles.container}>
+        <Text>
+          正在加载電影數據……
+        </Text>
+      </View>
+    );
+  }
+
+  renderMovie(movie) {
+    return (
+      <View style={styles.container}>
+        <Image
+          source={{uri: movie.posters.thumbnail}}
+          style={styles.thumbnail}
+        />
+        <View style={styles.rightContainer}>
+          <Text style={styles.title}>{movie.title}</Text>
+          <Text style={styles.year}>{movie.year}</Text>
+        </View>
+      </View>
+    );
+  }
+}
+```
