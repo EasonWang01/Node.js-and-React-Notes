@@ -1,7 +1,7 @@
 # React
 基礎
 
-```
+```javascript
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,8 @@
 	<title>Document</title>
   <script src="https://fb.me/react-15.0.0.js"></script>
     <script src="https://fb.me/react-dom-15.0.0.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-
+    core/5.8.34/browser.min.js"></script>
 </head>
 <body>
     <div id="example"></div>
@@ -46,7 +47,7 @@ class HelloMessage extends React.Component {
   }
 }
 
-ReactDOM.render(<HelloMessage name="Sebastian" />, mountNode);
+ReactDOM.render(<HelloMessage name="Sebastian"/>, mountNode);
 ```
 其他方法之簡單整理
 ```
@@ -64,7 +65,8 @@ class App extends baseComponent{
     constructor(props){
         super(props);
     }
-    // 初始化state,替代原getInitialState, 注意前面沒有static
+    // 初始化state,替代原getInitialState, 注意前面
+    沒有static
     state = {
         showMenu:false
     };
@@ -72,19 +74,23 @@ class App extends baseComponent{
     static propTypes = {
         autoPlay: React.PropTypes.bool.isRequired
     }
-    // 默認defaultProps,替代原getDefaultProps方法, 注意前面有static
+    // 默認defaultProps,替代原getDefaultProps方法, 注意前面
+    有static
     static defaultProps = {
         loading:false
     };
-    // 這以用箭頭函數箭頭函數不會改變this的指向,否則函數內,this指的就不是當前對象了
+    // 這以用箭頭函數箭頭函數不會改變this的指向,否則函數內,
+    this指的就不是當前對象了
     // React.CreatClass方式React會自動綁定this,ES6寫法不會.
     handleClick = (e)=>{
         this.setState();//
     };
     componentDidMount() {
         // React内置的周期 ,這裡要顯示所繼承父類的相同function,
-        // 否則一旦父類中有封裝,子類會把和父類相同的function覆蓋,不會執行父類的function.
-        // 但...父類如果本身沒有寫出componentDidMount,在子類寫出的話就會錯誤,
+        // 否則一旦父類中有封裝,子類會把和父類相同的function覆蓋,
+        不會執行父類的function.
+        // 但...父類如果本身沒有寫出componentDidMount,在子類
+        寫出的話就會錯誤,
         
         if (super.componentDidMount) {
             super.componentDidMount();
