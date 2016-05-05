@@ -1,5 +1,7 @@
 1.下載Node.js
 
+使用sublime，atom或任何編輯器創造如下檔案
+
 class.js
 ```
 function hello() {
@@ -7,6 +9,8 @@ function hello() {
 }
 hello();
 ```
+之後開啟終端機，並輸入`cd 你的檔案路徑`
+
 輸入node class
 
 2.模組
