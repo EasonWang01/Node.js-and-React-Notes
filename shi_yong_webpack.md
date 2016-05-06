@@ -12,6 +12,9 @@
 
 2.`npm install css-loader style-loader`
 
+3.進入http://localhost:8080/webpack-dev-server/bundle
+
+如果使用上面網址，可不用裝hotmodule
 ```
 var webpack = require('webpack');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;//壓縮bundle.js
