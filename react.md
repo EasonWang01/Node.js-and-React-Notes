@@ -1,7 +1,7 @@
 # React
 基礎
 
-```
+```javascript
 <!DOCTYPE html>
 <html lang="en">
 <head>
