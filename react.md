@@ -1022,6 +1022,22 @@ render((
 接著可到webpack那章，加上commonchunk plugin，加速我們每次網頁重新整理的速度
 
 ---
+#如何寫style
+個人習慣方式為:
+
+1.創一個style資料夾
+
+2.每個component有對應名稱的css檔案
+
+3.之後全部`@import`到index.css內
+
+4.於server設定`app.use(express.static('./style'));`
+
+5.引入到index.html
+```
+<link rel=stylesheet type="text/css" href="../style.css">
+```
+
 
 #加上Bootstrap
  雖然有react-bootstrap，但我們也可用原本的方式
