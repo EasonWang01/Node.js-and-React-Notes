@@ -1123,3 +1123,39 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
   }
 ```
 參考:https://github.com/callemall/material-ui#react-tap-event-plugin
+
+#React toggle style
+
+如何在點擊時切換style呢
+
+1
+
+```
+ <div className={"flipper" + (this.props.flipped ? " flipped" : "")}>
+```
+假設如上範例，可以先寫出，一個className的名稱的決定是由其於父組件上的prop決定
+
+
+之後其父組件使用state來設定其他子組件的prop
+
+```
+    render: function() {
+        return <div>
+            <Flipper flipped={this.state.flipped} orientation="horizontal" />
+            <Flipper flipped={this.state.flipped} orientation="vertical" />
+
+            <div className="button-container">
+                <button onClick={this.flip}>Flip!</button>
+            </div>
+        </div>;
+```
+
+所以點擊時會觸發下面這個函式
+
+```
+  flip: function() {
+        this.setState({ flipped: !this.state.flipped });
+    },
+```
+
+
