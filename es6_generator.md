@@ -304,7 +304,7 @@ Object.prototype[Symbol.iterator]
 #yield 實用方法
 
 
-在Promise中我們會在async function call的完成狀態(onSuccess)調用`resolve()`，而在Generator中我們會調用`g.next(要傳下去的值);`其中next裡面放的是接下來要繼續處理的值
+在Promise中我們會在async function call的完成狀態(onSuccess)調用`resolve(要傳下去的值)`，而在Generator中我們會調用`g.next(要傳下去的值);`其中next裡面放的是接下來要繼續處理的值
 
 ```
 var g = gen(); // 建立函數物件
@@ -331,3 +331,5 @@ function *gen(){
   console.log("totalDelay=%d t=%d", totalDelay, t);
 }
 ```
+
+可參考http://programmermagazine.github.io/mag/pmag201505/focus3.html
