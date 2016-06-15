@@ -1617,3 +1617,20 @@ https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.n
 
 因為Redux 的state統一存在store中，所以符合stateless function components之條件，
 可改用const來寫component
+
+```
+const ListOfNumbers = props => (
+  <ol className={props.className}>
+    {
+      props.numbers.map(number => (
+        <li>{number}</li>)
+      )
+    }
+  </ol>
+);
+
+ListOfNumbers.propTypes = {
+  className: React.PropTypes.string.isRequired,
+  numbers: React.PropTypes.arrayOf(React.PropTypes.number)
+};
+```
