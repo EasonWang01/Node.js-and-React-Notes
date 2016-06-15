@@ -1611,7 +1611,7 @@ export default store
 
 
 #stateless function components
-#(將class改為const)
+#(可將class改為const)
 https://facebook.github.io/react/docs/reusable-components.html#stateless-functions
 
 https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.nyhbdhy1j
