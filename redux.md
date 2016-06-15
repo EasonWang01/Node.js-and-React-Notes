@@ -1615,5 +1615,5 @@ export default store
 
 https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.nyhbdhy1j
 
-因為Redux state統一存在store中，所以符合stateless function components之條件，
+因為Redux 的state統一存在store中，所以符合stateless function components之條件，
 可改用const來寫component
