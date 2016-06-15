@@ -1612,6 +1612,7 @@ export default store
 
 #stateless function components
 #(可將class改為const)
+#官方推薦使用
 https://facebook.github.io/react/docs/reusable-components.html#stateless-functions
 
 https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.nyhbdhy1j
@@ -1635,3 +1636,4 @@ ListOfNumbers.propTypes = {
   numbers: React.PropTypes.arrayOf(React.PropTypes.number)
 };
 ```
+###注意，使用const宣告的component裡面不可有state以及ref
