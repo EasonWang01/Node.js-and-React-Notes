@@ -300,3 +300,34 @@ Object.prototype[Symbol.iterator]
 ```
 #有[Symbol.iterator]的方法都可用[...名字]去遍歷
 只有object無法
+
+#yield 實用方法
+
+
+在Promise中我們會在async function call的完成狀態(onSuccess)調用`resolve()`，而在Generator中我們會調用`g.next(要傳下去的值);`其中next裡面放的是接下來要繼續處理的值
+
+```
+var g = gen(); // 建立函數物件
+g.next(); // 開始執行到第一個 yield
+
+var totalDelay = 0;
+
+function delay(ms) {
+  setTimeout(function() {
+    console.log("delay "+ms+" ms");
+    totalDelay += ms;
+    g.next(totalDelay); // 這個 yield 完成後，傳回 totalDelay 並呼叫 next() 繼續執行到下一個 yield
+  }, ms);
+}
+
+function *gen(){
+  var a=5, b=3, t;
+  t = yield delay(800);
+  console.log("a=%d t=%d", a, t);
+  t = yield delay(500);
+  b = a+b;
+  console.log("b=%d t=%d", b, t);
+  t = yield delay(300);
+  console.log("totalDelay=%d t=%d", totalDelay, t);
+}
+```
