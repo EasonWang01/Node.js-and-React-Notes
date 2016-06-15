@@ -1608,3 +1608,12 @@ export default store
 ```
 
 3.開啟網頁即可看到chrome extension的redux devtools亮起，即可點選開啟
+
+
+#stateless function components
+#(將class改為const)
+
+https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.nyhbdhy1j
+
+因為Redux state統一存在store中，所以符合stateless function components之條件，
+可改用const來寫component
