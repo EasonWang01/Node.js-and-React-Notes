@@ -348,7 +348,7 @@ class nativereact extends Component {
 
 #產生APK
 
-1.使用JAVA工具產生keystore
+####1.使用JAVA工具產生keystore
 
 ```
 
@@ -359,3 +359,78 @@ class nativereact extends Component {
 keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
 之後依序填入資訊，記得:其中分別有兩次的密碼要你輸入，必須輸入不同的，最後會在bin資料夾下看到產生的keystore
+
+####2.之後把剛才產生的keystore檔案放在react專案下的android\app路徑資料夾內
+
+####3.修改android資料夾下的gradle.properties檔案
+
+將星號改為你剛才輸入的store與key的密碼
+````
+MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
+MYAPP_RELEASE_KEY_ALIAS=my-key-alias
+MYAPP_RELEASE_STORE_PASSWORD=*****
+MYAPP_RELEASE_KEY_PASSWORD=*****
+````
+
+####4.在android/app/build.gradle 檔案中新增
+
+1.先加入整個signingConfig如下
+```
+signingConfigs {
+        release {
+            storeFile file(MYAPP_RELEASE_STORE_FILE)
+            storePassword MYAPP_RELEASE_STORE_PASSWORD
+            keyAlias MYAPP_RELEASE_KEY_ALIAS
+            keyPassword MYAPP_RELEASE_KEY_PASSWORD
+        }
+    }
+```
+
+2.之後在buildTypes的release系新增一條規則如下
+
+```
+    buildTypes的release系新增一挑規則 {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+```
+
+加完後類似如下
+```
+...
+android {
+    ...
+    defaultConfig { ... }
+    signingConfigs {
+        release {
+            storeFile file(MYAPP_RELEASE_STORE_FILE)
+            storePassword MYAPP_RELEASE_STORE_PASSWORD
+            keyAlias MYAPP_RELEASE_KEY_ALIAS
+            keyPassword MYAPP_RELEASE_KEY_PASSWORD
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+}
+...
+```
+
+####5.最後
+
+先cd android 
+
+之後輸入gradlew assembleReleas
+
+即可
+
+###6.在C:\Users\yicheng\reactNative2\android\app\build\outputs\apk
+
+即可發現產生了app-release.apk 檔案
+
+(如產生的檔案為unsign，須確認上述的config內容是否正確)
