@@ -429,8 +429,14 @@ android {
 
 即可
 
-###6.在C:\Users\yicheng\reactNative2\android\app\build\outputs\apk
+###6.確認與安裝
+
+在C:\Users\yicheng\reactNative2\android\app\build\outputs\apk
 
 即可發現產生了app-release.apk 檔案
 
 (如產生的檔案為unsign，須確認上述的config內容是否正確)
+
+之後可直接把該apk放入手機安裝及可
+
+或是輸入`gradlew installRelease`會直接安裝在模擬器(記得先把之前dev時安裝在上面的app刪除，否則無法安裝)
