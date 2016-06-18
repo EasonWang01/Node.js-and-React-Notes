@@ -344,3 +344,18 @@ class nativereact extends Component {
   }
 }
 ```
+
+
+#產生APK
+
+1.使用JAVA工具產生keystore
+
+```
+
+使用admin開啟cmd後cd到C:\Program Files\Java\jre7\bin
+```
+再來輸入
+```
+keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+```
+之後依序填入資訊，記得:其中分別有兩次的密碼要你輸入，必須輸入不同的，最後會在bin資料夾下看到產生的keystore
