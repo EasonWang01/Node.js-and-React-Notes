@@ -6,10 +6,10 @@ https://www.instagram.com/developer
 
 2.其分為兩種存取API的方式
 ```
-使用三階段
+使用三階段(建議此種作法)
 client-ID-->code-->access-token
 
-使用兩階段
+使用兩階段(如沒有server)
 client-ID-->access-token
 
 
