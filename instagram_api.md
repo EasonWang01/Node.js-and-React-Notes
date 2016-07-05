@@ -9,7 +9,7 @@ https://www.instagram.com/developer
 使用三階段(建議此種作法)
 client-ID-->code-->access-token
 
-使用兩階段(如沒有server)
+使用兩階段(如沒有server，安全性較低)
 client-ID-->access-token
 
 
