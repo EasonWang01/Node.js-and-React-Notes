@@ -10,7 +10,7 @@
    "presets": ["es2015"]
 }
 ```
-2.再於使用export default 的parent檔案，使用
+2.再於使用export default 的parent檔案，使用(require)
 `babel-core/register`
 
 參考至:http://stackoverflow.com/questions/32346886/unexpected-reserved-word-import-in-node-js
