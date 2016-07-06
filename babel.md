@@ -16,3 +16,16 @@
 參考至:http://stackoverflow.com/questions/32346886/unexpected-reserved-word-import-in-node-js
 
 
+##第二種方法
+
+```
+
+```
+
+##於Production
+
+不建議以上兩種做法，更好的做法餐好以下連結
+https://medium.com/@Cuadraman/how-to-use-babel-for-production-5b95e7323c2f#.3yrne4t0a
+
+
+
