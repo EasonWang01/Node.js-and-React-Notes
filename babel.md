@@ -29,3 +29,9 @@ https://medium.com/@Cuadraman/how-to-use-babel-for-production-5b95e7323c2f#.3yrn
 
 
 
+##有關import 'babel-polyfill';
+
+```
+用來將node.js之外的ES6、7語法compile
+```
+
