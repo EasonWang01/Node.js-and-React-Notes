@@ -17,7 +17,7 @@ https://github.com/showdownjs/showdown
 ```
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.4.2/showdown.min.js"></script>
 ```
-使用:
+範例:
 ```
 var converter = new showdown.Converter();
 document.getElementById('realArticle').innerHTML =converter.makeHtml(e);
