@@ -35,3 +35,6 @@ https://medium.com/@Cuadraman/how-to-use-babel-for-production-5b95e7323c2f#.3yrn
 用來將node.js之外的ES6、7語法compile
 ```
 
+不錯的文章
+
+http://www.ruanyifeng.com/blog/2016/01/babel.html
