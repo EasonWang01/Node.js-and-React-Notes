@@ -16,6 +16,11 @@ audio的src可用base64當連結
 
 但這個路徑存在瀏覽器記憶體，如果要存到database要先轉為base64
 
+參考此
+http://stackoverflow.com/questions/16245767/creating-a-blob-from-a-base64-string-in-javascript
+
+
+
 
 
 
