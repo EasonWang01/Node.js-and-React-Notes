@@ -58,6 +58,118 @@ oReq.send(oMyForm);
 ```
 
 
+以下為完整的錄音然後存到express server的範例(使用multer)
+
+server.js
+```
+var express = require('express');
+var bodyParser = require('body-parser');
+var crypto = require('crypto');
+
+var app = express();
+var multer = require('multer');
+app.set('view engine','ejs');
+app.use(express.static(__dirname + '/views'));
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.get('/',function(req,res){
+	res.render('audio');
+})
+app.post('/app1',function(req,res){
+	console.log(req.body);
+})
+
+app.post('/app', multer({ storage: storage}).single('file'), function(req,res){
+
+	console.log(req.file); //form files
+
+});
+
+app.listen('8000',function(){
+	console.log('listen 8000')
+})
+
+
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads/')
+  },
+  filename: function (req, file, cb) {
+    crypto.pseudoRandomBytes(16, function (err, raw) {
+      cb(null, raw.toString('hex') + Date.now() + '.' + 'wav');
+    });
+  }
+});
+
+```
+audio.ejs
+
+```
+<html>
+  <body>
+    <audio controls autoplay></audio>
+    <script type="text/javascript" src="recorder.js"> </script>
+
+    <input onclick="startRecording()" type="button" value="start recording" />
+    <input onclick="stopRecording()" type="button" value="stop recording and play" />
+
+    <script>
+      var onFail = function(e) {
+        console.log('Rejected!', e);
+      };
+
+      var onSuccess = function(s) {
+        var context = new AudioContext();
+        var mediaStreamSource = context.createMediaStreamSource(s);
+        recorder = new Recorder(mediaStreamSource);
+        recorder.record();
+
+        // audio loopback
+        // mediaStreamSource.connect(context.destination);
+      }
+
+      window.URL = window.URL || window.webkitURL;
+      navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+      var recorder;
+      var audio = document.querySelector('audio');
+
+      function startRecording() {
+        if (navigator.getUserMedia) {
+          navigator.getUserMedia({audio: true}, onSuccess, onFail);
+        } else {
+          console.log('navigator.getUserMedia not present');
+        }
+      }
+
+        function stopRecording() {
+        recorder.stop();
+        recorder.exportWAV(function(s) {
+         
+
+var oMyForm = new FormData();
+
+oMyForm.append("file",s);
+
+var oReq = new XMLHttpRequest();
+
+oReq.open("POST", "/app");
+
+oReq.send(oMyForm);
+
+
+          audio.src = window.URL.createObjectURL(s);
+
+              }) 
+
+        };
+    </script>
+
+  </body>
+</html>
+```
+
 
 
 
