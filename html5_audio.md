@@ -69,24 +69,28 @@ var crypto = require('crypto');
 var app = express();
 var multer = require('multer');
 app.set('view engine','ejs');
+app.use(multer({
+        dest: './uploads'
+    }
+).single('file'));
 app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/',function(req,res){
-	res.render('audio');
+    res.render('audio');
 })
 app.post('/app1',function(req,res){
-	console.log(req.body);
+    console.log(req.body);
 })
 
 app.post('/app', multer({ storage: storage}).single('file'), function(req,res){
 
-	console.log(req.file); //form files
+    console.log(req.file); //form files
 
 });
 
 app.listen('8000',function(){
-	console.log('listen 8000')
+    console.log('listen 8000')
 })
 
 
@@ -101,7 +105,6 @@ var storage = multer.diskStorage({
     });
   }
 });
-
 ```
 audio.ejs
 
