@@ -6,7 +6,7 @@ audio的src可用base64當連結
 
 而blob只能在瀏覽器當下的session有效，因為它存在瀏覽器的記憶體中
 
-所以要將blob要當audio的src要轉為blob類型的src
+要將blob當audio的src時要轉為blob類型的src
 
 使用` audio.src = window.URL.createObjectURL(s);`
 
