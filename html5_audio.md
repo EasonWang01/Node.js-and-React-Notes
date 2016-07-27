@@ -32,7 +32,7 @@ http://stackoverflow.com/questions/18650168/convert-blob-to-base64
 
 btob為encode  把值encode為base64
 
-而atob為decode 把 值還原
+而atob為decode 把 base64轉為原始檔案的二進位格式
 
 ####但是試很很多base64跟decode的字串都太長
 
