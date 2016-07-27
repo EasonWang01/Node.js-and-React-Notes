@@ -60,6 +60,8 @@ oReq.send(oMyForm);
 
 以下為完整的錄音然後存到express server的範例(使用multer)
 
+PS:需先新建一個`uploads`資料夾於目錄，注意`var storage`的設定程式碼要放在post的路由前面
+
 server.js
 ```
 var express = require('express');
@@ -69,30 +71,9 @@ var crypto = require('crypto');
 var app = express();
 var multer = require('multer');
 app.set('view engine','ejs');
-app.use(multer({
-        dest: './uploads'
-    }
-).single('file'));
+
 app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({extended: true}));
-
-app.get('/',function(req,res){
-    res.render('audio');
-})
-app.post('/app1',function(req,res){
-    console.log(req.body);
-})
-
-app.post('/app', multer({ storage: storage}).single('file'), function(req,res){
-
-    console.log(req.file); //form files
-
-});
-
-app.listen('8000',function(){
-    console.log('listen 8000')
-})
-
 
 
 var storage = multer.diskStorage({
@@ -105,6 +86,29 @@ var storage = multer.diskStorage({
     });
   }
 });
+
+
+
+
+app.get('/',function(req,res){
+    res.render('audio');
+})
+app.post('/app1',function(req,res){
+    console.log(req.body);
+})
+
+app.post('/app', multer({storage: storage}).single('file'), function(req,res){
+
+    console.log(req.file); //form files
+
+});
+
+app.listen('8000',function(){
+    console.log('listen 8000')
+})
+
+
+
 ```
 audio.ejs
 
