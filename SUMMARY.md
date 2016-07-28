@@ -19,7 +19,6 @@
 * [使用MongoDB](shi_yong_mongodb.md)
 * [使用MySQL](shi_yong_mysql.md)
 * [使用PostgreSQL](shi_yong_postgresql.md)
-* [使用RethinkDB](使用RethinkDB)
 * [rethinkdb](rethinkdb.md)
 * [React](react.md)
 * [React router](react_router.md)
