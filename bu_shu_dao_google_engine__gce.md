@@ -39,7 +39,7 @@ https://www.youtube.com/watch?v=8l--TJabo2M
 
 http://howtodosteps.blogspot.tw/2015/08/how-to-assigntransfer-godaddy-domain.html
 
-之後已godaddy為範例，在我的網域=>管理DNS  下面的域名伺服器新增如下(先到GCE查看)如圖
+下面以godaddy為範例，在我的網域=>管理DNS  下面的域名伺服器新增如下(先到GCE查看)如圖
 
 ![1](https://cloud.githubusercontent.com/assets/11001914/17292905/68992eca-581f-11e6-9612-806d5f78b0be.png)
 
