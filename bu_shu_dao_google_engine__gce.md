@@ -28,6 +28,9 @@ https://community.linuxmint.com/tutorial/view/486
 
 最後再到網址列輸入你的ip位置後加上`/phpmyadmin`即可
 
+####安全性問題
+
+不建議production還放著phpmyadmin，而mysql預設是只能用localhost登入，但安裝phpmyadmin後如未特別設定則任何主機均可修改資料庫
 
 
 ##更改網域名稱DNS
@@ -50,3 +53,4 @@ http://howtodosteps.blogspot.tw/2015/08/how-to-assigntransfer-godaddy-domain.htm
 
 
 之後等待最長48小時。(這兩種搭配個人測試是一分鐘內生效的)
+
