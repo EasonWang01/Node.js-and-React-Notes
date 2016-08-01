@@ -45,6 +45,8 @@ http://howtodosteps.blogspot.tw/2015/08/how-to-assigntransfer-godaddy-domain.htm
 
 ![2](https://cloud.githubusercontent.com/assets/11001914/17292906/6a0ca958-581f-11e6-8fce-af92d16997f3.png)
 
+設定GCE
+![dns3](https://cloud.githubusercontent.com/assets/11001914/17297579/df656d0c-5838-11e6-8437-f9cd7a01546f.png)
 
 
 之後等待48小時。
