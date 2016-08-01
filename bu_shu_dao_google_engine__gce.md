@@ -32,6 +32,8 @@ https://community.linuxmint.com/tutorial/view/486
 
 不建議production還放著phpmyadmin，而mysql預設是只能用localhost登入，但安裝phpmyadmin後如未特別設定則任何主機均可修改資料庫
 
+http://serverfault.com/questions/68264/would-you-install-phpmyadmin-on-a-production-web-server
+
 
 ##更改網域名稱DNS
 
