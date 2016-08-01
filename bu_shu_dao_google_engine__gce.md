@@ -34,6 +34,8 @@ https://community.linuxmint.com/tutorial/view/486
 
 http://serverfault.com/questions/68264/would-you-install-phpmyadmin-on-a-production-web-server
 
+https://www.google.com.tw/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=mysql+only+allow+localhost
+
 
 ##更改網域名稱DNS
 
