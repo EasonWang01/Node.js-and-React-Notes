@@ -49,4 +49,4 @@ http://howtodosteps.blogspot.tw/2015/08/how-to-assigntransfer-godaddy-domain.htm
 ![dns3](https://cloud.githubusercontent.com/assets/11001914/17297579/df656d0c-5838-11e6-8437-f9cd7a01546f.png)
 
 
-之後等待48小時。
+之後等待最長48小時。(這兩種搭配個人測試是一分鐘內生效的)
