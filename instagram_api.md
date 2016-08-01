@@ -1,5 +1,9 @@
 # Instagram API
 
+改版後期改用sandbox模式，意思為，所有app要先經過審核才可使用public_content部分，一開始你只可讀取到你自己的content，或是你可以把別人邀請入你的sandbox，之後其同意後你也可以API獲取其資訊，不然都需經過審核才可使用API
+
+
+
 1.先到如下網站，註冊帳號
 
 https://www.instagram.com/developer
