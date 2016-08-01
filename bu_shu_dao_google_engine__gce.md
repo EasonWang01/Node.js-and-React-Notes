@@ -1,5 +1,7 @@
 # 部屬到Google Engine (GCE)
 
+到資訊主頁後點選Compute Engine
+
 現在有兩個月試用，以及300美元的
 免費額度
 
