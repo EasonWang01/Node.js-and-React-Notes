@@ -22,7 +22,7 @@ https://community.linuxmint.com/tutorial/view/486
 
 再來要改config檔案時可使用vim
 
-輸入 `sudo vim 加檔案路徑即可`
+輸入 `sudo vim 加檔案路徑即可打開檔案編輯`
 
 之後記得restart `sudo /etc/init.d/apache2 restart`
 
