@@ -24,7 +24,7 @@ https://community.linuxmint.com/tutorial/view/486
 
 之後記得restart `sudo /etc/init.d/apache2 restart`
 
-之後再到網址列輸入你的ip位置後加上`/phpmyadmin`即可
+最後再到網址列輸入你的ip位置後加上`/phpmyadmin`即可
 
 
 
