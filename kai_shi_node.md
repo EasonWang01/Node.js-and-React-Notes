@@ -26,6 +26,20 @@ sudo apt-get install npm
 之後輸入npm即可
 ```
 
+#在linux看到版本是0.xx.xx
+```
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+```
+使用n套件來更新
+
+參考以下兩篇文章，有關nodejs更新
+
+http://theholmesoffice.com/node-js-fundamentals-how-to-upgrade-the-node-js-version/
+
+http://askubuntu.com/questions/594656/how-to-install-the-latest-versions-of-nodejs-and-npm-for-ubuntu-14-04-lts
+
 
 ##開始第一個專案
 mkdir class1
