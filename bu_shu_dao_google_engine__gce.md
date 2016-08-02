@@ -66,6 +66,44 @@ https://community.linuxmint.com/tutorial/view/486
 
 最後再到網址列輸入你的ip位置後加上`/phpmyadmin`即可
 
+###登入MySQL prompt
+`mysql -u root -p`
+
+###修改apache2的預設監聽port
+
+```
+1.In /etc/apache2/ports.conf, change the port as
+
+Listen 44400
+
+2.Then go to /etc/apache2/sites-enabled/000-default.conf
+
+And change the first line as
+
+<VirtualHost *:44000>
+
+3.Now restart
+
+sudo service apache2 restart
+```
+
+#架設Node.js server無法監聽80 port
+產生如下錯誤
+
+`Error: listen EACCES 0.0.0.0:80`
+
+必須使用sudo 加上你的node檔案執行即可
+
+但是
+
+這樣不安全
+
+解法為可以用proxy server或更改ip table
+
+參考如下文章
+
+http://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode
+
 
 
 
