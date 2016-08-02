@@ -15,6 +15,8 @@
 
 https://gist.github.com/feczo/7282a6e00181fde4281b
 
+https://cloud.google.com/compute/docs/instances/connecting-to-instance#generatesshkeypair
+
 在中繼資料下面會有一個SSH，此為你一創好instance及會出現的public key。
 
 1.我們用putty的puttygen產生一個public key(記得滑鼠要在puttygen下左右滑動)，產生完後如圖
@@ -41,11 +43,11 @@ https://gist.github.com/feczo/7282a6e00181fde4281b
 
 #3.其他linux使用教學
 
-##查看現在占用的PORT
+###查看現在占用的PORT
 
 `sudo netstat -tulpn`
 
-#安裝Mysql
+###安裝Mysql
 https://community.linuxmint.com/tutorial/view/486
 
 1`sudo apt-get install apache2`
