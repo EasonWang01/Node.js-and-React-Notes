@@ -2,6 +2,7 @@
 
 前言:Google Cloud Platform 雲端平台有兩種服務一個叫做 Compute Engine，另一個叫做 App Engine，觀念別弄混了，以前 google 有一個專門放置 app Engine 的平台，現在已經把平台和做了整合
 
+#使用:
 
 到資訊主頁後點選Compute Engine
 
