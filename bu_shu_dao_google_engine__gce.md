@@ -41,7 +41,7 @@ https://cloud.google.com/compute/docs/instances/connecting-to-instance#generates
 5.最後再到session的ip位置輸入你的機器外部IP即可
 
 
->PS:不建議將private key存在C曹根目錄等需要admin存取的資料夾，則之後使用filezilla時需要存取此key會找不到檔案
+>PS:不建議將private key存在C曹根目錄等需要admin存取的資料夾，因為之後使用filezilla時需要存取此key會找不到檔案
 
 #3.其他linux使用教學
 
