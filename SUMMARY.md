@@ -50,4 +50,5 @@
 * [Markdown與code pretty js](markdownyu_code_pretty_js.md)
 * [HTML5 audio](html5_audio.md)
 * [部屬到Google Engine (GCE)](bu_shu_dao_google_engine__gce.md)
+* Vim 編輯器
 
