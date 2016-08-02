@@ -86,6 +86,8 @@ And change the first line as
 
 sudo service apache2 restart
 ```
+之後登入phpmyadmin改為如下
+`http://www.sakatu.com:8080/phpmyadmin/`
 
 #架設Node.js server無法監聽80 port
 產生如下錯誤
