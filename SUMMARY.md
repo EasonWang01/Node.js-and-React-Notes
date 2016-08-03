@@ -51,4 +51,5 @@
 * [HTML5 audio](html5_audio.md)
 * [部屬到Google Engine (GCE)](bu_shu_dao_google_engine__gce.md)
 * [Vim 編輯器](vim_bian_ji_qi.md)
+* 使用nginx
 
