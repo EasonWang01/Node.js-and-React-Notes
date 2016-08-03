@@ -47,10 +47,11 @@ ubuntu路徑如下
 之後
 
 ```
-sudo service nginx stop
+1.sudo service nginx stop
 
-sudo nginx
+2.sudo nginx
 ```
+在你的網域前加上`https://`即可
 
 
 參考至:https://free.com.tw/ssl-for-free/
