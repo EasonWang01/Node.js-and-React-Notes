@@ -42,6 +42,7 @@ ubuntu路徑如下
 
 把它更改如下圖
 
+![df](https://cloud.githubusercontent.com/assets/11001914/17371582/f7e9e9de-59d2-11e6-9929-c00f005eebcb.png)
 
 
 
