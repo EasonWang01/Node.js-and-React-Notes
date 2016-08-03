@@ -52,5 +52,5 @@
 * [部屬到Google Engine (GCE)](bu_shu_dao_google_engine__gce.md)
 * [Vim 編輯器](vim_bian_ji_qi.md)
 * [使用nginx](shi_yong_nginx.md)
-* Linux 食用指令
+* [Linux 食用指令](linux_shi_yong_zhi_ling.md)
 
