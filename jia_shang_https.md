@@ -28,6 +28,11 @@ certificate.csr
 
 我個人把它們存放再`/usr/share/nginx/sslcrt`路徑都可以，只要後面的virtual host 檔案內設定相同即可
 
+另外要輸入以下指令，將兩個crt合成一個bundle
+```
+sudo bash -c 'cat certificate.crt ca_bundle.crt >> bundle.crt'
+```
+
 我們要在nginx的virtual host設定檔案內設定https
 
 
@@ -40,7 +45,7 @@ ubuntu路徑如下
 
 開啟後如前面沒設定過，會都是藍色的註解
 
-把它更改如下圖
+把它更改如下圖(如果說private.key not match ，把ssl_certificate 的bundle.crt改為certificate.crt試試)
 
 ![df](https://cloud.githubusercontent.com/assets/11001914/17371582/f7e9e9de-59d2-11e6-9929-c00f005eebcb.png)
 
