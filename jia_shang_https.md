@@ -44,7 +44,13 @@ ubuntu路徑如下
 
 ![df](https://cloud.githubusercontent.com/assets/11001914/17371582/f7e9e9de-59d2-11e6-9929-c00f005eebcb.png)
 
+之後
 
+```
+sudo service nginx stop
+
+sudo nginx
+```
 
 
 參考至:https://free.com.tw/ssl-for-free/
