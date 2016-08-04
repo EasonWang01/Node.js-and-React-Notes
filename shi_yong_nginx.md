@@ -28,9 +28,9 @@ http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/
 
 ##讓domain.com www.domain.com都導向https
 
-其原理為任何80port會先導向443再轉到他的pass_proxy
+可參考下圖配置範例
 
-而輸入sakatu.com因為寫在443的config內所以會直接導向pass_proxy
 
-![nginx01](https://cloud.githubusercontent.com/assets/11001914/17393482/6b9b7572-5a56-11e6-912b-c3b738300b26.png)
+![sd](https://cloud.githubusercontent.com/assets/11001914/17406653/ed731d6c-5a96-11e6-971a-fabbde3a4a9f.png)
+
 
