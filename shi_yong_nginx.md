@@ -13,3 +13,15 @@ nginx的config 檔案路徑
 ```
 /etc/nginx/ 
 ```
+
+virtual host 路徑
+```
+/etc/nginx/sites-available
+```
+
+使用reverse proxy
+```
+  location / {
+    proxy_pass http://localhost:3000;
+  }
+```
