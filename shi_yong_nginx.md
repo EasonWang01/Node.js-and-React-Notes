@@ -4,29 +4,29 @@
 
 http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/
 
-在Linux 下的default webpage 路徑為
+##在Linux 下的default webpage 路徑為
 ```
 /usr/share/nginx/html
 ```
-nginx的config 檔案路徑
+##nginx的config 檔案路徑
 
 ```
 /etc/nginx/ 
 ```
 
-virtual host 路徑
+##virtual host 路徑
 ```
 /etc/nginx/sites-available
 ```
 
-使用reverse proxy
+##使用reverse proxy
 ```
   location / {
     proxy_pass http://localhost:3000;
   }
 ```
 
-讓domain.com www.domain.com都導向https
+##讓domain.com www.domain.com都導向https
 
 其原理為任何80port會先導向443再轉到他的pass_proxy
 
