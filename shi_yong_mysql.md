@@ -413,7 +413,7 @@ http://www.sitepoint.com/using-node-mysql-javascript-client/
 sudo /etc/init.d/apache2 start
 ```
 
-phpmyadmin的使用者即為mysql的使用者，安裝phpmyadmin套件可參考本書GCE章節。
+>phpmyadmin中的使用者即為mysql的使用者所以更改後兩者都會變，安裝phpmyadmin套件可參考本書GCE章節。
 
 如在terminal輸入mysql後告知沒有權限，可輸入以下
 ```
