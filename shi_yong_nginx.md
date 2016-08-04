@@ -8,4 +8,8 @@ http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/
 ```
 /usr/share/nginx/html
 ```
+nginx的config 檔案路徑
 
+```
+/etc/nginx/ 
+```
