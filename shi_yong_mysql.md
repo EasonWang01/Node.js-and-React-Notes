@@ -401,7 +401,9 @@ https://www.npmjs.com/package/mysql#getting-the-id-of-an-inserted-row
 http://www.sitepoint.com/using-node-mysql-javascript-client/
 
 
-於Linux的MySQL
+#於Linux安裝的MySQL
+
+一開始預設只有local可以存取到本地資料夾
 
 停止
 ```
