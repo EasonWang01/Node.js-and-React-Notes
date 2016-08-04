@@ -399,3 +399,18 @@ connection.end();
 https://www.npmjs.com/package/mysql#getting-the-id-of-an-inserted-row
 
 http://www.sitepoint.com/using-node-mysql-javascript-client/
+
+
+於Linux的MySQL
+
+停止
+```
+/etc/init.d/apache2 start
+```
+
+開啟
+```
+sudo /etc/init.d/apache2 start
+```
+
+phpmyadmin的使用者即為mysql的使用者，安裝phpmyadmin套件可參考本書GCE章節。
