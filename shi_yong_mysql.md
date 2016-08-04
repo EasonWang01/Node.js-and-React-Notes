@@ -414,3 +414,8 @@ sudo /etc/init.d/apache2 start
 ```
 
 phpmyadmin的使用者即為mysql的使用者，安裝phpmyadmin套件可參考本書GCE章節。
+
+如在terminal輸入mysql後告知沒有權限，可輸入以下
+```
+mysql -u root -p
+```
