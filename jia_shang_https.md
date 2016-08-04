@@ -83,3 +83,8 @@ https.createServer(options, app).listen(3000, function () {
    console.log('Started!');
 });
 ```
+
+記得設定nginx的reverse proxy
+
+參考
+https://www.sitepoint.com/how-to-use-ssltls-with-node-js/
