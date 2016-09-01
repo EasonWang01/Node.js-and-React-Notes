@@ -28,7 +28,7 @@ app.set('view engine', 'ejs');
 ##!!如出現找不到ejs module
 1.原因為如果是使用-g的express必須將ejs也安裝在-g
 
-2.或是將express和ejs都安裝在loacl
+2.或是將express和ejs都安裝在local
 
 ```
 <% %>同一行有HTML tag 則加等號 <%= %>
