@@ -155,3 +155,19 @@ view.ejs
     <%- include('post') %>
   <% }; %>
 ```
+
+#附註:mde的ejs如server端跟client都用mde的同時使用會有些問題
+ex:
+```
+  <script type="text/javascript">
+    
+ var people = ['geddy', 'neil', 'alex'],
+      aa = ejs.render('<%= people %>', {people: people});
+
+  </script>
+```
+server一開始會說people undefined，因為server端的ejs會去找res.render有沒有people，而不是等到執行client後才去從ejs.render裡面找，但假如我們也在res.render裡面加上people參數的話，會發現可正常值行，但是出現aa最後產生的值沒有引入people
+
+所以建議的做法是在client端使用
+http://www.embeddedjs.com/
+的
