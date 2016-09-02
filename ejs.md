@@ -156,7 +156,7 @@ view.ejs
   <% }; %>
 ```
 
-#附註:mde的ejs如server端跟client都用mde的同時使用會有些問題
+#附註:mde的ejs如server端跟client都用mde的，同時使用會有些問題
 ex:
 ```
   <script type="text/javascript">
