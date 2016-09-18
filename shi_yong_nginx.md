@@ -34,3 +34,17 @@ http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/
 ![sd](https://cloud.githubusercontent.com/assets/11001914/17406653/ed731d6c-5a96-11e6-971a-fabbde3a4a9f.png)
 
 
+
+##websocket有問題
+
+加入以下配置
+
+```
+location / {
+proxy_pass http://localhost:8080;
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection "upgrade";
+proxy_set_header Host $host;
+}
+```
