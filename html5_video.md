@@ -38,4 +38,4 @@ window.URL.createObjectURL(superBuffer)
 把他放到video的src即可
 
 
-3.後來想到可以使用將影片擷取10秒一格並分開傳送給client達到串流的效果
+3.後來想到可以使用將影片擷取10秒一格並分開連續傳送給client達到串流的效果
