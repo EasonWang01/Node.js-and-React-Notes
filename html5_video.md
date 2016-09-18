@@ -36,3 +36,6 @@ https://github.com/webrtc/samples/blob/gh-pages/src/content/getusermedia/record/
 window.URL.createObjectURL(superBuffer)
 ```
 把他放到video的src即可
+
+
+3.後來想到可以使用將影片擷取10秒並分開傳送給client達到串流的效果
