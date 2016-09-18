@@ -23,8 +23,9 @@ https://github.com/webrtc/samples/blob/gh-pages/src/content/getusermedia/record/
 ```
   recorder.ondataavailable = e => {
     console.log(e);
-    blob1.push(e);
+    blob1.push(e.data);
   }
+  //這裡記得要推入的是e.data
 ```
 之後再把blob轉格式
 
