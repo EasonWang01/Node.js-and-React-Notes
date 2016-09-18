@@ -5,7 +5,7 @@
 參考此
 https://github.com/EasonWang01/Node.js-stream-video/tree/master/Desktop/Node.js-stream-video-master
 
-但其原理為使用canvas擷取影像，並使用websocket傳遞canvas資料，所以只有影像，並且因為client端用來顯示的 dataURL會持續改變，所以雖然是串流，但畫面會有閃爍問題
+但其原理為使用canvas擷取影像，並使用websocket傳遞canvas資料，所以只有影像，這種做法client端用來顯示的 dataURL會持續改變，所以雖然是串流，但畫面會有閃爍問題
 
 2.從HTML5錄製影片並下載
 
