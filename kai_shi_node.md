@@ -8,7 +8,7 @@ windows
 官網下載安裝包即可
 ```
 Linux
-```
+
 方法1.
 ```
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -18,7 +18,9 @@ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
-方法2. wget https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-x86.tar.xz
+方法2.
+```
+wget https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-x86.tar.xz
 2.xz -d node-v4.4.7-linux-x86.tar.xz
 3.tar xvf node-v4.4.7-linux-x86.tar
 4.export PATH=$PATH:/home/IXD/node-v4.4.7-linux-x86
