@@ -53,6 +53,6 @@
 * [部屬到Google Engine (GCE)](bu_shu_dao_google_engine__gce.md)
 * [Vim 編輯器](vim_bian_ji_qi.md)
 * [使用nginx](shi_yong_nginx.md)
-* [Linux 時用指令](linux_shi_yong_zhi_ling.md)
+* [Linux 十用指令](linux_shi_yong_zhi_ling.md)
 * [加上https](jia_shang_https.md)
 
