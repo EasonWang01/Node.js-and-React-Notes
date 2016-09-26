@@ -56,3 +56,7 @@ git config --global http.sslverify false
 find / -name "dir-name-here"
 ```
 http://www.cyberciti.biz/faq/howto-find-a-directory-linux-command/
+
+###查看現在占用的PORT
+
+`sudo netstat -tulpn`
