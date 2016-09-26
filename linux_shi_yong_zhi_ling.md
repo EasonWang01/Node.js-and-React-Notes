@@ -1,6 +1,6 @@
-# Linux 食用指令
+# Linux 實用指令
 
-移除包含檔案的目錄
+#移除包含檔案的目錄
 
 `sudo rm -rf folderName`
 或是`Rf`
@@ -13,7 +13,7 @@ sudo bash -c 'cat
 
 
 
-Debian相關筆記
+#Debian相關筆記
 ```
 
 更改網路:/etc/network/interfaces
@@ -41,7 +41,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
 
 使用git:
 
-直接輸入apt-get install debian
+直接輸入apt-get install git
 
 之後git clone時可能會出現不信任憑證的錯誤
 輸入以下即可
@@ -49,3 +49,10 @@ git config --global http.sslverify false
 
 之後git clone可正常執行 
 ```
+
+#搜尋資料夾
+
+```
+find / -name "dir-name-here"
+```
+http://www.cyberciti.biz/faq/howto-find-a-directory-linux-command/
