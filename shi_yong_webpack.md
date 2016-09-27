@@ -5,6 +5,11 @@
 
 >可將webpack.config.js中寫的entry file內寫入許多require，之後輸入`webpack`即可將所有引入的東西打包成一份js
 
+####105.09.27
+可使用https://www.npmjs.com/package/webpack-livereload-plugin
+
+不用加入dev server可使用自己的server並加入liveReload
+
 ##開發時
 官方有webpack-dev-server但，我們未來部屬後還是要用自己的server，如果只是要開發靜態頁面可用
 ###1.靜態頁面基本開發環境
