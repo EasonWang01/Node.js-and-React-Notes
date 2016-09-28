@@ -557,6 +557,12 @@ export default TextInput
 ```
 onChange={this.handleChange.bind(this)}
 ```
+接著在render上面寫
+```
+handleChange(){
+ ...
+}
+```
 
 
 3.第三種寫法(ES6的箭頭函數，最方便，因為會直接幫你綁定)
