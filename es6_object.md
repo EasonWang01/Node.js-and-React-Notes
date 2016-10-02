@@ -34,10 +34,16 @@ function todoApp(state = initialState, action) {}
 
 let obj = {x: 1, y: 2}; let {x, y} = obj; // x = 1, y = 2
 
+//產生兩個新變數x,y
+
 ```
 2.當函式的參數為物件，名稱與值相同時
 ```
 const sendLoginRequest = ({username, password}) => dispatch(loginRequest({username, password}))
+
+
+//類似於{username:username,password:password}
+
 ```
 
 
