@@ -26,4 +26,18 @@ function todoApp(state = initialState, action) {}
 //如果沒有傳入state參數(第一個參數)，則會字動找initialState變數指定給function 內的state變數
 ```
 
+#Object 解構賦值
+
+1.
+```
+要保證key值匹配。
+
+let obj = {x: 1, y: 2}; let {x, y} = obj; // x = 1, y = 2
+
+```
+2.當函式的參數為物件名稱與值相同時
+```
+const sendLoginRequest = ({username, password}) => dispatch(loginRequest({username, password}))
+```
+
 
