@@ -45,5 +45,9 @@ const sendLoginRequest = ({username, password}) => dispatch(loginRequest({userna
 //類似於{username:username,password:password}
 
 ```
+可參考
+
+https://read01.com/oE8Q.html
 
 
+http://www.html5cn.org/article-9274-1.html
