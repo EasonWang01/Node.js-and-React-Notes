@@ -1164,4 +1164,26 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
     },
 ```
 
+#在render方法內使用js新增component
+
+ex:
+```
+render (){
+<div>
+  {addth}
+</div>
+}
+```
+在這裡addth可以是兩種寫法
+
+1.一個是直接return出完整的dom element
+
+2.或是把每個dom element放入array中
+
+```
+['<th>some<th>','<th>some<th>']
+```
+
+第二種方法即是常見的使用map放入的技巧
+
 
