@@ -1186,4 +1186,14 @@ render (){
 
 第二種方法即是常見的使用map放入的技巧
 
+#findDOMNode
+
+之前版本的getDOMNode已經拿掉
+
+可如下使用findDOMNode
+
+```
+findDOMNode(this.refs.chart)
+```
+
 
