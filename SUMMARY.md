@@ -55,4 +55,5 @@
 * [使用nginx](shi_yong_nginx.md)
 * [Linux 實用指令](linux_shi_yong_zhi_ling.md)
 * [加上https](jia_shang_https.md)
+* ES6 Symbol
 
