@@ -29,6 +29,7 @@
 * [使用Babel](babel.md)
 * [ES6 Generator](es6_generator.md)
 * [ES6 Set,Map](es6_set,map.md)
+* ES6 Symbol
 * [ES6 Promise](es6_promise.md)
 * [ES6 Arrow function](es6_arrow_function.md)
 * [ES6 Object](es6_object.md)
@@ -55,5 +56,4 @@
 * [使用nginx](shi_yong_nginx.md)
 * [Linux 實用指令](linux_shi_yong_zhi_ling.md)
 * [加上https](jia_shang_https.md)
-* ES6 Symbol
 
