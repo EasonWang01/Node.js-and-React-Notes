@@ -1,6 +1,6 @@
 # ES6 Symbol
 
-用途:讓Object中的key名稱不會被覆蓋
+用途:讓Object中的key名稱不會被之後取相同名字的key覆蓋
 ```
 var a = {}
 
@@ -17,3 +17,4 @@ Symbol(): 13
 Symbol(aa):13453453
 Symbol(aa): 12
 ```
+之後必須用a[g]來取值，不可用a.g
