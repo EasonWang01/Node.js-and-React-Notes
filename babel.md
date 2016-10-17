@@ -19,9 +19,9 @@
 ##第二種方法
 
 ```
-
+babel-node server.js
 ```
-
+將會自動轉有關import或相關ES6.7
 ##於Production
 
 不建議以上兩種做法，更好的做法餐好以下連結
