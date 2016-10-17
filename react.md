@@ -1196,4 +1196,12 @@ render (){
 findDOMNode(this.refs.chart)
 ```
 
+#Server side rendering(使用Express)
+
+參考此篇
+
+http://crypt.codemancers.com/posts/2016-09-16-react-server-side-rendering/
+
+
+
 
