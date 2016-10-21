@@ -43,5 +43,20 @@ var s = 5
 // explanation: explicit return inside block returns object
 ((name) => {return {id: name}})('Jess') 
 ```
+#注意
+
+如果使用()=>{}加上了{}則箭頭函數不會auto return
+```
+var a = () => {12}
+undefined
+a()
+undefined
+var a = () => 12
+undefined
+a()
+12
+
+```
+
 
 來源:http://stackoverflow.com/questions/28889450/when-should-i-use-return-in-es6-arrow-functions
