@@ -569,6 +569,13 @@ handleChange(){
 
 
 ```
+send = () => {
+    console.log(this.inputFiled.value)
+    let text = this.inputFiled.value;
+    this.props.addTodo1(text);
+  }
+
+
  <button onClick={()=>this.handleSubmit()}>Submit</button>
 ```
 或是
