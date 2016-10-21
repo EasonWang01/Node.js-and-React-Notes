@@ -590,6 +590,68 @@ send = () => {
 ####!每次改動constructor記得都要重新整理，就算有用Hot reload
 
 
+完整範例：
+
+container
+```
+import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import actions from '../redux/actions/todoActions.js'
+import { bindActionCreators } from 'redux'
+import List from '../components/List.js'
+
+class TodoList extends Component {
+  send = () => {
+    console.log(this.inputFiled.value)
+    let text = this.inputFiled.value;
+    this.props.addTodo1(text);
+  }
+  itemClick = (a) => {
+    console.log(a)
+  }
+  render() {
+    return (
+      <div>
+        <input ref={(c) => this.inputFiled = c} />
+        <button onClick={()=>this.send()}></button>
+        <List list={this.props} itemClick={()=>this.itemClick(12)}>
+        </List>
+      </div>
+    )
+  }
+
+}
+function mapStateToProp(state){
+	return state
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    addTodo1:actions.addTodo
+  },dispatch);
+}
+
+export default connect(mapStateToProp,mapDispatchToProps)(TodoList)
+
+```
+component
+
+```
+import React from 'react'
+const List = (props) => {
+ let todos = Array.from(props.list.todos);
+  return (
+    <div>
+      {todos.map( i =>
+         <p key={i.id} onClick={props.itemClick}>{i.text}</p>
+      )}
+    </div>
+  )
+}
+
+export default List;
+
+```
 
 #2.在class內所有的this都是指到那個class
 
