@@ -605,6 +605,31 @@ export default ReadMongo
 
 ####!每次改動constructor記得都要重新整理，就算有用Hot reload
 
+
+第四種寫法
+
+上面第三種在元件上沒辦法傳入參數，所以我們可以進階改為以下寫法，要用兩個箭頭才有反應
+
+```
+class TodoList extends Component {
+  send = (a) => () => {
+    console.log(a)
+  }
+  send1 = () => () => {
+    console.log(1232)
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.send(123)}></button>
+        <button onClick={this.send1()}></button>
+      </div>
+    )
+  }
+
+}
+```
+
 #2.在class內所有的this都是指到那個class
 
 所以要取得onchange時input內的value必須用e.target
