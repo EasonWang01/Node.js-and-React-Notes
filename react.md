@@ -606,7 +606,7 @@ export default ReadMongo
 ####!每次改動constructor記得都要重新整理，就算有用Hot reload
 
 
-第四種寫法
+4.第四種寫法
 
 上面第三種在元件上沒辦法傳入參數，所以我們可以進階改為以下寫法，要用兩個箭頭才有反應
 
