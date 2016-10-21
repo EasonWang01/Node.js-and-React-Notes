@@ -592,6 +592,8 @@ send = () => {
 
 完整範例：
 
+`注意其中的onclick 與 從子元件傳上來的 onclick`
+
 container
 ```
 import React, { Component } from 'react'
