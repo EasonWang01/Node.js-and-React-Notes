@@ -1328,9 +1328,9 @@ const rootReducer = combineReducers({
 ```
 >在多人合作中，我們會把reducer每個function放在不同檔案，最後再import到rootReducer來減少多人一起開發功能時的conflict
 
-#中間件ActionCreator
+#中間件BindActionCreator
 
-原本App.js的props裡只有Provider傳下來的dispatch方法，而使用這個後，dispatch被取代為actions
+將store 的dispatch 包住action 成為function 可直接使用  不用再dispatch(someaction)
 
 App.js加上
 ```
@@ -1372,7 +1372,51 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 但
 
-如果你是直接把STORE在每個元件引入的話，每個元件就直接知道有DISPATCH這個方法，所以也不用往下傳遞PROPS教導，所以也不用使用ACTIONCreator這個方法
+如果你是直接把STORE在每個元件引入的話，每個元件就直接知道有DISPATCH這個方法，所以也不用往下傳遞PROPS，所以也不用使用ACTIONCreator這個方法
+
+但此種做法不好
+
+建議如下寫法
+
+```
+import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import actions from '../redux/actions.js'
+import { bindActionCreators } from 'redux'
+
+class TodoList extends Component {
+  send = (a) => () => {
+    console.log(this.props);
+    this.props.addTodo1();
+
+  }
+  send1 = () => () => {
+    console.log(1232)
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.send(123)}></button>
+        <button onClick={this.send1()}></button>
+      </div>
+    )
+  }
+
+}
+function  mapStateToProp(state){
+
+	return state
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    addTodo1:actions.addTodo
+  },dispatch);
+}
+
+export default connect(mapStateToProp,mapDispatchToProps)(TodoList)
+
+```
 
 參考:https://camsong.github.io/redux-in-chinese/docs/api/bindActionCreators.html
 
