@@ -604,19 +604,19 @@ import List from '../components/List.js'
 
 class TodoList extends Component {
   send = () => {
-    console.log(this.inputFiled.value)
     let text = this.inputFiled.value;
     this.props.addTodo1(text);
   }
-  itemClick = (a) => {
-    console.log(a)
+  itemClick = (e,id) => {
+    console.log(e)
+    console.log(id)
   }
   render() {
     return (
       <div>
         <input ref={(c) => this.inputFiled = c} />
         <button onClick={()=>this.send()}></button>
-        <List list={this.props} itemClick={()=>this.itemClick(12)}>
+        <List list={this.props} itemClick={(e,id)=>this.itemClick(e,id)}>
         </List>
       </div>
     )
@@ -635,6 +635,8 @@ function mapDispatchToProps(dispatch) {
 
 export default connect(mapStateToProp,mapDispatchToProps)(TodoList)
 
+
+
 ```
 component
 
@@ -645,7 +647,7 @@ const List = (props) => {
   return (
     <div>
       {todos.map( i =>
-         <p key={i.id} onClick={props.itemClick}>{i.text}</p>
+         <p key={i.id} onClick={(e)=>props.itemClick(e,i.id)}>{i.text}</p>
       )}
     </div>
   )
