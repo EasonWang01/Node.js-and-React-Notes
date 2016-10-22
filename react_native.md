@@ -46,14 +46,18 @@
 ```
 1.watchman timeout
 2.fbjs
+3.Connect device failed
 ```
 解決方案
 ```
 1.確保node.js的版本
-2.確定watchmanconfig檔案存在(於一開始build時)
-3.npm install in admin
-4.如果沒有hot reload儲存沒反應，可先從emulator按上一頁，之後點選app重新進入，即可
-5.如果hot reload跳出app或是無法reload JS，需重新compile app
+確定watchmanconfig檔案存在(於一開始build時)
+2.npm install in admin
+如果沒有hot reload儲存沒反應，可先從emulator按上一頁，之後點選app重新進入，即可
+如果hot reload跳出app或是無法reload JS，需重新compile app
+3.參考此篇 設定genymotion android SDK path
+
+http://stackoverflow.com/questions/34692210/react-native-errortimeout-getting-device-list-when-running-hello-world-on-ubunt
 ```
 
 
