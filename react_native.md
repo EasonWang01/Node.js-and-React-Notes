@@ -37,9 +37,11 @@
 
 1. cd 專案資料夾根目錄
 
-2.react-native run-android
+2.react-native run-android(安裝APP到debug 用設備)
 
 3.react-native start
+(啟動H
+OT RELOAD SERVER)
 ```
 
 ####可能的問題
