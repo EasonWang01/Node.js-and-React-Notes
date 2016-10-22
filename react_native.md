@@ -23,6 +23,8 @@
 
 5.開啟android studio 點選上方圖案(SDK manger)，之後再點Launch Standalone SDK manger
   勾選build tool後安裝
+  
+  記得把android SDK 加入系統環境變數(ANDROID_HOME)
 
 6.在cmd輸入react-native run-android(記得開好genymotion)，正常跑完會出現紅色底字，這時因為我們還沒啟動react-native的server
 
