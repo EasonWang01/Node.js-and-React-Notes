@@ -1182,6 +1182,140 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 ```
 參考:https://github.com/callemall/material-ui#react-tap-event-plugin
 
+#Material UI 現在0.15後需如下使用
+
+1.加入Mui 的context
+2.injectTapEventPlugin();
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { render } from 'react-dom'
+import root from './root.js'
+import {Provider} from 'react-redux'
+import {configureStore} from '../redux/store'
+import {Router, browserHistory, Route} from 'react-router';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+const initialState = window.__PRELOADED_STATE__;
+injectTapEventPlugin();
+const store = configureStore(initialState);
+
+ReactDOM.render(
+	<Provider store={store}>
+		<MuiThemeProvider>
+	    <Router history={browserHistory} routes={root} />
+		</MuiThemeProvider>
+	</Provider>
+,document.getElementById('app')
+)
+
+```
+##使用server side rendering with Material UI
+
+一樣加入context和injectTapEventPlugin
+
+```
+var express = require('express');
+var path = require('path');
+var config = require('../../webpack.config.js');
+var webpack = require('webpack');
+var webpackDevMiddleware = require('webpack-dev-middleware');
+var webpackHotMiddleware = require('webpack-hot-middleware');
+
+import React from 'react';
+import {renderToString} from 'react-dom/server';
+import {RouterContext, match, createRoutes} from 'react-router';
+import root from '../client/root.js';
+import {Provider} from 'react-redux'
+import {configureStore} from '../redux/store'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+const routes = createRoutes(root);
+
+
+var app = express();
+
+var compiler = webpack(config);
+
+app.use(webpackDevMiddleware(compiler, {noInfo:true,publicPath: config.output.publicPath}));
+app.use(webpackHotMiddleware(compiler));
+app.use(express.static('./dist'));
+
+
+app.post('/ajax',function(req,res){
+
+	res.end("success");
+})
+
+let initialState = {
+		todos:[{
+			id:0,
+			completed: false,
+			text:'initial for demo'
+		}]
+}
+
+
+const store = configureStore(initialState);
+
+
+app.get('*', (req, res) => {
+	const muiTheme = getMuiTheme({
+	  userAgent: req.headers['user-agent'],
+	});
+  match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
+    if (error) {
+      res.status(500).send(error.message);
+    } else if (redirectLocation) {
+      res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+    } else if (renderProps) {
+      const content = renderToString(
+				<Provider store={store}>
+				  <MuiThemeProvider muiTheme={muiTheme}>
+					  <RouterContext {...renderProps} />
+				  </MuiThemeProvider>
+				</Provider>
+			);
+      let state = store.getState();
+      let page = renderFullPage(content, state);
+      return res.status(200).send(page);
+    } else {
+      res.status(404).send('Not Found');
+    }
+  });
+});
+
+const renderFullPage = (html, preloadedState) => (`
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React Todo List</title>
+</head>
+<body>
+  <div id="app">${html}</div>
+  <script>
+  window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\x3c')}
+   </script>
+  <script src="vendor.bundle.js"></script>
+  <script src="bundle.js"></script>
+</body>
+</html>
+`
+);
+
+var port = 3000;
+
+app.listen(port, function(error) {
+  if (error) throw error;
+  console.log("Express server listening on port", port);
+});
+
+```
+
+
 #React toggle style
 
 如何在點擊時切換style呢
