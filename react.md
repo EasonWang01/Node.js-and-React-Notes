@@ -1390,7 +1390,28 @@ findDOMNode(this.refs.chart)
 https://github.com/EasonWang01/React-router-Redux-isomorphic-Boilerplate
 
 
+#Stateless component
 
+相對於使用class，使用 `const = function` 的方式會提升效能
+
+但其不可使用lifecycle跟state,ref
+
+需要props傳入
+
+使用ref需於parent的class用div寫上ref在於其內引入stateless component
+
+範例:
+```
+  clickCircle = (e) => {
+    this.refs.cir1.children[0].style.background='red';
+  }
+
+  <div ref='cir1' key={1} onClick={(e) => this.clickCircle(e)} style={styles.circleContainer}>
+    <TwoCircle   />
+    <div style={styles.p}>粉絲註冊點帳戶</div>
+    <div style={styles.number}>6.69</div>
+  </div>
+```
 
 
 
