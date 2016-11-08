@@ -1407,7 +1407,7 @@ https://github.com/EasonWang01/React-router-Redux-isomorphic-Boilerplate
   }
 
   <div ref='cir1' key={1} onClick={(e) => this.clickCircle(e)} style={styles.circleContainer}>
-    <TwoCircle   />
+    <TwoCircle />
     <div style={styles.p}>粉絲註冊點帳戶</div>
     <div style={styles.number}>6.69</div>
   </div>
