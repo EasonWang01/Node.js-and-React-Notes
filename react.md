@@ -1399,6 +1399,7 @@ https://github.com/EasonWang01/React-router-Redux-isomorphic-Boilerplate
 需要props傳入
 
 使用ref需於parent的class用div寫上ref在於其內引入stateless component
+，之後再用this.refs.cir1.children[0]方式取得子節點
 
 範例:
 ```
