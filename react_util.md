@@ -1,7 +1,16 @@
 # React util
 
 
-##1.使用Rich Editor
+##1.如有一個共用的Component
+
+不要於component的style 寫上如
+```
+Object.assign(props.style,style.item)
+```
+這樣共用元素的頁面會互相覆蓋style
+因為react不會重新render元素
+
+##2.使用Rich Editor
 這裡使用Draft.js 做example
 
 官方的usage只給了一般的editor
