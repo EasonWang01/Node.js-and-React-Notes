@@ -21,6 +21,7 @@
 * [使用PostgreSQL](shi_yong_postgresql.md)
 * [rethinkdb](rethinkdb.md)
 * [React](react.md)
+* [React util](react_util.md)
 * [React router](react_router.md)
 * [Redux](redux.md)
 * [React Native](react_native.md)
@@ -57,5 +58,4 @@
 * [Linux 實用指令](linux_shi_yong_zhi_ling.md)
 * [加上https](jia_shang_https.md)
 * [Git 常用指令](git_chang_yong_zhi_ling.md)
-* [React util](react_util.md)
 
