@@ -495,7 +495,7 @@ kitty.save(function (err) {
   console.log('meow');
 });
 ```
-ps:如果存入資料的欄位不在schema內則不會顯示，但可正常存入該筆資料
+ps:如果存入資料的欄位不在schema內則不會存入
 
 ps:如省略某些欄位沒寫，則不會顯示，亦可正常存入
 ```
