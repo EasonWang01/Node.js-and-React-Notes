@@ -455,7 +455,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 完整
 ```
 var mongoose = require("mongoose");
-mongoose.connect('mongodb://forclass1:test123@ds013898.mlab.com:13898/forclasss',function(err){
+mongoose.connect('mongodb://forclass1:test123@ds013898.mlab.com:13898/forclass',function(err){
 	if(err){throw err};
 });
 var db = mongoose.connection;
