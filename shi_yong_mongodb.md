@@ -55,7 +55,7 @@ var server = new Server('ds013898.mlab.com',13898, {auto_reconnect : true});
 var db = new Db('forclass', server);
 
 ```
-設定database中user帳號及密碼(不是MongoLab的登入帳密)
+填入database中user帳號及密碼(不是MongoLab的登入帳密)
 ```
 db.open(function(err, client) {
     client.authenticate('forclass1', 'test123', function(err, success) {
