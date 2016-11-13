@@ -523,6 +523,18 @@ kitty.save(function (err) {
   console.log('meow');
 });
 ```
+#使用Promise 
+```
+var User = mongoose.model('ac', new mongoose.Schema({
+	name:{type: String, unique: true},
+	password:String
+}));
+var list = new User({name:"s", password:"123456"});
+list.save()
+.then(a => console.log(a))
+.catch(err => console.log(err));
+```
+
 #查詢資料
 ```
 var Cat = mongoose.model('Cat', {
