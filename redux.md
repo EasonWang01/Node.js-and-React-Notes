@@ -1370,11 +1370,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
   }
 ```
 
-但
+但一般我們不會用上面這種寫法
 
-如果你是直接把STORE在每個元件引入的話，每個元件就直接知道有DISPATCH這個方法，所以也不用往下傳遞PROPS，所以也不用使用ACTIONCreator這個方法
-
-但此種做法不好
 
 建議如下寫法
 
