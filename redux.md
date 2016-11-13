@@ -1372,7 +1372,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 但一般我們不會用上面這種寫法
 
-
+#mapDispatchToProp
 建議如下寫法
 
 
