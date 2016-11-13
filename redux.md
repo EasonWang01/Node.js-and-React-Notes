@@ -1378,48 +1378,16 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 建議如下寫法
 
-```
-import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import actions from '../redux/actions.js'
-import { bindActionCreators } from 'redux'
 
-class TodoList extends Component {
-  send = (a) => () => {
-    console.log(this.props);
-    this.props.addTodo1();
-
-  }
-  send1 = () => () => {
-    console.log(1232)
-  }
-  render() {
-    return (
-      <div>
-        <button onClick={this.send(123)}></button>
-        <button onClick={this.send1()}></button>
-      </div>
-    )
-  }
-
-}
-function  mapStateToProp(state){
-
-	return state
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    addTodo1:actions.addTodo
-  },dispatch);
-}
-
-export default connect(mapStateToProp,mapDispatchToProps)(TodoList)
+https://egghead.io/lessons/javascript-redux-using-mapdispatchtoprops-shorthand-notation
 
 ```
+//直接把action轉為function使用，因react-redux 幫你把dispatch包在裡面了
 
-參考:https://camsong.github.io/redux-in-chinese/docs/api/bindActionCreators.html
-
+export default connect(mapStateToProp,{
+  userInfoAction:actions.userInfo, 
+})(Login)
+```
 
 #操作非同步動作(Async)
 例如:
