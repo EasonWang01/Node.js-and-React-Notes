@@ -333,5 +333,7 @@ https://github.com/sstur/draft-js-export-html
       let html = stateToHTML(editorState.getCurrentContent());
       console.log(html)
     }
+    
+      //TODO 把此html傳給parent state使用即可
 ```
 如上使用即可
