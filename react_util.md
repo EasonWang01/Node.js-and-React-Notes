@@ -317,3 +317,21 @@ RichEditor.css
 即可看到如下畫面
 
 ![](螢幕快照 2016-11-09 下午5.46.00.png)
+
+接著因為我們要將其存成immutable的markdown轉為html，須使用如下模組
+
+https://github.com/sstur/draft-js-export-html
+
+```
+  constructor(props) {
+    super(props);
+    this.state = { editorState: EditorState.createEmpty() };
+    
+    this.onChange = (editorState) => {
+      this.setState({ editorState });
+      console.log(editorState.getCurrentContent())
+      let html = stateToHTML(editorState.getCurrentContent());
+      console.log(html)
+    }
+```
+如上使用即可
