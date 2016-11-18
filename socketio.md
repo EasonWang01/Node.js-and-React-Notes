@@ -1,5 +1,8 @@
 # socket.io
 
+
+注意：socket.broadcast.emit會傳給所有connected user除了自己
+
 server
 ```
 var express = require('express');
