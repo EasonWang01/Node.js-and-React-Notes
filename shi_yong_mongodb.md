@@ -535,7 +535,7 @@ list.save()
 .catch(err => console.log(err));
 ```
 
-##注意：記得回傳資料要先`JSON.stringify`
+##注意：記得res.end回傳資料要先`JSON.stringify`
 
 #查詢資料
 ```
