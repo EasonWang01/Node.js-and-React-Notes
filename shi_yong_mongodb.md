@@ -535,6 +535,8 @@ list.save()
 .catch(err => console.log(err));
 ```
 
+##注意：記得回傳資料要先`JSON.stringify`
+
 #查詢資料
 ```
 var Cat = mongoose.model('Cat', {
