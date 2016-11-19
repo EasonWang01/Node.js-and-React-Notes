@@ -1,7 +1,7 @@
 # JS 格式轉換
 
-String to Dom
-使用Dom parser
+String to DOM
+使用DOM parser
 ```
 var xmlString = "<div id='foo'><a href='#'>Link</a><span></span></div>"
   , parser = new DOMParser()
