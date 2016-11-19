@@ -42,3 +42,20 @@ $git pull origin master --allow-unrelated-histories
 
 ok
 ```
+
+##取消上次commit且維持檔案內容
+```
+git reset HEAD~
+```
+
+##回到上次commit的檔案狀態，刪除檔案內容
+```
+git reset --hard HEAD~1
+```
+##回到上次commit檔案狀態，刪除檔案內容，但把檔案內容先儲存
+```
+git stash
+```
+說明：你會發現跟reset hard類似，但他會把你的改變先儲存，之後可用`$ git stash apply`回復
+
+https://git-scm.com/book/zh-tw/v1/Git-%E5%B7%A5%E5%85%B7-%E5%84%B2%E8%97%8F-Stashing
