@@ -4,6 +4,7 @@
 
 如果不用oauth2可直接使用client ID發request
 
+注意：如果是傳base64需把前面data部分去除
 
 #browser
 參考以下範例
