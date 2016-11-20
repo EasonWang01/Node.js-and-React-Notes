@@ -7,7 +7,7 @@
  ```
 <div>
 <button onClick={() => this.fileBtn()} style={style.picBtn} />
-<input id="file-upload" ref="fileInput" type='file' />
+<input style={style.fileInput} id="file-upload" ref="fileInput" type='file' />
 </div>
  ```
  ```
@@ -27,5 +27,8 @@
     cursor: 'pointer',
     display: 'block',
     outline: 'none'
+  },
+    fileInput: {
+    display: 'none'
   }
  ```
