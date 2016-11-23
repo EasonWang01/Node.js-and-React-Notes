@@ -1645,4 +1645,39 @@ ListOfNumbers.propTypes = {
   numbers: React.PropTypes.arrayOf(React.PropTypes.number)
 };
 ```
-###注意，使用const宣告的component裡面不可有state以及ref
+####注意，使用const宣告的component裡面不可有state以及ref
+
+
+-----
+#從store 給到元件
+
+1.
+```
+const mapStateToProp = (state) => ({
+  userInfo: state.userInfo
+})
+```
+
+2.
+```
+<TextField
+  hintText=""
+  type="date"
+  id="date1"
+  value={ this.state.date }
+  onChange={ (e) => this.changeText(e,'date') }
+  floatingLabelStyle={{color: 'gray'}}
+  floatingLabelText=""
+/>
+```
+3.
+```
+  componentWillReceiveProps(nextProps) {//重新整理使用，因componentWillMount時的this.props還沒抓到
+    if (nextProps.userInfo !== 'undefined'){
+      this.setState({ date: nextProps.userInfo.birthday})
+    }
+  }
+  componentWillMount() {//切換元件時使用，因componentWillReceiveProps不會再切換元件時觸發，但每次切換元件state會重置
+      this.setState({ date: this.props.userInfo.birthday})
+  }
+```
