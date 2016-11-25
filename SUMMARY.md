@@ -62,4 +62,5 @@
 * [imgur API](imgur_api.md)
 * [JS 格式轉換](js_ge_shi_zhuan_huan.md)
 * [js trick](js_trick.md)
+* AWS 注意事項
 
