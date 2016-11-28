@@ -118,6 +118,10 @@ include servers/*;
 ```
 以上面這份config為例，我們會在root也就是電腦根目錄，下面的var資料夾下創建www資料夾．
 
+```
+/var/www/um1215-webclient/
+```
+
 之後裡面放入um1215-webclient資料夾(隨意取名)，然後再把我們剛build產生出的build資料夾放入
 
 >注意事項：build資料夾內要把index.html檔案放入，並且index.html內要有bundle.js的script引入
