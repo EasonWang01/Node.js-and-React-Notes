@@ -28,9 +28,9 @@ ubuntu路徑如下
 
 它會給你三個框框，裡面分別為
 ```
-ca_bundle.csr 
+ca_bundle.crt 
 private.key 
-certificate.csr
+certificate.crt
 ```
 用nginx為例子
 
