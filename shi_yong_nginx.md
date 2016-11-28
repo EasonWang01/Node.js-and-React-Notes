@@ -4,6 +4,11 @@
 
 http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/
 
+重啟指令
+```
+sudo nginx -s stop && sudo nginx
+```
+
 ##在Linux 下的default webpage 路徑為
 
 ```
