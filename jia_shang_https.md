@@ -34,7 +34,7 @@ certificate.csr
 ```
 用nginx為例子
 
-我個人把它們存放再`/usr/share/nginx/sslcrt`路徑都可以，只要後面的virtual host 檔案內設定相同即可
+我個人把它們存放再`/usr/share/nginx/sslcrt`，其他路徑也可以，只要後面的virtual host 檔案內設定相同即可
 
 另外要輸入以下指令，將兩個crt合成一個bundle
 ```
