@@ -60,3 +60,11 @@ http://www.cyberciti.biz/faq/howto-find-a-directory-linux-command/
 ###查看現在占用的PORT
 
 `sudo netstat -tulpn`
+
+###複製資料夾並移動
+
+記得先mkdir
+
+```
+sudo cp -R  ~/Desktop/um1215-webclient/ ./um1215-webclient
+```
