@@ -85,6 +85,11 @@ startProd即為webpack會打包成bundle.js的指令檔案
 
 安裝好nginx後我們先去改他的config
 
+mac預設路徑
+```
+ /usr/local/etc/nginx/
+```
+
 ex:
 
 ```
@@ -111,7 +116,7 @@ include servers/*;
 }
 
 ```
-以上面這份config為例，我們會在root也就是腦根目錄，下面的var資料夾下創建www資料夾．
+以上面這份config為例，我們會在root也就是電腦根目錄，下面的var資料夾下創建www資料夾．
 
 之後裡面放入um1215-webclient資料夾(隨意取名)，然後再把我們剛build產生出的build資料夾放入
 
