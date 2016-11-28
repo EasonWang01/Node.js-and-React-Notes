@@ -1,4 +1,4 @@
-# Linux 實用指令
+# Unix 實用指令
 
 #移除包含檔案的目錄
 
@@ -67,4 +67,10 @@ http://www.cyberciti.biz/faq/howto-find-a-directory-linux-command/
 
 ```
 sudo cp -R  ~/Desktop/um1215-webclient/ ./um1215-webclient
+```
+
+##打開當前資料夾
+
+```
+open .
 ```
