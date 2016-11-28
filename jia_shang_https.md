@@ -8,9 +8,11 @@ https://www.sslforfree.com
 
 之後把它給你的兩個檔案下載，之後放到你的server www目錄下的它給你的路徑
 
->Create a folder in your domain named ".well-known" if it does not already exist
-Create another folder in your domain under ".well-known" named "acme-challenge" if it does not already exist
-Upload the downloaded files to the "acme-challenge" folder
+>1.Create a folder in your domain named ".well-known" if it does not already exist
+>
+2.Create another folder in your domain under ".well-known" named "acme-challenge" if it does not already exist
+
+>3.Upload the downloaded files to the "acme-challenge" folder
 
 ubuntu路徑如下
 
