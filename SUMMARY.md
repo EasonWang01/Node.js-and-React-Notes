@@ -24,6 +24,7 @@
 * [React util](react_util.md)
 * [React router](react_router.md)
 * [Redux](redux.md)
+* [React webpack 部署](react_webpack_bu_shu.md)
 * [React Native](react_native.md)
 * [import_export_module.exports 模組化](importexport_module_exports_mo_zu_hua.md)
 * [使用webpack](shi_yong_webpack.md)
@@ -63,5 +64,4 @@
 * [JS 格式轉換](js_ge_shi_zhuan_huan.md)
 * [js trick](js_trick.md)
 * [部署到AWS](bu_shu_dao_aws.md)
-* [React webpack 部署](react_webpack_bu_shu.md)
 
