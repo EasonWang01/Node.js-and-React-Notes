@@ -13,3 +13,11 @@ https://www.youtube.com/watch?v=WxhFq64FQzA
 GUI部分，在`window`可用WINSCP或FileZillz在`Mac`可用CyberDuck
 
 http://stackoverflow.com/questions/20939562/scp-permission-denied-publickey-on-ec2-only-when-using-r-flag-on-directories
+
+##注意事項
+如果上傳檔案時沒有權限，但你覺得一個一個資料夾開權限太麻煩，於是在usr之類的大資料夾整個開權限後會出現整個sudo出現錯誤
+
+```
+sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
+```
+目前還沒找到解法，網路上目前推薦重灌系統
