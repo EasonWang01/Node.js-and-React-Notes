@@ -53,4 +53,11 @@ include servers/*;
 
 之後裡面放入um1215-webclient資料夾(隨意取名)，然後再把我們剛build產生出的build資料夾放入
 
->注意事項：build資料夾內要把index.html檔案放入，並且index.html要有bundle.js的script引入
+>注意事項：build資料夾內要把index.html檔案放入，並且index.html內要有bundle.js的script引入
+
+之後重啟nginx即可
+
+mac
+```
+sudo nginx -s stop && sudo nginx
+```
