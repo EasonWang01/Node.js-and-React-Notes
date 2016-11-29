@@ -702,3 +702,26 @@ https://docs.mongodb.org/manual/reference/operator/update/
 http://mongoosejs.com/docs/2.7.x/docs/methods-statics.html
 
 https://cnodejs.org/topic/504b4924e2b84515770103dd
+
+
+#注意事項
+
+在schema中定義Date如果如下兩種
+```
+PostDate: String,
+lastModify: Date,
+```
+node.js
+```
+PostDate: Date.now() + 1000 * 60 * 60 * 8, //因此預設為UTC+0 要改為UTC+8
+lastModify: Date.now() + 1000 * 60 * 60 * 8,
+```
+
+則String型態會存成
+```
+Tue Nov 29 2016 20:15:03 GMT+0800 (CST)
+```
+Date會存成
+```
+2016-11-29T12:15:03.713Z
+```
