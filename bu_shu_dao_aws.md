@@ -26,4 +26,4 @@ http://stackoverflow.com/questions/16682297/getting-message-sudo-must-be-setuid-
 目前還沒找到解法，網路上目前推薦重灌系統
 
 
-2.在第一次ssh進入之前即先把Elastic IP分配給該機器，會造成host key不match而無法連入
+2.Elastic IP分配後如果把該機器刪掉，之後自開一台把同個Elastic IP分配，可能會產生錯誤，所以建議開新機器並分配新的Elastic IP
