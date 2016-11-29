@@ -6,6 +6,8 @@ https://www.sslforfree.com
 
 輸入你的網域名稱
 
+點選最右邊的Manual verfication
+
 之後把它給你的兩個檔案下載，之後放到你的server www目錄下的它給你的路徑
 
 >1.Create a folder in your domain named ".well-known" if it does not already exist
