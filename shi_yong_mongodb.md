@@ -706,6 +706,8 @@ https://cnodejs.org/topic/504b4924e2b84515770103dd
 
 #注意事項
 
+1.
+
 在schema中定義Date如果如下兩種
 ```
 PostDate: String,
@@ -728,3 +730,12 @@ Date會存成
 
 
 也就是設為Date 的schema會自動轉為ISO
+
+1.
+在Schema寫好後如果沒有存入資料則該欄會為空值
+```
+	comments: Array,
+    
+    如上的schema如在後端沒指定值則comments這欄為[]
+```
+
