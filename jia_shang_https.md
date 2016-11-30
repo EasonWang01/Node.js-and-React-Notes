@@ -78,6 +78,18 @@ ubuntu路徑如下
 
 2.sudo nginx
 ```
+###注意
+
+這裡可能出現一些key或bundle的https錯誤，最常見的是說begin或end之類，記得每個檔案要有
+```
+-----BEGIN CERTIFICATE-----
+
+....
+
+-----END CERTIFICATE-----
+```
+這不是註解
+
 在你的網域前加上`https://`即可
 
 
