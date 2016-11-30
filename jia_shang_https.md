@@ -95,7 +95,13 @@ ubuntu路徑如下
 參考至:https://free.com.tw/ssl-for-free/
 
 
-#上Node.js裝上https
+#完整nginx config
+
+![](螢幕快照 2016-11-30 下午4.05.09.png)
+
+
+
+#附錄：上Node.js裝上https，不使用nginx
 
 範例如下
 
