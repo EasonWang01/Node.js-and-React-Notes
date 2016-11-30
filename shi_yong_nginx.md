@@ -46,6 +46,10 @@ var/www/html
 ![sd](https://cloud.githubusercontent.com/assets/11001914/17406653/ed731d6c-5a96-11e6-971a-fabbde3a4a9f.png)
 
 
+完整範例:
+
+![](螢幕快照 2016-11-30 下午4.05.09.png)
+
 
 ##websocket有問題
 
