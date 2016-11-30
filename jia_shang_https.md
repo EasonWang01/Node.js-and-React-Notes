@@ -1,14 +1,23 @@
 # 加上https
 
-先到此網站
+1.先到此網站
 
 https://www.sslforfree.com
 
-輸入你的網域名稱
+(如果沒顯示，換個瀏覽器)
 
-點選最右邊的Manual verfication
+2.之後輸入你的網域名稱
 
-之後把它給你的兩個檔案下載，之後放到你的server www目錄下的它給你的路徑
+3.點選Manual verfication
+
+4.之後把它給你的兩個檔案下載，之後放到你的server www目錄下
+
+建造一個資料夾`.well-known`然cd進入
+
+再創一個`acme-challenge`
+
+最後放入兩個下載的key
+
 
 >1.Create a folder in your domain named ".well-known" if it does not already exist
 >
@@ -28,7 +37,7 @@ ubuntu路徑如下
 
 ###接著是重點
 
-它會給你三個框框，裡面分別為
+5.它會給你三個框框，裡面分別為
 ```
 ca_bundle.crt 
 private.key 
@@ -36,14 +45,14 @@ certificate.crt
 ```
 用nginx為例子
 
-我個人把它們存放再`/usr/share/nginx/sslcrt`，其他路徑也可以，只要後面的virtual host 檔案內設定相同即可
+我個人把它們存放再`/usr/share/nginx/sslcrt`，其他路徑也可以，只要後面的nginx default 檔案內設定相同即可
 
 另外要輸入以下指令，將兩個crt合成一個bundle
 ```
 sudo bash -c 'cat certificate.crt ca_bundle.crt >> bundle.crt'
 ```
 
-我們要在nginx的virtual host設定檔案內設定https
+我們要在nginx的default設定檔案內設定https
 
 
 ubuntu路徑如下
@@ -57,7 +66,10 @@ ubuntu路徑如下
 
 把它更改如下圖(如果說private.key not match ，把ssl_certificate 的bundle.crt改為certificate.crt試試)
 
-![df](https://cloud.githubusercontent.com/assets/11001914/17371582/f7e9e9de-59d2-11e6-9929-c00f005eebcb.png)
+
+
+
+
 
 之後
 
