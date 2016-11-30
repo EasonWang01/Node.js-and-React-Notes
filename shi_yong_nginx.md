@@ -60,3 +60,9 @@ proxy_set_header Connection "upgrade";
 proxy_set_header Host $host;
 }
 ```
+
+#注意事項
+
+```
+使用AWS或其他VPS記得開防火牆的inbound記得開443PORT
+```
