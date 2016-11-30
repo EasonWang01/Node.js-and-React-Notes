@@ -1,4 +1,3 @@
-# 加上https
 
 1.先到此網站
 
@@ -90,7 +89,7 @@ ubuntu路徑如下
 ```
 這不是註解
 
-在你的網域前加上`https://`即可
+##最後在你的網域前加上`https://`即可
 
 
 參考至:https://free.com.tw/ssl-for-free/
