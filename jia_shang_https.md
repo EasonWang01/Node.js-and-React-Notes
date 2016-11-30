@@ -97,8 +97,23 @@ ubuntu路徑如下
 
 #完整nginx config
 
-![](螢幕快照 2016-11-30 下午4.05.09.png)
-
+完整範例:
+```
+server {        
+  listen 80;        
+  server_name sakatu.com  www.sakatu.com;
+  rewrite ^/(.*) https://sakatu.com/$1 permanent;
+}
+server {        
+  server_name sakatu.com;
+  listen 443;
+  ssl on;
+  ssl_certificate  /usr/share/nginx/sslcrt/bundle.crt;        
+  ssl_certificate_key /usr/share/nginx/sslcrt/private.key;     
+  location / {          
+    proxy_pass http://localhost:3000;      
+  }}
+```
 
 
 #附錄：上Node.js裝上https，不使用nginx
