@@ -47,8 +47,22 @@ var/www/html
 
 
 完整範例:
-
-![](螢幕快照 2016-11-30 下午4.05.09.png)
+```
+server {        
+  listen 80;        
+  server_name sakatu.com  www.sakatu.com;
+  rewrite ^/(.*) https://sakatu.com/$1 permanent;
+}
+server {        
+  server_name sakatu.com;
+  listen 443;
+  ssl on;
+  ssl_certificate  /usr/share/nginx/sslcrt/bundle.crt;        
+  ssl_certificate_key /usr/share/nginx/sslcrt/private.key;     
+  location / {          
+    proxy_pass http://localhost:3000;      
+  }}
+```
 
 
 ##websocket有問題
