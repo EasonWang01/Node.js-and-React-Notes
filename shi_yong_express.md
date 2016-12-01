@@ -523,3 +523,41 @@ req.session.cookie.expires = new Date(Date.now()); ///移除browser端cookie
 
 ```
 
+#1.使用JWT Token 
+
+https://github.com/auth0/node-jsonwebtoken
+
+
+
+我們要先安裝
+
+```
+ npm install jsonwebtoken
+```
+
+之後
+
+```
+let token = jwt.sign({
+  exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24),
+  data: {
+  user: jwtpayload
+  }
+}, jwtSecret);
+res.cookie('t', token, { maxAge: 1000 * 60 * 60 * 24 * 1, httpOnly: true });
+```
+上面是將token存在cookie的做法，也可使用別的方式傳回client
+
+認證:
+
+```
+ app.post('/',function(req,res) {
+ 	jwt.verify(req.cookies.t, jwtSecret, (err, decoded) => {
+ 		if(decoded){
+ 			// TODO 認證成功後要做的事
+ 		} else {
+ 			console.log('no token');
+		}
+ 	}
+ }
+```
