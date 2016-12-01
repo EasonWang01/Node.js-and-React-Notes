@@ -492,7 +492,7 @@ session有兩種，一種是brower的，關閉及消失．一種是會把cookie�
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 app.use(session({
-	saveUninitialized: true, // don't create session until something stored
+	saveUninitialized: false, // don't create session until something stored
   resave: false, //don't save session if unmodified
   secret: 'yicheng',
   key: 'auth_token',//cookie name
@@ -501,6 +501,11 @@ app.use(session({
 		url:'mongodb://forclass1:test123@ds013898.mlab.com:13898/forclass'
   })
 }));
+```
+
+####注意：如果講此選項設為true則重新整理網頁在你還沒設session會自動附加上去，所以建議為false
+```
+saveUninitialized:false
 ```
 
 上面為基本設置
