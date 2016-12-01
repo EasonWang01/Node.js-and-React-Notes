@@ -450,7 +450,7 @@ console.log(app.settings.Fruit);///需使用app.settings去讀取
 console.log(app.get('Fruit'));或app.get
 
 ```
-##設定cookie
+###1.設定cookie
 ```
 cookieParser = require('cookie-parser')
 
@@ -466,9 +466,55 @@ res.render('land');
 ```
 console.log(req.cookies);//記得加S
 ```
-##設定檔案目錄
+
+移除
+
+```
+res.cookie('ifUser',true, { expires: new Date() });
+```
+
+###1.設定檔案目錄
 如果render html後想在該html裡面讀取某個js檔案，必須用
 ```
 app.use(express.static(__dirname + '/public/'));
 ```
 否則你的server找不到該檔案
+
+
+###1.使用session
+
+
+session有兩種，一種是brower的，關閉及消失．一種是會把cookie拿來server驗證的session
+
+以下介紹第二種
+
+```
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+app.use(session({
+	saveUninitialized: true, // don't create session until something stored
+  resave: false, //don't save session if unmodified
+  secret: 'yicheng',
+  key: 'auth_token',//cookie name
+  cookie: {maxAge: 1000 * 60 * 60 * 24 * 1},//1 days
+  store: new MongoStore({
+		url:'mongodb://forclass1:test123@ds013898.mlab.com:13898/forclass'
+  })
+}));
+```
+
+上面為基本設置
+
+新增，會附加cookie到browser上
+```
+req.session.user = req.body.account;//將會在cookie中存入token之後token回到server取值
+```
+
+移除
+
+```
+req.session.user = null;  //移除server端資料
+req.session.cookie.expires = new Date(Date.now()); ///移除browser端cookie
+
+```
+
