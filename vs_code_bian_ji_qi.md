@@ -26,3 +26,7 @@ keybindings.json
                                      "when": "editorTextFocus && !editorReadonly" },
 ]
 ```
+####4.開啟終端機
+```
+control+`
+```
