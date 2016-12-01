@@ -14,3 +14,15 @@
 ```
 cmd+b
 ```
+
+####3.預設為使用cmd+z+shift（較特別）為回復上一步
+使用以下改為
+
+keybindings.json
+```
+// 將您的按鍵組合放入此檔案中以覆寫預設值
+[
+    { "key": "cmd+y",           "command": "redo",
+                                     "when": "editorTextFocus && !editorReadonly" },
+]
+```
