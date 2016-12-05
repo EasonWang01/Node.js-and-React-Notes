@@ -13,6 +13,8 @@ io.on('connection',(socket) => {
 }
 ```
 
+client就是簡單使用on和emit
+
 #最基本兩種
 分別是`socket.on('事件名稱',cb)`和`socket.emit('事件名稱',cb)`
 
