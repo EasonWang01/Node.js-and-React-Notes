@@ -4,7 +4,7 @@
 >注意：socket.broadcast.emit會傳給所有connected user除了自己
 
 
-首先必須先再連線範圍作用域才可做事
+#首先必須先再連線範圍作用域才可做事
 
 server.js
 ```
@@ -13,11 +13,14 @@ io.on('connection',(socket) => {
 }
 ```
 
-最基本兩種，分別是`socket.on('事件名稱',cb)`和`socket.emit('事件名稱',cb)`
+#最基本兩種
+分別是`socket.on('事件名稱',cb)`和`socket.emit('事件名稱',cb)`
 
 server和client都一樣的用法
 
-再來是房間部分
+`socket.broadcast.emit('user connected');`給所有連線人廣播
+
+#再來是房間部分
 
 `socket.join('房間名稱')`讓client加入房間 
 
@@ -26,7 +29,7 @@ server和client都一樣的用法
 ` socket.broadcast.to('房間名稱').emit('chat',{data: res});`給特定房間廣播訊息
 
 ---
-簡單範例
+#簡單範例
 server.js
 ```
 export const socketio = (io, axios, config1) => {
