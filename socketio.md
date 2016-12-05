@@ -1,187 +1,80 @@
 # socket.io
 
 
-注意：socket.broadcast.emit會傳給所有connected user除了自己
-
-server
-```
-var express = require('express');
-var app = express();
-var server = require('http').createServer(app);
-var io =require('socket.io')(server);
-
-// set the view engine to ejs
-app.set('view engine', 'ejs');
-
-// public folder to store assets
-app.use(express.static(__dirname + '/public'));
-
-// routes for app
-app.get('/', function(req, res) {
-  res.render('pad');
-});
-io.on('connection', function(socket){
-
-  console.log('a user connected');
+>注意：socket.broadcast.emit會傳給所有connected user除了自己
 
 
+首先必須先再連線範圍作用域才可做事
 
-   socket.on('stop', function(socket){
-     console.log('sd');
-   });
-
-
-
-
-
-});
-
-// listen on port 8000 (for localhost) or the port defined for heroku
-var port = process.env.PORT || 8000;
-server.listen(port,function(){console.log("listen 8000")});//記得用socket.io建成的server去監聽
-```
-
-
-接續上一章
-pad.ejs
-```
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Realtime Markdown Viewer</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-</head>
-
-<body class="container-fluid">
-
-    <section class="row">
-        <textarea class="col-md-6 full-height" id="pad">Write your text here..</textarea>
-        <div class="col-md-6 full-height" id="markdown"></div>
-    </section>
-
-    <script src="https://cdn.rawgit.com/showdownjs/showdown/1.0.2/dist/showdown.min.js"></script>
-
-<script src="/socket.io/socket.io.js"></script> <!--記得加入client端 -->
-   <script src="script.js"></script>
-
-</body>
-</html>
-```
-script.js
-```
-window.onload = function() {
-
-      var socket = io();//記得產生實例
-     
-
-    var converter = new showdown.Converter();
-    var pad = document.getElementById('pad');
-    var markdownArea = document.getElementById('markdown');   
-
-    var convertTextAreaToMarkdown = function(){
-        var markdownText = pad.value;
-        html = converter.makeHtml(markdownText);
-        markdownArea.innerHTML = html;
-
-        socket.emit("userinput",{data:html})
-        };
-
-
-    pad.addEventListener('input', convertTextAreaToMarkdown);
-
-    convertTextAreaToMarkdown();
-};
-```
 server.js
 ```
-var express = require('express');
-var app = express();
-var server = require('http').createServer(app);
-var io =require('socket.io')(server);
+io.on('connection',(socket) => {
+  利用socket來做事
+}
+```
 
-// set the view engine to ejs
-app.set('view engine', 'ejs');
+最基本兩種，分別是`socket.on('事件名稱',cb)`和`socket.emit('事件名稱',cb)`
 
-// public folder to store assets
-app.use(express.static(__dirname + '/public'));
+server和client都一樣的用法
 
-// routes for app
-app.get('/', function(req, res) {
-  res.render('pad');
-});
+再來是房間部分
+
+`socket.join`讓client加入房間 
+
+`socket.leave`讓client離開房間
+
+` socket.broadcast.to('房間名稱').emit('chat',{data: res});`給特定房間廣播訊息
+
+---
+簡單範例
+server.js
+```
+export const socketio = (io, axios, config1) => {
+
 io.on('connection', function(socket){
+	console.log('a user connected');
 
-  console.log('a user connected');
+	//房間
+	socket.on('mainPage',() => {
+		socket.join('mainPage',() => {
+		  console.log('join main okok')
+			socket.leave('chatPage', () => {
+				console.log('leave chat');
+			})
+		});
+	})
+	socket.on('chatPage',() => {
+		socket.join('chatPage',() => {
+		  console.log('join chat')
+			socket.leave('mainPage', () => {
+				console.log('leave main')
+			});
+		});
+	})
 
 
+  //事件
+  socket.on('chat',(res) => {
+    console.log(res);
+    socket.broadcast.to('chatPage').emit('chat',{data: res});
+    socket.emit('chat',{data: res})
+  })
 
-   socket.on('userinput', function(data){
-     console.log(data.data);
-     
-   });
-
-
-
-
-
+	socket.on('postArticle', function(){
+		axios.get(`${config1.origin}/getArticle`)
+			.then(function(response){
+				socket.broadcast.to('mainPage').emit('addArticle', response.data);//broadcast傳給所有人除了自己
+				socket.emit('addArticle', response.data);//加上傳給自己的socket
+         //socket.broadcast.to(id).emit('my message', msg);
+			}).
+			catch(err => {
+				console.log(err);
+			})
+	});
+	socket.on('chat', (data) => {
+		console.log(data)
+	})
 });
+}
 
-// listen on port 8000 (for localhost) or the port defined for heroku
-var port = process.env.PORT || 8000;
-server.listen(port,function(){console.log("listen 8000")});//記得用socket.io建成的server去監聽
 ```
-之後打開terminal對照網頁輸入，可發現輸入隨即出現於terminal上。
-
-
-之後要讓兩個client(瀏覽器)都接的到訊息
-新增`io.sockets.emit('updateClient',{data:data})`
-```
- socket.on('userinput', function(data){
-     console.log(data.data);
-     io.sockets.emit('updateClient',{data:data})
-   });
-```
-而client端
-```
-window.onload = function() {
-
-      var socket = io();//記得產生實例
-      
-  
-
-    var converter = new showdown.Converter();
-    var pad = document.getElementById('pad');
-    var markdownArea = document.getElementById('markdown');   
-
-    var convertTextAreaToMarkdown = function(){
-        var markdownText = pad.value;
-        html = converter.makeHtml(markdownText);
-        markdownArea.innerHTML = html;
-
-        socket.emit("userinput",{data:html})
-        };
-
-        socket.on('updateClient',function(data){
-
-            console.log( data.data.data);
-           // pad.innerHTML = data.data.data;
-            
-        });
-
-    pad.addEventListener('input', convertTextAreaToMarkdown);
-
-    convertTextAreaToMarkdown();
-};
-```
-之後開啟兩個瀏覽器，並打開console查看
-
-##但
-發現都有HTML　tag　在外面，我們的目的是讓所有client端同步
-　所以我們要擷取tag內的字串
- ```
- 
-console.log((data.data.data).length);
-var res =(data.data.data).slice(3,(data.data.data).length-4);
- ```
