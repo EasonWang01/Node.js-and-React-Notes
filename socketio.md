@@ -19,9 +19,9 @@ server和client都一樣的用法
 
 再來是房間部分
 
-`socket.join`讓client加入房間 
+`socket.join('房間名稱')`讓client加入房間 
 
-`socket.leave`讓client離開房間
+`socket.leave('房間名稱')`讓client離開房間
 
 ` socket.broadcast.to('房間名稱').emit('chat',{data: res});`給特定房間廣播訊息
 
