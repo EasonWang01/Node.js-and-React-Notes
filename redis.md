@@ -30,7 +30,7 @@ cd到目錄後執行` redis-server.exe`
 >注意：如果是要免費的記得選擇開啟的機器規格
 預設的選項是要付費的，FREE TIRE的免費只有t2 micro的Redis
 
-開完後記得先到`ElastiCache dashboard`上方點選Modify，並選擇和你EC2相同之security group，之後回到`EC2 dashboard`把security group加上 6379的PORT
+開完後記得先到`ElastiCache dashboard`上方點選Modify，並選擇和你EC2相同之security group，之後回到`EC2 dashboard`把security group的Inbound加上 6379的PORT
 
 ####連線:
 ssh到EC2後使用`telnet`
