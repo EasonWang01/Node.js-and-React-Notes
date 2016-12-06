@@ -17,6 +17,8 @@ cd到目錄後執行` redis-server.exe`
 4.
 試著在client端輸入 `set food noodle`後`get food`
 
+# #使用
+
 # #使用AWS的Redis ElastiCache
 
 >預設只給EC2做內網連線
@@ -37,5 +39,19 @@ ssh到EC2後使用`telnet`
 telnet test.aq9nab.ng.0001.apne1.cache.amazonaws.com 6379
 ```
 
+####開放從電腦本機連線到AWS Redis
+
+利用轉傳規則
+
+```
+ssh <your EC2 node that you use to connect to redis> -f -N -L6379:<your redis node endpoint>:6379 
+```
+
+ex:
+```
+sudo ssh -i ~/Downloads/1129new.pem  ubuntu@ec2-52-193-84-195.ap-northeast-1.compute.amazonaws.com -f -N -L6379:test.aq9nab.ng.0001.apne1.cache.amazonaws.com:6379
+```
+
+http://stackoverflow.com/questions/21917661/can-you-connect-to-amazon-elasticache-redis-outside-of-amazon
 
 
