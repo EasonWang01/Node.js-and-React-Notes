@@ -4,8 +4,13 @@
 windows下載
 https://github.com/dmajkic/redis/downloads
 
-Linux mac
+Linux
 http://download.redis.io/releases/redis-2.8.17.tar.gz
+
+Mac using homebrew
+
+https://medium.com/@petehouston/install-and-config-redis-on-mac-os-x-via-homebrew-eb8df9a4f298#.su9r2yd8u
+
 
 2.
 
