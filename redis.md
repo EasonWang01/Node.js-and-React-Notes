@@ -51,6 +51,7 @@ ex:
 ```
 sudo ssh -i ~/Downloads/1129new.pem  ubuntu@ec2-52-193-84-195.ap-northeast-1.compute.amazonaws.com -f -N -L6379:test.aq9nab.ng.0001.apne1.cache.amazonaws.com:6379
 ```
+之後即可本機端和EC2共用同一個Redis 伺服器
 
 http://stackoverflow.com/questions/21917661/can-you-connect-to-amazon-elasticache-redis-outside-of-amazon
 
