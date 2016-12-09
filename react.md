@@ -1446,7 +1446,7 @@ decodeEntities = () => {
   return decodeHTMLEntities;
 };
 ```
-
+之後再用
 ```
 <div dangerouslySetInnerHTML={{__html: (this.decodeEntities())(this.state.msgContent)}} style={styles.p1}></div>
 ```
