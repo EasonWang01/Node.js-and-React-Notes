@@ -1415,4 +1415,38 @@ https://github.com/EasonWang01/React-router-Redux-isomorphic-Boilerplate
 ```
 
 
+# #有關dangersetInnerHTML
 
+
+`dangerouslySetInnerHTML={{__html: }}`
+
+類似上面格式，但記得，其雖然可直接接受html tag傳入或是special char但是如果是 html tag 的special char只會轉為html tag的字串型態，如果想要他從special char直接轉為dom必須先另外寫decode function
+
+
+ex:
+
+```
+decodeEntities = () => {
+  // this prevents any overhead from creating the object each time
+  var element = document.createElement('div');
+
+  function decodeHTMLEntities (str) {
+    if(str && typeof str === 'string') {
+      // strip script/html tags
+      str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
+      str = str.replace(/<\/?\w(?:[^"'>]|"[^"]*"|'[^']*')*>/gmi, '');
+      element.innerHTML = str;
+      str = element.textContent;
+      element.textContent = '';
+    }
+
+    return str;
+  }
+
+  return decodeHTMLEntities;
+};
+```
+
+```
+<div dangerouslySetInnerHTML={{__html: (this.decodeEntities())(this.state.msgContent)}} style={styles.p1}></div>
+```
