@@ -44,6 +44,8 @@ exports.Redisclient = Redisclient;
 
 ```
 import { Redisclient } from './redis';
+import Redis from './redis';
+Redis();
 
 const payload = [{a:12,b:13},{a:12,b:13},{a:12,b:13}];
 
