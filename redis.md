@@ -24,7 +24,7 @@ cd到目錄後執行` redis-server.exe`
 
 # #使用
 
-基本上使用set 與get 即可用來存儲js相關字串或物件及array
+基本上使用set 與get 即可用來存儲js相關字串或物件及array，但記得要先轉為string
 
 ```
 const redis = require("redis");
