@@ -24,6 +24,42 @@ cd到目錄後執行` redis-server.exe`
 
 # #使用
 
+```
+const redis = require("redis");
+const Redisclient = redis.createClient();
+
+export default () => {
+
+  Redisclient.on("ready", function (err) {
+      console.log("Ready");
+  });
+
+  Redisclient.on("error", function (err) {
+      console.log("Error " + err);
+  });
+}
+
+exports.Redisclient = Redisclient;
+```
+
+```
+import { Redisclient } from './redis';
+
+const payload = [{a:12,b:13},{a:12,b:13},{a:12,b:13}];
+
+Redisclient.set("short", JSON.stringify(payload), () => {
+
+});
+Redisclient.get("short",function (err, reply) {
+    console.log(JSON.parse(reply)); // Will print `OK`
+});
+
+```
+
+```
+
+
+
 # #使用AWS的Redis ElastiCache
 
 >預設只給EC2做內網連線
