@@ -561,3 +561,32 @@ res.cookie('t', token, { maxAge: 1000 * 60 * 60 * 24 * 1, httpOnly: true });
  	}
  }
 ```
+
+>也可寫為function然後用middleware方式
+
+```
+const authToken = (req,res,next) => {
+	const token = req.cookies.t;
+	if (token) {
+		jwt.verify(req.cookies.t, jwtSecret, (err, decoded) => {
+			if(decoded){
+				next();
+			} else {
+				res.end('token not correct');
+			}
+	  });
+	} else {
+		res.end('no Token');
+	}
+}
+```
+
+```
+app.get('/userArticles/:user',authToken,(req,res) => {
+	Post.find({posterAccount: req.params.user})
+	.then(data => {
+  	 res.end(JSON.stringify(data))
+	})
+})
+
+```
