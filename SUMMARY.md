@@ -11,6 +11,7 @@
 * [repl(自訂命令列)](repl.md)
 * [http](http.md)
 * [path](path.md)
+* [Crypto加密](cryptojia_mi.md)
 * [有關繼承](you_guan_ji_cheng.md)
 * [使用NPM](shi_yong_npm.md)
 * [開始Node](kai_shi_node.md)
@@ -66,5 +67,4 @@
 * [部署到AWS](bu_shu_dao_aws.md)
 * [有關日期](you_guan_ri_qi.md)
 * [VS code 編輯器](vs_code_bian_ji_qi.md)
-* [Crypto加密](cryptojia_mi.md)
 
