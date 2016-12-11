@@ -20,6 +20,17 @@ Object.keys(obj).forEach(function(key) {
 });
 ```
 
+第二種
+
+```
+Object.keys(this.state.users).map(function(objectKey, index) {
+let value = objectKey;
+return (
+  <div>{value}</div>
+)
+})
+```
+
 #ES6 的新數據結構Set Map
 -----
 ##Set
