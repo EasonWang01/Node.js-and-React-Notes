@@ -6,7 +6,7 @@
 
 ```
 let cipher = crypto.createCipher('aes-256-cbc','testkey');
-let crypted = cipher.update(req.body.account,'utf8','hex');
+let crypted = cipher.update('要加密的東西','utf8','hex');
 crypted += cipher.final('hex');
 ```
 解密
