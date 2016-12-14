@@ -39,13 +39,26 @@ window.fbAsyncInit = function() {
 </div>
 ```
 
-
-
-
-
 現在有中文版doc直接看即可
 
+[https://developers.facebook.com/docs/facebook-login/web](https://developers.facebook.com/docs/facebook-login/web)
 
 
-https://developers.facebook.com/docs/facebook-login/web
+
+# \#取得個人資料
+
+
+
+在這個網址測試，然後跟根據封包內容來傳
+
+https://developers.facebook.com/tools/explorer?method=GET&path=me%3Ffields%3Did%2Cname%2Cpicture%2Cemail%2Cfriendlists&version=v2.8
+
+或是直接在網址輸入
+
+```
+https://graph.facebook.com/v2.8/me?access_token=EAADsdbW8NG8BADYzO7XPZCtGpDZC5cuWOZCHBnNhscoZA0hLZBhbaZBgIcB4mN5ZBt4FtivyOENqK6H8eylhk5ywZCraxYQn6QrZAmi4w6Dy8OtVUKSAvZBjii4y91JH2B0s3kTI2xPcXWOlO3t027UnZBWRWnUSHRYWTzKZBlrz7E1BAgZDZD
+&fields=id,name,picture,email,friendlists
+```
+
+
 
