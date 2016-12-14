@@ -58,5 +58,9 @@ https://graph.facebook.com/v2.8/me?access_token=EAADsdbW8NG8BADYzO7XPZCtGpDZC5cu
 
 fields可在此查詢
 
-https://developers.facebook.com/docs/graph-api/reference/user
+[https://developers.facebook.com/docs/graph-api/reference/user](https://developers.facebook.com/docs/graph-api/reference/user)
+
+
+
+如果後端要存入使用著識別，可存入使用者ID，因accessToken會改變
 
