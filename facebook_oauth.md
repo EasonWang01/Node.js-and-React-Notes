@@ -43,15 +43,11 @@ window.fbAsyncInit = function() {
 
 [https://developers.facebook.com/docs/facebook-login/web](https://developers.facebook.com/docs/facebook-login/web)
 
-
-
 # \#取得個人資料
-
-
 
 在這個網址測試，然後跟根據封包內容來傳
 
-https://developers.facebook.com/tools/explorer?method=GET&path=me%3Ffields%3Did%2Cname%2Cpicture%2Cemail%2Cfriendlists&version=v2.8
+[https://developers.facebook.com/tools/explorer?method=GET&path=me%3Ffields%3Did%2Cname%2Cpicture%2Cemail%2Cfriendlists&version=v2.8](https://developers.facebook.com/tools/explorer?method=GET&path=me%3Ffields%3Did%2Cname%2Cpicture%2Cemail%2Cfriendlists&version=v2.8)
 
 或是直接在網址輸入
 
@@ -60,5 +56,7 @@ https://graph.facebook.com/v2.8/me?access_token=EAADsdbW8NG8BADYzO7XPZCtGpDZC5cu
 &fields=id,name,picture,email,friendlists
 ```
 
+fields可在此查詢
 
+https://developers.facebook.com/docs/graph-api/reference/user
 
