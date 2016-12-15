@@ -65,7 +65,7 @@ fields可在此查詢
 ```
 FB.api('/me', {
       access_token : 'EAADsdbW8NG8BAE4mn6HXNGurHew2tW36drhzfA0nZBlxuJUILyQip8M92zt77B8rrXq2o4D3pcZC7sNP5KNgfiLBZCVVYBqKUp5xofZBsvMzFmSpt0c9KWcmmdHugUZBQtVNpoerKj4G0yaVm49vtis34iSPlCZAnEswMTNZCzwwwZDZD',
-      fields: 'last_name'
+      fields: 'name,id,email,picture.width(640)'
     },(res) => {
       console.log(res)
     });
@@ -73,5 +73,5 @@ FB.api('/me', {
 
 ＡＰＩ詳細DOC
 
-https://developers.facebook.com/docs/javascript/reference/FB.init/v2.8
+[https://developers.facebook.com/docs/javascript/reference/FB.init/v2.8](https://developers.facebook.com/docs/javascript/reference/FB.init/v2.8)
 
