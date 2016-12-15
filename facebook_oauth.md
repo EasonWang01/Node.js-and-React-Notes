@@ -75,3 +75,13 @@ FB.api('/me', {
 
 [https://developers.facebook.com/docs/javascript/reference/FB.init/v2.8](https://developers.facebook.com/docs/javascript/reference/FB.init/v2.8)
 
+＃產生按鈕
+
+https://developers.facebook.com/docs/facebook-login/web/login-button
+
+注意:上面產生的按鈕無法綁定onclick事件，如要綁定要自己客製化按鈕
+
+
+
+
+
