@@ -62,10 +62,8 @@ fields可在此查詢
 
 如果後端要存入使用著識別，可存入使用者ID，因accessToken會改變
 
-
-
 ```
-    FB.api('/me', {
+FB.api('/me', {
       access_token : 'EAADsdbW8NG8BAE4mn6HXNGurHew2tW36drhzfA0nZBlxuJUILyQip8M92zt77B8rrXq2o4D3pcZC7sNP5KNgfiLBZCVVYBqKUp5xofZBsvMzFmSpt0c9KWcmmdHugUZBQtVNpoerKj4G0yaVm49vtis34iSPlCZAnEswMTNZCzwwwZDZD',
       fields: 'last_name'
     },(res) => {
@@ -73,5 +71,7 @@ fields可在此查詢
     });
 ```
 
+ＡＰＩ詳細DOC
 
+https://developers.facebook.com/docs/javascript/reference/FB.init/v2.8
 
