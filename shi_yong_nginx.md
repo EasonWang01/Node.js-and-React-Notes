@@ -2,51 +2,50 @@
 
 可參考此篇安裝
 
-http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/
+[http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/](http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/)
 
 重啟指令
+
 ```
 sudo nginx -s stop && sudo nginx
 ```
 
-##在Linux 下的default webpage 路徑為
+## 在Linux 下的default webpage 路徑為
 
 ```
 var/www/html
 ```
 
 或
+
 ```
 /usr/share/nginx/html
 ```
 
-##nginx的config 檔案路徑
+## nginx的config 檔案路徑
 
 ```
-/etc/nginx/ 
+/etc/nginx/sites-available/default
 ```
 
-##virtual host 路徑
-```
-/etc/nginx/sites-available
-```
 
-##使用reverse proxy
+
+## 使用reverse proxy
+
 ```
-  location / {
+location / {
     proxy_pass http://localhost:3000;
   }
 ```
 
-##讓domain.com www.domain.com都導向https
+## 讓domain.com www.domain.com都導向https
 
 可參考下圖配置範例
 
-
 ![sd](https://cloud.githubusercontent.com/assets/11001914/17406653/ed731d6c-5a96-11e6-971a-fabbde3a4a9f.png)
 
-
 完整範例:
+
 ```
 server {        
   listen 80;        
@@ -64,8 +63,7 @@ server {
   }}
 ```
 
-
-##websocket有問題
+## websocket有問題
 
 加入以下配置
 
@@ -79,8 +77,11 @@ proxy_set_header Host $host;
 }
 ```
 
-#注意事項
+# 注意事項
 
 ```
 使用AWS或其他VPS記得開防火牆的inbound記得開443PORT
 ```
+
+
+
