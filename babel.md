@@ -42,7 +42,7 @@ npm install babel-cli -g
 之後使用
 
 ```
-babel lib -d dist --presets es2015,stage-2
+babel lib -d dist --presets es2015,stage-2 --copy-files
 ```
 
 lib為來源要compile  的server 檔案，dist為compile後會產生的資料夾
