@@ -10,7 +10,7 @@
 sudo nginx -s stop && sudo nginx
 ```
 
-## 在Linux 下的default webpage 路徑為
+## 在Linux ubuntu 下的default webpage 路徑為
 
 ```
 var/www/html
@@ -27,8 +27,6 @@ var/www/html
 ```
 /etc/nginx/sites-available/default
 ```
-
-
 
 ## 使用reverse proxy
 
