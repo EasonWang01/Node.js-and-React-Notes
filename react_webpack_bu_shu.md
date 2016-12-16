@@ -133,3 +133,10 @@ mac
 sudo nginx -s stop && sudo nginx
 ```
 
+# #Server render 的部署
+
+因為我們要在nginx下再架一個nodejs server
+
+所以第一步先把server side 的code 用到es6的先轉好，才不會出錯
+
+
