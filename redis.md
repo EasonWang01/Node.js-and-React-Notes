@@ -6,7 +6,7 @@ https://github.com/dmajkic/redis/downloads
 
 Linux
 ```
-sudo apt insall r
+sudo apt insall redis-server
 ```
 
 Mac using homebrew
