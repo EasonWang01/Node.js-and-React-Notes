@@ -47,7 +47,13 @@ babel lib -d dist --presets es2015,stage-2
 
 lib為來源要compile  的server 檔案，dist為compile後會產生的資料夾
 
-https://github.com/babel/example-node-server\#getting-ready-for-production-use
+[https://github.com/babel/example-node-server\\#getting-ready-for-production-use](https://github.com/babel/example-node-server\#getting-ready-for-production-use)
+
+>注意，css檔案不會被compile，所以如果是把整個資料夾compile裡面的css不會出現在compile後的資料夾
+
+
+
+
 
 ## 有關import 'babel-polyfill';
 
