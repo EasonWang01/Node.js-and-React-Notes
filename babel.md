@@ -5,14 +5,16 @@
 > 2.Node.js的--harmony不包含module功能
 
 1. 所以要在Node.js使用ES6 的export default 須另外寫一個.babelrc檔案
+
    ```
    {
    "presets": ["es2015"]
    }
    ```
 
-   2.再於使用export default 的parent檔案，使用\(require\)
+   2.再於使用export default 的parent檔案，使用\(require\)  
    `babel-core/register`
+
 
 參考至:[http://stackoverflow.com/questions/32346886/unexpected-reserved-word-import-in-node-js](http://stackoverflow.com/questions/32346886/unexpected-reserved-word-import-in-node-js)
 
@@ -31,8 +33,6 @@ babel-node server.js
 
 因為babel-node或bable-register或在runtime build
 
-
-
 所以我們要先compile
 
 ```
@@ -46,6 +46,8 @@ babel lib -d dist --presets es2015,stage-2
 ```
 
 lib為來源要compile  的server 檔案，dist為compile後會產生的資料夾
+
+https://github.com/babel/example-node-server\#getting-ready-for-production-use
 
 ## 有關import 'babel-polyfill';
 
