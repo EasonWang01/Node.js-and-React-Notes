@@ -51,7 +51,7 @@ lib為來源要compile  的server 檔案，dist為compile後會產生的資料�
 
 >注意，css檔案不會被compile，所以如果是把整個資料夾compile裡面的css不會出現在compile後的資料夾
 
-
+http://stackoverflow.com/questions/32642685/babel-cli-copy-nonjs-files
 
 
 
