@@ -140,3 +140,12 @@ sudo nginx -s stop && sudo nginx
 所以第一步先把server side 的code 用到es6的先轉好，才不會出錯
 
 
+`babel lib -d dist --presets es2015,stage-2 --copy-files`
+
+之後把client的code build一份bundle.js
+
+在webpack.config.js下使用`webpack`
+
+記得把hmr等plugin拿掉
+
+之後把bundle.js放到`express.static`的目錄下即可
