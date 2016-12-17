@@ -1,9 +1,12 @@
 # 有關Fetch
 
 注意事項:
+
 1.使用json()轉換
+
 2.第二個then才拿得到資料，第一個then只是一個promise結果
-3.cookie要手動在header加入
+
+3.cookie要手動在header加入(第二個參數)
 
 ```
      fetch('http://localhost:3001/getArticle',{
