@@ -81,7 +81,17 @@ https://developers.facebook.com/docs/facebook-login/web/login-button
 
 注意:上面產生的按鈕無法綁定onclick事件，如要綁定要自己客製化按鈕
 
-以下為自訂Login 按鈕範例
+點擊按鈕後並呼叫 `FB.login()`會產生登入框
+```
+FB.login((response) => {
+            this.testAPI(response.authResponse.accessToken);
+          })
+
+```
+
+----
+
+#以下為自訂Login 按鈕範例
 
  ```
   <RaisedButton onClick={() => this.FBlogin()} labelColor="white" label="臉書登入" style={style.FBbutton} backgroundColor="#31589c" />
