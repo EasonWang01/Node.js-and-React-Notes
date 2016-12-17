@@ -74,3 +74,12 @@ sudo cp -R  ~/Desktop/um1215-webclient/ ./um1215-webclient
 ```
 open .
 ```
+
+
+##切換資料夾與mac不同
+
+前面不用加`~`
+
+```
+/etc/nginx/sites-available/React-router-Redux-isomorphic-Boilerplate/dist/server
+```
