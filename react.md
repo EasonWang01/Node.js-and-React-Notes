@@ -1458,6 +1458,12 @@ decodeEntities = () => {
 
 # Isomophic注意事項
 
-```
+因為client的code會在server也跑一次
 
+所以如果需要用到css要如下寫，注意不可用import因為會出現impoort必須在top的錯誤
+
+```
+if(typeof document !== 'undefined') {
+  require ('./index.css');
+}
 ```
