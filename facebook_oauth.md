@@ -82,6 +82,10 @@ https://developers.facebook.com/docs/facebook-login/web/login-button
 注意:上面產生的按鈕無法綁定onclick事件，如要綁定要自己客製化按鈕
 
 
+# #注意事項：
+1.一開始設定應用程式時，要先選下方新增平台在設定網域，
+不然使用localhost時可能會發生`top domain not allow`的問題
+兩者均輸入`http://localhost:{port}`即可，網域會自動轉換`localhost`
 
-
-
+2.如果應用程式上線後仍想在`localhost`測試，需要再開一個FB應用程式專案
+，因為網域跟應用程式網址沒辦法輸入兩個
