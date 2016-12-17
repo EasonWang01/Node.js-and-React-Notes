@@ -140,3 +140,22 @@ var counter1 = require('./as');
  http://blog.npmjs.org/post/118810260230/building-a-simple-command-line-tool-with-npm
  
  http://www.ruanyifeng.com/blog/2015/05/command-line-with-node.html
+ 
+ 
+# 11. process.env
+ 
+ 用來定義執行時期的參數，
+ 建議寫在script的最前面
+ 
+ package.json
+ 
+ ```
+ "serve": "API_HOST=http://localhost:3001 nodemon  src/server/index.js  --ignore src/containers --ignore src/components --ignore src/redux  ",
+ ```
+ 
+ 讀取
+ 
+ 
+ ```
+console.log(process.env.API_HOST)
+ ```
