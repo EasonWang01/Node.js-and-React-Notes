@@ -9,7 +9,20 @@ windows
 ```
 Linux
 
-方法1.
+方法1.(推薦)
+
+```
+sudo apt-get install npm
+
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+
+sudo ln -sf /usr/local/n/versions/node/<VERSION(只有數字沒有v)>/bin/node /usr/bin/node 
+```
+
+
+方法2.
 ```
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 ```
@@ -18,7 +31,7 @@ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
 
-方法2.
+方法3.
 ```
 wget https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-x86.tar.xz
 2.xz -d node-v4.4.7-linux-x86.tar.xz
