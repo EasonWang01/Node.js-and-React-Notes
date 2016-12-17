@@ -142,6 +142,8 @@ sudo nginx -s stop && sudo nginx
 
 `babel lib -d dist --presets es2015,stage-2 --copy-files`
 
+>如果出問題先sudo npm install babel-cli -g
+
 之後把client的code build一份bundle.js
 
 在webpack.config.js下使用`webpack`
