@@ -81,6 +81,101 @@ https://developers.facebook.com/docs/facebook-login/web/login-button
 
 注意:上面產生的按鈕無法綁定onclick事件，如要綁定要自己客製化按鈕
 
+以下為自訂Login 按鈕範例
+
+ ```
+  <RaisedButton onClick={() => this.FBlogin()} labelColor="white" label="臉書登入" style={style.FBbutton} backgroundColor="#31589c" />
+  ``` 
+點擊後
+```
+  FBlogin() {
+    const context = this;
+    this.setState({ loading: true });
+      FB.getLoginStatus(function(response) {
+        context.statusChangeCallback(response);
+      });
+  }
+```
+觸發事件
+
+```
+    function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+      });
+    }
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '350004755369462',
+        cookie     : true,  // enable cookies to allow the server to access
+        xfbml      : true,  // parse social plugins on this page
+        version    : 'v2.8' // use graph api version 2.8
+      });
+    };
+
+
+    ///////////////////////////////
+  }
+
+  statusChangeCallback = (response) => {
+        console.log(response);
+
+        if (response.status === 'connected') {
+          // Logged into your app and Facebook.
+          console.log('connett FB')
+          this.testAPI(response.authResponse.accessToken);
+        } else if (response.status === 'not_authorized') {
+          console.log('not_authorized')
+          FB.login((response) => {
+            this.testAPI(response.authResponse.accessToken);
+          });
+          // The person is logged into Facebook, but not your app.
+        } else {
+          FB.login((response) => {
+            this.testAPI(response.authResponse.accessToken);
+          })
+          // The person is not logged into Facebook, so we're not sure if
+          console.log('not login')
+        }
+      }
+
+  testAPI = (token) => {
+    const context = this;
+    FB.api('/me', {
+      access_token : token,
+      fields: 'name,id,email,picture.width(640)'
+    },(res) => {
+      // 把資料先傳給後端，看使用者是否註冊過，如第一次則註冊使用者並登入，之後則直接登入
+      console.log(res)
+      axios.post('/FBlogin' ,res)
+      .then(response => {
+        console.log(response.data)
+        if (response.data.result === 'ok') {
+          if(localStorage.getItem('reloadFlag') === 'false') {
+            localStorage.setItem('reloadFlag', true);
+            browserHistory.push('/main');
+            axios.post('/getUser',{})
+              .then(function (response) {
+                context.setState({loading: false});
+                console.log(response.data)
+                  if (response.data.result !== -1) {
+                  //login時先把其他登入的裝置登出
+                  socket.emit('logout',context.state.account);
+                  //自己登入
+                  socket.emit('login',response.data);
+                  context.props.userInfoAction(response.data);
+                  browserHistory.push('/main');
+                }
+              })
+            //location.reload();
+          }
+        }
+      })
+    });
+  }
+```
+
 
 # #注意事項：
 1.一開始設定應用程式時，要先選下方新增平台在設定網域，
