@@ -145,9 +145,9 @@ sudo nginx -s stop && sudo nginx
 >如果出問題先sudo npm install babel-cli -g
 
 之後把client的code build一份bundle.js
-
-在webpack.config.js下使用`webpack`
-
+```
+在webpack.config.js同層使用`webpack`
+```
 記得把hmr等plugin拿掉
 
 之後把bundle.js放到`express.static`的目錄下即可
