@@ -146,7 +146,7 @@ sudo nginx -s stop && sudo nginx
 
 之後把client的code build一份bundle.js
 ```
-在webpack.config.js同層使用`webpack`
+在webpack.config.js同層使用`sudo webpack`
 ```
 記得把hmr等plugin拿掉，然後把server.js用到webpack的也拿掉
 
