@@ -1106,7 +1106,8 @@ render((
  
  在client.js加上
  ```
- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">```
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+ ```
  
  之後在用這個轉換網站轉換後貼上即可，記得外面要包著div
  
@@ -1453,4 +1454,10 @@ decodeEntities = () => {
 之後再用
 ```
 <div dangerouslySetInnerHTML={{__html: (this.decodeEntities())(this.state.msgContent)}} style={styles.p1}></div>
+```
+
+# Isomophic注意事項
+
+```
+
 ```
