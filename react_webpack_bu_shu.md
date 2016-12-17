@@ -148,6 +148,6 @@ sudo nginx -s stop && sudo nginx
 ```
 在webpack.config.js同層使用`webpack`
 ```
-記得把hmr等plugin拿掉
+記得把hmr等plugin拿掉，然後把server.js用到webpack的也拿掉
 
 之後把bundle.js放到`express.static`的目錄下即可
