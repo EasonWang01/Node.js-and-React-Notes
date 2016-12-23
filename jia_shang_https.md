@@ -142,3 +142,22 @@ https.createServer(options, app).listen(3000, function () {
 
 參考
 https://www.sitepoint.com/how-to-use-ssltls-with-node-js/
+
+
+#方法2
+
+使用cloudflare
+
+#自動轉址到https
+一個是在nginx做轉址
+```
+rewrite ^/(.*) https://sakatu.com/$1 permanent;
+```
+一個是在前端頁面做轉址
+```
+<script type="text/javascript">
+    var host = "class.sakatu.com";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+</script>
+```
