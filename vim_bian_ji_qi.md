@@ -46,3 +46,18 @@
 ---
 按下小寫`y`可以複製起選擇的文字，按下d可以刪除掉選取的文字。
         在想要貼上文字的地方，按下`p`就可以貼上剛才複製好的文字。
+        
+7
+
+```
+到行尾 ： shift+$
+到行首 ： 0
+```       
+
+8.安裝vim package manger 
+ 有幾種可以選擇，這裡使用NeoBundle
+ 
+ ```
+  $ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > ./install.sh
+ $ sh ./install.sh
+ ```
