@@ -58,6 +58,6 @@
  有幾種可以選擇，這裡使用NeoBundle
  
  ```
-  $ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > ./install.sh
+ $ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > ./install.sh
  $ sh ./install.sh
  ```
