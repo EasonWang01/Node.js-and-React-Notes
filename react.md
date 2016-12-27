@@ -1,8 +1,11 @@
 # React
 
+1.
 建議react 和react-dom相同版本才比較不會有問
 https://github.com/facebook/react/issues/8588#issuecomment-267596448
 
+2.
+如果使用`create-react-app`，如果套件在index.html引入須在使用套件時加上`window`
 
 基礎
 
