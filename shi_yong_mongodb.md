@@ -40,6 +40,8 @@ https://mlab.com/home
 
 #如何用Node.js連線到MongoLab?
 
+>注意：使用mLab註冊帳號後要去新增使用者，之後連線的url中的dbuser是你之後新增的使用者名稱跟密碼，不是輸入帳號
+
 先使用npm 安裝
 ```
 npm install mongodb
