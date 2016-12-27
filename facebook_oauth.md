@@ -28,6 +28,7 @@ window.fbAsyncInit = function() {
 
 在dashboard上填寫網域[http://localhost:3000]與最下方(http://localhost:3000)
 
+如果使用react記得在component加上`const FB = window.FB;`
 
 現在有中文版doc直接看即可
 
