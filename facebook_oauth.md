@@ -26,18 +26,8 @@ window.fbAsyncInit = function() {
    }(document, 'script', 'facebook-jssdk'));
 ```
 
-在facebook上填寫[http://localhost:3000](http://localhost:3000)
+在dashboard上填寫網域[http://localhost:3000]與最下方(http://localhost:3000)
 
-之後插入這段即可
-
-```
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
-```
 
 現在有中文版doc直接看即可
 
