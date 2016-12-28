@@ -59,7 +59,9 @@ http://www.cyberciti.biz/faq/howto-find-a-directory-linux-command/
 
 ###查看現在占用的PORT
 
-`sudo netstat -tulpn`
+```
+sudo netstat -tulpn
+```
 
 ###複製資料夾並移動
 
