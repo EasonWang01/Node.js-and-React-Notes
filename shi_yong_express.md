@@ -451,6 +451,9 @@ console.log(app.get('Fruit'));或app.get
 
 ```
 ###1.設定cookie
+
+
+https://github.com/expressjs/session/issues/403#issuecomment-269422586
 ```
 cookieParser = require('cookie-parser')
 
