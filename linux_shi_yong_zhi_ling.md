@@ -63,6 +63,18 @@ http://www.cyberciti.biz/faq/howto-find-a-directory-linux-command/
 sudo netstat -tulpn
 ```
 
+OSX
+
+```
+sudo lsof -nPi -sTCP:LISTEN
+```
+
+###找出特定port的PID
+
+```
+lsof -i :port
+```
+
 ###複製資料夾並移動
 
 記得先mkdir
