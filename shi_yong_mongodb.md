@@ -408,7 +408,7 @@ var cursor = db.collection('apple').find({likes : {$gt : 100}},{likes:1, _id: 0}
 ## 如果是下載到local端啟用
 
 ```
-   1.先到你的Mongo資料庫下bin的外面創建資料夾
+1.先到你的Mongo資料庫下bin的外面創建資料夾
    2.cd到bin裡面把路徑複製
    3.使用admin開起cmd在cd到剛複製的路徑
    4.執行mongod --dbpath ../資料夾名稱/
@@ -801,8 +801,7 @@ Date會存成
 
 ---
 
-1.  
-在Schema寫好後如果沒有存入資料則該欄會為空值
+1. 在Schema寫好後如果沒有存入資料則該欄會為空值
 
 ```
 comments: Array,
@@ -811,4 +810,8 @@ comments: Array,
 ```
 
 如果想要在已有的collection新增field可使用update配合$set即可
+
+
+
+避免使用update 中的 upsert 會產生\_id為null的情況
 
