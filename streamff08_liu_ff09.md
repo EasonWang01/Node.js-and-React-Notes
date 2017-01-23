@@ -32,17 +32,16 @@ var server = http.createServer(function (req, res) {
 });
 server.listen(8000);
 ```
+
 每次讀到一小段數據後隨即發送給客戶
 
 在cmd輸入node再輸入stream，觀看stream的方法
-
 
 第一個
 
 Readable
 
 ```
-
 var Readable = require('stream').Readable;
 
 var rs = new Readable;
@@ -52,7 +51,8 @@ rs.push(null);
 
 rs.pipe(process.stdout);
 ```
-rs.push(null); 告訴Readable要結束了
+
+rs.push\(null\); 告訴Readable要結束了  
 沒有在結尾輸入的話會產生錯誤
 
 或使用
@@ -73,10 +73,10 @@ rs.push(null);
 rs.on('data', function(chunk) {
  console.log(chunk);
 });
-
 ```
 
 但只讀到buffer，如何轉為字串?
+
 ```
 var Readable = require('stream').Readable;
 
@@ -92,8 +92,6 @@ rs.push(null);
 rs.on('data', function(chunk) {
  console.log(chunk);
 });
- 
-
 ```
 
 上面是開啟監聽data，如果想在結束後才一次讀出呢?
@@ -116,13 +114,13 @@ rs.on('data', function(chunk) {
 aa+=chunk;
 });
  rs.on('end',function(){
- 	console.log(aa);
+     console.log(aa);
  })
-
 ```
+
 如何讓他暫停不要結束?
 
-pause();
+pause\(\);
 
 ```
 var Readable = require('stream').Readable;
@@ -143,23 +141,30 @@ aa+=chunk;
 rs.pause();
 
  rs.on('end',function(){
- 	console.log(aa);
+     console.log(aa);
  })
 ```
+
 如何確認是不是暫停?
 
 ```
 console.log(rs.isPaused());
 ```
+
 暫停後如何繼續?
+
 ```
 rs.resume();
 ```
+
 讀進buffer後如何寫出?
+
 ```
 fs.writeFile(filename, data, [encoding], [callback])
 ```
+
 範例
+
 ```
 var Readable = require('stream').Readable;
 var fs = require('fs');
@@ -170,10 +175,9 @@ rs.push('Hi ');
 rs.push(null);
 
 rs.on('data', function(chunk) {
- 	console.log(chunk);
- 	fs.writeFile('./class1.js',chunk)
+     console.log(chunk);
+     fs.writeFile('./class1.js',chunk)
 });
-
 ```
 
 有更高級的寫法嗎?
@@ -190,12 +194,13 @@ rs.push('Hi ');
 rs.push(null);
 
 rs.on('data', function(chunk) {
- 	console.log(chunk);
- 	fs.createWriteStream('./class1.js').write(chunk);
+     console.log(chunk);
+     fs.createWriteStream('./class1.js').write(chunk);
 });
-
 ```
+
 將
+
 ```
 fs.createWriteStream('./class1.js').write(chunk);
 ```
@@ -205,18 +210,20 @@ fs.createWriteStream('./class1.js').write(chunk);
 ```
 console.log(fs.createWriteStream('./class1.js').write(chunk))
 ```
+
 猜看看會出現什麼?
 
 ---
+
 如何控制寫入?
-
-
 
 ```
 write()
 end()
 ```
-#Pipe
+
+# Pipe
+
 慢慢寫太慢了，直接用管子讓他快速流過去
 
 前提:read和write的實例要繼承stream
@@ -225,3 +232,6 @@ end()
 pipe()
 unpipe()
 ```
+
+
+

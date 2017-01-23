@@ -123,7 +123,7 @@ fs.mkdir('./IamDir',0777, function (err) {
  
  下面講一下檔案權限
  ```
- 讀取 Read = R = 4
+讀取 Read = R = 4
 寫入 Write = W = 2
 執行 eXecute = X = 1
 

@@ -1,10 +1,10 @@
 # React
 
-1.
-建議react 和react-dom相同版本才比較不會有問
-https://github.com/facebook/react/issues/8588#issuecomment-267596448
+1.  
+建議react 和react-dom相同版本才比較不會有問  
+[https://github.com/facebook/react/issues/8588\#issuecomment-267596448](https://github.com/facebook/react/issues/8588#issuecomment-267596448)
 
-2.
+2.  
 如果使用`create-react-app`，如果套件在index.html引入須在使用套件時加上`window`
 
 基礎
@@ -13,8 +13,8 @@ https://github.com/facebook/react/issues/8588#issuecomment-267596448
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
   <script src="https://fb.me/react-15.0.0.js"></script>
     <script src="https://fb.me/react-dom-15.0.0.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-
@@ -28,15 +28,10 @@ https://github.com/facebook/react/issues/8588#issuecomment-267596448
         document.getElementById('example')
       );
     </script>
-	
+
 </body>
 </html>
 ```
-
-
-
-
-
 
 ```
 var HelloMessage = React.createClass({
@@ -47,7 +42,9 @@ var HelloMessage = React.createClass({
 
 ReactDOM.render(<HelloMessage name="John" />, mountNode);
 ```
-使用ES6 
+
+使用ES6
+
 ```
 class HelloMessage extends React.Component {
   render() {
@@ -57,9 +54,10 @@ class HelloMessage extends React.Component {
 
 ReactDOM.render(<HelloMessage name="Sebastian"/>, mountNode);
 ```
-其他方法之簡單整理
-```
 
+其他方法之簡單整理
+
+```
 class baseComponent extends React.Component{
     // 建構子
     constructor(props){
@@ -99,37 +97,38 @@ class App extends baseComponent{
         不會執行父類的function.
         // 但...父類如果本身沒有寫出componentDidMount,在子類
         寫出的話就會錯誤,
-        
+
         if (super.componentDidMount) {
             super.componentDidMount();
         }
         // do something yourself...
     }
 }
-
 ```
 
+更多有關ES5 react to ES6 or ES7  
+[http://cheng.logdown.com/posts/2015/09/29/converting-es5-react-to-es6](http://cheng.logdown.com/posts/2015/09/29/converting-es5-react-to-es6)
 
-更多有關ES5 react to ES6 or ES7
-http://cheng.logdown.com/posts/2015/09/29/converting-es5-react-to-es6
+[http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8](http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8)
 
-http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8
+有關class用法  
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
-有關class用法
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+[http://es6.ruanyifeng.com/\#docs/class](http://es6.ruanyifeng.com/#docs/class)
 
-http://es6.ruanyifeng.com/#docs/class
+[https://gist.github.com/sebmarkbage/d7bce729f38730399d28](https://gist.github.com/sebmarkbage/d7bce729f38730399d28)
 
-https://gist.github.com/sebmarkbage/d7bce729f38730399d28
-#開始使用React
-##建立環境
+# 開始使用React
+
+## 建立環境
 
 npm install webpack -g
 
-npm install nodemon -g
-(在更改程式時自動執行server，而forever為遇到錯誤也不會停止)
+npm install nodemon -g  
+\(在更改程式時自動執行server，而forever為遇到錯誤也不會停止\)
 
 1.裡面放入package.json
+
 ```
 {
   "name": "react-todo-list",
@@ -157,19 +156,23 @@ npm install nodemon -g
   }
 }
 ```
+
 之後輸入npm install
 
 在根目錄下新建三個目錄
+
 ```
 forclass
     --client
     --components
     --server
     package.json
- ```
- 2.接著在server目錄下新增server.js
- ```
- var express = require('express');
+```
+
+2.接著在server目錄下新增server.js
+
+```
+var express = require('express');
 var path = require('path');
 
 var app = express();
@@ -186,8 +189,10 @@ app.listen(port, function(error) {
   if (error) throw error;
   console.log("Express server listening on port", port);
 });
- ```
+```
+
 3.在client資料夾內加入index.html
+
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -202,7 +207,9 @@ app.listen(port, function(error) {
 </body>
 </html>
 ```
+
 4.新增webpack 配置文件webpack.config.js
+
 ```
 module.exports = {
   devtool: 'inline-source-map',
@@ -226,12 +233,14 @@ module.exports = {
   }
 }
 ```
+
 什麼是source map
 
-可以看chrome dev tool 裡的setting即有此選項
-http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html
+可以看chrome dev tool 裡的setting即有此選項  
+[http://www.ruanyifeng.com/blog/2013/01/javascript\_source\_map.html](http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
 
 5.在client資料夾中新增client.js
+
 ```
 import React from 'react'
 import { render } from 'react-dom'
@@ -242,11 +251,13 @@ render(
   document.getElementById('app')
 )
 ```
+
 `<App/>`即為我們的react元件
 
 6.在components資料夾中新增App.js
 
 此即為我們第一個react元件
+
 ```
 import React, { Component } from 'react'
 
@@ -260,30 +271,38 @@ class App extends Component {
 
 export default App
 ```
-輸入`webpack --config webpack.config.js`
+
+輸入`webpack --config webpack.config.js`  
 會自動產生dist資料夾，裡面包含bundle.js檔案
 
-之後即可重新啟動伺服器，並觀看改變
-`npm run serve`(寫在package.json中的scripts內)
+之後即可重新啟動伺服器，並觀看改變  
+`npm run serve`\(寫在package.json中的scripts內\)
 
+## 讓我們不用重新整理網頁
 
-##讓我們不用重新整理網頁
 在package.json內加入
 
-1.不用重新整理網頁
-(讓我們不用使用webpack-dev-server也有-hot的指令)
+1.不用重新整理網頁  
+\(讓我們不用使用webpack-dev-server也有-hot的指令\)
+
 ```
 "webpack-hot-middleware": "^2.6.4"
 ```
+
 2.讓hot middleware知道react的class
+
 ```
- "babel-preset-react-hmre": "^1.1.0",
+"babel-preset-react-hmre": "^1.1.0",
 ```
+
 以及上webpack跑在我們架設的express server上
+
 ```
- "webpack-dev-middleware": "^1.5.1"
+"webpack-dev-middleware": "^1.5.1"
 ```
+
 完整版
+
 ```
 {
   "name": "react-todo-list",
@@ -314,6 +333,7 @@ export default App
   }
 }
 ```
+
 npm install後
 
 接著更改剛才server資料夾下的 server.js
@@ -346,11 +366,13 @@ app.listen(port, function(error) {
   console.log("Express server listening on port", port);
 });
 ```
+
 現在我們可以直接用server.js去compile 我們的webpack config檔案，不用再輸入指令compile
 
 最後因為我們剛才有用hot middle所以我們可以使用--hot去讓他自動reload網頁，但我們不想在指令輸入，所以可以把他加在webpack config內
 
 webpack.config.js
+
 ```
 var webpack = require('webpack');
 
@@ -384,16 +406,19 @@ module.exports = {
   }
 }
 ```
-現在執行
+
+現在執行  
 `npm run serve`
 
 再去更改app.js內的字，可以看到不用重新啟動伺服器，也不用按網頁的重新整理，即可更新
 
-##第二階段
+## 第二階段
+
 開始新增其他react元件
 
-在components下，新增一個檔案
+在components下，新增一個檔案  
 `TextDisplay.js`
+
 ```
 import React, {Component} from 'react'
 
@@ -403,6 +428,7 @@ class TextDisplay extend Component{
 
 export default TextDisplay
 ```
+
 上面是引用react後建造一個空的class後將他輸出
 
 接著我們要在class內寫入東西
@@ -412,22 +438,24 @@ import React, {Component} from 'react'
 //JSX要看到import了React 才可以編譯 
 class TextDisplay extends Component{
 
-	render() {
-		return (
-			<div>
-			<div> THis is text display</div>
-			<div> if we have two div we need to wrap it.</div>
-			</div>
+    render() {
+        return (
+            <div>
+            <div> THis is text display</div>
+            <div> if we have two div we need to wrap it.</div>
+            </div>
 
-		)};
+        )};
 
 }
 
 export default TextDisplay
 ```
+
 使著將最外層的div刪掉，會出現錯誤，因為一個元件要有東西包住最外層。
 
 之後讓原來的App.js引用他
+
 ```
 import React, { Component } from 'react'
 
@@ -443,12 +471,12 @@ class App extends Component {
 
 }
 export default App
-
-
 ```
+
 使用state
 
 TextDisplay.js
+
 ```
 import React, { Component } from 'react'
 
@@ -471,9 +499,9 @@ class TextInput extends Component {
           type="text"
           placeholder="This is going to be text"
           value={this.state.inputText}
-         
+
         />
-    
+
       </div>
     )
   }
@@ -482,9 +510,11 @@ class TextInput extends Component {
 
 export default TextInput
 ```
-####!!記得重新整理網頁，才會作用(因為這裡是constructor)
 
-#為元件加入方法
+#### !!記得重新整理網頁，才會作用\(因為這裡是constructor\)
+
+# 為元件加入方法
+
 ```
 import React, { Component } from 'react'
 
@@ -499,7 +529,7 @@ class TextInput extends Component {
   }
 
  handleChange(){
- 	console.log("ch")
+     console.log("ch")
  }
 
   render() {
@@ -511,7 +541,7 @@ class TextInput extends Component {
           value={this.state.inputText}
           onChange={this.handleChange}
         />
-    
+
       </div>
     )
   }
@@ -520,8 +550,11 @@ class TextInput extends Component {
 
 export default TextInput
 ```
-##在class中的方法如果有this的話他會不知道this是什麼，所以要在class 的constructor中把該方法綁進來
+
+## 在class中的方法如果有this的話他會不知道this是什麼，所以要在class 的constructor中把該方法綁進來
+
 1.
+
 ```
 import React, { Component } from 'react'
 
@@ -537,7 +570,7 @@ class TextInput extends Component {
   }
 
  handleChange(){
- 	this.setState({inputText:12});
+     this.setState({inputText:12});
  }
 
   render() {
@@ -549,7 +582,7 @@ class TextInput extends Component {
           value={this.state.inputText}
           onChange={this.handleChange}
         />
-    
+
       </div>
     )
   }
@@ -558,23 +591,24 @@ class TextInput extends Component {
 
 export default TextInput
 ```
+
 但後來發現如果想傳入參數還是要在html tag中寫bind才會傳入
 
-
 2.所以另一種寫法，是直接在DOM 的onchange中綁，但官方推薦綁在constructor
+
 ```
 onChange={this.handleChange.bind(this)}
 ```
+
 接著在render上面寫
+
 ```
 handleChange(){
  ...
 }
 ```
 
-
-3.第三種寫法(ES6的箭頭函數，最方便，因為會直接幫你綁定)
-
+3.第三種寫法\(ES6的箭頭函數，最方便，因為會直接幫你綁定\)
 
 ```
 send = () => {
@@ -587,22 +621,24 @@ send = () => {
  <button onClick={()=>this.handleSubmit()}>Submit</button>
 ```
 
-如要傳入事件，記得兩邊()都要傳入
+如要傳入事件，記得兩邊\(\)都要傳入
+
 ```
- <form onSubmit={(e)=>this.handleSubmit(e)}>
+<form onSubmit={(e)=>this.handleSubmit(e)}>
 ```
+
 好處是不用再用bind
 
-參考:http://egorsmirnov.me/2015/08/16/react-and-es6-part3.html
+參考:[http://egorsmirnov.me/2015/08/16/react-and-es6-part3.html](http://egorsmirnov.me/2015/08/16/react-and-es6-part3.html)
 
-####!每次改動constructor記得都要重新整理，就算有用Hot reload
-
+#### !每次改動constructor記得都要重新整理，就算有用Hot reload
 
 完整範例：
 
 `注意其中的onclick 與 從子元件傳上來的 onclick`
 
 container
+
 ```
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
@@ -632,7 +668,7 @@ class TodoList extends Component {
 
 }
 function mapStateToProp(state){
-	return state
+    return state
 }
 
 function mapDispatchToProps(dispatch) {
@@ -642,10 +678,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProp,mapDispatchToProps)(TodoList)
-
-
-
 ```
+
 component
 
 ```
@@ -662,13 +696,13 @@ const List = (props) => {
 }
 
 export default List;
-
 ```
 
-#2.在class內所有的this都是指到那個class
+# 2.在class內所有的this都是指到那個class
 
-所以要取得onchange時input內的value必須用e.target
+所以要取得onchange時input內的value必須用e.target  
 ，因為這裡不是DOM
+
 ```
 import React, { Component } from 'react'
 
@@ -684,16 +718,16 @@ class TextInput extends Component {
   }
 
  handleChange(e){
- 	console.log(e.target.value);
- 	console.log(this);
- 	//this.setState({inputText:12});
+     console.log(e.target.value);
+     console.log(this);
+     //this.setState({inputText:12});
  }
 
   render() {
     return (
       <div>
-        
-    	<input onChange={this.handleChange} />
+
+        <input onChange={this.handleChange} />
       </div>
     )
   }
@@ -702,21 +736,26 @@ class TextInput extends Component {
 
 export default TextInput
 ```
-#Prop
+
+# Prop
+
 即為HTML tag中的屬性
 
 1.新增一個元件為Propest.js
+
 ```
 import React, { Component } from 'react'
 
 class Proptest extends Component {
-	render(){
-		return <div> {this.props.text}</div>
-	}
+    render(){
+        return <div> {this.props.text}</div>
+    }
 }
 export default Proptest
 ```
+
 TextDisplay.js
+
 ```
 import React, { Component } from 'react'
 import Proptest from "./Proptest"
@@ -732,17 +771,17 @@ class TextInput extends Component {
   }
 
  handleChange(e){
- 	console.log(e.target.value);
- 	
- 	this.setState({inputText:e.target.value});
+     console.log(e.target.value);
+
+     this.setState({inputText:e.target.value});
  }
 
   render() {
     return (
       <div>
-        
-    	<input onChange={this.handleChange} />
-    	<Proptest text="123"/>
+
+        <input onChange={this.handleChange} />
+        <Proptest text="123"/>
       </div>
     )
   }
@@ -751,34 +790,38 @@ class TextInput extends Component {
 
 export default TextInput
 ```
+
 即可看到Proptest的props顯示出
 
 2.讓子代的view啟動父代的method
 
 Proptest.js
+
 ```
 import React, { Component } from 'react'
 
 class Proptest extends Component {
 
-	constructor(){
-		super()
-		
-	}
+    constructor(){
+        super()
+
+    }
 
 
-	render(){
-		return( 
+    render(){
+        return( 
 
-		<div> 
-			<button onClick={this.props.deleteLetter}> </button>
+        <div> 
+            <button onClick={this.props.deleteLetter}> </button>
 
-		</div>
-	)}
+        </div>
+    )}
 }
 export default Proptest
 ```
+
 TestDisplay.js
+
 ```
 import React, { Component } from 'react'
 import Proptest from "./Proptest"
@@ -795,20 +838,20 @@ class TextInput extends Component {
   }
 
  handleChange(e){
- 	console.log(e.target.value);
- 	
- 	this.setState({inputText:e.target.value});
+     console.log(e.target.value);
+
+     this.setState({inputText:e.target.value});
  }
  deleteLetter(){
- 	console.log(this);
+     console.log(this);
  }
 
   render() {
     return (
       <div>
-        
-    	<input onChange={this.handleChange} />
-    	<Proptest deleteLetter={this.deleteLetter}/>
+
+        <input onChange={this.handleChange} />
+        <Proptest deleteLetter={this.deleteLetter}/>
       </div>
     )
   }
@@ -818,7 +861,8 @@ class TextInput extends Component {
 export default TextInput
 ```
 
-進階(點擊button更改state)
+進階\(點擊button更改state\)
+
 ```
 import React, { Component } from 'react'
 import Proptest from "./Proptest"
@@ -835,22 +879,22 @@ class TextInput extends Component {
   }
 
  handleChange(e){
- 	console.log(e.target.value);
- 	
- 	this.setState({inputText:e.target.value});
+     console.log(e.target.value);
+
+     this.setState({inputText:e.target.value});
  }
  deleteLetter(){
- 	this.setState({
- 		inputText:this.state.inputText.substring(0,this.state.inputText.length-1)
- 	});
+     this.setState({
+         inputText:this.state.inputText.substring(0,this.state.inputText.length-1)
+     });
  }
 
   render() {
     return (
       <div>
-        
-    	<input    value={this.state.inputText}     onChange={this.handleChange} />
-    	<Proptest text={this.state.inputText} deleteLetter={this.deleteLetter}/>
+
+        <input    value={this.state.inputText}     onChange={this.handleChange} />
+        <Proptest text={this.state.inputText} deleteLetter={this.deleteLetter}/>
       </div>
     )
   }
@@ -865,26 +909,27 @@ import React, { Component } from 'react'
 
 class Proptest extends Component {
 
-	constructor(){
-		super()
-		
-	}
+    constructor(){
+        super()
+
+    }
 
 
-	render(){
-		return( 
+    render(){
+        return( 
 
-		<div> 
-			<p>{this.props.text}</p>
-			<button onClick={this.props.deleteLetter}> </button>
+        <div> 
+            <p>{this.props.text}</p>
+            <button onClick={this.props.deleteLetter}> </button>
 
-		</div>
-	)}
+        </div>
+    )}
 }
 export default Proptest
 ```
 
-#在元件內使用條件判斷
+# 在元件內使用條件判斷
+
 ```
 import React, { Component } from 'react'
 import Proptest from "./Proptest"
@@ -903,14 +948,14 @@ class TextInput extends Component {
   }
 
  handleChange(e){
- 	console.log(e.target.value);
- 	
- 	this.setState({inputText:e.target.value});
+     console.log(e.target.value);
+
+     this.setState({inputText:e.target.value});
  }
  deleteLetter(){
- 	this.setState({
- 		inputText:this.state.inputText.substring(0,this.state.inputText.length-1)
- 	});
+     this.setState({
+         inputText:this.state.inputText.substring(0,this.state.inputText.length-1)
+     });
  }
 
 
@@ -919,21 +964,21 @@ class TextInput extends Component {
 
 
   render() {
-  	var checkFalse = true;
-  	if(checkFalse){
-  		checkFalse =  <Proptest text={this.state.inputText} deleteLetter={this.deleteLetter}/>;
- 	}else{
-  		checkFalse = <p>This is false</p>
-  	}
+      var checkFalse = true;
+      if(checkFalse){
+          checkFalse =  <Proptest text={this.state.inputText} deleteLetter={this.deleteLetter}/>;
+     }else{
+          checkFalse = <p>This is false</p>
+      }
 
 
 
     return (
       <div>
-        
-    	<input    value={this.state.inputText}     onChange={this.handleChange} />
-    	
-    	{checkFalse}
+
+        <input    value={this.state.inputText}     onChange={this.handleChange} />
+
+        {checkFalse}
 
       </div>
     )
@@ -943,18 +988,20 @@ class TextInput extends Component {
 
 export default TextInput
 ```
+
 使用AJAX
 
 1.先在server.js加上app.post的路徑
+
 ```
 app.post('/hi',function(req,res){
-	res.end("hi");
+    res.end("hi");
 });
 ```
 
 2.
-```
 
+```
 import React, { Component } from 'react'
 import Proptest from "./Proptest"
 
@@ -977,13 +1024,13 @@ class TextInput extends Component {
 
 
  handleChange(e){
- 	console.log(e.target.value);
- 	
- 	this.setState({inputText:e.target.value});
+     console.log(e.target.value);
+
+     this.setState({inputText:e.target.value});
  }
  deleteLetter(){
- 	$.ajax({
-	 type:"POST",
+     $.ajax({
+     type:"POST",
       url: "/hi",
       dataType: 'text',
       success: function(data) {
@@ -994,10 +1041,10 @@ class TextInput extends Component {
       }.bind(this)
     });
 
- 	
- 	this.setState({
- 		inputText:this.state.inputText.substring(0,this.state.inputText.length-1)
- 	});
+
+     this.setState({
+         inputText:this.state.inputText.substring(0,this.state.inputText.length-1)
+     });
  }
 
 
@@ -1006,21 +1053,21 @@ class TextInput extends Component {
 
 
   render() {
-  	var checkFalse = true;
-  	if(checkFalse){
-  		checkFalse =  <Proptest text={this.state.inputText} deleteLetter={this.deleteLetter}/>;
- 	}else{
-  		checkFalse = <p>This is false</p>
-  	}
+      var checkFalse = true;
+      if(checkFalse){
+          checkFalse =  <Proptest text={this.state.inputText} deleteLetter={this.deleteLetter}/>;
+     }else{
+          checkFalse = <p>This is false</p>
+      }
 
 
 
     return (
       <div>
-        
-    	<input    value={this.state.inputText}     onChange={this.handleChange} />
-    	
-    	{checkFalse}
+
+        <input    value={this.state.inputText}     onChange={this.handleChange} />
+
+        {checkFalse}
 
       </div>
     )
@@ -1029,16 +1076,16 @@ class TextInput extends Component {
 }
 
 export default TextInput
-
 ```
 
-#使用React router
-1.
-https://github.com/EasonWang01/react-tutorial
+# 使用React router
+
+1.  
+[https://github.com/EasonWang01/react-tutorial](https://github.com/EasonWang01/react-tutorial)
 
 clone後到branch master開始進行
 
-2.
+2.  
 `npm install react-router`
 
 之後開啟client.js
@@ -1052,13 +1099,12 @@ import App from '../components/App'
 import { Router, Route, hashHistory } from 'react-router'
 
 render(( 
-	<Router history={hashHistory}>
+    <Router history={hashHistory}>
      <Route path="/" component={App}/>
     </Router> 
   ),document.getElementById('app'))
-
-
 ```
+
 再改為下面看看
 
 ```
@@ -1069,26 +1115,28 @@ import Proptest from '../components/Proptest'
 import { Router, Route, hashHistory } from 'react-router'
 
 render(( 
-	<Router history={hashHistory}>
-	<Route path="/" component={App}/>
+    <Router history={hashHistory}>
+    <Route path="/" component={App}/>
      <Route path="/about" component={Proptest}/>
     </Router> 
   ),document.getElementById('app'))
-
-
 ```
-到路徑http://localhost:3000/#/about
+
+到路徑[http://localhost:3000/\#/about](http://localhost:3000/#/about)
 
 即可看到，元件的切換
 
-(發現頁面切換元件很快速，我們以前要做到這樣必須用AJAX，或模板引擎內的動態compile(一樣是AJAX加載)，
-但React沒用到ajax，完全都在client端計算更改的virtual DOM後更新到DOM上)
+\(發現頁面切換元件很快速，我們以前要做到這樣必須用AJAX，或模板引擎內的動態compile\(一樣是AJAX加載\)，  
+但React沒用到ajax，完全都在client端計算更改的virtual DOM後更新到DOM上\)
 
 ---
+
 接著可到webpack那章，加上commonchunk plugin，加速我們每次網頁重新整理的速度
 
 ---
-#如何寫style
+
+# 如何寫style
+
 個人習慣方式為:
 
 1.創一個style資料夾
@@ -1100,27 +1148,27 @@ render((
 4.於server設定`app.use(express.static('./style'));`
 
 5.引入到index.html
+
 ```
 <link rel=stylesheet type="text/css" href="../style.css">
 ```
 
+# 加上Bootstrap
 
-#加上Bootstrap
- 雖然有react-bootstrap，但我們也可用原本的方式
- 
- 在client.js加上
- ```
- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
- ```
- 
- 之後在用這個轉換網站轉換後貼上即可，記得外面要包著div
- 
- http://facebook.github.io/react/html-jsx.html
-  
-  
+雖然有react-bootstrap，但我們也可用原本的方式
 
+在client.js加上
 
-#選取元素
+```
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+```
+
+之後在用這個轉換網站轉換後貼上即可，記得外面要包著div
+
+[http://facebook.github.io/react/html-jsx.html](http://facebook.github.io/react/html-jsx.html)
+
+# 選取元素
+
 在元素內放入下面的property
 
 `ref={(c) => this._input = c}`
@@ -1138,18 +1186,22 @@ var inputValue = input.value;
 
 Style React
 
-###一般寫法:
+### 一般寫法:
+
 把style放在物件裡面
+
 ```
-  <button style={style.submit} onClick={()=>this.handleSubmit()}>Submit</button>
-  
+<button style={style.submit} onClick={()=>this.handleSubmit()}>Submit</button>
+
   var style = {
   submit:{background:"green"}
 }
 ```
-###使用其他庫
 
-###1.Radium
+### 使用其他庫
+
+### 1.Radium
+
 ```
 1.import Radium from 'radium'
 
@@ -1163,21 +1215,25 @@ Style React
   }
 }
 ```
-http://stack.formidable.com/radium/
 
-###2.Material-ui
+[http://stack.formidable.com/radium/](http://stack.formidable.com/radium/)
+
+### 2.Material-ui
 
 `npm install material-ui`
 
 都是個別引入
+
 ```
 import RaisedButton from 'material-ui/lib/raised-button';
 
  <RaisedButton label="Submit"onClick={()=>this.handleSubmit()} />
 ```
-http://www.material-ui.com/#/customization/inline-styles
 
-#####PS:如果使用click相關的元件沒反應的話
+[http://www.material-ui.com/\#/customization/inline-styles](http://www.material-ui.com/#/customization/inline-styles)
+
+##### PS:如果使用click相關的元件沒反應的話
+
 `npm install react-tap-event-plugin`
 
 ```
@@ -1185,17 +1241,19 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
   constructor(props) {
     super(props);
-   
+
     injectTapEventPlugin();
   }
 ```
-參考:https://github.com/callemall/material-ui#react-tap-event-plugin
 
-#Material UI 現在0.15後需如下使用
+參考:[https://github.com/callemall/material-ui\#react-tap-event-plugin](https://github.com/callemall/material-ui#react-tap-event-plugin)
+
+# Material UI 現在0.15後需如下使用
 
 1.加入Mui 的context
 
-2.injectTapEventPlugin();
+2.injectTapEventPlugin\(\);
+
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -1211,137 +1269,133 @@ injectTapEventPlugin();
 const store = configureStore(initialState);
 
 ReactDOM.render(
-	<Provider store={store}>
-		<MuiThemeProvider>
-	    <Router history={browserHistory} routes={root} />
-		</MuiThemeProvider>
-	</Provider>
+    <Provider store={store}>
+        <MuiThemeProvider>
+        <Router history={browserHistory} routes={root} />
+        </MuiThemeProvider>
+    </Provider>
 ,document.getElementById('app')
 )
-
 ```
-##使用server side rendering with Material UI
+
+## 使用server side rendering with Material UI
 
 一樣加入context和injectTapEventPlugin
 
-```
-var express = require('express');
-var path = require('path');
-var config = require('../../webpack.config.js');
-var webpack = require('webpack');
-var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackHotMiddleware = require('webpack-hot-middleware');
+    var express = require('express');
+    var path = require('path');
+    var config = require('../../webpack.config.js');
+    var webpack = require('webpack');
+    var webpackDevMiddleware = require('webpack-dev-middleware');
+    var webpackHotMiddleware = require('webpack-hot-middleware');
 
-import React from 'react';
-import {renderToString} from 'react-dom/server';
-import {RouterContext, match, createRoutes} from 'react-router';
-import root from '../client/root.js';
-import {Provider} from 'react-redux'
-import {configureStore} from '../redux/store'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
-const routes = createRoutes(root);
-
-
-var app = express();
-
-var compiler = webpack(config);
-
-app.use(webpackDevMiddleware(compiler, {noInfo:true,publicPath: config.output.publicPath}));
-app.use(webpackHotMiddleware(compiler));
-app.use(express.static('./dist'));
+    import React from 'react';
+    import {renderToString} from 'react-dom/server';
+    import {RouterContext, match, createRoutes} from 'react-router';
+    import root from '../client/root.js';
+    import {Provider} from 'react-redux'
+    import {configureStore} from '../redux/store'
+    import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+    import getMuiTheme from 'material-ui/styles/getMuiTheme';
+    import injectTapEventPlugin from 'react-tap-event-plugin';
+    injectTapEventPlugin();
+    const routes = createRoutes(root);
 
 
-app.post('/ajax',function(req,res){
+    var app = express();
 
-	res.end("success");
-})
+    var compiler = webpack(config);
 
-let initialState = {
-		todos:[{
-			id:0,
-			completed: false,
-			text:'initial for demo'
-		}]
-}
+    app.use(webpackDevMiddleware(compiler, {noInfo:true,publicPath: config.output.publicPath}));
+    app.use(webpackHotMiddleware(compiler));
+    app.use(express.static('./dist'));
 
 
-const store = configureStore(initialState);
+    app.post('/ajax',function(req,res){
 
+        res.end("success");
+    })
 
-app.get('*', (req, res) => {
-	const muiTheme = getMuiTheme({
-	  userAgent: req.headers['user-agent'],
-	});
-  match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
-    if (error) {
-      res.status(500).send(error.message);
-    } else if (redirectLocation) {
-      res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-    } else if (renderProps) {
-      const content = renderToString(
-				<Provider store={store}>
-				  <MuiThemeProvider muiTheme={muiTheme}>
-					  <RouterContext {...renderProps} />
-				  </MuiThemeProvider>
-				</Provider>
-			);
-      let state = store.getState();
-      let page = renderFullPage(content, state);
-      return res.status(200).send(page);
-    } else {
-      res.status(404).send('Not Found');
+    let initialState = {
+            todos:[{
+                id:0,
+                completed: false,
+                text:'initial for demo'
+            }]
     }
-  });
-});
-
-const renderFullPage = (html, preloadedState) => (`
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>React Todo List</title>
-</head>
-<body>
-  <div id="app">${html}</div>
-  <script>
-  window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\x3c')}
-   </script>
-  <script src="vendor.bundle.js"></script>
-  <script src="bundle.js"></script>
-</body>
-</html>
-`
-);
-
-var port = 3000;
-
-app.listen(port, function(error) {
-  if (error) throw error;
-  console.log("Express server listening on port", port);
-});
-
-```
 
 
-#React toggle style
+    const store = configureStore(initialState);
+
+
+    app.get('*', (req, res) => {
+        const muiTheme = getMuiTheme({
+          userAgent: req.headers['user-agent'],
+        });
+      match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
+        if (error) {
+          res.status(500).send(error.message);
+        } else if (redirectLocation) {
+          res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+        } else if (renderProps) {
+          const content = renderToString(
+                    <Provider store={store}>
+                      <MuiThemeProvider muiTheme={muiTheme}>
+                          <RouterContext {...renderProps} />
+                      </MuiThemeProvider>
+                    </Provider>
+                );
+          let state = store.getState();
+          let page = renderFullPage(content, state);
+          return res.status(200).send(page);
+        } else {
+          res.status(404).send('Not Found');
+        }
+      });
+    });
+
+    const renderFullPage = (html, preloadedState) => (`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>React Todo List</title>
+    </head>
+    <body>
+      <div id="app">${html}</div>
+      <script>
+      window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\x3c')}
+       </script>
+      <script src="vendor.bundle.js"></script>
+      <script src="bundle.js"></script>
+    </body>
+    </html>
+    `
+    );
+
+    var port = 3000;
+
+    app.listen(port, function(error) {
+      if (error) throw error;
+      console.log("Express server listening on port", port);
+    });
+
+# React toggle style
 
 如何在點擊時切換style呢
 
 1
 
 ```
- <div className={"flipper" + (this.props.flipped ? " flipped" : "")}>
+<div className={"flipper" + (this.props.flipped ? " flipped" : "")}>
 ```
-假設如上範例，可以先寫出，一個className的名稱的決定是由其於父組件上的prop決定
 
+假設如上範例，可以先寫出，一個className的名稱的決定是由其於父組件上的prop決定
 
 之後其父組件使用state來設定其他子組件的prop
 
 ```
-    render: function() {
+render: function() {
         return <div>
             <Flipper flipped={this.state.flipped} orientation="horizontal" />
             <Flipper flipped={this.state.flipped} orientation="vertical" />
@@ -1355,14 +1409,15 @@ app.listen(port, function(error) {
 所以點擊時會觸發下面這個函式
 
 ```
-  flip: function() {
+flip: function() {
         this.setState({ flipped: !this.state.flipped });
     },
 ```
 
-#在render方法內使用js新增component
+# 在render方法內使用js新增component
 
 ex:
+
 ```
 render (){
 <div>
@@ -1370,6 +1425,7 @@ render (){
 </div>
 }
 ```
+
 在這裡addth可以是兩種寫法
 
 1.一個是直接return出完整的dom element
@@ -1382,7 +1438,7 @@ render (){
 
 第二種方法即是常見的使用map放入的技巧
 
-#findDOMNode
+# findDOMNode
 
 之前版本的getDOMNode已經拿掉
 
@@ -1392,14 +1448,13 @@ render (){
 findDOMNode(this.refs.chart)
 ```
 
-#Server side rendering(使用Express)
+# Server side rendering\(使用Express\)
 
 參考此repo
 
-https://github.com/EasonWang01/React-router-Redux-isomorphic-Boilerplate
+[https://github.com/EasonWang01/React-router-Redux-isomorphic-Boilerplate](https://github.com/EasonWang01/React-router-Redux-isomorphic-Boilerplate)
 
-
-#Stateless component
+# Stateless component
 
 相對於使用class，使用 `const = function` 的方式會提升效能
 
@@ -1407,12 +1462,13 @@ https://github.com/EasonWang01/React-router-Redux-isomorphic-Boilerplate
 
 需要props傳入
 
-使用ref需於parent的class用div寫上ref在於其內引入stateless component
-，之後再用this.refs.cir1.children[0]方式取得子節點
+使用ref需於parent的class用div寫上ref在於其內引入stateless component  
+，之後再用this.refs.cir1.children\[0\]方式取得子節點
 
 範例:
+
 ```
-  clickCircle = (e) => {
+clickCircle = (e) => {
     this.refs.cir1.children[0].style.background='red';
   }
 
@@ -1423,14 +1479,11 @@ https://github.com/EasonWang01/React-router-Redux-isomorphic-Boilerplate
   </div>
 ```
 
-
-# #有關dangersetInnerHTML
-
+# \#有關dangersetInnerHTML
 
 `dangerouslySetInnerHTML={{__html: }}`
 
 類似上面格式，但記得，其雖然可直接接受html tag傳入或是special char但是如果是 html tag 的special char只會轉為html tag的字串型態，如果想要他從special char直接轉為dom必須先另外寫decode function
-
 
 ex:
 
@@ -1455,7 +1508,9 @@ decodeEntities = () => {
   return decodeHTMLEntities;
 };
 ```
+
 之後再用
+
 ```
 <div dangerouslySetInnerHTML={{__html: (this.decodeEntities())(this.state.msgContent)}} style={styles.p1}></div>
 ```
@@ -1471,3 +1526,6 @@ if(typeof document !== 'undefined') {
   require ('./index.css');
 }
 ```
+
+
+

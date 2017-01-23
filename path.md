@@ -1,5 +1,6 @@
 # path
 
+
 ##path.join  用於連結路徑
 
 開啟cmd輸入node，再輸入

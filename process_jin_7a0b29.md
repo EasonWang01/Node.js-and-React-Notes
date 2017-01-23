@@ -3,12 +3,12 @@
 process.stdout和process.stdin都是stream的實例
 
 ```
- process.stdout.write("ass");
+ process.stdout.write("test");
 
 ```
 等於
 ```
-console.log("ass")
+console.log("test")
 ```
 因為
 
