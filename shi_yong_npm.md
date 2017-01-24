@@ -49,7 +49,10 @@ https://docs.npmjs.com/
 
 #package.json教學
 
-
-
+```
+"scripts": {
+  "start": "node index.js"
+},
+```
 
 
