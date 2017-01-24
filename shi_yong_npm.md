@@ -69,3 +69,13 @@ config用來設定環境變量，如下
 
 可在程式中使用
 `process.env.npm_package_config_port`讀取到
+
+比較常用設定環境變量的方法為
+```
+console.log(process.env.PORT)
+```
+然後執行
+```
+PORT=8000 node test1.js //mac
+node test1.js PORT=8000 //windows
+```
