@@ -12,6 +12,9 @@ npm install  -g (使用後可在cmd的任何路徑輸入package名稱執行，�
 ![](df.png)
 所以共有兩個環境變數:
 一個是node_modules  =>給require用
+>Mac 使用 require global package 可用
+export NODE_PATH=/usr/local/lib/node_modules
+
 
 一個是`C:\Users\Jason\AppData\Roaming\npm`給在cmd直接輸入module名稱用
 
