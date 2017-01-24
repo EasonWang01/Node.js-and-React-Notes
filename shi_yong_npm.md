@@ -33,7 +33,8 @@ npm update
 ##為了避免部屬後環境module過大，可不必安裝dev用的module
 一開始開發時將套件安裝到devDependencies
 ```
-npm install --save-dev
+npm install --save-dev  //記得save跟dev要用-連再一起
+
 ```
 部屬時安裝
 ```
