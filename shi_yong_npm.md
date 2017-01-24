@@ -38,7 +38,7 @@ npm install --save-dev  //記得save跟dev要用-連再一起
 ```
 部屬時安裝
 ```
-use npm install --production or set the NODE_ENV environment variable to production
+npm install --production 
 ```
 
 
