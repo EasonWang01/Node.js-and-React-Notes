@@ -30,6 +30,8 @@ npm ls -l
 npm update -g
 
 npm update
+
+
 ##為了避免部屬後環境module過大，可不必安裝dev用的module
 一開始開發時將套件安裝到devDependencies
 ```
@@ -49,10 +51,17 @@ https://docs.npmjs.com/
 
 #package.json教學
 
+1.
+`"main"`表示require('模組名稱')所預設加載的文件。
+
+2.如下的寫法可用`npm run start`輸入此即會執行`node index.js`
+
 ```
 "scripts": {
   "start": "node index.js"
 },
 ```
+
+
 
 
