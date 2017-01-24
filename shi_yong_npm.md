@@ -61,7 +61,11 @@ https://docs.npmjs.com/
   "start": "node index.js"
 },
 ```
+3.
+config用來設定環境變量，如下
+```
+"config": { "port" : "8080" }
+```
 
-
-
-
+可在程式中使用
+`process.env.npm_package_config_port`讀取到
