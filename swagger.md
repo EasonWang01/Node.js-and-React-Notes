@@ -48,3 +48,32 @@ app.use('*', function(req, res, next) {
 
 2.或是使用swaggerhub直接線上編輯並可產生只可看的swagger ui
 
+
+# #開始編寫yaml語言
+
+先到http://editor.swagger.io/#/
+
+可以看到範例，接著我們把它清空，開始編寫自己的版本
+
+最基本的型態
+```
+swagger: '2.0'
+
+info:
+  version: 1.0.0
+  title: test API
+  description: this is test
+
+schemes:
+  - http
+host: localhost:3000
+basePath: /
+
+paths: {}
+  
+```
+其中最上面指的是使用swagger的版本，目前固定是2.0.0
+
+中間部分等於是指定API server的位置，意思為http:localhost:3000/
+
+再來我們會開始往paths裡面寫api
