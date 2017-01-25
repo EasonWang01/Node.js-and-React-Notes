@@ -133,7 +133,8 @@ io.on('connection', function(socket){
   console.log('a user connected');
   socket.on('chat', function(msg){
     console.log('message: ' + msg);
-    socket.broadcast.emit('message',msg);
+    socket.broadcast.emit('message',msg);//傳給所有人除了自己
+    socket.emit('message',msg);//傳給自己
   });
 });
 
@@ -173,10 +174,10 @@ index.html
 ```
 
 
-
-
-
 >注意：socket.broadcast.emit會傳給所有connected user除了自己
+
+
+這時開啟第二個瀏覽器，並在文字框輸入後按送出，即可看到另一個瀏覽器產生文字
 
 
 #首先必須先再連線範圍作用域才可做事
