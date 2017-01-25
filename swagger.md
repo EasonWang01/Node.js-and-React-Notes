@@ -69,7 +69,7 @@ schemes:
 host: localhost:3000
 basePath: /
 
-paths: {}
+paths: 
   
 ```
 其中最上面指的是使用swagger的版本，目前固定是2.0.0
