@@ -1,4 +1,14 @@
+#Websocket
 
+WebSocket一種在單個 TCP 連線上進行全雙工通訊的協定
+
+以前必須要用Ajax間隔時間去跟server要資料，websocket則可以在建立連線後持續傳送
+
+簡單的比喻：
+
+Ajax 喝水要拿起水杯，喝完要再放下
+
+Websocket 用吸管喝水，要喝時或喝太多要吐回去都不必再次拿起水杯
 
 
 # socket.io
