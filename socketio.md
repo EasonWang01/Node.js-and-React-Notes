@@ -1,3 +1,6 @@
+
+
+
 # socket.io
 
 
@@ -83,3 +86,22 @@ io.on('connection', function(socket){
 }
 
 ```
+
+###安全機制之token
+
+client端
+
+```
+var socket = io.connect('http://localhost:8183/?token=localStorage.getItem('access_token'))
+```
+
+server端
+
+```
+io.on('connection', function(socket) {
+    console.log("url"+socket.handshake.url);
+    console.log(socket.handshake.query.token);
+
+});
+```
+另外client端的cookie會在websocket連線時自動送到server
