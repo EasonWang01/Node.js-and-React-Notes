@@ -77,3 +77,23 @@ paths:
 中間部分等於是指定API server的位置，意思為http:localhost:3000/
 
 再來我們會開始往paths裡面寫api
+
+#### #寫paths的步驟
+
+1.路徑 `/test`
+
+2.動詞 `get,post...`
+
+3.四劍客 `summary description parameters responses`
+
+4.在parameters下寫參數
+```
+ -  name: pageSize
+   in: query
+   description: Number of persons returned
+   type: integer
+```
+
+5.在responses下寫response code  `200,304...`
+
+6.每個response code下有  
