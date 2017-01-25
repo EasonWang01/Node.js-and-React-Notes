@@ -51,6 +51,8 @@ app.use('*', function(req, res, next) {
 
 # #開始編寫yaml語言
 
+>yaml子項目會後退空兩格，陣列使用`-`表示
+
 先到http://editor.swagger.io/#/
 
 可以看到範例，接著我們把它清空，開始編寫自己的版本
@@ -96,4 +98,17 @@ paths:
 
 5.在responses下寫response code  `200,304...`
 
-6.每個response code下有  
+6.每個response code下有回傳的東西
+```
+description: A Person
+schema:
+   required:
+     - username
+         properties:
+           firstName:
+             type: string
+           lastName:
+             type: string
+           username:
+             type: string
+```  
