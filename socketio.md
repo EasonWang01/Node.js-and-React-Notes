@@ -12,13 +12,81 @@ Ajax 喝水要拿起水杯，喝完要再放下
 
 Websocket 用吸管喝水，要喝時或喝太多要退回去杯子都不必再次拿起水杯
 
-####實作
+####webSocket相關框架
+
+ws
+https://github.com/websockets/ws
+
+engine.io https://github.com/socketio/engine.io
 
 
-
-
+這裡我們使用socket.io當教學範例
 # socket.io
 
+```
+npm install socket.io --save
+```
+
+之後新增server.js
+
+```
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+app.get('/', function(req, res){
+  res.sendFile('index.html');
+});
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
+```
+index.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Websocket Test</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    var socket = io();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+```
+之後啟動 `node server.js`
+
+打開瀏覽器`localhost:3000`，並開啟開發人員工具的network觀察
+
+以下取自維基百科https://zh.wikipedia.org/wiki/WebSocket
+```
+Connection必須設定Upgrade，表示用戶端希望連線升級。
+Upgrade欄位必須設定Websocket，表示希望升級到Websocket協定。
+Sec-WebSocket-Key是隨機的字串，伺服器端會用這些資料來構造出一個SHA-1的資訊摘要。把「Sec-WebSocket-Key」加上一個特殊字串「258EAFA5-E914-47DA-95CA-C5AB0DC85B11」，然後計算SHA-1摘要，之後進行BASE-64編碼，將結果做為「Sec-WebSocket-Accept」頭的值，返回給用戶端。如此操作，可以儘量避免普通HTTP請求被誤認為Websocket協定。
+Sec-WebSocket-Version 表示支援的Websocket版本。RFC6455要求使用的版本是13，之前草案的版本均應當被棄用。
+Origin欄位是可選的，通常用來表示在瀏覽器中發起此Websocket連線所在的頁面，類似於Referer。但是，於Referer不同的是，Origin只包含了協定和主機名稱。
+其他一些定義在HTTP協定中的欄位，如Cookie等，也可以在Websocket中使用。
+```
+
+新增一個事件
+
+```
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('chat', function(msg){
+    console.log('message: ' + msg);
+  });
+});
+```
 
 >注意：socket.broadcast.emit會傳給所有connected user除了自己
 
