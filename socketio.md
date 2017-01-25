@@ -79,6 +79,7 @@ Origin欄位是可選的，通常用來表示在瀏覽器中發起此Websocket�
 
 新增一個事件
 
+
 server.js
 
 ```
@@ -112,6 +113,67 @@ index.html
 </html>
 ```
 可看到我們在client端的方框輸入文字後按送出，可於terminal中看到訊息
+
+接著
+
+剛才是讓server接收client發出的事件，現在試著讓client接收server發送的事件
+
+server.js
+
+```
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
+});
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('chat', function(msg){
+    console.log('message: ' + msg);
+    socket.broadcast.emit('message',msg);
+  });
+});
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
+```
+
+記得更改完server.js後要記得把server重新啟動
+
+index.html
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Websocket Test</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+      function clickBtn() {
+        socket.emit('chat',document.getElementById('thisInput').value);
+      }
+      //接收事件
+      socket.on('message',function(data) {
+        document.getElementById('received').innerHTML = data;
+      })
+    </script>
+</head>
+<body>
+   <input id="thisInput"> </input>
+     <button onclick="clickBtn()">點我</button> 
+   <div id="received"></div>
+</body>
+</html>
+```
+
+
+
 
 
 >注意：socket.broadcast.emit會傳給所有connected user除了自己
