@@ -1,5 +1,15 @@
 # 使用express
 
+###使用`npm install express-generator -g`快速產生一個scaffold
+
+http://expressjs.com/zh-tw/starter/generator.html
+
+因預設模板引擎為Jade
+```
+ express test --view=ejs
+```
+
+#實作
 1.創建一個目錄，再進到該目錄
 ```
 mkdir expressExample
