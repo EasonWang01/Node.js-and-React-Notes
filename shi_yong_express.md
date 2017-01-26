@@ -181,6 +181,7 @@ app.use('/user/:id', function (req, res, next) {
 #注意
 
 (不要使用如下，因為有/hi,/as都會先跑過下面這行)
+
 ```
 
 app.use('/', function (req, res) {
@@ -217,13 +218,15 @@ app.get('/user/:d', function (req, res, next) {
   next();
 });
 app.listen(8080);
+```
 
 ##next() 跟next("router")的差別?
+
 ```
 app.get('/forum/:fid', middleware1, middleware2, function(){
   // ...
 })
-middleware1() 可以使用 next() 去執行 middleware2, 或使用 next(route) 跳過後面，直接傳給下一個app實例
+middleware1() 可以使用 next() 去執行 middleware2, 或使用 next("route") 跳過後面，直接傳給下一個app實例
 ```
 發現如果url為
 ```
@@ -247,6 +250,7 @@ I am next
 
 ###第一個方法
 1.index.js
+
 ```
 
 var fruit = require('./fruit');
