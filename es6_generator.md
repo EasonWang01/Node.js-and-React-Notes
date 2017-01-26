@@ -45,7 +45,7 @@ a.next()
 ```
 執行會錯誤
 
-#generator函式執行時不會改變，內部變數的值
+#generator函式執行時不會改變內部變數的值(yield應該放在每行的前面)
 ```
 function* foo(x) {
   var y = 2 * (yield (x + 1));
