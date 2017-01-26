@@ -9,6 +9,8 @@ http://expressjs.com/zh-tw/starter/generator.html
  express test --view=ejs
 ```
 
+但我們這裡不用使用產生器，所以我們自己到空的資料夾下
+
 #實作
 1.創建一個目錄，再進到該目錄
 ```
