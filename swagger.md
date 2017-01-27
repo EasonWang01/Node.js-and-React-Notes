@@ -112,3 +112,136 @@ schema:
            username:
              type: string
 ```  
+
+
+#基本上我們寫這樣就夠了
+
+GET 簡單範本
+```
+  /getUser:
+    # This is a HTTP operation
+    get:
+      description: |
+        取得使用者，使用query方法
+      parameters:
+        - name: id
+          in: query
+          description: 使用者id
+          required: true
+          type: string       
+      responses:
+        "200":
+          description: Success     
+```
+
+>在express中使用req.params取得url中使http://localhost:3000/getUser/123
+
+>使用req.query取得http://localhost:3000/getUser?id=123
+
+GET 方法的完整範例
+
+server.js
+```
+var express = require('express')
+var app = express()
+
+app.use('*', function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Accept, Origin, Content-Type');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    next();
+});
+
+app.get('/allArticle', function (req, res) {
+  res.json({
+    result: 'ok',
+    data: 'thisisall'
+  })
+})
+
+app.get('/getArticle/:id', function (req, res) {
+  console.log(req.params);
+  res.json({
+    result: 'ok',
+    data: ['data1','data2']
+  })
+})
+
+app.get('/getUser', function (req, res) {
+  console.log(req.query);
+  res.json({
+    result: 'ok',
+    data: ['data1','data2']
+  })
+})
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
+})
+```
+
+yaml
+```
+# Example YAML to get you started quickly.
+# Be aware that YAML has indentation based scoping.
+# Code completion support is available so start typing for available options.
+swagger: '2.0'
+
+host: localhost:3000
+# This is your document metadata
+info:
+  version: "1.0.0"
+  title: <testAPI>
+
+# Describe your paths here
+paths:
+
+  /allArticle:
+    # This is a HTTP operation
+    get:
+      # Describe this verb here. Note: you can use markdown
+      description: |
+        取得所有文章
+      responses:
+        "200":
+          description: Success
+                  
+  /getArticle/{id}:
+    # This is a HTTP operation
+    get:
+      # Describe this verb here. Note: you can use markdown
+      description: |
+        取得特定文章使用params方法
+      # This is array of GET operation parameters:
+      parameters:
+        - name: id
+          in: path
+          description: 文章id
+          required: true
+          type: string       
+      responses:
+        "200":
+          description: Success
+  /getUser:
+    # This is a HTTP operation
+    get:
+      # Describe this verb here. Note: you can use markdown
+      description: |
+        取得使用者，使用query方法
+      # This is array of GET operation parameters:
+      parameters:
+        - name: id
+          in: query
+          description: 使用者id
+          required: true
+          type: string       
+      responses:
+        "200":
+          description: Success                                    
+                  
+                  
+                  
+                  
+```
+  
