@@ -183,18 +183,15 @@ app.listen(3000, function () {
 
 yaml
 ```
-# Example YAML to get you started quickly.
-# Be aware that YAML has indentation based scoping.
-# Code completion support is available so start typing for available options.
+
 swagger: '2.0'
 
 host: localhost:3000
-# This is your document metadata
+
 info:
   version: "1.0.0"
   title: <testAPI>
 
-# Describe your paths here
 paths:
 
   /allArticle:
