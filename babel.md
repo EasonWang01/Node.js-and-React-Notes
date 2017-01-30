@@ -1,4 +1,4 @@
-# Babel
+2# Babel
 
 > 前言:1.我們在webpack寫入babel後可使用es6功能，但在entry file外就無法使用es6功能
 >
@@ -31,7 +31,7 @@ babel-node server.js
 不建議以上兩種做法，更好的做法餐好以下連結  
 [https://medium.com/@Cuadraman/how-to-use-babel-for-production-5b95e7323c2f\#.3yrne4t0a](https://medium.com/@Cuadraman/how-to-use-babel-for-production-5b95e7323c2f#.3yrne4t0a)
 
-因為babel-node或bable-register或在runtime build
+因為babel-node或bable-register在runtime build
 
 所以我們要先compile
 
