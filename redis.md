@@ -1,4 +1,4 @@
-edis-server# Redis
+# Redis
 1.
 
 windows下載
