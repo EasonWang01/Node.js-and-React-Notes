@@ -97,3 +97,14 @@ open .
 ```
 /etc/nginx/sites-available/React-router-Redux-isomorphic-Boilerplate/dist/server
 ```
+
+##移動檔案，或是更改檔案名稱
+
+
+http://jashliao.pixnet.net/blog/post/156412841-%E6%AF%8F%E5%A4%A9%E4%B8%80%E5%80%8Blinux%E6%8C%87%E4%BB%A4--mv-(%E7%94%A8%E4%BE%86%E6%90%AC%E7%A7%BB(%E6%9B%B4%E5%90%8D)%E7%9B%AE%E9%8C%84-%E6%AA%94
+
+##上傳檔案
+
+```
+scp -i ~/Downloads/pem1.pem ~/Downloads/pem1.pem ubuntu@ec2-13-112-175-93.ap-northeast-1.compute.amazonaws.com:~/home
+```
