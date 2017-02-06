@@ -115,3 +115,5 @@ npm install mongodb
 
 
 回到AWS Lambda上的function，將`Code entry type`旁的選單選擇為`Upload a ZIP file ` 然後把剛才的ZIP檔案拉上去
+
+之後點選TEST即可
