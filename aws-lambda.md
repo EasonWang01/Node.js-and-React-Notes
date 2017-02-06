@@ -21,3 +21,92 @@ exports.handler = function(event, context) {
 7.點選`Actions`的下拉選單，選擇`Create resource`，輸入path與名稱後按確定
 
 8.點選`Actions`的下拉選單，選擇`Create method`，然後下拉選單選擇`POST`，然後勾選`Lambda Function`，之後往下選擇`Lambda Region`，輸入剛才的`Lambda Function name`即可選擇`Save`
+
+9.點選閃電圖案的`Test`然後下拉點選`Test`
+
+
+##修改Lambda function
+
+回到aws 的 Lambda 點選剛才創建的function兩下，進入修改code的地方
+
+```
+
+exports.handler = function(event, context) {
+    
+    
+var http = require('http');
+  http.get({
+      host: 'www.chinatimes.com',
+      path: '/'
+  }, function(response) {
+         var body = '';
+         response.on('data', function(d) {
+          body += d;
+    });
+        response.on('end', function() {
+        context.succeed(body);
+    });
+  });
+  
+};
+```
+
+即可使用node.js模組
+
+或是可使用第三方的模組，並且與資料庫溝通
+
+這時先開啟terminal
+
+```
+mkdir lambdaTest
+
+npm init(記得先安裝好Node.js)
+
+之後新增一個index.js並且存入剛才的資料夾
+
+```
+
+index.js
+
+```
+
+
+
+
+////
+var mongo = require('mongodb');
+var Server = mongo.Server;
+var Db = mongo.Db;
+
+var server = new Server('ds013898.mlab.com',13898, {auto_reconnect : true});
+var db = new Db('forclass', server);
+
+
+db.open(function(err, client) {
+    client.authenticate('forclass1', 'test123', function(err, success) {
+        if(success){
+        console.log("connect success")
+        var cursor = db.collection('articles').find();
+
+        cursor.each(function(err, doc) {
+         
+         console.log(doc);
+
+         context.succeed(doc);
+        db.close();
+   });
+      }else{
+          console.log("client.authenticate error")
+      };
+
+    });
+});
+```
+
+然後輸入
+
+```
+npm install mongodb
+```
+
+之後輸入`open .` 按右鍵選擇資料夾後壓縮成zip檔案
