@@ -90,8 +90,8 @@ db.open(function(err, client) {
 
         cursor.each(function(err, doc) {
          
-         console.log(doc);
-
+         all = [];
+         all.push(doc);
          context.succeed(doc);
         db.close();
    });
@@ -100,6 +100,8 @@ db.open(function(err, client) {
       };
 
     });
+    
+    context.succeed(all);
 });
 ```
 
