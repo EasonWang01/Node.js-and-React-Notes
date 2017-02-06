@@ -1,3 +1,11 @@
+我們會使用到AWS Lambda 與API Gateway
+
+##前言
+
+兩個的用途分別為，Lambda可以讓我們寫function，API Gateway用來寫path與http method讓別人發出某個對應request時去執行Lambda function
+
+##實作
+
 1.前往 AWS Lambda
 
 2.選左上的`Create a Lambda function`，之後選擇左上的 `Blank Function`，再來先點選Next
@@ -120,3 +128,8 @@ npm install mongodb
 回到AWS Lambda上的function，將`Code entry type`旁的選單選擇為`Upload a ZIP file ` 然後把剛才的ZIP檔案拉上去
 
 之後點選TEST即可
+
+
+再來前往API Gateway
+
+點選`Actions`選單，選擇`Deploy API`
