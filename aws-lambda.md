@@ -109,4 +109,9 @@ db.open(function(err, client) {
 npm install mongodb
 ```
 
-之後輸入`open .` 按右鍵選擇資料夾後壓縮成zip檔案
+之後輸入`open .` 把資料夾的內容index.js和node_modules壓縮成zip
+
+>注意:不可直接壓縮資料夾，要進入資料夾後選擇index.js和node_modules再按壓縮，因為index.js必須在zip檔案的根目錄
+
+
+回到AWS Lambda上的function，將`Code entry type`旁的選單選擇為`Upload a ZIP file ` 然後把剛才的ZIP檔案拉上去
