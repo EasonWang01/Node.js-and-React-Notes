@@ -73,6 +73,7 @@ index.js
 
 
 
+
 ////
 var mongo = require('mongodb');
 var Server = mongo.Server;
@@ -81,6 +82,7 @@ var Db = mongo.Db;
 var server = new Server('ds013898.mlab.com',13898, {auto_reconnect : true});
 var db = new Db('forclass', server);
 
+exports.handler = function(event, context) {
 
 db.open(function(err, client) {
     client.authenticate('forclass1', 'test123', function(err, success) {
@@ -90,8 +92,8 @@ db.open(function(err, client) {
 
         cursor.each(function(err, doc) {
          
-         all = [];
-         all.push(doc);
+         console.log(doc);
+
          context.succeed(doc);
         db.close();
    });
@@ -100,9 +102,8 @@ db.open(function(err, client) {
       };
 
     });
-    
-    context.succeed(all);
 });
+}
 ```
 
 然後輸入
