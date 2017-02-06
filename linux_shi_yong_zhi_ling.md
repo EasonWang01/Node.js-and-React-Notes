@@ -109,6 +109,14 @@ http://jashliao.pixnet.net/blog/post/156412841-%E6%AF%8F%E5%A4%A9%E4%B8%80%E5%80
 scp -i ~/Downloads/pem1.pem ~/Downloads/pem1.pem ubuntu@ec2-13-112-175-93.ap-northeast-1.compute.amazonaws.com:~/home
 ```
 
+上傳資料夾(加上-r)
+
+```
+
+scp -i ~/Downloads/pem1.pem -r ./dist ubuntu@ec2-13-112-175-93.ap-northeast-1.compute.amazonaws.com:~/dist
+
+```
+
 ##切換當前使用者
 
 ```
