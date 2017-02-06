@@ -16,3 +16,8 @@ exports.handler = function(event, context) {
 
 5.點選Next並建立，之後可點擊`Test`
 
+6.再來前往AWS 的API gateway服務，點選`get start`，之後選擇`New API`選項，並填寫名稱
+
+7.點選`Actions`的下拉選單，選擇`Create resource`，輸入path與名稱後按確定
+
+8.點選`Actions`的下拉選單，選擇`Create method`，
