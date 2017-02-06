@@ -20,4 +20,4 @@ exports.handler = function(event, context) {
 
 7.點選`Actions`的下拉選單，選擇`Create resource`，輸入path與名稱後按確定
 
-8.點選`Actions`的下拉選單，選擇`Create method`，然後下拉選單選擇`POST`，然後勾選`Lambda Function`，之後往下選擇`Lambda Region`，輸入剛才的`Lambda Function name`
+8.點選`Actions`的下拉選單，選擇`Create method`，然後下拉選單選擇`POST`，然後勾選`Lambda Function`，之後往下選擇`Lambda Region`，輸入剛才的`Lambda Function name`即可選擇`Save`
