@@ -138,3 +138,8 @@ npm install mongodb
 
 ![](/assets/螢幕快照 2017-02-06 下午5.56.46.png)
 
+
+點選左側Resource在點選Action即可修改API gateway
+
+記得之後如果修改要重新再`deploy`
+
