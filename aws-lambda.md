@@ -132,4 +132,9 @@ npm install mongodb
 
 再來前往API Gateway
 
-點選`Actions`選單，選擇`Deploy API`
+點選`Actions`選單，選擇`Deploy API`，選擇new stage然後輸入名稱
+
+過幾秒他會跳出`invoke url`，如下圖
+
+![](/assets/螢幕快照 2017-02-06 下午5.56.46.png)
+
