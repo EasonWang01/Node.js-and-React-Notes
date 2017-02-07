@@ -195,6 +195,14 @@ export AWS_SECRET_ACCESS_KEY=填入你的access key
 ```
 region: ap-northeast-1
 ```
+並且把function下面的event註解拿掉
+```
+    events:
+      - http:
+          path: users/create
+          method: get
+```
+
 
 最後
 
