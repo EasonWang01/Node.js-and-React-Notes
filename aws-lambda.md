@@ -171,4 +171,16 @@ serverless create -t aws-nodejs
 
 之後回到aws 然後點選`service`中的`IAM`，左側點選`Users`，之後選`Add user`然後往下拉，之後按下`Create Access Key`按鈕
 
+這邊記得把`Access key ID`跟`Secret access key`記下來
+
+然後到terminal將這兩個加入電腦環境變數
+
+
+```
+export AWS_ACCESS_KEY_ID=填入你的key
+
+export AWS_SECRET_ACCESS_KEY=填入你的access key
+
+
+```
 
