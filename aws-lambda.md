@@ -209,8 +209,12 @@ region: ap-northeast-1
 ```
 serverless deploy
 ```
+成功後會給你一個可以去request的連結
 
-即可回到AWS lambda上看到多出一個function
+![](/assets/螢幕快照 2017-02-07 下午2.35.10.png)
+
+
+回到AWS lambda上看到多出一個function
 
 
 ##在本地測試
