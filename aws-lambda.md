@@ -168,3 +168,7 @@ serverless create -t aws-nodejs
 ```
 
 之後資料夾內新增了兩個檔案`handler.js`與`serverless.yml`
+
+之後回到aws 然後點選`service`中的`IAM`，左側點選`Users`，之後選`Add user`然後往下拉，之後按下`Create Access Key`按鈕
+
+
