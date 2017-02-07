@@ -193,3 +193,11 @@ export AWS_SECRET_ACCESS_KEY=填入你的access key
 ```
 region: ap-northeast-1
 ```
+
+最後
+
+```
+serverless deploy
+```
+
+即可回到AWS lambda上看到多出一個function
