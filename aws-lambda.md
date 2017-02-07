@@ -216,12 +216,13 @@ serverless deploy
 
 回到AWS lambda上看到多出一個function
 
+API gateway也會多出一個
 
-##在本地測試
+##測試
 
 於terminal輸入
 
+測試本地
 ```
 serverless invoke local --function hello
 ```
-
