@@ -147,3 +147,11 @@ npm install mongodb
 #查看Logs
 
 到AWS 的cloudwatch點選左側的`Logs`即可看到
+
+
+
+#使用serverless的Node.js第三方模組
+
+```
+npm install serverless -g
+```
