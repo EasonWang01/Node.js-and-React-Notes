@@ -20,6 +20,9 @@ exports.handler = function(event, context) {
 };
 ```
 
+有關handler function的說明
+http://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html
+
 4.拉到下面Role選單選擇`Create a custom role`然後會跳出一個視窗點選`Allow`，這樣Role即是`lambda_basic_execution`
 
 5.點選Next並建立，之後可點擊`Test`
