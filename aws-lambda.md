@@ -143,3 +143,7 @@ npm install mongodb
 
 記得之後如果修改要重新再`deploy`
 
+
+#查看Logs
+
+到AWS 的cloudwatch點選左側的`Logs`即可看到
