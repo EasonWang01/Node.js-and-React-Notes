@@ -155,6 +155,8 @@ npm install mongodb
 
 #使用serverless的Node.js第三方模組
 
+https://serverless.com/framework/docs/
+
 ```
 npm install serverless -g
 ```
@@ -201,3 +203,13 @@ serverless deploy
 ```
 
 即可回到AWS lambda上看到多出一個function
+
+
+##在本地測試
+
+於terminal輸入
+
+```
+serverless invoke local --function hello
+```
+
