@@ -187,3 +187,9 @@ export AWS_SECRET_ACCESS_KEY=填入你的access key
 然後點選左側選單`Users`選擇`Permissios` Tab 點選`Add permissions` 然後選擇`Attach existing policies directly`
 
 在輸入框輸入`AdministratorAccess`然後把他加入
+
+然後修改`serverless.yml` 把region的`#`拿掉，後面改為
+
+```
+region: ap-northeast-1
+```
