@@ -155,3 +155,13 @@ npm install mongodb
 ```
 npm install serverless -g
 ```
+
+```
+mkdir aws-nodejs
+
+cd aws-nodejs
+
+serverless create -t aws-nodejs
+```
+
+之後資料夾內新增了兩個檔案`handler.js`與`serverless.yml`
