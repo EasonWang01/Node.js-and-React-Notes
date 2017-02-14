@@ -64,10 +64,25 @@ ubuntu路徑如下
 
 開啟後如前面沒設定過，會都是藍色的註解
 
-把它更改如下圖(如果說private.key not match ，把ssl_certificate 的bundle.crt改為certificate.crt試試)
+把它如下(如果說private.key not match ，把ssl_certificate 的bundle.crt改為certificate.crt試試)
 
 
-
+```
+server {        
+  listen 80;        
+  server_name sakatu.com  www.sakatu.com;
+  rewrite ^/(.*) https://sakatu.com/$1 permanent;
+}
+server {        
+  server_name sakatu.com;
+  listen 443;
+  ssl on;
+  ssl_certificate  /usr/share/nginx/sslcrt/bundle.crt;        
+  ssl_certificate_key /usr/share/nginx/sslcrt/private.key;     
+  location / {          
+    proxy_pass http://localhost:3000;      
+  }}
+```
 
 
 
