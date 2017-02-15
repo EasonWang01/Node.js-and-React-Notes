@@ -30,3 +30,11 @@ keybindings.json
 ```
 control+`
 ```
+
+####5.從terminal開啟vscode
+
+先到vscode中點選`Shift+command+P`
+
+之後輸入`shell command`安裝
+
+之後cd到專案資料夾即可輸入`code .`開啟
