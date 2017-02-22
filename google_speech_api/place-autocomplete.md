@@ -73,4 +73,6 @@ var autocomplete = new window.google.maps.places.Autocomplete(this.refs.autosear
   }
 ```
 
+簡單範例
+http://stackoverflow.com/questions/18345875/google-places-api-example
 
