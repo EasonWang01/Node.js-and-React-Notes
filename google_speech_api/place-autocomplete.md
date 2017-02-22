@@ -5,7 +5,10 @@
 
 https://developers.google.com/maps/documentation/javascript/places
 
-先到googld console
+中文
+https://developers.google.com/places/web-service/intro
+
+先到google console 新增相關api與key
 
 
 # #使用
