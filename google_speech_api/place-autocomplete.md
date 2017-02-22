@@ -32,7 +32,7 @@ https://developers.google.com/maps/documentation/javascript/places
 <input ref="autosearch" type="text" size="50" />
 ```
 
-
+>因使用React所以google前面加上window
 ```
 var autocomplete = new window.google.maps.places.Autocomplete(this.refs.autosearch);
 
