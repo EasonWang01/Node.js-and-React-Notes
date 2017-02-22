@@ -50,6 +50,7 @@
 * [Sublime 安裝套件](sublime_an_zhuang_tao_jian.md)
 * [Google  api](google_speech_api.md)
   * speech api
+  * [place autocomplete](google_speech_api/place-autocomplete.md)
 * [Instagram API](instagram_api.md)
 * [Markdown與code pretty js](markdownyu_code_pretty_js.md)
 * [HTML5 audio](html5_audio.md)
