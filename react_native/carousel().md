@@ -1,0 +1,1 @@
+https://github.com/nick/react-native-carousel

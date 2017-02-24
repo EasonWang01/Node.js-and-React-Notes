@@ -29,6 +29,7 @@
 * [React Native](react_native.md)
   * [router](react_native/router.md)
   * [button](react_native/button.md)
+  * [carousel\(輪播\)](react_native/carousel().md)
 * [import\_export\_module.exports 模組化](importexport_module_exports_mo_zu_hua.md)
 * [使用webpack](shi_yong_webpack.md)
 * [使用Babel](babel.md)
