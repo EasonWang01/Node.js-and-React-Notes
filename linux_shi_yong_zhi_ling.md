@@ -122,3 +122,12 @@ scp -i ~/Downloads/pem1.pem -r ./dist ubuntu@ec2-13-112-175-93.ap-northeast-1.co
 ```
  sudo su <username>
 ```
+
+##加入環境變數
+
+假設原本要指定完整路徑才可執行檔案，可直接把他加入環境變數的PATH中
+
+```
+export PATH=/Volumes/FFmpeg\ 83544-g965f35b:$PATH
+
+```
