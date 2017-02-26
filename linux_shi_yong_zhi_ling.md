@@ -131,3 +131,18 @@ scp -i ~/Downloads/pem1.pem -r ./dist ubuntu@ec2-13-112-175-93.ap-northeast-1.co
 export PATH=/Volumes/FFmpeg\ 83544-g965f35b:$PATH
 
 ```
+
+但這樣會在重啟terminal後變數就消失，並且把原本變數覆蓋，解決方法為加入bashrc
+
+如使用zsh則是`~/.zshrc`
+
+寫入path如下
+```
+export PATH=/usr/local/bin:/usr/local/sbin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Volumes/FFmpeg\ 83544-g965f35b
+
+```
+之後重啟zsh
+
+```
+ . ~/.zshrc
+```
