@@ -146,3 +146,10 @@ export PATH=/usr/local/bin:/usr/local/sbin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X
 ```
  . ~/.zshrc
 ```
+
+##列出資料夾裡面的大容量檔案
+
+
+```
+du -a * | sort -r -n | head -10
+```
