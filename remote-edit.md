@@ -5,11 +5,12 @@
 
 1.安裝 Remote VScode 的vscode plugin
 
+
+之後在偏好設定的使用者設定加入
+
 ```
-並在偏好設定的設定加入
 "remote.port": 52698,
 
-// Launch the server on start up.
 "remote.onstartup": true
 ```
 
