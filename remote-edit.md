@@ -82,4 +82,9 @@ ex:
 
 之後儲存檔案後隨便開一個檔案修改後儲存，左下方會顯示uploading，之後遠端主機即會出現一個和設定檔中`remotePath`相同的資料夾，裡面即有剛才修改的檔案
 
->注意privateKeyPath要是絕對路徑，預設config是FTP，建議改為SFPT與22port
+>注意:
+1.privateKeyPath要是絕對路徑，預設config是FTP，建議改為SFPT與22port
+
+>2.可在private key所在資料夾輸入 [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}" 即會顯示絕對路徑
+
+>3.如果是用密碼登入不是用private則可以不用填privateKeyPath，而是要填password
