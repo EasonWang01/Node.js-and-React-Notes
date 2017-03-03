@@ -1,4 +1,8 @@
-遠端寫程式
+#遠端寫程式
+
+以下簡介兩種方式
+
+# 1.使用rmate
 
 這邊使用VSCODE開啟遠端主機上的檔案
 
@@ -40,3 +44,41 @@ rmate -p 52698 ./test1.js -f
 
 
 >注意:之前使用過jmate但檔案不會正常儲存，所以建議使用rmate
+
+
+#2.使用sync FTP
+也是編輯器上的插件
+
+在vscode可輸入`ftp-sync`
+
+之後點選F1，然後輸入`ftp-sync init`
+
+會在專案目錄產生一個`ftp-sync.json` 再以裡面填入相關遠端訊息
+
+ex:
+
+```
+{
+    "remotePath": "./grpcftp",
+    "host": "ec2-52-198-155-128.ap-northeast-1.compute.amazonaws.com",
+    "username": "ubuntu",
+    "password": "password",
+    "port": 22,
+    "secure": false,
+    "protocol": "sftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": "/Users/eason.wang/Downloads/pem1.pem",
+    "passphrase": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ]
+}
+```
+
+之後儲存檔案後隨便開一個檔案修改後儲存，左下方會顯示uploading，之後遠端主機即會出現一個和設定檔中`remotePath`相同的資料夾，裡面即有剛才修改的檔案
+
+>注意privateKeyPath要是絕對路徑，預設config是FTP，建議改為SFPT與22port
