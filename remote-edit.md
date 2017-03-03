@@ -1,0 +1,34 @@
+遠端寫程式
+
+這邊使用VSCODE開啟遠端主機上的檔案
+
+
+1.安裝 Remote VScode 的vscode plugin
+
+```
+並在偏好設定的設定加入
+"remote.port": 52698,
+
+// Launch the server on start up.
+"remote.onstartup": true
+```
+
+2.在遠端主機設定config  
+```
+  sudo vim /etc/ssh/sshd_config => 加上 GatewayPorts yes
+```
+3.在VSCODE啟動server
+```
+按F1 之後輸入 Remote: Start server   會看到左下角有server啟動字樣
+```
+
+
+4.使用tunnel方式連線 
+ssh -R 52698:127.0.0.1:52698  -i ~/Downloads/pem1.pem  ubuntu@ec2-52-198-155-128.ap-northeast-1.compute.amazonaws.com
+
+5.使用jmate   安裝：https://github.com/jrnewell/jmate
+jmate -p 52698 ./test1.js -f
+
+即會看到遠端檔案在本機的VSCODE打開
+
+```
