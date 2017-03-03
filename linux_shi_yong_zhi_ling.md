@@ -153,3 +153,9 @@ export PATH=/usr/local/bin:/usr/local/sbin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X
 ```
 du -a * | sort -r -n | head -10
 ```
+
+##找出當前資料夾的絕對路徑
+
+```
+[[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+```
