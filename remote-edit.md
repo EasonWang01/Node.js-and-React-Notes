@@ -24,14 +24,18 @@
 
 
 4.使用tunnel方式連線 
+
+```
 ssh -R 52698:127.0.0.1:52698  -i ~/Downloads/pem1.pem  ubuntu@ec2-52-198-155-128.ap-northeast-1.compute.amazonaws.com
+```
 
 5.使用rmate   安裝：https://github.com/textmate/rmate
-rmate -p 52698 ./test1.js -f
 
+```
+rmate -p 52698 ./test1.js -f
+```
 
 即會看到遠端檔案在本機的VSCODE打開
 
-```
 
 >注意:之前使用過jmate但檔案不會正常儲存，所以建議使用rmate
