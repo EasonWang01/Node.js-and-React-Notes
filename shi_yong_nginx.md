@@ -81,5 +81,7 @@ proxy_set_header Host $host;
 使用AWS或其他VPS記得開防火牆的inbound記得開443PORT
 ```
 
+設置可參考一篇不錯的文章
+https://www.linode.com/docs/websites/nginx/how-to-configure-nginx#start-stop-reload
 
 
