@@ -133,6 +133,16 @@ mac
 sudo nginx -s stop && sudo nginx
 ```
 
+
+如果想要重新整理時也找得到route
+
+```
+location / {
+    try_files $uri $uri/ /index.html;
+}
+```
+
+
 # #Server render 的部署
 
 因為我們要在nginx下再架一個nodejs server
