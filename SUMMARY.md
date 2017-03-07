@@ -80,4 +80,5 @@
 * [ES8 Async](es8-async.md)
 * [AWS lambda ](aws-lambda.md)
 * [Remote edit](remote-edit.md)
+* [Quicktime錄影注意事項](quicktime.md)
 

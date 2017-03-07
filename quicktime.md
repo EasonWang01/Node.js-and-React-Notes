@@ -1,0 +1,7 @@
+Quicktime內建沒有輸出encode功能，
+
+並且螢幕錄製時FPS是浮動的，所以建議如果有在QuickTime有剪輯的動作時記得先用影片轉檔軟體ex:iMovie轉好檔案至mp4之類再給windows，
+
+不然windows播放時會出現影像跟聲音有稍微不同步情況
+
+用iMovie會出現結尾多4秒之類的情況，原因是最後停住後畫面多四秒，但不影響
