@@ -134,11 +134,22 @@ sudo nginx -s stop && sudo nginx
 ```
 
 
-如果想要重新整理時也找得到route
+如果想要網頁重新整理時也找得到route
 
 ```
 location / {
     try_files $uri $uri/ /index.html;
+}
+```
+
+靜態文件
+
+```
+location ^~ /static/ {
+    root /webroot/static/;
+}
+location ~* \.(gif|jpg|jpeg|png|css|js|ico)$ {
+    root /webroot/res/;
 }
 ```
 
