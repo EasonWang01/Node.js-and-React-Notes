@@ -134,8 +134,9 @@ sudo nginx -s stop && sudo nginx
 ```
 
 
-如果想要網頁重新整理時也找得到route
+如果想要網頁重新整理時也找得到route可如下設定
 
+nginx config
 ```
 location / {
     try_files $uri $uri/ /index.html;
