@@ -3,6 +3,7 @@
 因為此較耗費運算資源，所以google把此api列為超過限制數量後為收費項目
 
 
+取得後看到他無法很精準的取得特定你要的區域規則例如縣或市，所以用if來進行判斷，假如沒有找到市就找國家
 ```
             axios.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + location.lat() + ',' + location.lng())
               .then((data) => {
