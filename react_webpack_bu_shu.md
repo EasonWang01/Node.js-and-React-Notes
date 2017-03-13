@@ -173,3 +173,12 @@ location ~* \.(gif|jpg|jpeg|png|css|js|ico)$ {
 記得把hmr等plugin拿掉，然後把server.js用到webpack的也拿掉
 
 之後把bundle.js放到`express.static`的目錄下即可
+
+
+
+
+# #如果使用pm2更新server檔案後要記得restart
+
+```
+pm2 restart all
+```
