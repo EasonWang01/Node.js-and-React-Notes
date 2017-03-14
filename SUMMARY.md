@@ -49,6 +49,7 @@
 * [OpenStack](openstack.md)
 * [google oauth](google_oauth.md)
 * [facebook oauth](facebook_oauth.md)
+  * [facebook like ,share](facebook_oauth/facebook-like-share.md)
 * [redis](redis.md)
 * [做一個簡單的markdown editor](zuo_yi_ge_jian_dan_de_markdown_editor.md)
 * [websocket](socketio.md)
