@@ -1,0 +1,37 @@
+影像辨識
+
+以下為圖片上傳網站範例
+
+https://cloud.google.com/vision/
+
+
+須先點選以下建立憑證，服務帳戶金鑰
+
+https://console.developers.google.com/apis/credentials
+
+以下為範例程式碼
+
+
+`./01.json`為金鑰檔案
+```
+
+const Vision = require('@google-cloud/vision');
+
+// Instantiates a client
+const vision = Vision({
+  keyFilename:'./01.json'
+});
+
+// The path to the local image file, e.g. "/path/to/image.png"
+// const fileName = '/path/to/image.png';
+
+// Performs text detection on the local file
+vision.detectText('./0.jpg')
+  .then((results) => {
+    const detections = results[0];
+
+    console.log('Text:');
+    detections.forEach((text) => console.log(text));
+});
+```
+

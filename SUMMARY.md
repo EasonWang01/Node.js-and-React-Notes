@@ -59,6 +59,7 @@
   * [place autocomplete](google_speech_api/place-autocomplete.md)
   * [Geocode](google_speech_api/geocode.md)
   * [Map](google_speech_api/map.md)
+  * [vision api](google_speech_api/vision-api.md)
 * [Instagram API](instagram_api.md)
 * [Markdown與code pretty js](markdownyu_code_pretty_js.md)
 * [HTML5 audio](html5_audio.md)
