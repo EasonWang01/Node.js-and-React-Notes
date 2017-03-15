@@ -19,6 +19,7 @@ const Vision = require('@google-cloud/vision');
 
 // Instantiates a client
 const vision = Vision({
+  languageHints: [ "en", "zh-TW", "zh-CN" ],  //要辨識的語言
   keyFilename:'./01.json'
 });
 
