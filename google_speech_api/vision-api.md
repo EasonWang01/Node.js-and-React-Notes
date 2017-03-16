@@ -1,4 +1,4 @@
-影像辨識
+#影像辨識
 
 以下為圖片上傳網站範例
 
@@ -38,8 +38,42 @@ vision.detectText('./0.jpg')
 
 
 
-Open Source可用模組
+#Open Source可用模組
 
 
 https://github.com/desmondmorris/node-tesseract
 https://github.com/tesseract-ocr/tesseract
+
+
+上面的連結是下面tesseract的Node.js wrapper
+
+
+範例程式如下
+
+>options可不給，預設為english，語言縮寫可參考https://github.com/tesseract-ocr/tesseract/blob/a75ab450a8cc9a2b69cf05f5c4f7a39bc44cbacc/contrib/traineddata.txt
+
+```
+var tesseract = require('node-tesseract');
+
+
+var options = {
+    l: 'chi_tra',
+    psm: 6,
+    binary: '/usr/local/bin/tesseract'
+};
+
+// Recognize text of any language in any format
+tesseract.process(__dirname + '/022.png', options,function(err, text) {
+    if(err) {
+        console.error(err);
+    } else {
+        console.log(text);
+    }
+});
+```
+
+如說要設路徑可參考
+
+```
+export TESSDATA_PREFIX=/usr/local/Cellar/tesseract/3.05.00/share/tessdata/
+```
