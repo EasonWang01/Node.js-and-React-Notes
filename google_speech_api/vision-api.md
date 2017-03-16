@@ -77,3 +77,5 @@ tesseract.process(__dirname + '/022.png', options,function(err, text) {
 ```
 export TESSDATA_PREFIX=/usr/local/Cellar/tesseract/3.05.00/share/tessdata/
 ```
+
+>注意:他辨識中文需花比較長時間，且識別度不高
