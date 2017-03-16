@@ -159,3 +159,13 @@ du -a * | sort -r -n | head -10
 ```
 [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
 ```
+
+
+##搜尋檔案
+http://www.techradar.com/how-to/computing/apple/terminal-101-using-the-find-command-1305633
+
+>`/`意思為搜尋整台電腦，也可指定路徑
+
+```
+sudo find / -name "eng.traineddata"
+```
