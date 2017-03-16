@@ -36,3 +36,10 @@ vision.detectText('./0.jpg')
 });
 ```
 
+
+
+Open Source可用模組
+
+
+https://github.com/desmondmorris/node-tesseract
+https://github.com/tesseract-ocr/tesseract
