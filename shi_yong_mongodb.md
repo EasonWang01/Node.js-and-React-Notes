@@ -815,3 +815,19 @@ comments: Array,
 
 避免使用update 中的 upsert 會產生\_id為null的情況
 
+#備份與還原
+
+http://www.runoob.com/mongodb/mongodb-mongodump-mongorestore.html
+
+備份
+
+```
+mongodump -h dbhost -d dbname -o dbdirectory
+```
+
+還原
+```
+mongorestore -h <hostname><:port> -d dbname <path>
+```
+
+之後如果是用Robomongo則重新對資料庫連線即可看到還原出的資料庫
