@@ -86,4 +86,12 @@ https://gist.github.com/EasonWang01/db8eae7202b6e7dde790c2ff7e8fb810
 
 
 # #從browser發出request
+
+文章
 http://terrenceryan.com/blog/index.php/working-with-cloud-vision-api-from-javascript/
+
+完整範例
+https://github.com/GoogleCloudPlatform/web-docs-samples/tree/master/vision/explore-api
+
+官方文件
+https://cloud.google.com/vision/docs/detecting-text#vision-text-detection-protocol
