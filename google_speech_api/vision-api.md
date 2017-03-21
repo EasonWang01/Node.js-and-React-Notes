@@ -79,3 +79,11 @@ export TESSDATA_PREFIX=/usr/local/Cellar/tesseract/3.05.00/share/tessdata/
 ```
 
 >注意:他辨識中文需花比較長時間，且識別度不高
+
+完整版相關gist
+
+https://gist.github.com/EasonWang01/db8eae7202b6e7dde790c2ff7e8fb810
+
+
+# #從browser發出request
+http://terrenceryan.com/blog/index.php/working-with-cloud-vision-api-from-javascript/
