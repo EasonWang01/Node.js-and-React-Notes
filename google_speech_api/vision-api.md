@@ -95,3 +95,39 @@ https://github.com/GoogleCloudPlatform/web-docs-samples/tree/master/vision/explo
 
 官方文件
 https://cloud.google.com/vision/docs/detecting-text#vision-text-detection-protocol
+
+>注意，官方文件images應該為image 
+
+```
+ 
+payload =  {
+              requests: [
+                {
+                  image: {
+                    "content": base64Data.replace("data:image/jpeg;base64,", "")
+                  },
+                  features: [
+                    {
+                      type: "TEXT_DETECTION"
+                    }
+                  ]
+                }
+              ]
+            }
+
+  axios.post('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyAp9SJv4H5ibESc4aFG28SBdP51jNqOQoA',
+    JSON.stringify(payload),
+    {
+      headers: {
+        "Content-Type": "application/json",
+        "Content-Length": base64Data.replace("data:image/jpeg;base64,", "").length
+      }
+    }
+  )
+  .then(response => {
+    console.log(util.inspect(response.data, {depth: null}));
+  })
+  .catch(err => {
+     console.log(util.inspect(err, {depth: null}));
+  })
+```
