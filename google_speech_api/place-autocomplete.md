@@ -49,6 +49,8 @@ var autocomplete = new window.google.maps.places.Autocomplete(this.refs.autosear
 2.可使用geocode來把經緯度轉換為地址(但geocode api官方表示耗用資源高，所以每天有限制免費的request數目，超過將收費)
 
 ```javascript
+
+    const contest = this;
     window.google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
         console.log(place)
@@ -73,7 +75,6 @@ var autocomplete = new window.google.maps.places.Autocomplete(this.refs.autosear
           });
         }
     });
-  }
 ```
 
 簡單範例
