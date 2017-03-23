@@ -50,7 +50,7 @@ var autocomplete = new window.google.maps.places.Autocomplete(this.refs.autosear
 
 ```javascript
 
-    const contest = this;
+    const context = this;
     window.google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
         console.log(place)
