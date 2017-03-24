@@ -169,3 +169,6 @@ http://www.techradar.com/how-to/computing/apple/terminal-101-using-the-find-comm
 ```
 sudo find / -name "eng.traineddata"
 ```
+
+##順序執行script
+各個指令後加入`;`，如果要同時執行則是`&`
