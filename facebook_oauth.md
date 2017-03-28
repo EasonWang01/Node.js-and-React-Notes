@@ -62,6 +62,10 @@ FB.api('/me', {
     });
 ```
 
+注意:
+
+>如果要存入使用者圖片要存入如下`"https://graph.facebook.com" + "/v2.8/" + userID + "/picture"`不可存入`scontent`的連結，因為過一段時間後會失效
+
 ＡＰＩ詳細DOC
 
 [https://developers.facebook.com/docs/javascript/reference/FB.init/v2.8](https://developers.facebook.com/docs/javascript/reference/FB.init/v2.8)
