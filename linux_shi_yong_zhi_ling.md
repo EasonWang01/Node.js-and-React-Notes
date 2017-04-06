@@ -153,6 +153,7 @@ export PATH=/usr/local/bin:/usr/local/sbin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X
 ```
 du -a * | sort -r -n | head -10
 ```
+>在mac中通常`~/Library/Caches/`會需刪除
 
 ##找出當前資料夾的絕對路徑
 
