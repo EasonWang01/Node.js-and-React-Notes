@@ -27,3 +27,7 @@ http://stackoverflow.com/questions/16682297/getting-message-sudo-must-be-setuid-
 
 
 2.Elastic IP分配後如果把該機器刪掉，之後自開一台把同個Elastic IP分配，可能會產生錯誤，所以建議開新機器並分配新的Elastic IP
+
+3.如出現 以下可輸入`sudo chmod 400 ~/Downloads/Trading-Platform.pem`，並且ssh不要輸入sudo
+>Load key "/Users/eason.wang/Downloads/Trading-Platform.pem": bad permissions
+Permission denied (publickey).

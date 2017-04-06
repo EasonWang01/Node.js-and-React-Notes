@@ -278,3 +278,8 @@ https://github.com/reactjs/react-router/blob/master/docs/guides/Histories.md#con
 
 https://github.com/reactjs/react-router-tutorial/tree/master/lessons/02-rendering-a-route
 
+
+#V4
+
+https://github.com/ReactTraining/react-router/issues/4928
+
