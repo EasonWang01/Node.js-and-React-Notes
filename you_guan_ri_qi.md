@@ -28,5 +28,4 @@ new Date().toISOString();
 現在時間減十天 `ex:將"2017-04-11" 轉為 "2017-04-01"`
 ```
 (new Date(Date.now() - 60*60*1000*24*10)).toISOString().substring(0,10)
-"2017-04-01"
 ```
