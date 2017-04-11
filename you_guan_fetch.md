@@ -1,5 +1,7 @@
 # 有關Fetch
 
+以前用xmlHttprequest但寫法太多，fetch為比較簡潔的寫法，並且有then可使用
+
 注意事項:
 
 1.使用json()轉換
@@ -35,6 +37,8 @@ https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwg
 
 
 #axios
+
+https://github.com/mzabriskie/axios
 
 也是一個可發request的套件
 
