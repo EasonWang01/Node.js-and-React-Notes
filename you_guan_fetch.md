@@ -31,3 +31,43 @@
 ```
 
 https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch_why_does_this_return/
+
+
+
+#axios
+
+也是一個可發request的套件
+
+```
+axios.post(API_HOST+'/api/Member/GetQAList',
+     {
+      LocalLang: "string",
+      MessageNo: this.state.msgNo,
+      Content: findDOMNode(this.refs.replyContent).value,
+     }
+    , {      
+      headers: {
+        accesstoken: localStorage.getItem('accessToken')
+      } 
+    })
+    .then((response) => {
+      sweetAlert(response.data.ResultMessage);
+    })
+    .catch(err => {
+      console.log(err)
+    })
+```
+
+
+如果要抓取error message要使用如下
+
+```
+  .catch(err => {
+    console.log(err)
+     if (err.response) {
+       alert(err.response.data.message); 
+     }
+  })
+```
+
+https://github.com/mzabriskie/axios/issues/376
