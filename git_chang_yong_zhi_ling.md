@@ -62,3 +62,10 @@ https://git-scm.com/book/zh-tw/v1/Git-%E5%B7%A5%E5%85%B7-%E5%84%B2%E8%97%8F-Stas
 
 
 >有關Bitbucket因為會在url產生一個隨機hash，所以每次push上去後重新整理看不到更新，必須重新進入repo一次才看得到更新，但github重新整理即可看到
+
+##把別人遠端新開的分支fetch到你的電腦
+
+```
+git fetch
+git checkout 分支名稱
+```
