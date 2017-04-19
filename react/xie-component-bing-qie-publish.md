@@ -12,6 +12,9 @@
 babel src -d dist --presets es2015,stage-2,react --copy-files
 ```
 
+可參考此Repo
+https://github.com/EasonWang01/react-pure-css-modal
+
 或是
 
 線上compile
