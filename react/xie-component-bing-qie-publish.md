@@ -1,5 +1,9 @@
 因為React的jsx無法被模組化直接使用，所以要先將jsx轉為js
 
+export default 等以及import也無法使用
+
+因為node_module被使用時不會被compile
+
 
 https://facebook.github.io/react/jsx-compiler.html
 
