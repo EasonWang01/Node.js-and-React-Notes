@@ -37,12 +37,21 @@ babel-node server.js
 
 ```
 npm install babel-cli -g
+
+npm install --save-dev babel-preset-stage-2
+
+npm install --save-dev babel-preset-es2015
+```
+
+如果有react
+```
+npm install babel-preset-react --save
 ```
 
 之後使用
 
 ```
-babel lib -d dist --presets es2015,stage-2 --copy-files
+ babel src -d dist --presets es2015,stage-2,react --copy-files
 ```
 
 lib為來源要compile  的server 檔案，dist為compile後會產生的資料夾
