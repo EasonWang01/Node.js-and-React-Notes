@@ -47,6 +47,7 @@ ok
 ```
 git reset HEAD~
 ```
+http://stackoverflow.com/questions/927358/how-to-undo-last-commits-in-git
 
 ##回到上次commit的檔案狀態，刪除檔案內容
 ```
