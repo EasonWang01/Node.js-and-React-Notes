@@ -173,3 +173,13 @@ sudo find / -name "eng.traineddata"
 
 ##順序執行script
 各個指令後加入`;`，如果要同時執行則是`&`
+
+##刪除遠端的目錄但不刪除本地
+
+```
+git rm --cached <filename>
+git rm --cached -r <dir_name>
+git commit -m "Removed folder from repository"
+git push origin master
+
+```

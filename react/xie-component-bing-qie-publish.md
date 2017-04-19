@@ -1,16 +1,24 @@
-因為React的jsx無法被模組化直接使用，所以要先將jsx轉為js
+# #作法
+1.因為React的jsx無法被模組化直接使用，所以要先將jsx轉為js
 
-export default 等以及import也無法使用
+2.export default 等以及import也無法使用
 
 因為node_module被使用時不會被compile
 
 
-https://facebook.github.io/react/jsx-compiler.html
+# #使用babel compile
+
+```
+babel src -d dist --presets es2015,stage-2,react --copy-files
+```
+
+或是
 
 線上compile
 
-https://babeljs.io/repl/
+https://facebook.github.io/react/jsx-compiler.html
 
+https://babeljs.io/repl/
 
 EX:
 
