@@ -757,6 +757,14 @@ Cat.update({_id:req.body.id[0]},{time:req.body.event[0],name:req.body.event[1]},
     });
 ```
 
+｀｀
+更新巢狀物件
+```
+        Post.update({_id: req.body.payload.itemInfo._id}, {$set: {
+          "contract.Lessor": req.body.payload
+        }})
+```
+
 第二個參數前可放入運作子  
 [https://docs.mongodb.org/manual/reference/operator/update/](https://docs.mongodb.org/manual/reference/operator/update/)
 
