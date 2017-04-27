@@ -823,6 +823,19 @@ comments: Array,
 
 避免使用update 中的 upsert 會產生\_id為null的情況
 
+2.Mongodb取出物件後無法加上屬性
+
+```
+      Post.findOne({_id: '5901931328e68a61797e4268'}, {potentialLessee: 0, comments: 0})
+      .then(d => {
+          //Mongodb取出物件後無法加上屬性
+          console.log(d.c = 12)
+          console.log(Object.assign(d, {confirmLesseeDay: new Date(Date.now() + 1000*60*60*8)}))
+          res.end(JSON.stringify(Object.assign(d, {price: new Date(Date.now() + 1000*60*60*8)})))
+          //console.log(d)
+      })
+      ```
+
 #備份與還原
 
 http://www.runoob.com/mongodb/mongodb-mongodump-mongorestore.html
