@@ -70,6 +70,7 @@
 * [Vim 編輯器](vim_bian_ji_qi.md)
 * [使用nginx](shi_yong_nginx.md)
 * [unix 實用指令](linux_shi_yong_zhi_ling.md)
+  * [Shell Script 教學](linux_shi_yong_zhi_ling/shell-script-jiao-xue.md)
 * [Git 實用指令](git_chang_yong_zhi_ling.md)
 * [加上https](jia_shang_https.md)
 * [有關Fetch與axios](you_guan_fetch.md)
