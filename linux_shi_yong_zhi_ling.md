@@ -125,6 +125,7 @@ scp -i ~/Downloads/pem1.pem -r ./dist ubuntu@ec2-13-112-175-93.ap-northeast-1.co
 
 ##加入環境變數
 
+####Mac
 假設原本要指定完整路徑才可執行檔案，可直接把他加入環境變數的PATH中
 
 ```
@@ -146,6 +147,23 @@ export PATH=/usr/local/bin:/usr/local/sbin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X
 ```
  . ~/.zshrc
 ```
+
+####Linux
+但Linux的環境變數路徑可能寫在~/.profile,~/.bashrc或是 ~/.bash_profile
+
+可參考此篇文章http://www.yunweipai.com/archives/2305.html
+
+解決方法:
+1.先輸入`echo $PATH`  現在的所有路徑變數，然後先複製起來
+
+2.輸入`~/.bashrc` 在開頭寫`export`空一格把剛才的貼上，最後加上`:`然後加上你要加上的路徑及可
+
+EX:
+```
+export PATH=/home/eason/bin:/home/eason/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eason/Desktop/bitcoin-0.14.1/bin
+
+```
+
 
 ##列出資料夾裡面的大容量檔案
 
