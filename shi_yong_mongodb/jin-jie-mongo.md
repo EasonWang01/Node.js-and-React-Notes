@@ -74,3 +74,5 @@ exports.Test = mongoose.model('test', c)
       res.end(err.toString());
     })
 ```
+
+3.另外要記得coordinates 是先放Longitude才放Latitude,跟一般google地圖相反
