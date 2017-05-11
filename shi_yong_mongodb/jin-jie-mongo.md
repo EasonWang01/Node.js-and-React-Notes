@@ -1,5 +1,5 @@
 
-#操作Mongo的Array
+# #1.操作Mongo的Array
 
 https://docs.mongodb.com/manual/reference/operator/update/pull/#up._S_pull
 
@@ -17,12 +17,12 @@ Ex: 以下可把rating_my Array中的item物件中的_id與req.body.item._id
 ```    
 
 
-#分頁快速query
+# #2.分頁快速query
 
 http://stackoverflow.com/questions/7228169/slow-pagination-over-tons-of-records-in-mongo
 
 
-# 使用Geo seearch
+# #3.使用Geo seearch
 
 https://docs.mongodb.com/manual/reference/operator/query-geospatial/
 
