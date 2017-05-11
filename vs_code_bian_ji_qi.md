@@ -38,3 +38,8 @@ control+`
 之後輸入`shell command`安裝
 
 之後cd到專案資料夾即可輸入`code .`開啟
+
+
+####6.code snippet
+
+https://www.facebook.com/pjchender/photos/a.1330200713732028.1073741836.768320183253420/1330201030398663/?type=3&theater
