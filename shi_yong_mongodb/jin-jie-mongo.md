@@ -22,7 +22,7 @@ Ex: 以下可把rating_my Array中的item物件中的_id與req.body.item._id
 http://stackoverflow.com/questions/7228169/slow-pagination-over-tons-of-records-in-mongo
 
 
-# #3.使用Geo seearch
+# #3.使用Geo search
 
 https://docs.mongodb.com/manual/reference/operator/query-geospatial/
 
