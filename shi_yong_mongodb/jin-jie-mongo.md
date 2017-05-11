@@ -76,3 +76,9 @@ exports.Test = mongoose.model('test', c)
 ```
 
 3.另外要記得coordinates 是先放Longitude才放Latitude,跟一般google地圖相反
+
+```
+$minDistance: 0,
+$maxDistance: 50
+```
+單位為公里
