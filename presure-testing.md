@@ -16,11 +16,18 @@ webbench -c 5000 -t 120 <url>
 
 #2.使用Apache Benchmark(ab)
 
+
 ```
  sudo apt-get install apache2-utils
 ```
 
-使用
+>打https會ssl handshake failed
+
+#3.使用hey(written in Golang)
+
+可直接打https
+
+https://github.com/rakyll/hey
 
 ```
 ab -k -n 50000 -c 9000 <url>
@@ -28,7 +35,4 @@ ab -k -n 50000 -c 9000 <url>
 
 #
 
-先安裝golang https://github.com/golang/go/wiki/Ubuntu
-```
-sudo apt-get install golang-go
-```
+先安裝golang https://www.digitalocean.com/community/tutorials/how-to-install-go-1-6-on-ubuntu-16-04
