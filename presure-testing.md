@@ -25,3 +25,10 @@ webbench -c 5000 -t 120 <url>
 ```
 ab -k -n 50000 -c 9000 <url>
 ```
+
+#
+
+先安裝golang https://github.com/golang/go/wiki/Ubuntu
+```
+sudo apt-get install golang-go
+```
