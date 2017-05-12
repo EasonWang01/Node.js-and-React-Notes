@@ -27,6 +27,10 @@ ab -k -n 50000 -c 9000 <url>
 
 >打https會ssl handshake failed
 
+如果併發數過高出現error可參考以下調整
+
+https://superuser.com/questions/323840/apache-bench-test-error-on-os-x-apr-socket-recv-connection-reset-by-peer-54
+
 #3.使用hey(written in Golang)
 
 優點:可直接打https
