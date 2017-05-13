@@ -31,6 +31,13 @@ ab -k -n 50000 -c 9000 -r <url>
 
 https://superuser.com/questions/323840/apache-bench-test-error-on-os-x-apr-socket-recv-connection-reset-by-peer-54
 
+如果用ip當url錯誤，在後面加`/`即可
+
+```
+ab -c 19000 -n 220000 -r 114.28.22.129/
+
+```
+
 #3.使用hey(written in Golang)
 
 優點:可直接打https
