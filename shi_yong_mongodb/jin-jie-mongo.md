@@ -79,6 +79,6 @@ exports.Test = mongoose.model('test', c)
 
 ```
 $minDistance: 0,
-$maxDistance: 50
+$maxDistance: 50 
 ```
-單位為公里
+單位為公尺
