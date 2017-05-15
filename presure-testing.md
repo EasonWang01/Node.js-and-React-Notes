@@ -1,5 +1,12 @@
 可參考http://www.epooll.com/archives/768/
 
+先增加file operator
+
+```
+sudo sh -c "ulimit -n 65535 && exec su $LOGNAME"
+```
+
+
 #1.使用Webbench
 
 https://github.com/EZLippi/WebBench
