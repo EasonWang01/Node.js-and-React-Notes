@@ -19,7 +19,7 @@
 * [簡單範例](jian_dan_fan_li.md)
 * [使用MongoDB](shi_yong_mongodb.md)
   * [進階Mongo](shi_yong_mongodb/jin-jie-mongo.md)
-  * [ba](shi_yong_mongodb/ba.md)
+  * [基本環境操作](shi_yong_mongodb/ba.md)
 * [使用MySQL](shi_yong_mysql.md)
 * [使用PostgreSQL](shi_yong_postgresql.md)
 * [rethinkdb](rethinkdb.md)
