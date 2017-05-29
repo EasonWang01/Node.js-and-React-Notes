@@ -71,7 +71,7 @@ show dbs
 db
 ```
 
-
+之後連線字串為mongodb://youruser:yourpassword@localhost/yourdatabase
 
 # \# 指定可連線的IP
 
@@ -81,19 +81,13 @@ db
 bind_ip=可連線的IP
 ```
 
+# \#自訂mongod.conf之config檔案
 
-
-# \#自訂config檔案
+\(因為使用mongod時不會和使用service啟動一樣自動使用/etc/mongod.conf的設定，需要手動加入--才會去使用config檔案\)
 
 ```
 https://docs.mongodb.com/manual/reference/configuration-options/#use-the-configuration-file
 ```
-
-
-
-
-
-
 
 參考至:
 
