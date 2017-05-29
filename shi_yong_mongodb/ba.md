@@ -11,19 +11,9 @@ mongod --dbpath ./data/db1 --shutdown
 
 mongo預設使用27017port，所以如果要使用robomongo連線EC2上的mongo要先開aws 的port然後記得要在mongo加上auth不然大家都可以連線，很不安全
 
-加上auth 帳號密碼的方式如下
-
-[https://medium.com/@matteocontrini/how-to-setup-auth-in-mongodb-3-0-properly-86b60aeef7e8](https://medium.com/@matteocontrini/how-to-setup-auth-in-mongodb-3-0-properly-86b60aeef7e8)
-
-&gt;如果出現[admin user not authorized](https://stackoverflow.com/questions/23943651/mongodb-admin-user-not-authorized)\(\)
-
-[https://stackoverflow.com/questions/35507182/creating-first-user-in-mongodb-3-2](https://stackoverflow.com/questions/35507182/creating-first-user-in-mongodb-3-2)
-
-用service的方式啟動無法用--dbpath指定資料夾路徑
 
 
-
-\#創建使用者步驟
+# \# 創建使用者步驟
 
 依序輸入以下指令
 
@@ -31,11 +21,76 @@ mongo預設使用27017port，所以如果要使用robomongo連線EC2上的mongo�
 1.mongod --dbpath ./data/db1 &
 2.mongo
 3.use admin
-4.db.createUser({ user: "admin", pwd: "adminpassword", roles: [{ role: "userAdminAnyDatabase", db: "admin" }] })
+4.db.createUser({ user: "admin", pwd: "輸入密碼", roles: [{ role: "userAdminAnyDatabase", db: "admin" }] })
 5.db.auth("admin", "adminpassword")
+```
 
+
+
+重新啟動並開啟認證登入
+
+&gt;使用--auth後要記得到admin並用db.auth後才可執行其他操作
 
 ```
+1.mongod --dbpath ./data/db1 --shutdown
+2.mongod --dbpath ./data/db1 --auth  &
+3.mongo
+4.use admin
+5.db.auth('admin','密碼')
+```
+
+新增一個資料庫並且新增使用者\(此時因為剛有登入admin所以可以新增使用者，但新增前無法添加資料\)
+
+```
+1.use <要新增的資料庫名稱>
+2.db.createUser(
+  {
+    user: "yicheng",
+    pwd: "密碼",
+    roles: [ { role: "readWrite", db: "此資料庫名稱" }]
+  }
+)
+
+```
+
+新增資料至資料庫
+
+```
+ db.資料庫名稱.insert({"name":"tutorials point"})
+```
+
+存入資料後可看到db被新增進去了
+
+```
+show dbs
+```
+
+查看現在所在的db名稱
+
+```
+db
+```
+
+
+
+[https://medium.com/@matteocontrini/how-to-setup-auth-in-mongodb-3-0-properly-86b60aeef7e8](https://medium.com/@matteocontrini/how-to-setup-auth-in-mongodb-3-0-properly-86b60aeef7e8)
+
+&gt;如果出現[admin user not authorized](https://stackoverflow.com/questions/23943651/mongodb-admin-user-not-authorized)\(\)
+
+[https://stackoverflow.com/questions/35507182/creating-first-user-in-mongodb-3-2](https://stackoverflow.com/questions/35507182/creating-first-user-in-mongodb-3-2)
+
+P.S 
+
+1.用service的方式啟動無法用--dbpath指定資料夾路徑
+
+2.用service無法輸入--auth需要打開/etc/mongod.conf並更改下列為如下
+
+```
+security:
+	authorization: enabled
+```
+
+
 
 
 
