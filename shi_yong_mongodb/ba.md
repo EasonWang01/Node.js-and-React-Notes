@@ -108,5 +108,5 @@ security:
     authorization: enabled
 ```
 
-3.admin使用者預設可以連到所有db，如果連不進去通常是因為db上還沒有資料所以db還沒完全建立好
+3.admin使用者預設可以連到所有db，如果連不進去通常是因為db上還沒有資料所以db還沒完全建立好，只要先使用admin新建資料庫\(use\)後在資料庫新增使用者\(createUser\)後使用該user登入\(db.auth\)然後新增資料，之後admin也可在該資料庫新增資料了
 
