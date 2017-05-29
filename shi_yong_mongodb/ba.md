@@ -16,8 +16,6 @@ mongod --dbpath ./data/db1 --shutdown
 
 mongo預設使用27017port，所以如果要使用robomongo連線EC2上的mongo要先開aws 的port然後記得要在mongo加上auth不然大家都可以連線，很不安全
 
-
-
 # \# 創建使用者步驟
 
 依序輸入以下指令
@@ -72,6 +70,32 @@ show dbs
 ```
 db
 ```
+
+
+
+# \# 指定可連線的IP
+
+到config檔案設定
+
+```
+bind_ip=可連線的IP
+```
+
+
+
+# \#自訂config檔案
+
+```
+https://docs.mongodb.com/manual/reference/configuration-options/#use-the-configuration-file
+```
+
+
+
+
+
+
+
+參考至:
 
 [https://medium.com/@matteocontrini/how-to-setup-auth-in-mongodb-3-0-properly-86b60aeef7e8](https://medium.com/@matteocontrini/how-to-setup-auth-in-mongodb-3-0-properly-86b60aeef7e8)
 
