@@ -108,5 +108,5 @@ security:
     authorization: enabled
 ```
 
-
+3.admin使用者預設可以連到所有db，如果連不進去通常是因為db上還沒有資料所以db還沒完全建立好
 
