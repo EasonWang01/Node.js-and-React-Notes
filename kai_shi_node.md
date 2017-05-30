@@ -1,15 +1,16 @@
 # 開始Node
 
+## 安裝
 
-
-##安裝
 windows
+
 ```
 官網下載安裝包即可
 ```
+
 Linux
 
-方法1.(推薦)
+方法1.\(推薦\)
 
 ```
 sudo apt-get install npm
@@ -18,20 +19,23 @@ sudo npm cache clean -f
 sudo npm install -g n
 sudo n stable
 
-sudo ln -sf /usr/local/n/versions/node/<VERSION(只有數字沒有v)>/bin/node /usr/bin/node 
+sudo ln -sf /usr/local/n/versions/node/<VERSION(只有數字沒有v)>/bin/node /usr/bin/node
 ```
 
-
 方法2.
+
 ```
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 ```
+
 然後
+
 ```
 sudo apt install -y nodejs
 ```
 
 方法3.
+
 ```
 wget https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-x86.tar.xz
 2.xz -d node-v4.4.7-linux-x86.tar.xz
@@ -50,28 +54,29 @@ sudo apt-get install npm
 之後輸入npm即可
 ```
 
-#在linux看到版本是0.xx.xx
+# 在linux看到版本是0.xx.xx
+
 ```
 sudo npm cache clean -f
 sudo npm install -g n
 sudo n stable
 ```
+
 使用n套件來更新
 
 參考以下兩篇文章，有關nodejs更新
 
-http://theholmesoffice.com/node-js-fundamentals-how-to-upgrade-the-node-js-version/
+[http://theholmesoffice.com/node-js-fundamentals-how-to-upgrade-the-node-js-version/](http://theholmesoffice.com/node-js-fundamentals-how-to-upgrade-the-node-js-version/)
 
-http://askubuntu.com/questions/594656/how-to-install-the-latest-versions-of-nodejs-and-npm-for-ubuntu-14-04-lts
+[http://askubuntu.com/questions/594656/how-to-install-the-latest-versions-of-nodejs-and-npm-for-ubuntu-14-04-lts](http://askubuntu.com/questions/594656/how-to-install-the-latest-versions-of-nodejs-and-npm-for-ubuntu-14-04-lts)
 
+## 開始第一個專案
 
-##開始第一個專案
 mkdir class1
 
 npm init
 
 發現資料夾多了一個package.json
-
 
 ## 
 
@@ -79,10 +84,10 @@ npm init
 
 ## 
 
-
-#使用scripts標籤下加入名稱，可使用npm run +名稱
+# 使用scripts標籤下加入名稱，可使用npm run +名稱
 
 package.json
+
 ```
 {
   "name": "class1webpack",
