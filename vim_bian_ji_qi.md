@@ -56,7 +56,7 @@
 到行首 ： 0
 ```
 
-8.安裝vim package manger   
+8.安裝vim package manger  
  有幾種可以選擇，這裡使用NeoBundle
 
 ```
