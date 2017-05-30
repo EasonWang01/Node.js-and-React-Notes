@@ -10,15 +10,13 @@ try_files $uri $uri/ =404;
 
 [https://servers.ustclug.org/2014/09/nginx-try\_files-fallacy/](https://servers.ustclug.org/2014/09/nginx-try_files-fallacy/)
 
-
-
 # Underscore header
 
-有時我們幫header取名時有\_這時會被nginx預設擋下，我們需加上
+有時我們幫header取名時有_，ex: access\__token這時會被nginx預設擋下，我們需加上
 
 ```
 underscores_in_headers on;
 ```
 
-https://serverfault.com/questions/586970/nginx-is-not-forwarding-a-header-value-when-using-proxy-pass
+[https://serverfault.com/questions/586970/nginx-is-not-forwarding-a-header-value-when-using-proxy-pass](https://serverfault.com/questions/586970/nginx-is-not-forwarding-a-header-value-when-using-proxy-pass)
 
