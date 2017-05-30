@@ -73,6 +73,14 @@ db
 
 之後連線字串為mongodb://youruser:yourpassword@localhost/yourdatabase
 
+ex:
+
+```
+mongoose.connect('mongodb://帳號:密碼@ec2-52-193-141-232.ap-northeast-1.compute.amazonaws.com:27017/資料庫名稱',function(err){
+	if(err){throw err};
+});
+```
+
 # \# 指定可連線的IP
 
 到config檔案設定
