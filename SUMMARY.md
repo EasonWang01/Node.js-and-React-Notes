@@ -22,6 +22,7 @@
   * [基本環境操作](shi_yong_mongodb/ba.md)
 * [使用MySQL](shi_yong_mysql.md)
 * [使用PostgreSQL](shi_yong_postgresql.md)
+  * [replica](shi_yong_postgresql/replica.md)
 * [rethinkdb](rethinkdb.md)
 * [React](react.md)
   * [寫component並且publish](react/xie-component-bing-qie-publish.md)
