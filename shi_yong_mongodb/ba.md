@@ -77,7 +77,7 @@ ex:
 
 ```
 mongoose.connect('mongodb://帳號:密碼@ec2-52-193-141-232.ap-northeast-1.compute.amazonaws.com:27017/資料庫名稱',function(err){
-	if(err){throw err};
+    if(err){throw err};
 });
 ```
 
@@ -117,4 +117,18 @@ security:
 ```
 
 3.admin使用者預設可以連到所有db，如果連不進去通常是因為db上還沒有資料所以db還沒完全建立好，只要先使用admin新建資料庫\(use\)後在資料庫新增使用者\(createUser\)後使用該user登入\(db.auth\)然後新增資料，之後admin也可在該資料庫新增資料了
+
+
+
+
+
+# \# 讓進程保持--fork
+
+\(記得要指定logpath\)
+
+```
+mongod --auth --dbpath ./data/db2 --fork --logpath=./mongodb.log
+```
+
+http://chenzhou123520.iteye.com/blog/1634676
 
