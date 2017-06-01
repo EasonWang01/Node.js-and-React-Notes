@@ -85,7 +85,16 @@ git checkout 分支名稱
 
 [http://blog.johnsonlu.org/git-submodule/](http://blog.johnsonlu.org/git-submodule/)
 
-http://blog.chh.tw/posts/git-submodule/
+[http://blog.chh.tw/posts/git-submodule/](http://blog.chh.tw/posts/git-submodule/)
 
 主要是引用第三方的git專案，git clone時這些submodule 需要--recursive才會一起下載
+
+或是可以之後輸入
+
+```
+ git submodule init
+ git submodule update
+```
+
+
 
