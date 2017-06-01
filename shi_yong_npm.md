@@ -1,20 +1,19 @@
 # 使用NPM
 
-* 
-先安裝Node.js
+* 先安裝Node.js
 
 * 以下為基本指令
 
-npm install 
+npm install
 
-npm install  -g (使用後可在cmd的任何路徑輸入package名稱執行，但如果是想在js檔內直接使用require的話，要再把環境變數加上才行)(如此即可不用在每個專案資料夾個別安裝package))
-(記得名稱要是NODE_PATH)
-![](df.png)
-所以共有兩個環境變數:
-一個是node_modules  =>給require用
->Mac 使用 require global package 可用
-export NODE_PATH=/usr/local/lib/node_modules
+npm install  -g \(使用後可在cmd的任何路徑輸入package名稱執行，但如果是想在js檔內直接使用require的話，要再把環境變數加上才行\)\(如此即可不用在每個專案資料夾個別安裝package\)\)  
+\(記得名稱要是NODE\_PATH\)  
+![](df.png)  
+所以共有兩個環境變數:  
+一個是node\_modules  =&gt;給require用
 
+> Mac 使用 require global package 可用  
+> export NODE\_PATH=/usr/local/lib/node\_modules
 
 一個是`C:\Users\Jason\AppData\Roaming\npm`給在cmd直接輸入module名稱用
 
@@ -34,28 +33,28 @@ npm update -g
 
 npm update
 
+## 為了避免部屬後環境module過大，可不必安裝dev用的module
 
-##為了避免部屬後環境module過大，可不必安裝dev用的module
 一開始開發時將套件安裝到devDependencies
+
 ```
 npm install --save-dev  //記得save跟dev要用-連再一起
-
 ```
+
 部屬時安裝
+
 ```
-npm install --production 
+npm install --production
 ```
 
+> 當npm install出現一些版本錯誤，而無法安裝，這是記得先更新本地端`npm install -g`\(更新global的package\)  
+> 更多可參考  
+> [https://docs.npmjs.com/](https://docs.npmjs.com/)
 
->當npm install出現一些版本錯誤，而無法安裝，這是記得先更新本地端`npm install -g`(更新global的package)
-更多可參考
-https://docs.npmjs.com/
+# package.json教學
 
-
-#package.json教學
-
-1.
-`"main"`表示require('模組名稱')所預設加載的文件。
+1.  
+`"main"`表示require\('模組名稱'\)所預設加載的文件。
 
 2.如下的寫法可用`npm run start`輸入此即會執行`node index.js`
 
@@ -64,21 +63,35 @@ https://docs.npmjs.com/
   "start": "node index.js"
 },
 ```
-3.
+
+3.  
 config用來設定環境變量，如下
+
 ```
 "config": { "port" : "8080" }
 ```
 
-可在程式中使用
+可在程式中使用  
 `process.env.npm_package_config_port`讀取到
 
 比較常用設定環境變量的方法為
+
 ```
 console.log(process.env.PORT)
 ```
+
 然後執行
+
 ```
 PORT=8000 node test1.js //mac
 node test1.js PORT=8000 //windows
 ```
+
+
+
+\# 控制版本
+
+使用shrinkwrap
+
+http://syshen.cc/post/18425250521/npm-shrinkwrap-%E8%A7%A3%E6%B1%BA-nodejs-%E5%A5%97%E4%BB%B6%E8%A4%87%E9%9B%9C%E7%9A%84%E9%97%9C%E9%80%A3%E6%80%A7%E5%95%8F%E9%A1%8C
+
