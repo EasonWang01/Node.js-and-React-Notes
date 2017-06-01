@@ -53,8 +53,7 @@ npm install --production
 
 # package.json教學
 
-1.  
-`"main"`表示require\('模組名稱'\)所預設加載的文件。
+1. `"main"`表示require\('模組名稱'\)所預設加載的文件。
 
 2.如下的寫法可用`npm run start`輸入此即會執行`node index.js`
 
@@ -64,8 +63,7 @@ npm install --production
 },
 ```
 
-3.  
-config用來設定環境變量，如下
+1. config用來設定環境變量，如下
 
 ```
 "config": { "port" : "8080" }
@@ -87,11 +85,9 @@ PORT=8000 node test1.js //mac
 node test1.js PORT=8000 //windows
 ```
 
-
-
 \# 控制版本
 
 使用shrinkwrap
 
-http://syshen.cc/post/18425250521/npm-shrinkwrap-%E8%A7%A3%E6%B1%BA-nodejs-%E5%A5%97%E4%BB%B6%E8%A4%87%E9%9B%9C%E7%9A%84%E9%97%9C%E9%80%A3%E6%80%A7%E5%95%8F%E9%A1%8C
+[http://syshen.cc/post/18425250521/npm-shrinkwrap-解決-nodejs-套件複雜的關連性問題](http://syshen.cc/post/18425250521/npm-shrinkwrap-解決-nodejs-套件複雜的關連性問題)
 
