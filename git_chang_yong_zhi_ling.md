@@ -83,6 +83,8 @@ git checkout 分支名稱
 
 # 有關submodule
 
+https://blog.wu-boy.com/2011/09/introduction-to-git-submodule/
+
 [http://blog.johnsonlu.org/git-submodule/](http://blog.johnsonlu.org/git-submodule/)
 
 [http://blog.chh.tw/posts/git-submodule/](http://blog.chh.tw/posts/git-submodule/)
