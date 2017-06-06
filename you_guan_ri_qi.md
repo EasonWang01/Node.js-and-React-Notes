@@ -37,12 +37,11 @@ new Date().toISOString();
 (new Date(Date.now() - 60*60*1000*24*10)).toISOString().substring(0,10)
 ```
 
-
-
 # \#注意事項
 
 ```
 1.new Date(1496716816519) 在browser會比node環境多8小時
+因為new Date會自動判斷當下時區去做加減
 ```
 
 
