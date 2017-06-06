@@ -81,7 +81,7 @@
 * [JS 格式轉換](js_ge_shi_zhuan_huan.md)
 * [js trick](js_trick.md)
 * [部署到AWS](bu_shu_dao_aws.md)
-* [有關日期](you_guan_ri_qi.md)
+* [有關日期Date](you_guan_ri_qi.md)
 * [VS code 編輯器](vs_code_bian_ji_qi.md)
 * [Docker](docker.md)
 * [CI  with Gitlab&Jenkins](ci--with-gitlabjenkins.md)
