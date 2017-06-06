@@ -41,7 +41,7 @@ new Date().toISOString();
 
 ```
 1.new Date(1496716816519) 在browser會比node環境多8小時
-因為new Date會自動判斷當下時區去做加減
+因為new Date會自動判斷當下時區UTC去做timestamp加減
 ```
 
 
