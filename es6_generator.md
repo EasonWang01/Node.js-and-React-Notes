@@ -382,7 +382,7 @@ function delay(ms) {
 }
 
 function *gen(){
-  var a = 5, b=3, t;
+  var a = 5, b = 3, t;
   t = yield delay(800);
   console.log("a=%d t=%d", a, t);
   t = yield delay(500);
