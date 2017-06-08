@@ -387,7 +387,7 @@ function *gen(){
   console.log("a=%d t=%d", a, t);
   t = yield delay(500);
   b = a + b;
-  console.log("b=%d t=%d", b, t);
+  console.log("b = %d t = %d", b, t);
   t = yield delay(300);
   console.log("totalDelay=%d t=%d", totalDelay, t);
 }
