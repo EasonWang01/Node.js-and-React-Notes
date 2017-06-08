@@ -10,12 +10,29 @@
 
 
 
+# \#2.使用
+
+文件:https://developers.google.com/recaptcha/docs/verify
+
+[https://github.c](https://www.gitbook.com/book/easonwang01/web_advance/edit#)使用套件的範例
+
+```
+<Recaptcha
+  verifyCallback={(r) => console.log(r)}
+  theme="light"
+  sitekey="6LejmSQUAAAAACsss6nydz-73jHrJBqlH5xa2WR0"
+  onloadCallback={() => { }}
+/>
+```
+
+
+
 > 將recapcha置中
 >
 > ```
 >   .g-recaptcha > div { 
 >       margin: auto !important;
->   } 
+>   }
 > ```
 
 
