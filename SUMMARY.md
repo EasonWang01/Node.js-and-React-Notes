@@ -64,6 +64,7 @@
   * [Geocode](google_speech_api/geocode.md)
   * [Map](google_speech_api/map.md)
   * [vision api](google_speech_api/vision-api.md)
+  * [Google-recaptcha](google_speech_api/google-recaptcha.md)
 * [Instagram API](instagram_api.md)
 * [Markdown與code pretty js](markdownyu_code_pretty_js.md)
 * [HTML5 audio](html5_audio.md)
