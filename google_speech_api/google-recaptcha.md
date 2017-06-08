@@ -48,7 +48,7 @@ remoteip    (可選)Optional. The user's IP address.   ()
 
 Node.js example
 
-\(記得要用querystring方式傳\)
+\(記得要用POST querystring方式傳\)
 
 ```
   app.post('/checkHuman', (req, res) => {
