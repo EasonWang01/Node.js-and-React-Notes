@@ -389,7 +389,7 @@ function *gen(){
   b = a + b;
   console.log("b = %d t = %d", b, t);
   t = yield delay(300);
-  console.log("totalDelay =%d t=%d", totalDelay, t);
+  console.log("totalDelay = %d t=%d", totalDelay, t);
 }
 ```
 
