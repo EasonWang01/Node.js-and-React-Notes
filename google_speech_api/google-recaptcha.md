@@ -8,13 +8,11 @@
 
 如果用react.js可以使用[https://github.com/appleboy/react-recaptcha](https://github.com/appleboy/react-recaptcha模組)克服dom沒出現但recaptcha執行造成無法顯示的情況
 
-
-
 # \#2.使用
 
-文件:https://developers.google.com/recaptcha/docs/verify
+文件:[https://developers.google.com/recaptcha/docs/verify](https://developers.google.com/recaptcha/docs/verify)
 
-[https://github.c](https://www.gitbook.com/book/easonwang01/web_advance/edit#)使用套件的範例
+使用react-recaptcha套件的範例
 
 ```
 <Recaptcha
@@ -25,8 +23,6 @@
 />
 ```
 
-
-
 > 將recapcha置中
 >
 > ```
@@ -34,6 +30,21 @@
 >       margin: auto !important;
 >   }
 > ```
+
+#### \#3.在server端接收到後傳給google驗證
+
+把verifyCallback拿到的值傳
+
+```
+URL: https://www.google.com/recaptcha/api/siteverify
+
+METHOD: POST
+
+POST Parameter	Description
+secret	   (你的API secret)     Required. The shared key between your site and reCAPTCHA.
+response   (點選後接到的verifycallback值)	 Required. The user response token provided by reCAPTCHA, verifying the user on your site.
+remoteip	(可選)Optional. The user's IP address.   ()
+```
 
 
 
