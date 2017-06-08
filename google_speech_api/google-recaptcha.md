@@ -40,10 +40,25 @@ URL: https://www.google.com/recaptcha/api/siteverify
 
 METHOD: POST
 
-POST Parameter	Description
-secret	   (你的API secret)     Required. The shared key between your site and reCAPTCHA.
-response   (點選後接到的verifycallback值)	 Required. The user response token provided by reCAPTCHA, verifying the user on your site.
-remoteip	(可選)Optional. The user's IP address.   ()
+POST Parameter    Description
+secret       (你的API secret)     Required. The shared key between your site and reCAPTCHA.
+response   (點選後接到的verifycallback值)     Required. The user response token provided by reCAPTCHA, verifying the user on your site.
+remoteip    (可選)Optional. The user's IP address.   ()
+```
+
+Node.js example
+
+\(記得要用querystring方式傳\)
+
+```
+  app.post('/checkHuman', (req, res) => {
+    axios.post('https://www.google.com/recaptcha/api/siteverify',querystring.stringify({
+      secret: '6LejmSQUAAAAAEccpZkMXhZjCwD8Z6kroMPijxmM',
+      response: req.body.code 
+    })).then(d => {
+      console.log(d.data)
+    })
+  })
 ```
 
 
