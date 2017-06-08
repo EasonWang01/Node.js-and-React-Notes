@@ -8,3 +8,15 @@
 
 如果用react.js可以使用[https://github.com/appleboy/react-recaptcha](https://github.com/appleboy/react-recaptcha模組)克服dom沒出現但recaptcha執行造成無法顯示的情況
 
+
+
+> 將recapcha置中
+>
+> ```
+>   .g-recaptcha > div { 
+>       margin: auto !important;
+>   } 
+> ```
+
+
+
