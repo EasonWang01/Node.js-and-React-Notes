@@ -61,5 +61,13 @@ Node.js example
   })
 ```
 
+成功會回傳如下
+
+```
+{ success: true,
+  challenge_ts: '2017-06-08T08:56:12Z',
+  hostname: 'localhost' }
+```
+
 
 
