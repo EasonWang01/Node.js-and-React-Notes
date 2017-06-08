@@ -2,15 +2,9 @@
 
 \(類似於csrf token的功能\)
 
-
-
 # \#1.  安裝
 
-https://www.google.com/recaptcha
+[https://www.google.com/recaptcha](https://www.google.com/recaptcha)
 
-如果用react.js可以使用https://github.com/appleboy/react-recaptcha模組
-
-
-
-
+如果用react.js可以使用[https://github.com/appleboy/react-recaptcha](https://github.com/appleboy/react-recaptcha模組)克服dom沒出現但recaptcha執行造成無法顯示的情況
 
