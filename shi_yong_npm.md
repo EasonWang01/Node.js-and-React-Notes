@@ -91,3 +91,11 @@ node test1.js PORT=8000 //windows
 
 [http://syshen.cc/post/18425250521/npm-shrinkwrap-解決-nodejs-套件複雜的關連性問題](http://syshen.cc/post/18425250521/npm-shrinkwrap-解決-nodejs-套件複雜的關連性問題)
 
+
+
+# \#更新NPM
+
+npm install npm@latest -g
+
+
+
