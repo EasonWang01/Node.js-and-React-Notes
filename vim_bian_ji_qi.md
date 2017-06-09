@@ -64,9 +64,11 @@
  $ sh ./install.sh
 ```
 
-
-
+> 注意事項:
+>
 > 如果使用windows cmd去用vim可能會造成跑版，但putty沒問題
+
+
 
 
 
