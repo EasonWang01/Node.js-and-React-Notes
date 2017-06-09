@@ -66,9 +66,7 @@
 
 
 
+> 如果使用windows cmd去用vim可能會造成跑版，但putty沒問題
 
 
-
-
-&gt;如果使用windows cmd去用vim可能會造成跑版，但putty沒問題
 
