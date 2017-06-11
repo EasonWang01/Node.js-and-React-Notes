@@ -113,11 +113,17 @@ sudo service apache2 restart
 
 [http://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode](http://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode)
 
-
-
-
-
 # \#開啟其他PORT
 
+點選左上的選單然後點選網路
+
+![](/assets/螢幕快照 2017-06-11 上午10.43.37.png)
+
 記得`目標標記 要輸入http-server`
+
+設定如下
+
+0.0.0.0/0代表開放所有IP
+
+![](/assets/螢幕快照 2017-06-11 上午10.43.50.png)
 
