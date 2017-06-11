@@ -77,6 +77,12 @@ db
 db.users.find()
 ```
 
+顯示所有collection
+
+```
+show collections
+```
+
 之後連線字串為mongodb://youruser:yourpassword@localhost/yourdatabase
 
 ex:
