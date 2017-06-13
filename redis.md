@@ -4,6 +4,7 @@
 windows下載
 https://github.com/MSOpenTech/redis/releases
 https://github.com/dmajkic/redis/downloads
+(下載後點選redis-server.exe 之後點選redis-cli)
 
 Linux
 ```
