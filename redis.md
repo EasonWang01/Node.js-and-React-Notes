@@ -2,6 +2,7 @@
 1.
 
 windows下載
+https://github.com/MSOpenTech/redis/releases
 https://github.com/dmajkic/redis/downloads
 
 Linux
