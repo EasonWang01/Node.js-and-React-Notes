@@ -26,7 +26,7 @@ window.fbAsyncInit = function() {
    }(document, 'script', 'facebook-jssdk'));
 ```
 
-在dashboard上填寫網域[http://localhost:3000]與最下方(http://localhost:3000)
+在dashboard上填寫網域\[[http://localhost:3000\]與最下方\(http://localhost:3000](http://localhost:3000]與最下方%28http://localhost:3000)\)
 
 如果使用react記得在component加上`const FB = window.FB;`
 
@@ -64,7 +64,7 @@ FB.api('/me', {
 
 注意:
 
->如果要存入使用者圖片要存入如下`"https://graph.facebook.com" + "/v2.8/" + userID + "/picture"`不可存入`scontent`的連結，因為過一段時間後會失效
+> 如果要存入使用者圖片要存入如下`"https://graph.facebook.com" + "/v2.8/" + userID + "/picture"`不可存入`scontent`的連結，因為過一段時間後會失效
 
 ＡＰＩ詳細DOC
 
@@ -72,26 +72,28 @@ FB.api('/me', {
 
 ＃產生按鈕
 
-https://developers.facebook.com/docs/facebook-login/web/login-button
+[https://developers.facebook.com/docs/facebook-login/web/login-button](https://developers.facebook.com/docs/facebook-login/web/login-button)
 
 注意:上面產生的按鈕無法綁定onclick事件，如要綁定要自己客製化按鈕
 
 點擊按鈕後並呼叫 `FB.login()`會產生登入框
+
 ```
 FB.login((response) => {
             this.testAPI(response.authResponse.accessToken);
           })
-
 ```
 
-----
+---
 
-#以下為自訂Login 按鈕範例
+# 以下為自訂Login 按鈕範例
 
- ```
+```
   <RaisedButton onClick={() => this.FBlogin()} labelColor="white" label="臉書登入" style={style.FBbutton} backgroundColor="#31589c" />
-  ``` 
+```
+
 點擊後
+
 ```
   FBlogin() {
     const context = this;
@@ -101,6 +103,7 @@ FB.login((response) => {
       });
   }
 ```
+
 觸發事件
 
 ```
@@ -181,11 +184,18 @@ FB.login((response) => {
   }
 ```
 
+# \#新增其他Domain
 
-# #注意事項：
-1.一開始設定應用程式時，要先選下方新增平台在設定網域，
-不然使用localhost時可能會發生`top domain not allow`的問題
+![](/assets/858.png)
+
+# 
+
+# \#注意事項：
+
+1.一開始設定應用程式時，要先選下方新增平台在設定網域，  
+不然使用localhost時可能會發生`top domain not allow`的問題  
 兩者均輸入`http://localhost:{port}`即可，網域會自動轉換`localhost`
 
-2.如果應用程式上線後仍想在`localhost`測試，需要再開一個FB應用程式專案
+2.如果應用程式上線後仍想在`localhost`測試，需要再開一個FB應用程式專案  
 ，因為網域跟應用程式網址沒辦法輸入兩個
+
