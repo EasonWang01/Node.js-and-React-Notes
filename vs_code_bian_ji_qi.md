@@ -50,5 +50,9 @@ keybindings.json
 
 [https://stackoverflow.com/questions/29973357/how-do-you-format-code-in-visual-studio-code-vscode](https://stackoverflow.com/questions/29973357/how-do-you-format-code-in-visual-studio-code-vscode)
 
-如果indent空格不對可以參考這篇設定https://stackoverflow.com/questions/36251820/visual-studio-code-format-is-not-using-indent-settings
+如果indent空格不對可以參考這篇設定[https://stackoverflow.com/questions/36251820/visual-studio-code-format-is-not-using-indent-settings](https://stackoverflow.com/questions/36251820/visual-studio-code-format-is-not-using-indent-settings)
+
+> 如果mac的shift+option+ F 沒反應，可以把所有plugin更新並重新啟動即可
+
+
 
