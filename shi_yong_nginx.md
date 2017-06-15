@@ -86,3 +86,13 @@ proxy_set_header Host $host;
 
 有關使用cloudflare與nginx配置之SSL可參考web\_Basic之cloudflare章節
 
+
+
+# 配置GZIP
+
+https://www.digitalocean.com/community/tutorials/how-to-add-the-gzip-module-to-nginx-on-ubuntu-14-04
+
+http://www.cnblogs.com/zfying/archive/2012/07/07/2580876.html
+
+
+
