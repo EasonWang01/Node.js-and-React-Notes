@@ -2,19 +2,15 @@
 
 
 
+http://pm2.keymetrics.io/docs/usage/application-declaration/
+
 設定環境變數\`NODE\_ENV\`
 
-需要先新增一個\`process.json\`檔案
+輸入以下指令，會產生ecosysten.config.js檔案
 
 ```
-{
-  "name" : "handi",
-  "script" : "index.js",
-  "env_production" : {
-    "NODE_ENV": "production"
-  }
-}
+pm2 ecosystem
 ```
 
-之後執行\`pm2 start process.json --env production\`
+
 
