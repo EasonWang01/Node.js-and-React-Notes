@@ -4,11 +4,11 @@
 
 注意事項:
 
-1.使用json()轉換
+1.使用json\(\)轉換
 
 2.第二個then才拿得到資料，第一個then只是一個promise結果
 
-3.cookie要手動在header加入(第二個參數)
+3.cookie要手動在header加入\(第二個參數\)
 
 ```
      fetch('http://localhost:3001/getArticle',{
@@ -32,13 +32,11 @@
        })
 ```
 
-https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch_why_does_this_return/
+[https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch\_why\_does\_this\_return/](https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch_why_does_this_return/)
 
+# axios
 
-
-#axios
-
-https://github.com/mzabriskie/axios
+[https://github.com/mzabriskie/axios](https://github.com/mzabriskie/axios)
 
 也是一個可發request的套件
 
@@ -62,16 +60,16 @@ axios.post(API_HOST+'/api/Member/GetQAList',
     })
 ```
 
-
 如果要抓取error message要使用如下
 
 ```
   .catch(err => {
     console.log(err)
      if (err.response) {
-       alert(err.response.data.message); 
+       alert(err.response.data); 
      }
   })
 ```
 
-https://github.com/mzabriskie/axios/issues/376
+[https://github.com/mzabriskie/axios/issues/376](https://github.com/mzabriskie/axios/issues/376)
+
