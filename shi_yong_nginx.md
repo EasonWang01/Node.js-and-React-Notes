@@ -92,11 +92,9 @@ proxy_set_header Host $host;
 
 [http://www.cnblogs.com/zfying/archive/2012/07/07/2580876.html](http://www.cnblogs.com/zfying/archive/2012/07/07/2580876.html)
 
-
-
 # 配置Request Limit
 
-https://www.nginx.com/blog/rate-limiting-nginx/
+[https://www.nginx.com/blog/rate-limiting-nginx/](https://www.nginx.com/blog/rate-limiting-nginx/)
 
 EX:
 
@@ -112,8 +110,6 @@ server {
         underscores_in_headers on;
         location / {
                 limit_req zone=req_zone burst=10 nodelay;
-                # First attempt to serve request as file, then
-                # as directory, then fall back to displaying a 404.
                 proxy_pass http://localhost:3001;
         }
 }
