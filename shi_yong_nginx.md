@@ -86,13 +86,38 @@ proxy_set_header Host $host;
 
 有關使用cloudflare與nginx配置之SSL可參考web\_Basic之cloudflare章節
 
-
-
 # 配置GZIP
 
-https://www.digitalocean.com/community/tutorials/how-to-add-the-gzip-module-to-nginx-on-ubuntu-14-04
+[https://www.digitalocean.com/community/tutorials/how-to-add-the-gzip-module-to-nginx-on-ubuntu-14-04](https://www.digitalocean.com/community/tutorials/how-to-add-the-gzip-module-to-nginx-on-ubuntu-14-04)
 
-http://www.cnblogs.com/zfying/archive/2012/07/07/2580876.html
+[http://www.cnblogs.com/zfying/archive/2012/07/07/2580876.html](http://www.cnblogs.com/zfying/archive/2012/07/07/2580876.html)
+
+
+
+# 配置Request Limit
+
+https://www.nginx.com/blog/rate-limiting-nginx/
+
+EX:
+
+```
+limit_req_zone $binary_remote_addr zone=req_zone:10m rate=5r/s;
+server {
+        listen 443;
+        server_name api.example.com;
+        gzip on;
+        ssl on;
+        ssl_certificate sites-available/c.pem;
+        ssl_certificate_key sites-available/c.key;
+        underscores_in_headers on;
+        location / {
+                limit_req zone=req_zone burst=10 nodelay;
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                proxy_pass http://localhost:3001;
+        }
+}
+```
 
 
 
