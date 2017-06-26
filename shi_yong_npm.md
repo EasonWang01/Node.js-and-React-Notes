@@ -91,11 +91,27 @@ node test1.js PORT=8000 //windows
 
 [http://syshen.cc/post/18425250521/npm-shrinkwrap-解決-nodejs-套件複雜的關連性問題](http://syshen.cc/post/18425250521/npm-shrinkwrap-解決-nodejs-套件複雜的關連性問題)
 
-
-
 # \#更新NPM
 
 npm install npm@latest -g
 
 
+
+# \#發布為GLOBAL package
+
+
+
+和之前一樣先npm adduser
+
+然後確認package名字沒重複
+
+之後因為是global所以加入bin的欄位到package.json檔案裏面
+
+```
+  "bin": {
+    "gendoc": "./index.js"
+  },
+```
+
+之後別人使用-g安裝即可使用` gendoc` 指令
 
