@@ -95,11 +95,7 @@ node test1.js PORT=8000 //windows
 
 npm install npm@latest -g
 
-
-
 # \#發布為GLOBAL package
-
-
 
 和之前一樣先npm adduser
 
@@ -113,5 +109,9 @@ npm install npm@latest -g
   },
 ```
 
-之後別人使用-g安裝即可使用` gendoc` 指令
+之後別人使用-g安裝即可使用`gendoc` 指令
+
+> npm link 也可在發布前直接把他家到Local督環境變數，但在windows會沒作用
+
+
 
