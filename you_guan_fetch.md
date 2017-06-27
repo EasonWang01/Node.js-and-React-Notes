@@ -34,6 +34,30 @@
 
 [https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch\_why\_does\_this\_return/](https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch_why_does_this_return/)
 
+
+
+使用POST
+
+```
+fetch('http://localhost:3016/login', {
+    method: 'POST',
+    headers: {'Content-Type':'application/x-www-form-urlencoded'},
+    body: 'foo=bar&blah=1'
+});
+```
+
+# 如果要傳JSON要先stringify
+
+```
+fetch('http://localhost:3016/we6/api/login', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({a:12})
+});
+```
+
+# 
+
 # axios
 
 [https://github.com/mzabriskie/axios](https://github.com/mzabriskie/axios)
