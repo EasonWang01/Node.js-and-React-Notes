@@ -34,8 +34,6 @@
 
 [https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch\_why\_does\_this\_return/](https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch_why_does_this_return/)
 
-
-
 使用POST
 
 ```
@@ -96,4 +94,37 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 ```
 
 [https://github.com/mzabriskie/axios/issues/376](https://github.com/mzabriskie/axios/issues/376)
+
+
+
+
+
+# 注意:
+
+如果是要發送cookie記得要加上 withCredentials: true` ` 
+
+      axios({
+        method,
+        url: `${API_HOST}/${url}`,
+        withCredentials: true,
+        data: {
+          method,
+          data: payload,
+          endpoint: url
+        }
+      })
+      .then((response) => {
+        console.log(response.data)
+        callbackReduxAction(response.data);
+      }).catch(err => {
+        console.log(err);
+      })
+
+或是直接寫為default
+
+```
+axios.defaults.withCredentials = true;
+```
+
+然後server的Cross domain要設定
 
