@@ -95,13 +95,9 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 [https://github.com/mzabriskie/axios/issues/376](https://github.com/mzabriskie/axios/issues/376)
 
-
-
-
-
 # 注意:
 
-如果是要發送cookie記得要加上 withCredentials: true` ` 
+如果是要發送cookie記得要加上 withCredentials: true` `
 
       axios({
         method,
@@ -127,4 +123,20 @@ axios.defaults.withCredentials = true;
 ```
 
 然後server的Cross domain要設定
+
+```
+app.use('*', function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3012');
+  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Accept, Origin, Content-Type');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  next();
+});
+```
+
+記得Origin不可用\*
+
+不然會顯示如下訊息.
+
+![](/assets/asca.png)
 
