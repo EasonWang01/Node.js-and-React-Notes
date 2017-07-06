@@ -115,3 +115,13 @@ npm install npm@latest -g
 
 
 
+# 更新或復原npm版本
+
+\(把數字改為你要的版本即可\)
+
+```
+npm install npm@4.6.1 
+```
+
+
+
