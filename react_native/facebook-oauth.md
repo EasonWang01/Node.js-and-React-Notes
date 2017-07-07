@@ -73,7 +73,6 @@
     </application>
 
 </manifest>
-
 ```
 
 完成後的build.gradle
@@ -145,7 +144,6 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
-
 ```
 
 完成後的string.sml
@@ -156,13 +154,11 @@ task copyDownloadableDepsToLibs(type: Copy) {
     <string name="fb_app_id">730254410464547</string>
     <string name="fb_login_protocol_scheme">fb730254410464547</string>
 </resources>
-
 ```
 
 完成後的index.js
 
 ```
-
 import React, { Component } from 'react';
 import {FBLogin, FBLoginManager} from 'react-native-facebook-login';
 import {
@@ -223,6 +219,74 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
+
+AppRegistry.registerComponent('AwesomeProject05', () => AwesomeProject05);
+```
+
+也可自己寫一個按鈕
+
+```
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
+import React, { Component } from 'react';
+import { FBLogin, FBLoginManager } from 'react-native-facebook-login';
+import {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  Button
+} from 'react-native';
+
+export default class AwesomeProject05 extends Component {
+  componentDidMount() {
+    console.log(123)
+  }
+
+  FBlogin() {
+    FBLoginManager.loginWithPermissions(["email", "user_friends"], function (error, data) {
+      if (!error) {
+        console.log("Login data: ", data);
+      } else {
+        console.log("Error: ", error);
+      }
+    })
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+
+        <Button
+          onPress={() => this.FBlogin()}
+          title="Learn More"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    height: 20,
     backgroundColor: '#F5FCFF',
   },
   welcome: {
