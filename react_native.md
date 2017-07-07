@@ -1,17 +1,18 @@
 # React Native
-----
 
-###1.windows環境建置
->需求安裝:
->
->1.JDK   
->
->2.Android Studio 
->
->3.Genymotion
->
->4.Node.js
+---
 
+### 1.windows環境建置
+
+> 需求安裝:
+>
+> 1.JDK
+>
+> 2.Android Studio
+>
+> 3.Genymotion
+>
+> 4.Node.js
 
 1.npm install -g react-native-cli    `安裝`
 
@@ -21,14 +22,16 @@
 
 4.進到專案資料夾把local.properties 複製到AwesomeProject 的android資料夾內   `產生環境變數`
 
-5.開啟android studio 點選上方圖案(SDK manger)，之後再點Launch Standalone SDK manger
+5.開啟android studio 點選上方圖案\(SDK manger\)，之後再點Launch Standalone SDK manger  
   勾選build tool後安裝
-  
-  記得把android SDK 加入系統環境變數(ANDROID_HOME)
 
-6.在cmd輸入react-native run-android(記得開好genymotion)，正常跑完會出現紅色底字，這時因為我們還沒啟動react-native的server
+記得把android SDK 加入系統環境變數\(ANDROID\_HOME\)
+
+6.在cmd輸入react-native run-android\(記得開好genymotion\)，正常跑完會出現紅色底字，這時因為我們還沒啟動react-native的server
 
 7.於cmd輸入 react-native start ，之後於genymotino點選Reload JS即可
+
+\(如果使用Android studio的原生模擬器，在windows上要按ctrl+m\)
 
 8.正常啟動後，可點選index.android.js修改，之後點genymotion的右側menu，設定hot reload   `儲存後即立刻更改畫面`
 
@@ -44,13 +47,16 @@
 OT RELOAD SERVER)
 ```
 
-####可能的問題
+#### 可能的問題
+
 ```
 1.watchman timeout
 2.fbjs
 3.Connect device failed
 ```
+
 解決方案
+
 ```
 1.確保node.js的版本
 確定watchmanconfig檔案存在(於一開始build時)
@@ -62,43 +68,46 @@ OT RELOAD SERVER)
 http://stackoverflow.com/questions/34692210/react-native-errortimeout-getting-device-list-when-running-hello-world-on-ubunt
 ```
 
+# 2.React native專案檔案介紹
 
-#2.React native專案檔案介紹
-
-####1.index.android.js
+#### 1.index.android.js
 
 我們一般會在該檔案，寫為如下
+
 ```
 'use strict';
 
 import React, { AppRegistry } from 'react-native';
 import App from './app/containers/app.js';
 
-AppRegistry.registerComponent('AwesomeProject', () => App); 
-
+AppRegistry.registerComponent('AwesomeProject', () => App);
 ```
+
 特別要注意的地方為
 
-`AppRegistry.registerComponent('AwesomeProject', () => App); `
+`AppRegistry.registerComponent('AwesomeProject', () => App);`
 
 `registerComponent`第一個參數要跟資料夾名稱相同，第二個參數要跟你的component enrty相同
 
-####2.app目錄
+#### 2.app目錄
 
 我們假設你已經學過React跟redux的基礎，以下我們稱react-native簡稱為native
 
 在native中，和一般node專案一樣使用npm安裝套件，接著再跟目錄創建app資料夾，將專案相關文件都寫於裡面
 
-####3.buckconfig(給IOS用)
-http://nuclide.io/docs/platforms/react-native/#buck-integration
+#### 3.buckconfig\(給IOS用\)
 
-####4.flowconfig
-http://flowtype.org/
-` Flow is not supported on Windows, so this integration is not yet available on that platform.`
-#3.Implement with Redux
+[http://nuclide.io/docs/platforms/react-native/\#buck-integration](http://nuclide.io/docs/platforms/react-native/#buck-integration)
 
-範例連結:
-https://github.com/alinz/example-react-native-redux
+#### 4.flowconfig
+
+[http://flowtype.org/](http://flowtype.org/)  
+`Flow is not supported on Windows, so this integration is not yet available on that platform.`
+
+# 3.Implement with Redux
+
+範例連結:  
+[https://github.com/alinz/example-react-native-redux](https://github.com/alinz/example-react-native-redux)
 
 下載後
 
@@ -107,6 +116,7 @@ https://github.com/alinz/example-react-native-redux
 2.`npm install redux react-redux redux-thunk --save`
 
 3..將`index.android.js`改為如下即可運行
+
 ```
 'use strict';
 
@@ -114,26 +124,24 @@ import React, { AppRegistry } from 'react-native';
 import App from './app/containers/app.js';
 
 AppRegistry.registerComponent('AwesomeProject', () => App);
-
 ```
+
 目前專案結構長為這樣
 
 ![](021.png)
 
+# 4.Layout
 
-#4.Layout
-
-###1.flex介紹
+### 1.flex介紹
 
 1.父元素要有flex屬性，子元素flex才有作用
 
-2.flex數字越高，占的空間越大
-(主要為同一層元素之flex數字間的比例關係)
+2.flex數字越高，占的空間越大  
+\(主要為同一層元素之flex數字間的比例關係\)
 
 1.基本範例
+
 ```
-
-
 import React, {
   AppRegistry,
   Component,
@@ -176,12 +184,12 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('nativereact', () => nativereact);
-
 ```
 
-2.改變layout 方向(flexDirection)
+2.改變layout 方向\(flexDirection\)
 
 於父元素加入該屬性，其子元素會改變layout排列方向
+
 ```
 class nativereact extends Component {
   render() {
@@ -201,48 +209,61 @@ class nativereact extends Component {
   }
 }
 ```
+
 3.其他layout方法與CSS 的flexbox屬性用法相同
+
 ```
 在container中的style
 justifyContent:'center',
 alignItems: 'center'
 
 分別負責垂直及水平置中
-
 ```
-#內建基本元件
+
+# 內建基本元件
 
 須先於上方import進入js檔案
 
-####1.View
+#### 1.View
+
 ```
 用作container使用，包在其他元件外
 ```
-####2.Text
+
+#### 2.Text
+
 ```
 產生文字
 ```
-####3.Image
-```
-source 屬性 可指定來源
 
-style中的`resizeMode:Image.resizeMode.contain`可讓圖片解析固定
-```
-####4.Touchable事件
+#### 3.Image
+
+    source 屬性 可指定來源
+
+    style中的`resizeMode:Image.resizeMode.contain`可讓圖片解析固定
+
+#### 4.Touchable事件
+
 **1.TouchableOpacity**
+
 ```
 點擊時改變透明度
 ```
-**
+
+**  
 2.TouchableHighlight**
+
 ```
 點擊時改變透明度、顏色，及其他(為TouchableOpacity的加強版)
 ```
+
 PS:記得要有onPress屬性，才會有效果
+
 ```
  onPress={() => console.log('custom THW text - highlight')}
 ```
-####5.DrawerLayoutAndroid
+
+#### 5.DrawerLayoutAndroid
 
 類似於隱藏選單，從邊緣拉入後顯示
 
@@ -268,22 +289,27 @@ return (  <DrawerLayoutAndroid
   }
 }
 ```
+
 於最外層view外面加入DrawerLayoutAndroid Tag，且從`renderNavigationView`屬性寫出Drawer的外觀
-####6.ListView
+
+#### 6.ListView
+
 許多列組成的畫面
+
 ```
      <ListView
         dataSource={this.state.dataSource}
         renderRow={this.renderMovie}
         style={styles.listView}
       />
-      
+
       datasource為資料來源
       renderRow為每列用資料產生的畫面
 ```
-EX:
-```
 
+EX:
+
+```
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
 class nativereact extends Component {
@@ -353,36 +379,39 @@ class nativereact extends Component {
 }
 ```
 
+# 產生APK
 
-#產生APK
-
-####1.使用JAVA工具產生keystore
+#### 1.使用JAVA工具產生keystore
 
 ```
-
 使用admin開啟cmd後cd到C:\Program Files\Java\jre7\bin
 ```
+
 再來輸入
+
 ```
 keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
+
 之後依序填入資訊，記得:其中分別有兩次的密碼要你輸入，必須輸入不同的，最後會在bin資料夾下看到產生的keystore
 
-####2.之後把剛才產生的keystore檔案放在react專案下的android\app路徑資料夾內
+#### 2.之後把剛才產生的keystore檔案放在react專案下的android\app路徑資料夾內
 
-####3.修改android資料夾下的gradle.properties檔案
+#### 3.修改android資料夾下的gradle.properties檔案
 
 將星號改為你剛才輸入的store與key的密碼
-````
+
+```
 MYAPP_RELEASE_STORE_FILE=my-release-key.keystore
 MYAPP_RELEASE_KEY_ALIAS=my-key-alias
 MYAPP_RELEASE_STORE_PASSWORD=*****
 MYAPP_RELEASE_KEY_PASSWORD=*****
-````
+```
 
-####4.在android/app/build.gradle 檔案中新增
+#### 4.在android/app/build.gradle 檔案中新增
 
 1.先加入整個signingConfig如下
+
 ```
 signingConfigs {
         release {
@@ -406,6 +435,7 @@ signingConfigs {
 ```
 
 加完後類似如下
+
 ```
 ...
 android {
@@ -429,22 +459,23 @@ android {
 ...
 ```
 
-####5.最後
+#### 5.最後
 
-先cd android 
+先cd android
 
 之後輸入gradlew assembleReleas
 
 即可
 
-###6.確認與安裝
+### 6.確認與安裝
 
 在C:\Users\yicheng\reactNative2\android\app\build\outputs\apk
 
 即可發現產生了app-release.apk 檔案
 
-(如產生的檔案為unsign，須確認上述的config內容是否正確)
+\(如產生的檔案為unsign，須確認上述的config內容是否正確\)
 
 之後可直接把該apk放入手機安裝及可
 
-或是輸入`gradlew installRelease`會直接安裝在模擬器(記得先把之前dev時安裝在上面的app刪除，否則無法安裝)
+或是輸入`gradlew installRelease`會直接安裝在模擬器\(記得先把之前dev時安裝在上面的app刪除，否則無法安裝\)
+
