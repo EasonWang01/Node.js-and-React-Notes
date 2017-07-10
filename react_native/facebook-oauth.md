@@ -302,7 +302,6 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('AwesomeProject05', () => AwesomeProject05);
-
 ```
 
 
