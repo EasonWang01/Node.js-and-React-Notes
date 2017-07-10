@@ -66,6 +66,8 @@ OT RELOAD SERVER)
 3.參考此篇 設定genymotion android SDK path
 
 http://stackoverflow.com/questions/34692210/react-native-errortimeout-getting-device-list-when-running-hello-world-on-ubunt
+
+4.如果模擬器有開但在run-android時卻說找不到模擬器，可以先跑react-native start之後會出現問題在哪
 ```
 
 # 2.React native專案檔案介紹
