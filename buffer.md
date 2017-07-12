@@ -61,9 +61,5 @@ buf.writeUIntBE(12345, 0 , 4)
 
 > 根據官方說明:Where to start reading. Must satisfy:`0 <= offset <= buf.length - 4`
 
-所以如果輸入以下會產生錯誤buf.writeUIntBE\(12345, 0 , 1\)
-
-
-
-
+所以如果輸入以下會產生錯誤buf.writeUIntBE\(12345, 0 , 1\)，因為6位的buffer-4後至少要offset大於等於2
 
