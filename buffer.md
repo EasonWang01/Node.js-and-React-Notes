@@ -16,6 +16,10 @@ Little Endian的系統：
 存到記憶體會變成 0x78 0x56 0x34 0x12，最低位元組在最低位元，最高位元組在最高位元，反序排列
 ```
 
+# \#操作
+
+
+
 buf會被分配隨機buffer
 
 ```
@@ -62,4 +66,32 @@ buf.writeUIntBE(12345, 0 , 4)
 > 根據官方說明:Where to start reading. Must satisfy:`0 <= offset <= buf.length - 4`
 
 所以如果輸入以下會產生錯誤buf.writeUIntBE\(12345, 0 , 1\)，因為6位的buffer-4後至少要offset大於等於2
+
+
+
+
+
+#### \#讀取
+
+試試看以下
+
+```
+buf = Buffer.from([0, 0, 0, 5]);
+<Buffer 00 00 00 05>
+
+
+> buf.readInt32BE(3,4).toString(16)
+'5000000'
+> buf.readInt32BE(2,4).toString(16)
+'50000'
+> buf.readInt32BE(1,4).toString(16)
+'500'
+> buf.readInt32BE(0,4).toString(16)
+'5'
+> buf.readInt32BE(4,4).toString(16)
+'0'
+
+```
+
+
 
