@@ -90,6 +90,7 @@
 * [CI  with Gitlab&Jenkins](ci--with-gitlabjenkins.md)
 * [swagger](swagger.md)
 * [Javascript 實用Lib](javascript-實用lib.md)
+* [Async Await](async-await.md)
 * [ES8 Async](es8-async.md)
 * [AWS lambda ](aws-lambda.md)
 * [Remote edit](remote-edit.md)
@@ -99,5 +100,4 @@
 * [LineBot](linebot.md)
 * [PM2部署](pm2bu-shu.md)
 * [i18n](i18n.md)
-* [Async Await](async-await.md)
 
