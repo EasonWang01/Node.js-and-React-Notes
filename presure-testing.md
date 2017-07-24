@@ -82,3 +82,27 @@ ab -k -r -n 600000 -c 20000 -H "Host: yourip.com" www.target.com.tw/
 
 之後hey會在go資料夾裡面的bin內
 
+
+
+# 4.Siege
+
+安裝:
+
+```
+apt-get install siege
+```
+
+文件:
+
+https://www.joedog.org/siege-manual/
+
+修改config，輸入以下
+
+```
+siege.config
+```
+
+
+
+
+
