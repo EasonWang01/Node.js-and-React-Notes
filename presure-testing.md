@@ -25,7 +25,7 @@ webbench -c 5000 -t 120 <url>
 
 # 2.使用Apache Benchmark\(ab\)
 
-文件: https://httpd.apache.org/docs/2.4/programs/ab.html
+文件: [https://httpd.apache.org/docs/2.4/programs/ab.html](https://httpd.apache.org/docs/2.4/programs/ab.html)
 
 下載: [https://httpd.apache.org/download.cgi](https://httpd.apache.org/download.cgi)
 
@@ -33,15 +33,11 @@ webbench -c 5000 -t 120 <url>
  sudo apt-get install apache2-utils
 ```
 
-
-
-使用: 
+使用:
 
 ```
 ab -k -n 50000 -c 9000 -r <url>
 ```
-
-
 
 > 打https會ssl handshake failed
 
@@ -65,7 +61,15 @@ ulimit -n 60000
 
 ```
 sysctl -w net.ipv4.tcp_timestamps=1  
-sysctl -w net.ipv4.tcp_tw_recycle=1 
+sysctl -w net.ipv4.tcp_tw_recycle=1
+```
+
+將請求來源地址更換
+
+EX:
+
+```
+ab -k -r -n 600000 -c 20000 -H "Host: yourip.com" www.target.com.tw/
 ```
 
 # 3.使用hey\(written in Golang\)
