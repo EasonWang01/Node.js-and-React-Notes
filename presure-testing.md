@@ -25,15 +25,23 @@ webbench -c 5000 -t 120 <url>
 
 # 2.使用Apache Benchmark\(ab\)
 
-[https://httpd.apache.org/download.cgi](https://httpd.apache.org/download.cgi)
+文件: https://httpd.apache.org/docs/2.4/programs/ab.html
+
+下載: [https://httpd.apache.org/download.cgi](https://httpd.apache.org/download.cgi)
 
 ```
  sudo apt-get install apache2-utils
 ```
 
+
+
+使用: 
+
 ```
 ab -k -n 50000 -c 9000 -r <url>
 ```
+
+
 
 > 打https會ssl handshake failed
 
@@ -53,7 +61,12 @@ ab -c 19000 -n 220000 -r 114.28.22.129/
 ulimit -n 60000
 ```
 
+出現Cannot assign requested address
 
+```
+sysctl -w net.ipv4.tcp_timestamps=1  
+sysctl -w net.ipv4.tcp_tw_recycle=1 
+```
 
 # 3.使用hey\(written in Golang\)
 
