@@ -49,5 +49,44 @@ function loginPageReducer(state = initialState, action) {
 }
 ```
 
+最後寫sagas 的function與 watcher
+
+```js
+
+export function* userLoginEnter(action) {
+  try {
+    const payload = yield new Promise(resolve => {
+      callApi('post', 'login', {
+        password: action.payload.password,
+        groupId: action.payload.groupId,
+        userId: action.payload.userId,
+        simpleLogin: false,
+        appId: "we6"
+      }, (response) => { resolve(response); });
+    });
+    yield put(userLogin(payload));
+  } catch (err) {
+    console.error(`userLogin saga error, err msg => ${err}`);
+  }
+}
+
+
+export function* watchUserLogin() {
+  yield takeLatest(USER_LOGIN_ENTER, userLoginEnter);
+}
+
+export default [
+  watchUserLogin
+];
+```
+
+
+
+記得要在store.js  run
+
+```js
+sagaMiddleware.run(watchUserLogin);
+```
+
 
 
