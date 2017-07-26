@@ -52,7 +52,6 @@ function loginPageReducer(state = initialState, action) {
 最後寫sagas 的function與 watcher
 
 ```js
-
 export function* userLoginEnter(action) {
   try {
     const payload = yield new Promise(resolve => {
@@ -79,8 +78,6 @@ export default [
   watchUserLogin
 ];
 ```
-
-
 
 記得要在store.js  run
 
