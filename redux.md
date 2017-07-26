@@ -1515,7 +1515,7 @@ export default store
 PS:
 
 在action.js內可以直接調用store的所有方法，因為我們action是由store發出的  
-ex:\`store.dispatch\(action.toggleTodo\(a.id\)\);\`\`\`
+ex:`store.dispatch(action.toggleTodo(a.id));`
 
 # React-router-redux
 
