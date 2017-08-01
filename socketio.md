@@ -278,3 +278,11 @@ io.on('connection', function(socket) {
 });
 ```
 另外client端的cookie會在websocket連線時自動送到server
+
+
+
+# 注意事項
+
+```
+如果有時更新websocket的code卻發現emit還是只有舊的有反應，則可能是舊的socket連線沒斷開
+```
