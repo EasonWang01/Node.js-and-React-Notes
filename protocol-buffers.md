@@ -18,7 +18,15 @@
 
 [https://grpc.io/grpc/node/index.html](https://grpc.io/grpc/node/index.html)
 
-範例:
+
+
+
+
+# 範例:
+
+https://github.com/EasonWang01/gRPC-Example
+
+
 
 getInfo.proto
 
