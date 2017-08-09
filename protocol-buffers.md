@@ -18,11 +18,7 @@
 
 [https://grpc.io/grpc/node/index.html](https://grpc.io/grpc/node/index.html)
 
-
-
 範例:
-
-
 
 getInfo.proto
 
@@ -31,7 +27,6 @@ syntax = "proto3";
 
 package getInfo;
 
-// The greeting service definition.
 service getInfoService {
   rpc getAccountBalance (account) returns (payload) {}
   rpc getLastestBlock (empty) returns (payload) {}
@@ -51,7 +46,6 @@ message empty {}
 server.js
 
 ```js
-
 const PROTO_PATH = './protos/getInfo.proto';
 
 const grpc = require('grpc');
@@ -60,7 +54,7 @@ const https = require('https');
 const getInfo_proto = grpc.load(PROTO_PATH).getInfo;
 
 /**
- * Implements the SayHello RPC method.
+ * Implements getAccountBalance RPC method.
  */
 function getAccountBalance(call, callback) {
   https.get({
@@ -102,7 +96,6 @@ function main() {
 }
 
 main();
-
 ```
 
 client.js
@@ -128,21 +121,15 @@ function main() {
 }
 
 main();
-
-
 ```
-
-
-
-
 
 # 注意
 
-> 1.  .proto文件內如果有RPC的參數不需要則不可以不寫，還是要寫一個空的message然後填入括號
+> 1. .proto文件內如果有RPC的參數不需要則不可以不寫，還是要寫一個空的message然後填入括號
 >
-> 2.  server 有新的RPC function記得要在server.addService 寫上
+> 2. server 有新的RPC function記得要在server.addService 寫上
 >
-> 3.  client呼叫的function如果不需要參數則還是要在第一個參數寫上空的{}  
+> 3. client呼叫的function如果不需要參數則還是要在第一個參數寫上空的{}
 >
 > ```
 > client.getLastestBlock({}, function(err, response) {
