@@ -56,3 +56,11 @@ keybindings.json
 
 
 
+8.選不同行的相同字
+
+```
+選字完後按下   command + d
+```
+
+
+
