@@ -18,15 +18,9 @@
 
 [https://grpc.io/grpc/node/index.html](https://grpc.io/grpc/node/index.html)
 
-
-
-
-
 # 範例:
 
-https://github.com/EasonWang01/gRPC-Example
-
-
+[https://github.com/EasonWang01/gRPC-Example](https://github.com/EasonWang01/gRPC-Example)
 
 getInfo.proto
 
@@ -62,7 +56,7 @@ const https = require('https');
 const getInfo_proto = grpc.load(PROTO_PATH).getInfo;
 
 /**
- * Implements getAccountBalance RPC method.
+ * Implements the SayHello RPC method.
  */
 function getAccountBalance(call, callback) {
   https.get({
@@ -96,6 +90,9 @@ function getLastestBlock(call, callback) {
 }
 
 
+
+
+
 function main() {
   var server = new grpc.Server();
   server.addService(getInfo_proto.getInfoService.service, { getAccountBalance, getLastestBlock });
@@ -114,22 +111,61 @@ var PROTO_PATH = './protos/getInfo.proto';
 var grpc = require('grpc');
 var getInfo_proto = grpc.load(PROTO_PATH).getInfo;
 
-function main() {
-  var client = new getInfo_proto.getInfoService('localhost:50051',
-                                       grpc.credentials.createInsecure());
+var client = new getInfo_proto.getInfoService('localhost:50051',
+  grpc.credentials.createInsecure());
+
+//Read command Line  
+const readline = require('readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question('What do you want to know? ', (answer) => {
+  switch (answer) {
+    case 'getAccountBalance':
+      getAccountBalance();
+      break;
+    case 'getLastestBlock':
+      getLastestBlock();
+      break;
+    default:
+      break;
+  }
+  rl.close();
+});
+
+
+
+function getAccountBalance() {
   var account;
   if (process.argv.length >= 3) {
     account = process.argv[2];
   } else {
     account = '12Vji8DJLgPEowfcEaGqjopueTCH9EsFim'; //default sample account
   }
-  client.getLastestBlock({}, function(err, response) {
-    console.log('Balance:', response);
+  client.getAccountBalance({ account }, function (err, response) {
+    console.log('Balance:', response.payload);
   });
 }
 
-main();
+
+function getLastestBlock() {
+  client.getLastestBlock({}, function (err, response) {
+    console.log('LastestBlock:', response.payload);
+  });
+}
 ```
+
+實驗步驟:
+
+1.node server
+
+2.node client
+
+3.彈出提示訊息後輸入，getAccountBalance或是getLastestBlock
+
+# 
 
 # 注意
 
