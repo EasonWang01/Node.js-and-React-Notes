@@ -73,11 +73,29 @@ docker build -t test/node-web-app .
 
 執行image
 
-\(意思為把Node.js server之8080port開放給外面電腦的49160，與開放Redis的6379\)
+\(意思為把Node.js server之8080port開放給外面電腦的49160，與開放Redis的6379給外面電腦的49161\)
+
+> 開啟瀏覽器localhost:49160即可看到
 
 ```
  docker run -p 49160:8080 49161:6379 test/node-web-app
 ```
 
+6.連線到Redis
 
+記得先進去container開啟Redis-server
+
+```
+docker ps
+```
+
+之後會顯示如下
+
+```
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS
+          PORTS                                              NAMES
+c7b4df8ebffb        test/node-web-app   "npm start"         11 minutes ago      Up 11 minu
+```
+
+然後用attach的方法進入docker的Process 之cli
 
