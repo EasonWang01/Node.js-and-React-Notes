@@ -122,11 +122,7 @@ const redis = require('redis')
   })
 ```
 
-
-
-
-
-# 把image搬到其他電腦
+# \#把image搬到其他電腦
 
 把最後面參數名字的image\(剛才tag名稱\)存成dockerImage壓縮檔
 
@@ -134,15 +130,19 @@ const redis = require('redis')
 docker save -o ./dockerImage test/node-web-app
 ```
 
-
-
 然後把此image壓縮檔移到在別台電腦及可讀取
-
-
 
 ```
  docker load -i ./dockerImage
 ```
 
+# \#PUSH Image到Docker Hub
 
+
+
+1.先到https://hub.docker.com/ 
+
+
+
+https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
 
