@@ -168,6 +168,12 @@ docker images
 docker tag bb38976d03cf yourhubusername/repositoryName
 ```
 
+6.
+
+```
+docker push yourhubusername/repositoryName
+```
+
 
 
 [https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)
