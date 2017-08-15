@@ -120,7 +120,28 @@ const redis = require('redis')
   client.on('ready', (res) => {
     console.log('ready');
   })
+```
 
+
+
+
+
+# 把image搬到其他電腦
+
+把最後面參數名字的image\(剛才tag名稱\)存成dockerImage壓縮檔
+
+```
+docker save -o ./dockerImage test/node-web-app
+```
+
+
+
+然後把此image壓縮檔移到在別台電腦及可讀取
+
+
+
+```
+ docker load -i ./dockerImage
 ```
 
 
