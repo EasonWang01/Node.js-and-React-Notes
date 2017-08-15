@@ -93,9 +93,35 @@ docker ps
 
 ```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS
-          PORTS                                              NAMES
+          PORTS                                              NxAMESe
 c7b4df8ebffb        test/node-web-app   "npm start"         11 minutes ago      Up 11 minu
 ```
 
-然後用attach的方法進入docker的Process 之cli
+然後用exec的方法進入docker的Process 之cli
+
+```
+docker exec -it c7b4df8ebffb /bin/bash
+```
+
+啟動Redis
+
+```
+redis-server
+```
+
+7.之後寫一個Node.js的程式來連Redis
+
+```js
+const redis = require('redis')
+  RDS_PORT = 49161,
+  RDS_HOST = '127.0.0.1',
+  client = redis.createClient(RDS_PORT, RDS_HOST,{});
+
+  client.on('ready', (res) => {
+    console.log('ready');
+  })
+
+```
+
+
 
