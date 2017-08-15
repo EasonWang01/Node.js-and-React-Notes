@@ -152,5 +152,23 @@ Create new repository
 docker login --username=<你的Dockerhub username> --password=<你的docker Hub密碼>
 ```
 
+4.
+
+查看你要push的image的ID
+
+```
+docker images
+```
+
+5.
+
+把ID配上你的repository名稱
+
+```
+docker tag bb38976d03cf yourhubusername/repositoryName
+```
+
+
+
 [https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)
 
