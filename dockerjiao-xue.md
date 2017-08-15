@@ -140,5 +140,7 @@ docker save -o ./dockerImage test/node-web-app
 
 1.先到[https://hub.docker.com/](https://hub.docker.com/)註冊帳號
 
+2.Create new repository
+
 [https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)
 
