@@ -138,9 +138,19 @@ docker save -o ./dockerImage test/node-web-app
 
 # \#PUSH Image到Docker Hub
 
-1.先到[https://hub.docker.com/](https://hub.docker.com/)註冊帳號
+1.
 
-2.Create new repository
+先到[https://hub.docker.com/](https://hub.docker.com/)註冊帳號
+
+2.
+
+Create new repository
+
+3.
+
+```
+docker login --username=<你的Dockerhub username> --password=<你的docker Hub密碼>
+```
 
 [https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)
 
