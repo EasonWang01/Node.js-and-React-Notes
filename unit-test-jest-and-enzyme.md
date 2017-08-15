@@ -38,7 +38,6 @@ describe('<HomePage />', () => {
     });
   });
 });
-
 ```
 
 action test
@@ -63,10 +62,7 @@ describe('Home Actions', () => {
     });
   });
 });
-
 ```
-
-
 
 Reducer test
 
@@ -86,8 +82,23 @@ describe('homeReducer', () => {
     expect(homeReducer(undefined, {})).toEqual(expectedResult);
   });
 });
-
 ```
 
 
+
+
+
+以下先安裝
+
+```
+npm install jest-cli -g
+```
+
+下面會每次檔案更動都跑test
+
+```
+"test:watch": "cross-env NODE_ENV=test jest --watchAll",
+```
+
+或是直接輸入jest跑一次test
 
