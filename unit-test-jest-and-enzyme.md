@@ -84,10 +84,6 @@ describe('homeReducer', () => {
 });
 ```
 
-
-
-
-
 以下先安裝
 
 ```
@@ -101,4 +97,6 @@ npm install jest-cli -g
 ```
 
 或是直接輸入jest跑一次test
+
+
 
