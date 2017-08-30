@@ -1,3 +1,13 @@
+# \# Install
+
+
+
+OSX: https://docs.docker.com/docker-for-mac/install/
+
+windows: https://kitematic.com/
+
+# 
+
 # 以下為Docker執行Redis與Node.js server並分別expose兩個PORT的範例
 
 1.新增package.json
@@ -173,8 +183,6 @@ docker tag bb38976d03cf yourhubusername/repositoryName
 ```
 docker push yourhubusername/repositoryName
 ```
-
-
 
 [https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)
 
