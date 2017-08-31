@@ -113,15 +113,23 @@ npm install npm@latest -g
 
 > npm link 也可在發布前直接把他家到Local督環境變數，但在windows會沒作用
 
-
-
 # 更新或復原npm版本
 
 \(把數字改為你要的版本即可\)
 
 ```
-npm install npm@4.6.1 
+npm install npm@4.6.1
 ```
+
+
+
+# 切換版本
+
+使用n 或nvm
+
+\(windows可能無法使用,所以可以用下面的方式\)
+
+windows: https://github.com/coreybutler/nvm-windows
 
 
 
