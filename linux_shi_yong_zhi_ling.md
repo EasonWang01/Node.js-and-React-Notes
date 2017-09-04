@@ -75,6 +75,17 @@ sudo lsof -nPi -sTCP:LISTEN
 lsof -i :port
 ```
 
+\(以下為給windows使用 \)
+
+```
+ C:\Users\username>netstat -o -n -a | findstr 0.0:3000
+   TCP    0.0.0.0:3000      0.0.0.0:0              LISTENING       3116
+
+C:\Users\username>taskkill /F /PID 3116
+```
+
+### 
+
 ### 複製資料夾並移動
 
 記得先mkdir
