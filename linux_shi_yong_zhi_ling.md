@@ -75,7 +75,7 @@ sudo lsof -nPi -sTCP:LISTEN
 lsof -i :port
 ```
 
-\(以下為給windows使用 \)
+\(以下為給windows使用並可關閉指定port的process \)
 
 ```
  C:\Users\username>netstat -o -n -a | findstr 0.0:3000
