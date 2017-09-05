@@ -140,9 +140,17 @@ app.use('*', function (req, res, next) {
 
 ![](/assets/asca.png)
 
-
-
 # \#瀏覽器跨域請求
+
+因為瀏覽器發出的請求會被限制同網域  不像後端server或是chrome plugin可以對其他網域請求
+
+所以我們可以用https://crossorigin.me這類的proxy服務
+
+
+
+> 如果是要像自己的server發request可以參考JSONP或CORS server
+
+
 
 ```js
   fetch('https://crossorigin.me/http://google.com',{
@@ -165,8 +173,6 @@ app.use('*', function (req, res, next) {
            return error.response.json();
        })
 ```
-
-
 
 
 
