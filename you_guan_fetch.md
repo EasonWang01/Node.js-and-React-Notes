@@ -140,3 +140,33 @@ app.use('*', function (req, res, next) {
 
 ![](/assets/asca.png)
 
+
+
+# \#瀏覽器跨域請求
+
+```js
+  fetch('https://crossorigin.me/http://google.com',{
+           method: 'GET',
+       })
+       .then((response) => {
+           if (response.status >= 200 && response.status < 300) {
+               return response.text()
+           } else {
+               var error = new Error(response.statusText)
+               error.response = response;
+               throw error;
+           }
+       })
+       .then((data) => {
+         console.log(data)
+       })
+       .catch(function(error) {
+           console.log('request failed', error);
+           return error.response.json();
+       })
+```
+
+
+
+
+

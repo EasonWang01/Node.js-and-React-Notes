@@ -80,7 +80,7 @@
   * [Shell Script 教學](linux_shi_yong_zhi_ling/shell-script-jiao-xue.md)
 * [Git 實用指令](git_chang_yong_zhi_ling.md)
 * [加上https](jia_shang_https.md)
-* [有關Fetch與axios](you_guan_fetch.md)
+* [有關Fetch與axios與跨域請求](you_guan_fetch.md)
 * [imgur API](imgur_api.md)
 * [JS 格式轉換](js_ge_shi_zhuan_huan.md)
 * [js trick](js_trick.md)
