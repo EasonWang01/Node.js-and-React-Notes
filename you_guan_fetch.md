@@ -4,7 +4,7 @@
 
 注意事項:
 
-1.使用json\(\)轉換
+1.使用json\(\)轉換或是其他型態轉換https://developer.mozilla.org/en-US/docs/Web/API/Body
 
 2.第二個then才拿得到資料，第一個then只是一個promise結果
 
