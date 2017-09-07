@@ -108,4 +108,5 @@
   * [cluster](cassandra/cluster.md)
 * [Distribute Web](distribute-web.md)
   * [Dat project](distribute-web/dat-project.md)
+  * [IPFS project](distribute-web/ipfs-project.md)
 
