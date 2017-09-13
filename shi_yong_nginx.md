@@ -115,10 +115,6 @@ server {
 }
 ```
 
-
-
-
-
 ## 可能錯誤
 
 1.[Nginx fails to stop and nginx.pid is missing](https://serverfault.com/questions/565339/nginx-fails-to-stop-and-nginx-pid-is-missing)
@@ -129,17 +125,16 @@ server {
  ps -ef |grep nginx
    會顯示如下
     www-data 16751     1  0 Jun19 ?        00:00:07 nginx: worker process
- 
+
  然後
- 
+
   sudo kill -9 16751
 
 
   重啟
-  
-  
-  sudo nginx
 
+
+  sudo nginx
 ```
 
 
