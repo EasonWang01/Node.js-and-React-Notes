@@ -30,10 +30,6 @@ ipfs add -r ./
 ipfs get <file hash>
 ```
 
-
-
-
-
 # JS-IPFS
 
 js 版本的IPFS
@@ -58,7 +54,6 @@ node.on('ready', () => {
     // process.exit()
   })
 })
-      
 ```
 
 下載
@@ -84,7 +79,17 @@ node.files.get(multihashStr, function (err, stream) {
 });
 ```
 
+記得要寫上以下 抓取錯誤
 
+```js
+node.on('error', (err) => {console.log(err)})
+```
 
+有時會出現以下錯誤
 
+```
+Error: can't lock file /home/.jsipfs/repo.lock: has non-zero size
+```
+
+刪除該lock檔案即可
 
