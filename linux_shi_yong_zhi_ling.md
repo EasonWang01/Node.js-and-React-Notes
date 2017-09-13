@@ -213,10 +213,12 @@ git push origin master
 # 讓程式在背景跑
 
 > 有時沒加sudo關掉後會斷了
+>
+> 或是記得執行nohub後要先ctrl+c離開然後再關閉視窗
 
 ```
-sudo nohub <command> &
+sudo nohup <command> &
 ```
 
-
+功能是接到任何離開SIGHUP訊號都不會離開  並且會產生log文件\(nohup.out\)
 
