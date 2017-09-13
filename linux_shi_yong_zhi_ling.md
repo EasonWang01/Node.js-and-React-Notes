@@ -210,5 +210,13 @@ git commit -m "Removed folder from repository"
 git push origin master
 ```
 
+# 讓程式在背景跑
+
+> 有時沒加sudo關掉後會斷了
+
+```
+sudo nohub <command> &
+```
+
 
 
