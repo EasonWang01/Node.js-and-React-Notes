@@ -27,8 +27,6 @@ cqlsh
 
 ![](/assets/analogy.jpg)
 
-
-
 # 使用
 
 ```
@@ -40,7 +38,7 @@ WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
 
 2.使用DB
  USE tutorialspoint;
- 
+
 3.新增Table
 CREATE TABLE emp(
    emp_id int PRIMARY KEY,
@@ -49,6 +47,10 @@ CREATE TABLE emp(
    emp_sal varint,
    emp_phone varint
    );
+
+4.確認Table
+select * from emp;
+
 ```
 
 
