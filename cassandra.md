@@ -1,5 +1,7 @@
 # \#安裝
 
+http://cassandra.apache.org/download/
+
 Linux\(Debian or Ubuntu\)
 
 ```
