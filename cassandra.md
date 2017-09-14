@@ -1,3 +1,20 @@
+# \#安裝
+
+Linux\(Debian or Ubuntu\)
+
+```
+echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list;
+curl https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -;
+sudo apt-get update;
+sudo apt-get install cassandra;
+// start
+sudo service cassandra start
+//check
+cqlsh
+```
+
+# 
+
 # 基礎操作
 
 1.輸入cqlsh進入command line
