@@ -119,7 +119,7 @@ sudo service apache2 restart
 
 ![](/assets/螢幕快照 2017-06-11 上午10.43.37.png)
 
-記得`目標標記 要輸入http-server`
+記得`目標標記 要輸入http-server  或是選擇apply to all也可`
 
 設定如下
 
