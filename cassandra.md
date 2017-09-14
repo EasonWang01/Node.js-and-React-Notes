@@ -50,13 +50,21 @@ CREATE TABLE emp(
 
 4.確認Table
 select * from emp;
+
+5.新增資料
+
+CREATE TABLE users(
+user_id int PRIMARY KEY,
+user_account text,
+user_password text,
+);
+
+INSERT INTO users (user_id, user_account, user_password) VALUES(1,'test123', '12345');
+
+
 ```
-
-
 
 # 預設cassandra只能讓Localhost連
 
-要更改可參考https://stackoverflow.com/questions/32258471/restricting-cassandra-to-localhost-only
-
-
+要更改可參考[https://stackoverflow.com/questions/32258471/restricting-cassandra-to-localhost-only](https://stackoverflow.com/questions/32258471/restricting-cassandra-to-localhost-only)
 
