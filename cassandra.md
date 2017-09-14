@@ -1,6 +1,6 @@
 # \#安裝
 
-http://cassandra.apache.org/download/
+[http://cassandra.apache.org/download/](http://cassandra.apache.org/download/)
 
 Linux\(Debian or Ubuntu\)
 
@@ -26,4 +26,30 @@ cqlsh
 2.基本結構
 
 ![](/assets/analogy.jpg)
+
+
+
+# 使用
+
+```
+cqlsh
+
+1.新增DB
+CREATE KEYSPACE tutorialspoint
+WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+
+2.使用DB
+ USE tutorialspoint;
+ 
+3.新增Table
+CREATE TABLE emp(
+   emp_id int PRIMARY KEY,
+   emp_name text,
+   emp_city text,
+   emp_sal varint,
+   emp_phone varint
+   );
+```
+
+
 
