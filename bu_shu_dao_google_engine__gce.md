@@ -127,13 +127,17 @@ sudo service apache2 restart
 
 ![](/assets/螢幕快照 2017-06-11 上午10.43.50.png)
 
-
-
 # \#gcloud
 
-VPS內的命令 可以
+VPS內的命令 可以操控VPS
 
+如權限不夠需先login
 
+```
+gcloud auth login
+```
+
+以下為新增防火牆範例
 
 ```
 gcloud compute firewall-rules create cassandra-rule --allow="tcp:9042,tcp:9160" --network="default" --description="Allow external Cassandra Thrift/CQL connections"
