@@ -50,8 +50,13 @@ CREATE TABLE emp(
 
 4.確認Table
 select * from emp;
-
 ```
+
+
+
+# 預設cassandra只能讓Localhost連
+
+要更改可參考https://stackoverflow.com/questions/32258471/restricting-cassandra-to-localhost-only
 
 
 
