@@ -222,3 +222,13 @@ sudo nohup <command> &
 
 功能是接到任何離開SIGHUP訊號都不會離開  並且會產生log文件\(nohup.out\)
 
+
+
+# OSX設定全域變數
+
+```
+vim /etc/paths
+```
+
+
+
