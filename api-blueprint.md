@@ -1,3 +1,5 @@
+# \# API Blueprint
+
 # 也是一種寫API 文件的工具
 
 [https://github.com/apiaryio/api-blueprint](https://github.com/apiaryio/api-blueprint)
@@ -10,11 +12,7 @@
 
 [https://github.com/apiaryio/api-blueprint/blob/master/API Blueprint Specification.md\#def-headers-section](https://github.com/apiaryio/api-blueprint/blob/master/API Blueprint Specification.md#def-headers-section)
 
-
-
 ## \#Example
-
-
 
 ```yaml
 FORMAT: 1A
@@ -38,9 +36,9 @@ which will return a `file hash`
 
             content-type: application/x-www-form-urlencoded
     + Body
-    
+
             data="{"name": "Adam", "height": "178cm"}"&password=123452
-            
+
 + Response 200 (application/x-www-form-urlencoded)
 
         Added file:<file hash>
@@ -59,9 +57,9 @@ which will return a `original content of the data`
 
             content-type: application/x-www-form-urlencoded
     + Body
-    
+
             hash=QmPJe1PJgKi6jS12Z96v8NZBPjSyBdGvqBqtkPgjCuhrEx&password=12345
-            
+
 + Response 200 (application/x-www-form-urlencoded)
 
         <Decrypted File content>
@@ -124,7 +122,6 @@ which will return a `original content of the data`
                     }
                 ]
             }
-
 ```
 
 
