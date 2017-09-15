@@ -1,7 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* Ｎode.js核心模組
 * [Node.js基本](chapter1.md)
 * [Buffer](buffer.md)
 * [文件操作](wen_jian_cao_zuo.md)
