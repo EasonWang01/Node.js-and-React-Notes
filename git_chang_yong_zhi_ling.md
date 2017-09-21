@@ -115,6 +115,24 @@ git checkout 分支名稱
 git commit --amend
 ```
 
+# \# 修改以前多次commit 說明
+
+https://help.github.com/articles/changing-a-commit-message/
+
+```
+git rebase -i HEAD~3
+```
+
+```
+//之後會進入vim如下
+
+pick e499d89 Delete CNAME
+reword 0c39034 Better README
+reword f7fde4a Change the commit message but push the same commit.
+
+//把要修改的前面從pick改為reword即可
+```
+
 # Git Reset
 
 ```
