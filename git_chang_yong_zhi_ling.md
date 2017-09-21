@@ -125,8 +125,6 @@ git reset --hard ORIG_HEAD  //返回reset前的內容
 git cherry-pick <sha1 hash>
 ```
 
-
-
 # Git revert
 
 可以返回上一次的提交 並且需要commit一次
