@@ -4,13 +4,11 @@ Google試算表 API
 
 以下為官方Node.js範例
 
-
-
-1.先到https://console.developers.google.com/flows/enableapi?apiid=sheets.googleapis.com
+1.先到[https://console.developers.google.com/flows/enableapi?apiid=sheets.googleapis.com](https://console.developers.google.com/flows/enableapi?apiid=sheets.googleapis.com)
 
 2.點選**Create credentials 然後選  OAuth client ID**
 
-3. 下載JSON然後改名為client\_secret.json
+1. 下載JSON然後改名為client\_secret.json
 
 4.npm install googleapi google-auth-library
 
@@ -19,8 +17,6 @@ Google試算表 API
 EX:
 
 ```js
-
-
 var fs = require('fs');
 var readline = require('readline');
 var google = require('googleapis');
@@ -142,10 +138,18 @@ function listMajors(auth) {
     }
   });
 }
-
 ```
 
 
+
+```
+Sheet1!A1:B2 refers to the first two cells in the top two rows of Sheet1.
+Sheet1!A:A refers to all the cells in the first column of Sheet1.
+Sheet1!1:2 refers to the all the cells in the first two rows of Sheet1.
+Sheet1!A5:A refers to all the cells of the first column of Sheet 1, from row 5 onward.
+A1:B2 refers to the first two cells in the top two rows of the first visible sheet.
+Sheet1 refers to all the cells in Sheet1.
+```
 
 
 
