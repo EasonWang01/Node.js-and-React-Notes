@@ -8,7 +8,7 @@ Google試算表 API
 
 2.點選**Create credentials 然後選  OAuth client ID**
 
-1. 下載JSON然後改名為client\_secret.json
+**3.**下載JSON然後改名為client\_secret.json
 
 4.npm install googleapi google-auth-library
 
@@ -141,6 +141,8 @@ function listMajors(auth) {
 ```
 
 
+
+Range可參考
 
 ```
 Sheet1!A1:B2 refers to the first two cells in the top two rows of Sheet1.
