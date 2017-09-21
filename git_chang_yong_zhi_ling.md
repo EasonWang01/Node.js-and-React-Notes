@@ -6,6 +6,12 @@
 gitk --all
 ```
 
+or 
+
+```
+npm install ungit -g
+```
+
 ### 刪除遠端分支
 
 ```
@@ -66,6 +72,9 @@ git reset --hard HEAD~1
 
 ```
 git stash
+git stash list //列出曾經stash過的東西
+git stash pop //把最近的stash套用 並從list刪除
+git stash clear // 清空stash list
 ```
 
 說明：你會發現跟reset hard類似，但他會把你的改變先儲存，之後可用`$ git stash apply`回復
@@ -83,7 +92,7 @@ git checkout 分支名稱
 
 # 有關submodule
 
-https://blog.wu-boy.com/2011/09/introduction-to-git-submodule/
+[https://blog.wu-boy.com/2011/09/introduction-to-git-submodule/](https://blog.wu-boy.com/2011/09/introduction-to-git-submodule/)
 
 [http://blog.johnsonlu.org/git-submodule/](http://blog.johnsonlu.org/git-submodule/)
 
