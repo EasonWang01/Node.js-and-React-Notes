@@ -107,13 +107,13 @@ git checkout 分支名稱
  git submodule update
 ```
 
-
-
 # Git Reset
 
 ```
 把之前的commit紀錄刪除
 git reset --hard HEAD^  //HEAD^指的是前一次  HEAD^^前兩次  以此類推
+
+git reset --hard ORIG_HEAD  //返回reset前的內容
 ```
 
 
