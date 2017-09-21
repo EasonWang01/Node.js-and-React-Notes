@@ -135,3 +135,14 @@ git revert HEAD //返回至上一次的提交  並且commit
 
 
 
+# Git Rebase
+
+```
+讓merge之後   圖表不顯示分支紀錄
+
+git rebase master
+git rebase --continue
+```
+
+
+
