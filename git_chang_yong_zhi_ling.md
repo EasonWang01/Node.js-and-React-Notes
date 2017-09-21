@@ -117,7 +117,9 @@ git commit --amend
 
 # \# 修改以前多次commit 說明
 
-https://help.github.com/articles/changing-a-commit-message/
+[https://help.github.com/articles/changing-a-commit-message/](https://help.github.com/articles/changing-a-commit-message/)
+
+https://git-scm.com/book/zh-tw/v1/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%AF%AB%E6%AD%B7%E5%8F%B2
 
 ```
 git rebase -i HEAD~3
