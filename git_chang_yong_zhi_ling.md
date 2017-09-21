@@ -107,6 +107,14 @@ git checkout 分支名稱
  git submodule update
 ```
 
+# 
+
+# \#修改上一次commit 的說明
+
+```
+git commit --amend
+```
+
 # Git Reset
 
 ```
@@ -132,8 +140,6 @@ git cherry-pick <sha1 hash>
 ```
 git revert HEAD //返回至上一次的提交  並且commit
 ```
-
-
 
 # Git Rebase
 
