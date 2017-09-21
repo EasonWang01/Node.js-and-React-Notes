@@ -146,6 +146,8 @@ git revert HEAD //返回至上一次的提交  並且commit
 ```
 讓merge之後   圖表不顯示分支紀錄
 
+// 加上 -i 為進入互動式模式
+
 git rebase master
 git rebase --continue
 ```
