@@ -117,8 +117,6 @@ git reset --hard HEAD^  //HEAD^指的是前一次  HEAD^^前兩次  以此類推
 git reset --hard ORIG_HEAD  //返回reset前的內容
 ```
 
-
-
 # Git cherry-pick
 
 把以前的commit檔案內容加入到現在的內容
@@ -128,6 +126,14 @@ git cherry-pick <sha1 hash>
 ```
 
 
+
+# Git revert
+
+可以返回上一次的提交 並且需要commit一次
+
+```
+git revert HEAD //返回至上一次的提交  並且commit
+```
 
 
 
