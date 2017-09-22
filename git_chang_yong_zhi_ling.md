@@ -119,7 +119,7 @@ git commit --amend
 
 [https://help.github.com/articles/changing-a-commit-message/](https://help.github.com/articles/changing-a-commit-message/)
 
-https://git-scm.com/book/zh-tw/v1/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%AF%AB%E6%AD%B7%E5%8F%B2
+[https://git-scm.com/book/zh-tw/v1/Git-工具-重寫歷史](https://git-scm.com/book/zh-tw/v1/Git-工具-重寫歷史)
 
 ```
 git rebase -i HEAD~3
@@ -171,6 +171,12 @@ git revert HEAD //返回至上一次的提交  並且commit
 git rebase master
 git rebase --continue
 ```
+
+
+
+# 不錯文章
+
+http://www.techug.com/post/10-tips-git-next-level.html
 
 
 
