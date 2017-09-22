@@ -140,6 +140,12 @@ function listMajors(auth) {
 }
 ```
 
+#### &gt; 執行後在console會產生網址 之後到那個網址會有hash 把它貼到console  之後本地電腦會產生憑證
+
+Ex: \Users\yi.w/.credentials/sheets.googleapis.com-nodejs-quickstart.json
+
+#### 
+
 #### \#Range可參考
 
 ```
@@ -175,11 +181,7 @@ https://www.googleapis.com/auth/drive |    Full, permissive scope to access all 
 
 #### \#寫入範例\(記得更改var scope\)
 
- 
-
 ```js
-
-
 var fs = require('fs');
 var readline = require('readline');
 var google = require('googleapis');
@@ -309,11 +311,8 @@ sheets.spreadsheets.values.update({
     console.log('%d cells updated.', result.updatedCells);
   }
 });
- 
+
 }
-
-
-
 ```
 
 
