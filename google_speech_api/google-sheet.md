@@ -140,7 +140,7 @@ function listMajors(auth) {
 }
 ```
 
-Range可參考
+#### \#Range可參考
 
 ```
 Sheet1!A1:B2 refers to the first two cells in the top two rows of Sheet1.
@@ -151,7 +151,28 @@ A1:B2 refers to the first two cells in the top two rows of the first visible she
 Sheet1 refers to all the cells in Sheet1.
 ```
 
-SCOPE
+#### SCOPE\(read write\)
 
-https://github.com/google/google-auth-library-nodejs/issues/168
+如出現
+
+```
+   [ { message: 'Request had insufficient authentication scopes.',
+       domain: 'global',
+       reason: 'forbidden' } ] }
+```
+
+[https://github.com/google/google-auth-library-nodejs/issues/168](https://github.com/google/google-auth-library-nodejs/issues/168)
+
+```
+value | describe
+---- | ---
+https://www.googleapis.com/auth/spreadsheets.readonly | Allows read-only access to the user's sheets and their properties.
+https://www.googleapis.com/auth/spreadsheets |	Allows read/write access to the user's sheets and their properties.
+https://www.googleapis.com/auth/drive.readonly |	Allows read-only access to the user's file metadata and file content.
+https://www.googleapis.com/auth/drive.file |	Per-file access to files created or opened by the app.
+https://www.googleapis.com/auth/drive |	Full, permissive scope to access all of a user's files. Request this scope only when it is strictly necessary.
+
+```
+
+
 
