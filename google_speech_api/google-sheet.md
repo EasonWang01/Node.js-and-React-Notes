@@ -167,6 +167,8 @@ Sheet1 refers to all the cells in Sheet1.
        reason: 'forbidden' } ] }
 ```
 
+更改SCOPE記得把電腦內的./credential 憑證刪除剛產生的
+
 [https://github.com/google/google-auth-library-nodejs/issues/168](https://github.com/google/google-auth-library-nodejs/issues/168)
 
 ```
