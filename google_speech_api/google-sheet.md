@@ -140,8 +140,6 @@ function listMajors(auth) {
 }
 ```
 
-
-
 Range可參考
 
 ```
@@ -153,5 +151,7 @@ A1:B2 refers to the first two cells in the top two rows of the first visible she
 Sheet1 refers to all the cells in Sheet1.
 ```
 
+SCOPE
 
+https://github.com/google/google-auth-library-nodejs/issues/168
 
