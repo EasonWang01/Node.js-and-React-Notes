@@ -145,3 +145,11 @@ gcloud compute firewall-rules create cassandra-rule --allow="tcp:9042,tcp:9160" 
 
 
 
+#### \#可以方便上傳下載檔案
+
+\(點選ssh網頁右上方的齒輪\)
+
+![](/assets/w3.png)
+
+
+
