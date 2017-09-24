@@ -1,6 +1,6 @@
 # 進程管理工具
 
-http://pm2.keymetrics.io/docs
+http://pm2.keymetrics.io/docs/usage/cluster-mode/
 
 #### \#PM2 教學
 
