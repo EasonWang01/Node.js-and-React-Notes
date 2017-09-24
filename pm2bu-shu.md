@@ -1,6 +1,6 @@
 # 進程管理工具
 
-#### #PM2 教學
+#### \#PM2 教學
 
 [http://pm2.keymetrics.io/docs/usage/application-declaration/](http://pm2.keymetrics.io/docs/usage/application-declaration/)
 
@@ -17,9 +17,6 @@ pm2 ecosystem
 ```
  pm2 start ecosystem.config.js --env production
 ```
-
-https://sakatu.com/
-https://rent.sakatu.com/
 
 
 
