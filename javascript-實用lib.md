@@ -42,7 +42,15 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 [https://github.com/spite/ccapture.js/](https://github.com/spite/ccapture.js/)
 
-https://github.com/Huddle/Resemble.js \(圖片比較\)
+[https://github.com/Huddle/Resemble.js](https://github.com/Huddle/Resemble.js) \(圖片比較\)
 
-https://github.com/Huddle/PhantomCSS \(css render比較測試\)
+[https://github.com/Huddle/PhantomCSS](https://github.com/Huddle/PhantomCSS) \(css render比較測試\)
+
+
+
+# 4.表單檢驗
+
+https://github.com/mailcheck/mailcheck \(mail提示\)
+
+
 
