@@ -8,13 +8,15 @@
 
 [https://www.youtube.com/watch?v=N1gJcVsGM\_g](https://www.youtube.com/watch?v=N1gJcVsGM_g)
 
-
-
 # \#shadowsocks
 
-https://shadowsocks.org/en/index.html
+[https://shadowsocks.org/en/index.html](https://shadowsocks.org/en/index.html)
 
+# \#KCPTUN
 
+https://github.com/xtaci/kcptun
+
+https://www.8dlive.com/post/371.html
 
 
 
