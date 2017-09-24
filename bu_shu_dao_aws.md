@@ -33,17 +33,9 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 > Load key "/Users/eason.wang/Downloads/Trading-Platform.pem": bad permissions  
 > Permission denied \(publickey\).
 
-
-
-
-
-
-
-# 其他AWS服務說明
+# \# 其他AWS服務說明
 
 > 可參考以下不錯文章
 
-http://ch-tseng.blogspot.tw/2015/04/amazon-aws.html?m=1
-
-
+[http://ch-tseng.blogspot.tw/2015/04/amazon-aws.html?m=1](http://ch-tseng.blogspot.tw/2015/04/amazon-aws.html?m=1)
 
