@@ -46,11 +46,15 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 [https://github.com/Huddle/PhantomCSS](https://github.com/Huddle/PhantomCSS) \(css render比較測試\)
 
-
-
 # 4.表單檢驗
 
-https://github.com/mailcheck/mailcheck \(mail提示\)
+[https://github.com/mailcheck/mailcheck](https://github.com/mailcheck/mailcheck) \(mail提示\)
+
+
+
+# 5.測試
+
+https://github.com/visionmedia/supertest \(http測試\)
 
 
 
