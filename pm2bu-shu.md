@@ -10,8 +10,12 @@ npm install pm2 -g
 
 ```
 pm2 start app.js //啟動
-npm restart <name or id>
-npm reload  <name or id>和restart類似 但可以達到0downtime
+
+pm2 restart <name or id>
+
+pm2 reload  <name or id>和restart類似 但可以達到0downtime
+
+pm2 monit //啟動pm2的即時監控視窗
 ```
 
 #### 
