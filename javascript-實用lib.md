@@ -36,13 +36,13 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 [https://github.com/getsentry/sentry](https://github.com/getsentry/sentry)
 
-
-
 # 3.螢幕截圖 錄影
 
-https://github.com/mgechev/jscapture/blob/master/src/index.js
+[https://github.com/mgechev/jscapture/blob/master/src/index.js](https://github.com/mgechev/jscapture/blob/master/src/index.js)
 
-https://github.com/spite/ccapture.js/
+[https://github.com/spite/ccapture.js/](https://github.com/spite/ccapture.js/)
 
+https://github.com/Huddle/Resemble.js \(圖片比較\)
 
+https://github.com/Huddle/PhantomCSS \(css render比較測試\)
 
