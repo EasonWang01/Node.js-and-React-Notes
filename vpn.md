@@ -1,2 +1,12 @@
-https://www.youtube.com/watch?v=N1gJcVsGM\_g
+# \#OPENVPN
+
+https://openvpn.net/
+
+https://stackoverflow.com/questions/32048832/node-js-programmatically-connect-to-a-vpn-or-route-http-requests-via-vpn
+
+
+
+# \#VPNBOOK
+
+[https://www.youtube.com/watch?v=N1gJcVsGM\_g](https://www.youtube.com/watch?v=N1gJcVsGM_g)
 
