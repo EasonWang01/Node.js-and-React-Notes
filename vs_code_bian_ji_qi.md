@@ -54,12 +54,12 @@ keybindings.json
 
 > 如果mac的shift+option+ F 沒反應，可以把所有plugin更新並重新啟動即可
 
-
-
 8.選不同行的相同字
 
 ```
 選字完後按下   command + d
+
+//windows  ctrl + d
 ```
 
 
