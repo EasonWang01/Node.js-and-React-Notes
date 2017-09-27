@@ -21,7 +21,7 @@ sudo bash -c 'cat
 
 debian的apt-get update   url位置 vim  /etc/apt/sources.list
 
-網路的router位置  vim /etc/resolv.conf  範例:nameserver  192.168.0.1
+dns位置  vim /etc/resolv.conf  範例:nameserver  192.168.0.1
 
 
 
