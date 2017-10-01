@@ -1,13 +1,13 @@
 # \#使用Expo
 
-可以不用安裝Xcode或android直接開發
+可以不用安裝Xcode或android直接開發，再跑起來之後可以用實機掃描QRCODE即會顯示在自己的手機上，或是下載genymotion即可顯示在模擬器，或`create-react-native-app run ios` 他會自動打開IOS模擬器
 
 安裝手冊[https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md)
 
 #### Android on OSX
 
 ```
-1.下載virtualBox 與 Genemotion
+1.下載virtualBox 與 Genymotion
 2.npm install create-react-native-app -g
 3.create-react-native-app my-app  & cd my-app
 4.create-react-native-app run android
