@@ -14,6 +14,8 @@ https://docs.expo.io/versions/v16.0.0/sdk/facebook.html#expofacebookloginwithrea
 
 安裝手冊[https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md)
 
+論壇:https://forums.expo.io/
+
 #### Android on OSX
 
 ```
