@@ -14,7 +14,7 @@ https://docs.expo.io/versions/v16.0.0/sdk/facebook.html#expofacebookloginwithrea
 
 安裝手冊[https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md)
 
-論壇:https://forums.expo.io/
+論壇:[https://forums.expo.io/](https://forums.expo.io/)
 
 #### Android on OSX
 
@@ -26,6 +26,12 @@ https://docs.expo.io/versions/v16.0.0/sdk/facebook.html#expofacebookloginwithrea
 ```
 
 > 可能會要你同意permission \(Draw over other apps 這時打勾後點上一頁即可
+
+#### Android on Windows
+
+```
+步驟和上面相同  只是要把genymotion的adb路徑加入
+```
 
 
 
