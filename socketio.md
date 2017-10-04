@@ -1,6 +1,6 @@
-#Websocket
+# Websocket
 
-####簡介
+#### 簡介
 
 WebSocket一種在單個 TCP 連線上進行全雙工通訊的協定
 
@@ -12,15 +12,63 @@ Ajax 喝水要拿起水杯，喝完要再放下
 
 Websocket 用吸管喝水，要喝時或喝太多要退回去杯子都不必再次拿起水杯
 
-####webSocket相關框架
+#### webSocket相關框架
 
-ws
-https://github.com/websockets/ws
+# \#ws
 
-engine.io https://github.com/socketio/engine.io
+####  [https://github.com/websockets/ws](https://github.com/websockets/ws)
 
+server.js
+
+```js
+const WebSocket = require('ws');
+
+const wss = new WebSocket.Server({ port: 3002 });
+
+wss.on('connection', function connection(ws) {
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+  });
+
+  ws.send('something');
+});
+```
+
+client.js
+
+```js
+const WebSocket = require('ws');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+const ws = new WebSocket('ws://35.190.233.55:3002');
+
+ws.on('open', function open() {
+  ws.send('something');
+});
+
+rl.on('line', (input) => {
+    console.log(`Received: ${input}`);
+    ws.send(input);
+  });
+
+ws.on('message', function incoming(data) {
+  console.log(data);
+});
+```
+
+#### 
+
+#### \#engine.io
+
+####  [https://github.com/socketio/engine.io](https://github.com/socketio/engine.io)
 
 這裡我們使用socket.io當教學範例
+
 # socket.io
 
 ```
@@ -46,7 +94,9 @@ http.listen(3000, function(){
   console.log('listening on *:3000');
 });
 ```
+
 index.html
+
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -59,15 +109,17 @@ index.html
     </script>
 </head>
 <body>
-    
+
 </body>
 </html>
 ```
+
 之後啟動 `node server.js`
 
 打開瀏覽器`localhost:3000`，並開啟開發人員工具的network觀察
 
-以下取自維基百科https://zh.wikipedia.org/wiki/WebSocket
+以下取自維基百科[https://zh.wikipedia.org/wiki/WebSocket](https://zh.wikipedia.org/wiki/WebSocket)
+
 ```
 Connection必須設定Upgrade，表示用戶端希望連線升級。
 Upgrade欄位必須設定Websocket，表示希望升級到Websocket協定。
@@ -79,7 +131,6 @@ Origin欄位是可選的，通常用來表示在瀏覽器中發起此Websocket�
 
 新增一個事件
 
-
 server.js
 
 ```
@@ -90,6 +141,7 @@ io.on('connection', function(socket){
   });
 });
 ```
+
 index.html
 
 ```
@@ -112,6 +164,7 @@ index.html
 </body>
 </html>
 ```
+
 可看到我們在client端的方框輸入文字後按送出，可於terminal中看到訊息
 
 接著
@@ -173,16 +226,14 @@ index.html
 </html>
 ```
 
-
->注意：socket.broadcast.emit會傳給所有connected user除了自己
-
+> 注意：socket.broadcast.emit會傳給所有connected user除了自己
 
 這時開啟第二個瀏覽器，並在文字框輸入後按送出，即可看到另一個瀏覽器產生文字
 
-
-#再複習一次，首先必須先再連線範圍作用域才可做事
+# 再複習一次，首先必須先再連線範圍作用域才可做事
 
 server.js
+
 ```
 io.on('connection',(socket) => {
   利用socket來做事
@@ -191,76 +242,77 @@ io.on('connection',(socket) => {
 
 client就是簡單使用on和emit
 
-#最基本兩種
+# 最基本兩種
+
 分別是`socket.on('事件名稱',cb)`和`socket.emit('事件名稱',cb)`
 
 server和client都一樣的用法
 
 `socket.broadcast.emit('user connected');`給所有連線人廣播
 
-#再來是房間部分
+# 再來是房間部分
 
-`socket.join('房間名稱')`讓client加入房間 
+`socket.join('房間名稱')`讓client加入房間
 
 `socket.leave('房間名稱')`讓client離開房間
 
-` socket.broadcast.to('房間名稱').emit('chat',{data: res});`給特定房間廣播訊息
+`socket.broadcast.to('房間名稱').emit('chat',{data: res});`給特定房間廣播訊息
 
 ---
-#簡單範例
+
+# 簡單範例
+
 server.js
-```
-export const socketio = (io, axios, config1) => {
 
-io.on('connection', function(socket){
-	console.log('a user connected');
+    export const socketio = (io, axios, config1) => {
 
-	//房間
-	socket.on('mainPage',() => {
-		socket.join('mainPage',() => {
-		  console.log('join main okok')
-			socket.leave('chatPage', () => {
-				console.log('leave chat');
-			})
-		});
-	})
-	socket.on('chatPage',() => {
-		socket.join('chatPage',() => {
-		  console.log('join chat')
-			socket.leave('mainPage', () => {
-				console.log('leave main')
-			});
-		});
-	})
+    io.on('connection', function(socket){
+        console.log('a user connected');
+
+        //房間
+        socket.on('mainPage',() => {
+            socket.join('mainPage',() => {
+              console.log('join main okok')
+                socket.leave('chatPage', () => {
+                    console.log('leave chat');
+                })
+            });
+        })
+        socket.on('chatPage',() => {
+            socket.join('chatPage',() => {
+              console.log('join chat')
+                socket.leave('mainPage', () => {
+                    console.log('leave main')
+                });
+            });
+        })
 
 
-  //事件
-  socket.on('chat',(res) => {
-    console.log(res);
-    socket.broadcast.to('chatPage').emit('chat',{data: res});
-    socket.emit('chat',{data: res})
-  })
+      //事件
+      socket.on('chat',(res) => {
+        console.log(res);
+        socket.broadcast.to('chatPage').emit('chat',{data: res});
+        socket.emit('chat',{data: res})
+      })
 
-	socket.on('postArticle', function(){
-		axios.get(`${config1.origin}/getArticle`)
-			.then(function(response){
-				socket.broadcast.to('mainPage').emit('addArticle', response.data);//broadcast傳給所有人除了自己
-				socket.emit('addArticle', response.data);//加上傳給自己的socket
-         //socket.broadcast.to(id).emit('my message', msg);
-			}).
-			catch(err => {
-				console.log(err);
-			})
-	});
-	socket.on('chat', (data) => {
-		console.log(data)
-	})
-});
-}
+        socket.on('postArticle', function(){
+            axios.get(`${config1.origin}/getArticle`)
+                .then(function(response){
+                    socket.broadcast.to('mainPage').emit('addArticle', response.data);//broadcast傳給所有人除了自己
+                    socket.emit('addArticle', response.data);//加上傳給自己的socket
+             //socket.broadcast.to(id).emit('my message', msg);
+                }).
+                catch(err => {
+                    console.log(err);
+                })
+        });
+        socket.on('chat', (data) => {
+            console.log(data)
+        })
+    });
+    }
 
-```
-
-###安全機制之token
+### 安全機制之token
 
 client端
 
@@ -277,12 +329,14 @@ io.on('connection', function(socket) {
 
 });
 ```
+
 另外client端的cookie會在websocket連線時自動送到server
-
-
 
 # 注意事項
 
 ```
 如果有時更新websocket的code卻發現emit還是只有舊的有反應，則可能是舊的socket連線沒斷開
 ```
+
+
+
