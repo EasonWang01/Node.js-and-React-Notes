@@ -29,9 +29,16 @@ https://docs.expo.io/versions/v16.0.0/sdk/facebook.html#expofacebookloginwithrea
 
 #### Android on Windows
 
+步驟和上面相同  之後  下載Android 的expo app然後掃描qr code
+
 ```
-步驟和上面相同  只是要把genymotion的adb路徑加入
+如果想用模擬器的方法
+必須要把genymotion 的setting 將 adb路徑加入
 https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md#using-genymotions-adb
+
+可參考https://stackoverflow.com/questions/35959350/react-native-android-genymotion-adb-server-didnt-ack
+
+所以必須安裝android SDK
 ```
 
 
