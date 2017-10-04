@@ -31,6 +31,7 @@ https://docs.expo.io/versions/v16.0.0/sdk/facebook.html#expofacebookloginwithrea
 
 ```
 步驟和上面相同  只是要把genymotion的adb路徑加入
+https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md#using-genymotions-adb
 ```
 
 
