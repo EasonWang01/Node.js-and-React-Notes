@@ -144,9 +144,13 @@ x-forwarded-for: 133.333.33.33, 122.146.89.8
 
 第一個是我們spoof的位置 第二個是原本client的真實ip
 
+也可用如下測試
 
+```
+curl http://35.190.233.54:3002/ -H 'X-Forwarded-For: 1.1.1.1' -H 'X-Real-IP: 2.2.2.2'
+```
 
 不錯的文章
 
-https://imququ.com/post/x-forwarded-for-header-in-http.html
+[https://imququ.com/post/x-forwarded-for-header-in-http.html](https://imququ.com/post/x-forwarded-for-header-in-http.html)
 
