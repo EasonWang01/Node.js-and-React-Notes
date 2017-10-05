@@ -33,13 +33,7 @@ console.log('Server running on port 3000.');
 將'Content-Type': 'text/plain' 改為'Content-Type': 'text/html'
 ```
 
-
-
 # \#取得remote ip
-
-
-
-
 
 > 注意 如果是在proxy後面 例如nginx
 
@@ -68,7 +62,6 @@ console.log('req.ip: ' + req.ip)
   }console.log('client IP is' + ip);
   res.end(`Your IP address is ${ip} and your source port is ${port}.`);
 }).listen(3004);
-                            
 ```
 
 會出現如下
@@ -79,6 +72,23 @@ socket remote Address: ::ffff:127.0.0.1
 req.connection.socket.remoteAddress: undefined
 req.ip: undefined
 client IP is::ffff:127.0.0.1
+```
+
+必須在nginx config加上
+
+```
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+```
+
+之後即會出現 x-forwarded-for的ip
+
+```
+x-forward for: 122.146.89.8
+socket remote Address: ::ffff:127.0.0.1
+req.connection.socket.remoteAddress: undefined
+req.ip: undefined
+client IP is122.146.89.8
 ```
 
 
