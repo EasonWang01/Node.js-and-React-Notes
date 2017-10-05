@@ -16,7 +16,8 @@ Websocket 用吸管喝水，要喝時或喝太多要退回去杯子都不必再�
 注意:
 
 ```
-一個websocket client連接其他websockt server後自己不可以再開啟websocket server接受其他client連線
+一個websocket client連接其他websocket server後
+自己不可以再開啟websocket server接受其他client連線
 ```
 
 #### webSocket相關框架
