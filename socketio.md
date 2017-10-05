@@ -8,13 +8,16 @@ WebSocket一種在單個 TCP 連線上進行全雙工通訊的協定
 
 簡單的比喻：
 
+```
 Ajax 喝水要拿起水杯，喝完要再放下
-
 Websocket 用吸管喝水，要喝時或喝太多要退回去杯子都不必再次拿起水杯
+```
 
+注意:
 
-
-
+```
+一個websocket client連接其他websockt server後自己不可以再開啟websocket server接受其他client連線
+```
 
 #### webSocket相關框架
 
