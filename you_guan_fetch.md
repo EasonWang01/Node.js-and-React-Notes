@@ -95,9 +95,25 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 [https://github.com/mzabriskie/axios/issues/376](https://github.com/mzabriskie/axios/issues/376)
 
+#### \#Get範例
+
+```js
+    axios.get('http://localhost:10001/test',{
+        params: {
+            ID: 12345
+          }
+    })
+    .then(function (response) {
+      // console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+```
+
 # 注意:
 
-如果是要發送cookie記得要加上 withCredentials: true` `
+如果是要發送cookie記得要加上 withCredentials: `true`
 
       axios({
         method,
