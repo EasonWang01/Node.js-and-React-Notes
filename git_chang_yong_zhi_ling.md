@@ -12,6 +12,12 @@ or
 npm install ungit -g
 ```
 
+### 取消git add .
+
+```
+git reset
+```
+
 ### 刪除遠端分支
 
 ```
@@ -175,8 +181,6 @@ git rebase --continue
 # Git Blame ./filename
 
 > 查看每行code是誰commit的
-
-
 
 # 其他不錯文章
 
