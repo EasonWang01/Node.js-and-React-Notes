@@ -95,9 +95,7 @@ req.ip: undefined
 client IP is122.146.89.8
 ```
 
-
-
-如果我們把上面的x-forwarded-for請求spoof 
+如果我們把上面的x-forwarded-for請求spoof
 
 改為其他IP
 
@@ -138,8 +136,6 @@ req.write(postData);
 req.end();
 ```
 
-
-
 之後nginx的x forwarded會出現如下
 
 ```
@@ -147,4 +143,10 @@ x-forwarded-for: 133.333.33.33, 122.146.89.8
 ```
 
 第一個是我們spoof的位置 第二個是原本client的真實ip
+
+
+
+不錯的文章
+
+https://imququ.com/post/x-forwarded-for-header-in-http.html
 
