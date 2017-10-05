@@ -35,6 +35,10 @@ console.log('Server running on port 3000.');
 
 # \#取得remote ip
 
+如果沒有proxy可用req.socket.remoteAddress 但如果有proxy的話req.socket.remoteAddress
+
+用瀏覽器發送請求如果server沒有在nginx的proxy後面會取不到`x-forwarded-for`
+
 > 注意 如果是在proxy後面 例如nginx
 
 ```js
@@ -92,4 +96,55 @@ client IP is122.146.89.8
 ```
 
 
+
+如果我們把上面的x-forwarded-for請求spoof 
+
+改為其他IP
+
+```js
+const querystring = require('querystring');
+const http = require('http');
+
+
+const options = {
+  hostname: '35.190.233.54' ,
+  port: 3002,
+  path: '/',
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'X-Forwarded-For':　'133.333.33.33',
+  }
+};
+
+const req = http.request(options, (res) => {
+  console.log(`STATUS: ${res.statusCode}`);
+  console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
+  res.setEncoding('utf8');
+  res.on('data', (chunk) => {
+    console.log(`BODY: ${chunk}`);
+  });
+  res.on('end', () => {
+    console.log('No more data in response.');
+  });
+});
+
+req.on('error', (e) => {
+  console.error(`problem with request: ${e.message}`);
+});
+
+// write data to request body
+req.write(postData);
+req.end();
+```
+
+
+
+之後nginx的x forwarded會出現如下
+
+```
+x-forwarded-for: 133.333.33.33, 122.146.89.8
+```
+
+第一個是我們spoof的位置 第二個是原本client的真實ip
 
