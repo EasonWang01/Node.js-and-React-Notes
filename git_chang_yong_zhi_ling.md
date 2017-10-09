@@ -159,6 +159,10 @@ git reset --hard ORIG_HEAD  //返回reset前的內容
 git cherry-pick <sha1 hash>
 ```
 
+一次pick多個commit
+
+https://stackoverflow.com/questions/1994463/how-to-cherry-pick-a-range-of-commits-and-merge-into-another-branch/1994491\#1994491
+
 # Git revert
 
 可以返回上一次的提交 並且需要commit一次
