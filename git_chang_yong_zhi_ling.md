@@ -182,6 +182,17 @@ git rebase --continue
 
 > 查看每行code是誰commit的
 
+# Merge以前的commit
+
+```
+因為merge以前的commit通常會認為歷史一樣 所以要用別的方法
+可用cherry-pick或是format-patch打包舊的commit再apply(am)
+```
+
+https://stackoverflow.com/questions/46638741/git-add-code-from-old-commit
+
+
+
 # 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
