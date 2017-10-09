@@ -161,7 +161,7 @@ git cherry-pick <sha1 hash>
 
 一次pick多個commit
 
-https://stackoverflow.com/questions/1994463/how-to-cherry-pick-a-range-of-commits-and-merge-into-another-branch/1994491\#1994491
+[https://stackoverflow.com/questions/1994463/how-to-cherry-pick-a-range-of-commits-and-merge-into-another-branch/1994491\#1994491](https://stackoverflow.com/questions/1994463/how-to-cherry-pick-a-range-of-commits-and-merge-into-another-branch/1994491#1994491)
 
 # Git revert
 
@@ -194,6 +194,16 @@ git rebase --continue
 ```
 
 [https://stackoverflow.com/questions/46638741/git-add-code-from-old-commit](https://stackoverflow.com/questions/46638741/git-add-code-from-old-commit)
+
+# Git shallow glone
+
+只把特定深度數字內的commit一起clone到本地
+
+```
+使用git clone --depth <深度 num> <url>
+```
+
+https://www.perforce.com/blog/git-beyond-basics-using-shallow-clones
 
 # 其他不錯文章
 
