@@ -1,10 +1,10 @@
 # \# Install
 
+OSX: [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/docker-for-mac/install/)
 
+windows: [https://kitematic.com/](https://kitematic.com/)
 
-OSX: https://docs.docker.com/docker-for-mac/install/
-
-windows: https://kitematic.com/
+https://store.docker.com/search?type=edition&offering=community
 
 # 
 
