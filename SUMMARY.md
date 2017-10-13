@@ -41,6 +41,7 @@
   * [限制螢幕垂直與水平](react_native/portrait.md)
   * [Facebook OAUTH](react_native/facebook-oauth.md)
   * [NativeBase UI](react_native/nativebase-ui.md)
+  * [Expo with Firebase](react_native/expo-with-firebase.md)
 * [import\_export\_module.exports 模組化](importexport_module_exports_mo_zu_hua.md)
 * [使用webpack](shi_yong_webpack.md)
 * [使用Babel](babel.md)
