@@ -4,9 +4,7 @@ Expo可以直接使用js的SDK在React Native內和firebase溝通
 
 [https://docs.expo.io/versions/latest/guides/using-firebase.html](https://docs.expo.io/versions/latest/guides/using-firebase.html)
 
-https://firebase.google.com/docs/database/web/read-and-write
-
-
+[https://firebase.google.com/docs/database/web/read-and-write](https://firebase.google.com/docs/database/web/read-and-write)
 
 Ex:
 
@@ -55,8 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
 ```
 
-
+即可在此看到https://console.firebase.google.com/project/test-214e1/database/data/
 
