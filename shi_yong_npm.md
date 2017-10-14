@@ -121,15 +121,19 @@ npm install npm@latest -g
 npm install npm@4.6.1
 ```
 
-
-
 # 切換版本
 
 使用n 或nvm
 
 \(windows可能無法使用,所以可以用下面的方式\)
 
-windows: https://github.com/coreybutler/nvm-windows
+windows: [https://github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows)
+
+# 查看套件以前發布過的版本
+
+```
+npm view connect
+```
 
 
 
