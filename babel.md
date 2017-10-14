@@ -72,3 +72,15 @@ lib為來源要compile  的server 檔案，dist為compile後會產生的資料�
 
 [http://www.ruanyifeng.com/blog/2016/01/babel.html](http://www.ruanyifeng.com/blog/2016/01/babel.html)
 
+
+
+# 可直接加到html的polyfill
+
+之後不用compile可直接使用ES6,7,8以上新功能
+
+https://github.com/zloirock/core-js
+
+https://cdnjs.cloudflare.com/ajax/libs/core-js/2.5.1/core.min.js
+
+
+
