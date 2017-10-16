@@ -101,7 +101,10 @@ axios.post(API_HOST+'/api/Member/GetQAList',
     axios.get('http://localhost:10001/test',{
         params: {
             ID: 12345
-          }
+          },
+        headers: {
+          Authorization: 'token ' + localStorage.getItem('t')
+        }
     })
     .then(function (response) {
       // console.log(response);
