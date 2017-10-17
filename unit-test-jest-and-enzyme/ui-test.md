@@ -1,3 +1,13 @@
+# \#跨平台測試
+
+https://saucelabs.com/beta/dashboard/manual
+
+https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Automated\_testing
+
+
+
+# 
+
 # [GoogleChrome](https://github.com/GoogleChrome)/[**puppeteer**](https://github.com/GoogleChrome/puppeteer)
 
 安裝:[https://github.com/GoogleChrome/puppeteer](https://github.com/GoogleChrome/puppeteer)
