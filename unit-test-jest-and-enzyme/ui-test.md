@@ -12,5 +12,22 @@
 const browser = await puppeteer.launch({headless: false});
 ```
 
+Example:
+
+```js
+const puppeteer = require('puppeteer');
+(async () => {
+  const browser = await puppeteer.launch({ headless: false });
+  const page = await browser.newPage();
+  await page.goto('https://example.com');
+  await page.goto('https://google.com')
+  const hg = await page.$eval('.gb_P', el => el.innerHTML);
+  console.log(hg)
+  await page.type('#lst-ib', 'Hello', {delay: 100});
+  await page.click('#gsri_ok0')
+  await page.screenshot({ path: 'example.png' });
+})();
+```
+
 
 
