@@ -1,14 +1,12 @@
 # \#跨平台測試
 
-https://saucelabs.com/beta/dashboard/manual
+[https://saucelabs.com/beta/dashboard/manual](https://saucelabs.com/beta/dashboard/manual)
 
-https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Automated\_testing
-
-
+[https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Automated\_testing](https://developer.mozilla.org/zh-TW/docs/Learn/Tools_and_testing/Cross_browser_testing/Automated_testing)
 
 # 
 
-# [GoogleChrome](https://github.com/GoogleChrome)/[**puppeteer**](https://github.com/GoogleChrome/puppeteer)
+# \#[GoogleChrome](https://github.com/GoogleChrome)/[**puppeteer**](https://github.com/GoogleChrome/puppeteer)
 
 安裝:[https://github.com/GoogleChrome/puppeteer](https://github.com/GoogleChrome/puppeteer)
 
@@ -38,6 +36,30 @@ const puppeteer = require('puppeteer');
   await page.screenshot({ path: 'example.png' });
 })();
 ```
+
+
+
+
+
+
+
+# \#nightmare
+
+https://github.com/segmentio/nightmare
+
+
+
+# \#phantomjs
+
+http://phantomjs.org/quick-start.html
+
+
+
+# \#casper.js
+
+http://casperjs.org/
+
+
 
 
 
