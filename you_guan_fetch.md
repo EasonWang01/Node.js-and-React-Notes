@@ -191,3 +191,41 @@ app.use('*', function (req, res, next) {
 
 
 
+# 下載檔案
+
+記得加上
+
+```js
+responseType: "blob"
+```
+
+```js
+axios.post('https://test/export/file', {},
+      {
+        responseType: "blob",
+        headers: {
+          Authorization: 'token ' + localStorage.getItem('t')
+        }
+      }).then(d => {
+        console.log(d.data)
+        var saveByteArray = (function () {
+          var a = document.createElement("a");
+          document.body.appendChild(a);
+          a.style = "display: none";
+          return function (data, name) {
+            var blob = new Blob(data, { type: "application/xlsx" }),
+              url = window.URL.createObjectURL(blob);
+              console.log(url)
+            a.href = url;
+            a.download = name;
+            a.click();
+            window.URL.revokeObjectURL(url);
+          };
+        }());
+
+        saveByteArray([d.data], 'example.xlsx');
+      }).catch(err => { console.log(err) })
+```
+
+
+
