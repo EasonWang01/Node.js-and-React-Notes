@@ -4,7 +4,7 @@
 
 [https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Automated\_testing](https://developer.mozilla.org/zh-TW/docs/Learn/Tools_and_testing/Cross_browser_testing/Automated_testing)
 
-https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Your\_own\_automation\_environment
+[https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Your\_own\_automation\_environment](https://developer.mozilla.org/zh-TW/docs/Learn/Tools_and_testing/Cross_browser_testing/Your_own_automation_environment)
 
 # 
 
@@ -51,7 +51,65 @@ const puppeteer = require('puppeteer');
 
 # \#nightmare
 
+\(使用electron當作介面\)
+
 [https://github.com/segmentio/nightmare](https://github.com/segmentio/nightmare)
+
+
+
+> 異步需要參考如下:
+
+https://github.com/rosshinkley/nightmare-examples/blob/master/docs/common-pitfalls/async-operations-loops.md
+
+```js
+var Nightmare = require('nightmare'),
+  nightmare = Nightmare({
+    show: true
+  });
+
+nightmare
+  //load a url
+  .goto('http://localhost:5081')
+  //simulate typing into an element identified by a CSS selector
+  //here, Nightmare is typing into the search bar
+  .type('#username', 'daniel06')
+  .type('#password', 'qwe123')
+  .click('#loginBTN')
+  .wait(1000)
+  .click('#agree_btn')
+
+  function runplay(nightmare, gametype){
+    nightmare
+    .wait(1000)
+    .click(gametype)
+    .wait(1500)
+    .click('#auto_select')
+    .wait(1000)
+    .click('#bet_btn')
+    .wait(1000)
+    .click('#ok_btn')
+    .wait(1500)
+    .click('#other_btn')
+  }
+
+    runplay(nightmare, '#UUFFC');
+    runplay(nightmare, '#UUSSC');
+    runplay(nightmare, '#UU11X5');
+    runplay(nightmare, '#TCP3P5');
+    runplay(nightmare, '#JSK3');
+  nightmare
+  //end the Nightmare instance along with the Electron instance it wraps
+
+  //run the queue of commands specified
+  .run(function(error, result) {
+    if (error) {
+      console.error(error);
+    } else {
+      console.log(result);
+    }
+  });
+
+```
 
 # \#phantomjs
 

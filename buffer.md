@@ -18,8 +18,6 @@ Little Endian的系統：
 
 # \#操作
 
-
-
 buf會被分配隨機buffer
 
 ```
@@ -67,10 +65,6 @@ buf.writeUIntBE(12345, 0 , 4)
 
 所以如果輸入以下會產生錯誤buf.writeUIntBE\(12345, 0 , 1\)，因為6位的buffer-4後至少要offset大於等於2
 
-
-
-
-
 #### \#讀取
 
 試試看以下
@@ -90,7 +84,6 @@ buf = Buffer.from([0, 0, 0, 5]);
 '5'
 > buf.readInt32BE(4,4).toString(16)
 '0'
-
 ```
 
 
