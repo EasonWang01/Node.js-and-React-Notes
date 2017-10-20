@@ -134,6 +134,8 @@ describe('test duckduckgo search results', () => {
 });
 ```
 
+https://segment.com/blog/ui-testing-with-nightmare/
+
 # \#phantomjs
 
 [http://phantomjs.org/quick-start.html](http://phantomjs.org/quick-start.html)
