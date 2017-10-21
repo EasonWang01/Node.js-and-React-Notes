@@ -1,11 +1,9 @@
 # React
 
-1.  
-建議react 和react-dom相同版本才比較不會有問  
-[https://github.com/facebook/react/issues/8588\#issuecomment-267596448](https://github.com/facebook/react/issues/8588#issuecomment-267596448)
+1. 建議react 和react-dom相同版本才比較不會有問  
+   [https://github.com/facebook/react/issues/8588\#issuecomment-267596448](https://github.com/facebook/react/issues/8588#issuecomment-267596448)
 
-2.  
-如果使用`create-react-app`，如果套件在index.html引入須在使用套件時加上`window`
+2. 如果使用`create-react-app`，如果套件在index.html引入須在使用套件時加上`window`
 
 基礎
 
@@ -109,7 +107,7 @@ class App extends baseComponent{
 更多有關ES5 react to ES6 or ES7  
 [http://cheng.logdown.com/posts/2015/09/29/converting-es5-react-to-es6](http://cheng.logdown.com/posts/2015/09/29/converting-es5-react-to-es6)
 
-[http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8](http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8)
+[http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8](http://bbs.reactnative.cn/topic/15/react-react-native-的es5-es6写法对照表)
 
 有關class用法  
 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
@@ -1080,13 +1078,11 @@ export default TextInput
 
 # 使用React router
 
-1.  
-[https://github.com/EasonWang01/react-tutorial](https://github.com/EasonWang01/react-tutorial)
+1. [https://github.com/EasonWang01/react-tutorial](https://github.com/EasonWang01/react-tutorial)
 
 clone後到branch master開始進行
 
-2.  
-`npm install react-router`
+1. `npm install react-router`
 
 之後開啟client.js
 
@@ -1525,6 +1521,14 @@ decodeEntities = () => {
 if(typeof document !== 'undefined') {
   require ('./index.css');
 }
+```
+
+
+
+# &lt;input /&gt; 裡面的defaultValue如不顯示時 在屬性加個跟著value變動的key即可
+
+```
+<input key={this.state.detailName} defaultValue={this.state.detailName} className="descInput" />
 ```
 
 
