@@ -1,10 +1,6 @@
-可直接使用alert\('訊息'\)來進行
-
-
+可直接使用`alert('訊息')`
 
 另外也可以custom alert
-
-
 
 ```js
  import { Alert } from 'react-native';
