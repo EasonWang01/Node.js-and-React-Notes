@@ -1,5 +1,7 @@
 # \#使用Expo
 
+> npm建議版本 4.6.1  or 5.3.0  \(其他容易會有安裝package失敗問題\)
+
 可以不用安裝Xcode或android直接開發，再跑起來之後可以用實機掃描QRCODE即會顯示在自己的手機上，或是下載genymotion即可顯示在模擬器，或`create-react-native-app run ios` 他會自動打開IOS模擬器
 
 > 使用expo 在 eject前無法放入native的相關模組
@@ -40,6 +42,12 @@ https://github.com/react-community/create-react-native-app/blob/master/react-nat
 
 所以必須安裝android SDK
 ```
+
+
+
+
+
+> 之後開發時存檔建議按兩下  時常會發生按一下不會自動reload問題
 
 
 
