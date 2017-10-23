@@ -1,5 +1,7 @@
 # React Native
 
+> npm建議版本 4.6.1  or 5.3.0  \(其他容易會有安裝package失敗問題\)
+
 ---
 
 ### 1.windows環境建置
