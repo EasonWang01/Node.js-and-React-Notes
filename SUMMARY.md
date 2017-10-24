@@ -37,6 +37,7 @@
   * [router](react_native/router.md)
   * [原生組件](react_native/yuan-sheng-zu-jian.md)
     * [Alert](react_native/yuan-sheng-zu-jian/alert.md)
+    * [KeyboardAvoidingView](react_native/yuan-sheng-zu-jian/keyboardavoidingview.md)
   * [button](react_native/button.md)
   * [carousel\(輪播\)](react_native/carousel.md)
   * [Media query\(自適應\)](react_native/media-query.md)
