@@ -207,6 +207,8 @@ git rebase --continue
 
 # 假設最新的不再master branch 在其他HEAD\(ex: bc50ed4\)但想把master更新為bc50ed4
 
+https://stackoverflow.com/questions/2763006/make-the-current-git-branch-a-master-branch
+
 ```
 git checkout master
 
@@ -215,8 +217,6 @@ git reset --hard bc50ed4
 
 git push -f origin master
 ```
-
-
 
 # 其他不錯文章
 
