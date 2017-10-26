@@ -203,7 +203,20 @@ git rebase --continue
 使用git clone --depth <深度 num> <url>
 ```
 
-https://www.perforce.com/blog/git-beyond-basics-using-shallow-clones
+[https://www.perforce.com/blog/git-beyond-basics-using-shallow-clones](https://www.perforce.com/blog/git-beyond-basics-using-shallow-clones)
+
+# 假設最新的不再master branch 在其他HEAD\(ex: bc50ed4\)但想把master更新為bc50ed4
+
+```
+git checkout master
+
+git reset --hard bc50ed4
+// 把master資料替換為HEAD bc50ed4
+
+git push -f origin master
+```
+
+
 
 # 其他不錯文章
 
