@@ -60,6 +60,12 @@ $git pull origin master --allow-unrelated-histories
 ok
 ```
 
+## 移除遠端上一次的push
+
+```
+git push -f origin HEAD^:master
+```
+
 ## 取消上次commit且維持檔案內容
 
 ```
@@ -207,7 +213,7 @@ git rebase --continue
 
 # 假設最新的不再master branch 在其他HEAD\(ex: bc50ed4\)但想把master更新為bc50ed4
 
-https://stackoverflow.com/questions/2763006/make-the-current-git-branch-a-master-branch
+[https://stackoverflow.com/questions/2763006/make-the-current-git-branch-a-master-branch](https://stackoverflow.com/questions/2763006/make-the-current-git-branch-a-master-branch)
 
 ```
 git checkout master
