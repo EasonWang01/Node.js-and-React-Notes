@@ -8,14 +8,26 @@ npm install
 
 npm install  -g \(使用後可在cmd的任何路徑輸入package名稱執行，但如果是想在js檔內直接使用require的話，要再把環境變數加上才行\)\(如此即可不用在每個專案資料夾個別安裝package\)\)  
 \(記得名稱要是NODE\_PATH\)  
-![](df.png)  
-所以共有兩個環境變數:  
-一個是node\_modules  =&gt;給require用
+
+
+####  所以共有兩個環境變數:
+
+1.  一個是NODE\_PATH =&gt; 安裝全域包後給js檔案require用
+
+> NODE\_PATH    `C:\Program Files\nodejs\node_modules`
 
 > Mac 使用 require global package 可用  
 > export NODE\_PATH=/usr/local/lib/node\_modules
+>
+> 如果不知道路徑是什麼可以先試著安裝-g 模組 然後看一下他print出來的安裝路徑
+>
+> ![](/assets/a.png)
 
-一個是`C:\Users\Jason\AppData\Roaming\npm`給在cmd直接輸入module名稱用
+2. 另一個是`C:\Users\Jason\AppData\Roaming\npm`給在cmd直接輸入module名稱用
+
+> PATH  `C:\Users\Jason\AppData\Roaming\npm`
+
+> 預設  安裝Node.js會自動幫你加上
 
 npm install  --save
 
