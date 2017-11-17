@@ -140,7 +140,7 @@ npm install npm@4.6.1
 
 windows: [https://github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows)
 
-下載點:https://github.com/coreybutler/nvm-windows/releases
+下載點:[https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases)
 
 # 查看套件以前發布過的版本
 
