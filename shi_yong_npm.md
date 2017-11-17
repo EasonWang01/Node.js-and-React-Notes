@@ -134,13 +134,24 @@ npm install npm@4.6.1
 
 # 切換版本
 
-使用n 或nvm
+#### n
 
-\(windows可能無法使用,所以可以用下面的方式\)
+```
+n use <version>
+```
 
-windows: [https://github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows)
+#### nvm
+
+\(windows可能無法使用n,所以可以用nvm安裝檔\)
 
 下載點:[https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases)
+
+然後
+
+```
+nvm install <version>
+nvm use <version>
+```
 
 # 查看套件以前發布過的版本
 
