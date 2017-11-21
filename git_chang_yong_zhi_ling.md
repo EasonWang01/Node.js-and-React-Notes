@@ -102,15 +102,15 @@ git fetch
 git checkout 分支名稱
 ```
 
-# Git Pull 時避免merge commit
+# Git Pull 時避免auto merge commit
 
 > 時常使用git pull之後會自動出現Merge branch 'master' of....之類的訊息在自己的commit之前
 >
 > 只要使用git pull --rebase即可解決
 
-http://kernowsoul.com/blog/2012/06/20/4-ways-to-avoid-merge-commits-in-git/
+[http://kernowsoul.com/blog/2012/06/20/4-ways-to-avoid-merge-commits-in-git/](http://kernowsoul.com/blog/2012/06/20/4-ways-to-avoid-merge-commits-in-git/)
 
-https://ihower.tw/blog/archives/3843
+[https://ihower.tw/blog/archives/3843](https://ihower.tw/blog/archives/3843)
 
 # 有關submodule
 
