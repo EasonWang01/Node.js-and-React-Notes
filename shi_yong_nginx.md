@@ -1,6 +1,6 @@
 # 使用nginx
 
-可參考此篇安裝 
+可參考此篇安裝
 
 [http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/](http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/)
 
