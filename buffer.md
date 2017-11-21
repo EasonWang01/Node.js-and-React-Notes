@@ -86,13 +86,13 @@ buf = Buffer.from([0, 0, 0, 5]);
 '0'
 ```
 
-
-
-> UInt 無號整數的型態名稱為 uint8、uint16、uint32、uint64，顧名思義，使用的長度分別為 8 位元、16 位元、32 位元與 64 位元。
+> UInt 無號整數的型態名稱為 uint8、uint16、uint32、uint64，顧名思義，使用的長度分別為 8 位元、16 位元、32 位元與 64 位元。
 >
-> 舉例來說，uint8 可儲存的整數範圍為 0 到 255 ，共256個數   因為2\*\*8 \(二的八次方為256\)
+> 舉例來說，uint8 可儲存的整數範圍為 0 到 255 ，共256個數   因為2\*\*8 \(二的八次方為256\)
 
 ## writeUInt8
+
+> write如果第一個參數前面沒加0x 他會以為你填入的是十進位來看
 
 ```js
 var buffLen = 128;
@@ -109,11 +109,11 @@ console.log(buffer)
 
 \(除了8以外其他後面都需要加上BE或LE，包含16和32（沒有64以及以上）\)
 
-因為buffer是以16進位表示，所以16BE的意思是16bits的Big endian，一共是4個字 因為\(2\*\*4 = 16\) 
+因為buffer是以16進位表示，所以16BE的意思是16bits的Big endian，一共是4個字 因為\(2\*\*4 = 16\)
 
 ```js
 var buffer = new Buffer(buffLen);
-for (var i = 0; i < buffLen; i += 2) {
+for (var i = 0; i < buffLen; i += 2) { // 因為buffer一次寫入會寫入2個bits，所以Int16的話共4個bits所以換下一個時要i += 2
     buffer.writeUInt16LE(0x0102, i); // 如果改為buffer.writeUInt16LE(0x010203, i); 會出現outbound錯誤
 }
 
