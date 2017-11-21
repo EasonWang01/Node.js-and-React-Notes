@@ -137,6 +137,27 @@ for (var i = 0; i < buffLen; i += 4) {
 console.log(buffer)
 ```
 
+# 使用Uint或Int
+
+\(sign 與 unsign\)
+
+```js
+var buffLen = 12;
+
+var buffer = new Buffer(buffLen);
+for (var i = 0; i < buffLen; i += 1) {
+    buffer.writeInt8(-1, i);   //這裡可成功編譯
+}
+
+console.log(buffer)
+```
+
+但如果把它換成unsign，如同以下，將會因為unsign不可接受負數，所以出現out bound錯誤
+
+```
+buffer.writeUInt8(-1, i); 
+```
+
 # 關於[NodeJS Buffer to JavaScript ArrayBuffer](https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer) 的轉換可參考
 
 [https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer](https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer)
