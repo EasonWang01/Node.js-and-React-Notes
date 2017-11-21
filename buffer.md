@@ -120,5 +120,18 @@ for (var i = 0; i < buffLen; i += 2) { // 因為buffer一次寫入會寫入2個b
 console.log(buffer)
 ```
 
+## writeUInt32BE
+
+
+
+
+
+# 關於[NodeJS Buffer to JavaScript ArrayBuffer](https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer) 的轉換可參考
+
+https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer
+
+  
+
+
 
 
