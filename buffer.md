@@ -155,7 +155,7 @@ console.log(buffer)
 但如果把它換成unsign，如同以下，將會因為unsign不可接受負數，所以出現out bound錯誤
 
 ```
-buffer.writeUInt8(-1, i); 
+buffer.writeUInt8(-1, i);
 ```
 
 # 關於[NodeJS Buffer to JavaScript ArrayBuffer](https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer) 的轉換可參考
