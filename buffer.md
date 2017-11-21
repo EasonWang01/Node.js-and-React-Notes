@@ -94,6 +94,8 @@ buf = Buffer.from([0, 0, 0, 5]);
 
 > write如果第一個參數前面沒加0x 他會以為你填入的是十進位來看
 
+因為buffer是以16進位表示，所以int8的意思是8bits的Big endian，一共是2個字 因為\(2\*4 = 8\) 一個16進位為4個bits
+
 ```js
 var buffLen = 128;
 
@@ -109,7 +111,7 @@ console.log(buffer)
 
 \(除了8以外其他後面都需要加上BE或LE，包含16和32（沒有64以及以上）\)
 
-因為buffer是以16進位表示，所以16BE的意思是16bits的Big endian，一共是4個字 因為\(2\*\*4 = 16\)
+因為buffer是以16進位表示，所以16BE的意思是16bits的Big endian，一共是4個字 因為\(4\*4 = 16\) 一個16進位為4個bits
 
 ```js
 var buffer = new Buffer(buffLen);
@@ -122,16 +124,20 @@ console.log(buffer)
 
 ## writeUInt32BE
 
+因為buffer是以16進位表示，所以32BE的意思是32bits的Big endian，一共是8個字 因為\(8\*4 = 32\) 一個16進位為4個bits
 
+```js
+var buffLen = 12;  //記得要配給他4的倍數  因為Int32  在buffer一次寫入會寫四個字
 
+var buffer = new Buffer(buffLen);
+for (var i = 0; i < buffLen; i += 4) {
+    buffer.writeUInt32BE(0x01020304, i);
+}
 
+console.log(buffer)
+```
 
 # 關於[NodeJS Buffer to JavaScript ArrayBuffer](https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer) 的轉換可參考
 
-https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer
-
-  
-
-
-
+[https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer](https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer)
 
