@@ -150,6 +150,8 @@ export PATH=/Volumes/FFmpeg\ 83544-g965f35b:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/Volumes/FFmpeg\ 83544-g965f35b
 ```
 
+> 記得是用 : 分隔
+
 之後重啟zsh
 
 ```
