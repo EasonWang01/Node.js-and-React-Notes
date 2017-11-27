@@ -115,6 +115,28 @@ server {
 }
 ```
 
+## 配置Load Balance
+
+```js
+http { 
+  upstream cluster { 
+      server 127.0.0.1:3000; 
+      server 127.0.0.1:3001; 
+      server 127.0.0.1:3002; 
+      server 127.0.0.1:3003; 
+  } 
+  server { 
+       listen 80; 
+       server_name www.domain.com; 
+       location / { 
+            proxy_pass http://cluster;
+       } 
+  }
+}
+```
+
+## 
+
 ## 可能錯誤
 
 1.[Nginx fails to stop and nginx.pid is missing](https://serverfault.com/questions/565339/nginx-fails-to-stop-and-nginx-pid-is-missing)
