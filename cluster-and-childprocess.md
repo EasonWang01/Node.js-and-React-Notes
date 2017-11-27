@@ -1,8 +1,10 @@
 # Cluster and Child\_process
 
+https://nodejs.org/api/cluster.html
+
+
+
 因為Nodejs為單進程，所以預設只會用一個ＣＰＵ執行程式，所以我們可以用Cluster來讓他可以跑多個CPU
-
-
 
 1.以下為讓每個cpu都跑一個process的範例\(根據cpu數量\)
 
@@ -82,8 +84,6 @@ if (cluster.isMaster) {
   }).listen(8000);
 }
 ```
-
-
 
 
 
