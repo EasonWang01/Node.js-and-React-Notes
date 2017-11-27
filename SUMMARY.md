@@ -8,6 +8,7 @@
 * [util \(工具類\)](util_gong_ju_985e29.md)
 * [Stream（流）](streamff08_liu_ff09.md)
 * [assert \(自訂拋出的錯誤\)](assert_zi_ding_pao_chu_de_cuo_8aa429.md)
+* [Cluster and Child\_process](cluster-and-childprocess.md)
 * [Process \(進程\)](process_jin_7a0b29.md)
 * [repl\(自訂命令列\)](repl.md)
 * [http](http.md)
@@ -118,6 +119,5 @@
 * [Distribute Web](distribute-web.md)
   * [Dat project](distribute-web/dat-project.md)
   * [IPFS project](distribute-web/ipfs-project.md)
-* [其他DB操作](qi-ta-db-cao-zuo.md)
-  * [Oracle DB](qi-ta-db-cao-zuo/oracle-db.md)
+* Cluster and Child\_process
 
