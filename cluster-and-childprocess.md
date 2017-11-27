@@ -1,8 +1,6 @@
 # Cluster and Child\_process
 
-https://nodejs.org/api/cluster.html
-
-
+[https://nodejs.org/api/cluster.html](https://nodejs.org/api/cluster.html)
 
 因為Nodejs為單進程，所以預設只會用一個ＣＰＵ執行程式，所以我們可以用Cluster來讓他可以跑多個CPU
 
@@ -84,6 +82,16 @@ if (cluster.isMaster) {
   }).listen(8000);
 }
 ```
+
+
+
+但是
+
+> master 進程創建 socket，綁定到某個地址以及PORT後，自身不調用 listen 來監聽連接以及 accept 連接，而是將該 socket 的 fd\(file descriptor\) 傳遞到 fork 出來的 worker 進程，worker 接收到 fd 後再調用 listen，accept 新的連接。但實際一個新到來的連接最終只能被某一個 worker 進程 accpet 再做處理。
+>
+> 所以會造成子進程產生競爭現象
+>
+> 可參考：http://taobaofed.org/blog/2015/11/03/nodejs-cluster/
 
 
 
