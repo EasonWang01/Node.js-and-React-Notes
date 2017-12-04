@@ -2,6 +2,8 @@
 
 不錯的文章：[http://www.oxxostudio.tw/articles/201701/line-bot.html](http://www.oxxostudio.tw/articles/201701/line-bot.html)
 
+https://goo.gl/ePtTRw
+
 # 申請機器人
 
 > 注意：一個是free方案一個是developer trial後面的這個才可以用push API （選好後無法兩者切換）
@@ -16,17 +18,13 @@
 
 # 開發者設定
 
-https://developers.line.me/console/channel/1550169976/basic/
+[https://developers.line.me/console/channel/1550169976/basic/](https://developers.line.me/console/channel/1550169976/basic/)
 
 # 開發者文件
 
 [https://developers.line.me/en/docs/messaging-api](https://developers.line.me/en/docs/messaging-api)
 
-
-
 # \# API 範例
-
-
 
 ## PUSH
 
