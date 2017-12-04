@@ -2,7 +2,7 @@
 
 不錯的文章：[http://www.oxxostudio.tw/articles/201701/line-bot.html](http://www.oxxostudio.tw/articles/201701/line-bot.html)
 
-https://goo.gl/ePtTRw
+[https://goo.gl/ePtTRw](https://goo.gl/ePtTRw)
 
 # 申請機器人
 
@@ -26,6 +26,33 @@ https://goo.gl/ePtTRw
 
 # \# API 範例
 
+
+
+## WebHook
+
+> 先在developer.line.me設定
+
+![](/assets/螢幕快照 2017-12-04 下午10.38.13.png)
+
+```js
+
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+app.use(bodyParser.json());
+
+app.post('/webhook/', (req, res, next) => {
+  // get content from request body
+  console.log(req.body.events[0].source)
+  console.log(req.body.events[0].message)
+})
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Listening on port 3000!')
+})
+
+```
+
 ## PUSH
 
 > 如果client沒有主動送訊息給bot過，則可能會出現傳送失敗的錯誤
@@ -33,9 +60,9 @@ https://goo.gl/ePtTRw
 > userID可以在開發者設定網頁最下方看到
 
 ```js
-const accessToken = "L2MidTusPwSDFpA8dCsPohcNMkdAHnZCdt541+sqUPxY8ONMspuGqFv9Rrv6mTrBUjvTV+afZ4oOE/PKJjOiV4pfCYvjY1Bi47oOLCbFxEuW2Rk/9efdc05e0ciQirzCrfIyNZmJLrJeBSo/mQ+yLwdB04t89/1O/w1cDnyilFU=";
-const channelSecret = "80f29885a979d63ec23ec629a5c67ba5";
-const userId = "U678157be02a660805cb61798ce5c4f7d"
+const accessToken = "L1MidTusPwSDFpA8dCsPohcNMkdAHnZCdt541+sqUPxY8ONMspuGqFv9Rrv6mTrBUjvTV+afZ4oOE/PKJjOiV4pfCYvjY1Bi47oOLCbFxEuW2Rk/9efdc05e0ciQirzCrfIyNZmJLrJeBSo/mQ+yLwdB04t89/1O/w1cDnyilFU=";
+const channelSecret = "80f29885a979d63ec23ec629a5c67ba3";
+const userId = "U678157be02a660805cb61798ce5c4f2d"
 
 
 const line = require('@line/bot-sdk');
