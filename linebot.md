@@ -16,3 +16,44 @@
 
 
 
+# 開發者文件
+
+https://developers.line.me/en/docs/messaging-api
+
+
+
+## PUSH
+
+> 如果client沒有主動送訊息給bot過，則可能會出現傳送失敗的錯誤
+>
+> userID可以在
+
+```js
+
+const accessToken = "L2MidTusPwSDFpA8dCsPohcNMkdAHnZCdt541+sqUPxY8ONMspuGqFv9Rrv6mTrBUjvTV+afZ4oOE/PKJjOiV4pfCYvjY1Bi47oOLCbFxEuW2Rk/9efdc05e0ciQirzCrfIyNZmJLrJeBSo/mQ+yLwdB04t89/1O/w1cDnyilFU=";
+const channelSecret = "80f29885a979d63ec23ec629a5c67ba5";
+const userId = "U678157be02a660805cb61798ce5c4f7d"
+
+
+const line = require('@line/bot-sdk');
+
+const client = new line.Client({
+  channelAccessToken: accessToken
+});
+
+const message = {
+  type: 'text',
+  text: '測試!'
+};
+
+client.pushMessage(userId, message)
+  .then(() => {
+    console.log('okok')
+  })
+  .catch((err) => {
+    console.log(err)
+  });
+```
+
+
+
