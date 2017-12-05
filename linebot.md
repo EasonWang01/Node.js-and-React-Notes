@@ -26,6 +26,16 @@
 
 [https://developers.line.me/en/docs/messaging-api/reference/](https://developers.line.me/en/docs/messaging-api/reference/)
 
+## 注意事項
+
+https://engineering.linecorp.com/tw/blog/detail/183
+
+
+
+
+
+
+
 # \# API 範例
 
 ## WebHook
@@ -123,7 +133,6 @@ app.listen(process.env.PORT || 3000, () => {
 # 回覆圖卡訊息
 
 ```js
-
 const line = require('@line/bot-sdk');
 const express = require('express')
 const bodyParser = require('body-parser')
