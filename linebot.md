@@ -83,12 +83,9 @@ client.pushMessage(userId, message)
   });
 ```
 
-
-
 # 回覆訊息
 
 ```js
-
 const line = require('@line/bot-sdk');
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -97,7 +94,7 @@ app.use(bodyParser.json());
 
 
 const client = new line.Client({
-  channelAccessToken: 'L2MidTusPwSDFpA8dCsPohcNMkdAHnZCdt541+sqUPxY8ONMspuGqFv9Rrv6mTrBUjvTV+afZ4oOE/PKJjOiV4pfCYvjY1Bi47oOLCbFxEuW2Rk/9efdc05e0ciQirzCrfIyNZmJLrJeBSo/mQ+yLwdB04t89/1O/w1cDnyilFU='
+  channelAccessToken: 'LMidTusPwSDFpA8dCsPohcNMkdAHnZCdt541+sqUPxY8ONMspuGqFv9Rrv6mTrBUjvTV+afZ4oOE/PKJjOiV4pfCYvjY1Bi47oOLCbFxEuW2Rk/9efdc05e0ciQirzCrfIyNZmJLrJeBSo/mQ+yLwdB04t89/1O/w1cDnyilFU='
 });
 
 app.post('/webhook/', (req, res, next) => {
@@ -121,10 +118,82 @@ app.post('/webhook/', (req, res, next) => {
 app.listen(process.env.PORT || 3000, () => {
   console.log('Listening on port 3000!')
 })
+```
+
+# 回覆圖卡訊息
+
+```js
+
+const line = require('@line/bot-sdk');
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+app.use(bodyParser.json());
+
+
+const client = new line.Client({
+  channelAccessToken: 'LMidTusPwSDFpA8dCsPohcNMkdAHnZCdt541+sqUPxY8ONMspuGqFv9Rrv6mTrBUjvTV+afZ4oOE/PKJjOiV4pfCYvjY1Bi47oOLCbFxEuW2Rk/9efdc05e0ciQirzCrfIyNZmJLrJeBSo/mQ+yLwdB04t89/1O/w1cDnyilFU='
+});
+
+app.post('/webhook/', (req, res, next) => {
+  if(req.body.events[0].type === "postback") {
+    postBackLogic(req)
+    return
+  }
+  client.replyMessage(req.body.events[0].replyToken, msg)
+    .then(() => {
+      console.log('message card replied!')
+    })
+    .catch((err) => {
+      console.log(err)
+    });
+
+})
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Listening on port 3000!')
+})
 
 
 
+const msg = {
+  "type": "template",
+  "altText": "請選擇查詢項目",
+  "template": {
+      "type": "buttons",
+      "thumbnailImageUrl": "https://i.ytimg.com/vi/b1-Fj-C4OmE/maxresdefault.jpg",
+      "imageAspectRatio": "rectangle",
+      "imageSize": "cover",
+      "imageBackgroundColor": "#FFFFFF",
+      "title": "加密星球",
+      "text": "請選擇查詢項目",
+      "actions": [
+          {
+            "type": "postback",
+            "label": "Buy",
+            "data": JSON.stringify({
+              action: "bitcoin"
+            }),
+          },
+          {
+            "type": "postback",
+            "label": "Add to cart",
+            "data": "action=add&itemid=123"
+          },
+          {
+            "type": "uri",
+            "label": "View detail",
+            "uri": "http://example.com/page/123"
+          }
+      ]
+  }
+}
 
+
+const postBackLogic = (req) => {
+  console.log(req.body.events[0].source)
+  console.log(JSON.parse(req.body.events[0].postback.data).action)
+};
 ```
 
 
