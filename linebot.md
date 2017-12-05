@@ -24,7 +24,7 @@
 
 [https://developers.line.me/en/docs/messaging-api](https://developers.line.me/en/docs/messaging-api)
 
-https://developers.line.me/en/docs/messaging-api/reference/
+[https://developers.line.me/en/docs/messaging-api/reference/](https://developers.line.me/en/docs/messaging-api/reference/)
 
 # \# API 範例
 
@@ -81,6 +81,50 @@ client.pushMessage(userId, message)
   .catch((err) => {
     console.log(err)
   });
+```
+
+
+
+# 回覆訊息
+
+```js
+
+const line = require('@line/bot-sdk');
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+app.use(bodyParser.json());
+
+
+const client = new line.Client({
+  channelAccessToken: 'L2MidTusPwSDFpA8dCsPohcNMkdAHnZCdt541+sqUPxY8ONMspuGqFv9Rrv6mTrBUjvTV+afZ4oOE/PKJjOiV4pfCYvjY1Bi47oOLCbFxEuW2Rk/9efdc05e0ciQirzCrfIyNZmJLrJeBSo/mQ+yLwdB04t89/1O/w1cDnyilFU='
+});
+
+app.post('/webhook/', (req, res, next) => {
+  console.log(req.body)
+  // get content from request body
+  console.log(req.body.events[0].source)
+  console.log(req.body.events[0].message)
+  client.replyMessage(req.body.events[0].replyToken, {
+    type: 'text',
+    text: '您好，請稍等..'
+  })
+    .then(() => {
+      console.log('message replied!')
+    })
+    .catch((err) => {
+      console.log(err)
+    });
+
+})
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Listening on port 3000!')
+})
+
+
+
+
 ```
 
 
