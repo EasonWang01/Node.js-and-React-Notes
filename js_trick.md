@@ -57,5 +57,7 @@ document.execCommand('copy');
 document.getElementById('pageHideInput').blur(); //避免手機彈起鍵盤
 ```
 
+但ios有的會有一些問題，所以建議可用
 
+https://codepen.io/anon/pen/EbJBjP
 
