@@ -28,13 +28,7 @@
 
 ## 注意事項
 
-https://engineering.linecorp.com/tw/blog/detail/183
-
-
-
-
-
-
+[https://engineering.linecorp.com/tw/blog/detail/183](https://engineering.linecorp.com/tw/blog/detail/183)
 
 # \# API 範例
 

@@ -12,6 +12,12 @@ or
 npm install ungit -g
 ```
 
+### 查看特定檔案的修改紀錄
+
+```
+gitk --follow [filename]
+```
+
 ### 取消git add .
 
 ```
