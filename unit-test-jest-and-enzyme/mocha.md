@@ -2,8 +2,8 @@
 
 ```js
 describe('加法測試', function() {
-    it('1 加 1 = 2', function() {
-      throw new Error('錯誤') 
+    it('1 加 1 = 2', function(done) {
+      done(new Error('錯誤'))
     });
   });
 ```
@@ -12,19 +12,15 @@ describe('加法測試', function() {
 
 ```js
 describe('加法測試', function() {
-    it('1 加 1 = 2', function() {
-      return
+    it('1 加 1 = 2', function(done) {
+       done()
     });
   });
 ```
 
-
-
-
-
 # 測試報表UI
 
-http://adamgruber.github.io/mochawesome/
+[http://adamgruber.github.io/mochawesome/](http://adamgruber.github.io/mochawesome/)
 
 > 產生測試後的結果並輸出到網頁上
 
