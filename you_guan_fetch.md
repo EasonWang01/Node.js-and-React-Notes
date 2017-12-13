@@ -118,7 +118,7 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 ```js
    import qs from 'querystring';
-    
+
       axios.post('http://localhost:82/login',
       qs.stringify({
         values: 'test',
@@ -184,7 +184,9 @@ app.use('*', function (req, res, next) {
 
 所以我們可以用[https://crossorigin.me這類的proxy服務](https://crossorigin.me這類的proxy服務)
 
-> 如果是要往自己的server發request可以參考JSONP或CORS server
+> 如果是要往自己的server發request可以參考JSONP或在server設定CORS
+>
+> 或是使用chrome相關plugin
 
 ```js
   fetch('https://crossorigin.me/http://google.com',{
