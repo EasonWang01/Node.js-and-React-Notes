@@ -18,6 +18,41 @@ describe('加法測試', function() {
   });
 ```
 
+# 異步測試\(Async\)
+
+> 可用this.timeout\(1000\)設定要容忍的回應時間
+>
+> 如果寫在describe層級則所有it皆會納用
+>
+> 如果寫在it層級額只有該層it會使用
+>
+> 如果寫Arrow function則無法用this要先綁定外層
+
+```js
+describe('加法測試', function() {
+    //this.timeout(4000);
+    it('1 加 1 = 2', function (done){
+        this.timeout(6000);
+      setTimeout(() => {
+        
+        done()
+      },3000)
+    });
+    it('1 加 1 = 2', function (done){
+          this.timeout(6000);
+        setTimeout(() => {
+          
+          done()
+        },5000)
+      });
+  });
+
+```
+
+
+
+# 
+
 # 測試報表UI
 
 [http://adamgruber.github.io/mochawesome/](http://adamgruber.github.io/mochawesome/)
