@@ -1,5 +1,3 @@
-
-
 1.只要throw new Error即可告知測試錯誤
 
 ```js
@@ -23,4 +21,17 @@ describe('加法測試', function() {
 
 
 
+
+# 測試報表UI
+
+http://adamgruber.github.io/mochawesome/
+
+> 產生測試後的結果並輸出到網頁上
+
+```
+npm install --save-dev mochawesome
+mocha testfile.js --reporter mochawesome
+```
+
+然後會產生一個資料夾裡面包含html檔案和json檔案
 
