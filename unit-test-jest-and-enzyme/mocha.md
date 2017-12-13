@@ -1,3 +1,7 @@
+# 決定是否測試成功
+
+> 使用it內的function第一個參數done
+
 1.只要throw new Error即可告知測試錯誤
 
 ```js
@@ -8,7 +12,9 @@ describe('加法測試', function() {
   });
 ```
 
-2.只要return即會判斷成功\(不論true 或 false\)
+2.
+
+> function內只要return即會判斷成功\(不論true 或 false\)
 
 ```js
 describe('加法測試', function() {
@@ -21,12 +27,12 @@ describe('加法測試', function() {
 # 異步測試\(Async\)
 
 > 1.可用this.timeout\(1000\)設定要容忍的回應時間
-
-> 2. 如果寫在describe層級則所有it皆會納用
-
-> 3. 如果寫在it層級額只有該層it會使用
 >
-> 4. 如果寫Arrow function則無法用this要先綁定外層
+> 1. 如果寫在describe層級則所有it皆會納用
+>
+> 2. 如果寫在it層級額只有該層it會使用
+>
+> 3. 如果寫Arrow function則無法用this要先綁定外層
 
 ```js
 describe('加法測試', function() {
