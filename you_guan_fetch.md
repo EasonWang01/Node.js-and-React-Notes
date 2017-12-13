@@ -95,7 +95,7 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 [https://github.com/mzabriskie/axios/issues/376](https://github.com/mzabriskie/axios/issues/376)
 
-#### \#Get範例
+#### \#Get 範例
 
 ```js
     axios.get('http://localhost:10001/test',{
@@ -112,6 +112,25 @@ axios.post(API_HOST+'/api/Member/GetQAList',
     .catch(function (error) {
       console.log(error);
     });
+```
+
+#### \#POST x-www-form-urlencoded範例
+
+```js
+   import qs from 'querystring';
+    
+      axios.post('http://localhost:82/login',
+      qs.stringify({
+        values: 'test',
+        lang: 'zh-CN',
+        v: 1513153379508
+      }))
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch(err => {
+          console.log(err)
+    })
 ```
 
 # 注意:
@@ -188,8 +207,6 @@ app.use('*', function (req, res, next) {
            return error.response.json();
        })
 ```
-
-
 
 # 下載檔案
 
