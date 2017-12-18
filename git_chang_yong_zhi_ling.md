@@ -250,7 +250,9 @@ git add .
 git commit -m "fixed untracked files"
 ```
 
-https://stackoverflow.com/questions/11451535/gitignore-is-not-working
+\(但這樣會在遠端刪除該cached檔案\)
+
+[https://stackoverflow.com/questions/11451535/gitignore-is-not-working](https://stackoverflow.com/questions/11451535/gitignore-is-not-working)
 
 # 其他不錯文章
 
