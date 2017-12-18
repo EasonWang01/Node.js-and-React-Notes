@@ -22,9 +22,9 @@ post-commit
 ```
 #!/usr/bin/env node
 
-console.log(6678)
+console.log(6678);
 
-// process.exit(1) 加上後會取消commit
+// process.exit(1); 加上後會取消commit
 ```
 
 之後commit時就會執行
@@ -35,23 +35,17 @@ console.log(6678)
 #!/bin/sh
 
 echo 123;
+
+# exit 1;  加上後會取消commit
 ```
-
-
-
-
-
-
 
 其他可參考:
 
-https://github.com/zwhu/blog/issues/31
+[https://github.com/zwhu/blog/issues/31](https://github.com/zwhu/blog/issues/31)
 
-https://gist.github.com/domenic/2238951
+[https://gist.github.com/domenic/2238951](https://gist.github.com/domenic/2238951)
 
 第三方模組:
 
-https://github.com/typicode/husky
-
-
+[https://github.com/typicode/husky](https://github.com/typicode/husky)
 
