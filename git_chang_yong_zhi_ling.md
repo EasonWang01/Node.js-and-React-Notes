@@ -259,7 +259,7 @@ git commit -m "fixed untracked files"
 # 查看目前修改過但還沒add的檔案
 
 ```
-git ls-files --others --exclude-standard
+git diff --stat
 ```
 
 # 查看目前已add 但還沒commit的檔案
@@ -268,9 +268,9 @@ git ls-files --others --exclude-standard
 git diff --cached --name-only
 ```
 
-https://stackoverflow.com/questions/2298047/git-ls-files-howto-identify-new-files-added-not-committed
+[https://stackoverflow.com/questions/2298047/git-ls-files-howto-identify-new-files-added-not-committed](https://stackoverflow.com/questions/2298047/git-ls-files-howto-identify-new-files-added-not-committed)
 
-https://git-scm.com/docs/git-diff
+[https://git-scm.com/docs/git-diff](https://git-scm.com/docs/git-diff)
 
 # 查看目前已commit還沒push的檔案
 
