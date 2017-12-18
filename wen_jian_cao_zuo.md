@@ -423,3 +423,13 @@ The 同步 version of fs.appendFile.
 
 
 
+# fs.utimes
+
+```
+修改檔案的atime與mtime，
+```
+
+其他可參考下面文章
+
+https://www.shellhacks.com/fake-file-access-modify-change-timestamps-linux/
+
