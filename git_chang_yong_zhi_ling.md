@@ -256,6 +256,28 @@ git commit -m "fixed untracked files"
 
 [https://stackoverflow.com/questions/11451535/gitignore-is-not-working](https://stackoverflow.com/questions/11451535/gitignore-is-not-working)
 
+# 查看目前修改過但還沒add的檔案
+
+```
+git ls-files --others --exclude-standard
+```
+
+# 查看目前已add 但還沒commit的檔案
+
+```
+git diff --cached --name-only
+```
+
+https://stackoverflow.com/questions/2298047/git-ls-files-howto-identify-new-files-added-not-committed
+
+https://git-scm.com/docs/git-diff
+
+# 查看目前已commit還沒push的檔案
+
+```
+ git show –name-only {commit hash}
+```
+
 # 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
