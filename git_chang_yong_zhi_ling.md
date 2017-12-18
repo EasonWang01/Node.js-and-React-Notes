@@ -68,6 +68,8 @@ ok
 
 ## 移除遠端上一次的push
 
+\(但記得這樣會直接退回到你上次的HEAD^ 如果你還沒pull則會把別人的push一起移除\)
+
 ```
 git push -f origin HEAD^:master
 ```
