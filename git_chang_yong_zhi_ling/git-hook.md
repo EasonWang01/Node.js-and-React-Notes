@@ -39,6 +39,12 @@ echo 123;
 # exit 1;  加上後會取消commit
 ```
 
+
+
+> 但之後改完因為.git無法加入commit，我們必須使用link file的方式讓別人執行，然後加入到git hook
+
+
+
 其他可參考:
 
 [https://github.com/zwhu/blog/issues/31](https://github.com/zwhu/blog/issues/31)
