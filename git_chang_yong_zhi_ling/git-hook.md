@@ -1,3 +1,7 @@
+# Git Hooks
+
+https://git-scm.com/book/zh-tw/v1/Git-%E5%AE%A2%E8%A3%BD%E5%8C%96-Git-Hooks
+
 在git的專案的目錄下有一個隱藏資料夾為`.git`
 
 進入後可看到如下![](/assets/sdfsdf.png)
