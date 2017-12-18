@@ -11,14 +11,16 @@ post-commit
 
 我們先把pre-commit.sample檔案名稱改為pre-commit
 
-
-
 然後在裡面加上
+
+> 使用第一行的\#!決定要用哪一種方式解譯，如果更改檔案副檔名則無效
 
 ```
 #!/usr/bin/env node
 
 console.log(6678)
+
+// process.exit(1) 加上後會取消commit
 ```
 
 之後commit時就會執行
