@@ -1,6 +1,6 @@
 # Git Hooks
 
-https://git-scm.com/book/zh-tw/v1/Git-%E5%AE%A2%E8%A3%BD%E5%8C%96-Git-Hooks
+[https://git-scm.com/book/zh-tw/v1/Git-客製化-Git-Hooks](https://git-scm.com/book/zh-tw/v1/Git-客製化-Git-Hooks)
 
 在git的專案的目錄下有一個隱藏資料夾為`.git`
 
@@ -36,6 +36,22 @@ console.log(6678)
 
 echo 123;
 ```
+
+
+
+
+
+
+
+其他可參考:
+
+https://github.com/zwhu/blog/issues/31
+
+https://gist.github.com/domenic/2238951
+
+第三方模組:
+
+https://github.com/typicode/husky
 
 
 
