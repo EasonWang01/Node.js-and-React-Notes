@@ -135,8 +135,6 @@ git checkout 分支名稱
  git submodule update
 ```
 
-# 
-
 # \#修改上一次commit 的說明
 
 ```
@@ -239,6 +237,20 @@ git reset --hard bc50ed4
 
 git push -f origin master
 ```
+
+# .gitignore沒反應
+
+如果在加入.gitignore檔案之前已經提交過檔案了，則git 會有cache造成寫了.gitignore依然會提交該檔案
+
+可使用以下指令
+
+```
+git rm -r --cached .
+git add .
+git commit -m "fixed untracked files"
+```
+
+https://stackoverflow.com/questions/11451535/gitignore-is-not-working
 
 # 其他不錯文章
 
