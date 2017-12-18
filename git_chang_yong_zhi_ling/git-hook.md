@@ -39,9 +39,64 @@ echo 123;
 # exit 1;  加上後會取消commit
 ```
 
+# 
 
+# Link hook file
 
 > 但之後改完因為.git無法加入commit，我們必須使用link file的方式讓別人執行，然後加入到git hook
+
+新增如下檔案結構
+
+![](/assets/asx.png)
+
+link.js
+
+```js
+var fs = require("fs");
+var path = require("path");
+
+["applypatch-msg", "commit-msg", "post-commit", "post-receive", "post-update", "pre-applypatch", "pre-commit",
+ "prepare-commit-msg", "pre-rebase", "update"].forEach(function (hook) {
+    var hookInSourceControl = path.resolve(__dirname, hook);
+
+    if (fs.existsSync(hookInSourceControl)) {
+        var hookInHiddenDirectory = path.resolve(__dirname, "../..", ".git", "hooks", hook);
+
+        if (fs.existsSync(hookInHiddenDirectory)) {
+            fs.unlinkSync(hookInHiddenDirectory);
+        }
+
+        fs.linkSync(hookInSourceControl, hookInHiddenDirectory);
+    }
+});
+```
+
+pre-commit
+
+```js
+#!/usr/bin/env node
+
+const { exec } = require('child_process');
+
+
+// 如果修改的檔案為/dist 會要求修改/js 並使用babel compile
+exec('git diff --cached --name-only', (error, stdout, stderr) => {
+  if (error) {
+    console.error(`exec error: ${error}`);
+    return;
+  }
+
+  if(stdout.indexOf('/dist') !== -1) { // 修改了dist資料夾內的檔案
+	  console.log(`您修改了包含/dist檔案內的資料，所以被禁止commit!!`)
+	  console.log(stdout);
+      process.exit(1);
+  }
+});
+```
+
+之後執行該link.js檔案即可讓兩隻檔案連結起來，互相複製內容，改動其中一隻另外一個檔案也會被改變。
+
+
 
 
 
