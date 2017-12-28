@@ -130,5 +130,11 @@ TCP的createServer的socket實例永遠會保持在最後連線的client
 
 [https://nodejs.org/dist/latest-v7.x/docs/api/tls.html\#tls\_class\_tls\_server](https://nodejs.org/dist/latest-v7.x/docs/api/tls.html#tls_class_tls_server)
 
-https://docs.nodejitsu.com/articles/cryptography/how-to-use-the-tls-module/
+[https://docs.nodejitsu.com/articles/cryptography/how-to-use-the-tls-module/](https://docs.nodejitsu.com/articles/cryptography/how-to-use-the-tls-module/)
+
+
+
+> 每個tcp建立連線後可以把socket物件記住，之後連線其他的節點後可以再次存取原先socket即可再次傳送訊息。
+
+
 
