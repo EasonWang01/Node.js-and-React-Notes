@@ -31,12 +31,10 @@ TCP可以接受多個連接，每個連接會對應到file descriptors。
 >   console.log(count)
 > })
 > ```
-
+>
 > 2.net.createServer\(\(socket\) =&gt; ....\)
 >
 > 雖然TCP連線後會繼續保持，但其中的socket callback會是最後一個連線到server的client，所以需要自行把先前連線的socket保存著
-
-
 
 TCP server:
 
@@ -139,19 +137,29 @@ process.on('SIGINT', function() {
 });
 ```
 
-TCP的createServer的socket實例永遠會保持在最後連線的client
 
-所以想要達到TCP廣播可參考:
+
+#### 1.TCP廣播可參考:
 
 [https://gist.github.com/creationix/707146](https://gist.github.com/creationix/707146)
 
-如果想在TCP封包上加密可參考:
+#### 2.如果想在TCP封包上加密可參考:
 
 [https://nodejs.org/dist/latest-v7.x/docs/api/tls.html\#tls\_class\_tls\_server](https://nodejs.org/dist/latest-v7.x/docs/api/tls.html#tls_class_tls_server)
 
 [https://docs.nodejitsu.com/articles/cryptography/how-to-use-the-tls-module/](https://docs.nodejitsu.com/articles/cryptography/how-to-use-the-tls-module/)
 
 > 每個tcp建立連線後可以把socket物件記住，之後連線其他的節點後可以再次存取原先socket即可再次傳送訊息。
+
+#### 3.限制最大連線數
+
+> ```js
+> 1. server.maxConnections
+>
+> 2.設定Linux中的tcp_max_syn_backlog 與 somaxconn
+>
+> 3.設定listen參數中的backlog
+> ```
 
 
 
