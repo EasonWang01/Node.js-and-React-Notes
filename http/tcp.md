@@ -7,9 +7,7 @@ TCP的特色在於傳輸資料時，會有握手的過程，以確保雙方身�
 
 TCP可以接受多個連接，每個連接會對應到file descriptors。
 
-可參考：https://stackoverflow.com/a/27182584
-
-
+可參考：[https://stackoverflow.com/a/27182584](https://stackoverflow.com/a/27182584)
 
 而UDP的特色在於傳輸資料時，不需要驗  
 證資料，不保證正確性，發送端不知道數據是否會正確接收，所以速度較快速
@@ -24,7 +22,7 @@ TCP可以接受多個連接，每個連接會對應到file descriptors。
 
 具有TCP中的TCP server與 TCP client的兩種類型
 
-> Node.js 的 TCP可以使用以下來取得目前連線中的連接
+> 1.Node.js 的 TCP可以使用以下來取得目前連線中的連接
 >
 > [https://nodejs.org/api/net.html\#net\_server\_getconnections\_callback](https://nodejs.org/api/net.html#net_server_getconnections_callback)
 >
@@ -33,6 +31,12 @@ TCP可以接受多個連接，每個連接會對應到file descriptors。
 >   console.log(count)
 > })
 > ```
+
+> 2.net.createServer\(\(socket\) =&gt; ....\)
+>
+> 雖然TCP連線後會繼續保持，但其中的socket callback會是最後一個連線到server的client，所以需要自行把先前連線的socket保存著
+
+
 
 TCP server:
 
