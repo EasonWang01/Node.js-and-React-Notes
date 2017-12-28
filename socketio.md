@@ -13,12 +13,7 @@ Ajax 喝水要拿起水杯，喝完要再放下
 Websocket 用吸管喝水，要喝時或喝太多要退回去杯子都不必再次拿起水杯
 ```
 
-注意:
 
-```
-一個websocket client連接其他websocket server後
-自己不可以再開啟websocket server接受其他client連線
-```
 
 #### webSocket相關框架
 
@@ -69,7 +64,33 @@ ws.on('message', function incoming(data) {
 });
 ```
 
-#### 
+client with server
+
+```js
+const WebSocket = require('ws');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+const wss = new WebSocket.Server({ port: 3042 });
+const ws = new WebSocket('ws://127.0.0.1:3032');
+
+ws.on('open', function open() {
+    ws.send('something');
+});
+
+rl.on('line', (input) => {
+    console.log(`Received: ${input}`);
+    ws.send(input);
+});
+
+ws.on('message', function incoming(data) {
+    console.log(data);
+});
+```
 
 #### \#engine.io
 
