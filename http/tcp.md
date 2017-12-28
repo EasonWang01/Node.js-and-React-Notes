@@ -120,5 +120,11 @@ process.on('SIGINT', function() {
 });
 ```
 
+TCP的createServer的socket實例永遠會保持在最後連線的client
 
+
+
+所以想要達到TCP廣播可參考:
+
+https://gist.github.com/creationix/707146
 
