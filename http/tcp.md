@@ -122,9 +122,11 @@ process.on('SIGINT', function() {
 
 TCP的createServer的socket實例永遠會保持在最後連線的client
 
-
-
 所以想要達到TCP廣播可參考:
 
-https://gist.github.com/creationix/707146
+[https://gist.github.com/creationix/707146](https://gist.github.com/creationix/707146)
+
+如果想在TCP封包上加密可參考:
+
+https://nodejs.org/dist/latest-v7.x/docs/api/tls.html\#tls\_class\_tls\_server
 
