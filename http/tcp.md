@@ -128,5 +128,7 @@ TCP的createServer的socket實例永遠會保持在最後連線的client
 
 如果想在TCP封包上加密可參考:
 
-https://nodejs.org/dist/latest-v7.x/docs/api/tls.html\#tls\_class\_tls\_server
+[https://nodejs.org/dist/latest-v7.x/docs/api/tls.html\#tls\_class\_tls\_server](https://nodejs.org/dist/latest-v7.x/docs/api/tls.html#tls_class_tls_server)
+
+https://docs.nodejitsu.com/articles/cryptography/how-to-use-the-tls-module/
 
