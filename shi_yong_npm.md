@@ -93,7 +93,6 @@ console.log(process.env.PORT)
 
 ```
 PORT=8000 node test1.js //mac
-node test1.js PORT=8000 //windows
 ```
 
 > windows如果不行可以使用git bash來執行
