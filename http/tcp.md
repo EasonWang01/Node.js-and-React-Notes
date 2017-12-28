@@ -18,47 +18,112 @@ TCP的特色在於傳輸資料時，會有握手的過程，以確保雙方身�
 
 具有TCP中的TCP server與 TCP client的兩種類型
 
-#### 實作
 
-1.進入資料夾第10章中的TCP資料夾，執行test1.js來執行TCP server
 
-2.開啟另一個terminal，一樣進入資料夾第10章中的TCP資料夾，執行test2.js
+TCP server:
 
-3.結合Repl
+```js
+const net = require('net');
+const server = net.createServer((c) => {
+  // 'connection' listener
+  console.log('client connected');
+  c.on('end', () => {
+    console.log('client disconnected');
+  });
+  c.on('error', (err) => {
+      console.log(err)
+  })
+  c.on('data', (data) => {
+      console.log(data)
+  })
+  c.write('hello\r\n');
+  //c.pipe(c); 用來echo任何client送出的message給client
+});
+server.on('error', (err) => {
+  throw err;
+});
+server.listen(8120, () => {
+  console.log('server bound');
+});
 
-將client test2.js改為如下
+
+// 監聽ctrl + c 並且disconnect 來避免TCP server產生ECONNRESET ERROR
+process.on('SIGINT', function() {
+    console.log("Caught interrupt signal");
+    client.end();
+});
 
 ```
-var net = require('net');
 
-var HOST = 'localhost';
-var PORT = 8000;
+TCP client
 
-var client = new net.Socket(); //建立一個新的socket實例
-client.connect(PORT, HOST, function() {
-
-    console.log('CONNECTED TO: ' + HOST + ':' + PORT);
-    client.write('hello,this is from client!');//發送給server數據
-
-
-    const repl = require('repl');
-    var test = repl.start('請輸入: ').context;
-    test.hello = function() {
-      client.write('client說了hello!');
-    }
-    //之後啟動client後輸入hello()
+```js
+const client = net.createConnection({ port: 8120 }, () => {
+  //'connect' listener
+  console.log('connected to server!');
+  client.write('world123!\r\n');
+});
+client.on('data', (data) => {
+  console.log(data.toString());
+  //client.end();
+});
+client.on('end', () => {
+  console.log('disconnected from server');
+  process.exit();
 });
 
-client.on('data', function(data) {
-    console.log('DATA: ' + data);
+// 監聽ctrl + c 並且disconnect 來避免TCP server產生ECONNRESET ERROR
+process.on('SIGINT', function() {
+    console.log("Caught interrupt signal");
+    client.end();
 });
 
-client.on('close', function() {
-    console.log('Connection closed');
-});
 ```
 
-# 
+
+
+TCP 可以同時建立Server與建立Client與其他節點連線\(Websocket的client不可再建立server\)
+
+```js
+const net = require('net');
+const server = net.createServer((c) => {
+  // 'connection' listener
+  console.log('client connected');
+  c.on('end', () => {
+    console.log('client disconnected');
+  });
+  c.write('hello\r\n');
+  c.pipe(c);
+});
+server.on('error', (err) => {
+  throw err;
+});
+server.listen(8121, () => {
+  console.log('server bound');
+});
+
+
+const client = net.createConnection({ port: 8120 }, () => {
+  //'connect' listener
+  console.log('connected to server!');
+  client.write('world123!\r\n');
+});
+client.on('data', (data) => {
+  console.log(data.toString());
+  //client.end();
+});
+client.on('end', () => {
+  console.log('disconnected from server');
+  process.exit();
+});
+
+// 監聽ctrl + c 並且disconnect 來避免TCP server產生ECONNRESET ERROR
+process.on('SIGINT', function() {
+    console.log("Caught interrupt signal");
+    client.end();
+});
+
+```
 
 
 
