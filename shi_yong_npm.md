@@ -97,6 +97,12 @@ PORT=8000 node test1.js //mac
 
 > windows如果不行可以使用git bash來執行
 
+nodemon可用類似如下
+
+```
+set PORT=8080 && nodemon test.js
+```
+
 \# 控制版本
 
 使用shrinkwrap
