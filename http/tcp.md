@@ -22,6 +22,8 @@ TCP的特色在於傳輸資料時，會有握手的過程，以確保雙方身�
 
 > Node.js 的 TCP已經內建TCP fork機制，所以可以在同一個port接受多個連接，使用以下來取得目前連線中的連接
 >
+> https://nodejs.org/api/net.html\#net\_server\_getconnections\_callback
+>
 > ```js
 > server.getConnections((err, count) => {
 >   console.log(count)
