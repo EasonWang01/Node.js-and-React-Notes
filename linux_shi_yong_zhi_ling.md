@@ -244,5 +244,7 @@ rsync
 rsync --progress -r --exclude "node_modules/" --exclude  ".*/"  -e "ssh -i ~/Downloads/pem1.pem"  ubuntu@ec2-52-198-155-128.ap-northeast-1.compute.amazonaws.com:/home/ubuntu/ ./
 ```
 
+> rsync可參考  https://blog.gtwang.org/linux/rsync-local-remote-file-synchronization-commands/
+
 
 
