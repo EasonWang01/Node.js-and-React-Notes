@@ -230,5 +230,19 @@ sudo nohup <command> &
 vim /etc/paths
 ```
 
+# 同步檔案
+
+scp
+
+```
+scp -i private_key your_username@remotehost.edu:foobar.txt /some/local/directory
+```
+
+rsync
+
+```
+rsync --progress -r --exclude "node_modules/" --exclude  ".*/"  -e "ssh -i ~/Downloads/pem1.pem"  ubuntu@ec2-52-198-155-128.ap-northeast-1.compute.amazonaws.com:/home/ubuntu/ ./
+```
+
 
 
