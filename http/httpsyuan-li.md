@@ -1,6 +1,8 @@
 #### 流程可參考
 
-https://www.zhihu.com/question/37370216/answer/74060132
+![](/assets/bg2014092003.png)
+
+[https://www.zhihu.com/question/37370216/answer/74060132](https://www.zhihu.com/question/37370216/answer/74060132)
 
 #### windows中可以如下查看在認證列表內的機構證書
 
