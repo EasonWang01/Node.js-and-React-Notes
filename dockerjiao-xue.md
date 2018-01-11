@@ -1,12 +1,14 @@
-# \# Install
+# 安裝
 
 OSX: [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/docker-for-mac/install/)
 
+> windows版本的docker建議可以使用kitemantic整合環境
+
 windows: [https://kitematic.com/](https://kitematic.com/)
 
-https://store.docker.com/search?type=edition&offering=community
+[https://store.docker.com/search?type=edition&offering=community](https://store.docker.com/search?type=edition&offering=community)
 
-# 
+windows使用kitemantic後點選右下角的DOCKER CLI![](/assets/98234234.png)
 
 # 以下為Docker執行Redis與Node.js server並分別expose兩個PORT的範例
 
