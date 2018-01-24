@@ -113,7 +113,18 @@ set PORT=8080 && nodemon test.js
 
 npm install npm@latest -g
 
-# \#發布為GLOBAL package
+
+
+# \#發佈npm package
+
+```
+npm adduser
+npm publish
+```
+
+> 記得輸入npm publish時要在package.json的同層目錄下
+
+# \#發佈為npm GLOBAL package
 
 和之前一樣先npm adduser
 
