@@ -1,27 +1,30 @@
 # React util
 
-
-##1.如有一個共用的Component
+## 1.如有一個共用的Component
 
 不要於component的style 寫上如
+
 ```
 Object.assign(props.style,style.item)
 ```
-這樣共用元素的頁面會互相覆蓋style
+
+這樣共用元素的頁面會互相覆蓋style  
 因為react不會重新render元素
 
-##2.使用Rich Editor
+## 2.使用Rich Editor
+
 這裡使用Draft.js 做example
 
 官方的usage只給了一般的editor
 
 如要有上方按鈕需使用官方提供的richEditor範例
 
-https://github.com/facebook/draft-js/blob/master/examples/rich/rich.html
+[https://github.com/facebook/draft-js/blob/master/examples/rich/rich.html](https://github.com/facebook/draft-js/blob/master/examples/rich/rich.html)
 
 我們使用時會先把它包成一個component在做引入
 
 1.先新增RichEditor.js
+
 ```
 import React, { Component, PropTypes as T } from 'react';
 import { connect } from 'react-redux';
@@ -224,11 +227,12 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, {
 })(radium(RichEditor));
-
 ```
+
 2.添加兩份css
 
 Draft.css
+
 ```
 /**
  * Draft v0.9.0
@@ -241,8 +245,8 @@ Draft.css
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 .DraftEditor-editorContainer,.DraftEditor-root,.public-DraftEditor-content{height:inherit;text-align:initial}.public-DraftEditor-content[contenteditable=true]{-webkit-user-modify:read-write-plaintext-only}.DraftEditor-root{position:relative}.DraftEditor-editorContainer{background-color:rgba(255,255,255,0);border-left:.1px solid transparent;position:relative;z-index:1}.public-DraftEditor-block{position:relative}.DraftEditor-alignLeft .public-DraftStyleDefault-block{text-align:left}.DraftEditor-alignLeft .public-DraftEditorPlaceholder-root{left:0;text-align:left}.DraftEditor-alignCenter .public-DraftStyleDefault-block{text-align:center}.DraftEditor-alignCenter .public-DraftEditorPlaceholder-root{margin:0 auto;text-align:center;width:100%}.DraftEditor-alignRight .public-DraftStyleDefault-block{text-align:right}.DraftEditor-alignRight .public-DraftEditorPlaceholder-root{right:0;text-align:right}.public-DraftEditorPlaceholder-root{color:#9197a3;position:absolute;z-index:0}.public-DraftEditorPlaceholder-hasFocus{color:#bdc1c9}.DraftEditorPlaceholder-hidden{display:none}.public-DraftStyleDefault-block{position:relative;white-space:pre-wrap}.public-DraftStyleDefault-ltr{direction:ltr;text-align:left}.public-DraftStyleDefault-rtl{direction:rtl;text-align:right}.public-DraftStyleDefault-listLTR{direction:ltr}.public-DraftStyleDefault-listRTL{direction:rtl}.public-DraftStyleDefault-ol,.public-DraftStyleDefault-ul{margin:16px 0;padding:0}.public-DraftStyleDefault-depth0.public-DraftStyleDefault-listLTR{margin-left:1.5em}.public-DraftStyleDefault-depth0.public-DraftStyleDefault-listRTL{margin-right:1.5em}.public-DraftStyleDefault-depth1.public-DraftStyleDefault-listLTR{margin-left:3em}.public-DraftStyleDefault-depth1.public-DraftStyleDefault-listRTL{margin-right:3em}.public-DraftStyleDefault-depth2.public-DraftStyleDefault-listLTR{margin-left:4.5em}.public-DraftStyleDefault-depth2.public-DraftStyleDefault-listRTL{margin-right:4.5em}.public-DraftStyleDefault-depth3.public-DraftStyleDefault-listLTR{margin-left:6em}.public-DraftStyleDefault-depth3.public-DraftStyleDefault-listRTL{margin-right:6em}.public-DraftStyleDefault-depth4.public-DraftStyleDefault-listLTR{margin-left:7.5em}.public-DraftStyleDefault-depth4.public-DraftStyleDefault-listRTL{margin-right:7.5em}.public-DraftStyleDefault-unorderedListItem{list-style-type:square;position:relative}.public-DraftStyleDefault-unorderedListItem.public-DraftStyleDefault-depth0{list-style-type:disc}.public-DraftStyleDefault-unorderedListItem.public-DraftStyleDefault-depth1{list-style-type:circle}.public-DraftStyleDefault-orderedListItem{list-style-type:none;position:relative}.public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-listLTR:before{left:-36px;position:absolute;text-align:right;width:30px}.public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-listRTL:before{position:absolute;right:-36px;text-align:left;width:30px}.public-DraftStyleDefault-orderedListItem:before{content:counter(ol0) ". ";counter-increment:ol0}.public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth1:before{content:counter(ol1) ". ";counter-increment:ol1}.public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth2:before{content:counter(ol2) ". ";counter-increment:ol2}.public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth3:before{content:counter(ol3) ". ";counter-increment:ol3}.public-DraftStyleDefault-orderedListItem.public-DraftStyleDefault-depth4:before{content:counter(ol4) ". ";counter-increment:ol4}.public-DraftStyleDefault-depth0.public-DraftStyleDefault-reset{counter-reset:ol0}.public-DraftStyleDefault-depth1.public-DraftStyleDefault-reset{counter-reset:ol1}.public-DraftStyleDefault-depth2.public-DraftStyleDefault-reset{counter-reset:ol2}.public-DraftStyleDefault-depth3.public-DraftStyleDefault-reset{counter-reset:ol3}.public-DraftStyleDefault-depth4.public-DraftStyleDefault-reset{counter-reset:ol4}
-
 ```
+
 RichEditor.css
 
 ```
@@ -309,7 +313,6 @@ RichEditor.css
 .RichEditor-activeButton {
   color: #5890ff;
 }
-
 ```
 
 之後引入上面包好的Component
@@ -320,20 +323,34 @@ RichEditor.css
 
 接著因為我們要將其存成immutable的markdown轉為html，須使用如下模組
 
-https://github.com/sstur/draft-js-export-html
+[https://github.com/sstur/draft-js-export-html](https://github.com/sstur/draft-js-export-html)
 
 ```
   constructor(props) {
     super(props);
     this.state = { editorState: EditorState.createEmpty() };
-    
+
     this.onChange = (editorState) => {
       this.setState({ editorState });
       console.log(editorState.getCurrentContent())
       let html = stateToHTML(editorState.getCurrentContent());
       console.log(html)
     }
-    
+
       //TODO 把此html傳給parent state使用即可
 ```
+
 如上使用即可
+
+
+
+# 使用Material UI
+
+為原本的Materialize css包成的套件。
+
+http://www.material-ui.com/\#/components/list
+
+ICON: https://material.io/icons/\#ic\_swap\_horiz
+
+
+
