@@ -91,11 +91,9 @@ if (cluster.isMaster) {
 >
 > 可參考：[http://taobaofed.org/blog/2015/11/03/nodejs-cluster/](http://taobaofed.org/blog/2015/11/03/nodejs-cluster/)
 
-
-
 ## 執行shell指令
 
-> 可以使用shawn或是exec
+> 可以使用spawn或是exec
 
 ```js
   const { exec } = require('child_process');
