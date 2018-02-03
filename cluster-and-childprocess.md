@@ -83,15 +83,42 @@ if (cluster.isMaster) {
 }
 ```
 
-
-
 但是
 
 > master 進程創建 socket，綁定到某個地址以及PORT後，自身不調用 listen 來監聽連接以及 accept 連接，而是將該 socket 的 fd\(file descriptor\) 傳遞到 fork 出來的 worker 進程，worker 接收到 fd 後再調用 listen，accept 新的連接。但實際一個新到來的連接最終只能被某一個 worker 進程 accpet 再做處理。
 >
 > 所以會造成子進程產生競爭現象
 >
-> 可參考：http://taobaofed.org/blog/2015/11/03/nodejs-cluster/
+> 可參考：[http://taobaofed.org/blog/2015/11/03/nodejs-cluster/](http://taobaofed.org/blog/2015/11/03/nodejs-cluster/)
+
+
+
+## 執行shell指令
+
+> 可以使用shawn或是exec
+
+```js
+  const { exec } = require('child_process');
+  exec(`
+  mkdir ${location}
+  cd ${location}
+  openssl genrsa -out ${keyName}_private.pem
+  openssl rsa -in ${keyName}_private.pem -out ${keyName}_public.pem -outform PEM -pubout
+  `, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+      }
+      console.log(`${stdout}`);
+      console.log(`${stderr}`);
+    });
+```
+
+spawn會需要將參數寫成如下
+
+```js
+spawn('ls', ['-lh', '/usr'] )....
+```
 
 
 
