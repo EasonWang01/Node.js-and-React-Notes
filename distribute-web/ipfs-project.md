@@ -2,9 +2,9 @@
 
 Tutorial
 
-https://github.com/ipfs/js-ipfs/tree/master/examples
+[https://github.com/ipfs/js-ipfs/tree/master/examples](https://github.com/ipfs/js-ipfs/tree/master/examples)
 
-下載
+#### 安裝
 
 [https://ipfs.io/docs/install/](https://ipfs.io/docs/install/)
 
@@ -16,6 +16,13 @@ sudo apt-get install golang-go -y
 wget https://dist.ipfs.io/go-ipfs/v0.4.10/go-ipfs_v0.4.10_linux-386.tar.gz
 tar xvfz go-ipfs_v0.4.10_linux-386.tar.gz
 sudo mv go-ipfs/ipfs /usr/local/bin/ipfs
+```
+
+#### 初始化
+
+```
+ipfs init
+ipfs daemon
 ```
 
 上傳
@@ -32,6 +39,12 @@ ipfs add -r ./
 
 ```
 ipfs get <file hash>
+```
+
+也可在以下網站查看
+
+```
+https://ipfs.io/ipfs/檔案Hash
 ```
 
 # JS-IPFS
