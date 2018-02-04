@@ -47,6 +47,12 @@ ipfs get <file hash>
 https://ipfs.io/ipfs/檔案Hash
 ```
 
+可以輸入以下進入節點資訊頁面
+
+```
+localhost:5001/webui
+```
+
 # JS-IPFS
 
 js 版本的IPFS
