@@ -113,8 +113,6 @@ set PORT=8080 && nodemon test.js
 
 npm install npm@latest -g
 
-
-
 # \#發佈npm package
 
 ```
@@ -174,7 +172,7 @@ nvm use <version>
 # 查看套件以前發布過的版本
 
 ```
-npm view connect
+npm view <套件名稱>
 ```
 
 
