@@ -36,7 +36,7 @@ rcedit('./pkttest-win.exe' , {
 
 > 指定exe檔案位置與ico位置後即可更換可執行檔的icon
 >
-> 如果執行成功後圖片沒變，把檔案移動到別的資料夾即可生效
+> 如果執行成功後圖片沒變，把檔案移動到別的資料夾即可生效，或是複製檔案後再貼上也可以
 
 只能使用.ico檔案，無法使用png或jpg，可用此轉換:[http://icoconvert.com/](http://icoconvert.com/)
 
