@@ -244,7 +244,20 @@ rsync
 rsync --progress -r --exclude "node_modules/" --exclude  ".*/"  -e "ssh -i ~/Downloads/pem1.pem"  ubuntu@ec2-52-198-155-128.ap-northeast-1.compute.amazonaws.com:/home/ubuntu/ ./
 ```
 
-> rsync可參考  https://blog.gtwang.org/linux/rsync-local-remote-file-synchronization-commands/
+> rsync可參考  [https://blog.gtwang.org/linux/rsync-local-remote-file-synchronization-commands/](https://blog.gtwang.org/linux/rsync-local-remote-file-synchronization-commands/)
+
+
+
+#### 更改螢幕解析度
+
+windows
+
+https://superuser.com/a/89360
+
+```
+下載nircmd，之後 cd 到執行檔目錄
+nircmd.exe setdisplay 1920 1080 32
+```
 
 
 
