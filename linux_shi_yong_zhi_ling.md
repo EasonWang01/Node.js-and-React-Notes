@@ -169,10 +169,16 @@ export PATH=/usr/local/bin:/usr/local/sbin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X
 
 2.輸入`~/.bashrc` 在開頭寫`export`空一格把剛才的貼上，最後加上`:`然後加上你要加上的路徑及可
 
-EX:
+E.g.
 
 ```
 export PATH=/home/eason/bin:/home/eason/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eason/Desktop/bitcoin-0.14.1/bin
+```
+
+之後Reload 設定即可
+
+```
+source ~/.bashrc
 ```
 
 ## 列出資料夾裡面的大容量檔案
@@ -246,13 +252,11 @@ rsync --progress -r --exclude "node_modules/" --exclude  ".*/"  -e "ssh -i ~/Dow
 
 > rsync可參考  [https://blog.gtwang.org/linux/rsync-local-remote-file-synchronization-commands/](https://blog.gtwang.org/linux/rsync-local-remote-file-synchronization-commands/)
 
-
-
 #### 更改螢幕解析度
 
 windows
 
-https://superuser.com/a/89360
+[https://superuser.com/a/89360](https://superuser.com/a/89360)
 
 ```
 下載nircmd，之後 cd 到執行檔目錄
