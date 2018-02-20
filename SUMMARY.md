@@ -127,4 +127,5 @@
 * [打包應用程式](da-bao-ying-yong-cheng-shi.md)
 * Java
   * [使用gradle結合docker](shi-yong-gradlejie-he-docker.md)
+* [Debug 頁面](debug-ye-mian.md)
 
