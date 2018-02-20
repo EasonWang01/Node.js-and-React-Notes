@@ -26,6 +26,8 @@ git reset
 
 ### 刪除遠端分支
 
+> 記得該分支不可是Default branch
+
 ```
 git push <remote name> :<branch name>
 
