@@ -268,7 +268,7 @@ rsync --progress -r --exclude "node_modules/" --exclude  ".*/"  -e "ssh -i ~/Dow
 
 #### 更改螢幕解析度
 
-windows
+**Ｗindows**
 
 [https://superuser.com/a/89360](https://superuser.com/a/89360)
 
