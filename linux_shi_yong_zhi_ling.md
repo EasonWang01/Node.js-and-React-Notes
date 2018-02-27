@@ -183,19 +183,21 @@ source ~/.bashrc
 
 ## 列出資料夾裡面的大容量檔案
 
+#### Linux與macOS:
+
 ```
 du -a * | sort -r -n | head -10
 ```
 
 > 在mac中通常`~/Library/Caches/`會需刪除
 
-Windows :
+#### Windows :
 
 ```
 forfiles /S /M * /C "cmd /c if @fsize GEQ 1073741824 echo @path"
 ```
 
-或是
+或是 \( 推薦 \)
 
 ```
 powershell -command "$fso = new-object -com Scripting.FileSystemObject; gci -Directory | select @{l='Size'; e={$fso.GetFolder($_.FullName).Size}},FullName | sort Size -Descending | ft @{l='Size [MB]'; e={'{0:N2}    ' -f ($_.Size / 1MB)}},FullName"
