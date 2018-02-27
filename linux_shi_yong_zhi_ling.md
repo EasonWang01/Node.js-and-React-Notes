@@ -189,6 +189,12 @@ du -a * | sort -r -n | head -10
 
 > 在mac中通常`~/Library/Caches/`會需刪除
 
+windows
+
+```
+forfiles /S /M * /C "cmd /c if @fsize GEQ 1073741824 echo @path"
+```
+
 ## 找出當前資料夾的絕對路徑
 
 ```
