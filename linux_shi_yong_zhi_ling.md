@@ -15,11 +15,11 @@ sudo bash -c 'cat
 # Debian相關筆記
 
 ```
-更改網路:/etc/network/interfaces
-其中需設定如下:1.ip 2.netmask 3. gateway
-之後重啟網路:/etc/init.d/networking restart
+更改網路: /etc/network/interfaces
+其中需設定如下: 1.ip 2.netmask 3. gateway
+之後重啟網路: /etc/init.d/networking restart
 
-debian的apt-get update   url位置 vim  /etc/apt/sources.list
+apt-get update 之 url 位置： vim  /etc/apt/sources.list
 
 dns位置  vim /etc/resolv.conf  範例:nameserver  192.168.0.1
 
