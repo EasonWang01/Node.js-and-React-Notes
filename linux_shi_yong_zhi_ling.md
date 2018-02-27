@@ -189,10 +189,16 @@ du -a * | sort -r -n | head -10
 
 > 在mac中通常`~/Library/Caches/`會需刪除
 
-windows
+Windows :
 
 ```
 forfiles /S /M * /C "cmd /c if @fsize GEQ 1073741824 echo @path"
+```
+
+或是
+
+```
+powershell -command "$fso = new-object -com Scripting.FileSystemObject; gci -Directory | select @{l='Size'; e={$fso.GetFolder($_.FullName).Size}},FullName | sort Size -Descending | ft @{l='Size [MB]'; e={'{0:N2}    ' -f ($_.Size / 1MB)}},FullName"
 ```
 
 ## 找出當前資料夾的絕對路徑
