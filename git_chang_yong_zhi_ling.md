@@ -165,6 +165,25 @@ reword f7fde4a Change the commit message but push the same commit.
 //把要修改的前面從pick改為reword即可
 ```
 
+# 移除以前的commit
+
+```
+git rebase -i HEAD~4
+```
+
+```
+之後會產生列表，把你不要的移除或註解掉即可，如下。
+```
+
+```
+pick 2f05aba ... #will be preserved
+#pick 3371cec ... #will be deleted
+#pick daed25c ... #will be deleted
+pick e2b2a84 ... #will be preserved
+```
+
+https://stackoverflow.com/questions/9725156/remove-old-git-commits
+
 # Git Reset
 
 ```
