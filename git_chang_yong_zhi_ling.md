@@ -139,13 +139,13 @@ git checkout 分支名稱
  git submodule update
 ```
 
-# \#修改上一次commit 的說明
+# 修改上一次commit 的說明
 
 ```
 git commit --amend
 ```
 
-# \# 修改以前多次commit 說明
+# 修改以前多次commit 說明
 
 [https://help.github.com/articles/changing-a-commit-message/](https://help.github.com/articles/changing-a-commit-message/)
 
@@ -216,11 +216,15 @@ git cherry-pick <sha1 hash>
 git revert HEAD //返回至上一次的提交  並且commit
 ```
 
+revert 用來取消以前的Commit，取消後會產生出新的commit，可參考 :
+
+http://rubyist.marsz.tw/blog/2012-01-17/git-reset-and-revert-to-rollback-commit/
+
 # Git Rebase
 
-```
-讓merge之後   圖表不顯示分支紀錄
+讓merge後 ，圖表不顯示分支紀錄，並且可用來移除以前的Commit。
 
+```
 // 加上 -i 為進入互動式模式
 
 git rebase master
