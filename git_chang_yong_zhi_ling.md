@@ -182,7 +182,9 @@ pick 2f05aba ... #will be preserved
 pick e2b2a84 ... #will be preserved
 ```
 
-https://stackoverflow.com/questions/9725156/remove-old-git-commits
+[https://stackoverflow.com/questions/9725156/remove-old-git-commits](https://stackoverflow.com/questions/9725156/remove-old-git-commits)
+
+> 如果要更改遠端Repo必須要Force Push
 
 # Git Reset
 
