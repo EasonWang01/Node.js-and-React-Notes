@@ -76,6 +76,12 @@ ok
 git push -f origin HEAD^:master
 ```
 
+或是使用以下，然後把commit註解掉
+
+```
+git rebase -i HEAD~2
+```
+
 ## 取消上次commit且維持檔案內容
 
 ```
@@ -186,6 +192,8 @@ pick e2b2a84 ... #will be preserved
 
 > 如果要更改遠端Repo必須要Force Push
 
+> 如果要移除最後一次commit 則至少要到HEAD~2 `git rebase -i HEAD~2` 然後把最後一次commit註解掉
+
 # Git Reset
 
 ```
@@ -218,7 +226,7 @@ git revert HEAD //返回至上一次的提交  並且commit
 
 revert 用來取消以前的Commit，取消後會產生出新的commit，可參考 :
 
-http://rubyist.marsz.tw/blog/2012-01-17/git-reset-and-revert-to-rollback-commit/
+[http://rubyist.marsz.tw/blog/2012-01-17/git-reset-and-revert-to-rollback-commit/](http://rubyist.marsz.tw/blog/2012-01-17/git-reset-and-revert-to-rollback-commit/)
 
 # Git Rebase
 
