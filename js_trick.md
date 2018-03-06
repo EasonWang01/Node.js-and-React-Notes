@@ -48,7 +48,7 @@ style
 
 ```js
 <input id="pageHideInput"/> 
-//新增一個隱藏的Input，但記得如果使用display:none會無法使用select() 所以建議把它用absolute然後width:0px; height: 0px;
+//新增一個隱藏的Input，但記得如果使用display:none會無法使用select() 所以建議把它用absolute然後width:0px; height: 0px; top: -1200px
 <div id="textToCopy"></div> 
 
 var v = document.getElementById('textToCopy').innerHTML;
