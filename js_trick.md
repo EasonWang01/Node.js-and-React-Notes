@@ -75,35 +75,43 @@ document.getElementById('pageHideInput').blur(); //避免手機彈起鍵盤
 ```
 
 ```js
-// 倒數計時
-				// 倒數多久
-				var time = 1;
-				var countDownDate = new Date().getTime() + 1000 * 60 * time;
-				// Update the count down every 1 second
-				var x = setInterval(function () {
-					// Get todays date and time
-					var now = new Date().getTime();
-					// Find the distance between now an the count down date
-					var distance = countDownDate - now;
-					// Time calculations for days, hours, minutes and seconds
-					var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-					var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-					var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-					var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-					seconds.toString().length > 1 ? seconds = seconds : seconds = '0' + seconds
 
-					// Display the result in the element with id="demo"
-					document.getElementById("timer").innerHTML = "0" + minutes + ":" + seconds;
 
-					// If the count down is finished, write some text 
-					if (distance < 0) {
-						clearInterval(x);
-						document.getElementById("timer").innerHTML = "EXPIRED";
-					}
-				}, 200);
-			} else {
-				window.open(data.bankUrl);
-			}
+/**
+ * 設定畫面倒數計時
+ * 
+ * @ element 綁定畫面元素ID
+ * @ time 倒數分鐘數
+ * @ callback {Function} 倒數結束後的執行Function
+ */
+function setUITimer(element, time, callback) {
+  var countDownDate = new Date().getTime() + 1000 * 60 * time;
+  if(window.scan_wc_timer) {
+    clearInterval(window.scan_wc_timer);
+    document.getElementById('timer').innerHTML = "05:00"
+  }
+  window.scan_wc_timer = setInterval(function () {
+    // Get todays date and time
+    var now = new Date().getTime();
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    seconds.toString().length > 1 ? seconds = seconds : seconds = '0' + seconds
+
+    document.getElementById(element).innerHTML = "0" + minutes + ":" + seconds;
+
+  
+    if (distance < 0) {
+      clearInterval(window.scan_wc_timer);
+      document.getElementById('timer').innerHTML = "05:00"
+      callback();
+    }
+  }, 300);
+}
 ```
 
 
