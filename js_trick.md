@@ -75,8 +75,6 @@ document.getElementById('pageHideInput').blur(); //避免手機彈起鍵盤
 ```
 
 ```js
-
-
 /**
  * 設定畫面倒數計時
  * 
@@ -104,7 +102,7 @@ function setUITimer(element, time, callback) {
 
     document.getElementById(element).innerHTML = "0" + minutes + ":" + seconds;
 
-  
+
     if (distance < 0) {
       clearInterval(window.scan_wc_timer);
       document.getElementById('timer').innerHTML = "05:00"
@@ -114,5 +112,15 @@ function setUITimer(element, time, callback) {
 }
 ```
 
+# 移除畫面上的事件綁定
 
+有時如果畫面更新但元素沒更新時，造成重複綁定事件，可用以下方法更新元素，移除舊事件。
+
+```js
+var old_element = document.getElementById("btn");
+var new_element = old_element.cloneNode(true);
+old_element.parentNode.replaceChild(new_element, old_element);
+```
+
+https://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element
 
