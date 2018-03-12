@@ -122,5 +122,16 @@ var new_element = old_element.cloneNode(true);
 old_element.parentNode.replaceChild(new_element, old_element);
 ```
 
-https://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element
+例如
+
+```js
+element.addEventListener('click', function () {
+  scanPayDepositApplication(element)
+  var old_element = element;
+  var new_element = old_element.cloneNode(true);
+  old_element.parentNode.replaceChild(new_element, old_element);	
+})
+```
+
+[https://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element](https://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element)
 
