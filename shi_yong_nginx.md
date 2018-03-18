@@ -159,10 +159,6 @@ http {
   sudo nginx
 ```
 
-
-
-
-
 EXAMPLE:
 
 ```
@@ -230,8 +226,21 @@ server {
  }
 
 }
-
 ```
+
+# 讀取index.html
+
+```js
+server {
+  listen 80 default;
+  root /home/yichengww/build;
+  location / {
+    try_files $uri /index.html;
+  }
+}
+```
+
+> 記得root不可寫`~`
 
 
 
