@@ -244,3 +244,21 @@ server {
 
 
 
+
+
+# 注意事項
+
+有時如果以下指令出現`"nginx.pid" failed` 
+
+```
+nginx -s reload
+```
+
+可替換為
+
+```
+sudo service nginx restart
+```
+
+
+
