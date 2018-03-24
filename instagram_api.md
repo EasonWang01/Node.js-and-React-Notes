@@ -105,31 +105,40 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 ```js
 const https = require('https');
 
-const options = {
-  hostname: 'www.instagram.com',
-  port: 443,
-  path: '/yicheng71248/?__a=1',
-  method: 'GET'
-};
 
-let chunk = '';
+function https_request(username, querystring) {
+  let chunk = '';
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname: 'www.instagram.com',
+      port: 443,
+      path: `/${username}/${querystring}`,
+      method: 'GET'
+    };
+    const req = https.request(options, (res) => {
+      res.on('data', (d) => {
+          chunk += d;
+      });
+      res.on('end', () => {
+        resolve(chunk)
+      })
+    });
+    req.on('error', (e) => {
+      console.error(e);
+    });
+    req.end();
+  })  
+}  
 
-const req = https.request(options, (res) => {
-  res.on('data', (d) => {
-      chunk += d;
-  });
-  res.on('end', () => {
-    console.log(JSON.parse(chunk).graphql.user.id)
-  })
-});
-
-req.on('error', (e) => {
-  console.error(e);
-});
-
-
-req.end();
+https_request('liona_luona', '?__a=1').then(data => {
+  console.log(JSON.parse(data).graphql.user.id)
+})
+https_request('yicheng71248', '?__a=1').then(data => {
+  console.log(JSON.parse(data).graphql.user.id)
+})
 ```
+
+之後我們有了ID就可以來查找使用者以前發送過的所有文章
 
 
 
