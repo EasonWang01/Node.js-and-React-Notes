@@ -32,10 +32,6 @@ https://www.instagram.com/oauth/authorize?client_id=3b6d608eb019431ca90bde60c917
 
 之後會跳轉到你填寫的redirect URL 並在網址最後面附上`Access-token`
 
-
-
-
-
 ## 查詢指定tag的所有文章
 
 GET
@@ -51,6 +47,20 @@ GET
 ```
 https://www.instagram.com/使用者ID/?__a=1
 ```
+
+# 爬蟲參數
+
+instagram的XHR固定格式如下
+
+```
+https://www.instagram.com/graphql/query/?query_hash=....&variables=...
+```
+
+* query\_hash 為發送請求的種類 \( 例如請求加載使用者後續圖片的hash均為 `472f257a40c653c64c666ce877d59d2b`\)
+
+* variables 為一個json經過urlEncode過的字串
+
+
 
 # 注意事項：
 
