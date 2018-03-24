@@ -32,11 +32,17 @@ https://www.instagram.com/oauth/authorize?client_id=3b6d608eb019431ca90bde60c917
 
 之後會跳轉到你填寫的redirect URL 並在網址最後面附上`Access-token`
 
+## 查詢指定tag的所有文章
+
+Get
+
+```
+https://www.instagram.com/explore/tags/輸入欲查詢的TAG/?__a=1
+```
+
 # 注意事項：
 
 2017/10/1號之後只能取得Basic的資訊，其他 API 都不開放了。
 
-https://www.instagram.com/developer/changelog/
-
-
+[https://www.instagram.com/developer/changelog/](https://www.instagram.com/developer/changelog/)
 
