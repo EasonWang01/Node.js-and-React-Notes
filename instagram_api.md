@@ -54,7 +54,7 @@ https://www.instagram.com/使用者帳號/?__a=1
 
 > 可以查到使用者數字ID、名字、追蹤人數、等等。
 
-## 取得使用者發布過的文章
+## 取得使用者發布過的文章圖片
 
 instagram的XHR固定格式如下
 
@@ -133,14 +133,78 @@ function https_request(username, querystring) {
 https_request('liona_luona', '?__a=1').then(data => {
   console.log(JSON.parse(data).graphql.user.id)
 })
-https_request('yicheng71248', '?__a=1').then(data => {
-  console.log(JSON.parse(data).graphql.user.id)
+```
+
+之後我們有了ID
+
+我們可以將下面改為如下查找使用者發表過的文章數量
+
+```js
+https_request('liona_luona', '?__a=1').then(data => {
+  console.log(JSON.parse(data).graphql.user.edge_owner_to_timeline_media.count)
 })
 ```
 
-之後我們有了ID就可以來查找使用者以前發送過的所有文章
+有了ID與文章數量後我們就可以來拼出參數
+
+我們先拼出querystring
+
+```json
+{
+  "id":"275237117",
+  "first": 1000, //或是上剛才查出使用者的文章數量，因為我們要一次查全部
+  "after":"AQBEU_pfdtAHWuxSKwtTEIYRnN8LIHtBASC8bAaQGgpD9r3ZaaVu0qMQzh_qArARwpdM2jt0tprfp35rtcX268DNOFUTBEH7yme7oC8R6mRAug"
+}
+```
+
+發送請求
+
+```js
+const https = require('https');
 
 
+function https_request(path, querystring) {
+  let chunk = '';
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname: 'www.instagram.com',
+      port: 443,
+      path: `/${path}/${querystring}`,
+      method: 'GET'
+    };
+    const req = https.request(options, (res) => {
+      res.on('data', (d) => {
+          chunk += d;
+      });
+      res.on('end', () => {
+        resolve(chunk)
+      })
+    });
+    req.on('error', (e) => {
+      console.error(e);
+    });
+    req.end();
+  })  
+}  
+
+https_request('yicheng71248', '?__a=1').then(data => {
+  userID = JSON.parse(data).graphql.user.id
+  userArticleCount = JSON.parse(data).graphql.user.edge_owner_to_timeline_media.count
+}).then(() => {
+  let urlencodeP = encodeURIComponent(
+    `{"id": ${userID},
+     "first": ${userArticleCount},
+     "after":"AQBo_T54D3Isvkn39aEAn5WO1VvQXmLmZzReXHtfgylI-l4IrcVMMRs0Kqz1Q2tu5Jrkcw1ScAfAUddkbVuBiDTXhkHI5jz58I1xj3kxVuzlDQ"
+    }`)
+    console.log(urlencodeP)
+  let querystring = `?query_hash=472f257a40c653c64c666ce877d59d2b&variables=${urlencodeP}`
+  https_request('graphql/query', querystring).then(data => {
+    console.log(data)
+  })
+})
+```
+
+注意：如果first參數超過一千以上會產生timeout情況，返回FB錯誤頁面。
 
 # 注意事項：
 
