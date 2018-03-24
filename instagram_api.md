@@ -68,7 +68,7 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 
 #### varibles格式有兩種
 
-第一種： 當query\_hash為`7e1e0c68bbe459cf48cbd5533ddee9d`時
+第一種： 當query\_hash為`7e1e0c68bbe459cf48cbd5533ddee9d`時 \(加載使用者相關的資訊\)
 
 ```json
 {
@@ -80,7 +80,7 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 }
 ```
 
-第二種：  當query\_hash為 `472f257a40c653c64c666ce877d59d2b`時
+第二種：  當query\_hash為 `472f257a40c653c64c666ce877d59d2b`時 \(加載使用者文章\)
 
 ```json
 {
@@ -97,6 +97,39 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 > ```
 > AQBEU_pfdtAHWuxSKwtTEIYRnN8LIHtBASC8bAaQGgpD9r3ZaaVu0qMQzh_qArARwpdM2jt0tprfp35rtcX268DNOFUTBEH7yme7oC8R6mRAug
 > ```
+
+所以現在我們來試著取得使用者的所有文章，首先我們要先知道要查詢的使用者ID
+
+所以我們先使用如下查詢ID
+
+```js
+const https = require('https');
+
+const options = {
+  hostname: 'www.instagram.com',
+  port: 443,
+  path: '/yicheng71248/?__a=1',
+  method: 'GET'
+};
+
+let chunk = '';
+
+const req = https.request(options, (res) => {
+  res.on('data', (d) => {
+      chunk += d;
+  });
+  res.on('end', () => {
+    console.log(JSON.parse(chunk).graphql.user.id)
+  })
+});
+
+req.on('error', (e) => {
+  console.error(e);
+});
+
+
+req.end();
+```
 
 
 
