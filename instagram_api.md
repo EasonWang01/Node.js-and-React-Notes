@@ -98,6 +98,8 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 > AQBEU_pfdtAHWuxSKwtTEIYRnN8LIHtBASC8bAaQGgpD9r3ZaaVu0qMQzh_qArARwpdM2jt0tprfp35rtcX268DNOFUTBEH7yme7oC8R6mRAug
 > ```
 
+> end\_cursor可以從上次的query請求中的Response獲得。
+
 所以現在我們來試著取得使用者的所有文章，首先我們要先知道要查詢的使用者ID
 
 所以我們先使用如下查詢ID
