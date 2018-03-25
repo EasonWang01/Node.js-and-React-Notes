@@ -255,9 +255,82 @@ https_request('yicheng71248', '?__a=1').then(data => {
 
 注意：如果first參數超過一千以上會產生timeout情況，返回FB錯誤頁面。
 
+接著我們用Async Loop的方式讀取使用者所有圖片
+
+```js
+const https = require('https');
+
+let articles = [];
+let current_count = 0;
+
+function https_request(path, querystring) {
+  let chunk = '';
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname: 'www.instagram.com',
+      port: 443,
+      path: `/${path}/${querystring}`,
+      method: 'GET'
+    };
+    const req = https.request(options, (res) => {
+      res.on('data', (d) => {
+        chunk += d;
+      });
+      res.on('end', () => {
+        resolve(chunk)
+      })
+    });
+    req.on('error', (e) => {
+      console.error(e);
+    });
+    req.end();
+  })
+}
+
+https_request('yicheng71248', '?__a=1').then(data => {
+  userID = JSON.parse(data).graphql.user.id
+  userArticleCount = JSON.parse(data).graphql.user.edge_owner_to_timeline_media.count
+  current_endCursor = "AQBo_T54D3Isvkn39aEAn5WO1VvQXmLmZzReXHtfgylI-l4IrcVMMRs0Kqz1Q2tu5Jrkcw1ScAfAUddkbVuBiDTXhkHI5jz58I1xj3kxVuzlDQ"
+}).then(() => {
+
+  (async function loop() {
+    for (let i = 0; i < userArticleCount; i += 12) {
+      await new Promise(resolve => {
+        let urlencodeP = encodeURIComponent(
+          `{"id": ${userID},
+           "first": 12,
+           "after": "${current_endCursor}"
+          }`);
+        let querystring = `?query_hash=472f257a40c653c64c666ce877d59d2b&variables=${urlencodeP}`
+        https_request('graphql/query', querystring).then(data => {
+          let _articles = JSON.parse(data).data.user.edge_owner_to_timeline_media.edges;
+          _articles.forEach(article => {
+            articles.push(article.node.display_url);
+          })
+          current_endCursor = JSON.parse(data).data.user.edge_owner_to_timeline_media.page_info.end_cursor;
+          resolve();
+          if(i + 12 > userArticleCount) {
+            // 讀取全部後
+            console.log(articles)
+          }
+        })
+      });
+    }
+  })();
+})
+```
+
 # 注意事項：
 
-2017/10/1號之後只能取得Basic的資訊，其他 API 都不開放了。
+1. 2017/10/1號之後只能取得Basic的資訊，其他 API 都不開放了。
 
 [https://www.instagram.com/developer/changelog/](https://www.instagram.com/developer/changelog/)
+
+    2. 爬蟲執行過多次後會出現以下錯誤：
+
+```
+{"message": "rate limited", "status": "fail"}
+```
+
+
 
