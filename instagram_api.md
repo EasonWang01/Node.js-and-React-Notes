@@ -262,7 +262,7 @@ const https = require('https');
 
 let articles = [];
 let current_count = 0;
-let iterateCount = 12;
+let iterateCount = 1000;
 let username = "liona_luona";
 
 function https_request(path, querystring) {
