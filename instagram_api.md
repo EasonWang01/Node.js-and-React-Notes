@@ -341,5 +341,7 @@ https_request(username, '?__a=1').then(data => {
 {"message": "rate limited", "status": "fail"}
 ```
 
+> 解決方法為把first調大，並減少iterate的request次數
+
 
 
