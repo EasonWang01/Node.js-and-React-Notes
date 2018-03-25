@@ -322,11 +322,11 @@ https_request('yicheng71248', '?__a=1').then(data => {
 
 # 注意事項：
 
-1. 2017/10/1號之後只能取得Basic的資訊，其他 API 都不開放了。
+1.2017/10/1號之後只能取得Basic的資訊，其他 API 都不開放了。
 
 [https://www.instagram.com/developer/changelog/](https://www.instagram.com/developer/changelog/)
 
-    2. 爬蟲執行過多次後會出現以下錯誤：
+2.爬蟲執行過多次後會出現以下錯誤：
 
 ```
 {"message": "rate limited", "status": "fail"}
