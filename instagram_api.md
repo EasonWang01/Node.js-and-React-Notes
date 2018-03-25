@@ -54,7 +54,14 @@ https://www.instagram.com/使用者帳號/?__a=1
 
 > 可以查到使用者數字ID、名字、追蹤人數、等等。
 
-## 取得使用者發布過的文章圖片
+## 查詢使用者動態影片
+
+```
+https://www.instagram.com/graphql/query/?query_hash=...&variables=...
+```
+
+* * 
+## Query請求格式
 
 instagram的XHR固定格式如下
 
@@ -66,7 +73,7 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 
 * variables 為一個json經過urlEncode過的字串
 
-#### varibles格式有兩種
+#### varibles格式
 
 第一種： 當query\_hash為`7e1e0c68bbe459cf48cbd5533ddee9d`時 \(加載使用者相關的資訊\)
 
@@ -97,8 +104,14 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 > ```
 > AQBEU_pfdtAHWuxSKwtTEIYRnN8LIHtBASC8bAaQGgpD9r3ZaaVu0qMQzh_qArARwpdM2jt0tprfp35rtcX268DNOFUTBEH7yme7oC8R6mRAug
 > ```
-
+>
 > end\_cursor可以從上次的query請求中的Response獲得。
+
+第三種： 當query\_hash為 `bf41e22b1c4ba4c9f31b844ebb7d9056` 時 \(加載使用者動態影片\)
+
+
+
+## 取得使用者發布過的文章圖片
 
 所以現在我們來試著取得使用者的所有文章，首先我們要先知道要查詢的使用者ID
 
