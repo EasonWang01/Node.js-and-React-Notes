@@ -60,7 +60,7 @@ https://www.instagram.com/使用者帳號/?__a=1
 https://www.instagram.com/graphql/query/?query_hash=...&variables=...
 ```
 
-* * ## Query請求格式
+## Query請求格式
 
 instagram的XHR固定格式如下
 
@@ -72,9 +72,15 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 
 * variables 為一個json經過urlEncode過的字串
 
-#### varibles格式
+#### Querystring參數
 
-第一種： 當query\_hash為`7e1e0c68bbe459cf48cbd5533ddee9d`時 \(加載使用者相關的資訊\)
+有兩個參數，query\_hash與variables
+
+**第一種： **
+
+當query\_hash為`7e1e0c68bbe459cf48cbd5533ddee9d`時 \(加載使用者相關的資訊\)
+
+variables參數：
 
 ```json
 {
@@ -86,7 +92,17 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 }
 ```
 
-第二種：  當query\_hash為 `472f257a40c653c64c666ce877d59d2b`時 \(加載使用者文章\)
+e.g.
+
+```
+https://www.instagram.com/graphql/query/?query_hash=7e1e0c68bbe459cf48cbd5533ddee9d4&variables=%7B%22user_id%22%3A%22275237117%22%2C%22include_chaining%22%3Atrue%2C%22include_reel%22%3Atrue%2C%22include_suggested_users%22%3Afalse%2C%22include_logged_out_extras%22%3Afalse%7D
+```
+
+**第二種：  **
+
+當query\_hash為 `472f257a40c653c64c666ce877d59d2b`時 \(加載使用者文章\)
+
+variables參數：
 
 ```json
 {
@@ -106,7 +122,15 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 >
 > end\_cursor可以從上次的query請求中的Response獲得。
 
-第三種： 當query\_hash為 `bf41e22b1c4ba4c9f31b844ebb7d9056` 時 \(加載使用者動態影片\)
+e.g.
+
+```
+https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables=%7B%22id%22%3A%22275237117%22%2C%22first%22%3A12%2C%22after%22%3A%22AQDgv0_xlXhuHI_YQW8deViqPYXPj7dim6ODe_tAbM6XLhqwbe-Xp4JPEHpLAJ5XGusu-nKdFoCYCVFcF7OkjSscKISMfCYIsEVs8zx9h2rWaQ%22%7D
+```
+
+第三種： 
+
+當query\_hash為 `bf41e22b1c4ba4c9f31b844ebb7d9056` 時 \(加載使用者動態影片\)
 
 ```json
 query_hash: bf41e22b1c4ba4c9f31b844ebb7d9056
@@ -114,6 +138,12 @@ variables: {"reel_ids":["275237117"],"precomposed_overlay":false}
 ```
 
 > reel\_ids即為使用者ID
+
+e.g.
+
+```
+https://www.instagram.com/graphql/query/?query_hash=bf41e22b1c4ba4c9f31b844ebb7d9056&variables=%7B%22reel_ids%22%3A%5B%22275237117%22%5D%2C%22precomposed_overlay%22%3Afalse%7D
+```
 
 ## 取得使用者發布過的文章圖片
 
