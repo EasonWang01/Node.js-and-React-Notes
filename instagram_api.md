@@ -60,8 +60,7 @@ https://www.instagram.com/使用者帳號/?__a=1
 https://www.instagram.com/graphql/query/?query_hash=...&variables=...
 ```
 
-* * 
-## Query請求格式
+* * ## Query請求格式
 
 instagram的XHR固定格式如下
 
@@ -109,7 +108,12 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 
 第三種： 當query\_hash為 `bf41e22b1c4ba4c9f31b844ebb7d9056` 時 \(加載使用者動態影片\)
 
+```json
+query_hash: bf41e22b1c4ba4c9f31b844ebb7d9056
+variables: {"reel_ids":["275237117"],"precomposed_overlay":false}
+```
 
+> reel\_ids即為使用者ID
 
 ## 取得使用者發布過的文章圖片
 
