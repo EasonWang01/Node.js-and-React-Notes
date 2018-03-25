@@ -262,6 +262,8 @@ const https = require('https');
 
 let articles = [];
 let current_count = 0;
+let iterateCount = 12;
+let username = "liona_luona";
 
 function https_request(path, querystring) {
   let chunk = '';
@@ -287,29 +289,34 @@ function https_request(path, querystring) {
   })
 }
 
-https_request('yicheng71248', '?__a=1').then(data => {
+https_request(username, '?__a=1').then(data => {
   userID = JSON.parse(data).graphql.user.id
   userArticleCount = JSON.parse(data).graphql.user.edge_owner_to_timeline_media.count
   current_endCursor = "AQBo_T54D3Isvkn39aEAn5WO1VvQXmLmZzReXHtfgylI-l4IrcVMMRs0Kqz1Q2tu5Jrkcw1ScAfAUddkbVuBiDTXhkHI5jz58I1xj3kxVuzlDQ"
 }).then(() => {
 
   (async function loop() {
-    for (let i = 0; i < userArticleCount; i += 12) {
+    for (let i = 0; i < userArticleCount; i += iterateCount) {
       await new Promise(resolve => {
         let urlencodeP = encodeURIComponent(
           `{"id": ${userID},
-           "first": 12,
-           "after": "${current_endCursor}"
+            "first": ${iterateCount},
+            "after": "${current_endCursor}"
           }`);
         let querystring = `?query_hash=472f257a40c653c64c666ce877d59d2b&variables=${urlencodeP}`
         https_request('graphql/query', querystring).then(data => {
+          if(JSON.parse(data).status === 'fail') {
+            console.log(data);
+            return
+          }
+
           let _articles = JSON.parse(data).data.user.edge_owner_to_timeline_media.edges;
           _articles.forEach(article => {
             articles.push(article.node.display_url);
           })
           current_endCursor = JSON.parse(data).data.user.edge_owner_to_timeline_media.page_info.end_cursor;
           resolve();
-          if(i + 12 > userArticleCount) {
+          if (i + iterateCount > userArticleCount) {
             // 讀取全部後
             console.log(articles)
           }
@@ -317,6 +324,8 @@ https_request('yicheng71248', '?__a=1').then(data => {
       });
     }
   })();
+}).catch(err => {
+  console.log('No user')
 })
 ```
 
