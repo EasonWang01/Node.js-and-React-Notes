@@ -78,7 +78,7 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 
 **第一種： **
 
-當query\_hash為`7e1e0c68bbe459cf48cbd5533ddee9d`時 \(加載使用者相關的資訊\)
+當query\_hash為`7e1e0c68bbe459cf48cbd5533ddee9d`時 \(加載使用者推薦好友相關的資訊\)
 
 variables參數：
 
@@ -128,7 +128,7 @@ e.g.
 https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables=%7B%22id%22%3A%22275237117%22%2C%22first%22%3A12%2C%22after%22%3A%22AQDgv0_xlXhuHI_YQW8deViqPYXPj7dim6ODe_tAbM6XLhqwbe-Xp4JPEHpLAJ5XGusu-nKdFoCYCVFcF7OkjSscKISMfCYIsEVs8zx9h2rWaQ%22%7D
 ```
 
-第三種：
+**第三種：**
 
 當query\_hash為 `bf41e22b1c4ba4c9f31b844ebb7d9056` 時 \(加載使用者動態影片\)
 
