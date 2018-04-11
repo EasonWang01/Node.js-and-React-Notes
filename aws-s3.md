@@ -1,6 +1,8 @@
 1. 申請IAM，取得access key 和 secret key
 2. 下載aws-sdk
 
+官方文件：https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html\#createBucket-property
+
 # 上傳到 S3 範例
 
 > 以下程式開啟後會先當一個範例上傳網站，然後可以在此上傳檔案，之後會傳到S3，使用的上傳檔案模組為busboy
