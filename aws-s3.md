@@ -32,6 +32,7 @@ function uploadToS3(file, filename) {
     Bucket: BUCKET_NAME,
     Key: filename,
     Body: file,
+    ACL: "public-read"
    };
    s3bucket.upload(params, function (err, data) {
     if (err) {
