@@ -129,9 +129,37 @@ element.addEventListener('click', function () {
   scanPayDepositApplication(element)
   var old_element = element;
   var new_element = old_element.cloneNode(true);
-  old_element.parentNode.replaceChild(new_element, old_element);	
+  old_element.parentNode.replaceChild(new_element, old_element);    
 })
 ```
 
 [https://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element](https://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element)
+
+
+
+# 取得所有可能的字串組合
+
+假設四個字母組成字串，要印出所有可能組合
+
+> 4 \*\* 4 = 256 種組合
+
+```js
+c = []
+ca = ["A", "B", "C", "D"];
+for(let i = 0; i < 4; i ++){
+  c[0] = ca[i]
+  for(let i = 0; i < 4; i ++){
+    c[1] = ca[i]
+    for(let i = 0; i < 4; i ++){
+      c[2] = ca[i]
+       for(let i = 0; i < 4; i ++){
+          c[3] = ca[i]
+          console.log(c)
+        }
+    }
+  }
+}
+```
+
+
 
