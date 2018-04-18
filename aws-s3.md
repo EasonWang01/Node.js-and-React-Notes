@@ -89,3 +89,32 @@ http.createServer(function(req, res) {
 
 
 
+# 開啟CORS
+
+到下圖中設定
+
+![](/assets/螢幕快照 2018-04-18 上午11.14.50.png)
+
+加上藍色那段
+
+```
+<AllowedMethod>HEAD</AllowedMethod>
+```
+
+完整版為：
+
+```
+<!-- Sample policy -->
+<CORSConfiguration>
+	<CORSRule>
+		<AllowedOrigin>*</AllowedOrigin>
+		<AllowedMethod>GET</AllowedMethod>
+		<AllowedMethod>HEAD</AllowedMethod>
+		<MaxAgeSeconds>3000</MaxAgeSeconds>
+		<AllowedHeader>Authorization</AllowedHeader>
+	</CORSRule>
+</CORSConfiguration>
+```
+
+
+
