@@ -95,5 +95,43 @@ docClient.get(params, function(err, data) {
 
 > docClient.put改成 docClient.get 即可，並且把params的Item改為Key
 
+# 更新
+
+需要加上幾個欄位在參數: UpdateExpression
+
+```js
+var AWS = require('aws-sdk');
+AWS.config.update({
+  region: 'us-west-1'
+});
+
+
+var docClient = new AWS.DynamoDB.DocumentClient();
+
+var params = {
+  TableName: 'market_item',
+  Key: {
+      id: '0x01',
+  },
+  UpdateExpression: 'set #m=:n',
+  ExpressionAttributeNames: {
+      '#m': 'test'
+  },
+  ExpressionAttributeValues: {
+      ':n': 456
+  },
+  ReturnValues: 'UPDATED_NEW'
+};
+
+// Call DynamoDB to add the item to the table
+docClient.update(params, function(err, data) {
+  if (err) {
+    console.log("Error", err);
+  } else {
+    console.log("Success", data);
+  }
+});
+```
+
 
 
