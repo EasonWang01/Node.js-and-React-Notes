@@ -29,7 +29,7 @@ us-west-2    US West (Oregon)
 
 4.建立一個Dynamo Table
 
-# 寫入
+# 新增
 
 ```js
 var AWS = require('aws-sdk');
@@ -65,7 +65,7 @@ docClient.put(params, function(err, data) {
 >
 > [https://stackoverflow.com/questions/33942945/error-invalidparametertype-expected-params-itempid-to-be-a-structure-in-dyn?utm\_medium=organic&utm\_source=google\_rich\_qa&utm\_campaign=google\_rich\_qa](https://stackoverflow.com/questions/33942945/error-invalidparametertype-expected-params-itempid-to-be-a-structure-in-dyn?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa)
 
-# 讀取
+# 查詢
 
 ```js
 var AWS = require('aws-sdk');
@@ -142,6 +142,36 @@ var params = {
 
 // Call DynamoDB to add the item to the table
 docClient.update(params, function(err, data) {
+  if (err) {
+    console.log("Error", err);
+  } else {
+    console.log("Success", data);
+  }
+});
+```
+
+# 刪除
+
+參數與新增相同
+
+```js
+var AWS = require('aws-sdk');
+AWS.config.update({
+  region: 'us-west-1'
+});
+
+
+var docClient = new AWS.DynamoDB.DocumentClient();
+
+var params = {
+  TableName: 'market_item',
+  Key: {
+      id: '0x01',
+  }
+};
+
+// Call DynamoDB to add the item to the table
+docClient.delete(params, function(err, data) {
   if (err) {
     console.log("Error", err);
   } else {
