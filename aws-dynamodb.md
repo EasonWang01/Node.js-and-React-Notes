@@ -180,5 +180,7 @@ docClient.delete(params, function(err, data) {
 });
 ```
 
+不錯文章:
 
+https://medium.com/@kinvilhsiao/dynamodb-%E4%BD%BF%E7%94%A8-nodejs-4a24c99ea751
 
