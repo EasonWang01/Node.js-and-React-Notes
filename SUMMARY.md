@@ -99,6 +99,7 @@
 * [AWS lambda ](aws-lambda.md)
 * [AWS S3](aws-s3.md)
 * [AWS DynamoDB](aws-dynamodb.md)
+  * [結合Lambda](aws-dynamodb/jie-he-lambda.md)
 * [有關日期Date](you_guan_ri_qi.md)
 * [VS code 編輯器](vs_code_bian_ji_qi.md)
 * [CI  with Gitlab&Jenkins](ci--with-gitlabjenkins.md)
