@@ -25,5 +25,7 @@ exports.handler = function index(event, context, callback){
 }
 ```
 
-4.
+4.進行測試
+
+5.加入API gateway即可
 
