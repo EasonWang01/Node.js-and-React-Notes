@@ -97,7 +97,24 @@ docClient.get(params, function(err, data) {
 
 # 更新
 
-需要加上幾個欄位在參數: UpdateExpression
+需要加上幾個欄位在參數: UpdateExpression, ExpressionAttributeNames, ExpressionAttributeValues, ReturnValues
+
+```
+UpdateExpression: 'set #m=:n' 並在後續ExpressionAttributeNames, ExpressionAttributeValues寫上m跟n代表的值
+#後面的值到錶要被設定的KEY   
+=:後面的值代表要設定的Value
+```
+
+ReturnValues代表:
+
+```
+ALL_OLD：回傳整個 item 被更新前的資料。
+ALL_NEW：回傳整個 item 被更新後的資料。
+UPDATED_OLD：僅回傳 item 這次更新的欄位被修改前的資料。
+UPDATED_NEW：僅回傳 item 這次更新的欄位資料。
+```
+
+範例:
 
 ```js
 var AWS = require('aws-sdk');
