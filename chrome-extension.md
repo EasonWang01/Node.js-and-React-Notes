@@ -11,5 +11,15 @@ Manifest.json
   ]
 ```
 
+# 取得所有頁面上的xhr事件回應
+
+```
+此與chrome extension無關
+```
+
+> https://stackoverflow.com/a/5202999/4622645
+
+
+
 
 
