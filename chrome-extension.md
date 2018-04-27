@@ -36,6 +36,8 @@ chrome.tabs.executeScript({
 ```
 
 > [https://stackoverflow.com/a/5202999/4622645](https://stackoverflow.com/a/5202999/4622645)
+>
+> https://www.jianshu.com/p/7337ac624b8e
 
 
 
