@@ -13,6 +13,22 @@ Manifest.json
   ]
 ```
 
+# 點擊Extension後觸發js
+
+```js
+chrome.tabs.executeScript({
+  code: `console.log(123)`
+})
+```
+
+要加permission
+
+```js
+"permissions": [
+  "activeTab"
+]
+```
+
 # 取得所有頁面上的xhr事件回應
 
 ```
