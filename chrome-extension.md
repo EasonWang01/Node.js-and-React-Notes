@@ -2,6 +2,8 @@
 
 Manifest.json
 
+> 將要執行的程式寫在`./src/js/inject.js`
+
 ```json
   "content_scripts": [
     {
@@ -17,9 +19,7 @@ Manifest.json
 此與chrome extension無關
 ```
 
-> https://stackoverflow.com/a/5202999/4622645
-
-
+> [https://stackoverflow.com/a/5202999/4622645](https://stackoverflow.com/a/5202999/4622645)
 
 
 
