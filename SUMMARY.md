@@ -132,4 +132,5 @@
   * [使用gradle結合docker](shi-yong-gradlejie-he-docker.md)
 * [Debug 頁面](debug-ye-mian.md)
 * [Proxy](proxy.md)
+* [Chrome extension](chrome-extension.md)
 
