@@ -196,3 +196,38 @@ curl http://35.190.233.54:3002/ -H 'X-Forwarded-For: 1.1.1.1'
 
 [https://imququ.com/post/x-forwarded-for-header-in-http.html](https://imququ.com/post/x-forwarded-for-header-in-http.html)
 
+# 寫一個Proxy  Server
+
+接收到請求後可以進行轉發，可用來避開cors
+
+```js
+const http = require("http");
+var https = require("https");
+
+var proxy = http.createServer(function (request, response) {
+  response.setHeader('Access-Control-Allow-Origin', '*');
+  response.setHeader('Access-Control-Allow-Methods', 'GET, OPTION, PUT, POST, DELETE');
+  response.setHeader('Access-Control-Allow-Headers', '*');
+
+  var options = {
+    "method": request.method,
+    "hostname": "pf1sit1fe.yxunistar.com",
+    // "port": null,
+    "path": request.url
+  };
+  var req = https.request(options, function (res) {
+    res.pipe(response);
+  });
+  if(typeof request.headers.cookie !== 'undefined') {
+    req.setHeader('Cookie', request.headers.cookie); // 將client的cookie加上
+  }
+  req.end();
+}).listen(8080);
+```
+
+
+
+
+
+
+
