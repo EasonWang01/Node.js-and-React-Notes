@@ -10,6 +10,8 @@
 
 [https://app.apiary.io](https://app.apiary.io)
 
+https://help.apiary.io/
+
 畫面稍微看起來比swagger漂亮一點
 
 #### 寫文件教學\(Specification\)
@@ -130,7 +132,7 @@ which will return a `original content of the data`
 
 # 範例:
 
-https://pandurangpatil.docs.apiary.io/\#reference/user
+[https://pandurangpatil.docs.apiary.io/\#reference/user](https://pandurangpatil.docs.apiary.io/#reference/user)
 
 > 點左上角即可下載範例檔案
 
