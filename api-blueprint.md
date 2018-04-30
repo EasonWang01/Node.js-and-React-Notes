@@ -1,5 +1,9 @@
 # \# API Blueprint
 
+> 點選Editor網頁上方人的按鈕即可發送Email給團隊成員編輯。
+>
+> 免費方案可以給五個成員共同編輯，十個成員瀏覽。
+
 # 也是一種寫API 文件的工具
 
 [https://github.com/apiaryio/api-blueprint](https://github.com/apiaryio/api-blueprint)
@@ -123,6 +127,12 @@ which will return a `original content of the data`
                 ]
             }
 ```
+
+# 範例:
+
+https://pandurangpatil.docs.apiary.io/\#reference/user
+
+> 點左上角即可下載範例檔案
 
 
 

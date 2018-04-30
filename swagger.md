@@ -6,7 +6,7 @@ swagger有三個服務，editor,codegen,swagger ui
 
 其中editor有提供線上的editor或是本機host
 
-[http://editor.swagger.io/\\#/](http://editor.swagger.io/\#/)
+[http://editor.swagger.io/\\#/](http://editor.swagger.io/#/)
 
 線上的缺點在於無法給別人用
 
@@ -48,16 +48,16 @@ app.use('*', function(req, res, next) {
 
 2.或是使用swaggerhub直接線上編輯並可產生只可看的swagger ui
 
+# \#開始編寫yaml語言
 
-# #開始編寫yaml語言
+> yaml子項目會後退空兩格，陣列使用`-`表示
 
->yaml子項目會後退空兩格，陣列使用`-`表示
-
-先到http://editor.swagger.io/#/
+先到[http://editor.swagger.io/\#/](http://editor.swagger.io/#/)
 
 可以看到範例，接著我們把它清空，開始編寫自己的版本
 
 最基本的型態
+
 ```
 swagger: '2.0'
 
@@ -71,16 +71,16 @@ schemes:
 host: localhost:3000
 basePath: /
 
-paths: 
-  
+paths:
 ```
+
 其中最上面指的是使用swagger的版本，目前固定是2.0.0
 
 中間部分等於是指定API server的位置，意思為http:localhost:3000/
 
 再來我們會開始往paths裡面寫api
 
-#### #寫paths的步驟
+#### \#寫paths的步驟
 
 1.路徑 `/test`
 
@@ -89,6 +89,7 @@ paths:
 3.四劍客 `summary description parameters responses`
 
 4.在parameters下寫參數
+
 ```
  -  name: pageSize
    in: query
@@ -99,6 +100,7 @@ paths:
 5.在responses下寫response code  `200,304...`
 
 6.每個response code下有回傳的東西
+
 ```
 description: A Person
 schema:
@@ -111,12 +113,12 @@ schema:
              type: string
            username:
              type: string
-```  
+```
 
-
-#基本上我們寫這樣就夠了
+# 基本上我們寫這樣就夠了
 
 GET 簡單範本
+
 ```
   /getUser:
     # This is a HTTP operation
@@ -131,16 +133,17 @@ GET 簡單範本
           type: string       
       responses:
         "200":
-          description: Success     
+          description: Success
 ```
 
->在express中使用req.params取得url中使http://localhost:3000/getUser/123
-
->使用req.query取得http://localhost:3000/getUser?id=123
+> 在express中使用req.params取得url中使[http://localhost:3000/getUser/123](http://localhost:3000/getUser/123)
+>
+> 使用req.query取得[http://localhost:3000/getUser?id=123](http://localhost:3000/getUser?id=123)
 
 GET 方法的完整範例
 
 server.js
+
 ```
 var express = require('express')
 var app = express()
@@ -182,8 +185,8 @@ app.listen(3000, function () {
 ```
 
 yaml
-```
 
+```
 swagger: '2.0'
 
 host: localhost:3000
@@ -203,7 +206,7 @@ paths:
       responses:
         "200":
           description: Success
-                  
+
   /getArticle/{id}:
     # This is a HTTP operation
     get:
@@ -235,37 +238,36 @@ paths:
           type: string       
       responses:
         "200":
-          description: Success                                    
-                  
-                  
-                  
-                  
+          description: Success
 ```
-  
-Post 
 
->你可能看過$ref: '#/definitions/test1'，之後把test1另外定義，但個人感覺此種寫法比較分散，於是此處不用此種寫法
+Post
 
-#注意:修改yaml後記得把`Try this operation`重新開啟才會更新
+> 你可能看過$ref: '\#/definitions/test1'，之後把test1另外定義，但個人感覺此種寫法比較分散，於是此處不用此種寫法
+
+# 注意:修改yaml後記得把`Try this operation`重新開啟才會更新
 
 先定義post type
 
 ```
 consumes:
   - application/x-www-form-urlencoded
-
 ```
+
 或是
+
 ```
 consumes:
   - multipart/form-data
 ```
 
---------
+---
+
 路由
+
 ```
   /register:         
-  
+
     post:
       description: add a new user
       # movie info to be stored
@@ -284,7 +286,7 @@ consumes:
           required: true
       responses:
         "200":
-          description: Success        
+          description: Success
 ```
 
 server.js
@@ -343,6 +345,7 @@ app.listen(3000, function () {
 最後加上PUT與DELETE方法
 
 server.js
+
 ```
 var express = require('express');
 var app = express();
@@ -411,7 +414,6 @@ app.listen(3000, function () {
 yaml
 
 ```
-
 swagger: '2.0'
 
 host: localhost:3000
@@ -432,7 +434,7 @@ paths:
       responses:
         "200":
           description: Success
-                  
+
   /getArticle/{id}:
     # This is a HTTP operation
     get:
@@ -466,7 +468,7 @@ paths:
         "200":
           description: Success  
   /register:         
-  
+
     post:
       description: add a new user
       # movie info to be stored
@@ -486,9 +488,9 @@ paths:
       responses:
         "200":
           description: Success        
-                  
+
   /user:         
-  
+
     put:
       description: 更新個人資料
       # movie info to be stored
@@ -531,8 +533,8 @@ paths:
           required: true
       responses:
         "200":
-          description: Success                      
-                  
-                                    
-                  
+          description: Success
 ```
+
+
+
