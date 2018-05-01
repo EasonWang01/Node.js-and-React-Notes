@@ -62,5 +62,13 @@ keybindings.json
 //windows  ctrl + d
 ```
 
+#### 8. Code snippets
+
+> 可自行定義code 快捷鍵
+
+https://code.visualstudio.com/docs/editor/userdefinedsnippets
+
+> 範例: https://github.com/xabikos/vscode-react/blob/master/snippets/snippets.json
+
 
 

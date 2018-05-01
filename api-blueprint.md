@@ -10,7 +10,7 @@
 
 [https://app.apiary.io](https://app.apiary.io)
 
-https://help.apiary.io/
+[https://help.apiary.io/](https://help.apiary.io/)
 
 畫面稍微看起來比swagger漂亮一點
 
