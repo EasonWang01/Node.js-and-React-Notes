@@ -82,3 +82,13 @@ var generatePolicy = function(principalId, effect, resource) {
 
 ![](/assets/005.png)
 
+之後調用該API時如果沒有傳Header的Token會顯示如下:
+
+```json
+{
+    "message": "Unauthorized"
+}
+```
+
+
+
