@@ -85,5 +85,57 @@
     };
 ```
 
+# 登入使用者
+
+> 這邊使用到第三方模組，所以要先在本地安裝好後打包成ZIP檔案上傳Lambda。
+
+```js
+const AWS = require('aws-sdk');
+const crypto = require('crypto');
+const documentClient = new AWS.DynamoDB.DocumentClient();
+const jwt = require('jsonwebtoken');
+const jwtPass = "yicheng";
+
+exports.handler = function index(event, context) {
+    function HMAC_sha256(text) {
+        const secret = 'yicheng';
+        const hash = crypto.createHmac('sha256', secret)
+            .update(text)
+            .digest('hex');
+        return hash;
+    }
+    
+    var account = event.account;
+    var hashed_password = HMAC_sha256(event.password.toString());
+    
+    var params = {
+        TableName: "market_user",
+        Key: {
+            account
+        }
+    };
+    documentClient.get(params, function(err, data) {
+    if (err) {
+        console.log("Error", err);
+    } else {
+        var db_password = data.Item.hashed_password;
+        if(db_password === hashed_password) {
+            var token = jwt.sign({ account, timestamp: Date.now() }, jwtPass);
+            context.succeed({
+                code: 0,
+                result: 'Success Login',
+                token
+            })
+        } else {
+            context.succeed({
+                code: 1,
+                result: 'Password not match'
+            })
+        }
+    }});
+};
+
+```
+
 
 
