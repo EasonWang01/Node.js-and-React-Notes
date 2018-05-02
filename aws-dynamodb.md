@@ -6,9 +6,7 @@
 >
 > 但查詢時就必須提供所有key。
 
-![](/assets/asdasd.png)
 
-> 新增好Function後點save後才能按Test
 
 步驟:
 
