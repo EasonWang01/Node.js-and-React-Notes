@@ -6,6 +6,8 @@
 
 3.加入如下程式
 
+> function index 對應到index.js相同檔案名稱
+
 ```js
 var AWS = require('aws-sdk'),
     uuid = require('uuid'),
@@ -29,13 +31,9 @@ exports.handler = function index(event, context, callback){
 
 5.加入API gateway即可
 
-
-
 # API gateway授權
 
 當我們要確認用戶有權限可以打API 時可以先發一隻 AUTH TOKEN 請求
 
-http://akuma1.pixnet.net/blog/post/321461539-%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8Bapi-gateway-custom-authoriz
-
-
+[http://akuma1.pixnet.net/blog/post/321461539-（十一）​​​​​​​api-gateway-custom-authoriz](http://akuma1.pixnet.net/blog/post/321461539-（十一）​​​​​​​api-gateway-custom-authoriz)
 
