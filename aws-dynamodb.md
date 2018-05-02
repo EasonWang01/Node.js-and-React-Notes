@@ -1,5 +1,11 @@
 # AWS DynamoDB
 
+> 為一個NoSQL的結構，其中primary key是唯一的，也是查詢條件。
+>
+> 可以新增其他key為sort key。
+>
+> 但查詢時就必須提供所有key。
+
 步驟:
 
 1.先設定好AMI，然後參考此文章，將AMI的key設定到電腦檔案中。
