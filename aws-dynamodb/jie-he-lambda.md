@@ -27,6 +27,12 @@ exports.handler = function index(event, context, callback){
 }
 ```
 
+> 注意，搜尋的回傳值會要用
+>
+> ```
+> data.Item 取出
+> ```
+
 4.進行測試
 
 5.加入API gateway即可
