@@ -99,6 +99,7 @@
 * [部署到AWS](bu_shu_dao_aws.md)
 * [AWS lambda ](aws-lambda.md)
   * [範例](aws-lambda/fan-li.md)
+  * [加上權限控管](aws-lambda/jia-shang-quan-xian-kong-guan.md)
 * [AWS S3](aws-s3.md)
 * [AWS DynamoDB](aws-dynamodb.md)
   * [結合Lambda](aws-dynamodb/jie-he-lambda.md)
