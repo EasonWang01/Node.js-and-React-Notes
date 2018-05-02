@@ -1,7 +1,5 @@
 # AWS DynamoDB
 
->
-
 步驟:
 
 1.先設定好AMI，然後參考此文章，將AMI的key設定到電腦檔案中。
@@ -85,7 +83,6 @@ var params = {
   }
 };
 
-// Call DynamoDB to add the item to the table
 docClient.get(params, function(err, data) {
   if (err) {
     console.log("Error", err);
@@ -142,7 +139,6 @@ var params = {
   ReturnValues: 'UPDATED_NEW'
 };
 
-// Call DynamoDB to add the item to the table
 docClient.update(params, function(err, data) {
   if (err) {
     console.log("Error", err);
@@ -172,7 +168,6 @@ var params = {
   }
 };
 
-// Call DynamoDB to add the item to the table
 docClient.delete(params, function(err, data) {
   if (err) {
     console.log("Error", err);
