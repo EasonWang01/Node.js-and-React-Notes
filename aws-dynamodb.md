@@ -1,5 +1,7 @@
 # AWS DynamoDB
 
+>
+
 步驟:
 
 1.先設定好AMI，然後參考此文章，將AMI的key設定到電腦檔案中。
@@ -182,5 +184,5 @@ docClient.delete(params, function(err, data) {
 
 不錯文章:
 
-https://medium.com/@kinvilhsiao/dynamodb-%E4%BD%BF%E7%94%A8-nodejs-4a24c99ea751
+[https://medium.com/@kinvilhsiao/dynamodb-使用-nodejs-4a24c99ea751](https://medium.com/@kinvilhsiao/dynamodb-使用-nodejs-4a24c99ea751)
 
