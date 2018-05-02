@@ -37,6 +37,8 @@ exports.handler = function(event, context) {
 
 9.點選閃電圖案的`Test`然後下拉點選`Test`
 
+> 新增好Function後點save後才能按Test，才有反應
+
 ## 修改Lambda function
 
 回到aws 的 Lambda 點選剛才創建的function兩下，進入修改code的地方
