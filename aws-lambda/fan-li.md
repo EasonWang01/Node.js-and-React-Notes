@@ -1,4 +1,8 @@
-註冊使用者
+> 使用event.headers 可取得 Header
+>
+> event.body 可取得body
+
+# 註冊使用者
 
 ```js
     const AWS = require('aws-sdk');
@@ -53,7 +57,7 @@
             context.succeed({ code: 1, result: "User exist" });
             return
           } 
-          
+
             var params = {
               Item: {
                 "id": uuid.v1(),
@@ -79,7 +83,6 @@
       });
 
     };
-    
 ```
 
 
