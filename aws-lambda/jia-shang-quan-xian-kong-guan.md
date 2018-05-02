@@ -1,3 +1,5 @@
+# API Gateway 結合 Lambda 之權限管理
+
 # 文件與文章
 
 [https://docs.aws.amazon.com/zh\_cn/apigateway/latest/developerguide/api-gateway-custom-authorizer-output.html](https://docs.aws.amazon.com/zh_cn/apigateway/latest/developerguide/api-gateway-custom-authorizer-output.html)
