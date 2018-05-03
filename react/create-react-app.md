@@ -25,8 +25,6 @@ require('dotenv').load();
 console.log(process.env)
 ```
 
-
-
 # 設定多個.env
 
 創建一個目錄結構如下
@@ -124,7 +122,6 @@ function getClientEnvironment(publicUrl) {
 }
 
 module.exports = getClientEnvironment;
-
 ```
 
 其中以下部分可以下後端的process.env傳到前端。
@@ -134,6 +131,15 @@ Object.assign({
         NODE_ENV: process.env.NODE_ENV || 'development',
         PUBLIC_URL: publicUrl
       } ,process.env)
+```
+
+package.json中的 script 如下
+
+```json
+"scripts": {
+    "dev": "cross-env stage=dev concurrently --kill-others \"yarn start\" \"yarn runProxy\"",
+    "sit": "cross-env stage=sit concurrently --kill-others \"yarn start\" \"yarn runProxy\""
+  },
 ```
 
 
