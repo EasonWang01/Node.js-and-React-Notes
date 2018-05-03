@@ -20,7 +20,7 @@ const AWS = require('aws-sdk');
 const BUCKET_NAME = 'marketplace-model';
 
 // 從IAM獲得
-const IAM_USER_KEY = 'AKIAIV4LYK7OX6MZGGTQ';
+const IAM_USER_KEY = 'AKIAIV4LYK7OX6MZGGTa';
 const IAM_USER_SECRET = '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';
 
 function uploadToS3(file, filename) {
@@ -87,8 +87,6 @@ http.createServer(function(req, res) {
 
 > 在createBucket的params的參數key前面加上路徑/test/test.png 則會自動在S3新增test資料夾
 
-
-
 # 開啟CORS
 
 到下圖中設定
@@ -106,13 +104,13 @@ http.createServer(function(req, res) {
 ```
 <!-- Sample policy -->
 <CORSConfiguration>
-	<CORSRule>
-		<AllowedOrigin>*</AllowedOrigin>
-		<AllowedMethod>GET</AllowedMethod>
-		<AllowedMethod>HEAD</AllowedMethod>
-		<MaxAgeSeconds>3000</MaxAgeSeconds>
-		<AllowedHeader>Authorization</AllowedHeader>
-	</CORSRule>
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <AllowedMethod>HEAD</AllowedMethod>
+        <MaxAgeSeconds>3000</MaxAgeSeconds>
+        <AllowedHeader>Authorization</AllowedHeader>
+    </CORSRule>
 </CORSConfiguration>
 ```
 
