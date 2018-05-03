@@ -20,8 +20,8 @@ const AWS = require('aws-sdk');
 const BUCKET_NAME = 'marketplace-model';
 
 // 從IAM獲得
-const IAM_USER_KEY = 'AKIAIV4LYK7OX6MZGGTa';
-const IAM_USER_SECRET = 'cHrBLd6wU5B8Kc25fZO8Lq0U60TVI5Qh0N97Gkxm';
+const IAM_USER_KEY = 'key';
+const IAM_USER_SECRET = 'secret';
 
 function uploadToS3(file, filename) {
  let s3bucket = new AWS.S3({
