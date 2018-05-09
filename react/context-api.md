@@ -6,7 +6,9 @@ React 16.3後新增了Context API，可以用來替代Redux。
 
 > [https://medium.freecodecamp.org/replacing-redux-with-the-new-react-context-api-8f5d01a00e8c](https://medium.freecodecamp.org/replacing-redux-with-the-new-react-context-api-8f5d01a00e8c)
 
+可參考此範例:
 
+> https://github.com/EasonWang01/React-context-api-boilerplate
 
 # 範例:
 
@@ -34,7 +36,7 @@ class App extends PureComponent {
       user: 'test1231'
     }
   }
-  
+
   render() {
     return (
       <Router>
