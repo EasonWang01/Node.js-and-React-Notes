@@ -8,7 +8,7 @@ React 16.3後新增了Context API，可以用來替代Redux。
 
 可參考此範例:
 
-> https://github.com/EasonWang01/React-context-api-boilerplate
+> [https://github.com/EasonWang01/React-context-api-boilerplate](https://github.com/EasonWang01/React-context-api-boilerplate)
 
 # 範例:
 
@@ -93,4 +93,16 @@ const { Provider, Consumer } = Context
 2.在react-router把consumer傳給元件。
 
 3.在元件內使用Consumer包住所有dom，dom內即可存取provider的數據。
+
+
+
+# 相關框架
+
+> https://github.com/didierfranc/react-waterfall
+>
+> https://github.com/elisherer/react-waterfall-redux-devtools-middleware
+
+
+
+
 
