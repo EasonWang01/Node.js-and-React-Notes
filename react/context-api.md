@@ -2,6 +2,10 @@
 
 React 16.3後新增了Context API，可以用來替代Redux。
 
+官方文件:
+
+> https://reactjs.org/docs/context.html
+
 不錯的文章:
 
 > [https://medium.freecodecamp.org/replacing-redux-with-the-new-react-context-api-8f5d01a00e8c](https://medium.freecodecamp.org/replacing-redux-with-the-new-react-context-api-8f5d01a00e8c)
@@ -94,15 +98,11 @@ const { Provider, Consumer } = Context
 
 3.在元件內使用Consumer包住所有dom，dom內即可存取provider的數據。
 
-
-
 # 相關框架
 
-> https://github.com/didierfranc/react-waterfall
+> [https://github.com/didierfranc/react-waterfall](https://github.com/didierfranc/react-waterfall)
 >
-> https://github.com/elisherer/react-waterfall-redux-devtools-middleware
-
-
+> [https://github.com/elisherer/react-waterfall-redux-devtools-middleware](https://github.com/elisherer/react-waterfall-redux-devtools-middleware)
 
 
 
