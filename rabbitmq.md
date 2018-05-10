@@ -44,5 +44,11 @@ rabbitmq-plugins enable rabbitmq_management
 > rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
 > ```
 
+![](/assets/asdw23.png)
+
+## 使用Node.js連線
+
+
+
 
 
