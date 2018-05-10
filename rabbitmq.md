@@ -48,7 +48,5 @@ rabbitmq-plugins enable rabbitmq_management
 
 ## 使用Node.js連線
 
-
-
-
+http://www.squaremobius.net/rabbit.js/
 
