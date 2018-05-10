@@ -24,27 +24,25 @@ rabbitmq-plugins enable rabbitmq_management
 
 我們可以如下新增一個使用者，即可開放外網連線 :
 
-以下使用test使用者為範例。
+以下使用使用者: test 密碼: test為範例。
 
-> 1. Add a new/fresh user, say user ‘test’ and password ‘test’
+> 1. Add a new/fresh user, say user ‘test’ and password ‘test’
 >
 > ```
 > rabbitmqctl add_user test test
 > ```
 >
-> 2.  Give administrative access to the new access
+> 1. Give administrative access to the new access
 >
 > ```
 > rabbitmqctl set_user_tags test administrator
 > ```
 >
-> 3.  Set permission to newly created user
+> 1. Set permission to newly created user
 >
 > ```
 > rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
 > ```
-
-
 
 
 
