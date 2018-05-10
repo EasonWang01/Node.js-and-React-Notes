@@ -137,4 +137,6 @@
 * [Debug 頁面](debug-ye-mian.md)
 * [Proxy](proxy.md)
 * [Chrome extension](chrome-extension.md)
+* 消息系統
+  * [RabbitMQ](rabbitmq.md)
 
