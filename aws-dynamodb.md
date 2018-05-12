@@ -5,6 +5,14 @@
 > 可以新增其他key為sort key。
 >
 > 但查詢時就必須提供所有key。
+>
+> 如果想再在未來新增查詢的Key可參考: GSI \(Table點進去後按Indexes新增\)
+>
+> ```
+> Global Secondary Indexes (GSI) allow you to query efficiently over any field (attribute) in your DynamoDB table. GSIs can treat any table attribute as a key, even attributes not present in all items.
+> ```
+
+
 
 步驟:
 
