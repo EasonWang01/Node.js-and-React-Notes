@@ -6,8 +6,6 @@
 >
 > 但查詢時就必須提供所有key。
 
-
-
 步驟:
 
 1.先設定好AMI，然後參考此文章，將AMI的key設定到電腦檔案中。
@@ -101,6 +99,32 @@ docClient.get(params, function(err, data) {
 ```
 
 > docClient.put改成 docClient.get 即可，並且把params的Item改為Key
+
+# 查詢全部
+
+> 使用Scan，並且不用指定Key
+
+```js
+var AWS = require('aws-sdk');
+AWS.config.update({
+  region: 'us-west-1'
+});
+
+
+var docClient = new AWS.DynamoDB.DocumentClient();
+
+var params = {
+  TableName: 'market_item',
+};
+
+docClient.scan(params, function(err, data) {
+  if (err) {
+    console.log("Error", err);
+  } else {
+    console.log("Success", data);
+  }
+});
+```
 
 # 更新
 
