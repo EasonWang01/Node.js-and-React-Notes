@@ -209,8 +209,6 @@ sudo certbot --nginx -d <輸入網域名稱>
 
 最後記得打開虛擬主機防火牆。
 
-
-
 # 新增Submain Domain
 
 1.之後有新增subdomain時只要先加入如下在nginx
@@ -231,6 +229,8 @@ sudo certbot --nginx -d <輸入網域名稱>
 ```
 sudo certbot --nginx -d <輸入網域名稱>
 ```
+
+> 如果沒有先設定A紀錄，則在第三步驟會出錯。
 
 
 
