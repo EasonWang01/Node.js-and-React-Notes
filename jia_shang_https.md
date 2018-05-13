@@ -182,7 +182,7 @@ rewrite ^/(.*) https://sakatu.com/$1 permanent;
 # 自動使用腳本加上
 
 > 可參考 [https://blog.hellojcc.tw/2018/05/02/setup-https-with-letsencrypt-on-nginx/](https://blog.hellojcc.tw/2018/05/02/setup-https-with-letsencrypt-on-nginx/)
-
+>
 > 注意如果使用AWS 或 GCP 跑完腳本後要把security group 防火牆的 443 PORT打開。
 
 步驟1
@@ -208,4 +208,17 @@ sudo certbot --nginx -d <輸入網域名稱>
 會出現設定選項，輸入對應數字即可。
 
 最後記得打開虛擬主機防火牆。
+
+> 之後有新增subdomain時只要先加入如下在nginx然後再重複第二步驟即可。
+>
+> ```
+> server {
+>   server_name api.domain.com;
+>   location / {
+>    proxy_pass http://localhost:8888;
+>   }
+> }
+> ```
+
+
 
