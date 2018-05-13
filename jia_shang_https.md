@@ -179,15 +179,33 @@ rewrite ^/(.*) https://sakatu.com/$1 permanent;
 </script>
 ```
 
-
-
 # 自動使用腳本加上
 
-> 可參考
->
-> https://blog.hellojcc.tw/2018/05/02/setup-https-with-letsencrypt-on-nginx/
+> 可參考 [https://blog.hellojcc.tw/2018/05/02/setup-https-with-letsencrypt-on-nginx/](https://blog.hellojcc.tw/2018/05/02/setup-https-with-letsencrypt-on-nginx/)
 
-注意如果使用AWS 或 GCP 跑完腳本後要把security group 防火牆的 443 PORT打開。
+> 注意如果使用AWS 或 GCP 跑完腳本後要把security group 防火牆的 443 PORT打開。
 
+步驟1
 
+```
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:certbot/certbot # 載入 certbot 的 ppa
+sudo apt-get update  # 更新 apt-get
+sudo apt-get install python-certbot-nginx # 安裝 python 的 certbot for nginx
+```
+
+步驟2
+
+> 在 -d 後面加上網域名稱
+
+```
+sudo certbot --nginx -d <輸入網域名稱>
+```
+
+步驟3
+
+會出現設定選項，輸入對應數字即可。
+
+最後記得打開虛擬主機防火牆。
 
