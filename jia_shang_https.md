@@ -181,3 +181,13 @@ rewrite ^/(.*) https://sakatu.com/$1 permanent;
 
 
 
+# 自動使用腳本加上
+
+> 可參考
+>
+> https://blog.hellojcc.tw/2018/05/02/setup-https-with-letsencrypt-on-nginx/
+
+注意如果使用AWS 或 GCP 跑完腳本後要把security group 防火牆的 443 PORT打開。
+
+
+
