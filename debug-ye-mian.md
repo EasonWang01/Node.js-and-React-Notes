@@ -20,11 +20,27 @@
 
 > 也可在程式加入`debugger;` 來指定執行到哪裡時要中斷。
 
-
-
 #### 4.也可在元素上點擊，幫元素加上斷點
 
 ![](/assets/df4.png)
+
+## Debug深層Function
+
+有時斷點執行時不會跳入深層Function的執行過程，我們只要在Function的開頭加上
+
+```
+debugger;
+```
+
+即可
+
+```
+function AssembleOrder() {
+  debugger;
+  if (!checkNonZeroNumber($("#multiples").val()))
+  .....
+}
+```
 
 
 
