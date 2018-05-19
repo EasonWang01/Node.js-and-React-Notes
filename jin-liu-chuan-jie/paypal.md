@@ -6,6 +6,12 @@
 
 [https://github.com/paypal/PayPal-node-SDK](https://github.com/paypal/PayPal-node-SDK)
 
+# 範例:
+
+https://developer.paypal.com/docs/integration/direct/express-checkout/integration-jsv4/set-up-a-payment/
+
+https://developer.paypal.com/demo/checkout/\#/pattern/client
+
 # 說明:
 
 1.擁有 [https://www.paypal.com](https://www.paypal.com) 帳號
