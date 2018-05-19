@@ -139,4 +139,6 @@
 * [Chrome extension](chrome-extension.md)
 * 消息系統
   * [RabbitMQ](rabbitmq.md)
+* [金流串接](jin-liu-chuan-jie.md)
+  * [Paypal](jin-liu-chuan-jie/paypal.md)
 
