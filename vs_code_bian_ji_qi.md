@@ -66,9 +66,13 @@ keybindings.json
 
 > 可自行定義code 快捷鍵
 
-https://code.visualstudio.com/docs/editor/userdefinedsnippets
+打開偏好設定 -&gt; 使用者程式碼片段
 
-> 範例: https://github.com/xabikos/vscode-react/blob/master/snippets/snippets.json
+[https://code.visualstudio.com/docs/editor/userdefinedsnippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+
+貼上類似如下
+
+> 範例: [https://github.com/xabikos/vscode-react/blob/master/snippets/snippets.json](https://github.com/xabikos/vscode-react/blob/master/snippets/snippets.json)
 
 
 
