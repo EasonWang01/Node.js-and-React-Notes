@@ -32,6 +32,7 @@
   * [寫component並且publish](react/xie-component-bing-qie-publish.md)
   * [create-react-app](react/create-react-app.md)
   * [Context API](react/context-api.md)
+  * [i18n](react/i18n.md)
 * [React util](react_util.md)
 * [React router](react_router.md)
 * [Redux](redux.md)
