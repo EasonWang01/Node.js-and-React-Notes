@@ -144,6 +144,14 @@ function setUITimer(element, time, callback) {
     timer(200000)
 ```
 
+如果想設定倒數結束的開始時間：
+
+```js
+// 開始日期為2018, 4, 22
+let elapsed = Math.floor(Date.now() / 1000) - Math.floor(new Date(2018, 4, 20).getTime() / 1000);
+timer(30 * 60 * 60 * 24 - elapsed);
+```
+
 # 移除畫面上的事件綁定
 
 有時如果畫面更新但元素沒更新時，造成重複綁定事件，可用以下方法更新元素，移除舊事件。
