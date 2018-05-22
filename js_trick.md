@@ -112,6 +112,38 @@ function setUITimer(element, time, callback) {
 }
 ```
 
+版本2
+
+```js
+  function timer(intDiff) {
+
+      var intDiff = parseInt(intDiff);
+      var day = 0,
+        hour = 0,
+        minute = 0,
+        second = 0;
+
+
+      window.setInterval(function () {
+
+        if (intDiff > 0) {
+          day = Math.floor(intDiff / 86400);
+          hour = Math.floor(intDiff / 3600) - (day * 24);
+          minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+          second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+        }
+        console.log(hour)
+        if (hour <= 9) hour = "0" + hour;
+        if (minute <= 9) minute = "0" + minute;
+        if (second <= 9) second = "0" + second;
+        console.log(" " + day + ":" + hour + ":" + minute + ":" + second + "");
+        intDiff--;
+      }, 1000);
+      // alert("The language is: " + userLang);
+    }
+    timer(200000)
+```
+
 # 移除畫面上的事件綁定
 
 有時如果畫面更新但元素沒更新時，造成重複綁定事件，可用以下方法更新元素，移除舊事件。
@@ -134,8 +166,6 @@ element.addEventListener('click', function () {
 ```
 
 [https://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element](https://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element)
-
-
 
 # 取得所有可能的字串組合
 
