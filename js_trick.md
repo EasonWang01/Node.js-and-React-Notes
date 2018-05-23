@@ -152,6 +152,10 @@ let elapsed = Math.floor(Date.now() / 1000) - Math.floor(new Date(2018, 4, 20).g
 timer(30 * 60 * 60 * 24 - elapsed);
 ```
 
+# 角子老虎機捲動效果
+
+https://codepen.io/EasonWang01/pen/VxNzXz
+
 # 移除畫面上的事件綁定
 
 有時如果畫面更新但元素沒更新時，造成重複綁定事件，可用以下方法更新元素，移除舊事件。
