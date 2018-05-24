@@ -154,7 +154,47 @@ timer(30 * 60 * 60 * 24 - elapsed);
 
 # 角子老虎機捲動效果
 
-https://codepen.io/EasonWang01/pen/VxNzXz
+[https://codepen.io/EasonWang01/pen/VxNzXz](https://codepen.io/EasonWang01/pen/VxNzXz)
+
+主要是創造兩階層的0-9個數字，然後在0接到9時位置跳回開頭。
+
+```js
+  componentDidMount() {
+    var c = "";
+    for (let i = 0; i <= 8; i++) {
+      c = c + this.htmlstrFun(`c_0${i}`)
+    }
+    document.getElementById('money').insertAdjacentHTML('beforeend', c);
+    this.runPrize("564787263")
+  }
+
+  runPrize(target) {
+    setTimeout(() => {
+      for (let i = 0; i <= 8; i++) {
+        this.runNum(1 / (i + 1) * 20, i, target)
+      }
+    }, 1000)
+  }
+
+  runNum(fe, index, target) {
+    // fe代表運轉的速度，index為數字的位置，target為目標數字。
+    let gap = document.querySelector('.bonus_money li').clientHeight;
+    let position = 0;
+    var v = setInterval(() => {
+      if (position === -(gap * 10) - (gap * target[index]) && index == runIndex) {
+        runIndex -= 1;
+        clearInterval(v);
+        return
+      }
+      if (position === -(gap * 19) + Math.floor(gap / 2)) {
+        position = -(gap * 9) + Math.floor(gap / 2)
+      } else {
+        position -= 1;
+      }
+      document.querySelector(`#c_0${index}`).style.top = `${position}px`;
+    }, fe)
+  }
+```
 
 # 移除畫面上的事件綁定
 
