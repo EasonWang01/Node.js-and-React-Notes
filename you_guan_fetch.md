@@ -70,6 +70,7 @@ axios.post(API_HOST+'/api/Member/GetQAList',
       Content: findDOMNode(this.refs.replyContent).value,
      }
     , {      
+      withCredentials: true,
       headers: {
         accesstoken: localStorage.getItem('accessToken')
       } 
