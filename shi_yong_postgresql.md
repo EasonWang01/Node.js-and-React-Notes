@@ -29,6 +29,12 @@ sudo -u postgres -i
 psql
 ```
 
+更改預設密碼，進入psql後輸入以下
+
+```
+\password postgres
+```
+
 ## 1.使用pgAdmin III
 
 如要查看TABLE
