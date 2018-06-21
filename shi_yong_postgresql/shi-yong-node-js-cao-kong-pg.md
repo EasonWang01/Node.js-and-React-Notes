@@ -33,5 +33,21 @@ client.query('select * from company;', (err, res) => {
 })
 ```
 
+## Insert
+
+```js
+const { Client } = require('pg')
+const client = new Client()
+
+client.connect()
+var data = ["000", "bazi", 2, 1, Date.now()];
+var queryletter =`INSERT INTO bet_user(ADDRESS, CATEGORY, ODDS, AMOUNT, TIMESTAMP) VALUES ($1, $2, $3, $4, $5)`;
+
+client.query(queryletter,data, (err, res) => {
+  console.log(err ? err.stack : res.rows)
+  client.end()
+})
+```
+
 
 
