@@ -19,5 +19,19 @@ $ PGUSER=dbuser \
   node script.js
 ```
 
+## Query
+
+```js
+const { Client } = require('pg')
+const client = new Client()
+
+client.connect()
+
+client.query('select * from company;', (err, res) => {
+  console.log(err ? err.stack : res.rows)
+  client.end()
+})
+```
+
 
 
