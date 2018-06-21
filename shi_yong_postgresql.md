@@ -4,6 +4,8 @@
 
 # 安裝
 
+https://www.godaddy.com/garage/how-to-install-postgresql-on-ubuntu-14-04/
+
 ```
 1.下載
 apt-get install postgresql postgresql-contrib
@@ -15,7 +17,17 @@ update-rc.d postgresql enable
 service postgresql start
 ```
 
+之後輸入以下進入postgres使用者
 
+```
+sudo -u postgres -i
+```
+
+進入psql
+
+```
+psql
+```
 
 ## 1.使用pgAdmin III
 
