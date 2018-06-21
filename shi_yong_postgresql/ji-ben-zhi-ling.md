@@ -50,6 +50,8 @@ CREATE TABLE DEPARTMENT(
 );
 ```
 
+> 可用ID SERIAL 來創建AUTO INCREMENT的Table，之後會建立一個特別相對應的表。
+
 ## 列出所有Table
 
 ```
