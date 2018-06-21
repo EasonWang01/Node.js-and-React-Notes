@@ -8,6 +8,8 @@ npm install pg --save
 
 [https://github.com/brianc/node-postgres](https://github.com/brianc/node-postgres)
 
+https://node-postgres.com/features/queries
+
 ## 執行指令前輸入相關連線設定
 
 ```
