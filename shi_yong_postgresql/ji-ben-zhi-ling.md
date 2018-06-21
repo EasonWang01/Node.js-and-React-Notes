@@ -56,5 +56,11 @@ CREATE TABLE DEPARTMENT(
 \d
 ```
 
+## 檢視詳細Table schema
+
+```
+\d <Table名稱>
+```
+
 
 
