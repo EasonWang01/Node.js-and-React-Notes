@@ -4,7 +4,7 @@
 
 # 安裝
 
-https://www.godaddy.com/garage/how-to-install-postgresql-on-ubuntu-14-04/
+[https://www.godaddy.com/garage/how-to-install-postgresql-on-ubuntu-14-04/](https://www.godaddy.com/garage/how-to-install-postgresql-on-ubuntu-14-04/)
 
 ```
 1.下載
@@ -47,6 +47,7 @@ psql
 
 ```
 記得每個指令結尾要加 ;
+使用 \q 離開。
 ```
 
 ```
