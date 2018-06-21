@@ -62,15 +62,7 @@ psql
 
 ---
 
-# Node.js與PostgreSQL
-
-```
-npm install pg --save
-```
-
-[https://github.com/brianc/node-postgres](https://github.com/brianc/node-postgres)
-
----
+# 
 
 參考至:
 
