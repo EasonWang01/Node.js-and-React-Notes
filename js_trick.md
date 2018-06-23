@@ -249,6 +249,7 @@ for(let i = 0; i < 4; i ++){
 
 ```js
 function parseQuerystring(s) {
+  var urlParams = {};
   var match,
     pl = /\+/g, // Regex for replacing addition symbol with a space
     search = /([^&=]+)=?([^&]*)/g,
