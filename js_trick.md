@@ -270,5 +270,13 @@ function parseQuerystring(s) {
 parseQuerystring(location.search)
 ```
 
+> 或是可使用官方ＡＰＩ
+>
+> ```js
+> var urlParams = new URLSearchParams(window.location.search);
+>
+> console.log(urlParams.has('post')); // true
+> ```
+
 
 
