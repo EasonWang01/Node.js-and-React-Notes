@@ -757,8 +757,9 @@ Cat.update({_id:req.body.id[0]},{time:req.body.event[0],name:req.body.event[1]},
     });
 ```
 
-｀｀
+｀｀  
 更新巢狀物件
+
 ```
         Post.update({_id: req.body.payload.itemInfo._id}, {$set: {
           "contract.Lessor": req.body.payload
@@ -819,8 +820,6 @@ comments: Array,
 
 如果想要在已有的collection新增field可使用update配合$set即可
 
-
-
 避免使用update 中的 upsert 會產生\_id為null的情況
 
 2.Mongodb取出物件後無法加上屬性
@@ -834,11 +833,11 @@ comments: Array,
           res.end(JSON.stringify(Object.assign(d, {price: new Date(Date.now() + 1000*60*60*8)})))
           //console.log(d)
       })
-      ```
+```
 
-#備份與還原
+# 備份與還原
 
-http://www.runoob.com/mongodb/mongodb-mongodump-mongorestore.html
+[http://www.runoob.com/mongodb/mongodb-mongodump-mongorestore.html](http://www.runoob.com/mongodb/mongodb-mongodump-mongorestore.html)
 
 備份
 
@@ -846,9 +845,15 @@ http://www.runoob.com/mongodb/mongodb-mongodump-mongorestore.html
 mongodump -h dbhost -d dbname -o dbdirectory
 ```
 
+> dbhost是mongo db 執行的ip與port，dbname是要備份的數據庫名稱，dbdirectory是備份後要存放的檔案位置
+
 還原
+
 ```
 mongorestore -h <hostname><:port> -d dbname <path>
 ```
 
+> dbname填入剛才備份的數據庫名稱，以及path填入剛才備份後的檔案
+
 之後如果是用Robomongo則重新對資料庫連線即可看到還原出的資料庫
+
