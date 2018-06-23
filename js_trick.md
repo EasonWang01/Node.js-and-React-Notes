@@ -243,5 +243,31 @@ for(let i = 0; i < 4; i ++){
 }
 ```
 
+# 解析QueryString
+
+先使用location.search取得QueryString
+
+```js
+function parseQuerystring(s) {
+  var match,
+    pl = /\+/g, // Regex for replacing addition symbol with a space
+    search = /([^&=]+)=?([^&]*)/g,
+    decode = function(s) {
+      return decodeURIComponent(s.replace(pl, " "));
+    },
+    query = s.substring(1);
+  urlParams = {};
+  while ((match = search.exec(query)))
+    urlParams[decode(match[1])] = decode(match[2]);
+  return urlParams;
+}
+```
+
+使用
+
+```
+parseQuerystring(location.search)
+```
+
 
 
