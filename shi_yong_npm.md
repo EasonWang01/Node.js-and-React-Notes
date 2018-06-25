@@ -179,7 +179,17 @@ npm view <套件名稱>
 
 #### 1.node-gyp error
 
-有c如果安裝的套件是使用C++然後用node-
+有時如果安裝的套件是使用C++然後用node-gyp編譯的話，需要預先安裝如下
+
+```
+npm install -g node-gyp
+```
+
+> 如果是ubuntu還需要安裝build-essential
+>
+> ```
+> sudo apt-get install build-essential
+> ```
 
 
 
