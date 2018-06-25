@@ -175,5 +175,11 @@ nvm use <version>
 npm view <套件名稱>
 ```
 
+# 常見問題
+
+#### 1.node-gyp error
+
+有c如果安裝的套件是使用C++然後用node-
+
 
 
