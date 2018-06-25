@@ -28,6 +28,10 @@ npm install  -g \(使用後可在cmd的任何路徑輸入package名稱執行，�
 >
 > 預設  安裝Node.js會自動幫你加上
 
+```
+
+```
+
 npm install  --save
 
 npm uninstall
