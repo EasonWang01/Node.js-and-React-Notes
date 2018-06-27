@@ -191,8 +191,16 @@ pick e2b2a84 ... #will be preserved
 [https://stackoverflow.com/questions/9725156/remove-old-git-commits](https://stackoverflow.com/questions/9725156/remove-old-git-commits)
 
 > 如果要更改遠端Repo必須要Force Push
-
+>
 > 如果要移除最後一次commit 則至少要到HEAD~2 `git rebase -i HEAD~2` 然後把最後一次commit註解掉
+
+# 移除所有Commit 紀錄
+
+照著下面的步驟輸入即可。
+
+會把原先master分支刪除。
+
+https://stackoverflow.com/a/26000395/8606842
 
 # Git Reset
 
