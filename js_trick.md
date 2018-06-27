@@ -147,9 +147,9 @@ function setUITimer(element, time, callback) {
 如果想設定倒數結束的開始時間：
 
 ```js
-// 開始日期為2018, 4, 22
-let elapsed = Math.floor(Date.now() / 1000) - Math.floor(new Date(2018, 4, 20).getTime() / 1000);
-timer(30 * 60 * 60 * 24 - elapsed);
+// 結束日期為2018, 5, 22 要用5-1的原因是JS date的一月是0
+let elapsed = Math.floor(Date.now() / 1000) - Math.floor(new Date(2018, 5 - 1, 20).getTime() / 1000);
+timer(60 * 60 * 24 - elapsed);
 ```
 
 # 角子老虎機捲動效果
