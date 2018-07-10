@@ -242,13 +242,9 @@ server {
 
 > 記得root不可寫`~`
 
-
-
-
-
 # 注意事項
 
-有時如果以下指令出現`"nginx.pid" failed` 
+#### 1.有時如果以下指令出現`"nginx.pid" failed`
 
 ```
 nginx -s reload
@@ -258,6 +254,14 @@ nginx -s reload
 
 ```
 sudo service nginx restart
+```
+
+### .nginx: \[emerg\] open\(\) "/usr/local/Cellar/nginx/1.15.0/logs/error.log" failed \(2: No such file or directory\)
+
+可以創建一個error.log檔案即可
+
+```
+
 ```
 
 
