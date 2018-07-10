@@ -256,12 +256,18 @@ nginx -s reload
 sudo service nginx restart
 ```
 
-### .nginx: \[emerg\] open\(\) "/usr/local/Cellar/nginx/1.15.0/logs/error.log" failed \(2: No such file or directory\)
+### 2.nginx: \[emerg\] open\(\) "/usr/local/Cellar/nginx/1.15.0/logs/error.log" failed \(2: No such file or directory\)
 
 可以創建一個error.log檔案即可
 
 ```
 
+```
+
+#### 3.nginx: \[emerg\] bind\(\) to 0.0.0.0:82 failed \(13: Permission denied\)
+
+```
+使用sudo nginx 即可
 ```
 
 
