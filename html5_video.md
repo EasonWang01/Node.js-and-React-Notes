@@ -45,6 +45,8 @@ window.URL.createObjectURL(superBuffer)
 
 # WebRTC串流
 
+![](/assets/螢幕快照 2018-07-20 下午3.14.32.png)
+
 # 名詞:
 
 [https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介](https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介)
@@ -55,7 +57,7 @@ window.URL.createObjectURL(superBuffer)
 
 [https://github.com/shanet/WebRTC-Example](https://github.com/shanet/WebRTC-Example)
 
-以上兩個為很好且簡單的範例。
+以上兩個為很好且簡單的範例，上面是文章下面是程式碼。
 
 Client 過程
 
