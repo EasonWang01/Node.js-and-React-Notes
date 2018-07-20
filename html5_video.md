@@ -58,7 +58,10 @@ window.URL.createObjectURL(superBuffer)
 以上兩個為很好且簡單的範例。
 
 ```
-1. 建立: new RTCPeerConnection
+1. 初始化連線: new RTCPeerConnection，並加入本地影像 peerConnection.addStream(localStream);
+
+(以下有兩個2的原因是SDP與ICE會同時進行)
+2. 設定SDP: peerConnection.setLocalDescription
 2. 在本地蒐集到ice後傳送給另一個peer: onicecandidate 並且傳送 serverConnection.send
 3. 另一個peer接到ice後把ice加入： peerConnection.addIceCandidate
 ```
