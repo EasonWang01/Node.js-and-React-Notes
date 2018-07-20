@@ -78,3 +78,27 @@ Client 過程
 
 Server
 
+> 單純廣播所有接收到的訊息給連線的client
+
+```js
+const wss = new WebSocketServer({server: httpsServer});
+
+wss.on('connection', function(ws) {
+  ws.on('message', function(message) {
+    // Broadcast any received message to all clients
+    console.log('received: %s', message);
+    wss.broadcast(message);
+  });
+});
+
+wss.broadcast = function(data) {
+  this.clients.forEach(function(client) {
+    if(client.readyState === WebSocket.OPEN) {
+      client.send(data);
+    }
+  });
+};
+```
+
+
+
