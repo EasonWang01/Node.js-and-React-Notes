@@ -47,7 +47,7 @@ window.URL.createObjectURL(superBuffer)
 
 # 名詞:
 
-https://blog.mozilla.com.tw/posts/3261/webrtc-%E7%9B%B8%E9%97%9C%E7%B8%AE%E5%AF%AB%E5%90%8D%E8%A9%9E%E7%B0%A1%E4%BB%8B
+[https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介](https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介)
 
 # 範例:
 
@@ -56,4 +56,12 @@ https://blog.mozilla.com.tw/posts/3261/webrtc-%E7%9B%B8%E9%97%9C%E7%B8%AE%E5%AF%
 [https://github.com/shanet/WebRTC-Example](https://github.com/shanet/WebRTC-Example)
 
 以上兩個為很好且簡單的範例。
+
+```
+1. 建立: new RTCPeerConnection
+2. 在本地蒐集到ice後傳送給另一個peer: onicecandidate 並且傳送 serverConnection.send
+3. 另一個peer接到ice後把ice加入： peerConnection.addIceCandidate
+```
+
+
 
