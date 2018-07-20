@@ -57,6 +57,8 @@ window.URL.createObjectURL(superBuffer)
 
 以上兩個為很好且簡單的範例。
 
+Client 過程
+
 ```
 1. 初始化連線: new RTCPeerConnection，並加入本地影像 peerConnection.addStream(localStream);
 
@@ -66,7 +68,11 @@ window.URL.createObjectURL(superBuffer)
 (ICE candidate可能接收到多個)
 
 4. 另一個peer接到ice後把ice加入： peerConnection.addIceCandidate
+
+5. 接收到視訊：peerConnection.ontrack = gotRemoteStream
+
+6. 顯示遠端視訊： remoteVideo.srcObject = event.streams[0]
 ```
 
-
+Server
 
