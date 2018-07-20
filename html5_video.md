@@ -45,6 +45,12 @@ window.URL.createObjectURL(superBuffer)
 
 # WebRTC串流
 
+# 名詞:
+
+https://blog.mozilla.com.tw/posts/3261/webrtc-%E7%9B%B8%E9%97%9C%E7%B8%AE%E5%AF%AB%E5%90%8D%E8%A9%9E%E7%B0%A1%E4%BB%8B
+
+# 範例:
+
 [https://shanetully.com/2014/09/a-dead-simple-webrtc-example/](https://shanetully.com/2014/09/a-dead-simple-webrtc-example/)
 
 [https://github.com/shanet/WebRTC-Example](https://github.com/shanet/WebRTC-Example)
