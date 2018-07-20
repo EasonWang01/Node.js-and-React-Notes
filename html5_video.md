@@ -43,15 +43,11 @@ window.URL.createObjectURL(superBuffer)
 
 3.後來想到可以使用將影片擷取10秒一格並分開連續傳送給client達到串流的效果
 
-
-
-
-
 # WebRTC串流
 
-https://shanetully.com/2014/09/a-dead-simple-webrtc-example/
+[https://shanetully.com/2014/09/a-dead-simple-webrtc-example/](https://shanetully.com/2014/09/a-dead-simple-webrtc-example/)
 
-https://github.com/shanet/WebRTC-Example
+[https://github.com/shanet/WebRTC-Example](https://github.com/shanet/WebRTC-Example)
 
-
+以上兩個為很好且簡單的範例。
 
