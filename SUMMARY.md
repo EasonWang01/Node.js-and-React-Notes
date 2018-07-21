@@ -145,5 +145,6 @@
   * [RabbitMQ](rabbitmq.md)
 * [金流串接](jin-liu-chuan-jie.md)
   * [Paypal](jin-liu-chuan-jie/paypal.md)
+  * [spgateway智富通](jin-liu-chuan-jie/spgatewayzhi-fu-tong.md)
 * [有關Log](you-guan-log.md)
 
