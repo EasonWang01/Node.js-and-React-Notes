@@ -12,5 +12,13 @@
 
 ![](/assets/螢幕快照 2018-07-21 下午10.53.57.png)
 
+# 查看文件
+
+API文件列表：https://www.spgateway.com/website/Page/content/download\_api\#1
+
+收款API文件：點擊上方網址後，選擇最上面那，然後搜尋 串接環境與作業流程 章節。
+
+
+
 
 
