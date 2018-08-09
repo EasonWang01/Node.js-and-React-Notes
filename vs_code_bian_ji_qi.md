@@ -74,5 +74,13 @@ keybindings.json
 
 > 範例: [https://github.com/xabikos/vscode-react/blob/master/snippets/snippets.json](https://github.com/xabikos/vscode-react/blob/master/snippets/snippets.json)
 
+#### 9.Git blame即時顯示
+
+在plugin輸入`git blame` 下載插件。
+
+之後會在左下方即時顯時該行是誰commit的。
+
+![](/assets/Screen Shot 2018-08-09 at 11.44.01 AM.png)
+
 
 
