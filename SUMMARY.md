@@ -54,6 +54,7 @@
   * [Facebook OAUTH](react_native/facebook-oauth.md)
   * [NativeBase UI](react_native/nativebase-ui.md)
   * 原生組件
+  * [Debug](react_native/debug.md)
 * [import\_export\_module.exports 模組化](importexport_module_exports_mo_zu_hua.md)
 * [使用webpack](shi_yong_webpack.md)
 * [使用Babel](babel.md)
