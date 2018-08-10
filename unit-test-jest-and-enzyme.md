@@ -1,3 +1,7 @@
+# Jest
+
+https://jestjs.io/docs/en/
+
 EX:
 
 \(其中的.toMatchSnapshot\(\)會產生一個snapshot檔案，之後如果改動component裡面並造成render結果不同則會產生錯誤需修正\)
@@ -97,6 +101,25 @@ npm install jest-cli -g
 ```
 
 或是直接輸入jest跑一次test
+
+> 如果沒有過所有測試，則不會產生_snapshots_
+
+## 也可用react-test-renderer
+
+```js
+import React from 'react';
+import toJSON from 'enzyme-to-json';
+import renderer from 'react-test-renderer';
+import SectionDisplay from './SectionDisplay.jsx';
+
+describe('SectionDisplay component', () => {
+  test('renders without crashing', () => {
+    const wrapper = renderer.create(<SectionDisplay />);
+    expect(toJSON(wrapper)).toMatchSnapshot();
+  });
+});
+
+```
 
 
 
