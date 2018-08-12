@@ -11,11 +11,11 @@ Quicktime內建沒有輸出encode功能，
 
 # 2.螢幕錄影沒聲音
 
-https://github.com/mattingalls/Soundflower/releases
+[https://github.com/mattingalls/Soundflower/releases](https://github.com/mattingalls/Soundflower/releases)
 
 可以下載Soundflower，然後設定Audio MIDI
 
-> 在其他 &gt; Audio MIDI![](/assets/Screen Shot 2018-08-12 at 2.11.27 PM.png)
+> 其他 &gt; Audio MIDI Setup![](/assets/Screen Shot 2018-08-12 at 2.11.27 PM.png)
 
 然後點選左下角的 + ，然後點選Create Multi-output device
 
@@ -25,7 +25,7 @@ https://github.com/mattingalls/Soundflower/releases
 
 ![](/assets/Screen Shot 2018-08-12 at 2.09.05 PM 12.png)
 
-> 可參考：https://blog.allenchou.cc/soundflower/
+> 可參考：[https://blog.allenchou.cc/soundflower/](https://blog.allenchou.cc/soundflower/)
 
 
 
