@@ -1,3 +1,5 @@
+# QuickTime 設定教學
+
 # 1.有關編碼
 
 Quicktime內建沒有輸出encode功能，
@@ -35,7 +37,7 @@ Quicktime內建沒有輸出encode功能，
 
 ### 所以我們還要設定以下，來同時錄螢幕的聲音與自己麥克風的聲音
 
-https://zeekmagazine.com/archives/39196
+[https://zeekmagazine.com/archives/39196](https://zeekmagazine.com/archives/39196)
 
 一樣點選左下的加號，然後這次選擇的是Aggregate Device，然後選擇Soundflower與Built-in Microphone
 
