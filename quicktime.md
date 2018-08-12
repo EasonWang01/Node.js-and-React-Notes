@@ -21,11 +21,25 @@ Quicktime內建沒有輸出encode功能，
 
 > 新增好後記得確認右下U se的順序，讓音源輸出第一個是Uuilt-in Output，這樣電腦才有聲音![](/assets/Screen Shot 2018-08-12 at 2.08.26 PM.png)
 
+然後到 設定 &gt; Audio &gt; Output 設定選擇Multi-Output Device
+
+![](/assets/Screen Shot 2018-08-12 at 2.16.36 PM.png)
+
 然後在QuickTime選擇麥克風來源即可。
 
 ![](/assets/Screen Shot 2018-08-12 at 2.09.05 PM 12.png)
 
 > 可參考：[https://blog.allenchou.cc/soundflower/](https://blog.allenchou.cc/soundflower/)
 
+但這樣還不夠，因為我們只能錄螢幕的聲音，還聽不到自己的聲音。
 
+### 所以我們還要設定以下，來同時錄螢幕的聲音與自己麥克風的聲音
+
+一樣點選左下的加號，然後這次選擇的是Aggregate Device，然後選擇Soundflower與Built-in Microphone
+
+![](/assets/Screen Shot 2018-08-12 at 2.37.55 PM.png)
+
+然後到 設定 &gt; Audio &gt; Input ，選擇剛才的Aggregate Device
+
+![](/assets/Screen Shot 2018-08-12 at 2.41.14 PM.png)  
 
