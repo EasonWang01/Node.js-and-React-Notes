@@ -21,7 +21,7 @@ Quicktime內建沒有輸出encode功能，
 
 然後點選左下角的 + ，然後點選Create Multi-output device
 
-> 新增好後記得確認右下U se的順序，讓音源輸出第一個是Uuilt-in Output，這樣電腦才有聲音![](/assets/Screen Shot 2018-08-12 at 2.08.26 PM.png)
+> 新增好後記得確認右下U se的順序，讓音源輸出第一個是 Muilt-in Output，這樣電腦才有聲音![](/assets/Screen Shot 2018-08-12 at 2.08.26 PM.png)
 
 然後到 設定 &gt; Audio &gt; Output 設定選擇Multi-Output Device
 
