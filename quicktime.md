@@ -35,11 +35,19 @@ Quicktime內建沒有輸出encode功能，
 
 ### 所以我們還要設定以下，來同時錄螢幕的聲音與自己麥克風的聲音
 
+https://zeekmagazine.com/archives/39196
+
 一樣點選左下的加號，然後這次選擇的是Aggregate Device，然後選擇Soundflower與Built-in Microphone
 
 ![](/assets/Screen Shot 2018-08-12 at 2.37.55 PM.png)
 
 然後到 設定 &gt; Audio &gt; Input ，選擇剛才的Aggregate Device
 
-![](/assets/Screen Shot 2018-08-12 at 2.41.14 PM.png)  
+![](/assets/Screen Shot 2018-08-12 at 2.41.14 PM.png)
+
+最後到QuickTime選擇Aggregate Device即大功告成。
+
+> 現在電腦就可以同時收取遊戲的聲音和外面麥克風的聲音了！
+
+![](/assets/Screen Shot 2018-08-12 at 2.36.20 PM.png)
 
