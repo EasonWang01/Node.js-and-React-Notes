@@ -117,7 +117,7 @@
 * [API Blueprint](api-blueprint.md)
 * [Javascript 實用Lib](javascript-實用lib.md)
 * [ES8 Async](es8-async.md)
-* [Remote edit](remote-edit.md)
+* [遠端寫程式](remote-edit.md)
 * [Quicktime錄影注意事項](quicktime.md)
 * [Web開發進階Bug](bugs.md)
 * [Web壓力測試](presure-testing.md)
