@@ -1,6 +1,18 @@
+# Enzyme
+
+http://airbnb.io/enzyme/
+
+僅提供React.js相關的Render功能。
+
+包含: shallow, render, mount等等
+
+https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913
+
 # Jest
 
-https://jestjs.io/docs/en/
+類似Mocha，為一個跑測試的執行者
+
+[https://jestjs.io/docs/en/](https://jestjs.io/docs/en/)
 
 EX:
 
@@ -118,7 +130,6 @@ describe('SectionDisplay component', () => {
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 });
-
 ```
 
 
