@@ -66,7 +66,8 @@ sudo netstat -tulpn
 OSX
 
 ```
-sudo lsof -nPi -sTCP:LISTEN
+lsof -nPi -sTCP:LISTEN
+netstat -an | grep LISTEN
 ```
 
 ### 找出特定port的PID
