@@ -44,6 +44,19 @@ fetch('http://localhost:3016/login', {
 });
 ```
 
+```js
+fetch('http://localhost:3000/info', {
+    method: "POST",
+    body: JSON.stringify({test: 123})
+  })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(myJson);
+  });
+```
+
 # 如果要傳JSON要先stringify
 
 ```
