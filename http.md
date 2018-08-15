@@ -1,4 +1,4 @@
-# http
+# HTTP
 
 ```
 var http = require('http');
@@ -6,6 +6,35 @@ var http = require('http');
 http.createServer(function (request, response){
   response.writeHead(200, {'Content-Type': 'text/plain'});
   response.end('Hello World\n');
+}).listen(3000);
+
+console.log('Server running on port 3000.');
+```
+
+#### 包含路由與讀取Body
+
+```js
+const http = require('http');
+
+const parseBody = (req, callback) => {
+  let body = '';
+  req.on('data', chunk => {
+    body += chunk.toString();
+  });
+  req.on('end', () => {
+    callback(body);
+  });
+}
+
+http.createServer(function (req, res) {
+  if (req.url === '/') {
+    if (req.method === "POST") {
+      parseBody(req, (body) => {
+        console.log(JSON.parse(body));
+        res.end('ok');
+      })
+    }
+  }
 }).listen(3000);
 
 console.log('Server running on port 3000.');
@@ -224,10 +253,6 @@ var proxy = http.createServer(function (request, response) {
   req.end();
 }).listen(8080);
 ```
-
-
-
-
 
 
 
