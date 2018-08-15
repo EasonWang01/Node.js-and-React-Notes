@@ -61,6 +61,21 @@ server {
   }}
 ```
 
+## 設定靜態目錄
+
+```
+
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /home/lasih82ne/getuserInfo/front-end/build;
+
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+}
+```
+
 ## websocket有問題
 
 加入以下配置
