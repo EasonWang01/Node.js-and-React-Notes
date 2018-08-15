@@ -1,5 +1,7 @@
 # 有關Fetch
 
+https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch\_API/Using\_Fetch
+
 以前用xmlHttprequest但寫法太多，fetch為比較簡潔的寫法，並且有then可使用
 
 注意事項:
