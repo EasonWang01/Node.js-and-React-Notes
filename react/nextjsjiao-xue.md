@@ -1,6 +1,6 @@
 # Next.js 教學
 
-https://nextjs.org/
+[https://nextjs.org/](https://nextjs.org/)
 
 1.開一個新資料夾，然後cd進去後輸入以下指令。
 
@@ -47,6 +47,25 @@ export default () => (
     <p>This is the about page</p>
   </div>
 )
+```
+
+#### 新增client Route
+
+我們把index.js改為如下
+
+```js
+import Link from 'next/link'
+
+const Index = () => (
+  <div>
+    <Link href="/about">
+      <a>About Page</a>
+    </Link>
+    <p>Hello Next.js</p>
+  </div>
+)
+
+export default Index
 ```
 
 
