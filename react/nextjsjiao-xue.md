@@ -68,7 +68,11 @@ const Index = () => (
 export default Index
 ```
 
-> route的文件：https://github.com/zeit/next.js\#routing
+> route的文件：[https://github.com/zeit/next.js\#routing](https://github.com/zeit/next.js#routing)
+
+## 新增共用layout component
+
+https://nextjs.org/learn/basics/using-shared-components/the-layout-component
 
 
 
