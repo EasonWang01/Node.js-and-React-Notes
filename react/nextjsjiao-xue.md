@@ -49,7 +49,7 @@ export default () => (
 )
 ```
 
-#### 新增client Route
+## 新增client Route
 
 我們把index.js改為如下
 
@@ -67,6 +67,8 @@ const Index = () => (
 
 export default Index
 ```
+
+> route的文件：https://github.com/zeit/next.js\#routing
 
 
 
