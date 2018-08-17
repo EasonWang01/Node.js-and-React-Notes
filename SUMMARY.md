@@ -151,5 +151,6 @@
 * [金流串接](jin-liu-chuan-jie.md)
   * [Paypal](jin-liu-chuan-jie/paypal.md)
   * [spgateway智富通](jin-liu-chuan-jie/spgatewayzhi-fu-tong.md)
+  * [Stripe 串接](jin-liu-chuan-jie/stripe-chuan-jie.md)
 * [有關Log](you-guan-log.md)
 
