@@ -2,6 +2,8 @@
 
 [https://nextjs.org/](https://nextjs.org/)
 
+## 1.建立專案
+
 1.開一個新資料夾，然後cd進去後輸入以下指令。
 
 ```
@@ -49,7 +51,7 @@ export default () => (
 )
 ```
 
-## 新增client Route
+## 2.新增client Route
 
 我們把index.js改為如下
 
@@ -70,11 +72,11 @@ export default Index
 
 > route的文件：[https://github.com/zeit/next.js\#routing](https://github.com/zeit/next.js#routing)
 
-## 新增共用layout component
+## 3.新增共用layout component
 
 [https://nextjs.org/learn/basics/using-shared-components/the-layout-component](https://nextjs.org/learn/basics/using-shared-components/the-layout-component)
 
-# 引入&lt;script&gt;或是其他html tag
+# 4.引入&lt;script&gt;或是其他html tag
 
 ```js
 import Layout from '../components/MyLayout.js'
@@ -90,7 +92,7 @@ export default () => (
 )
 ```
 
-#### 讀取url
+# 5.讀取url
 
 > 加入`withRouter`
 >
