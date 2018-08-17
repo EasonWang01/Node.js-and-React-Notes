@@ -129,6 +129,8 @@ export default Page
 ```
 
 > as 為顯示出來的，href為實際的router
+>
+> 但重新整理後會無法讀取該顯示出來的router
 
 
 
