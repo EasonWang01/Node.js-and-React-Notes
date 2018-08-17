@@ -72,7 +72,23 @@ export default Index
 
 ## 新增共用layout component
 
-https://nextjs.org/learn/basics/using-shared-components/the-layout-component
+[https://nextjs.org/learn/basics/using-shared-components/the-layout-component](https://nextjs.org/learn/basics/using-shared-components/the-layout-component)
+
+# 引入&lt;script&gt;或是其他html tag
+
+```js
+import Layout from '../components/MyLayout.js'
+import Head from 'next/head'
+
+export default () => (
+    <Layout>
+        <Head>
+          <script src="https://checkout.stripe.com/v2/checkout.js"></script>
+        </Head>
+       <p>This is the about page</p>
+    </Layout>
+)
+```
 
 
 
