@@ -132,5 +132,11 @@ export default Page
 >
 > 但重新整理後會無法讀取該顯示出來的router
 
+# 7.自訂Server
+
+原先為使用Next.js內建的dev server，現在要來自己建一個Server
+
+
+
 
 
