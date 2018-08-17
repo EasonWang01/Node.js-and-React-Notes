@@ -118,5 +118,17 @@ const Page = (props) => (
 export default Page
 ```
 
+# 6.Router Masking
+
+也就是更改實際的client URL
+
+```js
+    <Link as={`/p/${props.id}/scasc`} href={`/post?title=${props.title}`}>
+      <a>{props.title}</a>
+    </Link>
+```
+
+> as 為顯示出來的，href為實際的router
+
 
 
