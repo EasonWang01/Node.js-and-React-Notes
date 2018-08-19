@@ -169,5 +169,47 @@ app.prepare()
 })
 ```
 
-https://github.com/zeit/next.js\#custom-server-and-routing
+[https://github.com/zeit/next.js\#custom-server-and-routing](https://github.com/zeit/next.js#custom-server-and-routing)
+
+# 8.使用Fetch獲取Data
+
+把index.js改為如下
+
+> 當client 跳轉到此頁面時會從client發出請求，但如果是重新整理頁面的話則是Server Side會發出請求並直接把資料渲染到頁面上。
+
+```js
+import Layout from '../components/MyLayout.js'
+import Link from 'next/link'
+import fetch from 'isomorphic-unfetch'
+
+const Index = (props) => (
+  <Layout>
+    <h1>Batman TV Shows</h1>
+    <ul>
+      {props.shows.map(({show}) => (
+        <li key={show.id}>
+          <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
+            <a>{show.name}</a>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </Layout>
+)
+
+Index.getInitialProps = async function() {
+  const res = await fetch('https://api.tvmaze.com/search/shows?q=batman')
+  const data = await res.json()
+
+  console.log(`Show data fetched. Count: ${data.length}`)
+
+  return {
+    shows: data
+  }
+}
+
+export default Index
+```
+
+
 
