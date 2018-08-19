@@ -200,7 +200,7 @@ pick e2b2a84 ... #will be preserved
 
 會把原先master分支刪除。
 
-https://stackoverflow.com/a/26000395/8606842
+[https://stackoverflow.com/a/26000395/8606842](https://stackoverflow.com/a/26000395/8606842)
 
 # Git Reset
 
@@ -320,6 +320,16 @@ git diff --cached --name-only
 ```
  git show –name-only {commit hash}
 ```
+
+# 取消Rebase
+
+如果Rebase完了要Merge，不讓你checkout到原本的branch，可以使用如下
+
+```
+git reset --merge
+```
+
+然後再`git checkout ...` 即可
 
 # 其他不錯文章
 
