@@ -194,6 +194,22 @@ pick e2b2a84 ... #will be preserved
 >
 > 如果要移除最後一次commit 則至少要到HEAD~2 `git rebase -i HEAD~2` 然後把最後一次commit註解掉
 
+# 重置歷史commit
+
+https://stackoverflow.com/a/32765827
+
+先checkout新的orphan branch
+
+```
+git checkout --orphan mainsource01  
+```
+
+然後移除舊的branch
+
+```
+git push origin --delete mainsource -f
+```
+
 # 移除所有Commit 紀錄
 
 照著下面的步驟輸入即可。
