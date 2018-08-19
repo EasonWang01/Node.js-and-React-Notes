@@ -1,12 +1,13 @@
-# #在網站放入Google的地圖
+# 在網站放入Google的地圖
 
-放入元素，把地圖置中(記得設定寬高)
+放入元素，把地圖置中\(記得設定寬高\)
+
 ```html
 <div style={{height: '300px',width: '300px', marginLeft: 'auto', marginRight: 'auto'}} id="map"></div>
-
 ```
 
 初始化
+
 ```javascript
       var map;
       var marker;
@@ -22,10 +23,10 @@
       window.google.maps.event.addListener(map, 'click', function(event) {
         placeMarker(event.latLng);
       });
-      
-      
-      
-      
+
+
+
+
        function placeMarker(location) {
          if (marker == null) {
             marker = new window.google.maps.Marker({
@@ -36,6 +37,13 @@
                 marker.setPosition(location); 
 
           };
-       
+
        }
 ```
+
+# 直接放入Embeded元件
+
+https://developers.google.com/maps/documentation/embed/start
+
+
+
