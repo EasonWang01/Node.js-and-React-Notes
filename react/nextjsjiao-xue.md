@@ -272,5 +272,23 @@ export default () => (
 "serve": "NODE_ENV=production node server.js"
 ```
 
+# 11. 部署到 Now
 
+Now 為一個 https://zeit.co/ 所出的雲端快速建置服務，使用Heroku
+
+安裝：
+
+```
+npm i -g --unsafe-perm now
+```
+
+之後再項目的根目錄輸入`now`
+
+> 記得先到網站註冊帳號
+
+部署後會看到如下（會給你分配一個 now.sh 的子網域）：
+
+![](/assets/Screen Shot 2018-08-20 at 2.51.29 PM.png)之後回到Zeit.co網站也可查看部署過的項目。
+
+![](/assets/Screen Shot 2018-08-20 at 2.54.46 PM.png)
 
