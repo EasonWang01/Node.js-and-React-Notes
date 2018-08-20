@@ -331,5 +331,5 @@ next export
 > serve -p 8080
 > ```
 
-
+如果想要部署到 Now上，進入 out 資料夾後輸入 `now` 即可。 
 
