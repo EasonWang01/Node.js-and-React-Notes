@@ -274,7 +274,7 @@ export default () => (
 
 # 11. 部署到 Now
 
-Now 為一個 https://zeit.co/ 所出的雲端快速建置服務，使用Heroku
+Now 為一個 [https://zeit.co/](https://zeit.co/) 所出的雲端快速建置服務，使用Heroku
 
 安裝：
 
@@ -291,4 +291,45 @@ npm i -g --unsafe-perm now
 ![](/assets/Screen Shot 2018-08-20 at 2.51.29 PM.png)之後回到Zeit.co網站也可查看部署過的項目。
 
 ![](/assets/Screen Shot 2018-08-20 at 2.54.46 PM.png)
+
+# 額外功能
+
+### 1. 輸出靜態頁面
+
+新增 next.config.js
+
+```json
+module.exports = {
+  exportPathMap: function () {
+    return {
+      '/': { page: '/' },
+      '/about': { page: '/about' },
+      '/p/hello-nextjs': { page: '/post', query: { title: "Hello Next.js" } },
+      '/p/learn-nextjs': { page: '/post', query: { title: "Learn Next.js is awesome" } },
+      '/p/deploy-nextjs': { page: '/post', query: { title: "Deploy apps with Zeit" } },
+      '/p/exporting-pages': { page: '/post', query: { title: "Learn to Export HTML Pages" } }
+    }
+  }
+}
+```
+
+> 上面的config檔案描述 route 該導向哪個檔案，以及要Render的資料。
+
+之後輸入以下即可
+
+```
+next export
+```
+
+會產生一個out資料夾，裡面包含一個html檔案。
+
+> 可以使用Serve模組測試
+>
+> ```
+> npm install serve -g
+> cd out
+> serve -p 8080
+> ```
+
+
 
