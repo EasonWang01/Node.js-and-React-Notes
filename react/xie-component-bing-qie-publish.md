@@ -1,27 +1,27 @@
-# #作法
+# 作法
+
 1.因為React的jsx無法被模組化直接使用，所以要先將jsx轉為js
 
 2.export default 等以及import也無法使用
 
-因為node_module被使用時不會被compile
+因為node\_module被使用時不會被compile
 
-
-# #使用babel compile
+# 使用babel compile
 
 ```
 babel src -d dist --presets es2015,stage-2,react --copy-files
 ```
 
-可參考此Repo
-https://github.com/EasonWang01/react-pure-css-modal
+可參考此Repo  
+[https://github.com/EasonWang01/react-pure-css-modal](https://github.com/EasonWang01/react-pure-css-modal)
 
 或是
 
 線上compile
 
-https://facebook.github.io/react/jsx-compiler.html
+[https://facebook.github.io/react/jsx-compiler.html](https://facebook.github.io/react/jsx-compiler.html)
 
-https://babeljs.io/repl/
+[https://babeljs.io/repl/](https://babeljs.io/repl/)
 
 EX:
 
@@ -89,3 +89,10 @@ var Modal = function (_Component) {
   return Modal;
 }(Component);
 ```
+
+# 測試元件
+
+1.把元件放到create-react-app 的 src folder測試
+
+
+
