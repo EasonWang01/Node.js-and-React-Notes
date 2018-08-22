@@ -278,5 +278,13 @@ rsync --progress -r --exclude "node_modules/" --exclude  ".*/"  -e "ssh -i ~/Dow
 nircmd.exe setdisplay 1920 1080 32
 ```
 
+# 修改Domain對應IP
+
+OSX:
+
+```
+sudo vim /private/etc/hosts
+```
+
 
 
