@@ -286,5 +286,11 @@ OSX:
 sudo vim /private/etc/hosts
 ```
 
+> 然後記得重整DNS cache
+>
+> ```
+> sudo dscacheutil -flushcache
+> ```
 
+https://www.inmotionhosting.com/support/website/how-to/how-to-edit-your-hosts-file-on-a-mac
 
