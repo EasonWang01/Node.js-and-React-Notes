@@ -6,6 +6,8 @@
 
 因為node\_module被使用時不會被compile
 
+> css 不用 compile 也可以，因為通常專案在compile 後的 jsx 有 require css，這時會被專案的 webpack loader compile。
+
 # 使用babel compile
 
 ```
@@ -93,6 +95,4 @@ var Modal = function (_Component) {
 # 測試元件
 
 1.把元件放到create-react-app 的 src folder測試
-
-
 
