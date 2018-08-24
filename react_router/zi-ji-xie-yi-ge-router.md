@@ -1,5 +1,11 @@
 # 自己寫一個 React Router
 
+> 1.使用onpopstate管理瀏覽器的前後頁切換
+>
+> 2.換到下一頁時用`setState` 控制畫面
+>
+> 3.用 window.history.pushState 推入瀏覽器 URL
+
 ```js
 import React, { Component } from 'react';
 
