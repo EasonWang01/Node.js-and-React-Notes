@@ -140,5 +140,66 @@ describe('SectionDisplay component', () => {
 
 使用如上指令會顯示目前測試覆蓋率。
 
-通常只要在render的元素加上snapshot與所有事件上 \(onCick...\)
+通常只要在render的元素加上snapshot與所有事件上 \(onClick...\) 加上測試即可
+
+```js
+import React from 'react';
+import { configure, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import toJSON from 'enzyme-to-json';
+import BookingDetail from './BookingDetail';
+import SectionDisplay from '../common/SectionDisplay';
+import BookingStatus from '../history/BookingStatus';
+import ModalDisplay from '../common/ModalDisplay';
+
+configure({ adapter: new Adapter() });
+
+describe('bookingDetail', () => {
+  const clickCancelModal = jest.fn();
+  const wrapper = mount(
+    <BookingDetail clickCancelModal={clickCancelModal} showCancelModal />,
+  );
+  test('renders without crashing', () => {
+    expect(toJSON(wrapper)).toMatchSnapshot();
+  });
+  test('Render SectionDisplay inside bookingDetail', () => {
+    expect(wrapper.find(SectionDisplay).length).toBe(3);
+  });
+  test('Render BookingStatus inside bookingDetail', () => {
+    expect(wrapper.find(BookingStatus).exists());
+  });
+  test('Render ModalDisplay inside bookingDetail', () => {
+    expect(wrapper.find(ModalDisplay).exists());
+  });
+  test('Render ModalDisplay inside bookingDetail', () => {
+    expect(wrapper.props().showCancelModal).toBe(true);
+  });
+  test('Click cancel modal Button', () => {
+    wrapper
+      .find('Button')
+      .first()
+      .simulate('click');
+    expect(clickCancelModal).toHaveBeenCalled();
+  });
+  test('Click back btn in modal', () => {
+    wrapper
+      .find('Button')
+      .at(1)
+      .simulate('click');
+    expect(clickCancelModal).toHaveBeenCalled();
+  });
+  test('Click cancelBooking btn Button', () => {
+    wrapper
+      .find('Button')
+      .at(2)
+      .simulate('click');
+    expect(clickCancelModal).toHaveBeenCalled();
+  });
+});
+
+```
+
+> 如果沒有在所有Onclick事件加上測試，則會無法有100%覆蓋。
+
+
 
