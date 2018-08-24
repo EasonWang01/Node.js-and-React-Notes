@@ -132,11 +132,13 @@ describe('SectionDisplay component', () => {
 });
 ```
 
-# Test converage
+# Test coverage
 
 ```
 --coverage
 ```
 
+使用如上指令會顯示目前測試覆蓋率。
 
+通常只要在render的元素加上snapshot與所有事件上 \(onCick...\)
 
