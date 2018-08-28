@@ -467,7 +467,7 @@ android {
 
 先cd android
 
-之後輸入gradlew assembleReleas
+之後輸入gradle assembleRelease
 
 即可
 
