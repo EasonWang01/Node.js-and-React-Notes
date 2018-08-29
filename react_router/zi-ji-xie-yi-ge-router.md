@@ -29,11 +29,11 @@ class App extends Component {
   render() {
     switch (this.state.page) {
       case '/':
-      case '/loginPage':
+      case '/login':
         return (
           <div>Login Page</div>
         )
-      case '/mainPage':
+      case '/main':
         return (
           <div>Main Page</div>
         )
