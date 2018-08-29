@@ -483,3 +483,16 @@ android {
 
 或是輸入`gradlew installRelease`會直接安裝在模擬器\(記得先把之前dev時安裝在上面的app刪除，否則無法安裝\)
 
+
+
+# 開發
+
+1. 先開啟Genymotion
+2. 輸入以下：
+
+```
+react-native run-android
+```
+
+
+
