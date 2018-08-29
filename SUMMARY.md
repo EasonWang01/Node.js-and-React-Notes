@@ -45,7 +45,7 @@
   * [Redux sagas](redux/redux-sagas.md)
 * [React webpack 部署](react_webpack_bu_shu.md)
 * [React Native](react_native.md)
-  * [安裝](react_native/an-zhuang.md)
+  * [Expo](react_native/an-zhuang.md)
   * [router](react_native/router.md)
     * [react-navigation套件](react_native/router/react-navigationtao-jian.md)
   * [原生組件](react_native/yuan-sheng-zu-jian.md)

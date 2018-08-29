@@ -1,4 +1,4 @@
-# \#使用Expo
+# 使用Expo
 
 > npm建議版本 4.6.1  or 5.3.0  \(其他容易會有安裝package失敗問題\)
 >
@@ -47,11 +47,7 @@ https://github.com/react-community/create-react-native-app/blob/master/react-nat
 
 > 之後開發時存檔建議按兩下  時常會發生按一下不會自動reload問題
 
-
-
 # 使用Expo
 
 可以使用`yarn eject` 來還原為原本專案。
-
-
 
