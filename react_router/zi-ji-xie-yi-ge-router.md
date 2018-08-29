@@ -13,9 +13,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      page: '/loginPage'
+      page: window.location.pathname // 重新整理時抓取URL render
     };
-    window.onpopstate = () => {
+    window.onpopstate = () => {  // 點選瀏覽器上一頁時
       this.handleRoute(document.location.pathname, true);
     }
   }
