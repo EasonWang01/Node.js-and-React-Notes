@@ -272,6 +272,40 @@ export default () => (
 "serve": "NODE_ENV=production node server.js"
 ```
 
+# 使用Nginx
+
+他跟create-react-app 不同之處在於他是server side render，所以沒有直接build然後用serve static的方式，而是需要啟動next的server然後用nginx做reverse proxy的方式。
+
+```json
+location / {
+  # default port, could be changed if you use next with custom server
+  proxy_pass http://localhost:3000;
+
+  proxy_http_version 1.1;
+  proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection 'upgrade';
+  proxy_set_header Host $host;
+  proxy_cache_bypass $http_upgrade;
+  
+  # if you have try_files like this, remove it from our block
+  # otherwise next app will not work properly
+  # try_files $uri $uri/ =404;
+}
+```
+
+https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy
+
+#### 可以使用pm2
+
+> 到next專案下輸入如下：
+>
+> ```
+> next build
+> pm2 start npm --name "next" -- start
+> ```
+
+
+
 # 11. 部署到 Now
 
 Now 為一個 [https://zeit.co/](https://zeit.co/) 所出的雲端快速建置服務，使用Heroku
@@ -331,5 +365,5 @@ next export
 > serve -p 8080
 > ```
 
-如果想要部署到 Now上，進入 out 資料夾後輸入 `now` 即可。 
+如果想要部署到 Now上，進入 out 資料夾後輸入 `now` 即可。
 
