@@ -134,13 +134,17 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 可使用此模組：
 
-https://github.com/azmenak/react-stripe-checkout
+[https://github.com/azmenak/react-stripe-checkout](https://github.com/azmenak/react-stripe-checkout)
 
 ```
 npm install react-stripe-checkout --save
 ```
 
 ```js
+import StripeCheckout from 'react-stripe-checkout';
+
+....
+
 <StripeCheckout
   stripeKey="pubkey"
   token={this.onToken}
