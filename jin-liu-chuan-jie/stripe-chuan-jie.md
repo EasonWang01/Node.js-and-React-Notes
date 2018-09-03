@@ -187,5 +187,9 @@ app.post("/stripepay", (req, res) => {
 });
 ```
 
+# 客製化按鈕
+
+https://github.com/stripe/elements-examples
+
 
 
