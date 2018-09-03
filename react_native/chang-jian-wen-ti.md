@@ -10,13 +10,11 @@
 
 ![](/assets/螢幕快照 2018-09-03 上午9.52.22.png)
 
-
-
 ### 2.
 
 Failed to find Platform SDK with path: platforms;
 
-![](/assets/螢幕快照 2018-09-03 上午9.51.43.png)
+到SDK頁面把版本號碼，填入剛才build.gradle的SDK版本位置即可。![](/assets/螢幕快照 2018-09-03 上午9.51.54.png)
 
 # 開發
 
