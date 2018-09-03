@@ -2,7 +2,7 @@
 
 ### 1.Failed to find Build Tools revisui
 
-### 2.
+### 2.Faailed to find Platform SDK with 
 
 ![](/assets/螢幕快照 2018-09-03 上午9.51.43.png)
 
