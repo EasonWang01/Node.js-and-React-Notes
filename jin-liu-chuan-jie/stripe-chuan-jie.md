@@ -130,9 +130,58 @@ h2 You successfully paid <strong>$5.00</strong>!
 >
 > ![](/assets/Screen Shot 2018-08-17 at 3.27.20 PM.png)
 
+# 使用React
 
+可使用此模組：
 
-> html相關也可參考此處。
+https://github.com/azmenak/react-stripe-checkout
+
+```
+npm install react-stripe-checkout --save
+```
+
+```js
+<StripeCheckout
+  stripeKey="pubkey"
+  token={this.onToken}
+/>
+```
+
+```js
+  onToken = (res) => {
+    axios.post(`${window.API_HOST}/stripepay`, res)
+      .then((response) => {
+        window.alert('成功', '', 'success');
+      })
+      .catch(err => {
+        window.alert('失敗，請重試');
+      })
+  }
+```
+
+Server.js
+
+```js
+app.post("/stripepay", (req, res) => {
+    const stripe = require("stripe")("sk_test_LtpwSuF1PsGKLLv3rlVCTZlN");
+    let amount = 500;
+    stripe.customers.create({
+       email: req.body.email,
+      source: req.body.id
+    })
+    .then(customer =>
+      stripe.charges.create({
+        amount,
+        description: "Sample Charge",
+           currency: "usd",
+           customer: customer.id
+      }))
+    .then(charge => {
+      console.log(charge)
+      res.end('ok');
+    });
+});
+```
 
 
 
