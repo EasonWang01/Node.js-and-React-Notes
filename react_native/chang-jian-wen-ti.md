@@ -4,6 +4,14 @@
 
 SDK location not found. Define location with sdk.dir in the local.properties file or with an ANDROID\_HOME environment variable
 
+解法：在react-native專案的andorid目錄下創建如下local.properties，並寫上路徑。
+
+可直接輸入以下指令
+
+```
+echo sdk.dir = "$HOME"/Library/Android/sdk >> local.properties
+```
+
 ### 1.
 
 問題：Failed to find Build Tools revision
