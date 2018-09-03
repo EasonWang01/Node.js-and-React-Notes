@@ -1,5 +1,9 @@
 # 環境
 
+#### 0.
+
+SDK location not found. Define location with sdk.dir in the local.properties file or with an ANDROID\_HOME environment variable
+
 ### 1.
 
 問題：Failed to find Build Tools revision
