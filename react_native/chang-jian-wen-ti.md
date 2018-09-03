@@ -1,6 +1,6 @@
 # 環境
 
-### 1.![](/assets/螢幕快照 2018-09-03 上午9.51.34.png)Failed to find Build Tools revisui
+### 1.Failed to find Build Tools revisui
 
 ### 2.
 
