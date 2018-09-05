@@ -82,7 +82,7 @@ $maxDistance: 50
 
 # 4.新增欄位
 
-新增欄位的意思極為在每個document新增一筆資料。
+新增欄位的意思為在每個document新增一筆資料。
 
 ```
 db.your_collection.update(
@@ -101,5 +101,5 @@ Upsert: If set to true, creates a new document when no document matches the quer
 Multi: If set to true, updates multiple documents that meet the query criteria. If set to false, updates one document.
 ```
 
-https://stackoverflow.com/a/7714428
+[https://stackoverflow.com/a/7714428](https://stackoverflow.com/a/7714428)
 
