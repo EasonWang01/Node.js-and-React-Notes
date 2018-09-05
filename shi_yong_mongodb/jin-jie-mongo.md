@@ -1,34 +1,30 @@
+# \#1.操作Mongo的Array
 
-# #1.操作Mongo的Array
+[https://docs.mongodb.com/manual/reference/operator/update/pull/\#up.\_S\_pull](https://docs.mongodb.com/manual/reference/operator/update/pull/#up._S_pull)
 
-https://docs.mongodb.com/manual/reference/operator/update/pull/#up._S_pull
-
-
-Ex: 以下可把rating_my Array中的item物件中的_id與req.body.item._id
+Ex: 以下可把rating\_my Array中的item物件中的\_id與req.body.item.\_id  
 值相同的所有欄位移除
-```
 
+```
     User.update({_id: req.token.data._id}, {$pull: {  //先把舊的移除
       rating_my: {
         "item._id": req.body.item._id
       }
     }})
-    
-```    
+```
 
+# \#2.分頁快速query
 
-# #2.分頁快速query
+[http://stackoverflow.com/questions/7228169/slow-pagination-over-tons-of-records-in-mongo](http://stackoverflow.com/questions/7228169/slow-pagination-over-tons-of-records-in-mongo)
 
-http://stackoverflow.com/questions/7228169/slow-pagination-over-tons-of-records-in-mongo
+# \#3.使用Geo search
 
-
-# #3.使用Geo search
-
-https://docs.mongodb.com/manual/reference/operator/query-geospatial/
+[https://docs.mongodb.com/manual/reference/operator/query-geospatial/](https://docs.mongodb.com/manual/reference/operator/query-geospatial/)
 
 以下使用$near為範例
 
 1.先在schema建立index
+
 ```
 var c = new mongoose.Schema({
     status: String,   //物品承租階段狀態 eg,尋租中,已出租,已還租
@@ -51,7 +47,7 @@ c.index({geometry: '2dsphere'});
 exports.Test = mongoose.model('test', c)
 ```
 
-建立後可以查看到index
+建立後可以查看到index  
 ![](/assets/螢幕快照 2017-05-11 下午5.44.50.png)
 
 2.之後即可搜尋
@@ -79,6 +75,31 @@ exports.Test = mongoose.model('test', c)
 
 ```
 $minDistance: 0,
-$maxDistance: 50 
+$maxDistance: 50
 ```
+
 單位為公尺
+
+# 4.新增欄位
+
+新增欄位的意思極為在每個document新增一筆資料。
+
+```
+db.your_collection.update(
+  {},
+  { $set: {"new_field": 1} },
+  false,
+  true
+)
+```
+
+後面兩個參數分別為：
+
+```
+Upsert: If set to true, creates a new document when no document matches the query criteria.
+
+Multi: If set to true, updates multiple documents that meet the query criteria. If set to false, updates one document.
+```
+
+https://stackoverflow.com/a/7714428
+
