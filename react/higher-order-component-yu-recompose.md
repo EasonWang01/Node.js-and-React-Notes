@@ -57,9 +57,7 @@ const BookingFormWithProps = compose(
 )(BookingForm);
 ```
 
-管理state可用withStateHandlers
-
-EX:
+#### 1.管理state可用withStateHandlers
 
 ```js
 const BookingFormWithProps = compose(....
@@ -69,6 +67,26 @@ withStateHandlers(localState(), localStateHandlers);
 
 localState寫上state的值
 localStateHandler寫上改變state的function
+```
+
+#### 2.加上React 生命週期
+
+https://github.com/acdlite/recompose/blob/master/docs/API.md\#lifecycle
+
+使用`lifecycle({})`，之後可在裡面放入componentDidMount等方法。
+
+```js
+const PostsList = ({ posts }) => (
+  <ul>{posts.map(p => <li>{p.title}</li>)}</ul>
+)
+
+const PostsListWithData = lifecycle({
+  componentDidMount() {
+    fetchPosts().then(posts => {
+      this.setState({ posts });
+    })
+  }
+})(PostsList);
 ```
 
 
