@@ -2,7 +2,7 @@
 
 > A higher-order component \(HOC\) is an advanced technique in React for reusing component logic. HOCs are not part of the React API, per se. They are a pattern that emerges from React’s compositional nature.
 
-https://reactjs.org/docs/higher-order-components.html
+[https://reactjs.org/docs/higher-order-components.html](https://reactjs.org/docs/higher-order-components.html)
 
 可想像是我們有一個共用的邏輯要在許多component中共用，我們可以把邏輯寫在一個component中，然後使用例如：
 
@@ -21,7 +21,7 @@ https://reactjs.org/docs/higher-order-components.html
 
 # Recompose
 
-https://github.com/acdlite/recompose
+[https://github.com/acdlite/recompose](https://github.com/acdlite/recompose)
 
 > Recompose is a React utility belt for function components and higher-order components. Think of it like lodash for React.
 >
@@ -39,6 +39,37 @@ https://github.com/acdlite/recompose
 >   </div>
 > )
 > ```
+
+最後組成component時可寫為如下：
+
+```js
+const BookingFormWithProps = compose(
+  setDisplayName('BookingForm'),
+  withRouter,
+  connect(mapStateToProps),
+  withReload,
+  withStateHandlers(localState(), localStateHandlers),
+  Form.create({
+    onValuesChange: executeSideEffects,
+  }),
+  withPreloadAndListener,
+  mapProps(filterToBookingFormProps),
+)(BookingForm);
+```
+
+管理state可用withStateHandlers
+
+EX:
+
+```js
+const BookingFormWithProps = compose(....
+withStateHandlers(localState(), localStateHandlers);
+....)
+
+
+localState寫上state的值
+localStateHandler寫上改變state的function
+```
 
 
 
