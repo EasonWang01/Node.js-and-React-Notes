@@ -236,5 +236,22 @@ describe('ToLocalStorage', () => {
 > });
 > ```
 
+# 測試Module
+
+https://jestjs.io/docs/en/mock-functions\#mocking-modules
+
+```js
+// users.test.js
+import axios from 'axios';
+
+jest.mock('axios');
+
+test('should fetch users', () => {
+  const resp = {data: [{name: 'Bob'}]};
+  axios.get.mockResolvedValue(resp);
+  return Users.all().then(users => expect(users).toEqual(resp.data));
+});
+```
+
 
 
