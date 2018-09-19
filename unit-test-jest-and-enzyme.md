@@ -8,7 +8,7 @@
 
 [https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913](https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913)
 
-> cheatSheet: https://devhints.io/enzyme
+> cheatSheet: [https://devhints.io/enzyme](https://devhints.io/enzyme)
 
 # Jest
 
@@ -201,6 +201,40 @@ describe('bookingDetail', () => {
 ```
 
 > 如果沒有在所有Onclick事件加上測試，則會無法有100%覆蓋。
+
+## 測試Function
+
+```js
+describe('ToLocalStorage', () => {
+    const localStorageMock = {
+      getItem: jest.fn(),
+      setItem: jest.fn(),
+      clear: jest.fn(),
+    };
+    global.localStorage = localStorageMock;
+    beforeEach(() => {
+      localStorage.setItem.mockClear();
+      localStorage.getItem.mockClear();
+    });
+    test('should save location to localStorage', () => {
+      savingLocation({});
+      expect(localStorage.setItem).toHaveBeenCalled();
+    });
+    test('should get location from localStorage', () => {
+      getPastLocation({});
+      expect(localStorage.getItem).toHaveBeenCalled();
+    });
+  });
+```
+
+> Reset先前的function call可用
+>
+> ```
+> beforeEach(() => {
+>   localStorage.setItem.mockClear();
+>   localStorage.getItem.mockClear();
+> });
+> ```
 
 
 
