@@ -266,7 +266,7 @@ const withCSS = require('@zeit/next-css')
 module.exports = withCSS()
 ```
 
-然後記得import './....css' 的檔案必須寫在pages/index.js中，然後也要寫一份在需要的元件檔案中。
+然後記得import './....css' 的檔案必須寫在pages/index.js中。
 
 # 10. 部署
 
@@ -306,7 +306,7 @@ location / {
 }
 ```
 
-\[\[[https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29\)\)
+\[\[\[[https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)\)\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29%29\)\)
 
 #### 可以使用pm2
 
