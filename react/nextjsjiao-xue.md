@@ -255,6 +255,19 @@ export default () => (
 )
 ```
 
+# 如果要加上外部css檔案
+
+next.config.js
+
+```js
+const withCSS = require('@zeit/next-css')
+module.exports = withCSS()
+```
+
+然後記得import './....css'
+
+的檔案只能寫在pages/index.js中。
+
 # 10. 部署
 
 新增以下這兩行在 package.json 的 script 中。
@@ -286,14 +299,14 @@ location / {
   proxy_set_header Connection 'upgrade';
   proxy_set_header Host $host;
   proxy_cache_bypass $http_upgrade;
-  
+
   # if you have try_files like this, remove it from our block
   # otherwise next app will not work properly
   # try_files $uri $uri/ =404;
 }
 ```
 
-https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy
+[https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy)
 
 #### 可以使用pm2
 
@@ -303,8 +316,6 @@ https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy
 > next build
 > pm2 start npm --name "next" -- start
 > ```
-
-
 
 # 11. 部署到 Now
 
