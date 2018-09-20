@@ -136,6 +136,8 @@ export default Page
 
 原先為使用Next.js內建的dev server，現在要來自己建一個Server
 
+> 如果有不在page內路徑url，也必須要自訂server，否則重新整理會產生404頁面。
+
 ```js
 const express = require('express')
 const next = require('next')
@@ -306,7 +308,7 @@ location / {
 }
 ```
 
-[https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy)
+\[[https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy)\)
 
 #### 可以使用pm2
 
