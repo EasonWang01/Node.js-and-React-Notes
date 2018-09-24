@@ -128,6 +128,8 @@ npm publish
 
 > 記得輸入npm publish時要在package.json的同層目錄下
 
+> 每次更新記得要更改package.json的版本號
+
 # 發佈為npm global package
 
 > 可以直接在Terminal輸入指令的package
