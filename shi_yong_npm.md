@@ -142,7 +142,7 @@ npm publish
 
 之後別人使用-g安裝即可使用`gendoc` 指令
 
-> npm link 也可在發布前直接把他家到Local督環境變數，但在windows會沒作用
+> npm link 也可在發布前直接把他加到Local環境變數，但在windows會沒作用
 
 # 更新或復原npm版本
 
