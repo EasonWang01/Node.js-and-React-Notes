@@ -95,6 +95,8 @@ if (cluster.isMaster) {
 
 > 可以使用spawn或是exec
 
+## Exec
+
 ```js
   const { exec } = require('child_process');
   exec(`
@@ -112,12 +114,20 @@ if (cluster.isMaster) {
     });
 ```
 
-spawn會需要將參數寫成如下
+## Spawn
+
+> spawn會需要將參數寫成如下
 
 ```js
 const spawn = require('child_process').spawn;
 const ls = spawn('ls', ['-lh', '/usr']);
+```
 
+如果有輸出log
+
+```js
+const { exec } = require('child_process');
+const cmdInfo = exec(`ls -lh`);
 ls.stdout.on('data', (data) => {
   console.log(`stdout: ${data}`);
 });
