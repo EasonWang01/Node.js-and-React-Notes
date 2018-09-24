@@ -101,17 +101,11 @@ sudo cp -R  ~/Desktop/um1215-webclient/ ./um1215-webclient
 open .
 ```
 
-## 切換資料夾與mac不同
-
-前面不用加`~`
-
-```
-/etc/nginx/sites-available/React-router-Redux-isomorphic-Boilerplate/dist/server
-```
-
 ## 移動檔案，或是更改檔案名稱
 
-[http://jashliao.pixnet.net/blog/post/156412841-每天一個linux指令--mv-\(用來搬移\(更名\)目錄-檔](http://jashliao.pixnet.net/blog/post/156412841-每天一個linux指令--mv-%28用來搬移%28更名%29目錄-檔)
+```
+mv <source> <dist>
+```
 
 ## 上傳檔案
 
@@ -292,5 +286,5 @@ sudo vim /private/etc/hosts
 > sudo dscacheutil -flushcache
 > ```
 
-https://www.inmotionhosting.com/support/website/how-to/how-to-edit-your-hosts-file-on-a-mac
+[https://www.inmotionhosting.com/support/website/how-to/how-to-edit-your-hosts-file-on-a-mac](https://www.inmotionhosting.com/support/website/how-to/how-to-edit-your-hosts-file-on-a-mac)
 
