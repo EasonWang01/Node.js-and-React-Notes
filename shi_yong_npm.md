@@ -113,11 +113,13 @@ set PORT=8080 && nodemon test.js
 
 [http://syshen.cc/post/18425250521/npm-shrinkwrap-解決-nodejs-套件複雜的關連性問題](http://syshen.cc/post/18425250521/npm-shrinkwrap-解決-nodejs-套件複雜的關連性問題)
 
-# \#更新NPM
+# 更新npm
 
+```
 npm install npm@latest -g
+```
 
-# \#發佈npm package
+# 發佈npm package
 
 ```
 npm adduser
@@ -126,13 +128,23 @@ npm publish
 
 > 記得輸入npm publish時要在package.json的同層目錄下
 
-# \#發佈為npm GLOBAL package
+# 發佈為npm global package
+
+> 可以直接在Terminal輸入指令的package
 
 和之前一樣先npm adduser
 
 然後確認package名字沒重複
 
-之後因為是global所以加入bin的欄位到package.json檔案裏面
+1.記得將index.js檔案加上
+
+```js
+#!/usr/bin/env node
+
+.....
+```
+
+2.之後因為是global所以加入bin的欄位到package.json檔案裏面
 
 ```
   "bin": {
@@ -142,7 +154,7 @@ npm publish
 
 之後別人使用-g安裝即可使用`gendoc` 指令
 
-> npm link 也可在發布前直接把他加到Local環境變數，但在windows會沒作用
+> npm link 也可在發布前直接把他加到Local環境變數進行測試，但在windows會沒作用
 
 # 更新或復原npm版本
 
