@@ -107,7 +107,6 @@ export default createBottomTabNavigator({
   LinksStack,
   SettingsStack,
 });
-
 ```
 
 > 使用createStackNavigator來初始化該路由，然後用createBottomTabNavigator建立底部導航

@@ -46,9 +46,21 @@ sudo react-native run-android
 >
 > adb server version \(40\) doesn't match this client \(39\);
 
-這時通常輸入`adb start-server` 也會無法執行，通常是因為有兩個版本，所以只要把`/sdk/platform-tools/adb` 複製到`/usr/local/bin`即可 
+這時通常輸入`adb start-server` 也會無法執行，通常是因為有兩個版本，所以只要把`/sdk/platform-tools/adb` 複製到`/usr/local/bin`即可
 
 解法：[https://github.com/facebook/react-native/issues/8401\#issuecomment-344628512](https://github.com/facebook/react-native/issues/8401#issuecomment-344628512)
+
+#### 5.
+
+> Development Server response 500
+
+重新啟動專案或重建都一樣時可輸入以下指令：
+
+```
+npm start -- --reset-cache
+```
+
+
 
 # 開發
 
