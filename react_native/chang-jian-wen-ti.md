@@ -60,7 +60,13 @@ sudo react-native run-android
 npm start -- --reset-cache
 ```
 
+#### 6.
 
+不穩定，有時跳出錯誤訊息，有時又沒有
+
+```
+建議關閉 hot-reload 功能。
+```
 
 # 開發
 
