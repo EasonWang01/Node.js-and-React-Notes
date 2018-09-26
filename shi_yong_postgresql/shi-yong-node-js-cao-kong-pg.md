@@ -21,6 +21,21 @@ $ PGUSER=dbuser \
   node script.js
 ```
 
+或是寫在程式
+
+```js
+const { Client } = require('pg')
+const client = new Client(
+  {
+    user: 'yicheng',
+    host: 'localhost',
+    database: 'mysb',
+    password: '123456',
+    port: 5432,
+  }
+)
+```
+
 ## Query
 
 ```js
