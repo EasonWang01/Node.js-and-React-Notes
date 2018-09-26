@@ -84,5 +84,11 @@ npm start -- --reset-cache
             ))}
 ```
 
+#### 2.取得Input的值
+
+```js
+<Input onChangeText={(e) => console.log(e)} />
+```
+
 
 
