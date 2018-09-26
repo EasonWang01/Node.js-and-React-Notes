@@ -30,6 +30,7 @@
   * [replica](shi_yong_postgresql/replica.md)
   * [基本指令](shi_yong_postgresql/ji-ben-zhi-ling.md)
   * [使用Node.js操控pg](shi_yong_postgresql/shi-yong-node-js-cao-kong-pg.md)
+  * [SQL 基礎](shi_yong_postgresql/sql-ji-chu.md)
 * [rethinkdb](rethinkdb.md)
 * [React](react.md)
   * [寫component並且publish](react/xie-component-bing-qie-publish.md)
