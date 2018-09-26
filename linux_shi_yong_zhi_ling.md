@@ -288,3 +288,11 @@ sudo vim /private/etc/hosts
 
 [https://www.inmotionhosting.com/support/website/how-to/how-to-edit-your-hosts-file-on-a-mac](https://www.inmotionhosting.com/support/website/how-to/how-to-edit-your-hosts-file-on-a-mac)
 
+# 尋找檔案路徑
+
+```
+sudo find / -name <檔案名稱>
+```
+
+
+
