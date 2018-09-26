@@ -44,15 +44,21 @@ createdb mydb
 psql mydb // 進入DB
 ```
 
-https://medium.com/@Umesh\_Kafle/postgresql-and-postgis-installation-in-mac-os-87fa98a6814d
+[https://medium.com/@Umesh\_Kafle/postgresql-and-postgis-installation-in-mac-os-87fa98a6814d](https://medium.com/@Umesh_Kafle/postgresql-and-postgis-installation-in-mac-os-87fa98a6814d)
 
-## 1.使用pgAdmin III
+## 1.使用pgAdmin
+
+> 一個可視化的網頁瀏覽工具
+
+> 如果使用本地連線時輸入localhost比較好，因為有時127.0.0.1無作用
 
 如要查看TABLE
 
 ```
 點選數據庫=>架構=>數據表
 ```
+
+![](/assets/Screen Shot 2018-09-26 at 2.09.48 PM.png)
 
 如要查看row
 
