@@ -35,6 +35,15 @@ psql
 \password postgres
 ```
 
+## Mac安裝
+
+```
+brew install postgres
+pg_ctl -D /usr/local/var/postgres start
+createdb mydb
+psql mydb // 進入DB
+```
+
 ## 1.使用pgAdmin III
 
 如要查看TABLE
