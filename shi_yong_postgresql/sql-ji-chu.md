@@ -12,5 +12,7 @@
 ALTER TABLE <Table名稱> ALTER COLUMN <column名稱> SET DEFAULT <預設值>;
 ```
 
+或是建表時設定
 
+https://www.postgresql.org/docs/9.3/static/ddl-default.html
 
