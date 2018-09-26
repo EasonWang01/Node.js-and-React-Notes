@@ -1,8 +1,16 @@
-http://www.postgresqltutorial.com/
+[http://www.postgresqltutorial.com/](http://www.postgresqltutorial.com/)
 
 # 
 
 # Data type
 
 [https://www.w3schools.com/sql/sql\_datatypes.asp](https://www.w3schools.com/sql/sql_datatypes.asp)
+
+# 設定column預設值
+
+```
+ALTER TABLE <Table名稱> ALTER COLUMN <column名稱> SET DEFAULT <預設值>;
+```
+
+
 
