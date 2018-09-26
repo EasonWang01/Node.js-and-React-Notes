@@ -44,6 +44,8 @@ createdb mydb
 psql mydb // 進入DB
 ```
 
+https://medium.com/@Umesh\_Kafle/postgresql-and-postgis-installation-in-mac-os-87fa98a6814d
+
 ## 1.使用pgAdmin III
 
 如要查看TABLE
