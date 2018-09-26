@@ -10,6 +10,10 @@ npm install pg --save
 
 [https://node-postgres.com/features/queries](https://node-postgres.com/features/queries)
 
+> 可選擇使用client或使用Pool
+>
+> https://node-postgres.com/features/pooling
+
 ## 執行指令前輸入相關連線設定
 
 ```
