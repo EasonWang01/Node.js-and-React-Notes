@@ -49,10 +49,10 @@ psql mydb // 進入DB
 ## 1.使用pgAdmin
 
 > 一個可視化的網頁瀏覽工具
-
+>
 > 如果使用本地連線時輸入localhost比較好，因為有時127.0.0.1無作用
 
-如要查看TABLE
+#### 如要查看TABLE
 
 ```
 點選數據庫=>架構=>數據表
@@ -60,13 +60,21 @@ psql mydb // 進入DB
 
 ![](/assets/Screen Shot 2018-09-26 at 2.09.48 PM.png)
 
-如要查看row
+#### 如要查看row
 
 ```
 點選數據表下的table名稱，在點選最上方工具(T)下面的表格圖案
 ```
 
+#### 執行SQL
+
+點選 Tools 然後按 Query Tool
+
+![](/assets/Screen Shot 2018-09-26 at 2.17.31 PM.png)
+
 ## 2.使用SQL shell\(psql\)
+
+> 輸入psql &lt;資料庫名稱&gt;
 
 ```
 記得每個指令結尾要加 ;
