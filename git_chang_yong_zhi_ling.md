@@ -82,6 +82,8 @@ git push -f origin HEAD^:master
 git rebase -i HEAD~2
 ```
 
+> `git rebase origin/master`will merge in the requested branch `origin/master`and apply the commits that you have made locally to the top of the history without creating a merge commit.
+
 ## 取消上次commit且維持檔案內容
 
 ```
@@ -196,12 +198,12 @@ pick e2b2a84 ... #will be preserved
 
 # 重置歷史commit
 
-https://stackoverflow.com/a/32765827
+[https://stackoverflow.com/a/32765827](https://stackoverflow.com/a/32765827)
 
 先checkout新的orphan branch
 
 ```
-git checkout --orphan mainsource01  
+git checkout --orphan mainsource01
 ```
 
 然後移除舊的branch
