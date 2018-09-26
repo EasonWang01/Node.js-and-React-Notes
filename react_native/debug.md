@@ -11,5 +11,13 @@
 3.點選 Genymotion 的 Debug JS Remotely
 ```
 
+#### 2.簡單看Log
+
+```
+react-native log-android
+或是
+react-native log-ios
+```
+
 
 
