@@ -50,9 +50,9 @@ sudo react-native run-android
 
 解法：[https://github.com/facebook/react-native/issues/8401\#issuecomment-344628512](https://github.com/facebook/react-native/issues/8401#issuecomment-344628512)
 
-#### 5.
+#### 5.Development Server response 500
 
-> Development Server response 500
+> 通常為node\_module包含不相容的專案
 
 重新啟動專案或重建都一樣時可輸入以下指令：
 
