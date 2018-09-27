@@ -12,7 +12,7 @@ npm install pg --save
 
 > 可選擇使用client或使用Pool
 >
-> https://node-postgres.com/features/pooling
+> [https://node-postgres.com/features/pooling](https://node-postgres.com/features/pooling)
 
 ## 執行指令前輸入相關連線設定
 
@@ -64,11 +64,15 @@ client.connect()
 var data = ["000", "bazi", 2, 1, Date.now()];
 var queryletter =`INSERT INTO bet_user(ADDRESS, CATEGORY, ODDS, AMOUNT, TIMESTAMP) VALUES ($1, $2, $3, $4, $5)`;
 
-client.query(queryletter,data, (err, res) => {
+client.query(queryletter, data, (err, res) => {
   console.log(err ? err.stack : res.rows)
   client.end()
 })
 ```
+
+> 如果是直接寫，記得要是value單引號，不然會出現沒有該column name的錯誤
+>
+>       const insertString = `INSERT INTO users (account, password, username) VALUES('${req.body.account}','${req.body.password}','${req.body.account}');`
 
 
 
