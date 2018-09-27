@@ -23,11 +23,9 @@ console.log('解密的文本：'+dec);
 
 可把`'hex'`改為`'binary'`試試
 
-
-
 # JWT Token產生
 
-https://github.com/auth0/node-jsonwebtoken
+[https://github.com/auth0/node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
 
 Server
 
@@ -48,5 +46,5 @@ const decoded = jwt.verify(token, result.rows[0].password);
 console.log(decoded) // bar
 ```
 
-
+如果客戶端已經有Token則直接使用密碼與verify解密即可驗證，不用再次去DB query。
 
