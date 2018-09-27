@@ -33,6 +33,7 @@ Server
 
 ```js
 // Generate JWT token
+const jwt = require('jsonwebtoken');
 const token = jwt.sign(result.rows[0], result.rows[0].password);
 console.log(token)
 ```
