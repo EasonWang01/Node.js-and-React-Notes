@@ -10,13 +10,7 @@ Server可使用此模組
 
 > 因為React-native 沒有stream模組，不能用`node-jsonwebtoken`
 >
-> 的verify功能。
-
-
-
-
-
-
+> 的verify功能。r
 
 
 
