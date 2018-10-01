@@ -5,12 +5,13 @@
 1.[https://github.com/kriasoft/react-starter-kit/issues/909\#issuecomment-252969542](https://github.com/kriasoft/react-starter-kit/issues/909#issuecomment-252969542)
 
 ```js
-  openDrawer = () => {
-    this.drawer.openTheDrawer();
-  };
+openDrawer = () => {
+  this.drawer.openTheDrawer();
+};
 
 <Drawer onRef={ref => (this.drawer = ref)}>
- .....
+  .....
+   <button onClick={() => this.openDrawer()} />
 </Drawer>
 ```
 
@@ -23,7 +24,7 @@ Drawer.js
   openTheDrawer(){
     ....
   };
-  
+
   render(){
      <div>
         ......
