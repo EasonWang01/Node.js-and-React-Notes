@@ -78,6 +78,33 @@ npm start -- --reset-cache
 npm start -- reset-cache
 ```
 
+#### 8.
+
+執行 `react-native run-android` 後畫面空白，或是說無法連線到development server
+
+> 重新執行`react-native run-android`
+>
+> 即可
+
+#### 9.
+
+避免特定資料夾更改後，觸發 react native server hot reload
+
+https://stackoverflow.com/a/41963217
+
+```js
+const blacklist = require('metro-config/src/defaults/blacklist');
+
+// blacklist is a function that takes an array of regexes and combines
+// them with the default blacklist to return a single regex.
+// 下面輸入不要觸發更新的資料夾名稱
+module.exports = {
+  resolver: {
+    blacklistRE: blacklist([/server\/.*/])
+  }
+};
+```
+
 # 開發
 
 # 1.無法用e.target
