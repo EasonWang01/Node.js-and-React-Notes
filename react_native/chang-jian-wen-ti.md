@@ -68,6 +68,16 @@ npm start -- --reset-cache
 建議關閉 hot-reload 功能。
 ```
 
+#### 7.
+
+安裝模組後如果執行出現錯誤，例如：`Unable to symbolicate stack trace: The stack is null`
+
+輸入以下即可。
+
+```
+npm start -- reset-cache
+```
+
 # 開發
 
 # 1.無法用e.target
