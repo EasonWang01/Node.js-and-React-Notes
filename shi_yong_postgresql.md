@@ -76,6 +76,36 @@ psql mydb // 進入DB
 
 ![](/assets/Screen Shot 2018-09-26 at 2.17.31 PM.png)
 
+## PgAdmin連線遠端主機的DB
+
+1.設定pg\_hba.conf
+
+```
+sudo vim /etc/postgresql/9.5/main/pg_hba.conf
+
+然後加入以下
+
+host all all 0.0.0.0/0  md5
+```
+
+> 分別為DB, User, IP 與方法
+
+2.設定postgresql.conf
+
+```
+listen_addresses = '*'
+```
+
+3.重啟：
+
+```
+sudo service postgresql restart
+```
+
+4.開啟遠端主機防火牆，port：5432
+
+然後即可使用PgAdmin遠端連線。
+
 ## 2.使用SQL shell\(psql\)
 
 > 輸入psql &lt;資料庫名稱&gt;
