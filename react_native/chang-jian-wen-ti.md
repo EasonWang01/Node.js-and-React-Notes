@@ -1,4 +1,4 @@
-# 環境
+# 環境相關
 
 #### 0.
 
@@ -111,7 +111,21 @@ module.exports = {
 };
 ```
 
-# 開發
+#### 10.Unable to load script from assets index.android.bundle 
+
+加入以下：
+
+package.json
+
+```json
+  "scripts": {
+    "android-linux": "react-native bundle --platform android --dev false --entry-file App.js --bundle-output android/app/src/main/assets/App.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
+  },
+```
+
+https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows
+
+# 開發相關
 
 # 1.無法用e.target
 
@@ -120,14 +134,14 @@ module.exports = {
 [https://stackoverflow.com/a/42125039](https://stackoverflow.com/a/42125039)
 
 ```js
-            {Object.keys(this.state.locationURL).map((location, idx) => (
-              <ListItem key={idx} onPress={(e) => this.changeURL(idx)}>
-                <Text>{location}</Text>
-              </ListItem>
-            ))}
+{Object.keys(this.state.locationURL).map((location, idx) => (
+   <ListItem key={idx} onPress={(e) => this.changeURL(idx)}>
+     <Text>{location}</Text>
+   </ListItem>
+))}
 ```
 
-#### 2.取得Input的值
+#### 2.取得Input的值或對象
 
 ```js
 <Input onChangeText={(e) => console.log(e)} />
