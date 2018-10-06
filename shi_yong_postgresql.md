@@ -106,9 +106,9 @@ sudo service postgresql restart
 
 然後即可使用PgAdmin遠端連線。
 
-## 2.使用SQL shell\(psql\)
+## 2.使用SQL shell \( psql \)
 
-> 輸入psql &lt;資料庫名稱&gt;
+> 輸入psql  &lt;資料庫名稱&gt;
 
 ```
 記得每個指令結尾要加 ;
@@ -116,7 +116,7 @@ sudo service postgresql restart
 ```
 
 ```
-指令如同Mysql的SQL指令
+指令類似於 MySQL 的 SQL 指令
 ```
 
 ---
