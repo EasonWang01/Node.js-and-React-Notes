@@ -12,6 +12,12 @@
 echo sdk.dir = "$HOME"/Library/Android/sdk >> local.properties
 ```
 
+或是加入環境變量
+
+```
+export ANDROID_HOME = <SDK位置>
+```
+
 ### 1.
 
 > Failed to find Build Tools revision
@@ -90,7 +96,7 @@ npm start -- reset-cache
 
 避免特定資料夾更改後，觸發 react native server hot reload
 
-https://stackoverflow.com/a/41963217
+[https://stackoverflow.com/a/41963217](https://stackoverflow.com/a/41963217)
 
 ```js
 const blacklist = require('metro-config/src/defaults/blacklist');
