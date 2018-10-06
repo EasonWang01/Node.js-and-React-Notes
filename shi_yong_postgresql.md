@@ -106,6 +106,8 @@ sudo service postgresql restart
 
 然後即可使用PgAdmin遠端連線。
 
+可參考：https://cloud.google.com/community/tutorials/setting-up-postgres
+
 ## 2.使用SQL shell \( psql \)
 
 > 輸入psql  &lt;資料庫名稱&gt;
