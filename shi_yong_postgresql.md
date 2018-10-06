@@ -48,11 +48,13 @@ psql mydb // 進入DB
 
 ## 1.使用pgAdmin
 
-https://www.pgadmin.org/download/
+[https://www.pgadmin.org/download/](https://www.pgadmin.org/download/)
 
-> 一個可視化的網頁瀏覽工具
->
+一個可視化的網頁瀏覽工具
+
 > 如果使用本地連線時輸入localhost比較好，因為有時127.0.0.1無作用
+>
+> 如果出現can't connect application server，重新啟動一次即可。
 
 #### 如要查看TABLE
 
