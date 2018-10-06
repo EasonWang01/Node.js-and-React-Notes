@@ -11,10 +11,10 @@
 apt-get install postgresql postgresql-contrib
 
 2.然後設定開機自動啟動
-update-rc.d postgresql enable
+sudo update-rc.d postgresql enable
 
 3.啟動postgresql
-service postgresql start
+sudo service postgresql start
 ```
 
 之後輸入以下進入postgres使用者
@@ -47,6 +47,8 @@ psql mydb // 進入DB
 [https://medium.com/@Umesh\_Kafle/postgresql-and-postgis-installation-in-mac-os-87fa98a6814d](https://medium.com/@Umesh_Kafle/postgresql-and-postgis-installation-in-mac-os-87fa98a6814d)
 
 ## 1.使用pgAdmin
+
+https://www.pgadmin.org/download/
 
 > 一個可視化的網頁瀏覽工具
 >
