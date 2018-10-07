@@ -80,8 +80,6 @@ export default class App extends React.Component {
 }
 ```
 
-
-
 # 監聽Router Change
 
 > react-navigation listen on router change
@@ -104,4 +102,13 @@ import { NavigationEvents } from "react-navigation";
 ```
 
 使用NavigationEvents即可。
+
+> ```
+> onWillFocus={payload => console.log("will focus", payload)}
+> onDidFocus={payload => console.log("did focus", payload)}
+>
+> 這兩個有時要同時加才有反應
+> ```
+
+
 
