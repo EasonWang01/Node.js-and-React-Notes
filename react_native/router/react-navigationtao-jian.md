@@ -9,9 +9,9 @@
 >   header: null,
 > };
 > ```
-
+>
 > 使用`this.props.navigation.navigate('Main')` 進行導航
-
+>
 > 使用createStackNavigator來初始化該路由，然後用createBottomTabNavigator建立底部導航
 
 # 或是直接貼上以下Code即可
@@ -81,4 +81,27 @@ export default class App extends React.Component {
 ```
 
 
+
+# 監聽Router Change
+
+> react-navigation listen on router change
+
+1.
+
+```js
+import { NavigationEvents } from "react-navigation";
+
+  render() {
+    return (
+      <View>
+        <NavigationEvents
+          onWillFocus={payload => console.log("will focus", payload)}
+          onDidFocus={payload => console.log("did focus", payload)}
+          onWillBlur={payload => console.log("will blur", payload)}
+          onDidBlur={payload => console.log("did blur", payload)}
+        />
+        ..........
+```
+
+使用NavigationEvents即可。
 
