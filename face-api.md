@@ -1,7 +1,5 @@
 # Face API
 
-
-
 ## 簡介：
 
 FaceAPI包含許多服務：
@@ -9,8 +7,6 @@ FaceAPI包含許多服務：
 > 分別有特徵識別、相似臉尋找、兩張臉驗證相似度、將相似的臉分群等功能。
 
 ![](/assets/螢幕快照 2018-10-13 下午5.18.59.png)
-
-
 
 ## 開始使用
 
@@ -70,8 +66,6 @@ req.write(
 req.end();
 ```
 
-
-
 # 找尋相似的臉
 
 > 每個請求記得都要有如下Header
@@ -80,19 +74,23 @@ req.end();
 > Ocp-Apim-Subscription-Key: 存取金鑰
 > ```
 
-1.先建立一個FaceListId：https://eastasia.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524b/console
-
-參數如下：![](/assets/螢幕快照 2018-10-13 下午5.20.38.png)
-
-![](/assets/螢幕快照 2018-10-13 下午5.20.38.png)
-
-![](/assets/螢幕快照 2018-10-13 下午5.20.38.png)
-
-![](/assets/螢幕快照 2018-10-13 下午5.20.38.png)
-
-![](/assets/螢幕快照 2018-10-13 下午5.20.38.png)
+1.先建立一個FaceListId：[https://eastasia.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524b/console](https://eastasia.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524b/console)
 
 > FaceListId和LargeFaceListId 類似，分別能存1000和1,000,000個臉。
 
+參數如下：![](/assets/螢幕快照 2018-10-13 下午5.20.38.png)
+
+> name為list的名稱，userData可隨意輸入。
+
 2.在FaceListId加入臉
+
+> 參數就放入那張臉的圖片連結![](/assets/螢幕快照 2018-10-13 下午5.20.18.png)
+
+3.從第二步驟加入的圖中找相似的臉
+
+在下圖參數的faceId放入我們要尋找的圖，他會從我們的faceListId中找尋所有類似的臉。![](/assets/螢幕快照 2018-10-13 下午5.24.30.png)
+
+回傳結果如下：
+
+![](/assets/螢幕快照 2018-10-13 下午5.11.26.png)
 
