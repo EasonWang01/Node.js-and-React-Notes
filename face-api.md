@@ -1,12 +1,24 @@
 # Face API
 
+
+
+## 簡介：
+
+FaceAPI包含許多服務：
+
+> 分別有特徵識別、相似臉尋找、兩張臉驗證相似度、將相似的臉分群等功能。
+
+![](/assets/螢幕快照 2018-10-13 下午5.18.59.png)
+
+
+
+## 開始使用
+
 先到此處申請服務：[https://portal.azure.com/\#create/Microsoft.CognitiveServicesFace](https://portal.azure.com/#create/Microsoft.CognitiveServicesFace)![](/assets/螢幕快照 2018-10-13 下午1.31.31.png)
 
 然後取得存取金鑰：
 
 ![](/assets/螢幕快照 2018-10-13 下午4.52.38.png)
-
-
 
 之後可以到此網站線上測試此API:
 
@@ -59,4 +71,28 @@ req.end();
 ```
 
 
+
+# 找尋相似的臉
+
+> 每個請求記得都要有如下Header
+>
+> ```
+> Ocp-Apim-Subscription-Key: 存取金鑰
+> ```
+
+1.先建立一個FaceListId：https://eastasia.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039524b/console
+
+參數如下：![](/assets/螢幕快照 2018-10-13 下午5.20.38.png)
+
+![](/assets/螢幕快照 2018-10-13 下午5.20.38.png)
+
+![](/assets/螢幕快照 2018-10-13 下午5.20.38.png)
+
+![](/assets/螢幕快照 2018-10-13 下午5.20.38.png)
+
+![](/assets/螢幕快照 2018-10-13 下午5.20.38.png)
+
+> FaceListId和LargeFaceListId 類似，分別能存1000和1,000,000個臉。
+
+2.在FaceListId加入臉
 
