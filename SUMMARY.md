@@ -159,6 +159,6 @@
   * [spgateway智富通](jin-liu-chuan-jie/spgatewayzhi-fu-tong.md)
   * [Stripe 串接](jin-liu-chuan-jie/stripe-chuan-jie.md)
 * [有關Log](you-guan-log.md)
-* Azure
+* [Azure](azure.md)
   * [Face API](face-api.md)
 
