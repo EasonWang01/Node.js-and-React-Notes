@@ -161,4 +161,5 @@
 * [有關Log](you-guan-log.md)
 * [Azure](azure.md)
   * [Face API](face-api.md)
+  * [Image Analyze API](image-analyze-api.md)
 
