@@ -1,5 +1,7 @@
 # 加上 SSH-key 到 GitHub
 
+> 使用 remote repo時如果用 ssh 方法進行 clone, fetch ,pull, push時會需要放置電腦本地金鑰到 Github 上提供驗證。
+
 ## 產生金鑰
 
 輸入以下：
@@ -11,6 +13,8 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 之後輸入金鑰密碼（也可不輸入）。
 
 ## 新增其他Key
+
+> 有時如果電腦已經存在金鑰時，加入 GitHub 相同名稱金鑰會產生錯誤，可取名不同金鑰名稱。
 
 1.到此文件：`~/.ssh/config`
 
