@@ -64,7 +64,75 @@ console.log('Server running on port 3000.');
 
 # 寫檔案Request與讀檔案Server
 
-https://gist.github.com/alepez/9205394
+Server.js
+
+```js
+var express = require('express');
+var http = require('http');
+var path = require('path');
+var fs = require('fs');
+
+var app = express();
+
+app.set('port', process.env.PORT || 3007);
+
+app.post('/upload/:filename', function (req, res) {
+  var filename = path.basename(req.params.filename);
+  filename = path.resolve(__dirname, filename);
+  var dst = fs.createWriteStream(filename);
+  req.pipe(dst);
+  dst.on('drain', function() {
+    console.log('drain', new Date());
+    req.resume();
+  });
+  req.on('end', function () {
+    res.send(200);
+  });
+});
+
+http.createServer(app).listen(app.get('port'), function () {
+  console.log('Express server listening on port ' + app.get('port'));
+});
+```
+
+client.js
+
+```js
+var request = require('request');
+var path = require('path');
+var fs = require('fs');
+const http = require('http');
+
+var filename = __dirname + '/../tt.js'
+
+var rs = fs.createReadStream(filename);
+
+var options = {
+  host: "localhost",
+  port: 3007,
+  path: '/upload/' + path.basename(filename),
+  method: "POST",
+  headers: {
+    "test": "123",
+  }
+};
+const req = http.request(options);
+
+req.on('drain', function () {
+  console.log('drain', new Date());
+  rs.resume();
+});
+
+rs.on('end', function () {
+  console.log('uploaded finish');
+});
+
+req.on('error', function (err) {
+  console.error('cannot send file to ' + target + ': ' + err);
+});
+
+rs.pipe(req);
+```
 
 # 靜態Server
 
