@@ -103,9 +103,9 @@ var path = require('path');
 var fs = require('fs');
 const http = require('http');
 
-var filename = __dirname + '/../tt.js'
+var filepath = __dirname + '/../tt.js'
 
-var rs = fs.createReadStream(filename);
+var rs = fs.createReadStream(filepath);
 
 var options = {
   host: "localhost",
