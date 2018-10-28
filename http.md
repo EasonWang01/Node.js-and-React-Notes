@@ -116,7 +116,11 @@ var options = {
     "test": "123",
   }
 };
-const req = http.request(options);
+const req = http.request(options, res => {
+  res.on('data', function (data) {
+    console.log(data.toString());
+  });
+});
 
 req.on('drain', function () {
   console.log('drain', new Date());
