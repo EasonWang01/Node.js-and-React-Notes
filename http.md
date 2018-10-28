@@ -98,9 +98,8 @@ http.createServer(app).listen(app.get('port'), function () {
 client.js
 
 ```js
-var request = require('request');
-var path = require('path');
-var fs = require('fs');
+const path = require('path');
+const fs = require('fs');
 const http = require('http');
 
 var filepath = __dirname + '/../tt.js'
