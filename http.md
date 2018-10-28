@@ -117,6 +117,7 @@ var options = {
   }
 };
 const req = http.request(options, res => {
+  console.log(`Status Code: ${res.statusCode}`);
   res.on('data', function (data) {
     console.log(data.toString());
   });
