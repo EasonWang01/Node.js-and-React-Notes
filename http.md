@@ -62,6 +62,10 @@ console.log('Server running on port 3000.');
 將'Content-Type': 'text/plain' 改為'Content-Type': 'text/html'
 ```
 
+# 寫檔案Request與讀檔案Server
+
+https://gist.github.com/alepez/9205394
+
 # 靜態Server
 
 ```js
