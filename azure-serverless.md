@@ -2,7 +2,7 @@
 
 這篇文章要講解如何使用 VS Code 的 plugin 來部署與測試 Azure Function。
 
-https://code.visualstudio.com/tutorials/functions-extension/getting-started
+[https://code.visualstudio.com/tutorials/functions-extension/getting-started](https://code.visualstudio.com/tutorials/functions-extension/getting-started)
 
 ## 前置步驟：
 
@@ -24,17 +24,31 @@ https://code.visualstudio.com/tutorials/functions-extension/getting-started
 
 ![](/assets/Screen Shot 2018-10-30 at 6.32.38 PM.png)
 
-
-
 ## 本地測試：
 
 ```
 按住 fn 後按下 F5
 ```
 
-之後會執行本地 Server，然後到 http://localhost:7071/api/HttpTrigger?name=jason。
+之後會執行本地 Server，然後到 [http://localhost:7071/api/HttpTrigger?name=jason。](http://localhost:7071/api/HttpTrigger?name=jason。)
 
 即可看到如下：
 
 ![](/assets/Screen Shot 2018-10-30 at 6.29.48 PM.png)
+
+## 部署：
+
+點選如下藍色向上箭頭按鈕：![](/assets/sdasd.png)
+
+之後會選擇要部署到的 Function 名稱，最後按下確定部署：
+
+![](/assets/Screen Shot 2018-10-30 at 6.35.46 PM.png)
+
+成功後即可看到回傳部署後的 Endpoint
+
+![](/assets/Screen Shot 2018-10-30 at 6.36.22 PM.png)
+
+即可把剛才本地的 URL 換為此正式的 URL
+
+![](/assets/Screen Shot 2018-10-30 at 6.36.46 PM.png)
 
