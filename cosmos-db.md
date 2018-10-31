@@ -25,5 +25,7 @@ Cosmos DB 可以建立 RDBMS 與 NoSQL型態。
 
 2.下載他的範例 script
 
-3.進入 
+3.進入DataExplorer
+
+![](/assets/Screen Shot 2018-10-31 at 3.02.33 PM.png)
 
