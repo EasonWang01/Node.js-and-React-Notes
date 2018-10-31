@@ -13,11 +13,13 @@ Cosmos DB 可以建立 RDBMS 與 NoSQL型態。
 
 ![](/assets/Screen Shot 2018-10-31 at 2.16.06 PM.png)
 
-再來進入服務裡面創建 `collection` 
+再來進入服務裡面創建 `collection`
 
 ![](/assets/Screen Shot 2018-10-31 at 2.47.52 PM.png)
 
 > 可以看到大致的收費情況
 
+點擊後第二步驟和第三步驟隨即會出現。
 
+![](/assets/Screen Shot 2018-10-31 at 2.54.03 PM.png)
 
