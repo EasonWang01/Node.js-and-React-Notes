@@ -41,3 +41,13 @@ npm install && npm start
 
 ![](/assets/Screen Shot 2018-11-01 at 2.30.48 PM.png)
 
+# 分析程式
+
+在 config.js 內可以看到連線相關資訊。
+
+![](/assets/Screen Shot 2018-11-01 at 3.31.38 PM.png)
+
+接著可以使用此官方SDK：
+
+https://github.com/Azure/azure-cosmos-js\#readme
+
