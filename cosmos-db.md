@@ -51,11 +51,29 @@ npm install && npm start
 
 [https://github.com/Azure/azure-cosmos-js\#readme](https://github.com/Azure/azure-cosmos-js#readme)
 
-
-
 # 使用方式
 
-https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-nodejs\#review-the-code
+![](/assets/Screen Shot 2018-11-01 at 4.15.18 PM.png)
 
+執行 SQL Query:
 
+```js
+const querySpec = {
+    query: "SELECT VALUE r.children FROM root r WHERE r.lastName = @lastName",
+    parameters: [
+        {
+            name: "@lastName",
+            value: "Andersen"
+        }
+    ]
+};
+
+const { result: results } = await client.database(databaseId).container(containerId).items.query(querySpec).toArray();
+for (var queryResult of results) {
+    let resultString = JSON.stringify(queryResult);
+    console.log(`\tQuery returned ${resultString}\n`);
+}
+```
+
+[https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-nodejs\#review-the-code](https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-nodejs#review-the-code)
 
