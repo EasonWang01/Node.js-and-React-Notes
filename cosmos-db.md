@@ -49,5 +49,13 @@ npm install && npm start
 
 接著可以使用此官方SDK：
 
-https://github.com/Azure/azure-cosmos-js\#readme
+[https://github.com/Azure/azure-cosmos-js\#readme](https://github.com/Azure/azure-cosmos-js#readme)
+
+
+
+# 使用方式
+
+https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-nodejs\#review-the-code
+
+
 
