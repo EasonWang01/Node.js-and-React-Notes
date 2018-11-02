@@ -1,8 +1,6 @@
 # Cosmos DB
 
-Cosmos DB 可以建立 RDBMS 與 NoSQL型態。
-
-而許多人會困惑如果是傳統RDBMS型態，那與原本的Azure SQL區別在哪。
+Cosmos DB 在 collection 的資料都是以 JSON 格式儲存。
 
 | SQL Server | Cosmos SQL DB |
 | :--- | :--- |
@@ -77,11 +75,7 @@ for (var queryResult of results) {
 
 [https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-nodejs\#review-the-code](https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-nodejs#review-the-code)
 
-
-
 # 使用 Rest API
 
-https://docs.microsoft.com/en-us/rest/api/cosmos-db/list-documents
-
-
+[https://docs.microsoft.com/en-us/rest/api/cosmos-db/list-documents](https://docs.microsoft.com/en-us/rest/api/cosmos-db/list-documents)
 
