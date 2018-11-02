@@ -77,3 +77,11 @@ for (var queryResult of results) {
 
 [https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-nodejs\#review-the-code](https://docs.microsoft.com/en-us/azure/cosmos-db/create-sql-api-nodejs#review-the-code)
 
+
+
+# 使用 Rest API
+
+https://docs.microsoft.com/en-us/rest/api/cosmos-db/list-documents
+
+
+
