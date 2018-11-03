@@ -79,3 +79,11 @@ for (var queryResult of results) {
 
 [https://docs.microsoft.com/en-us/rest/api/cosmos-db/list-documents](https://docs.microsoft.com/en-us/rest/api/cosmos-db/list-documents)
 
+
+
+# Node.js SDK 文件
+
+https://docs.microsoft.com/en-us/azure/cosmos-db/sql-api-nodejs-samples
+
+
+
