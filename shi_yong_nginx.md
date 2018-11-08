@@ -192,7 +192,6 @@ server {
   rewrite ^/(.*) https://sakatu.com permanent;
 }
 
-
 server {
   server_name rent.sakatu.com;
   listen 443;
@@ -206,10 +205,6 @@ server {
   gzip_min_length 256;
   gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;
 
-
-  ssl on;
-  ssl_certificate  /usr/share/nginx/sslcrt/bundle.crt;
-  ssl_certificate_key /usr/share/nginx/sslcrt/private.key;
   location / {
     try_files $uri  /index.html;
     proxy_http_version 1.1;
