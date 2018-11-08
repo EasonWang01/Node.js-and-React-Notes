@@ -173,7 +173,7 @@ http {
   sudo nginx
 ```
 
-EXAMPLE:
+EXAMPLE 1: \(WEB\)
 
 ```
 server {
@@ -205,6 +205,10 @@ server {
   gzip_min_length 256;
   gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;
 
+ ssl on;
+ ssl_certificate /usr/share/nginx/sslcrt/cert.pem;
+ ssl_certificate_key /usr/share/nginx/sslcrt/private.key;
+
   location / {
     try_files $uri  /index.html;
     proxy_http_version 1.1;
@@ -234,6 +238,27 @@ server {
 
  }
 
+}
+```
+
+EXAMPLE 2: \(API\)
+
+```
+limit_req_zone $binary_remote_addr zone=req_zone:10m rate=5r/s;
+server {
+        listen 443;
+        server_name api.sakatu.com;
+        gzip on;
+        ssl on;
+        ssl_certificate sites-available/c.pem;
+        ssl_certificate_key sites-available/c.key;
+        underscores_in_headers on;
+        location / {
+               limit_req zone=req_zone burst=10 nodelay;
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                proxy_pass http://localhost:3001;
+        }
 }
 ```
 
