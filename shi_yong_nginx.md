@@ -198,7 +198,7 @@ server {
   root /home/ubuntu/sharehandi_web/build;
   gzip on;
   gzip_vary on;
-   gzip_proxied any;
+  gzip_proxied any;
   gzip_comp_level 6;
   gzip_buffers 16 8k;
   gzip_http_version 1.1;
@@ -222,7 +222,6 @@ server {
     location /sitemap.txt {
    try_files /../../sitemap.txt /test.html;
   }
-
 }
 
 
@@ -235,9 +234,7 @@ server {
   proxy_set_header Upgrade $http_upgrade;
   proxy_set_header Connection "upgrade";
   proxy_set_header Host $host;
-
  }
-
 }
 ```
 
