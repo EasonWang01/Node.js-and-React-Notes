@@ -166,4 +166,5 @@
   * [Azure Serverless](azure-serverless.md)
   * [Cosmos DB](cosmos-db.md)
     * [使用 SDK](cosmos-db/shi-yong-sdk.md)
+    * [以 RESTful 操作 DB](cosmos-db/yi-restful-cao-zuo-db.md)
 
