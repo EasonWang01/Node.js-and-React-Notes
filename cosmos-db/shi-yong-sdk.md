@@ -102,6 +102,52 @@ for (var queryResult of results) {
 
 # Cassandra API
 
+
+## Cassandra DB 簡介
+
+相信已經許多人先前已經搭配 `Spark` 使用過，不過因為本賽季後續會使用，所以還是簡介一下。Cassandra 本身是 2008 由 `Facebook` 開源的一個 NoSQL DB，轉眼間已經十年，與 IT 鐵人賽一樣。Cassandra 的資料是以 `Key-Value` 的方式儲存，資料模型與 `Google BigTable` 和 `HBase` 類似，但 Cassandra 在建立 `cluster` 中不會有 `master` 節點，每個節點都是平等的，這樣可以避免單一節點有問題時造成整個系統故障。
+
+![https://ithelp.ithome.com.tw/upload/images/20181105/20112426dYUQHlvSly.png](https://ithelp.ithome.com.tw/upload/images/20181105/20112426dYUQHlvSly.png)
+
+Cassandra 的查詢語言 `CQL` 與 `SQL` 類似，可參考官方文件：https://cassandra.apache.org/doc/latest/cql/index.html
+
+使用 Cassandra 一開始要先建立一個 `KEYSPACE`，同時設定 replication 的方式。
+```
+CREATE  KEYSPACE [IF NOT EXISTS] keyspace_name 
+   WITH REPLICATION = { 
+      'class' : 'SimpleStrategy', 'replication_factor' : N } 
+     | 'class' : 'NetworkTopologyStrategy', 
+       'dc1_name' : N [, ...] 
+   }
+   [AND DURABLE_WRITES =  true|false] ;
+```
+
+> replication 策略包含以下兩種：
+> 1.`SimpleStrategy` 只有一個`datacenters` 和一個 `rack` 時使用，通常用作測試環境，會設定 `replication_factor` 代表同步儲存資料的節點數目。
+> 2.`NetworkTopologyStrategy` 通常用在生產正式環境，設定 datacenters 的各個名稱，與分別要同步的節點數目。
+> https://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archDataDistributeReplication.html
+
+相關名詞介紹：https://docs.datastax.com/en/cassandra/3.0/cassandra/architecture/archIntro.html
+
+## CAP
+
+`SaaS` 有 [twelve-factor](https://12factor.net/)，分散式系統有 `CAP`，`Cassandra` 屬於比較偏向 `AP` 的部分。
+
+熟悉的圖：
+![https://ithelp.ithome.com.tw/upload/images/20181105/20112426Zpk7ZaDgog.png](https://ithelp.ithome.com.tw/upload/images/20181105/20112426Zpk7ZaDgog.png)
+
+> 來源：http://digbigdata.com/wp-content/uploads/2013/05/media_httpfarm5static_mevIk.png
+
+---
+
+## Azure Cosmos DB 的 `Cassandra API`
+
+`Azure Cosmos DB` 的 `Cassandra API` 與 [Apache Cassandra](https://cassandra.apache.org/) 可以無縫的整合，因為使用相同的 `CQLv4` （ Cassandra Query Language），只需要改一下連線的字串，即可將原本連線到自行架設的 `Cassandra DB` 轉為連線到 `Azure Cosmos DB`。
+
+無痛轉移到 `Azure Cosmos DB` 的 `Cassandra` ，以後再也不用去監控 DB 機器的狀態，以及 CPU、 RAM 使用量突然飆高等問題，也不用管理一堆 `yaml` 等等的配置檔案以及煩惱配置跨地區 `cluster` 與設定網路等等，通通都交給 `Azure Cosmos DB` 幫你處理即可。`throughput` 與 `latency` 出問題時再也不用 `Dear DevOps` 然後 `Dear SysOps`，只要於 `portal` 面板按個按鈕即可解決。
+
+下一篇將介紹如何實際使用 Azure Cosmos DB 的 `Cassandra API` 。
+
 這篇文章要來實際使用一下 `Azure Cosmos DB` 的 `Cassandra API`。
 
 如果已經安裝了 [`cqlsh`](http://cassandra.apache.org/doc/4.0/tools/cqlsh.html) 可以直接用如下方式連線：
