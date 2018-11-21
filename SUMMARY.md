@@ -92,6 +92,7 @@
   * [place autocomplete](google_speech_api/place-autocomplete.md)
   * [Geocode](google_speech_api/geocode.md)
   * [Map](google_speech_api/map.md)
+    * [React map](google_speech_api/map/react-map.md)
   * [vision api](google_speech_api/vision-api.md)
   * [Google-recaptcha](google_speech_api/google-recaptcha.md)
   * [Google sheet](google_speech_api/google-sheet.md)
