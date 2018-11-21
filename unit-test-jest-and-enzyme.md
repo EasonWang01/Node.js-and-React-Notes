@@ -10,6 +10,13 @@
 
 > cheatSheet: [https://devhints.io/enzyme](https://devhints.io/enzyme)
 
+> ```js
+> const wrapper = shallow(<GoogleMap mapType="pickup" />);    
+> spyOn(wrapper.instance(), "handleLocationChange"); // mount 沒有 instance()
+> wrapper.instance().handleLocationChange();
+> expect(wrapper.instance().handleLocationChange).toHaveBeenCalled();
+> ```
+
 # Jest
 
 類似Mocha，為一個跑測試的執行者
