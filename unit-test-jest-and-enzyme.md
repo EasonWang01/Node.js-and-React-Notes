@@ -149,6 +149,10 @@ describe('SectionDisplay component', () => {
 
 使用如上指令會顯示目前測試覆蓋率。
 
+可以打開coverage folder查看他生成的網頁：
+
+![](/assets/Screen Shot 2018-11-23 at 11.33.33 AM.png)
+
 通常只要在render的元素加上snapshot與所有事件上 \(onClick...\) 加上測試即可
 
 ```js
