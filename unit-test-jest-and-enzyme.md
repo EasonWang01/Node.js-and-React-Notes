@@ -151,7 +151,9 @@ describe('SectionDisplay component', () => {
 
 可以打開coverage folder查看他生成的網頁：
 
-![](/assets/Screen Shot 2018-11-23 at 11.33.33 AM.png)
+![](/assets/Screen Shot 2018-11-23 at 11.33.33 AM.png)上面會清楚的告訴你哪些部分還沒測試到
+
+![](/assets/Screen Shot 2018-11-23 at 11.52.31 AM.png)
 
 通常只要在render的元素加上snapshot與所有事件上 \(onClick...\) 加上測試即可
 
