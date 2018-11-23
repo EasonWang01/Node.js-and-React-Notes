@@ -281,5 +281,14 @@ test('should fetch users', () => {
 });
 ```
 
+# 取得 props
+
+```js
+const wrapper = shallow(<GoogleMap mapType="pickup" />);
+const props = wrapper.instance().props;
+// 或是：
+const { setPickUpLocation } = GoogleMap.defaultProps;
+```
+
 
 
