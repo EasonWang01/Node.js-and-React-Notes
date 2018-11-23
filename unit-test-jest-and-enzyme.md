@@ -9,7 +9,7 @@
 [https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913](https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913)
 
 > cheatSheet: [https://devhints.io/enzyme](https://devhints.io/enzyme)
-
+>
 > ```js
 > const wrapper = shallow(<GoogleMap mapType="pickup" />);    
 > spyOn(wrapper.instance(), "handleLocationChange"); // mount 沒有 instance()
@@ -150,6 +150,21 @@ describe('SectionDisplay component', () => {
 使用如上指令會顯示目前測試覆蓋率。
 
 通常只要在render的元素加上snapshot與所有事件上 \(onClick...\) 加上測試即可
+
+```js
+  test('call getCurrentLocation function', () => {
+    const wrapper = shallow(<GoogleMap mapType="pickup" />);
+    const getCurrentLocation = jest.spyOn(
+      wrapper.instance(),
+      'getCurrentLocation',
+    );
+    const currentLocationButton = wrapper.find('.pickupCurrentRect');
+    currentLocationButton.simulate('click');
+
+    wrapper.instance().getCurrentLocation();
+    expect(getCurrentLocation).toHaveBeenCalled();
+  });
+```
 
 ```js
 import React from 'react';
