@@ -264,6 +264,25 @@ describe('ToLocalStorage', () => {
 > });
 > ```
 
+## 測試 Component Function
+
+```js
+import React from 'react';
+import { configure, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import toJSON from 'enzyme-to-json';
+import GoogleMap from './GoogleMap';
+
+const wrapper = shallow(
+  <GoogleMap mapType="pickup" pickUpLatitude={1.1} />,
+);
+
+test('initMap', () => {
+  const spy = jest.spyOn(GoogleMap.prototype, 'initMap');
+  wrapper.instance().initMap();
+});
+```
+
 # 測試Module
 
 [https://jestjs.io/docs/en/mock-functions\#mocking-modules](https://jestjs.io/docs/en/mock-functions#mocking-modules)
