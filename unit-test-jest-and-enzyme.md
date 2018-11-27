@@ -309,6 +309,21 @@ test('should fetch users', () => {
 });
 ```
 
+以及
+
+```js
+import * as action from '../booking/action';
+
+jest.mock('../booking/action');
+    action.getReverseGeoPOI.mockImplementation(() =>
+      Promise.resolve({
+        result: [{}],
+        extra: [{}],
+        trees: [{}],
+      }),
+    );
+```
+
 # 取得 props
 
 ```js
