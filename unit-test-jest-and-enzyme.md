@@ -283,6 +283,15 @@ test('initMap', () => {
 });
 ```
 
+> 如果是 async function 則 test 也要 async
+>
+> ```js
+>   test('Call handleLocationChange function', async () => {
+>     .....
+>     await wrapper.instance().handleLocationChange(map);
+>   });
+> ```
+
 # 測試Module
 
 [https://jestjs.io/docs/en/mock-functions\#mocking-modules](https://jestjs.io/docs/en/mock-functions#mocking-modules)
