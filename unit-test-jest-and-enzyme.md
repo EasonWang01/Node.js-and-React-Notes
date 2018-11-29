@@ -335,3 +335,9 @@ const { setPickUpLocation } = GoogleMap.defaultProps;
 
 
 
+# 測component 不在 class 內的 function
+
+> Export 出來然後於 test 內呼叫即可
+
+ 
+
