@@ -1523,13 +1523,25 @@ if(typeof document !== 'undefined') {
 }
 ```
 
-
-
 # &lt;input /&gt; 裡面的defaultValue如不顯示時 在屬性加個跟著value變動的key即可
 
 ```
 <input key={this.state.detailName} defaultValue={this.state.detailName} className="descInput" />
 ```
+
+# Refs
+
+```js
+  constructor(props) {
+    super(props);
+    this.mapRef = React.createRef();
+  }
+  componentDidMount() {
+    console.log(this.mapRef.current);
+  }
+```
+
+https://reactjs.org/docs/refs-and-the-dom.html
 
 
 
