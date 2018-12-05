@@ -349,6 +349,8 @@ git reset --merge
 
 然後再`git checkout ...` 即可
 
+# Checkout 先前 commit 後 merge cjo
+
 # 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)

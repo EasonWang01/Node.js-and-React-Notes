@@ -111,7 +111,7 @@ module.exports = {
 };
 ```
 
-#### 10.Unable to load script from assets index.android.bundle 
+#### 10.Unable to load script from assets index.android.bundle
 
 加入以下：
 
@@ -123,7 +123,7 @@ package.json
   },
 ```
 
-https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows
+[https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows](https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows)
 
 # 開發相關
 
