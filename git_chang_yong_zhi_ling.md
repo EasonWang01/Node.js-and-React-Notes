@@ -349,7 +349,18 @@ git reset --merge
 
 然後再`git checkout ...` 即可
 
-# Checkout 先前 commit 後 merge cjo
+# Checkout 先前 commit 後 merge 
+
+```
+git checkout a59867a8b0
+```
+
+> 如果有時想回到先前的commit 內容，可以checkout 回以前的 commit hash，但如果之後又在此commit上改東西後，想讓當前內容變為最新的內容的話可以用如下
+
+```
+git checkout <Branch name>
+git merge a59867a8b0
+```
 
 # 其他不錯文章
 
