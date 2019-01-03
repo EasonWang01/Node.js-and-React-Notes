@@ -147,5 +147,9 @@ package.json
 <Input onChangeText={(e) => console.log(e)} />
 ```
 
+#### 3. Genymotion 存取跟電腦相同的 VPN
+
+設定Adapter 2 的網路為 NAT 即可。 ![](/assets/Screen Shot 2019-01-03 at 4.07.16 PM.png)
+
 
 
