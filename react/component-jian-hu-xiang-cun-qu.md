@@ -35,3 +35,11 @@ Drawer.js
 
 這樣就可以存取到parent \(Drawer\) 的function，或是可在parent寫static function，但注意static function 沒有this
 
+
+
+# Passing child red to parent
+
+https://stackoverflow.com/questions/42980402/react-passing-ref-from-dumb-componentchild-to-smart-componentparent
+
+
+
