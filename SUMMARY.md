@@ -170,4 +170,5 @@
     * [使用 SDK](cosmos-db/shi-yong-sdk.md)
     * [以 RESTful 操作 DB](cosmos-db/yi-restful-cao-zuo-db.md)
     * [一致性策略與 DB replicate](cosmos-db/yi-zhi-xing-ce-lve-yu-db-replicate.md)
+* [NodeBB 筆記](nodebb-bi-ji.md)
 

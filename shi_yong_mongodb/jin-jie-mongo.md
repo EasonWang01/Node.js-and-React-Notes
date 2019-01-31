@@ -103,8 +103,6 @@ Multi: If set to true, updates multiple documents that meet the query criteria. 
 
 [https://stackoverflow.com/a/7714428](https://stackoverflow.com/a/7714428)
 
-
-
 # 5.刪除 DB 資料
 
 ```
