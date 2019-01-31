@@ -132,7 +132,7 @@ security:
 
 # 遠端連線mongoDB
 
-https://ianlondon.github.io/blog/mongodb-auth/
+[https://ianlondon.github.io/blog/mongodb-auth/](https://ianlondon.github.io/blog/mongodb-auth/)
 
 # \# 讓進程保持--fork
 
@@ -143,4 +143,26 @@ mongod --auth --dbpath ./data/db2 --fork --logpath=./mongodb.log
 ```
 
 [http://chenzhou123520.iteye.com/blog/1634676](http://chenzhou123520.iteye.com/blog/1634676)
+
+
+
+# 注意事項
+
+如果在第一次創建 user 使用
+
+```
+db.createUser( { user: "admin", pwd: "<Enter a secure password>", roles: [ { role: "readWriteAnyDatabase", db: "admin" }, { role: "userAdminAnyDatabase", db: "admin" } ] } )
+```
+
+> 這樣會讓admin無法刪除DB，因為沒有權限
+
+可以如下修改
+
+```
+mongo -u admin -p 密碼 --authenticationDatabase=admin
+use admin
+db.grantRolesToUser('admin',[{ role: "root", db: "admin" }])
+```
+
+
 
