@@ -349,7 +349,7 @@ git reset --merge
 
 然後再`git checkout ...` 即可
 
-# Checkout 先前 commit 後 merge 
+# Checkout 先前 commit 後 merge
 
 ```
 git checkout a59867a8b0
@@ -361,6 +361,22 @@ git checkout a59867a8b0
 git checkout <Branch name>
 git merge a59867a8b0
 ```
+
+# 一次解決所有 conflict
+
+全部檔案套用遠端的
+
+```
+grep -lr '<<<<<<<' . | xargs git checkout --theirs
+```
+
+全部檔案套用本地的
+
+```
+grep -lr '<<<<<<<' . | xargs git checkout --ours
+```
+
+https://easyengine.io/tutorials/git/git-resolve-merge-conflicts
 
 # 其他不錯文章
 
