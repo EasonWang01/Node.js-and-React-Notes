@@ -376,7 +376,18 @@ grep -lr '<<<<<<<' . | xargs git checkout --theirs
 grep -lr '<<<<<<<' . | xargs git checkout --ours
 ```
 
-https://easyengine.io/tutorials/git/git-resolve-merge-conflicts
+[https://easyengine.io/tutorials/git/git-resolve-merge-conflicts](https://easyengine.io/tutorials/git/git-resolve-merge-conflicts)
+
+# 快速更改上次commit的作者
+
+```
+git commit --amend --author="yicheng.wang <yicheng.wang@ccc.com>"
+git push origin master --force
+```
+
+> 如果要更改多次的用rebase
+>
+> https://www.git-tower.com/learn/git/faq/change-author-name-email
 
 # 其他不錯文章
 
