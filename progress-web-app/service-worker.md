@@ -2,13 +2,13 @@
 
 #### 1. 首先要先加入 Manifest，參考如下步驟
 
-https://developer.mozilla.org/en-US/docs/Web/Manifest
+[https://developer.mozilla.org/en-US/docs/Web/Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 
 之後可以確認：
 
 ![](/assets/Screen Shot 2019-02-21 at 4.33.38 PM.png)
 
-#### 2. 
+#### 2.
 
 在App.js之類的地方加入：
 
@@ -71,21 +71,17 @@ function registerValidSW(swUrl, config) {
 
 上面我們有寫 /service-worker.js; 所以我們要把他加在 /public 資料夾中，讓網域可以直接存取到。
 
+> 有關life cycle 可參考：[https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle?hl=zh-tw](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle?hl=zh-tw)
+
 ```js
 self.addEventListener('install', () => self.skipWaiting());
 
 self.addEventListener('activate', () => {
-  self.clients.matchAll({ type: 'window' }).then(windowClients => {
-    for (let windowClient of windowClients) {
-      windowClient.navigate(windowClient.url);
-    }
-  });
 });
 
-self.addEventListener('fetch', event => {});
+self.addEventListener('fetch', event => {
+});
 ```
-
-
 
 ---
 
