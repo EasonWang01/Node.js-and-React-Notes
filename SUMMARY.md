@@ -174,4 +174,5 @@
 * [NodeBB 筆記](nodebb-bi-ji.md)
 * [Progress Web APP](progress-web-app.md)
   * [Add to Home Screen \(A2HS\)](progress-web-app/add-to-home-screen-a2hs.md)
+  * [Service Worker](progress-web-app/service-worker.md)
 
