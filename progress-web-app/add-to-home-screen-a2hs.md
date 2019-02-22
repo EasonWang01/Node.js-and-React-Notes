@@ -19,6 +19,10 @@
 
 [https://developer.mozilla.org/en-US/docs/Web/Progressive\_web\_apps/Add\_to\_home\_screen](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen)
 
+## 測試開啟 Flag
+
+![](/assets/Screen Shot 2019-02-22 at 11.49.33 AM.png)
+
 #### 移除APP
 
 到以下 URL
