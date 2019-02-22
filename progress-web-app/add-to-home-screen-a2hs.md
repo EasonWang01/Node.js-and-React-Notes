@@ -17,5 +17,15 @@
 
 之後就會跳出是否要加入桌面的確認框。
 
-https://developer.mozilla.org/en-US/docs/Web/Progressive\_web\_apps/Add\_to\_home\_screen
+[https://developer.mozilla.org/en-US/docs/Web/Progressive\_web\_apps/Add\_to\_home\_screen](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Add_to_home_screen)
+
+#### 移除APP
+
+到以下
+
+chrome://apps/
+
+打開 APP 後按右上角三個點，然後按 Uninstall
+
+![](/assets/Screen Shot 2019-02-22 at 11.08.00 AM.png)
 
