@@ -21,9 +21,11 @@
 
 #### 移除APP
 
-到以下
+到以下 URL
 
+```
 chrome://apps/
+```
 
 打開 APP 後按右上角三個點，然後按 Uninstall
 
