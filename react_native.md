@@ -483,8 +483,6 @@ android {
 
 或是輸入`gradlew installRelease`會直接安裝在模擬器\(記得先把之前dev時安裝在上面的app刪除，否則無法安裝\)
 
-
-
 # 開發
 
 1. 先開啟Genymotion
@@ -493,6 +491,10 @@ android {
 ```
 react-native run-android
 ```
+
+# 更換ICON
+
+https://medium.com/@scottianstewart/react-native-add-app-icons-and-launch-screens-onto-ios-and-android-apps-3bfbc20b7d4c
 
 
 
