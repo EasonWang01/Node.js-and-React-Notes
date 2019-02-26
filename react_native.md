@@ -502,5 +502,22 @@ react-native run-android
 android/app/src/main/res/values/strings.xml
 ```
 
+然後要改 `applicationId`
+
+build.gradle
+
+```
+    defaultConfig {
+        applicationId "com.yichengwang01"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+    }
+```
+
 
 
