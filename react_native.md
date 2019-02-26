@@ -494,7 +494,13 @@ react-native run-android
 
 # 更換ICON
 
-https://medium.com/@scottianstewart/react-native-add-app-icons-and-launch-screens-onto-ios-and-android-apps-3bfbc20b7d4c
+[https://medium.com/@scottianstewart/react-native-add-app-icons-and-launch-screens-onto-ios-and-android-apps-3bfbc20b7d4c](https://medium.com/@scottianstewart/react-native-add-app-icons-and-launch-screens-onto-ios-and-android-apps-3bfbc20b7d4c)
+
+# 更改APP Name
+
+```
+android/app/src/main/res/values/strings.xml
+```
 
 
 
