@@ -74,5 +74,26 @@ client.query(queryletter, data, (err, res) => {
 >
 >       const insertString = `INSERT INTO users (account, password, username) VALUES('${req.body.account}','${req.body.password}','${req.body.account}');`
 
+# 使用Pool
+
+```js
+async function query(exec_query, data, callback) {
+  const _client = await client.connect();
+  if (typeof data === "function") {
+    callback = data;
+    data = "";
+  }
+  await client.query(exec_query, data, (err, res) => {
+    if (err) return err;
+    _client.release();
+    callback(res);
+  });
+}
+```
+
+> 記得要release\(\) 不然程式會當掉
+>
+> https://node-postgres.com/features/pooling
+
 
 
