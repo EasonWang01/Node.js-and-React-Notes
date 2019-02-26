@@ -106,7 +106,7 @@ sudo service postgresql restart
 
 然後即可使用PgAdmin遠端連線。
 
-可參考：https://cloud.google.com/community/tutorials/setting-up-postgres
+可參考：[https://cloud.google.com/community/tutorials/setting-up-postgres](https://cloud.google.com/community/tutorials/setting-up-postgres)
 
 ## 2.使用SQL shell \( psql \)
 
@@ -123,7 +123,34 @@ sudo service postgresql restart
 
 ---
 
-# 
+# 使用Log
+
+> 預設只會存在psql 操作的log
+
+log路徑：`/var/log/postgresql/postgresql-10-main.log`
+
+1.首先要設定config: `/etc/postgresql/10/main/postgresql.conf`
+
+2.
+
+```
+- change the log_statement setting to 'all'.
+- turned on the log_destination
+- turn on the logging_collector
+```
+
+3.重啟config
+
+```
+進入psql後輸入
+SELECT pg_reload_conf();
+```
+
+---
+
+
+
+
 
 參考至:
 
