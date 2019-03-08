@@ -337,6 +337,10 @@ const { setPickUpLocation } = GoogleMap.defaultProps;
 
 > Export 出來然後於 test 內呼叫即可
 
+# 如果React map component 內的沒cover到
+
+shallow 改為 mount 即可
+
 # 點擊測試
 
 ```js
