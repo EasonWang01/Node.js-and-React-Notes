@@ -46,6 +46,7 @@
   * [自己寫一個Router](react_router/zi-ji-xie-yi-ge-router.md)
 * [Redux](redux.md)
   * [Redux sagas](redux/redux-sagas.md)
+  * [compose](redux/compose.md)
 * [React webpack 部署](react_webpack_bu_shu.md)
 * [React Native](react_native.md)
   * [Expo](react_native/an-zhuang.md)
