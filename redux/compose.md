@@ -27,5 +27,26 @@ compose(a, b)(1)
 
 > 因為 compose\(a, b\)\(1\)  會變為 `a(b(1))`
 
+# 如果HOC要用在compose內必須要這樣寫
+
+```js
+export default function withRules(ruleOptions = {}) {
+  return Component =>
+    class WithRules extends React.Component {
+      render() {
+        return (
+          <Component>
+           ....
+         </Component>
+        )
+      }
+    }
+}  
+```
+
+> ```
+> (opt) => (BaseComponent) => return class
+> ```
+
 
 
