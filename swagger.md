@@ -24,6 +24,22 @@ swagger有三個服務，editor,codegen,swagger ui
 
 [https://scotch.io/tutorials/document-your-already-existing-apis-with-swagger](https://scotch.io/tutorials/document-your-already-existing-apis-with-swagger)
 
+```
+1.下載並且安裝node.js 
+2. npm install -g http-server 
+3. 下載項目https://github.com/swagger-api/swagger-ui 並且解壓。 
+4. 進入swagger-ui文件夾。運行http-server命令。 
+5. 進入http://127.0.0.1:8080/dist/就可以看到swagger頁面了
+```
+
+> 讀取不同的swagger json 只要加上 ?url 即可
+
+```
+http://127.0.0.1:8080/dist/?url=https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v2.0/json/api-with-examples.json
+```
+
+[https://swagger.io/docs/open-source-tools/swagger-ui/usage/installation/](https://swagger.io/docs/open-source-tools/swagger-ui/usage/installation/)
+
 # 3.使用swagger editor 並開啟localhost cors
 
 因沒開啟的話，位於遠端網頁的 swagger editor 無法發送測試
