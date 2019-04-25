@@ -51,3 +51,9 @@ pbcopy < ~/.ssh/公鑰名稱.pub
 
 ![](/assets/螢幕快照 2018-10-27 上午10.57.08.png)
 
+# 讓不同Github帳號有不同KEY
+
+https://stackoverflow.com/a/10056098
+
+
+
