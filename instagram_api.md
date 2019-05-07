@@ -343,5 +343,7 @@ https_request(username, '?__a=1').then(data => {
 
 > 解決方法為把first調大，並減少iterate的request次數
 
+3.2019年之後\`?\_\_a=1\` request要加上cookie才可
+
 
 
