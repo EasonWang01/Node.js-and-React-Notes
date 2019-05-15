@@ -127,6 +127,8 @@ chrome.tabs.executeScript({
 
 > 作法為開一個新視窗
 
+popup.js
+
 ```js
 document.getElementById('open').addEventListener('click', () => {
     chrome.windows.create({
