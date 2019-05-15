@@ -1,3 +1,7 @@
+# 重新整理extension
+
+> 點選extension的重新整理按鈕，然後到網頁上重新整理頁面即可
+
 # Inject script 到任何網頁
 
 Manifest.json
@@ -19,7 +23,7 @@ inject.js
 document.addEventListener('click', function(e){
    console.log(123)
  }, false);
- 
+
  // 以上的console 會直接出現在頁面devtool上
 ```
 
@@ -45,6 +49,8 @@ background.js
     return true;
  });
 ```
+
+> 點擊以下檢視background 的 console.log![](/assets/螢幕快照 2019-05-15 上午11.31.45.png)
 
 # 點擊Extension後觸發js
 
