@@ -4,6 +4,10 @@
 
 # extension點擊後跳出專用畫面
 
+有分browser\_action 和 page\_action
+
+[https://stackoverflow.com/questions/44712495/what-are-the-differences-between-page-action-and-browser-action](https://stackoverflow.com/questions/44712495/what-are-the-differences-between-page-action-and-browser-action)
+
 第一種方法：
 
 manifest.json
