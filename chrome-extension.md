@@ -123,6 +123,23 @@ chrome.tabs.executeScript({
 ]
 ```
 
+# 將chrome extension 保持開啟
+
+> 作法為開一個新視窗
+
+```js
+document.getElementById('open').addEventListener('click', () => {
+    chrome.windows.create({
+        url:"popup.html",
+        type:"panel",
+        width:300,
+        height:200
+    });
+})
+```
+
+# 
+
 # 取得所有頁面上的xhr事件回應
 
 ```
