@@ -13,6 +13,39 @@ Manifest.json
   ]
 ```
 
+inject.js
+
+```js
+document.addEventListener('click', function(e){
+   console.log(123)
+ }, false);
+ 
+ // 以上的console 會直接出現在頁面devtool上
+```
+
+# 從網頁傳送訊息到extension
+
+manifest.json
+
+```js
+    "permissions": ["activeTab"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+```
+
+background.js
+
+```js
+  chrome.extension.onMessage.addListener(function(myMessage, sender, sendResponse){
+    //do something that only the extension has privileges here
+    console.log(myMessage)
+    chrome.extension.getBackgroundPage().console.log(myMessage);
+    return true;
+ });
+```
+
 # 點擊Extension後觸發js
 
 ```js
@@ -43,7 +76,7 @@ chrome.tabs.executeScript({
 
 使用Ajax-hook
 
-> https://github.com/wendux/Ajax-hook
+> [https://github.com/wendux/Ajax-hook](https://github.com/wendux/Ajax-hook)
 
 ```js
 !function (t) { function r(i) { if (n[i]) return n[i].exports; var o = n[i] = { exports: {}, id: i, loaded: !1 }; return t[i].call(o.exports, o, o.exports, r), o.loaded = !0, o.exports } var n = {}; return r.m = t, r.c = n, r.p = "", r(0) }([function (t, r, n) { n(1)(window) }, function (t, r) { t.exports = function (t) { t.hookAjax = function (t) { function r(t) { return function () { return this.hasOwnProperty(t + "_") ? this[t + "_"] : this.xhr[t] } } function n(r) { return function (n) { var i = this.xhr, o = this; return 0 != r.indexOf("on") ? void (this[r + "_"] = n) : void (t[r] ? i[r] = function () { t[r](o) || n.apply(i, arguments) } : i[r] = n) } } function i(r) { return function () { var n = [].slice.call(arguments); if (!t[r] || !t[r].call(this, n, this.xhr)) return this.xhr[r].apply(this.xhr, n) } } return window._ahrealxhr = window._ahrealxhr || XMLHttpRequest, XMLHttpRequest = function () { this.xhr = new window._ahrealxhr; for (var t in this.xhr) { var o = ""; try { o = typeof this.xhr[t] } catch (t) { } "function" === o ? this[t] = i(t) : Object.defineProperty(this, t, { get: r(t), set: n(t) }) } }, window._ahrealxhr }, t.unHookAjax = function () { window._ahrealxhr && (XMLHttpRequest = window._ahrealxhr), window._ahrealxhr = void 0 }, t.default = t } }]);
