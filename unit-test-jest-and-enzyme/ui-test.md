@@ -58,8 +58,8 @@ const browserWSEndpoint = 'ws://127.0.0.1:9222/devtools/browser/15d59f55-f1c9-4c
     const browser = await puppeteer.connect({
         browserWSEndpoint,
     });
-    const page = await browser.newPage();
-    let pageUrl = 'https://sakatu.com/';
+    const page = (await browser.pages())[0]; //存取第一個 tab
+    let page = 'https://sakatu.com/';
 
     await page.goto(pageUrl, {
         waitUntil: 'networkidle0'
