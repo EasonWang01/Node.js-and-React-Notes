@@ -1,4 +1,4 @@
-# \#跨平台測試
+# 跨平台測試
 
 [https://saucelabs.com/beta/dashboard/manual](https://saucelabs.com/beta/dashboard/manual)
 
@@ -8,7 +8,7 @@
 
 # 
 
-# \#[GoogleChrome](https://github.com/GoogleChrome)/[**puppeteer**](https://github.com/GoogleChrome/puppeteer)
+# [GoogleChrome](https://github.com/GoogleChrome) / [**puppeteer**](https://github.com/GoogleChrome/puppeteer)
 
 安裝:[https://github.com/GoogleChrome/puppeteer](https://github.com/GoogleChrome/puppeteer)
 
@@ -39,17 +39,43 @@ const puppeteer = require('puppeteer');
 })();
 ```
 
-# 
+## 連線到已經開啟的chrome
 
-# \#WebDriver.io
+因為預設程式結束時chrome也會關閉，所以要用connect的方法。
+
+使用以下方式開啟chrome
+
+```
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --no-first-run --no-default-browser-check --user-data-dir=$(mktemp -d -t 'chrome-remote_data_dir')
+```
+
+之後將以下擷取下來![](/assets/螢幕快照 2019-05-29 下午5.05.31.png)之後用如下方式
+
+```js
+const puppeteer = require('puppeteer');
+const browserWSEndpoint = 'ws://127.0.0.1:9222/devtools/browser/15d59f55-f1c9-4c95-89c9-3f164988ba58';
+(async () => {
+    const browser = await puppeteer.connect({
+        browserWSEndpoint,
+    });
+    const page = await browser.newPage();
+    let pageUrl = 'https://sakatu.com/';
+
+    await page.goto(pageUrl, {
+        waitUntil: 'networkidle0'
+    });
+})();
+```
+
+# WebDriver.io
 
 [http://webdriver.io/](http://webdriver.io/)
 
-# \#selenium-webdriver
+# selenium-webdriver
 
 [https://github.com/SeleniumHQ/selenium/tree/master/javascript/node/selenium-webdriver](https://github.com/SeleniumHQ/selenium/tree/master/javascript/node/selenium-webdriver)
 
-# \#nightmare
+# nightmare
 
 \(使用electron當作介面\)
 
@@ -134,13 +160,13 @@ describe('test duckduckgo search results', () => {
 });
 ```
 
-https://segment.com/blog/ui-testing-with-nightmare/
+[https://segment.com/blog/ui-testing-with-nightmare/](https://segment.com/blog/ui-testing-with-nightmare/)
 
-# \#phantomjs
+# phantomjs
 
 [http://phantomjs.org/quick-start.html](http://phantomjs.org/quick-start.html)
 
-# \#casper.js
+# casper.js
 
 [http://casperjs.org/](http://casperjs.org/)
 

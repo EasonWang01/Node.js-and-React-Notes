@@ -143,7 +143,7 @@
 * [Docker教學](dockerjiao-xue.md)
 * [Docker](docker.md)
 * [Unit Test \(Jest & enzyme\)](unit-test-jest-and-enzyme.md)
-  * [UI Test](unit-test-jest-and-enzyme/ui-test.md)
+  * [UI Test \(puppeteer\)](unit-test-jest-and-enzyme/ui-test.md)
   * [mocha](unit-test-jest-and-enzyme/mocha.md)
 * [Cassandra](cassandra.md)
   * [cluster](cassandra/cluster.md)
