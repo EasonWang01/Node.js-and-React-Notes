@@ -387,9 +387,17 @@ git push origin master --force
 
 > 如果要更改多次的用rebase
 >
-> https://www.git-tower.com/learn/git/faq/change-author-name-email
+> [https://www.git-tower.com/learn/git/faq/change-author-name-email](https://www.git-tower.com/learn/git/faq/change-author-name-email)
+
+# 直接給予權限
+
+```
+git remote set-url origin https://<username>:<password>@github.com/....git
+```
 
 # 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
+
+
 
