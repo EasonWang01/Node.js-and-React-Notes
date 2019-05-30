@@ -8,141 +8,104 @@ Google試算表 API
 
 1.點選Enable The Sheet API然後下載憑證
 
-2.創建新的google sheet 並更改 code 的 spreadsheetId![](/assets/螢幕快照 2019-05-30 上午10.48.31132234.png)
-
-EX:
+2.創建新的google sheet 並更改 code 的 spreadsheetId![](/assets/螢幕快照 2019-05-30 上午10.48.31132234.png)程式範例:
 
 ```js
-var fs = require('fs');
-var readline = require('readline');
-var google = require('googleapis');
-var googleAuth = require('google-auth-library');
+const fs = require('fs');
+const readline = require('readline');
+const { google } = require('googleapis');
 
-// If modifying these scopes, delete your previously saved credentials
-// at ~/.credentials/sheets.googleapis.com-nodejs-quickstart.json
-var SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
-var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
-    process.env.USERPROFILE) + '/.credentials/';
-var TOKEN_PATH = TOKEN_DIR + 'sheets.googleapis.com-nodejs-quickstart.json';
+// If modifying these scopes, delete token.json.
+var SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
+// The file token.json stores the user's access and refresh tokens, and is
+// created automatically when the authorization flow completes for the first
+// time.
+const TOKEN_PATH = 'token.json';
 
 // Load client secrets from a local file.
-fs.readFile('./client_secret.json', function processClientSecrets(err, content) {
-  if (err) {
-    console.log('Error loading client secret file: ' + err);
-    return;
-  }
-  console.log(JSON.parse(content))
-  // Authorize a client with the loaded credentials, then call the
-  // Google Sheets API.
-  authorize(JSON.parse(content), listMajors);
+fs.readFile('credentials.json', (err, content) => {
+    if (err) return console.log('Error loading client secret file:', err);
+    // Authorize a client with credentials, then call the Google Sheets API.
+    authorize(JSON.parse(content), listMajors);
 });
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
  * given callback function.
- *
  * @param {Object} credentials The authorization client credentials.
  * @param {function} callback The callback to call with the authorized client.
  */
 function authorize(credentials, callback) {
-  var clientSecret = credentials.installed.client_secret;
-  var clientId = credentials.installed.client_id;
-  var redirectUrl = credentials.installed.redirect_uris[0];
-  var auth = new googleAuth();
-  var oauth2Client = new auth.OAuth2(clientId, clientSecret, redirectUrl);
+    const { client_secret, client_id, redirect_uris } = credentials.installed;
+    const oAuth2Client = new google.auth.OAuth2(
+        client_id, client_secret, redirect_uris[0]);
 
-  // Check if we have previously stored a token.
-  fs.readFile(TOKEN_PATH, function(err, token) {
-    if (err) {
-      getNewToken(oauth2Client, callback);
-    } else {
-      oauth2Client.credentials = JSON.parse(token);
-      callback(oauth2Client);
-    }
-  });
+    // Check if we have previously stored a token.
+    fs.readFile(TOKEN_PATH, (err, token) => {
+        if (err) return getNewToken(oAuth2Client, callback);
+        oAuth2Client.setCredentials(JSON.parse(token));
+        callback(oAuth2Client);
+    });
 }
 
 /**
  * Get and store new token after prompting for user authorization, and then
  * execute the given callback with the authorized OAuth2 client.
- *
- * @param {google.auth.OAuth2} oauth2Client The OAuth2 client to get token for.
- * @param {getEventsCallback} callback The callback to call with the authorized
- *     client.
+ * @param {google.auth.OAuth2} oAuth2Client The OAuth2 client to get token for.
+ * @param {getEventsCallback} callback The callback for the authorized client.
  */
-function getNewToken(oauth2Client, callback) {
-  var authUrl = oauth2Client.generateAuthUrl({
-    access_type: 'offline',
-    scope: SCOPES
-  });
-  console.log('Authorize this app by visiting this url: ', authUrl);
-  var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-  rl.question('Enter the code from that page here: ', function(code) {
-    rl.close();
-    oauth2Client.getToken(code, function(err, token) {
-      if (err) {
-        console.log('Error while trying to retrieve access token', err);
-        return;
-      }
-      oauth2Client.credentials = token;
-      storeToken(token);
-      callback(oauth2Client);
+function getNewToken(oAuth2Client, callback) {
+    const authUrl = oAuth2Client.generateAuthUrl({
+        access_type: 'offline',
+        scope: SCOPES,
     });
-  });
+    console.log('Authorize this app by visiting this url:', authUrl);
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+    rl.question('Enter the code from that page here: ', (code) => {
+        rl.close();
+        oAuth2Client.getToken(code, (err, token) => {
+            if (err) return console.error('Error while trying to retrieve access token', err);
+            oAuth2Client.setCredentials(token);
+            // Store the token to disk for later program executions
+            fs.writeFile(TOKEN_PATH, JSON.stringify(token), (err) => {
+                if (err) return console.error(err);
+                console.log('Token stored to', TOKEN_PATH);
+            });
+            callback(oAuth2Client);
+        });
+    });
 }
 
 /**
- * Store token to disk be used in later program executions.
- *
- * @param {Object} token The token to store to disk.
- */
-function storeToken(token) {
-  try {
-    fs.mkdirSync(TOKEN_DIR);
-  } catch (err) {
-    if (err.code != 'EEXIST') {
-      throw err;
-    }
-  }
-  fs.writeFile(TOKEN_PATH, JSON.stringify(token));
-  console.log('Token stored to ' + TOKEN_PATH);
-}
-
-/**
- * Print the names and majors of students in a sample spreadsheet:
- * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+ * Prints the names and majors of students in a sample spreadsheet:
+ * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+ * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
 function listMajors(auth) {
-  var sheets = google.sheets('v4');
-  sheets.spreadsheets.values.get({
-    auth: auth,
-    spreadsheetId: '166bdwPOtfitjEJBhiptMOYv-mL3xP5-GvS5Q8w6-AZ0',
-    range: ['1:12'],
-  }, function(err, response) {
-    if (err) {
-      console.log('The API returned an error: ' + err);
-      return;
-    }
-    var rows = response.values;
-    if (rows.length == 0) {
-      console.log('No data found.');
-    } else {
-      console.log(rows)
-    }
-  });
+    const sheets = google.sheets({ version: 'v4', auth });
+    sheets.spreadsheets.values.get({
+        spreadsheetId: '1aCA49m9XIKbX3NZk4FA5WDvSfOQEAbAfFQ_-MSQGdAo',
+        range: ['Sheet1!A1:B2'],
+    }, (err, res) => {
+        if (err) return console.log('The API returned an error: ' + err);
+        const rows = res.data.values;
+        if (rows.length) {
+            rows.map((row) => {
+                console.log(row);
+            });
+        } else {
+            console.log('No data found.');
+        }
+    });
 }
 ```
 
-#### &gt; 執行後在console會產生網址 之後到那個網址會有hash 把它貼到console  之後本地電腦會產生憑證
+> 第一次執行後在console會產生網址 之後到那個網址會有hash 把它貼到console  之後本地電腦會產生token，供下次使用
 
-Ex: \Users\yi.w/.credentials/sheets.googleapis.com-nodejs-quickstart.json
-
-#### 
-
-#### \#Range可參考
+Range可參考
 
 ```
 Sheet1!A1:B2 refers to the first two cells in the top two rows of Sheet1.
@@ -153,7 +116,7 @@ A1:B2 refers to the first two cells in the top two rows of the first visible she
 Sheet1 refers to all the cells in Sheet1.
 ```
 
-#### \#SCOPE\(read write\)
+SCOPE\( read/write \)
 
 如出現
 
@@ -177,139 +140,34 @@ https://www.googleapis.com/auth/drive.file |    Per-file access to files created
 https://www.googleapis.com/auth/drive |    Full, permissive scope to access all of a user's files. Request this scope only when it is strictly necessary.
 ```
 
-#### \#寫入範例\(記得更改var scope\)
+#### 寫入範例\(記得scope\)
 
 ```js
-var fs = require('fs');
-var readline = require('readline');
-var google = require('googleapis');
-var googleAuth = require('google-auth-library');
-
-// If modifying these scopes, delete your previously saved credentials
-// at ~/.credentials/sheets.googleapis.com-nodejs-quickstart.json
-var SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
-var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
-    process.env.USERPROFILE) + '/.credentials/';
-var TOKEN_PATH = TOKEN_DIR + 'sheets.googleapis.com-nodejs-quickstart.json';
-
-// Load client secrets from a local file.
-fs.readFile('./client_secret.json', function processClientSecrets(err, content) {
-  if (err) {
-    console.log('Error loading client secret file: ' + err);
-    return;
-  }
-  console.log(JSON.parse(content))
-  // Authorize a client with the loaded credentials, then call the
-  // Google Sheets API.
-  authorize(JSON.parse(content), listMajors);
-});
-
-/**
- * Create an OAuth2 client with the given credentials, and then execute the
- * given callback function.
- *
- * @param {Object} credentials The authorization client credentials.
- * @param {function} callback The callback to call with the authorized client.
- */
-function authorize(credentials, callback) {
-  var clientSecret = credentials.installed.client_secret;
-  var clientId = credentials.installed.client_id;
-  var redirectUrl = credentials.installed.redirect_uris[0];
-  var auth = new googleAuth();
-  var oauth2Client = new auth.OAuth2(clientId, clientSecret, redirectUrl);
-
-  // Check if we have previously stored a token.
-  fs.readFile(TOKEN_PATH, function(err, token) {
-    if (err) {
-      getNewToken(oauth2Client, callback);
-    } else {
-      oauth2Client.credentials = JSON.parse(token);
-      callback(oauth2Client);
-    }
-  });
-}
-
-/**
- * Get and store new token after prompting for user authorization, and then
- * execute the given callback with the authorized OAuth2 client.
- *
- * @param {google.auth.OAuth2} oauth2Client The OAuth2 client to get token for.
- * @param {getEventsCallback} callback The callback to call with the authorized
- *     client.
- */
-function getNewToken(oauth2Client, callback) {
-  var authUrl = oauth2Client.generateAuthUrl({
-    access_type: 'offline',
-    scope: SCOPES
-  });
-  console.log('Authorize this app by visiting this url: ', authUrl);
-  var rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-  rl.question('Enter the code from that page here: ', function(code) {
-    rl.close();
-    oauth2Client.getToken(code, function(err, token) {
-      if (err) {
-        console.log('Error while trying to retrieve access token', err);
-        return;
-      }
-      oauth2Client.credentials = token;
-      storeToken(token);
-      callback(oauth2Client);
-    });
-  });
-}
-
-/**
- * Store token to disk be used in later program executions.
- *
- * @param {Object} token The token to store to disk.
- */
-function storeToken(token) {
-  try {
-    fs.mkdirSync(TOKEN_DIR);
-  } catch (err) {
-    if (err.code != 'EEXIST') {
-      throw err;
-    }
-  }
-  fs.writeFile(TOKEN_PATH, JSON.stringify(token));
-  console.log('Token stored to ' + TOKEN_PATH);
-}
-
-/**
- * Print the names and majors of students in a sample spreadsheet:
- * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
- */
 function listMajors(auth) {
-  var sheets = google.sheets('v4');
-
-
-var values = [
-  [
-    12
-  ],
-  // Additional rows ...
-];
-var body = {
-  values: values
-};
-sheets.spreadsheets.values.update({
-   auth: auth,
-   spreadsheetId: '1rrteBLVUM96azFrdQigQwDR-XZDMV8Od4GITvtyvSOI',
-   range: ['1:12'],
-   valueInputOption: 'RAW',
-   resource: body
-}, function(err, result) {
-  if(err) {
-    // Handle error
-    console.log(err);
-  } else {
-    console.log('%d cells updated.', result.updatedCells);
-  }
-});
-
+    var sheets = google.sheets('v4');
+    var values = [
+        [
+            12123
+        ],
+        // Additional rows ...
+    ];
+    var body = {
+        values: values
+    };
+    sheets.spreadsheets.values.update({
+        auth: auth,
+        spreadsheetId: '1aCA49m9XIKbX3NZk4FA5WDvSfOQEAbAfFQ_-MSQGdAo',
+        range: ['sheet1'],
+        valueInputOption: 'RAW',
+        resource: body
+    }, function (err, result) {
+        if (err) {
+            // Handle error
+            console.log(err);
+        } else {
+            console.log('%d cells updated.', result.updatedCells);
+        }
+    });
 }
 ```
 
