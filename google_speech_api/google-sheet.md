@@ -173,5 +173,123 @@ function listMajors(auth) {
 }
 ```
 
+# 讀取A sheet並寫入 B sheet範例
+
+```js
+const fs = require('fs');
+const readline = require('readline');
+const { google } = require('googleapis');
+
+const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
+const spreadsheetId = '1aCA49m9XIKbX3NZk4FA5WDvSfOQEAbAfFQ_-MSQGdAo';
+const TOKEN_PATH = 'token.json';
+
+// Load client secrets from a local file.
+fs.readFile('credentials.json', (err, content) => {
+    if (err) return console.log('Error loading client secret file:', err);
+    // Authorize a client with credentials, then call the Google Sheets API.
+    authorize(JSON.parse(content), doAction);
+});
+
+/**
+* Create an OAuth2 client with the given credentials, and then execute the
+* given callback function.
+* @param {Object} credentials The authorization client credentials.
+* @param {function} callback The callback to call with the authorized client.
+*/
+function authorize(credentials, callback) {
+    const { client_secret, client_id, redirect_uris } = credentials.installed;
+    const oAuth2Client = new google.auth.OAuth2(
+        client_id, client_secret, redirect_uris[0]);
+
+    // Check if we have previously stored a token.
+    fs.readFile(TOKEN_PATH, (err, token) => {
+        if (err) return getNewToken(oAuth2Client, callback);
+        oAuth2Client.setCredentials(JSON.parse(token));
+        callback(oAuth2Client);
+    });
+}
+
+/**
+* Get and store new token after prompting for user authorization, and then
+* execute the given callback with the authorized OAuth2 client.
+* @param {google.auth.OAuth2} oAuth2Client The OAuth2 client to get token for.
+* @param {getEventsCallback} callback The callback for the authorized client.
+*/
+function getNewToken(oAuth2Client, callback) {
+    const authUrl = oAuth2Client.generateAuthUrl({
+        access_type: 'offline',
+        scope: SCOPES,
+    });
+    console.log('Authorize this app by visiting this url:', authUrl);
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+    rl.question('Enter the code from that page here: ', (code) => {
+        rl.close();
+        oAuth2Client.getToken(code, (err, token) => {
+            if (err) return console.error('Error while trying to retrieve access token', err);
+            oAuth2Client.setCredentials(token);
+            // Store the token to disk for later program executions
+            fs.writeFile(TOKEN_PATH, JSON.stringify(token), (err) => {
+                if (err) return console.error(err);
+                console.log('Token stored to', TOKEN_PATH);
+            });
+            callback(oAuth2Client);
+        });
+    });
+}
+
+
+
+function readSheet2(auth) {
+    return new Promise((resolve, reject) => {
+        const sheets = google.sheets({ version: 'v4', auth });
+        sheets.spreadsheets.values.get({
+            spreadsheetId,
+            range: ['Sheet2'],
+        }, (err, res) => {
+            if (err) return console.log('The API returned an error: ' + err);
+            const rows = res.data.values;
+            if (rows.length) {
+                rows.shift(); // 移除欄位名稱
+                resolve(rows);
+            } else {
+                reject('No data found.');
+            }
+        });
+
+    })
+}
+
+
+function updateSheet1(auth, values) {
+    var sheets = google.sheets('v4');
+    var body = {
+        values
+    };
+    sheets.spreadsheets.values.append({
+        auth,
+        spreadsheetId,
+        range: ['sheet1'],
+        valueInputOption: 'RAW',
+        resource: body
+    }, function (err, result) {
+        if (err) {
+            // Handle error
+            console.log(err);
+        } else {
+            console.log('%d cells updated.', result.updatedCells);
+        }
+    });
+}
+
+async function doAction(auth) {
+  const sheet2Value = await readSheet2(auth);
+  updateSheet1(auth, sheet2Value);
+}
+```
+
 
 
