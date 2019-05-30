@@ -1,5 +1,24 @@
 # facebook oauth
 
+# 使用流程
+
+1.使用者從UI登入後會回傳access token
+
+2.用access token到 [https://graph.facebook.com/me?access\_token=&lt;...&gt;](https://graph.facebook.com/me?access_token=EAAEZBU9UdDfYBAECdk1FZAyeHpgmYbhL5yGbmqE5om58AVprJrN2xgDh90QMVxNSfH97mIoRTdRK0GHjyPbFZAbMipy7O1tXS8z7pOQRJlIdWqFdj0QuZBiOegV1ZCfXjR0YdaeXagm4H0bXSAEKHWQGqFqWIBz2ViSZBLBpb1VVA9K3ZBCZBeKnYo6aW8a9DcYfW4Ce6n5uaQZDZD) 進行驗證，成功會回傳id, name.
+
+3.取得user id後即可取得其他資訊。
+
+e.g.
+
+```
+curl -i -X GET \
+  "https://graph.facebook.com/{your-user-id}/photos
+    ?fields=height,width
+    &access_token={your-user-access-token}"
+```
+
+# 網頁安裝
+
 1.先到此創建  
 [https://developers.facebook.com/apps/](https://developers.facebook.com/apps/)
 

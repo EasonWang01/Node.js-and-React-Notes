@@ -69,7 +69,6 @@ public class MainApplication extends Application implements ReactApplication {
     SoLoader.init(this, /* native exopackage */ false);
   }
 }
-
 ```
 
 MainActivity.java
@@ -96,7 +95,6 @@ public class MainActivity extends ReactActivity {
     }
 
 }
-
 ```
 
 strings.xml
@@ -107,8 +105,6 @@ strings.xml
     <string name="facebook_app_id">350004755369462</string>
 </resources>
 ```
-
-
 
 AndroidManifest.xml
 
