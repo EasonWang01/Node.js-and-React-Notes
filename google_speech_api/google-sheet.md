@@ -8,7 +8,9 @@ Google試算表 API
 
 1.點選Enable The Sheet API然後下載憑證
 
-2.創建新的google sheet 並更改 code 的 spreadsheetId![](/assets/螢幕快照 2019-05-30 上午10.48.31132234.png)程式範例:
+2.創建新的google sheet 並更改 code 的 spreadsheetId![](/assets/螢幕快照 2019-05-30 上午10.48.31132234.png)3.npm install googleapis
+
+程式範例:
 
 ```js
 const fs = require('fs');
