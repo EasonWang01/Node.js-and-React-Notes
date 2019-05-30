@@ -6,6 +6,8 @@ Google試算表 API
 
 [https://developers.google.com/sheets/api/quickstart/nodejs](https://developers.google.com/sheets/api/quickstart/nodejs)
 
+1.點選Enable The Sheet API然後下載憑證
+
 EX:
 
 ```js
