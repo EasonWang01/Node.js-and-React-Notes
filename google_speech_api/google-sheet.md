@@ -4,15 +4,7 @@ Google試算表 API
 
 以下為官方Node.js範例
 
-1.先到[https://console.developers.google.com/flows/enableapi?apiid=sheets.googleapis.com](https://console.developers.google.com/flows/enableapi?apiid=sheets.googleapis.com)
-
-2.點選**Create credentials 然後選  OAuth client ID**
-
-**3.**下載JSON然後改名為client\_secret.json
-
-4.npm install googleapi google-auth-library
-
-5.建立一個google sheet  然後更改下面code的spreadsheetId
+[https://developers.google.com/sheets/api/quickstart/nodejs](https://developers.google.com/sheets/api/quickstart/nodejs)
 
 EX:
 
