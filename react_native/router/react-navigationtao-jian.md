@@ -2,12 +2,15 @@
 
 [https://reactnavigation.org/docs/en/navigating.html](https://reactnavigation.org/docs/en/getting-started.html)
 
-> 隱藏Header
+> 隱藏Header，於各router 的 component 
 >
 > ```js
-> static navigationOptions = {
->   header: null,
-> };
+> class .....
+>   static navigationOptions = {
+>     header: null,
+>   };
+>   .....
+> }  
 > ```
 >
 > 使用`this.props.navigation.navigate('Main')` 進行導航
