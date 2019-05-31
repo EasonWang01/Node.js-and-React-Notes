@@ -20,10 +20,6 @@ Server可使用此模組
 
 [http://self-issued.info/docs/draft-ietf-jose-json-web-algorithms-00.html](http://self-issued.info/docs/draft-ietf-jose-json-web-algorithms-00.html)
 
-
-
-
-
 # 驗證方法：
 
 一般使用HMAC的話直接在client和server都給密碼即可解密，但這樣可能不安全。
