@@ -67,6 +67,10 @@ const browserWSEndpoint = 'ws://127.0.0.1:9222/devtools/browser/15d59f55-f1c9-4c
 })();
 ```
 
+# Puppeteer-firefox
+
+[https://github.com/GoogleChrome/puppeteer/tree/master/experimental/puppeteer-firefox](https://github.com/GoogleChrome/puppeteer/tree/master/experimental/puppeteer-firefox)goo
+
 # WebDriver.io
 
 [http://webdriver.io/](http://webdriver.io/)

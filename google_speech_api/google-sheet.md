@@ -142,7 +142,7 @@ https://www.googleapis.com/auth/drive.file |    Per-file access to files created
 https://www.googleapis.com/auth/drive |    Full, permissive scope to access all of a user's files. Request this scope only when it is strictly necessary.
 ```
 
-#### 寫入範例\(記得scope\)
+#### 寫入範例\(記得改scope\)
 
 ```js
 function listMajors(auth) {
