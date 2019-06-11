@@ -42,6 +42,7 @@
   * [Next.js教學](react/nextjsjiao-xue.md)
   * [Higher order component 與 Recompose ](react/higher-order-component-yu-recompose.md)
   * [component 間 互相存取](react/component-jian-hu-xiang-cun-qu.md)
+  * [React hook](react/react-hook.md)
 * [React util](react_util.md)
 * [React router](react_router.md)
   * [自己寫一個Router](react_router/zi-ji-xie-yi-ge-router.md)
