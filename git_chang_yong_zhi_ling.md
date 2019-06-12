@@ -395,9 +395,17 @@ git push origin master --force
 git remote set-url origin https://<username>:<password>@github.com/....git
 ```
 
+# 改大小寫後push確沒改到
+
+[https://stackoverflow.com/questions/10523849/changing-capitalization-of-filenames-in-git/16071375](https://stackoverflow.com/questions/10523849/changing-capitalization-of-filenames-in-git/16071375)
+
+用以下方法改檔名
+
+```
+git mv hello.txt Hello.txt
+```
+
 # 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
-
-
 

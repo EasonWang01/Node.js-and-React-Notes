@@ -19,7 +19,7 @@ babel src -d dist --presets es2015,stage-2,react --copy-files
 
 或是
 
-線上compile
+gi線上compile
 
 [https://facebook.github.io/react/jsx-compiler.html](https://facebook.github.io/react/jsx-compiler.html)
 
