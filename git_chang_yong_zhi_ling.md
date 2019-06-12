@@ -399,7 +399,7 @@ git remote set-url origin https://<username>:<password>@github.com/....git
 
 [https://stackoverflow.com/questions/10523849/changing-capitalization-of-filenames-in-git/16071375](https://stackoverflow.com/questions/10523849/changing-capitalization-of-filenames-in-git/16071375)
 
-用以下方法改檔名
+改完後要記得用以下方法改git內的暫存檔名，會自動stage
 
 ```
 git mv hello.txt Hello.txt
