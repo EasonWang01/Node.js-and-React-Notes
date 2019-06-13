@@ -2,8 +2,6 @@
 
 可以讓functional component也擁有 ref, state, 生命週期等方法。
 
-
-
 ## State
 
 ```js
@@ -33,7 +31,7 @@ function Example() {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     console.log('Mounted')
-  });
+  }, /** 記得傳此參數，否則會重複render/);
 
   return (
     <div>
@@ -44,6 +42,10 @@ function Example() {
   );
 }
 ```
+
+> 用 useEffect 有個雷要注意，記得傳第二個參數，否則會發現怎麼一直重複render
+>
+> [https://reactjs.org/docs/hooks-reference.html\#conditionally-firing-an-effect](https://reactjs.org/docs/hooks-reference.html#conditionally-firing-an-effect)
 
 ## Ref
 
