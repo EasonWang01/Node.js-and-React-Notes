@@ -57,9 +57,13 @@ class FadeInView extends React.Component {
 </FadeInView>
 ```
 
+# 文件
+
+除了 `Animated.timing` 外共有三種可以使用。
+
+![](/assets/螢幕快照 2019-06-18 下午3.50.22.png)
+
 # 相關模組
 
 [https://github.com/oblador/react-native-animatable](https://github.com/oblador/react-native-animatable)
-
-
 
