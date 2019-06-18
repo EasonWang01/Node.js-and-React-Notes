@@ -69,6 +69,7 @@
   * 硬體操作
     * [相機與圖片庫存取](react_native/xiang-ji-yu-tu-pian-ku-cun-qu.md)
   * [Async Storage](react_native/async-storage.md)
+  * [Animation](react_native/animation.md)
 * [import\_export\_module.exports 模組化](importexport_module_exports_mo_zu_hua.md)
 * [使用webpack](shi_yong_webpack.md)
 * [使用Babel](babel.md)

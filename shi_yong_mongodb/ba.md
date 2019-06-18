@@ -144,8 +144,6 @@ mongod --auth --dbpath ./data/db2 --fork --logpath=./mongodb.log
 
 [http://chenzhou123520.iteye.com/blog/1634676](http://chenzhou123520.iteye.com/blog/1634676)
 
-
-
 # 注意事項
 
 如果在第一次創建 user 使用
