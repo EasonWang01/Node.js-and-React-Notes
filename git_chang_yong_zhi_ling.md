@@ -48,6 +48,12 @@ git commit -m "Removed folder from repository"
 git push origin master
 ```
 
+### 將一個分支的所有內容推送到另一分支
+
+```
+git push origin <原分枝>:<新增之分枝>
+```
+
 ### 有時在遠端開分之後新增檔案但和local端history不同，導致無法pull和push
 
 可使用`git pull origin master --allow-unrelated-histories`
