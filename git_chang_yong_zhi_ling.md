@@ -29,10 +29,15 @@ git reset
 > 記得該分支不可是Default branch
 
 ```
-git push <remote name> :<branch name>
+git push origin :the_remote_branch
+或是
+git push origin --delete the_remote_branch
+```
 
-ex:
-git push origin :test
+### 移除本地分支
+
+```
+git branch -D <分支名稱>
 ```
 
 ### 移除遠端的目錄\(不包含本地\)
