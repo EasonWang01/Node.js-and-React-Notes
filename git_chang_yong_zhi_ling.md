@@ -413,7 +413,7 @@ git remote set-url origin https://<username>:<password>@github.com/....git
 改完後要記得用以下方法改git內的暫存檔名，會自動stage
 
 ```
-git mv hello.txt Hello.txt
+git mv --force Myclass.java MyClass.java
 ```
 
 # 其他不錯文章
