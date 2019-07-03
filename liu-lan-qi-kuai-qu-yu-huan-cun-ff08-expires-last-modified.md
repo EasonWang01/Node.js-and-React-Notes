@@ -21,5 +21,9 @@ res.end('123');
 res.setHeader("Last-modified", new Date("2005-02-10").toUTCString())
 ```
 
+> 記得要用UTCString
+
+
+
 
 
