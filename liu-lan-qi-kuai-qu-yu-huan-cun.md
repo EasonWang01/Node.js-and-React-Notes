@@ -91,6 +91,8 @@ test.html
 > 1.如果是跨域請求會在request header 顯示 `provisional headers are shown` ，所以會看不到 If-None-Match
 >
 > 2.有時chrome 304沒顯示可以用firebox試看看。
+>
+> 3.記得要點選瀏覽器的 disable cache 然後再點掉，讓他忘記快取
 
 # 如果是 expressjs server 已經實作了 304 回應![](/assets/螢幕快照 2019-07-03 下午3.30.17.png)
 
