@@ -25,8 +25,6 @@ res.setHeader("Last-modified", new Date("2005-02-10").toUTCString())
 
 > 記得要用UTCString
 
-
-
 # Cache-Control
 
 max-age 單位為秒。
@@ -42,5 +40,5 @@ res.setHeader('Cache-Control', 'public, max-age=3');
 > public cache (CDN )
 > ```
 
-
+[https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-tw](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-tw)
 
