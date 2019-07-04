@@ -65,6 +65,12 @@ describe('<HomePage />', () => {
 });
 ```
 
+> 如果是包過compose 的話可以單獨把compoent export 然後傳給 test
+>
+> ```
+> export { Application };
+> ```
+
 action test
 
 ```js
