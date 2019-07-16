@@ -835,6 +835,26 @@ comments: Array,
       })
 ```
 
+## 使用Mongoose lean
+
+[https://mongoosejs.com/docs/tutorials/lean.html](https://mongoosejs.com/docs/tutorials/lean.html)
+
+當讀取資料後mongoose會用物件模型轉換，所以資量多時會導致大量效能耗損，所以可以用
+
+```
+const leanDoc = await MyModel.findOne().lean();
+```
+
+但使用lean會損失以下功能：
+
+```
+Change tracking
+Casting and validation
+Getters and setters
+Virtuals
+save()
+```
+
 # 備份與還原
 
 [http://www.runoob.com/mongodb/mongodb-mongodump-mongorestore.html](http://www.runoob.com/mongodb/mongodb-mongodump-mongorestore.html)
