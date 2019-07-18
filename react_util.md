@@ -342,15 +342,21 @@ RichEditor.css
 
 如上使用即可
 
-
-
 # 使用Material UI
 
 為原本的Materialize css包成的套件。
 
-http://www.material-ui.com/\#/components/list
+[http://www.material-ui.com/\#/components/list](http://www.material-ui.com/#/components/list)
 
-ICON: https://material.io/icons/\#ic\_swap\_horiz
+ICON: [https://material.io/icons/\#ic\_swap\_horiz](https://material.io/icons/#ic_swap_horiz)
+
+# 使用 I18N
+
+個人推薦：[https://react.i18next.com/guides/quick-start](https://react.i18next.com/guides/quick-start)
+
+他是i18next的react版本，nodejs也有類似，且用法相同，可共用程式。
+
+> 而 [https://github.com/formatjs/react-intl](https://github.com/formatjs/react-intl) 需要且defineMessage與defaultMessage較為繁瑣。
 
 
 
