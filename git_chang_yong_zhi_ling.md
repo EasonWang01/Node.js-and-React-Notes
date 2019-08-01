@@ -416,6 +416,14 @@ git remote set-url origin https://<username>:<password>@github.com/....git
 git mv --force Myclass.java MyClass.java
 ```
 
+# 把某個pull request直接加到local
+
+```
+git pull origin pull/<request號碼>/head
+```
+
+> request號碼為7 e.g.：[https://github.com/test/react-examination/pull/7](https://github.com/bridge5/react-examination/pull/7)
+
 # 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
