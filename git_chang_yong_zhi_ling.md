@@ -424,7 +424,29 @@ git pull origin pull/<request號碼>/head
 
 > request號碼為7 e.g.：[https://github.com/test/react-examination/pull/7](https://github.com/bridge5/react-examination/pull/7)
 
+# Merge時省略特定檔案
 
+[https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes\#\_merge\_strategies](https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes#_merge_strategies)
+
+輸入 
+
+```
+git config --global merge.ours.driver true
+```
+
+之後 `vim $HOME/.gitconfig` 會顯示如下
+
+![](/assets/螢幕快照 2019-08-13 下午4.07.31.png)
+
+然後於專案內輸入`vim .gitattributes`
+
+新增以下內容
+
+```
+<要省略的檔案名稱> merge=ours
+```
+
+之後commit 在 merge 即可
 
 # 其他不錯文章
 
