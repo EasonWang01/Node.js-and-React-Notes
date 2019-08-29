@@ -47,6 +47,16 @@ function Example() {
 >
 > [https://reactjs.org/docs/hooks-reference.html\#conditionally-firing-an-effect](https://reactjs.org/docs/hooks-reference.html#conditionally-firing-an-effect)
 
+## ComponentWillMount
+
+[https://reactjs.org/docs/hooks-reference.html\#uselayouteffect](https://reactjs.org/docs/hooks-reference.html#uselayouteffect)
+
+```
+useLayoutEffect(()=> {
+  console.log('I am about to render!');
+},[]);
+```
+
 ## Ref
 
 ```js
