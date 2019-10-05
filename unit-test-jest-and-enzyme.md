@@ -380,5 +380,12 @@ import { Bar } from 'recharts';
     .onClick();
 ```
 
+# 測試 defaultProp
+
+```js
+import Barcharts from '../index';
+Barcharts.defaultProps.onBarClick();
+```
+
 
 
