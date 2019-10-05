@@ -8,6 +8,8 @@
 
 [https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913](https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913)
 
+完整API:  [https://airbnb.io/enzyme/docs/api/shallow.html](https://airbnb.io/enzyme/docs/api/shallow.html)
+
 > cheatSheet: [https://devhints.io/enzyme](https://devhints.io/enzyme)
 >
 > ```js
