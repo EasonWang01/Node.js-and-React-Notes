@@ -357,5 +357,28 @@ shallow 改為 mount 即可
 
 > find 可以找 id, class 或是 component
 
+# 測試component 內 children的 prop
+
+```js
+import Barcharts from '../index';
+import { Bar } from 'recharts';
+
+  const wrapper = shallow(
+    <Barcharts
+      chartData={chartData}
+      formatter={tooltipFormatter}
+      tooltipFormatter={tooltipFormatter}
+      clickable={true}
+      dataKey={dataKey}
+      onBarClick={onBarClick}
+    />,
+  );
+  wrapper
+    .find(Bar)
+    .first()
+    .props()
+    .onClick();
+```
+
 
 
