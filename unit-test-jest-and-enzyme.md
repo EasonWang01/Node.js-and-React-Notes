@@ -330,8 +330,14 @@ jest.mock('../booking/action');
 # 取得 props
 
 ```js
+// stateless component 用 props() 只能用mount
+const wrapper = mount(<GoogleMap mapType="pickup" />);
+console.log(wrapper.props())
+
+// class component 用 instance().props
 const wrapper = shallow(<GoogleMap mapType="pickup" />);
 const props = wrapper.instance().props; // instance 在 react16 後 stateless component都會是null
+
 // 或是取得default prop
 const { setPickUpLocation } = GoogleMap.defaultProps;
 ```
@@ -350,9 +356,9 @@ shallow 改為 mount 即可
   test('Click openMap', () => {
     wrapper.find(POIMapButton).simulate('click');
   });
-  
+
   或是
-  
+
   const item = wrapper.find('[data-testid="listItem"]')
   item.first().simulate('click');
   expect(onSelect).toHaveBeenCalledTimes(1);
