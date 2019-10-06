@@ -396,6 +396,11 @@ Barcharts.defaultProps.onBarClick();
       <FilterBlock checkedItem={{ value: 12 }} list={[1, 2]} onSelect={jest.fn()} t={jest.fn()} />,
     );
     console.log(wrapper.find("#test1234").length);
+    
+    
+    或是
+    <div data-testid="listItem" /> 
+    console.log(wrapper.find('[data-testid="listItem"]').length);
 ```
 
 > 注意:
