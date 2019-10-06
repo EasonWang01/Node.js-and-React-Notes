@@ -401,8 +401,7 @@ Barcharts.defaultProps.onBarClick();
 > 注意:
 >
 > 1. find\(''\#123"\) or find\(".342"\) 數字開頭的都會出現錯誤
-> 2. 不管有沒有成功找到console.log都會顯示 ShallowWrapper {} 所以可以用.length來查看有沒有找
-> 3.
+> 2. 不管有沒有成功找到console.log都會顯示 ShallowWrapper {} 所以可以用.length來查看有沒有找到
 
 
 
