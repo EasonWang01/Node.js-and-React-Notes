@@ -389,5 +389,20 @@ import Barcharts from '../index';
 Barcharts.defaultProps.onBarClick();
 ```
 
+# Find 元素
+
+```js
+    const wrapper = shallow(
+      <FilterBlock checkedItem={{ value: 12 }} list={[1, 2]} onSelect={jest.fn()} t={jest.fn()} />,
+    );
+    console.log(wrapper.find("#test1234").length);
+```
+
+> 注意:
+>
+> 1. find\(''\#123"\) or find\(".342"\) 數字開頭的都會出現錯誤
+> 2. 不管有沒有成功找到console.log都會顯示 ShallowWrapper {} 所以可以用.length來查看有沒有找
+> 3.
+
 
 
