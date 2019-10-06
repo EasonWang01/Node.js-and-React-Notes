@@ -12,6 +12,24 @@
 
 > [https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913](https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913)
 
+#### Snapshot testing
+
+```js
+import React from 'react';
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import test from '../index';
+
+configure({ adapter: new Adapter() });
+describe('<test />', () => {
+  it('should render and match the snapshot', () => {
+    const wrapper = shallow(<test />);
+    expect(wrapper).toMatchSnapshot();
+  });
+});
+
+```
+
 # Jest
 
 類似Mocha，為一個跑測試的執行者
