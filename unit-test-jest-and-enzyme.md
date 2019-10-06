@@ -2,22 +2,15 @@
 
 [http://airbnb.io/enzyme/](http://airbnb.io/enzyme/)
 
-僅提供React.js相關的Render功能。
+提供 React.js 相關的 Render 功能。
 
-包含: shallow, render, mount等等
-
-[https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913](https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913)
-
-完整API:  [https://airbnb.io/enzyme/docs/api/shallow.html](https://airbnb.io/enzyme/docs/api/shallow.html)
+完整API文件 :  [https://airbnb.io/enzyme/docs/api/shallow.html](https://airbnb.io/enzyme/docs/api/shallow.html)
 
 > cheatSheet: [https://devhints.io/enzyme](https://devhints.io/enzyme)
->
-> ```js
-> const wrapper = shallow(<GoogleMap mapType="pickup" />);    
-> spyOn(wrapper.instance(), "handleLocationChange"); // mount 沒有 instance()
-> wrapper.instance().handleLocationChange();
-> expect(wrapper.instance().handleLocationChange).toHaveBeenCalled();
-> ```
+
+## shallow, render, mount 差異
+
+> [https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913](https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913)
 
 # Jest
 
@@ -25,13 +18,15 @@
 
 [https://jestjs.io/docs/en/](https://jestjs.io/docs/en/)
 
-EX:
+#### jest.fn, jest.mock, jest.spyOn 差異
 
-\(其中的.toMatchSnapshot\(\)會產生一個snapshot檔案，之後如果改動component裡面並造成render結果不同則會產生錯誤需修正\)
+```
+jest.fn 可模擬 function 名稱，但邏輯為空，並根據function名字追蹤是否被呼叫
+jest.mock 可模擬整個模組內所有function 為 jest.fn()
+jest.spyOn 會實際模擬 function 內邏輯
+```
 
-\(如果更改檔案但其結果不會影響render結果則不會有錯誤訊息\)
-
-component Test
+#### component Test
 
 ```js
 /**
@@ -73,7 +68,7 @@ describe('<HomePage />', () => {
 > export { Application };
 > ```
 
-action test
+#### action test
 
 ```js
 import {
@@ -97,7 +92,7 @@ describe('Home Actions', () => {
 });
 ```
 
-Reducer test
+#### Reducer test
 
 ```js
 import { fromJS } from 'immutable';
@@ -396,8 +391,8 @@ Barcharts.defaultProps.onBarClick();
       <FilterBlock checkedItem={{ value: 12 }} list={[1, 2]} onSelect={jest.fn()} t={jest.fn()} />,
     );
     console.log(wrapper.find("#test1234").length);
-    
-    
+
+
     或是
     <div data-testid="listItem" /> 
     console.log(wrapper.find('[data-testid="listItem"]').length);
