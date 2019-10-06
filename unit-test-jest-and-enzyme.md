@@ -332,7 +332,7 @@ jest.mock('../booking/action');
 ```js
 const wrapper = shallow(<GoogleMap mapType="pickup" />);
 const props = wrapper.instance().props;
-// 或是：
+// 或是取得default prop
 const { setPickUpLocation } = GoogleMap.defaultProps;
 ```
 
@@ -340,7 +340,7 @@ const { setPickUpLocation } = GoogleMap.defaultProps;
 
 > Export 出來然後於 test 內呼叫即可
 
-# 如果React map component 內的沒cover到
+# 如果React children component 內的沒cover到
 
 shallow 改為 mount 即可
 
