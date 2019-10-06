@@ -27,7 +27,6 @@ describe('<test />', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
-
 ```
 
 # Jest
@@ -432,6 +431,22 @@ Barcharts.defaultProps.onBarClick();
 >
 > 1. find\(''\#123"\) or find\(".342"\) 數字開頭的都會出現錯誤
 > 2. 不管有沒有成功找到console.log都會顯示 ShallowWrapper {} 所以可以用.length來查看有沒有找到
+
+# 設定 window 相關變數
+
+設定所有有關window.&lt;&gt;
+
+```js
+global.appConfig = {
+  API_ENDPOINT: ''
+}
+
+或是
+
+global.localstorage = {
+  setItem: jest.fn()
+}
+```
 
 
 
