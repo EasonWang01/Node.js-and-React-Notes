@@ -448,5 +448,13 @@ global.localstorage = {
 }
 ```
 
+## Hook UseEffect
+
+```js
+const wrapper = mount(<Login />);
+const useEffect = jest.spyOn(React, "useEffect");
+wrapper.unmount();
+```
+
 
 
