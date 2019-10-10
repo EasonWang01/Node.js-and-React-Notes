@@ -59,6 +59,9 @@ class human {
 const a = new human(178, 67);
 cc = a.c;
 console.log(cc()) // undefined
+
+cc = a.c();
+console.log(cc) // human { height: 178, weight: 67 }
 ```
 
 
