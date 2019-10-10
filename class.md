@@ -43,5 +43,23 @@ human.fly();
 >
 > console.log\(this\) 會是 \[Function: human\]
 
+#### class 均為嚴格模式執行 \(no autoboxing\)
+
+```js
+class human {
+  constructor(height, weight){
+    this.height = height;
+    this.weight = weight;
+  }
+  c(){
+    return this
+  }
+}
+
+const a = new human(178, 67);
+cc = a.c;
+console.log(cc()) // undefined
+```
+
 
 
