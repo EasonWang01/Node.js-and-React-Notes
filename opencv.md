@@ -11,8 +11,8 @@ brew install pkg-config
 brew install opencv@2
 brew link --force opencv@2
 
-yarn add opencv
 echo 'export PATH="/usr/local/opt/opencv@2/bin:$PATH"' >> ~/.zshrc
+yarn add opencv
 ```
 
 
