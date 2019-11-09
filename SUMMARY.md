@@ -187,4 +187,6 @@
 * ES6 ES7 ES8
 * Node.js 第三方模組
   * [OpenCV](opencv.md)
+* Kubernetes
+  * [本地測試 MiniKube](ben-di-ce-shi-minikube.md)
 
