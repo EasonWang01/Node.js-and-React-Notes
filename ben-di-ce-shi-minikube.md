@@ -5,7 +5,9 @@
 #### 安裝
 
 ```
-brew install kubectl Minikube
+brew install kubectl && brew install minikube
+rm /usr/local/bin/kubectl
+brew link --overwrite kubernetes-cli
 ```
 
 > 另外需要安裝virtualBox
