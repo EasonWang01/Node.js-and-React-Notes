@@ -58,6 +58,8 @@ spec:
 
 要先用 `kubectl get pods` 找到 pod 名稱
 
+> 因為 yaml 寫兩個 replicas 所以會有兩個pod![](/assets/螢幕快照 2019-11-09 下午1.28.13.png)
+
 ```
 kubectl port-forward nginx-deployment-54f57cf6bf-ds6sl 3009:80
 ```
