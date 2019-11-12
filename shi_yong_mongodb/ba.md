@@ -93,6 +93,14 @@ mongoose.connect('mongodb://帳號:密碼@ec2-52-193-141-232.ap-northeast-1.comp
 });
 ```
 
+# restore 導入DB檔案
+
+```
+mongorestore -d <取DB名稱> <要導入的資料夾路徑> --authenticationDatabase admin -u admin -p <admin密碼>
+```
+
+
+
 # \# 指定可連線的IP
 
 到config檔案設定
