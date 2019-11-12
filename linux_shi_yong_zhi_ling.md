@@ -110,7 +110,7 @@ mv <source> <dist>
 ## 上傳檔案
 
 ```
-scp -i ~/Downloads/pem1.pem ubuntu@ec2-13-112-175-93.ap-northeast-1.compute.amazonaws.com:~/home
+scp -i ~/Downloads/pem1.pem /path/file1 ubuntu@ec2-13-112-175-93.ap-northeast-1.compute.amazonaws.com:~/home
 ```
 
 上傳資料夾\(加上-r\)
