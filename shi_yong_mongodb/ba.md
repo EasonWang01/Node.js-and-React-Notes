@@ -1,4 +1,6 @@
-# \# 基本啟動與終止
+# MongoDB 常用指令
+
+# 基本啟動與終止
 
 ```
 sudo service mongod start
@@ -93,13 +95,17 @@ mongoose.connect('mongodb://帳號:密碼@ec2-52-193-141-232.ap-northeast-1.comp
 });
 ```
 
-# restore 導入DB檔案
+# Dump 將 DB 資料導出備份
+
+```
+mongodump --authenticationDatabase admin -u admin -p <admin密碼>
+```
+
+# Restore 將備份檔案導入DB
 
 ```
 mongorestore -d <取DB名稱> <要導入的資料夾路徑> --authenticationDatabase admin -u admin -p <admin密碼>
 ```
-
-
 
 # \# 指定可連線的IP
 
