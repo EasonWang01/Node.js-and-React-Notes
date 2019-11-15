@@ -1,6 +1,6 @@
 # 有關Fetch
 
-https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch\_API/Using\_Fetch
+[https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch\_API/Using\_Fetch](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch)
 
 以前用xmlHttprequest但寫法太多，fetch為比較簡潔的寫法，並且有then可使用
 
@@ -69,9 +69,36 @@ fetch('http://localhost:3016/we6/api/login', {
 });
 ```
 
-# 
+## Fetch 取得 server 錯誤訊息
 
-# axios
+https://github.com/github/fetch/issues/203\#issuecomment-335786498
+
+```js
+fetch(`${HOST}`, {
+        headers: {
+          'content-type': 'application/json',
+        },
+        method: 'PUT',
+        body,
+      }).then(response => Promise.all([response.ok, response.json()]))
+      .then(([responseOk, body]) => {
+        if (responseOk) {
+          console.log(responseOk, body)
+          // handle success case
+        } else {
+          // console Error message from server
+          console.log(body);
+          throw new Error(body);
+        }
+      })
+      .catch(error => {
+        // catches error case and if fetch itself rejects
+        console.log(error);
+      });
+    };
+```
+
+# Axios
 
 [https://github.com/mzabriskie/axios](https://github.com/mzabriskie/axios)
 
