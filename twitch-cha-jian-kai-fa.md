@@ -14,7 +14,13 @@
 
 ## 開發
 
+1.下載OBS
 
+2.下載Twitch Developer Rig
 
+3.下載設 Twitch Hello world範例，並設定如下
 
+![](/assets/螢幕快照 2019-11-16 下午12.32.25.png)
+
+4. 啟動前端與後端 server後可看到畫面![](/assets/螢幕快照 2019-11-16 下午12.33.14.png)
 
