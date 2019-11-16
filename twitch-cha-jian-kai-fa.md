@@ -30,7 +30,7 @@
 
 ![](/assets/螢幕快照 2019-11-16 下午12.38.45.png)
 
-#### 6.使用http://twitch.tv 登入，記得點選url右側的安全性選項
+#### 6.使用[http://twitch.tv](http://twitch.tv) 登入，記得點選url右側的安全性選項
 
 ![](/assets/螢幕快照 2019-11-16 下午12.39.39.png)
 
@@ -42,7 +42,15 @@
 2. component \(partscreen\)
 3. overlay \(fullscreen\)
 
-![](/assets/螢幕快照 2019-11-16 下午12.41.15.png)
+#### ![](/assets/螢幕快照 2019-11-16 下午12.41.15.png)
 
+#### 範例程式：
 
+[https://github.com/twitchdev/extensions-hello-world](https://github.com/twitchdev/extensions-hello-world)
+
+> 檔案上面分別為不同類型的插件，不要改錯檔案，改完按重新整理即可
+>
+> services/backend.js 為後端程式，後端需要JWT Auth 只有在 頻道上才可測試 `Twitch.onAuth` function
+
+![](/assets/螢幕快照 2019-11-16 下午12.41.46.png)
 
