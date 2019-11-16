@@ -189,4 +189,6 @@
   * [OpenCV](opencv.md)
 * Kubernetes
   * [本地測試 MiniKube](ben-di-ce-shi-minikube.md)
+* 第三方工具開發
+  * [Twitch 插件開發](twitch-cha-jian-kai-fa.md)
 
