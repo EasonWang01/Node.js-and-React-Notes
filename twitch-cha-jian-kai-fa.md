@@ -18,6 +18,10 @@
 
 #### 2.下載Twitch Developer Rig
 
+> ```
+> twitch.rig.log(123); // 要用此，並且開啟直播才能console到
+> ```
+
 #### 3.下載設 Twitch Hello world範例，並設定如下
 
 #### ![](/assets/螢幕快照 2019-11-16 下午12.32.25.png)4.啟動前端與後端 server後可看到畫面![](/assets/螢幕快照 2019-11-16 下午12.33.14.png)
@@ -53,4 +57,34 @@
 > services/backend.js 為後端程式，後端需要JWT Auth 只有在 頻道上才可測試 `Twitch.onAuth` function
 
 ![](/assets/螢幕快照 2019-11-16 下午12.41.46.png)
+
+#### 引入函式庫
+
+要使用Twitch API 只要使用以下即可
+
+```js
+<script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+```
+
+#### Bit 開發
+
+Bit 為儲值點數的單位，可用以下方法
+
+```js
+const twitch = window.Twitch.ext;
+document.getElementById('skuBtn').addEventListener('click', () => {
+  twitch.bits.useBits(this.state.sku)
+})
+```
+
+取得develop rig內設定可購買的bit產品
+
+```js
+twitch.bits.getProducts().then(product => {
+  twitch.rig.log(product);
+  console.log(product)
+})
+```
+
+
 
