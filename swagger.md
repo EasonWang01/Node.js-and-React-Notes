@@ -1,6 +1,8 @@
-# \#簡介
+# 簡介
 
 swagger有三個服務，editor,codegen,swagger ui
+
+> 以下範例為Open API 2.0 現在最新為Open API 3.0
 
 # 1.
 
