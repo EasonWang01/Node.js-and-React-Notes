@@ -8,9 +8,7 @@ yarn add swagger-jsdoc swagger-ui-express swagger-model-validator
 
 ## 使用
 
-1. 
-
-新增： /router/swagger.js
+1. 新增： /router/swagger.js
 
 ```js
 const express = require('express')
@@ -71,7 +69,7 @@ const swaggerRoute = require("./router/swagger");
 app.use("/swagger", swaggerRoute);
 ```
 
-3. API 文件
+1. API 文件
 
 ```js
 /**
@@ -89,12 +87,26 @@ app.use("/swagger", swaggerRoute);
  *         schema:
  *           $ref: '#/definitions/Stocks'
  */
+ 
+ 或是
+ 
+ /**
+ * @swagger
+ * /:
+ *   post:
+ *     summary: Add a new pet
+ *     parameters:
+ *       - in: formData
+ *         name: userId
+ */
+ 
+ 
 router.post('/', async (req, res) => {
  .......
 })
 ```
 
-4. Model 文件
+1. Model 文件
 
 ```js
 /**
