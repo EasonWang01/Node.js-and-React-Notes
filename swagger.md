@@ -566,7 +566,7 @@ header       parameters, such as X-MyHeader: Value
 cookie       parameters, which are passed in the Cookie header, such as Cookie: debug=0; csrftoken=BUSe35dohU3O1MZvDCU
 ```
 
-# Scheam 型別
+# Schema 型別
 
 ```js
 string (this includes dates and files)
