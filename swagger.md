@@ -556,5 +556,15 @@ paths:
 
 > response code 如果沒寫就看不到response
 
+# Request 參數
+
+```
+formData     POST Data
+path         parameters, such as /users/{id}
+query        parameters, such as /users?role=admin
+header       parameters, such as X-MyHeader: Value
+cookie       parameters, which are passed in the Cookie header, such as Cookie: debug=0; csrftoken=BUSe35dohU3O1MZvDCU 
+```
+
 
 
