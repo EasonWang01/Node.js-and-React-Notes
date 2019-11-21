@@ -579,3 +579,17 @@ object
 
 [https://swagger.io/docs/specification/data-models/data-types/\#array](https://swagger.io/docs/specification/data-models/data-types/#array)
 
+# 切分區域
+
+用tags，即可將其加入子項目
+
+```
+ * /amss1-login/:
+ *   get:
+ *     summary: Get ProjectRevisions
+ *     tags:
+ *       - Grid
+```
+
+![](/assets/螢幕快照 2019-11-21 下午1.56.42.png)
+
