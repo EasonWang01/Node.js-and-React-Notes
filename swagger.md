@@ -563,8 +563,19 @@ formData     POST Data
 path         parameters, such as /users/{id}
 query        parameters, such as /users?role=admin
 header       parameters, such as X-MyHeader: Value
-cookie       parameters, which are passed in the Cookie header, such as Cookie: debug=0; csrftoken=BUSe35dohU3O1MZvDCU 
+cookie       parameters, which are passed in the Cookie header, such as Cookie: debug=0; csrftoken=BUSe35dohU3O1MZvDCU
 ```
 
+# Scheam 型別
 
+```js
+string (this includes dates and files)
+number
+integer
+boolean
+array
+object
+```
+
+[https://swagger.io/docs/specification/data-models/data-types/\#array](https://swagger.io/docs/specification/data-models/data-types/#array)
 
