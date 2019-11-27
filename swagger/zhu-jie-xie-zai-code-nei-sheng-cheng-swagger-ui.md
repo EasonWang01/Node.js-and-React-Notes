@@ -87,9 +87,9 @@ app.use("/swagger", swaggerRoute);
  *         schema:
  *           $ref: '#/definitions/Stocks'
  */
- 
+
  或是
- 
+
  /**
  * @swagger
  * /:
@@ -99,8 +99,8 @@ app.use("/swagger", swaggerRoute);
  *       - in: formData
  *         name: userId
  */
- 
- 
+
+
 router.post('/', async (req, res) => {
  .......
 })
@@ -145,4 +145,47 @@ const GridSchema = new Schema({
 > port 為你 server 的 port
 
 參考至：[https://danielpecos.com/2017/09/06/rest-api-with-node-js-and-swagger/](https://danielpecos.com/2017/09/06/rest-api-with-node-js-and-swagger/)
+
+6.瀏覽產生出的swagger.json
+
+http://localhost:3000/[swagger/json](https://amss-5-portfolio.bridge5.asia/swagger/json)
+
+# 加入Redoc
+
+Redoc提供更完整的文件頁面
+
+[https://github.com/Redocly/redoc](https://github.com/Redocly/redoc)
+
+#### 使用方式
+
+在html加入如下
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ReDoc</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+
+    <!--
+    ReDoc doesn't change outer page styles
+    -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <redoc spec-url='http://petstore.swagger.io/v2/swagger.json'></redoc>
+    <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
+  </body>
+</html>
+```
+
+把上面的swagger.json替換為你的即可
 
