@@ -148,7 +148,7 @@ const GridSchema = new Schema({
 
 6.瀏覽產生出的swagger.json
 
-http://localhost:3000/[swagger/json](https://amss-5-portfolio.bridge5.asia/swagger/json)
+> [https://localhost:3000/swagger/json](https://amss-5-portfolio.bridge5.asia/swagger/json)
 
 # 加入Redoc
 
