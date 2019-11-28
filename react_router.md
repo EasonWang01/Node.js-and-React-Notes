@@ -272,7 +272,7 @@ app.get('*', function (req, res) {
 
 [https://github.com/reactjs/react-router-tutorial/tree/master/lessons/02-rendering-a-route](https://github.com/reactjs/react-router-tutorial/tree/master/lessons/02-rendering-a-route)
 
-# V4
+# React router Version 4, 5 用法
 
 [https://github.com/ReactTraining/react-router/issues/4928](https://github.com/ReactTraining/react-router/issues/4928)
 
@@ -287,7 +287,7 @@ app.get('*', function (req, res) {
       </Router>
 ```
 
-#### 換頁可用如下
+#### 1.換頁可用如下
 
 ```js
 class aa {
@@ -300,6 +300,14 @@ export default withRouter(aa);
 
 ```
 this.props.history.push("/some/Path");
+```
+
+#### 2.監聽路由
+
+```js
+this.props.history.listen((location, action) => {
+  console.log(location.pathname);
+});
 ```
 
 
