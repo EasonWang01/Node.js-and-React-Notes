@@ -75,5 +75,22 @@ export default Map;
 
 > 之後用`mapEle.current` 即可存取
 
+#### Memo
+
+memo只能用在stateless component
+
+功能類似pure component
+
+```js
+import React,{ memo } from 'react';
+
+ const Test = memo(function Son(props){
+    return (
+        <div>{props.val}</div>
+    )
+})
+export default Test;
+```
+
 
 
