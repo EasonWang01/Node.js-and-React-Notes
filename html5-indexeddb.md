@@ -103,6 +103,8 @@ const databaseName = 'projectDB';
               if (e.target.result) {
                 console.log(e.target.result);
                   e.target.result.continue();
+              } else {
+                console.log('read end');
               }
           };
           cursor.onerror = function(e) {
