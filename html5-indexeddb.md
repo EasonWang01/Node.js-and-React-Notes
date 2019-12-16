@@ -111,7 +111,7 @@ const databaseName = 'projectDB';
 
 ## 執行後可看到如下畫面：
 
-![](/assets/螢幕快照 2019-12-16 下午4.25.52.png)
+> ![](/assets/螢幕快照 2019-12-16 下午4.25.52.png)key 為 1是因為使用了 auto-increment
 
 ## HTML 範例：
 
