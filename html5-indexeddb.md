@@ -11,11 +11,109 @@ https://developers.google.com/web/ilt/pwa/working-with-indexeddb
 
 ## 使用：
 
+新增如下檔案：
 
+indexDB.js
 
+```js
+export default class indexDB {
+  constructor(dbName) {
+    this.dbName = dbName;
+  }
+  init(version, upgrade, done) {
+    const indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB;
+    console.log('init');
+    var openReq = indexedDB.open(this.dbName, version);
+    openReq.onsuccess = function (e) {
+      var db = e.target.result;
+      // Chrome 23 still has setVersion so don't upgrade
+      // unless the version is still old.
+      if ('setVersion' in db && db.version < version) {
+        var setVerReq = db.setVersion(version);
+        setVerReq.onsuccess = function (e) {
+          console.log('upgrading');
+          upgrade(e.target.result.db);
+          done();
+        };
+      } else {
+        done();
+      }
+    };
+    openReq.onupgradeneeded = function (e) {
+      // Never gets raised before Chrome 23.
+      console.log('upgrading');
+      upgrade(e.target.result);
+    };
+    openReq.onerror = function (e) {
+      console.log('init error');
+    };
+    openReq.onblocked = function (e) {
+      console.log('init blocked');
+    };
+  }
+  read(stores, fn, done) {
+    return this.transaction('readonly', stores, fn, done);
+  }
+  readWrite(stores, fn, done) {
+    return this.transaction('readwrite', stores, fn, done);
+  }
+  transaction(mode, stores, fn, done) {
+    var openReq = indexedDB.open(this.dbName);
+    openReq.onsuccess = function (e) {
+      var db = e.target.result;
+      var tx = db.transaction(stores, mode);
+      tx.oncomplete = function (e) {
+        if (done) {
+          done();
+        }
+      };
+      tx.onabort = function (e) {
+        console.log('tx abort');
+      };
+      tx.onerror = function (e) {
+        console.log('tx error');
+      };
+      fn(tx);
+    };
+    openReq.onerror = function (e) {
+      console.log('open tx error');
+    };
+  }
+}
+```
 
+app.js
 
-## 範例：
+```js
+import indexDB from './indexDB';
+const databaseName = 'projectDB';
+    const projectsStoreName = 'projects';
+    const dbVersion = 1;
+    const indexdb = new indexDB(databaseName);
+    indexdb.init(dbVersion, function (db) {
+      db.createObjectStore(projectsStoreName, {
+        autoIncrement: true
+      });
+    }, function () {
+      console.log('ready');
+      // 寫入資料
+      indexdb.readWrite([projectsStoreName], function (tx) {
+        var contact = {
+          name: 123,
+          email: 123
+        };
+        tx.objectStore(projectsStoreName).put(contact);
+      }, function () {
+        console.log('added');
+      });
+    });
+```
+
+## 執行後可看到如下畫面：
+
+![](/assets/螢幕快照 2019-12-16 下午4.25.52.png)
+
+## HTML 範例：
 
 ```html
 <!DOCTYPE html>
