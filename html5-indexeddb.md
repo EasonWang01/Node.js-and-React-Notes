@@ -96,6 +96,19 @@ const databaseName = 'projectDB';
       });
     }, function () {
       console.log('ready');
+      // 讀取資料
+        indexdb.read([ 'projects' ], function(tx) {
+          var cursor = tx.objectStore('projects').openCursor();
+          cursor.onsuccess = function(e) {
+              if (e.target.result) {
+                console.log(e.target.result);
+                  e.target.result.continue();
+              }
+          };
+          cursor.onerror = function(e) {
+              console.log('cursor error');
+          };
+      });
       // 寫入資料
       indexdb.readWrite([projectsStoreName], function (tx) {
         var contact = {
