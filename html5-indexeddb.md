@@ -130,6 +130,8 @@ const databaseName = 'projectDB';
 
 ## HTML 範例：
 
+[https://gist.github.com/jdiamond/3734629](https://gist.github.com/jdiamond/3734629)
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -337,6 +339,16 @@ const databaseName = 'projectDB';
     </script>
 </body>
 </html>
+```
+
+## 清空Table
+
+```js
+  clear(collection) {
+    return this.write([collection], tx => {
+      tx.objectStore(collection).clear();
+    });
+  }
 ```
 
 
