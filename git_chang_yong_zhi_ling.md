@@ -373,6 +373,12 @@ git checkout <Branch name>
 git merge a59867a8b0
 ```
 
+# 回復以前commit的內容，並覆蓋develop
+
+```
+git branch -f develop <git commit hash>
+```
+
 # 一次解決所有 conflict
 
 全部檔案套用遠端的
@@ -428,7 +434,7 @@ git pull origin pull/<request號碼>/head
 
 [https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes\#\_merge\_strategies](https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes#_merge_strategies)
 
-輸入 
+輸入
 
 ```
 git config --global merge.ours.driver true
