@@ -454,6 +454,15 @@ git config --global merge.ours.driver true
 
 之後commit 在 merge 即可
 
+# 創建空的branch
+
+```
+git checkout --orphan <分支名稱>
+git rm --cached -r .
+```
+
+> 創建新的branch原本檔案內容會帶過來，需要主動discard
+
 # 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
