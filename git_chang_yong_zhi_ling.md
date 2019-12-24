@@ -461,7 +461,7 @@ git checkout --orphan <分支名稱>
 git rm --cached -r .
 ```
 
-> 創建新的branch原本檔案內容會帶過來，需要主動discard
+> 創建新的branch原本檔案內容會帶過來，需要主動 discard
 
 # 其他不錯文章
 
