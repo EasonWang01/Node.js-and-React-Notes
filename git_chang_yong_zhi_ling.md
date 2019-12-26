@@ -463,6 +463,19 @@ git rm --cached -r .
 
 > 創建新的branch原本檔案內容會帶過來，需要主動 discard
 
+# Git 自訂快捷鍵
+
+> 把以下加在~/.zshrc 內 之後可以用 gac ... 直接取代 `git add . && git commit -m '....'`
+
+```shell
+gac() {
+    string=""
+    for i in "$@"; do string+=" $i"; done;
+    git add .
+    git commit -m "$string"
+}
+```
+
 # 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
