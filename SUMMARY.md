@@ -26,6 +26,7 @@
 * [使用MongoDB](shi_yong_mongodb.md)
   * [進階Mongo](shi_yong_mongodb/jin-jie-mongo.md)
   * [基本環境操作](shi_yong_mongodb/ba.md)
+  * [MongoDB Sharding](shi_yong_mongodb/mongodb-sharding.md)
 * [使用MySQL](shi_yong_mysql.md)
 * [使用PostgreSQL](shi_yong_postgresql.md)
   * [replica](shi_yong_postgresql/replica.md)
