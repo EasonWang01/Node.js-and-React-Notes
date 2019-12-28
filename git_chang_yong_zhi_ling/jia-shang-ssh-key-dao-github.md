@@ -53,7 +53,29 @@ pbcopy < ~/.ssh/公鑰名稱.pub
 
 # 讓不同Github帳號有不同KEY
 
-https://stackoverflow.com/a/10056098
+[https://stackoverflow.com/a/10056098](https://stackoverflow.com/a/10056098)
+
+
+
+# Windows
+
+產生金鑰匙
+
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+```
+start-ssh-agent.cmd
+ssh-add ~/.ssh/id_rsa
+```
+
+加到github
+
+```
+clip < ~/.ssh/id_rsa
+然後 https://github.com/settings/keys 貼上
+```
 
 
 
