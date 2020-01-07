@@ -294,5 +294,13 @@ sudo vim /private/etc/hosts
 sudo find / -name <檔案名稱>
 ```
 
+# 列出所有PID
+
+```
+ps -A
+或是
+ps aux
+```
+
 
 
