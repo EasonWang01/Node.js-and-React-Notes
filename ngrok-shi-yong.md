@@ -11,7 +11,7 @@
 ```
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 unzip ./ngrok.zip
-./ngork http <port> 
+./ngork http <port>
 ```
 
 ## 在背景跑
@@ -21,6 +21,8 @@ unzip ./ngrok.zip
 export WEBHOOK_URL="$(curl http://localhost:4040/api/tunnels | jq ".tunnels[0].public_url")"
 echo $WEBHOOK_URL
 ```
+
+> 要關閉可使用ps -A \| grep ngrok 然後再 kill -9 &lt;pid&gt;
 
 ## 查看dashboard
 
