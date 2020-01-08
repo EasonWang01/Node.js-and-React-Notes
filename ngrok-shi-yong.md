@@ -17,7 +17,7 @@ unzip ./ngrok.zip
 ## 在背景跑
 
 ```
-./ngrok http <port> > /dev/null
+./ngrok http <port> > /dev/null &
 export WEBHOOK_URL="$(curl http://localhost:4040/api/tunnels | jq ".tunnels[0].public_url")"
 echo $WEBHOOK_URL
 ```
