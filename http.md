@@ -330,5 +330,11 @@ var proxy = http.createServer(function (request, response) {
 }).listen(8080);
 ```
 
+# 發送Requst記得加上Header content type
+
+```js
+"content-type": "application/x-www-form-urlencoded",
+```
+
 
 
