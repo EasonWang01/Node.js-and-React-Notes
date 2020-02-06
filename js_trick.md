@@ -278,5 +278,35 @@ parseQuerystring(location.search)
 > console.log(urlParams.has('post')); // true
 > ```
 
+## Promise cancel
+
+拋出error當timeout，中斷所有其他promise
+
+```js
+function timeoutPromise(delay) {
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        throw new Error()
+      }, delay);
+    });
+  }
+
+var winnerPromise = new Promise(function (resolve) {
+    setTimeout(function () {
+        resolve('this is winner');
+    }, 4000);
+});
+var loserPromise = new Promise(function (resolve) {
+    setTimeout(function () {
+        resolve('this is loser');
+    }, 5000);
+});
+Promise.race([winnerPromise, loserPromise, timeoutPromise(1000)]).then(function (value) {
+    console.log(value); 
+}, function(err) {
+  console.log(err)
+});
+```
+
 
 
