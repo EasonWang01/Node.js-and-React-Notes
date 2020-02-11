@@ -1,18 +1,21 @@
 # ESLint
 
-https://wohugb.gitbooks.io/javascript/content/tool/lintmd.html
+[https://wohugb.gitbooks.io/javascript/content/tool/lintmd.html](https://wohugb.gitbooks.io/javascript/content/tool/lintmd.html)
 
-##用處:用來檢查code的語法
+## 用處:用來檢查code的語法
+
 1.安裝
 
 ```
-npm install -g eslint  
+npm install -g eslint
 ```
+
 2.配置
 
 ```
 於根目錄新增   .eslintrc.json
 ```
+
 ```
 {
   "globals": {
@@ -33,20 +36,27 @@ npm install -g eslint
   }
 }
 ```
-看到上面的rules的數字，對照下表，以上面為例，意思是對所有出現quotes(引號)的地方要使用double(兩個引號)，強制性為1(只產生警告訊息)
+
+看到上面的rules的數字，對照下表，以上面為例，意思是對所有出現quotes\(引號\)的地方要使用double\(兩個引號\)，強制性為1\(只產生警告訊息\)
+
 ```
 0 - Disable the rule
 1 - Warn about the rule
 2 - Throw error about the rule
 ```
-##其他rules可參考官網
-http://eslint.org/docs/rules/
+
+## 其他rules可參考官網
+
+[http://eslint.org/docs/rules/](http://eslint.org/docs/rules/)
 
 3.使用parser去解析ES6
+
 ```
 npm install babel-eslint
 ```
+
 之後在.eslintrc.json加上
+
 ```
 {
   "parser": "babel-eslint",
@@ -55,13 +65,16 @@ npm install babel-eslint
   }
 }
 ```
-#如何執行?
+
+# 如何執行?
+
 ```
 eslint 檔案名稱.js
 ```
-##其他規則
-```
 
+## 其他規則
+
+```
 {  
   "env": {  
     "browser": true,  
@@ -90,9 +103,9 @@ eslint 檔案名稱.js
           return "Hello!"; 
         } 
      }; 
- 
+
      等同於 
- 
+
      var o = { 
        method: function() { 
          return "Hello!"; 
@@ -105,7 +118,7 @@ eslint 檔案名稱.js
       var foo = 'bar'; 
       var baz = {foo}; 
       baz // {foo: "bar"} 
- 
+
       // 等同於 
       var baz = {foo: foo}; 
     */  
@@ -124,7 +137,7 @@ eslint 檔案名稱.js
     // http://es6.ruanyifeng.com/#docs/object#對像的擴展運算符  
     "experimentalObjectRestSpread": true  
   },  
-  
+
   "rules": {  
     // 定義對像的set存取器屬性時，強制定義get  
     "accessor-pairs": 2,  
@@ -318,17 +331,29 @@ eslint 檔案名稱.js
     "wrap-regex": 0,  
     "yoda": [2, "never"]  
   }  
-}  
+}
 ```
-#使用sublime+ESLint
-進入sublime的package manage(需先安裝)
+
+# 使用sublime+ESLint
+
+進入sublime的package manage\(需先安裝\)
 
 輸入
+
 ```
 SublimeLinter-eslint
 ```
 
+參考至  
+[http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/](http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/)
 
-參考至
-http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/
+# Eslint React
+
+如果在vscode React 沒有顯示 syntax error線，可安裝
+
+```
+yarn add eslint-plugin-react
+```
+
+
 
