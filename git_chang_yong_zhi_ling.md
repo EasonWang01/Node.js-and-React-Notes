@@ -131,11 +131,19 @@ git fetch
 git checkout 分支名稱
 ```
 
-# Git Pull 時避免auto merge commit
+# 使用 Git rebase 讓 Git Pull 時避免auto merge commit
 
 > 時常使用git pull之後會自動出現Merge branch 'master' of....之類的訊息在自己的commit之前
 >
 > 只要使用git pull --rebase即可解決
+
+```
+git:(feature/branch) git pull --rebase origin master
+git:(feature/branch) 修改衝突
+git:(feature/branch) git add .
+git:(feature/branch) git rebase --continue
+git:(feature/branch) git push origin <feature/branch> -f
+```
 
 [http://kernowsoul.com/blog/2012/06/20/4-ways-to-avoid-merge-commits-in-git/](http://kernowsoul.com/blog/2012/06/20/4-ways-to-avoid-merge-commits-in-git/)
 
