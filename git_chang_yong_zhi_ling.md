@@ -153,7 +153,7 @@ git:(feature/branch) git push origin <feature/branch> -f
 
 當合併分枝時想乾淨一點，可以用squash
 
-記得第一個pick 或 squash 要放在該feature 第一個commit 的前一個。
+記得第一個pick 要放在該feature 的前一個commit。
 
 ![](/assets/螢幕快照 2020-02-13 上午10.56.00.png)
 
