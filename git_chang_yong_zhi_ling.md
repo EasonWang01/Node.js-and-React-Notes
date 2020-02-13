@@ -152,7 +152,7 @@ git:(feature/branch) git push origin <feature/branch> -f
 # 使用 Git rebase 來 squash commit
 
 ```
-git rebase -i <feature commit的前一個 commit>
+git rebase -i <feature 第一個commit之前的前一個 commit>
 ```
 
 當合併分枝時想乾淨一點，可以用squash
