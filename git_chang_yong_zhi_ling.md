@@ -149,6 +149,14 @@ git:(feature/branch) git push origin <feature/branch> -f
 
 [https://ihower.tw/blog/archives/3843](https://ihower.tw/blog/archives/3843)
 
+# 使用 Git rebase 來 squash commit
+
+當合併分枝時想乾淨一點，可以用squash
+
+![](/assets/螢幕快照 2020-02-13 上午10.56.00.png)
+
+> squash 可改為 fixup 可以移除commit訊息
+
 # 有關submodule
 
 [https://blog.wu-boy.com/2011/09/introduction-to-git-submodule/](https://blog.wu-boy.com/2011/09/introduction-to-git-submodule/)
