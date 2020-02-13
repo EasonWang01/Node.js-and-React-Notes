@@ -151,7 +151,17 @@ git:(feature/branch) git push origin <feature/branch> -f
 
 # 使用 Git rebase 來 squash commit
 
+```
+git rebase -i <feature commit的前一個 commit>
+```
+
 當合併分枝時想乾淨一點，可以用squash
+
+```
+pick 2bab3e7 test1
+squash 27f6ed6 test2
+// 例如此例 27f6ed6 會合併進去 2bab3e7
+```
 
 記得第一個pick 要放在該feature 的前一個commit。
 
