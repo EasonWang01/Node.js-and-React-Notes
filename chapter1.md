@@ -4,7 +4,7 @@
 
 class.js
 
-```
+```js
 function hello() {
     console.log('Hello World!');
 }
@@ -13,7 +13,7 @@ hello();
 
 之後開啟終端機，並輸入`cd 你的檔案路徑`
 
-輸入node class
+輸入`node class`
 
 # 2.模組
 
@@ -109,8 +109,7 @@ NodeJS定義了一個特殊的node\_modules目錄用於存放模塊。例如某�
 
 6.手動設定預設加載模組路徑
 
-1.  
-將以下放在require前
+1. 將以下放在require前
 
 ```
 module.paths.push("./as", "one/more/path");
