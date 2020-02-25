@@ -1,4 +1,4 @@
-# Table of contents
+# Summary
 
 * [Introduction](README.md)
 * [Node.js基本](chapter1.md)
@@ -194,4 +194,5 @@
 * [HTML5 IndexedDB](html5-indexeddb-1.md)
 * [Ngrok 使用](ngrok-shi-yong.md)
 * [Firebase 教學](firebase-jiao-xue.md)
+* [演算法筆記](yan-suan-fa-bi-ji.md)
 
