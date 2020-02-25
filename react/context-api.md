@@ -1,5 +1,7 @@
 # Context API
 
+## Context API
+
 React 16.3後新增了Context API，可以用來替代Redux。
 
 官方文件:
@@ -14,11 +16,11 @@ React 16.3後新增了Context API，可以用來替代Redux。
 
 > [https://github.com/EasonWang01/React-context-api-boilerplate](https://github.com/EasonWang01/React-context-api-boilerplate)
 
-# 範例:
+## 範例:
 
 App.js
 
-```js
+```javascript
 import React, { PureComponent, createContext } from 'react';
 import {
   BrowserRouter as Router,
@@ -65,7 +67,7 @@ export default App;
 
 Login.js
 
-```js
+```javascript
 import React, { PureComponent } from 'react';
 
 export default class Login extends PureComponent {
@@ -84,11 +86,11 @@ export default class Login extends PureComponent {
 }
 ```
 
-## 步驟:
+### 步驟:
 
 1.使用Provider提供根組件，任何包在Provider內的子組件均可使用Consumer來存取根組件數據。
 
-```js
+```javascript
 const Context = createContext()
 
 const { Provider, Consumer } = Context
@@ -98,11 +100,9 @@ const { Provider, Consumer } = Context
 
 3.在元件內使用Consumer包住所有dom，dom內即可存取provider的數據。
 
-# 相關框架
+## 相關框架
 
 > [https://github.com/didierfranc/react-waterfall](https://github.com/didierfranc/react-waterfall)
 >
 > [https://github.com/elisherer/react-waterfall-redux-devtools-middleware](https://github.com/elisherer/react-waterfall-redux-devtools-middleware)
-
-
 

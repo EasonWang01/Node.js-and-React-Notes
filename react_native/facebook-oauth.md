@@ -1,3 +1,5 @@
+# Facebook OAUTH
+
 [https://github.com/facebook/react-native-fbsdk](https://github.com/facebook/react-native-fbsdk)
 
 [https://developers.facebook.com/docs/android/getting-started/](https://developers.facebook.com/docs/android/getting-started/)
@@ -6,7 +8,7 @@
 
 新增權限
 
-```
+```text
 <LoginButton
   publishPermissions={["email", "user_friends", "user_photos"]}
 ....
@@ -14,20 +16,18 @@
 
 但是要注意現在許多權限都要審核並申請。
 
-![](/assets/螢幕快照 2019-05-31 下午1.47.31.png)  
+![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-05-31%20下午1.47.31.png)  
 [https://developers.facebook.com/apps/350004755369462/app-review/permissions/](https://developers.facebook.com/apps/350004755369462/app-review/permissions/)
 
-# 使用
+## 使用
 
-```
+```text
 import { LoginButton, AccessToken, LoginManager } from 'react-native-fbsdk';
 ```
 
-
-
 1.使用內建UI button
 
-```js
+```javascript
   <LoginButton
           readPermissions={["email", "public_profile"]}
           onLoginFinished={
@@ -57,12 +57,12 @@ import { LoginButton, AccessToken, LoginManager } from 'react-native-fbsdk';
 
 2.自定義UI，使用Login Manager
 
-```js
+```javascript
 <Button
   title="Continute with FB"
   onPress={() => this.FBLoginTrigger()}
 />
-	
+
 FBLoginTrigger() {
     const context = this;
     LoginManager.logInWithReadPermissions(["email", "public_profile"]).then(
@@ -89,6 +89,4 @@ FBLoginTrigger() {
     );
   }
 ```
-
-
 

@@ -1,4 +1,6 @@
-# 跨平台測試
+# UI Test \(puppeteer\)
+
+## 跨平台測試
 
 [https://saucelabs.com/beta/dashboard/manual](https://saucelabs.com/beta/dashboard/manual)
 
@@ -6,9 +8,7 @@
 
 [https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Your\_own\_automation\_environment](https://developer.mozilla.org/zh-TW/docs/Learn/Tools_and_testing/Cross_browser_testing/Your_own_automation_environment)
 
-# 
-
-# [GoogleChrome](https://github.com/GoogleChrome) / [**puppeteer**](https://github.com/GoogleChrome/puppeteer)
+## [GoogleChrome](https://github.com/GoogleChrome) / [**puppeteer**](https://github.com/GoogleChrome/puppeteer)
 
 安裝:[https://github.com/GoogleChrome/puppeteer](https://github.com/GoogleChrome/puppeteer)
 
@@ -18,13 +18,13 @@
 
 > 記得加上headless: false 才會打開瀏覽器
 
-```
+```text
 const browser = await puppeteer.launch({headless: false});
 ```
 
 Example:
 
-```js
+```javascript
 const puppeteer = require('puppeteer');
 (async () => {
   const browser = await puppeteer.launch({ headless: false });
@@ -39,19 +39,19 @@ const puppeteer = require('puppeteer');
 })();
 ```
 
-## 連線到已經開啟的chrome
+### 連線到已經開啟的chrome
 
 因為預設程式結束時chrome也會關閉，所以要用connect的方法。
 
 使用以下方式開啟chrome
 
-```
+```text
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --no-first-run --no-default-browser-check --user-data-dir=$(mktemp -d -t 'chrome-remote_data_dir')
 ```
 
-之後將以下擷取下來![](/assets/螢幕快照 2019-05-29 下午5.05.31.png)之後用如下方式
+之後將以下擷取下來![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-05-29%20下午5.05.31.png)之後用如下方式
 
-```js
+```javascript
 const puppeteer = require('puppeteer');
 const browserWSEndpoint = 'ws://127.0.0.1:9222/devtools/browser/15d59f55-f1c9-4c95-89c9-3f164988ba58';
 (async () => {
@@ -67,19 +67,19 @@ const browserWSEndpoint = 'ws://127.0.0.1:9222/devtools/browser/15d59f55-f1c9-4c
 })();
 ```
 
-# Puppeteer-firefox
+## Puppeteer-firefox
 
 [https://github.com/GoogleChrome/puppeteer/tree/master/experimental/puppeteer-firefox](https://github.com/GoogleChrome/puppeteer/tree/master/experimental/puppeteer-firefox)goo
 
-# WebDriver.io
+## WebDriver.io
 
 [http://webdriver.io/](http://webdriver.io/)
 
-# selenium-webdriver
+## selenium-webdriver
 
 [https://github.com/SeleniumHQ/selenium/tree/master/javascript/node/selenium-webdriver](https://github.com/SeleniumHQ/selenium/tree/master/javascript/node/selenium-webdriver)
 
-# nightmare
+## nightmare
 
 \(使用electron當作介面\)
 
@@ -89,7 +89,7 @@ const browserWSEndpoint = 'ws://127.0.0.1:9222/devtools/browser/15d59f55-f1c9-4c
 
 [https://github.com/rosshinkley/nightmare-examples/blob/master/docs/common-pitfalls/async-operations-loops.md](https://github.com/rosshinkley/nightmare-examples/blob/master/docs/common-pitfalls/async-operations-loops.md)
 
-```js
+```javascript
 var Nightmare = require('nightmare'),
   nightmare = Nightmare({
     show: true
@@ -140,7 +140,7 @@ nightmare
 
 mocha + nightmare範例
 
-```js
+```javascript
 import Nightmare from 'nightmare';
 import {expect} from 'chai';
 
@@ -166,11 +166,11 @@ describe('test duckduckgo search results', () => {
 
 [https://segment.com/blog/ui-testing-with-nightmare/](https://segment.com/blog/ui-testing-with-nightmare/)
 
-# phantomjs
+## phantomjs
 
 [http://phantomjs.org/quick-start.html](http://phantomjs.org/quick-start.html)
 
-# casper.js
+## casper.js
 
 [http://casperjs.org/](http://casperjs.org/)
 

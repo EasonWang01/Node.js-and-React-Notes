@@ -1,16 +1,21 @@
 # Node ajax
 
+## Node ajax
+
 Server side
-```
+
+```text
 app.post("/login",function(req,res){
     console.log(req.body);//console出ajax.data的內容
     res.send(req.body);//輸出到client端的ajax.success中
-	res.end();
-	
+    res.end();
+
 });
 ```
+
 Client side
-```
+
+```text
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,9 +55,9 @@ Client side
 //取消表單行為
 
   $('#form1').on('submit', function(e){
-   
+
     return false;
-    
+
   });
 
 
@@ -66,17 +71,20 @@ var account = $("#account").val();
     success:function(result){console.log(result)},
     dataType:'json'
     //如果指定datatype則傳送和返回的data如不符合，則不顯示
-    
-   
+
+
   });
 });
 </script>
 </body>
 </html>
 ```
-#xmlhttp.send() 格式
 
-```
+## xmlhttp.send\(\) 格式
+
+```text
 xhttp.send('_id ='+ this.getAttribute('dataid'));
 ```
+
 必須寫為 =，如果寫:型態會出現格式問題
+

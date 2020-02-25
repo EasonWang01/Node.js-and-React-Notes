@@ -1,55 +1,48 @@
-# #簡介:
+# place autocomplete
+
+## \#簡介:
 
 為我們輸入地址在input時會自動填入地區
 
+[https://developers.google.com/maps/documentation/javascript/places](https://developers.google.com/maps/documentation/javascript/places)
 
-https://developers.google.com/maps/documentation/javascript/places
-
-中文
-https://developers.google.com/places/web-service/intro
+中文 [https://developers.google.com/places/web-service/intro](https://developers.google.com/places/web-service/intro)
 
 先到google console 新增相關api與key
 
+## \#使用
 
-# #使用
-
-####1.申請ＡＰＩ服務
+### 1.申請ＡＰＩ服務
 
 要申請兩個
 
-一個是Google Maps JavaScript API
-另一個是Google Places API Web Service
+一個是Google Maps JavaScript API 另一個是Google Places API Web Service
 
 因為place需求Maps API
 
+### 2.載入SDK並更改api key
 
-####2.載入SDK並更改api key
-
-```
+```text
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAodeKstiifB9WhEnZrZY7_mA8abcyJpY&libraries=places"></script>
 ```
 
-####3.啟用
+### 3.啟用
 
-```
+```text
 <input ref="autosearch" type="text" size="50" />
 ```
 
->因使用React所以google前面加上window
+> 因使用React所以google前面加上window
 
-```
+```text
 var autocomplete = new window.google.maps.places.Autocomplete(this.refs.autosearch);
-
 ```
 
+### 4.偵測輸入
 
-####4.偵測輸入
-
-1.用了除與2是因為他有兩個數值(目前不清楚f,b分別表示什麼)
-2.可使用geocode來把經緯度轉換為地址(但geocode api官方表示耗用資源高，所以每天有限制免費的request數目，超過將收費)
+1.用了除與2是因為他有兩個數值\(目前不清楚f,b分別表示什麼\) 2.可使用geocode來把經緯度轉換為地址\(但geocode api官方表示耗用資源高，所以每天有限制免費的request數目，超過將收費\)
 
 ```javascript
-
     const context = this;
     window.google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
@@ -77,6 +70,5 @@ var autocomplete = new window.google.maps.places.Autocomplete(this.refs.autosear
     });
 ```
 
-簡單範例
-http://stackoverflow.com/questions/18345875/google-places-api-example
+簡單範例 [http://stackoverflow.com/questions/18345875/google-places-api-example](http://stackoverflow.com/questions/18345875/google-places-api-example)
 

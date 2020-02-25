@@ -1,8 +1,10 @@
-# 部屬到Google Engine \(GCE\)
+# Google Cloud Platform \(GCP\)
+
+## 部屬到Google Engine \(GCE\)
 
 前言:Google Cloud Platform 雲端平台有兩種服務一個叫做 Compute Engine，另一個叫做 App Engine，觀念別弄混了，以前 google 有一個專門放置 app Engine 的平台，現在已經把平台和做了整合
 
-# 使用:
+## 使用:
 
 到資訊主頁後點選Compute Engine
 
@@ -11,11 +13,11 @@
 
 他的SSH可以直接用瀏覽器連線
 
-# 1.基本上跟著他網頁的指示即可學會操作
+## 1.基本上跟著他網頁的指示即可學會操作
 
 創建好之後，在instance的VM執行個體下，點SSH按鈕會開啟一個視窗即可直接連線到機器
 
-# 2.使用putty連線GCE
+## 2.使用putty連線GCE
 
 [https://gist.github.com/feczo/7282a6e00181fde4281b](https://gist.github.com/feczo/7282a6e00181fde4281b)
 
@@ -46,7 +48,7 @@
 
 > PS:不建議將private key存在C曹根目錄等需要admin存取的資料夾，因為之後使用filezilla時需要存取此key會找不到檔案
 
-# 3.其他linux使用教學
+## 3.其他linux使用教學
 
 ### 查看現在占用的PORT
 
@@ -76,7 +78,7 @@
 
 ### 修改apache2的預設監聽port
 
-```
+```text
 1.In /etc/apache2/ports.conf, change the port as
 
 Listen 44400
@@ -95,7 +97,7 @@ sudo service apache2 restart
 之後登入phpmyadmin改為如下  
 `http://www.sakatu.com:8080/phpmyadmin/`
 
-# 架設Node.js server無法監聽80 port
+## 架設Node.js server無法監聽80 port
 
 產生如下錯誤
 
@@ -113,43 +115,39 @@ sudo service apache2 restart
 
 [http://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode](http://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode)
 
-# \#開啟其他PORT
+## \#開啟其他PORT
 
 點選左上的選單然後點選網路
 
-![](/assets/螢幕快照 2017-06-11 上午10.43.37.png)
+![](.gitbook/assets/ying-mu-kuai-zhao-20170611-shang-wu-10.43.37.png)
 
-記得`目標標記 要輸入http-server  或是選擇apply to all也可`
+記得`目標標記 要輸入http-server 或是選擇apply to all也可`
 
 設定如下
 
-0.0.0.0/0代表開放所有IP  \(記得要有/0\)
+0.0.0.0/0代表開放所有IP \(記得要有/0\)
 
-![](/assets/螢幕快照 2017-06-11 上午10.43.50.png)
+![](.gitbook/assets/ying-mu-kuai-zhao-20170611-shang-wu-10.43.50.png)
 
-# \#gcloud
+## \#gcloud
 
 VPS內的命令 可以操控VPS
 
 如權限不夠需先login
 
-```
+```text
 gcloud auth login
 ```
 
 以下為新增防火牆範例
 
-```
+```text
 gcloud compute firewall-rules create cassandra-rule --allow="tcp:9042,tcp:9160" --network="default" --description="Allow external Cassandra Thrift/CQL connections"
 ```
-
-
 
 #### \#可以方便上傳下載檔案
 
 \(點選ssh網頁右上方的齒輪\)
 
-![](/assets/w3.png)
-
-
+![](.gitbook/assets/w3.png)
 

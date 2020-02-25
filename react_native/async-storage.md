@@ -1,10 +1,10 @@
-# AsyncStorage
+# Async Storage
 
 用來儲存內容，類似localstorage。
 
 [https://facebook.github.io/react-native/docs/asyncstorage](https://facebook.github.io/react-native/docs/asyncstorage)
 
-```js
+```javascript
 import { AsyncStorage } from 'react-native';
 
 _storeData = async () => {
@@ -27,6 +27,4 @@ _retrieveData = async () => {
   }
 };
 ```
-
-
 

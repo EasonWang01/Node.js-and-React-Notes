@@ -1,4 +1,6 @@
-# Google Sheet
+# Google sheet
+
+## Google Sheet
 
 Google試算表 API
 
@@ -8,11 +10,11 @@ Google試算表 API
 
 1.點選Enable The Sheet API然後下載憑證
 
-2.創建新的google sheet 並更改 code 的 spreadsheetId![](/assets/螢幕快照 2019-05-30 上午10.48.31132234.png)3.npm install googleapis
+2.創建新的google sheet 並更改 code 的 spreadsheetId![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-05-30%20上午10.48.31132234.png)3.npm install googleapis
 
 程式範例:
 
-```js
+```javascript
 const fs = require('fs');
 const readline = require('readline');
 const { google } = require('googleapis');
@@ -105,11 +107,11 @@ function listMajors(auth) {
 }
 ```
 
-> 第一次執行後在console會產生網址 之後到那個網址會有hash 把它貼到console  之後本地電腦會產生token，供下次使用
+> 第一次執行後在console會產生網址 之後到那個網址會有hash 把它貼到console 之後本地電腦會產生token，供下次使用
 
 Range可參考
 
-```
+```text
 Sheet1!A1:B2 refers to the first two cells in the top two rows of Sheet1.
 Sheet1!A:A refers to all the cells in the first column of Sheet1.
 Sheet1!1:2 refers to the all the cells in the first two rows of Sheet1.
@@ -122,7 +124,7 @@ SCOPE\( read/write \)
 
 如出現
 
-```
+```text
    [ { message: 'Request had insufficient authentication scopes.',
        domain: 'global',
        reason: 'forbidden' } ] }
@@ -132,7 +134,7 @@ SCOPE\( read/write \)
 
 [https://github.com/google/google-auth-library-nodejs/issues/168](https://github.com/google/google-auth-library-nodejs/issues/168)
 
-```
+```text
 value | describe
 ---- | ---
 https://www.googleapis.com/auth/spreadsheets.readonly | Allows read-only access to the user's sheets and their properties.
@@ -142,9 +144,9 @@ https://www.googleapis.com/auth/drive.file |    Per-file access to files created
 https://www.googleapis.com/auth/drive |    Full, permissive scope to access all of a user's files. Request this scope only when it is strictly necessary.
 ```
 
-#### 寫入範例\(記得改scope\)
+### 寫入範例\(記得改scope\)
 
-```js
+```javascript
 function listMajors(auth) {
     var sheets = google.sheets('v4');
     var values = [
@@ -173,9 +175,9 @@ function listMajors(auth) {
 }
 ```
 
-# 讀取A sheet並寫入 B sheet範例
+## 讀取A sheet並寫入 B sheet範例
 
-```js
+```javascript
 const fs = require('fs');
 const readline = require('readline');
 const { google } = require('googleapis');
@@ -290,6 +292,4 @@ async function doAction(auth) {
   updateSheet1(auth, sheet2Value);
 }
 ```
-
-
 

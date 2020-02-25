@@ -1,26 +1,24 @@
-#facebook 按讚與分享API
-
+# facebook like ,share
 
 按讚
 
 給不同的`data-href`即可區別不同的讚
 
-```
+```text
 <div className="fb-like" data-href='https://sakatu.com/123' data-layout="standard" data-action="like" data-size="small" data-show-faces="true" ></div>
 
 <div className="fb-like" data-href='https://sakatu.com/1232' data-layout="standard" data-action="like" data-size="small" data-show-faces="true" ></div>
-
 ```
-
 
 分享
 
-可以直接嵌入或是使用API  `FB.ui`方式呼叫
+可以直接嵌入或是使用API `FB.ui`方式呼叫
 
 以下示範`FB.ui`
 
-https://developers.facebook.com/docs/sharing/reference/share-dialog
-```
+[https://developers.facebook.com/docs/sharing/reference/share-dialog](https://developers.facebook.com/docs/sharing/reference/share-dialog)
+
+```text
    FB.ui(
     {
         method: 'share',
@@ -34,3 +32,4 @@ https://developers.facebook.com/docs/sharing/reference/share-dialog
         // your code to manage the response
      });
 ```
+

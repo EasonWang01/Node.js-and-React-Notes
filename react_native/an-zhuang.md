@@ -1,6 +1,8 @@
-# 使用Expo
+# Expo
 
-> npm建議版本 4.6.1  or 5.3.0  \(其他容易會有安裝package失敗問題\)
+## 使用Expo
+
+> npm建議版本 4.6.1 or 5.3.0 \(其他容易會有安裝package失敗問題\)
 >
 > 記得執行的時候genymotion 執行的Android版本要跟你安裝的Android SDK有對應。
 
@@ -12,7 +14,7 @@
 
 但是Expo也有提供許多SDK\(包含oauth\)
 
-```
+```text
 https://docs.expo.io/versions/v16.0.0/sdk/facebook.html#expofacebookloginwithreadpermissionsasyncappid-options
 ```
 
@@ -20,9 +22,9 @@ https://docs.expo.io/versions/v16.0.0/sdk/facebook.html#expofacebookloginwithrea
 
 論壇:[https://forums.expo.io/](https://forums.expo.io/)
 
-#### Android on OSX
+### Android on OSX
 
-```
+```text
 1.下載virtualBox 與 Genymotion
 2.npm install create-react-native-app -g
 3.create-react-native-app my-app 
@@ -31,11 +33,11 @@ https://docs.expo.io/versions/v16.0.0/sdk/facebook.html#expofacebookloginwithrea
 
 > 可能會要你同意permission \(Draw over other apps 這時打勾後點上一頁即可
 
-#### Android on Windows
+### Android on Windows
 
-步驟和上面相同  之後  下載Android 的expo app然後掃描qr code
+步驟和上面相同 之後 下載Android 的expo app然後掃描qr code
 
-```
+```text
 如果想用模擬器的方法
 必須要把genymotion 的setting 將 adb路徑加入
 https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md#using-genymotions-adb
@@ -45,9 +47,9 @@ https://github.com/react-community/create-react-native-app/blob/master/react-nat
 所以必須安裝android SDK
 ```
 
-> 之後開發時存檔建議按兩下  時常會發生按一下不會自動reload問題
+> 之後開發時存檔建議按兩下 時常會發生按一下不會自動reload問題
 
-# 使用Expo
+## 使用Expo
 
 可以使用`yarn eject` 來還原為原本專案。
 

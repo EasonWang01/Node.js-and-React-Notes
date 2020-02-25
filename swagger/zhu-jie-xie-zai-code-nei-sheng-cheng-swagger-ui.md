@@ -1,16 +1,18 @@
 # 註解寫在Code內生成swagger UI
 
-## 安裝
+## 註解寫在Code內生成swagger UI
 
-```
+### 安裝
+
+```text
 yarn add swagger-jsdoc swagger-ui-express swagger-model-validator
 ```
 
-## 使用
+### 使用
 
 1. 新增： /router/swagger.js
 
-```js
+```javascript
 const express = require('express')
 const router = express.Router()
 
@@ -64,14 +66,14 @@ module.exports = router;
 
 server.js
 
-```js
+```javascript
 const swaggerRoute = require("./router/swagger");
 app.use("/swagger", swaggerRoute);
 ```
 
 1. API 文件
 
-```js
+```javascript
 /**
  * @swagger
  * /:
@@ -108,7 +110,7 @@ router.post('/', async (req, res) => {
 
 1. Model 文件
 
-```js
+```javascript
 /**
  * @swagger
  * definitions:
@@ -150,7 +152,7 @@ const GridSchema = new Schema({
 
 > [https://localhost:3000/swagger/json](https://amss-5-portfolio.bridge5.asia/swagger/json)
 
-# 加入Redoc
+## 加入Redoc
 
 Redoc提供更完整的文件頁面
 
@@ -160,7 +162,7 @@ Redoc提供更完整的文件頁面
 
 在html加入如下
 
-```html
+```markup
 <!DOCTYPE html>
 <html>
   <head>

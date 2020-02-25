@@ -1,14 +1,14 @@
-# 產生Log後寫入到檔案
+# 有關Log
 
 這邊使用log模組
 
-https://github.com/tj/log.js
+[https://github.com/tj/log.js](https://github.com/tj/log.js)
 
-```
+```text
 yarn add log
 ```
 
-```js
+```javascript
 const fs = require('fs');
 const Log = require('log');
 const dir = 'logs';
@@ -22,7 +22,7 @@ const log = new Log('info', fs.createWriteStream(`${dir}/info_${Date.now()}.log`
 
 寫入
 
-```js
+```javascript
   log.info({
     message: '...',
     user: '...'
@@ -35,15 +35,11 @@ const log = new Log('info', fs.createWriteStream(`${dir}/info_${Date.now()}.log`
 
 讀取
 
-```js
+```javascript
 var stream = fs.createReadStream(`${dir}/info_1529635751525.log`)
 logReader = new Log('debug', stream);
 logReader.on('line', function (line) {
   console.log(line);
 });
 ```
-
-
-
-
 

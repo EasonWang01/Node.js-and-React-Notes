@@ -1,28 +1,28 @@
 # VS code 編輯器
 
-#### 1.記得先到喜好設定的工作區設定tab size不然程式碼排版會改變
+## 1.記得先到喜好設定的工作區設定tab size不然程式碼排版會改變
 
 把想要改的地方從左側貼到右側在輸入數字即可
 
-```
+```text
 {
   "editor.tabSize": 2
 }
 ```
 
-#### 2.快速關閉開啟資料夾結構bar
+## 2.快速關閉開啟資料夾結構bar
 
-```
+```text
 cmd+b
 ```
 
-#### 3.預設為使用cmd+z+shift（較特別）為回復上一步
+## 3.預設為使用cmd+z+shift（較特別）為回復上一步
 
 使用以下改為
 
 keybindings.json
 
-```
+```text
 // 將您的按鍵組合放入此檔案中以覆寫預設值
 [
     { "key": "cmd+y",           "command": "redo",
@@ -30,11 +30,13 @@ keybindings.json
 ]
 ```
 
-#### 4.開啟終端機
+## 4.開啟終端機
 
-    control+`
+```text
+control+`
+```
 
-#### 5.從terminal開啟vscode
+## 5.從terminal開啟vscode
 
 先到vscode中點選`Shift+command+P`
 
@@ -42,11 +44,11 @@ keybindings.json
 
 之後cd到專案資料夾即可輸入`code .`開啟
 
-#### 6.code snippet
+## 6.code snippet
 
 [https://www.facebook.com/pjchender/photos/a.1330200713732028.1073741836.768320183253420/1330201030398663/?type=3&theater](https://www.facebook.com/pjchender/photos/a.1330200713732028.1073741836.768320183253420/1330201030398663/?type=3&theater)
 
-#### 7.Format code
+## 7.Format code
 
 [https://stackoverflow.com/questions/29973357/how-do-you-format-code-in-visual-studio-code-vscode](https://stackoverflow.com/questions/29973357/how-do-you-format-code-in-visual-studio-code-vscode)
 
@@ -56,13 +58,13 @@ keybindings.json
 
 8.選不同行的相同字
 
-```
+```text
 選字完後按下   command + d
 
 //windows  ctrl + d
 ```
 
-#### 8. Code snippets
+## 8. Code snippets
 
 > 可自行定義code 快捷鍵
 
@@ -74,13 +76,11 @@ keybindings.json
 
 > 範例: [https://github.com/xabikos/vscode-react/blob/master/snippets/snippets.json](https://github.com/xabikos/vscode-react/blob/master/snippets/snippets.json)
 
-#### 9.Git blame即時顯示
+## 9.Git blame即時顯示
 
 在plugin輸入`git blame` 下載插件。
 
 之後會在左下方即時顯時該行是誰commit的。
 
-![](/assets/Screen Shot 2018-08-09 at 11.44.01 AM.png)
-
-
+![](.gitbook/assets/screen-shot-2018-08-09-at-11.44.01-am.png)
 

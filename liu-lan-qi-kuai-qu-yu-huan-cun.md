@@ -1,4 +1,6 @@
-# 瀏覽器快取與緩存（Etag 與 If-None-Match）
+# 瀏覽器快取與緩存（Etag, If-None-Match）
+
+## 瀏覽器快取與緩存（Etag 與 If-None-Match）
 
 #### 為何要用：
 
@@ -10,11 +12,11 @@
 
 這個部分 If-None-Match 瀏覽器會自動實作（value自動在下次請求時設為 Etag 的 value），但Etag附加以及If-None-Match 的比對需要自行在 Server實作。
 
-![](/assets/螢幕快照 2019-07-03 下午5.54.47.png)
+![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-07-03%20下午5.54.47.png)
 
-## 範例
+### 範例
 
-```js
+```javascript
 const http = require('http');
 const fs = require('fs');
 const etag = require('etag');
@@ -53,7 +55,7 @@ console.log('Node.js web server running at port 5000')
 
 test.html
 
-```js
+```javascript
 <!doctype HTML>
 <html>
 
@@ -80,13 +82,13 @@ test.html
 
 第一次請求：
 
-![](/assets/螢幕快照 2019-07-03 下午5.56.23.png)
+![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-07-03%20下午5.56.23.png)
 
 第二次請求：
 
-![](/assets/螢幕快照 2019-07-03 下午5.56.34.png)
+![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-07-03%20下午5.56.34.png)
 
-# 注意事項：
+## 注意事項：
 
 > 1.如果是跨域請求會在request header 顯示 `provisional headers are shown` ，所以會看不到 If-None-Match
 >
@@ -94,7 +96,7 @@ test.html
 >
 > 3.記得要點選瀏覽器的 disable cache 然後再點掉，讓他忘記快取
 
-# 如果是 expressjs server 已經實作了 304 回應![](/assets/螢幕快照 2019-07-03 下午3.30.17.png)
+## 如果是 expressjs server 已經實作了 304 回應![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-07-03%20下午3.30.17.png)
 
-![](/assets/螢幕快照 2019-07-03 下午3.31.07.png)
+![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-07-03%20下午3.31.07.png)
 

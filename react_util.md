@@ -1,17 +1,19 @@
 # React util
 
-## 1.如有一個共用的Component
+## React util
+
+### 1.如有一個共用的Component
 
 不要於component的style 寫上如
 
-```
+```text
 Object.assign(props.style,style.item)
 ```
 
 這樣共用元素的頁面會互相覆蓋style  
 因為react不會重新render元素
 
-## 2.使用Rich Editor
+### 2.使用Rich Editor
 
 這裡使用Draft.js 做example
 
@@ -25,7 +27,7 @@ Object.assign(props.style,style.item)
 
 1.先新增RichEditor.js
 
-```
+```text
 import React, { Component, PropTypes as T } from 'react';
 import { connect } from 'react-redux';
 import radium from 'radium';
@@ -233,7 +235,7 @@ export default connect(mapStateToProps, {
 
 Draft.css
 
-```
+```text
 /**
  * Draft v0.9.0
  *
@@ -249,7 +251,7 @@ Draft.css
 
 RichEditor.css
 
-```
+```text
 .RichEditor-root {
   background: #fff;
   border: 1px solid #ddd;
@@ -319,13 +321,13 @@ RichEditor.css
 
 即可看到如下畫面
 
-![](螢幕快照 2016-11-09 下午5.46.00.png)
+![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/螢幕快照%202016-11-09%20下午5.46.00.png)
 
 接著因為我們要將其存成immutable的markdown轉為html，須使用如下模組
 
 [https://github.com/sstur/draft-js-export-html](https://github.com/sstur/draft-js-export-html)
 
-```
+```text
   constructor(props) {
     super(props);
     this.state = { editorState: EditorState.createEmpty() };
@@ -342,7 +344,7 @@ RichEditor.css
 
 如上使用即可
 
-# 使用Material UI
+## 使用Material UI
 
 為原本的Materialize css包成的套件。
 
@@ -350,13 +352,11 @@ RichEditor.css
 
 ICON: [https://material.io/icons/\#ic\_swap\_horiz](https://material.io/icons/#ic_swap_horiz)
 
-# 使用 I18N
+## 使用 I18N
 
 個人推薦：[https://react.i18next.com/guides/quick-start](https://react.i18next.com/guides/quick-start)
 
 他是i18next的react版本，nodejs也有類似，且用法相同，可共用程式。
 
 > 而 [https://github.com/formatjs/react-intl](https://github.com/formatjs/react-intl) 需要且defineMessage與defaultMessage較為繁瑣。
-
-
 

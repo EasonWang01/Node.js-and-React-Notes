@@ -1,6 +1,8 @@
+# Drawer
+
 Drawer.js
 
-```js
+```javascript
 import React from 'react';
 import { DrawerLayoutAndroid, View, Text } from 'react-native';
 export default class Drawer extends React.Component {
@@ -32,7 +34,7 @@ export default class Drawer extends React.Component {
 
 使用
 
-```js
+```javascript
   openDrawer = () => {
     this.drawer.openTheDrawer();
   };
@@ -44,6 +46,4 @@ export default class Drawer extends React.Component {
       )
   }
 ```
-
-
 

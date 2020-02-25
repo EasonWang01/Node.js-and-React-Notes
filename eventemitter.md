@@ -1,18 +1,24 @@
 # EventEmitter
+
 1.
 
 剛才在操作檔案時，看到類似這樣的東西
-```
+
+```text
 fs.on('open', function () {
   console.log('event has occured');
 });
 ```
+
 原因是當我們在讀取時他會自動發出
-```
+
+```text
 fs.emit('open');
 ```
+
 而
-```
+
+```text
 fs.on("open")接到他的通知
 ```
 
@@ -20,7 +26,7 @@ fs.on("open")接到他的通知
 
 以下為一個範例
 
-```
+```text
 var EventEmitter = require('events').EventEmitter;
 var oneEvent = new EventEmitter();
 
@@ -39,13 +45,14 @@ f()
 // event has occured
 // end
 ```
+
 一個emit發出一個用on接收
 
 Socket.io就是使用這個概念
 
-2.
-Node.js預設最多只能設定10個具有on的回調參數
-```
+2. Node.js預設最多只能設定10個具有on的回調參數
+
+```text
 var EventEmitter = require('events').EventEmitter;
 var oneEvent = new EventEmitter();
 
@@ -93,19 +100,20 @@ f()
 // event has occured
 // end
 ```
-代碼改成上面後會發現console出現提醒訊息
 
+代碼改成上面後會發現console出現提醒訊息
 
 但
 
 我們可以加入一行來手動增加監聽器on的數量
 
-```
+```text
 oneEvent.setMaxListeners(20);
 ```
 
 2.可以在emit傳入參數
-```
+
+```text
 var EventEmitter = require('events').EventEmitter;
 var myEmitter = new EventEmitter;
 
@@ -117,12 +125,11 @@ myEmitter.on('connection', connection);
 myEmitter.emit('connection', 6,8);
 ```
 
-3.
-任何其他的函式都可以使用EventEmitter
+3. 任何其他的函式都可以使用EventEmitter
 
 只要將它繼承即可
 
-```
+```text
 var EventEmitter = require('events').EventEmitter;
 
 function Dog(name) {
@@ -143,10 +150,12 @@ setInterval(function(){
   simon.emit('bark');
 }, 500);
 ```
+
 或者
 
-你也可以用util模組(內建)去做繼承
-```
+你也可以用util模組\(內建\)去做繼承
+
+```text
 var util = require('util');
 var EventEmitter = require('events').EventEmitter;
 
@@ -179,21 +188,19 @@ var radio = new Radio(station);
 
 radio.on('open', function(station) {
   console.log('OPEN', station.name, station.freq);
- 
+
 });
 
 radio.on('close', function(station) {
   console.log('CLOSE', station.name, station.freq);
 });
-
-```
-4.
-EventEmitter 原始的事件
-
-newListener事件：添加新的回調函式時觸發。
-removeListener事件：移除回調函式時觸發。
 ```
 
+4. EventEmitter 原始的事件
+
+newListener事件：添加新的回調函式時觸發。 removeListener事件：移除回調函式時觸發。
+
+```text
 var EventEmitter = require('events').EventEmitter;
 var Event = new EventEmitter;///////記得require後要產生實例
 
@@ -214,23 +221,25 @@ Event.removeListener("this is on", foo);
 
 5.once方法
 
-```
+```text
 和on使用方式相同，但他只會監聽一次即移除
-
 ```
 
 6.一次移除所有監聽
-```
+
+```text
 var EventEmitter = require('events').EventEmitter;
 
 var emitter = new EventEmitter;
 
 emitter.removeAllListeners();
 ```
+
 7.尋找某個事件擁有的回調函式
 
 listener方法
-```
+
+```text
 var EventEmitter = require('events').EventEmitter;
 
 var ee = new EventEmitter;
@@ -244,3 +253,4 @@ ee.emit("firstConnection");
 
 console.log(ee.listeners("firstConnection"));
 ```
+

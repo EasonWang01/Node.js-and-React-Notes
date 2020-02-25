@@ -14,15 +14,13 @@
 
 > 可以看到下圖出現 Verified 圖樣
 
-![](/assets/Screen Shot 2019-02-21 at 12.24.34 PM.png)
-
----
+![](../.gitbook/assets/screen-shot-2019-02-21-at-12.24.34-pm.png)
 
 ## 如果出現failed-to-sign-the-data
 
 於 ~/.zshrc 加上
 
-```
+```text
 export GPG_TTY=$(tty)
 ```
 

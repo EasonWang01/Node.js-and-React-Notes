@@ -1,24 +1,26 @@
-# RethinkDB\(使用ReQL 為query language\)
+# rethinkdb
+
+## RethinkDB\(使用ReQL 為query language\)
 
 [https://www.rethinkdb.com/docs/quickstart/](https://www.rethinkdb.com/docs/quickstart/)
 
-```
+```text
 brew update && brew install rethinkdb
 ```
 
 windows直接下載後點擊exe，在前往
 
-```
+```text
 http://localhost:8080/
 ```
 
 使用Node.js
 
-```
+```text
 npm install rethinkdb
 ```
 
-```
+```text
 r = require('rethinkdb');
 
 var connection = null;
@@ -31,7 +33,7 @@ r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
 
 建立Table
 
-```
+```text
 r = require('rethinkdb');
 
 r.connect( {host: 'localhost', port: 28015}, function(err, connection) {
@@ -46,13 +48,13 @@ r.connect( {host: 'localhost', port: 28015}, function(err, connection) {
 });
 ```
 
-```
+```text
 generated_keys為主鍵的意思
 ```
 
-# 取得資料
+## 取得資料
 
-```
+```text
 r = require('rethinkdb');
 
 r.connect( {host: 'localhost', port: 28015}, function(err, connection) {
@@ -70,9 +72,9 @@ r.table('authors').run(connection, function(err, cursor) {
 });
 ```
 
-# 體驗rethinkDB的realtime
+## 體驗rethinkDB的realtime
 
-```
+```text
 r = require('rethinkdb');
 
 r.connect( {host: 'localhost', port: 28015}, function(err, connection) {
@@ -93,7 +95,7 @@ r.table('authors').changes().run(connection, function(err, cursor) {
 
 檔案改成
 
-```
+```text
 r = require('rethinkdb');
 
 r.connect( {host: 'localhost', port: 28015}, function(err, connection) {

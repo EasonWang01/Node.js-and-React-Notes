@@ -1,4 +1,6 @@
-# HTML5 Video
+# HTML5 Video 與 WebRTC
+
+## HTML5 Video
 
 1.有關串流
 
@@ -21,7 +23,7 @@ Source code
 
 而MediaRecorder接到資料後要存入blob
 
-```
+```text
   recorder.ondataavailable = e => {
     console.log(e);
     blob1.push(e.data);
@@ -35,7 +37,7 @@ Source code
 
 最後轉為可用在url的型態
 
-```
+```text
 window.URL.createObjectURL(superBuffer)
 ```
 
@@ -43,15 +45,15 @@ window.URL.createObjectURL(superBuffer)
 
 3.後來想到可以使用將影片擷取10秒一格並分開連續傳送給client達到串流的效果
 
-# WebRTC串流
+## WebRTC串流
 
-![](/assets/螢幕快照 2018-07-20 下午3.14.32.png)
+![](.gitbook/assets/ying-mu-kuai-zhao-20180720-xia-wu-3.14.32.png)
 
-# 名詞:
+## 名詞:
 
 [https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介](https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介)
 
-# 範例:
+## 範例:
 
 [https://shanetully.com/2014/09/a-dead-simple-webrtc-example/](https://shanetully.com/2014/09/a-dead-simple-webrtc-example/)
 
@@ -61,7 +63,7 @@ window.URL.createObjectURL(superBuffer)
 
 Client 過程
 
-```
+```text
 1. 初始化連線: new RTCPeerConnection，並加入本地影像 peerConnection.addStream(localStream);
 
 2. 設定SDP: peerConnection.setLocalDescription
@@ -80,7 +82,7 @@ Server
 
 > 單純廣播所有接收到的訊息給連線的client
 
-```js
+```javascript
 const wss = new WebSocketServer({server: httpsServer});
 
 wss.on('connection', function(ws) {
@@ -99,6 +101,4 @@ wss.broadcast = function(data) {
   });
 };
 ```
-
-
 

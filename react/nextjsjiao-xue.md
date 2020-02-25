@@ -1,19 +1,21 @@
-# Next.js 教學
+# Next.js教學
+
+## Next.js 教學
 
 [https://nextjs.org/](https://nextjs.org/)
 
-## 1.建立專案
+### 1.建立專案
 
 1.開一個新資料夾，然後cd進去後輸入以下指令。
 
-```
+```text
 npm init -y
 npm install --save react react-dom next
 ```
 
 2.在package.json的script內加入以下
 
-```
+```text
 {
   "scripts": {
     "dev": "next"
@@ -23,13 +25,13 @@ npm install --save react react-dom next
 
 3.
 
-```
+```text
 npm run dev
 ```
 
 4.之後應該會顯示一個404畫面，這時我們新增一下pages 資料夾，裡面放入一個index.js，內容放入以下。
 
-```js
+```javascript
 const Index = () => (
   <div>
     <p>Hello Next.js</p>
@@ -43,7 +45,7 @@ export default Index
 
 > /pages/about.js
 
-```js
+```javascript
 export default () => (
   <div>
     <p>This is the about page</p>
@@ -51,11 +53,11 @@ export default () => (
 )
 ```
 
-## 2.新增client Route
+### 2.新增client Route
 
 我們把index.js改為如下
 
-```js
+```javascript
 import Link from 'next/link'
 
 const Index = () => (
@@ -72,13 +74,13 @@ export default Index
 
 > route的文件：[https://github.com/zeit/next.js\#routing](https://github.com/zeit/next.js#routing)
 
-## 3.新增共用layout component
+### 3.新增共用layout component
 
 [https://nextjs.org/learn/basics/using-shared-components/the-layout-component](https://nextjs.org/learn/basics/using-shared-components/the-layout-component)
 
-# 4.引入&lt;script&gt;或是其他html tag
+## 4.引入&lt;script&gt;或是其他html tag
 
-```js
+```javascript
 import Layout from '../components/MyLayout.js'
 import Head from 'next/head'
 
@@ -92,13 +94,13 @@ export default () => (
 )
 ```
 
-# 5.讀取url
+## 5.讀取url
 
 > 加入`withRouter`
 >
 > 之後即可讀取到router的props
 
-```js
+```javascript
 import {withRouter} from 'next/router'
 import Layout from '../components/MyLayout.js'
 
@@ -118,11 +120,11 @@ const Page = (props) => (
 export default Page
 ```
 
-# 6.Router Masking
+## 6.Router Masking
 
 也就是更改實際的client URL
 
-```js
+```javascript
     <Link as={`/p/${props.id}/scasc`} href={`/post?title=${props.title}`}>
       <a>{props.title}</a>
     </Link>
@@ -132,13 +134,13 @@ export default Page
 >
 > 但重新整理後會無法讀取該顯示出來的router
 
-# 7.自訂Server
+## 7.自訂Server
 
 原先為使用Next.js內建的dev server，現在要來自己建一個Server
 
 > 如果有不在page內路徑url，也必須要自訂server，否則重新整理會產生404頁面。
 
-```js
+```javascript
 const express = require('express')
 const next = require('next')
 
@@ -173,13 +175,13 @@ app.prepare()
 
 [https://github.com/zeit/next.js\#custom-server-and-routing](https://github.com/zeit/next.js#custom-server-and-routing)
 
-# 8.使用Fetch獲取Data
+## 8.使用Fetch獲取Data
 
 把index.js改為如下
 
 > 當client 跳轉到此頁面時會從client發出請求，但如果是重新整理頁面的話則是Server Side會發出請求並直接把資料渲染到頁面上。
 
-```js
+```javascript
 import Layout from '../components/MyLayout.js'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
@@ -213,7 +215,7 @@ Index.getInitialProps = async function() {
 export default Index
 ```
 
-# 9. Style JSX
+## 9. Style JSX
 
 可以如下寫css
 
@@ -257,22 +259,22 @@ export default () => (
 )
 ```
 
-# 如果要加上外部css檔案
+## 如果要加上外部css檔案
 
 next.config.js
 
-```js
+```javascript
 const withCSS = require('@zeit/next-css')
 module.exports = withCSS()
 ```
 
 然後記得import './....css' 的檔案必須寫在pages/index.js中。
 
-# 10. 部署
+## 10. 部署
 
 新增以下這兩行在 package.json 的 script 中。
 
-```
+```text
 "build": "next build",
 "start": "next start -p 8000",
 ```
@@ -281,15 +283,15 @@ module.exports = withCSS()
 
 > 加上NODE\_ENV=production即可，自訂的Server為上面第七點的Server
 
-```
+```text
 "serve": "NODE_ENV=production node server.js"
 ```
 
-# 使用Nginx
+## 使用Nginx
 
 他跟create-react-app 不同之處在於他是server side render，所以沒有直接build然後用serve static的方式，而是需要啟動next的server然後用nginx做reverse proxy的方式。
 
-```json
+```javascript
 location / {
   # default port, could be changed if you use next with custom server
   proxy_pass http://localhost:3000;
@@ -306,24 +308,24 @@ location / {
 }
 ```
 
-\[\[\[[https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)\)\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29%29\)\)
+\[\[\[\[[https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)\)\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29%29\)\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29%29]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29%29%29\)\)
 
-#### 可以使用pm2
+**可以使用pm2**
 
 > 到next專案下輸入如下：
 >
-> ```
+> ```text
 > next build
 > pm2 start npm --name "next" -- start
 > ```
 
-# 11. 部署到 Now
+## 11. 部署到 Now
 
 Now 為一個 [https://zeit.co/](https://zeit.co/) 所出的雲端快速建置服務，使用Heroku
 
 安裝：
 
-```
+```text
 npm i -g --unsafe-perm now
 ```
 
@@ -333,17 +335,17 @@ npm i -g --unsafe-perm now
 
 部署後會看到如下（會給你分配一個 now.sh 的子網域）：
 
-![](/assets/Screen Shot 2018-08-20 at 2.51.29 PM.png)之後回到Zeit.co網站也可查看部署過的項目。
+![](../.gitbook/assets/screen-shot-2018-08-20-at-2.51.29-pm.png)之後回到Zeit.co網站也可查看部署過的項目。
 
-![](/assets/Screen Shot 2018-08-20 at 2.54.46 PM.png)
+![](../.gitbook/assets/screen-shot-2018-08-20-at-2.54.46-pm.png)
 
-# 額外功能
+## 額外功能
 
-### 1. 輸出靜態頁面
+#### 1. 輸出靜態頁面
 
 新增 next.config.js
 
-```json
+```javascript
 module.exports = {
   exportPathMap: function () {
     return {
@@ -362,7 +364,7 @@ module.exports = {
 
 之後輸入以下即可
 
-```
+```text
 next export
 ```
 
@@ -370,7 +372,7 @@ next export
 
 > 可以使用Serve模組測試
 >
-> ```
+> ```text
 > npm install serve -g
 > cd out
 > serve -p 8080

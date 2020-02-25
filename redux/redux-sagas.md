@@ -10,7 +10,7 @@
 
 1.一個按鈕點擊後發出一個普通action
 
-```js
+```javascript
 <div onClick={() => userLoginEnter()} />
 
 userLoginEnter() {
@@ -24,7 +24,7 @@ userLoginEnter() {
 
 2.該action與reducer
 
-```js
+```javascript
 export function userLoginEnter(payload) {
   return {
     payload,
@@ -35,7 +35,7 @@ export function userLoginEnter(payload) {
 
 reducer
 
-```js
+```javascript
 function loginPageReducer(state = initialState, action) {
   switch (action.type) {
   case USER_LOGIN_ENTER:
@@ -51,7 +51,7 @@ function loginPageReducer(state = initialState, action) {
 
 最後寫sagas 的function與 watcher
 
-```js
+```javascript
 export function* userLoginEnter(action) {
   try {
     const payload = yield new Promise(resolve => {
@@ -79,11 +79,9 @@ export default [
 ];
 ```
 
-記得要在store.js  run
+記得要在store.js run
 
-```js
+```javascript
 sagaMiddleware.run(watchUserLogin);
 ```
-
-
 
