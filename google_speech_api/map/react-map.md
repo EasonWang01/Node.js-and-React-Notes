@@ -1,10 +1,8 @@
-# React map
-
-## React 與 Google MAP
+# React 與 Google MAP
 
 可以使用如下用法：
 
-```javascript
+```js
   componentDidMount() {
     const googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`,
     if (!window.google) {
@@ -33,11 +31,11 @@
   }
 ```
 
-## 客製化地圖
+# 客製化地圖
 
 在地圖左上放入元素：
 
-```javascript
+```js
     map.controls[google.maps.ControlPosition.LEFT_TOP].push(
       document.getElementById('dropoffLegend'),
     );
@@ -45,7 +43,7 @@
 
 加上預設圖型 Marker
 
-```javascript
+```js
       const marker = new google.maps.Marker({
         position: { lat, lng },
         map,
@@ -64,7 +62,7 @@
 
 加上地圖事件
 
-```javascript
+```js
 google.maps.event.addListener(map, 'dragstart', () => {
   this.setState({ dragging: true });
 });
@@ -72,7 +70,7 @@ google.maps.event.addListener(map, 'dragstart', () => {
 
 如果想要在地圖上加入中心點，並且保持滑動後永遠中心，可以加上一個絕對定位元素。
 
-```javascript
+```js
  .centerMarker {
    position: absolute;
    width: 80px;
@@ -83,7 +81,7 @@ google.maps.event.addListener(map, 'dragstart', () => {
  }
 ```
 
-```markup
+```html
         <div
           style={{
             position: 'relative',
@@ -96,5 +94,7 @@ google.maps.event.addListener(map, 'dragstart', () => {
        </div>
 ```
 
-> 跟地圖同層，然後父層是一個 `relative`元素
+> 跟地圖同層，然後父層是一個 `relative `元素
+
+
 

@@ -1,10 +1,8 @@
-# 使用Node.js操控pg
-
-### 安裝
+## 安裝
 
 可使用以下模組，與資料庫連線。
 
-```text
+```
 npm install pg --save
 ```
 
@@ -16,9 +14,9 @@ npm install pg --save
 >
 > [https://node-postgres.com/features/pooling](https://node-postgres.com/features/pooling)
 
-### 執行指令前輸入相關連線設定
+## 執行指令前輸入相關連線設定
 
-```text
+```
 $ PGUSER=dbuser \
   PGHOST=database.server.com \
   PGPASSWORD=secretpassword \
@@ -29,7 +27,7 @@ $ PGUSER=dbuser \
 
 或是寫在程式
 
-```javascript
+```js
 const { Client } = require('pg')
 const client = new Client(
   {
@@ -42,9 +40,9 @@ const client = new Client(
 )
 ```
 
-### Query
+## Query
 
-```javascript
+```js
 const { Client } = require('pg')
 const client = new Client()
 
@@ -56,9 +54,9 @@ client.query('select * from company;', (err, res) => {
 })
 ```
 
-### Insert
+## Insert
 
-```javascript
+```js
 const { Client } = require('pg')
 const client = new Client()
 
@@ -74,13 +72,11 @@ client.query(queryletter, data, (err, res) => {
 
 > 如果是直接寫，記得要是value單引號，不然會出現沒有該column name的錯誤
 >
-> ```text
->   const insertString = `INSERT INTO users (account, password, username) VALUES('${req.body.account}','${req.body.password}','${req.body.account}');`
-> ```
+>       const insertString = `INSERT INTO users (account, password, username) VALUES('${req.body.account}','${req.body.password}','${req.body.account}');`
 
-## 使用Pool
+# 使用Pool
 
-```javascript
+```js
 async function query(exec_query, data, callback) {
   const _client = await client.connect();
   if (typeof data === "function") {
@@ -97,5 +93,7 @@ async function query(exec_query, data, callback) {
 
 > 記得要release\(\) 不然程式會當掉
 >
-> [https://node-postgres.com/features/pooling](https://node-postgres.com/features/pooling)
+> https://node-postgres.com/features/pooling
+
+
 

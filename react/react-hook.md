@@ -1,10 +1,10 @@
-# React hook
+# React hook 教學
 
 可以讓functional component也擁有 ref, state, 生命週期等方法。
 
 ## State
 
-```javascript
+```js
 import React, { useState } from 'react';
 
 function Example() {
@@ -23,7 +23,7 @@ function Example() {
 
 ## ComponentDidMount
 
-```javascript
+```js
 import React, { useEffect } from 'react';
 
 function Example() {
@@ -51,7 +51,7 @@ function Example() {
 
 [https://reactjs.org/docs/hooks-reference.html\#uselayouteffect](https://reactjs.org/docs/hooks-reference.html#uselayouteffect)
 
-```text
+```
 useLayoutEffect(()=> {
   console.log('I am about to render!');
 },[]);
@@ -59,7 +59,7 @@ useLayoutEffect(()=> {
 
 ## Ref
 
-```javascript
+```js
 import React, { useState, useEffect, useRef } from 'react';
 
 const Map = () => {
@@ -75,13 +75,13 @@ export default Map;
 
 > 之後用`mapEle.current` 即可存取
 
-### Memo
+#### Memo
 
 memo只能用在stateless component
 
 功能類似pure component
 
-```javascript
+```js
 import React,{ memo } from 'react';
 
  const Test = memo(function Son(props){
@@ -91,4 +91,6 @@ import React,{ memo } from 'react';
 })
 export default Test;
 ```
+
+
 

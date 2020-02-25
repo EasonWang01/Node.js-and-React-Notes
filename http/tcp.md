@@ -1,7 +1,5 @@
 # TCP
 
-## TCP
-
 網路七層協議  
 [https://zh.wikipedia.org/wiki/OSI模型](https://zh.wikipedia.org/wiki/OSI模型)
 
@@ -16,7 +14,7 @@ TCP可以接受多個連接，每個連接會對應到file descriptors。
 
 一般瀏覽網頁時使用的協議是HTTP與HTTPS，其主要是基於TCP，為TCP往上之發展
 
-## Node.js中的TCP
+# Node.js中的TCP
 
 在node.js主要使用`net`這個核心模組來提供TCP的相關功能，
 
@@ -28,7 +26,7 @@ TCP可以接受多個連接，每個連接會對應到file descriptors。
 >
 > [https://nodejs.org/api/net.html\#net\_server\_getconnections\_callback](https://nodejs.org/api/net.html#net_server_getconnections_callback)
 >
-> ```javascript
+> ```js
 > server.getConnections((err, count) => {
 >   console.log(count)
 > })
@@ -40,7 +38,7 @@ TCP可以接受多個連接，每個連接會對應到file descriptors。
 
 TCP server:
 
-```javascript
+```js
 const net = require('net');
 const server = net.createServer((c) => {
   // 'connection' listener
@@ -74,7 +72,7 @@ process.on('SIGINT', function() {
 
 TCP client
 
-```javascript
+```js
 const net = require('net');
 const client = net.createConnection({ port: 8120 }, () => {
   //'connect' listener
@@ -99,7 +97,7 @@ process.on('SIGINT', function() {
 
 同時建立Server與建立Client
 
-```javascript
+```js
 const net = require('net');
 const server = net.createServer((c) => {
   // 'connection' listener
@@ -139,11 +137,13 @@ process.on('SIGINT', function() {
 });
 ```
 
-### 1.TCP廣播可參考:
+
+
+#### 1.TCP廣播可參考:
 
 [https://gist.github.com/creationix/707146](https://gist.github.com/creationix/707146)
 
-### 2.如果想在TCP封包上加密可參考:
+#### 2.如果想在TCP封包上加密可參考:
 
 [https://nodejs.org/dist/latest-v7.x/docs/api/tls.html\#tls\_class\_tls\_server](https://nodejs.org/dist/latest-v7.x/docs/api/tls.html#tls_class_tls_server)
 
@@ -151,13 +151,15 @@ process.on('SIGINT', function() {
 
 > 每個tcp建立連線後可以把socket物件記住，之後連線其他的節點後可以再次存取原先socket即可再次傳送訊息。
 
-### 3.限制最大連線數
+#### 3.限制最大連線數
 
-> ```javascript
+> ```js
 > 1. server.maxConnections
 >
 > 2.設定Linux中的tcp_max_syn_backlog 與 somaxconn
 >
 > 3.設定listen參數中的backlog
 > ```
+
+
 

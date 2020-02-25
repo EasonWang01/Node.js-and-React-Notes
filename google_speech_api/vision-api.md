@@ -1,20 +1,20 @@
-# vision api
-
-## 影像辨識
+#影像辨識
 
 以下為圖片上傳網站範例
 
-[https://cloud.google.com/vision/](https://cloud.google.com/vision/)
+https://cloud.google.com/vision/
+
 
 須先點選以下建立憑證，服務帳戶金鑰
 
-[https://console.developers.google.com/apis/credentials](https://console.developers.google.com/apis/credentials)
+https://console.developers.google.com/apis/credentials
 
 以下為範例程式碼
 
-`./01.json`為金鑰檔案
 
-```text
+`./01.json`為金鑰檔案
+```
+
 const Vision = require('@google-cloud/vision');
 
 // Instantiates a client
@@ -36,17 +36,23 @@ vision.detectText('./0.jpg')
 });
 ```
 
-## Open Source可用模組
 
-[https://github.com/desmondmorris/node-tesseract](https://github.com/desmondmorris/node-tesseract) [https://github.com/tesseract-ocr/tesseract](https://github.com/tesseract-ocr/tesseract)
+
+#Open Source可用模組
+
+
+https://github.com/desmondmorris/node-tesseract
+https://github.com/tesseract-ocr/tesseract
+
 
 上面的連結是下面tesseract的Node.js wrapper
 
+
 範例程式如下
 
-> options可不給，預設為english，語言縮寫可參考[https://github.com/tesseract-ocr/tesseract/blob/a75ab450a8cc9a2b69cf05f5c4f7a39bc44cbacc/contrib/traineddata.txt](https://github.com/tesseract-ocr/tesseract/blob/a75ab450a8cc9a2b69cf05f5c4f7a39bc44cbacc/contrib/traineddata.txt)
+>options可不給，預設為english，語言縮寫可參考https://github.com/tesseract-ocr/tesseract/blob/a75ab450a8cc9a2b69cf05f5c4f7a39bc44cbacc/contrib/traineddata.txt
 
-```text
+```
 var tesseract = require('node-tesseract');
 
 
@@ -68,27 +74,32 @@ tesseract.process(__dirname + '/022.png', options,function(err, text) {
 
 如說要設路徑可參考
 
-```text
+```
 export TESSDATA_PREFIX=/usr/local/Cellar/tesseract/3.05.00/share/tessdata/
 ```
 
-> 注意:他辨識中文需花比較長時間，且識別度不高
+>注意:他辨識中文需花比較長時間，且識別度不高
 
 完整版相關gist
 
-[https://gist.github.com/EasonWang01/db8eae7202b6e7dde790c2ff7e8fb810](https://gist.github.com/EasonWang01/db8eae7202b6e7dde790c2ff7e8fb810)
+https://gist.github.com/EasonWang01/db8eae7202b6e7dde790c2ff7e8fb810
 
-## \#從browser發出request
 
-文章 [http://terrenceryan.com/blog/index.php/working-with-cloud-vision-api-from-javascript/](http://terrenceryan.com/blog/index.php/working-with-cloud-vision-api-from-javascript/)
+# #從browser發出request
 
-完整範例 [https://github.com/GoogleCloudPlatform/web-docs-samples/tree/master/vision/explore-api](https://github.com/GoogleCloudPlatform/web-docs-samples/tree/master/vision/explore-api)
+文章
+http://terrenceryan.com/blog/index.php/working-with-cloud-vision-api-from-javascript/
 
-官方文件 [https://cloud.google.com/vision/docs/detecting-text\#vision-text-detection-protocol](https://cloud.google.com/vision/docs/detecting-text#vision-text-detection-protocol)
+完整範例
+https://github.com/GoogleCloudPlatform/web-docs-samples/tree/master/vision/explore-api
 
-> 注意，官方文件images應該為image
+官方文件
+https://cloud.google.com/vision/docs/detecting-text#vision-text-detection-protocol
 
-```text
+>注意，官方文件images應該為image 
+
+```
+ 
 payload =  {
               requests: [
                 {
@@ -120,4 +131,3 @@ payload =  {
      console.log(util.inspect(err, {depth: null}));
   })
 ```
-

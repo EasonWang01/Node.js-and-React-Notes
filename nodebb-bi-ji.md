@@ -1,6 +1,6 @@
-# NodeBB 筆記
+# 重置
 
-```text
+```
 mongo -u admin -p 密碼 --authenticationDatabase=admin
 use nodebb
 db.dropDatabase();

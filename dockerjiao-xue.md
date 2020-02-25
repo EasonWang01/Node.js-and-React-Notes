@@ -1,6 +1,4 @@
-# Docker教學
-
-## 安裝
+# 安裝
 
 OSX: [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/docker-for-mac/install/)
 
@@ -10,13 +8,13 @@ windows: [https://kitematic.com/](https://kitematic.com/)
 
 [https://store.docker.com/search?type=edition&offering=community](https://store.docker.com/search?type=edition&offering=community)
 
-windows使用kitemantic後點選右下角的DOCKER CLI![](.gitbook/assets/98234234.png)
+windows使用kitemantic後點選右下角的DOCKER CLI![](/assets/98234234.png)
 
-## 以下為Docker執行Redis與Node.js server並分別expose兩個PORT的範例
+# 以下為Docker執行Redis與Node.js server並分別expose兩個PORT的範例
 
 1.新增package.json
 
-```text
+```
 {
   "name": "docker_web_app",
   "version": "1.0.0",
@@ -34,7 +32,7 @@ windows使用kitemantic後點選右下角的DOCKER CLI![](.gitbook/assets/982342
 
 2.server.js
 
-```javascript
+```js
 'use strict';
 
 const express = require('express');
@@ -55,7 +53,7 @@ console.log(`Running on http://${HOST}:${PORT}`);
 
 3.Dockerfile
 
-```text
+```
 FROM node:boron
 
 WORKDIR /usr/src/app
@@ -79,7 +77,7 @@ CMD [ "npm", "start" ]
 
 \(-t 為tag 的意思即為這個image的名字\)
 
-```text
+```
 docker build -t test/node-web-app .
 ```
 
@@ -91,7 +89,7 @@ docker build -t test/node-web-app .
 
 > 開啟瀏覽器localhost:49160即可看到
 
-```text
+```
  docker run -p 49160:8080 49161:6379 test/node-web-app
 ```
 
@@ -99,13 +97,13 @@ docker build -t test/node-web-app .
 
 記得先進去container開啟Redis-server
 
-```text
+```
 docker ps
 ```
 
 之後會顯示如下
 
-```text
+```
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS
           PORTS                                              NxAMESe
 c7b4df8ebffb        test/node-web-app   "npm start"         11 minutes ago      Up 11 minu
@@ -113,19 +111,19 @@ c7b4df8ebffb        test/node-web-app   "npm start"         11 minutes ago      
 
 然後用exec的方法進入docker的Process 之cli
 
-```text
+```
 docker exec -it c7b4df8ebffb /bin/bash
 ```
 
 啟動Redis
 
-```text
+```
 redis-server
 ```
 
 7.之後寫一個Node.js的程式來連Redis
 
-```javascript
+```js
 const redis = require('redis')
   RDS_PORT = 49161,
   RDS_HOST = '127.0.0.1',
@@ -136,21 +134,21 @@ const redis = require('redis')
   })
 ```
 
-## \#把image搬到其他電腦
+# \#把image搬到其他電腦
 
 把最後面參數名字的image\(剛才tag名稱\)存成dockerImage壓縮檔
 
-```text
+```
 docker save -o ./dockerImage test/node-web-app
 ```
 
 然後把此image壓縮檔移到在別台電腦及可讀取
 
-```text
+```
  docker load -i ./dockerImage
 ```
 
-## \#PUSH Image到Docker Hub
+# \#PUSH Image到Docker Hub
 
 1.
 
@@ -162,7 +160,7 @@ Create new repository
 
 3.
 
-```text
+```
 docker login --username=<你的Dockerhub username> --password=<你的docker Hub密碼>
 ```
 
@@ -170,7 +168,7 @@ docker login --username=<你的Dockerhub username> --password=<你的docker Hub�
 
 查看你要push的image的ID
 
-```text
+```
 docker images
 ```
 
@@ -178,13 +176,13 @@ docker images
 
 把ID配上你的repository名稱
 
-```text
+```
 docker tag bb38976d03cf yourhubusername/repositoryName
 ```
 
 6.
 
-```text
+```
 docker push yourhubusername/repositoryName
 ```
 

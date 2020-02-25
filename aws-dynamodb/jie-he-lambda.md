@@ -1,6 +1,4 @@
-# 結合Lambda
-
-## 使用Lambda結合DynamoDB
+# 使用Lambda結合DynamoDB
 
 1.先於IAM創建一個Role。
 
@@ -10,7 +8,7 @@
 
 > function index 對應到index.js相同檔案名稱
 
-```javascript
+```js
 var AWS = require('aws-sdk'),
     uuid = require('uuid'),
     documentClient = new AWS.DynamoDB.DocumentClient(); 
@@ -31,7 +29,7 @@ exports.handler = function index(event, context, callback){
 
 > 注意，搜尋的回傳值會要用
 >
-> ```text
+> ```
 > data.Item 取出
 > ```
 
@@ -39,7 +37,7 @@ exports.handler = function index(event, context, callback){
 
 5.加入API gateway即可
 
-## API gateway授權
+# API gateway授權
 
 當我們要確認用戶有權限可以打API 時可以先發一隻 AUTH TOKEN 請求
 

@@ -1,8 +1,8 @@
-# repl\(自訂命令列\)
+# repl
+
 
 test1.js
-
-```text
+```
 var repl = require("repl");
 var fs = require('fs');
 
@@ -22,15 +22,14 @@ replServer.context.foo =  function(){
 
 之後執行
 
-```text
+```
 node test1
 ```
 
 再來輸入
 
-```text
+```
 foo()
 ```
 
 即可發現創造了一個helloDir的資料夾
-

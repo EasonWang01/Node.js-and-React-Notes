@@ -1,14 +1,14 @@
-# react native FB login
+# React Native FB login
 
 1.創建應用程式後，新增平台
 
 [https://developers.facebook.com/quickstarts/](https://developers.facebook.com/quickstarts/)
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20190530-xia-wu-5.55.50.png)
+![](/assets/螢幕快照 2019-05-30 下午5.55.50.png)
 
 輸入相關名稱
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20190530-xia-wu-5.58.00.png)
+![](/assets/螢幕快照 2019-05-30 下午5.58.00.png)
 
 2.照著以下教學調整專案
 
@@ -99,7 +99,7 @@ public class MainActivity extends ReactActivity {
 
 strings.xml
 
-```markup
+```xml
 <resources>
     <string name="app_name">AwesomeProject</string>
     <string name="facebook_app_id">350004755369462</string>
@@ -108,7 +108,7 @@ strings.xml
 
 AndroidManifest.xml
 
-```markup
+```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.awesomeproject">
 
@@ -137,4 +137,6 @@ AndroidManifest.xml
 
 </manifest>
 ```
+
+
 

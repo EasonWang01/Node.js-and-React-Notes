@@ -1,6 +1,4 @@
-# 常見問題
-
-## 環境相關
+# 環境相關
 
 #### 0.
 
@@ -10,13 +8,13 @@
 
 可直接輸入以下指令
 
-```text
+```
 echo sdk.dir = "$HOME"/Library/Android/sdk >> local.properties
 ```
 
 或是加入環境變量
 
-```text
+```
 export ANDROID_HOME = <SDK位置>
 ```
 
@@ -28,13 +26,13 @@ export ANDROID_HOME = <SDK位置>
 
 之後更改react-native 的 android folder內的build.gradle ，更改buildToolsVersion
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20180903-shang-wu-9.52.22.png)
+![](/assets/螢幕快照 2018-09-03 上午9.52.22.png)
 
 ### 2.
 
 > Failed to find Platform SDK with path: platforms;
 
-到SDK頁面把版本號碼，填入剛才build.gradle的SDK版本位置即可。![](../.gitbook/assets/ying-mu-kuai-zhao-20180903-shang-wu-9.51.54.png)
+到SDK頁面把版本號碼，填入剛才build.gradle的SDK版本位置即可。![](/assets/螢幕快照 2018-09-03 上午9.51.54.png)
 
 #### 3.
 
@@ -42,7 +40,7 @@ export ANDROID_HOME = <SDK位置>
 
 解法：加上sudo
 
-```text
+```
 sudo react-native run-android
 ```
 
@@ -64,7 +62,7 @@ sudo react-native run-android
 
 重新啟動專案或重建都一樣時可輸入以下指令：
 
-```text
+```
 npm start -- --reset-cache
 ```
 
@@ -72,7 +70,7 @@ npm start -- --reset-cache
 
 不穩定，有時跳出錯誤訊息，有時又沒有
 
-```text
+```
 建議關閉 hot-reload 功能。
 ```
 
@@ -82,7 +80,7 @@ npm start -- --reset-cache
 
 輸入以下即可。
 
-```text
+```
 npm start -- reset-cache
 ```
 
@@ -100,7 +98,7 @@ npm start -- reset-cache
 
 [https://stackoverflow.com/a/41963217](https://stackoverflow.com/a/41963217)
 
-```javascript
+```js
 const blacklist = require('metro-config/src/defaults/blacklist');
 
 // blacklist is a function that takes an array of regexes and combines
@@ -119,7 +117,7 @@ module.exports = {
 
 package.json
 
-```javascript
+```json
   "scripts": {
     "android-linux": "react-native bundle --platform android --dev false --entry-file App.js --bundle-output android/app/src/main/assets/App.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
   },
@@ -127,15 +125,15 @@ package.json
 
 [https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows](https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows)
 
-## 開發相關
+# 開發相關
 
-## 1.無法用e.target
+# 1.無法用e.target
 
 建議採用map並加上index方法傳遞。
 
 [https://stackoverflow.com/a/42125039](https://stackoverflow.com/a/42125039)
 
-```javascript
+```js
 {Object.keys(this.state.locationURL).map((location, idx) => (
    <ListItem key={idx} onPress={(e) => this.changeURL(idx)}>
      <Text>{location}</Text>
@@ -145,11 +143,13 @@ package.json
 
 #### 2.取得Input的值或對象
 
-```javascript
+```js
 <Input onChangeText={(e) => console.log(e)} />
 ```
 
 #### 3. Genymotion 存取跟電腦相同的 VPN
 
-設定Adapter 2 的網路為 NAT 即可。 ![](../.gitbook/assets/screen-shot-2019-01-03-at-4.07.16-pm.png)
+設定Adapter 2 的網路為 NAT 即可。 ![](/assets/Screen Shot 2019-01-03 at 4.07.16 PM.png)
+
+
 

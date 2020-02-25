@@ -1,4 +1,4 @@
-# 自己寫一個Router
+# 自己寫一個 React Router
 
 > 1.使用onpopstate管理瀏覽器的前後頁切換
 >
@@ -6,7 +6,7 @@
 >
 > 3.用 window.history.pushState 推入瀏覽器 URL
 
-```javascript
+```js
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -45,4 +45,6 @@ class App extends Component {
 
 export default App;
 ```
+
+
 

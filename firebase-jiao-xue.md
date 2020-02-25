@@ -10,10 +10,12 @@
 
 先 clone 此專案：[https://github.com/firebase/quickstart-js/tree/master/auth](https://github.com/firebase/quickstart-js/tree/master/auth)
 
-```text
+```
 1. 註冊firebase帳號與專案
 2. 下載firebase cli (可以讓你在cli上直接設定好要使用的專案)
 3. 使用 firebase serve 啟動 firebase寫好的 server
 4. 最後可使用 firebase deploy 部署
 ```
+
+
 

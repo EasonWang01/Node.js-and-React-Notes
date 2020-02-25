@@ -1,10 +1,8 @@
-# Alert
-
 可直接使用`alert('訊息')`
 
 另外也可以custom alert
 
-```javascript
+```js
  import { Alert } from 'react-native';
 
 Alert.alert(
@@ -19,5 +17,5 @@ Alert.alert(
 )
 ```
 
-![](../../.gitbook/assets/screen-shot-2018-10-04-at-2.39.51-pm.png)
+![](/assets/Screen Shot 2018-10-04 at 2.39.51 PM.png)
 

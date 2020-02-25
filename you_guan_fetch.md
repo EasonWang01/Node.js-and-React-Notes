@@ -1,6 +1,4 @@
-# 有關Fetch與axios與跨域請求
-
-## 有關Fetch
+# 有關Fetch
 
 [https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch\_API/Using\_Fetch](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch)
 
@@ -14,7 +12,7 @@
 
 3.cookie要手動在header加入\(第二個參數\)
 
-```text
+```
      fetch('http://localhost:3001/getArticle',{
            method: 'GET',
        })
@@ -40,7 +38,7 @@
 
 使用POST
 
-```text
+```
 fetch('http://localhost:3016/login', {
     method: 'POST',
     headers: {'Content-Type':'application/x-www-form-urlencoded'},
@@ -48,7 +46,7 @@ fetch('http://localhost:3016/login', {
 });
 ```
 
-```javascript
+```js
 fetch('http://localhost:3000/info', {
     method: "POST",
     body: JSON.stringify({test: 123})
@@ -61,9 +59,9 @@ fetch('http://localhost:3000/info', {
   });
 ```
 
-## 如果要傳JSON要先stringify
+# 如果要傳JSON要先stringify
 
-```text
+```
 fetch('http://localhost:3016/we6/api/login', {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
@@ -71,11 +69,11 @@ fetch('http://localhost:3016/we6/api/login', {
 });
 ```
 
-### Fetch 取得 server 錯誤訊息
+## Fetch 取得 server 錯誤訊息
 
-[https://github.com/github/fetch/issues/203\#issuecomment-335786498](https://github.com/github/fetch/issues/203#issuecomment-335786498)
+https://github.com/github/fetch/issues/203\#issuecomment-335786498
 
-```javascript
+```js
 fetch(`${HOST}`, {
         headers: {
           'content-type': 'application/json',
@@ -100,13 +98,13 @@ fetch(`${HOST}`, {
     };
 ```
 
-## Axios
+# Axios
 
 [https://github.com/mzabriskie/axios](https://github.com/mzabriskie/axios)
 
 也是一個可發request的套件
 
-```text
+```
 axios.post(API_HOST+'/api/Member/GetQAList',
      {
       LocalLang: "string",
@@ -129,7 +127,7 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 如果要抓取error message要使用如下
 
-```text
+```
   .catch(err => {
     console.log(err)
      if (err.response) {
@@ -142,7 +140,7 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 #### \#Get 範例
 
-```javascript
+```js
     axios.get('http://localhost:10001/test',{
         params: {
             ID: 12345
@@ -161,7 +159,7 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 #### \#POST x-www-form-urlencoded範例
 
-```javascript
+```js
    import qs from 'querystring';
 
       axios.post('http://localhost:82/login',
@@ -178,38 +176,36 @@ axios.post(API_HOST+'/api/Member/GetQAList',
     })
 ```
 
-## 注意:
+# 注意:
 
 如果是要發送cookie記得要加上 withCredentials: `true`
 
-```text
-  axios({
-    method,
-    url: `${API_HOST}/${url}`,
-    withCredentials: true,
-    data: {
-      method,
-      data: payload,
-      endpoint: url
-    }
-  })
-  .then((response) => {
-    console.log(response.data)
-    callbackReduxAction(response.data);
-  }).catch(err => {
-    console.log(err);
-  })
-```
+      axios({
+        method,
+        url: `${API_HOST}/${url}`,
+        withCredentials: true,
+        data: {
+          method,
+          data: payload,
+          endpoint: url
+        }
+      })
+      .then((response) => {
+        console.log(response.data)
+        callbackReduxAction(response.data);
+      }).catch(err => {
+        console.log(err);
+      })
 
 或是直接寫為default
 
-```text
+```
 axios.defaults.withCredentials = true;
 ```
 
 然後server的Cross domain要設定
 
-```text
+```
 app.use('*', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3012');
   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
@@ -223,11 +219,11 @@ app.use('*', function (req, res, next) {
 
 不然會顯示如下訊息.
 
-![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/asca.png)
+![](/assets/asca.png)
 
-## \#瀏覽器跨域請求
+# \#瀏覽器跨域請求
 
-因為瀏覽器發出的請求會被限制同網域 不像後端server或是chrome plugin可以對其他網域請求
+因為瀏覽器發出的請求會被限制同網域  不像後端server或是chrome plugin可以對其他網域請求
 
 所以我們可以用[https://crossorigin.me這類的proxy服務](https://crossorigin.me這類的proxy服務)
 
@@ -235,7 +231,7 @@ app.use('*', function (req, res, next) {
 >
 > 或是使用chrome相關plugin
 
-```javascript
+```js
   fetch('https://crossorigin.me/http://google.com',{
            method: 'GET',
        })
@@ -257,15 +253,15 @@ app.use('*', function (req, res, next) {
        })
 ```
 
-## 下載檔案
+# 下載檔案
 
 記得加上
 
-```javascript
+```js
 responseType: "blob"
 ```
 
-```javascript
+```js
 axios.post('https://test/export/file', {},
       {
         responseType: "blob",
@@ -292,4 +288,6 @@ axios.post('https://test/export/file', {},
         saveByteArray([d.data], 'example.xlsx');
       }).catch(err => { console.log(err) })
 ```
+
+
 

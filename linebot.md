@@ -1,46 +1,44 @@
-# LineBot
-
 > linebot的api server 必須用https的，所以測試建議可以部署在heroku或是使用ngrok
 
 不錯的文章：[http://www.oxxostudio.tw/articles/201701/line-bot.html](http://www.oxxostudio.tw/articles/201701/line-bot.html)
 
 [https://goo.gl/ePtTRw](https://goo.gl/ePtTRw)
 
-## 申請機器人
+# 申請機器人
 
 > 注意：一個是free方案一個是developer trial後面的這個才可以用push API （選好後無法兩者切換）
 
 [https://business.line.me/zh-hant/services/lineat](https://business.line.me/zh-hant/services/lineat)
 
-## 管理機器人
+# 管理機器人
 
 [https://admin-official.line.me/8417327/account/autoanswer/\#/?backUrl=%2F%3Fpage%3D1](https://admin-official.line.me/8417327/account/autoanswer/#/?backUrl=%2F%3Fpage%3D1)
 
 > 包含把自動回覆訊息修改或關閉
 
-## 開發者設定
+# 開發者設定
 
 [https://developers.line.me/console/channel/1550169976/basic/](https://developers.line.me/console/channel/1550169976/basic/)
 
-## 開發者文件
+# 開發者文件
 
 [https://developers.line.me/en/docs/messaging-api](https://developers.line.me/en/docs/messaging-api)
 
 [https://developers.line.me/en/docs/messaging-api/reference/](https://developers.line.me/en/docs/messaging-api/reference/)
 
-### 注意事項
+## 注意事項
 
 [https://engineering.linecorp.com/tw/blog/detail/183](https://engineering.linecorp.com/tw/blog/detail/183)
 
-## \# API 範例
+# \# API 範例
 
-### WebHook
+## WebHook
 
 > 先在developer.line.me設定
 
-![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202017-12-04%20下午10.38.13.png)
+![](/assets/螢幕快照 2017-12-04 下午10.38.13.png)
 
-```javascript
+```js
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
@@ -57,13 +55,13 @@ app.listen(process.env.PORT || 3000, () => {
 })
 ```
 
-### PUSH
+## PUSH
 
 > 如果client沒有主動送訊息給bot過，則可能會出現傳送失敗的錯誤
 >
 > userID可以在開發者設定網頁最下方看到
 
-```javascript
+```js
 const accessToken = "L1MidTusPwSDFpA8dCsPohcNMkdAHnZCdt541+sqUPxY8ONMspuGqFv9Rrv6mTrBUjvTV+afZ4oOE/PKJjOiV4pfCYvjY1Bi47oOLCbFxEuW2Rk/9efdc05e0ciQirzCrfIyNZmJLrJeBSo/mQ+yLwdB04t89/1O/w1cDnyilFU=";
 const channelSecret = "80f29885a979d63ec23ec629a5c67ba3";
 const userId = "U678157be02a660805cb61798ce5c4f2d"
@@ -89,9 +87,9 @@ client.pushMessage(userId, message)
   });
 ```
 
-## 回覆訊息
+# 回覆訊息
 
-```javascript
+```js
 const line = require('@line/bot-sdk');
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -126,9 +124,9 @@ app.listen(process.env.PORT || 3000, () => {
 })
 ```
 
-## 回覆圖卡訊息
+# 回覆圖卡訊息
 
-```javascript
+```js
 const line = require('@line/bot-sdk');
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -200,4 +198,6 @@ const postBackLogic = (req) => {
   console.log(JSON.parse(req.body.events[0].postback.data).action)
 };
 ```
+
+
 

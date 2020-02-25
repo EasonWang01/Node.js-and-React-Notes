@@ -1,8 +1,6 @@
 # 文件操作
 
-## 文件操作
-
-```text
+```
 require("fs");
 ```
 
@@ -12,7 +10,7 @@ require("fs");
 
 在class.js輸入:
 
-```text
+```
 fs = require("fs");
 
 function copy(src, target) {
@@ -28,7 +26,7 @@ copy("./class1.js","./class2.js");
 
 class.js
 
-```text
+```
   fs = require("fs");
 
 function copy(src, target) {
@@ -39,7 +37,7 @@ copy("./class1.js","./class2.js");
 
 2.同步讀取文件
 
-```text
+```
  fs = require("fs");
 
 fileName ="./class1.js";
@@ -51,7 +49,7 @@ console.log(text);
 
 3.同步寫入文件
 
-```text
+```
  fs = require("fs");
 
 fileName ="./class2.js";
@@ -66,7 +64,7 @@ console.log(text);
 
 改為appendFileSync
 
-```text
+```
  fs = require("fs");
 
 fileName ="./class2.js";
@@ -81,7 +79,7 @@ console.log(text);
 
 exists\(path, callback\)
 
-```text
+```
  fs = require("fs");
 
 fileName ="./class2.js";
@@ -94,7 +92,7 @@ fs.exists(fileName, function (exists) {
 
 先新建一個class3.js
 
-```text
+```
 var fs = require('fs');
 var filePath = "./class3.js" ; 
 fs.unlinkSync(filePath);
@@ -106,7 +104,7 @@ fs.unlinkSync(filePath);
 
 先新建一個名為class3的資料夾
 
-```text
+```
 var fs = require('fs');
 var filePath = "./class3" ; 
 fs.rmdir(filePath);
@@ -114,7 +112,7 @@ fs.rmdir(filePath);
 
 7.創建資料夾
 
-```text
+```
 var fs = require('fs');
 
 fs.mkdir('./IamDir',0777, function (err) {
@@ -126,7 +124,7 @@ fs.mkdir('./IamDir',0777, function (err) {
 
 下面講一下檔案權限
 
-```text
+```
 讀取 Read = R = 4
 寫入 Write = W = 2
 執行 eXecute = X = 1
@@ -155,7 +153,7 @@ Other (訪客) = 4 + 0 + 1 = 5
 
 8.readFile是異步的
 
-```text
+```
 var fs = require('fs');
 
 fs.readFile('./class1.js','UTF-8' ,function (err, data) {
@@ -175,13 +173,13 @@ fs.readFile('./class3.js','UTF-8' ,function (err, data) {
 多嘗試幾次，發現console的讀取順序不固定  
 9.同步讀取
 
-```text
+```
 mkdirSync()，writeFileSync()，readFileSync()
 ```
 
 10.讀取目錄內檔案
 
-```text
+```
 var fs = require('fs');
 
 dir="./as";
@@ -203,7 +201,7 @@ fs.readdir(dir, function (err, files) {
 
 fs.stat\(path, callback\)
 
-```text
+```
 var fs = require('fs');
 
 dir="./as";
@@ -229,7 +227,7 @@ fs.readdir(dir, function (err, files) {
 
 watchfile\(\)，unwatchfile\(\)
 
-```text
+```
 var fs = require('fs');
 
 fs.watchFile('./class1.js', function (curr, prev) {
@@ -244,7 +242,7 @@ fs.watchFile('./class1.js', function (curr, prev) {
 
 createReadStream方法往往用於打開大型的文本文件，創建一個讀取操作的數據流。所謂大型文本文件，指的是文本文件的體積很大，讀取操作的緩存裝不下，只能分成幾次發送，每次發送會觸發一個data事件，發送結束會觸發end事件。
 
-```text
+```
 var fs = require('fs');
 
 var input = fs.createReadStream('./class1.js');
@@ -257,7 +255,7 @@ console.log(data);
 
 會發現得到的是一個buffer
 
-```text
+```
 console.log(data.toString());
 ```
 
@@ -265,7 +263,7 @@ console.log(data.toString());
 
 另外
 
-```text
+```
 data.toString(); 
 //還可以指定字元集，預設utf-8
 data.toString('ascii');
@@ -277,11 +275,11 @@ data.toString('utf-8',0,10);
 
 為什麼要有buffer?
 
-```text
+```
 電腦裡有很多檔案其實不是文字檔案來的。實際上，大部分我們開啟的檔案都是二進制檔案，例如圖片檔案，音訊檔案，簡報等，所有檔案裡的資料其實都是以二進制表示的。所以我們就用Buffer物件去表示檔案的內容，和方便我們閱讀檔案資料的每個位元組。
 ```
 
-```text
+```
 1    fs.rename(oldPath, newPath, callback)
 異步 rename().回調函數沒有參數，但可能拋出異常。
 2    fs.ftruncate(fd, len, callback)
@@ -423,13 +421,15 @@ The 同步 version of fs.appendFile.
 異步 symlink().回調函數沒有參數，但可能拋出異常。
 ```
 
-## fs.utimes
 
-```text
+
+# fs.utimes
+
+```
 修改檔案的atime與mtime，
 ```
 
 其他可參考下面文章
 
-[https://www.shellhacks.com/fake-file-access-modify-change-timestamps-linux/](https://www.shellhacks.com/fake-file-access-modify-change-timestamps-linux/)
+https://www.shellhacks.com/fake-file-access-modify-change-timestamps-linux/
 

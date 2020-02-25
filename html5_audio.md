@@ -29,11 +29,11 @@ audio的src可用base64當連結
 
 ## 另外 atob btob
 
-btob為encode 把值encode為base64
+btob為encode  把值encode為base64
 
 而atob為decode 把 base64轉為原始檔案的二進位格式
 
-### 但是試很很多base64跟decode的字串都太長
+#### 但是試很很多base64跟decode的字串都太長
 
 所以最後還是轉為檔案存在server的硬碟內
 
@@ -45,7 +45,7 @@ formdata的POST不可指定contentType，如果指定了會收不到
 
 Formdata Ajax範例如下
 
-```text
+```
 var oMyForm = new FormData();
 
 oMyForm.append("file",s);
@@ -63,7 +63,7 @@ PS:需先新建一個`uploads`資料夾於目錄，注意`var storage`的設定�
 
 server.js
 
-```text
+```
 var express = require('express');
 var bodyParser = require('body-parser');
 var crypto = require('crypto');
@@ -110,7 +110,7 @@ app.listen('8000',function(){
 
 audio.ejs
 
-```text
+```
 <html>
   <body>
     <audio controls autoplay></audio>
@@ -174,4 +174,6 @@ oReq.send(oMyForm);
   </body>
 </html>
 ```
+
+
 

@@ -1,10 +1,10 @@
-# ES8 Async
+# Async與Await
 
 可以簡單地在任何function前加上async字樣，之後把裡面會需要異步的function前加上await即可
 
 後面用then\(\)即可去進行步驟控制
 
-```javascript
+```js
 async function getTrace () {  
     pageContent = await fetch('www.google.com', {
       method: 'get'
@@ -19,9 +19,13 @@ getTrace()
   })
 ```
 
+
+
+#### 
+
 因為一般function沒有內建promise所以無法用Async，需要如下使用
 
-```javascript
+```js
 function timeout(ms) {
     return new Promise(resolve => setTimeout(() => {
     resolve();
@@ -33,4 +37,6 @@ async function sleep() {
     console.log(123)
 }
 ```
+
+
 

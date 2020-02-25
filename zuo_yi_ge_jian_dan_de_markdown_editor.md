@@ -1,12 +1,9 @@
 # 做一個簡單的markdown editor
 
-## 做一個簡單的markdown editor
-
 放入package.json後使用npm install
 
 package.json
-
-```text
+```
  {
       "name": "RealtimeMarkdownViewer",
       "description": "Realtime Markdown Viewer",
@@ -34,10 +31,8 @@ package.json
       }
     }
 ```
-
 server.js
-
-```text
+```
 var express = require('express');
 var app = express();
 
@@ -56,12 +51,12 @@ app.get('/', function(req, res) {
 var port = process.env.PORT || 8000;
 app.listen(port,function(){console.log("listen 8000")});
 ```
-
 建造views資料夾，裡面存放模板
 
-在views內創造pad.ejs
 
-```text
+在views內創造pad.ejs
+```
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,12 +78,10 @@ app.listen(port,function(){console.log("listen 8000")});
 </body>
 </html>
 ```
-
 建造public資料夾在根目錄，即為我們的static folder
 
 裡面放入style.css
-
-```text
+```
 html, body, section, .full-height {
     height: 100%;
 } 
@@ -111,10 +104,8 @@ html, body, section, .full-height {
     border-left: 1px solid black;
 }
 ```
-
 public裡面放入script.js
-
-```text
+```
 window.onload = function() {
     var converter = new showdown.Converter();
     var pad = document.getElementById('pad');
@@ -131,15 +122,14 @@ window.onload = function() {
     convertTextAreaToMarkdown();
 };
 ```
-
 此時輸入 node server 可看到兩個框框，在左邊那個框輸入markdown試試
 
-## 讓他成為共筆的markdown
 
-```text
+#讓他成為共筆的markdown
+```
 npm install --save share@0.6.3
 npm install --save redis
 ```
 
-[https://github.com/showdownjs](https://github.com/showdownjs) [https://www.npmjs.com/package/showdown](https://www.npmjs.com/package/showdown)
-
+https://github.com/showdownjs
+https://www.npmjs.com/package/showdown

@@ -6,7 +6,7 @@
 
 1.以下為讓每個cpu都跑一個process的範例\(根據cpu數量\)
 
-```javascript
+```js
 var cluster = require('cluster');
 var os = require('os');
 
@@ -24,7 +24,7 @@ if (cluster.isMaster){
 
 2.以下為讓子進程與主進程溝通的範例
 
-```javascript
+```js
 var cluster = require('cluster');
 var http = require('http');
 var numReqs = 0;
@@ -97,7 +97,7 @@ if (cluster.isMaster) {
 
 ## Exec
 
-```javascript
+```js
   const { exec } = require('child_process');
   exec(`
   mkdir ${location}
@@ -118,14 +118,14 @@ if (cluster.isMaster) {
 
 > spawn會需要將參數寫成如下
 
-```javascript
+```js
 const spawn = require('child_process').spawn;
 const ls = spawn('ls', ['-lh', '/usr']);
 ```
 
 如果有輸出log
 
-```javascript
+```js
 const { exec } = require('child_process');
 const cmdInfo = exec(`ls -lh`);
 ls.stdout.on('data', (data) => {
@@ -140,4 +140,6 @@ ls.on('close', (code) => {
   console.log(`child process exited with code ${code}`);
 });
 ```
+
+
 

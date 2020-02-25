@@ -1,12 +1,10 @@
-# Geocode
-
 用來把經緯度轉換為文字地址
 
 因為此較耗費運算資源，所以google把此api列為超過限制數量後為收費項目
 
-取得後看到他無法很精準的取得特定你要的區域規則例如縣或市，所以用if來進行判斷，假如沒有找到市就找國家
 
-```text
+取得後看到他無法很精準的取得特定你要的區域規則例如縣或市，所以用if來進行判斷，假如沒有找到市就找國家
+```
 MapGeocode(location) {
     const context = this;
     axios.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + location.lat() + ',' + location.lng())
@@ -15,9 +13,10 @@ MapGeocode(location) {
         context.locationVerify(data);  
       })
   }
+
 ```
 
-```text
+```
   locationVerify(data) {
      const context = this;
      context.setState({regionName: ''}) //每次點選都把上一次記錄過的地區先清空
@@ -43,5 +42,5 @@ MapGeocode(location) {
           })
         }
   }
-```
 
+```

@@ -1,10 +1,8 @@
-# compose
-
-## Compose
+# Compose
 
 [https://github.com/reduxjs/redux/blob/master/src/compose.js](https://github.com/reduxjs/redux/blob/master/src/compose.js)
 
-```javascript
+```js
 function compose(...funcs) {
   if (funcs.length === 0) {
     return arg => arg
@@ -20,18 +18,18 @@ function compose(...funcs) {
 
 使用
 
-```text
+```
 let a = (c) => c * c
 let b = (x) => x + x
 compose(a, b)(1)
 // 4
 ```
 
-> 因為 compose\(a, b\)\(1\) 會變為 `a(b(1))`
+> 因為 compose\(a, b\)\(1\)  會變為 `a(b(1))`
 
-## 如果HOC要用在compose內必須要這樣寫
+# 如果HOC要用在compose內必須要這樣寫
 
-```javascript
+```js
 export default function withRules(ruleOptions = {}) {
   return Component =>
     class WithRules extends React.Component {
@@ -43,10 +41,12 @@ export default function withRules(ruleOptions = {}) {
         )
       }
     }
-}
+}  
 ```
 
-> ```text
+> ```
 > (opt) => (BaseComponent) => return class
 > ```
+
+
 

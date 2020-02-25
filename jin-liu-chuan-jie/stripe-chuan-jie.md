@@ -1,6 +1,4 @@
-# Stripe 串接
-
-## Stripe
+# Stripe
 
 stripe為一個金流串接服務提供者，其特點在於串接簡單。
 
@@ -15,13 +13,13 @@ stripe為一個金流串接服務提供者，其特點在於串接簡單。
 
 > 建立商店後會可以進入一個Dashboard介面，在左下方把Test打開即可進入測試模式。
 >
-> ![](../.gitbook/assets/screen-shot-2018-08-17-at-3.13.45-pm.png)
+> ![](/assets/Screen Shot 2018-08-17 at 3.13.45 PM.png)
 
 #### 3.程式範例：
 
 Server.js
 
-```javascript
+```js
 const keyPublishable = process.env.PUBLISHABLE_KEY;
 const keySecret = process.env.SECRET_KEY;
 
@@ -60,7 +58,7 @@ app.listen(4567);
 
 views/index.pug
 
-```text
+```pug
 <html>
 <head>
 <script src="https://checkout.stripe.com/v2/checkout.js"></script></head>
@@ -77,17 +75,17 @@ views/index.pug
 
 views/charge.pug
 
-```markup
+```html
 h2 You successfully paid <strong>$5.00</strong>!
 ```
 
-### 原理：
+## 原理：
 
 要求客戶付款的都在checkout文件：[https://stripe.com/docs/checkout](https://stripe.com/docs/checkout)
 
 #### 1.引入stripe的官方script後，加入一個元件
 
-```markup
+```html
     <form action="/charge" method="post">
         <article><label>Amount: $5.00</label></article>
         <script class="stripe-button" data-key="pk_test_nk4UQNZM8NWjfvmhKjfZnWav" src="//checkout.stripe.com/v2/checkout.js" data-locale="auto" data-description="Sample Charge" data-amount="500"></script>
@@ -98,7 +96,7 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 #### 2.之後點擊按鈕後會要求填入信用卡資訊與email
 
-![](../.gitbook/assets/screen-shot-2018-08-17-at-3.22.28-pm.png)
+![](/assets/Screen Shot 2018-08-17 at 3.22.28 PM.png)
 
 #### 3.送出後會發送Request給stripe
 
@@ -106,7 +104,7 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 #### 4.接著我們後端App.js接到後會執行
 
-```javascript
+```js
   stripe.customers.create({
      email: req.body.stripeEmail,
     source: req.body.stripeToken
@@ -115,9 +113,9 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 產生如下請求
 
-#### ![](../.gitbook/assets/screen-shot-2018-08-17-at-3.20.39-pm.png)5.最後前一個請求返回後會進行確認請求
+#### ![](/assets/Screen Shot 2018-08-17 at 3.20.39 PM.png)5.最後前一個請求返回後會進行確認請求
 
-```javascript
+```js
     stripe.charges.create({
       amount,
       description: "Sample Charge",
@@ -126,23 +124,23 @@ h2 You successfully paid <strong>$5.00</strong>!
     })
 ```
 
-![](../.gitbook/assets/screen-shot-2018-08-17-at-3.26.43-pm.png)
+![](/assets/Screen Shot 2018-08-17 at 3.26.43 PM.png)
 
 > 以上的請求詳細內容都可以在左側log tab看到
 >
-> ![](../.gitbook/assets/screen-shot-2018-08-17-at-3.27.20-pm.png)
+> ![](/assets/Screen Shot 2018-08-17 at 3.27.20 PM.png)
 
-## 使用React
+# 使用React
 
 可使用此模組：
 
 [https://github.com/azmenak/react-stripe-checkout](https://github.com/azmenak/react-stripe-checkout)
 
-```text
+```
 npm install react-stripe-checkout --save
 ```
 
-```javascript
+```js
 import StripeCheckout from 'react-stripe-checkout';
 
 ....
@@ -153,7 +151,7 @@ import StripeCheckout from 'react-stripe-checkout';
 />
 ```
 
-```javascript
+```js
   onToken = (res) => {
     axios.post(`${window.API_HOST}/stripepay`, res)
       .then((response) => {
@@ -167,7 +165,7 @@ import StripeCheckout from 'react-stripe-checkout';
 
 Server.js
 
-```javascript
+```js
 app.post("/stripepay", (req, res) => {
     const stripe = require("stripe")("sk_test_LtpwSuF1PsGKLLv3rlVCTZlN");
     let amount = 500;
@@ -189,7 +187,9 @@ app.post("/stripepay", (req, res) => {
 });
 ```
 
-## 客製化按鈕
+# 客製化按鈕
 
-[https://github.com/stripe/elements-examples](https://github.com/stripe/elements-examples)
+https://github.com/stripe/elements-examples
+
+
 

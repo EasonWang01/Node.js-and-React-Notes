@@ -1,10 +1,8 @@
 # Crypto加密
 
-## Crypto加密
+# 簡單字串加密
 
-## 簡單字串加密
-
-```text
+```
 let cipher = crypto.createCipher('aes-256-cbc','testkey');
 let crypted = cipher.update('要加密的東西','utf8','hex');
 crypted += cipher.final('hex');
@@ -12,7 +10,7 @@ crypted += cipher.final('hex');
 
 解密
 
-```text
+```
 let decipher = crypto.createDecipher('aes-256-cbc','testkey');
 let dec = decipher.update(crypted,'hex','utf8');
 dec += decipher.final('utf8');
@@ -25,7 +23,7 @@ console.log('解密的文本：'+dec);
 
 可把`'hex'`改為`'binary'`試試
 
-## JWT Token產生
+# JWT Token產生
 
 [https://github.com/auth0/node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
 
@@ -33,7 +31,7 @@ Server
 
 > 以下為預設的HMAC加密，第二個參數放入secret，可以放入客戶password
 
-```javascript
+```js
 // Generate JWT token
 const jwt = require('jsonwebtoken');
 const token = jwt.sign(result.rows[0], result.rows[0].password);
@@ -44,7 +42,7 @@ Client
 
 > 登入時驗證password正確，token從localstorage等地方取出。
 
-```javascript
+```js
 const decoded = jwt.verify(token, result.rows[0].password);
 console.log(decoded) // bar
 ```

@@ -1,15 +1,13 @@
-# AWS S3
-
 1. 申請IAM，取得access key 和 secret key
 2. 下載aws-sdk
 
 官方文件：[https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html\#createBucket-property](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#createBucket-property)
 
-## 上傳到 S3 範例
+# 上傳到 S3 範例
 
 > 以下程式開啟後會先當一個範例上傳網站，然後可以在此上傳檔案，之後會傳到S3，使用的上傳檔案模組為busboy
 
-```javascript
+```js
 var http = require('http'),
     path = require('path'),
     os = require('os'),
@@ -89,21 +87,21 @@ http.createServer(function(req, res) {
 
 > 在createBucket的params的參數key前面加上路徑/test/test.png 則會自動在S3新增test資料夾
 
-## 開啟CORS
+# 開啟CORS
 
 到下圖中設定
 
-![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202018-04-18%20上午11.14.50.png)
+![](/assets/螢幕快照 2018-04-18 上午11.14.50.png)
 
 加上藍色那段
 
-```text
+```
 <AllowedMethod>HEAD</AllowedMethod>
 ```
 
 完整版為：
 
-```text
+```
 <!-- Sample policy -->
 <CORSConfiguration>
     <CORSRule>
@@ -115,4 +113,6 @@ http.createServer(function(req, res) {
     </CORSRule>
 </CORSConfiguration>
 ```
+
+
 

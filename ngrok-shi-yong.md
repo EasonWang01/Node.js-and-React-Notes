@@ -8,7 +8,7 @@
 
 ## 使用
 
-```text
+```
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 unzip ./ngrok.zip
 ./ngork http <port>
@@ -16,7 +16,7 @@ unzip ./ngrok.zip
 
 ## 在背景跑
 
-```text
+```
 ./ngrok http <port> > /dev/null &
 export WEBHOOK_URL="$(curl http://localhost:4040/api/tunnels | jq ".tunnels[0].public_url")"
 echo $WEBHOOK_URL
@@ -26,7 +26,9 @@ echo $WEBHOOK_URL
 
 ## 查看dashboard
 
-```text
+```
 http://localhost:4040
 ```
+
+
 

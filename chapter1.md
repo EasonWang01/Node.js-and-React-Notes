@@ -1,12 +1,10 @@
-# Node.js基本
-
-## 1.下載Node.js
+# 1.下載Node.js
 
 使用sublime，atom或任何編輯器創造如下檔案
 
 class.js
 
-```text
+```
 function hello() {
     console.log('Hello World!');
 }
@@ -17,13 +15,13 @@ hello();
 
 輸入node class
 
-## 2.模組
+# 2.模組
 
 export
 
 新增一個class1.js
 
-```text
+```
 exports.hello1=function () {
     console.log('Hello this is class1!');
 }
@@ -31,7 +29,7 @@ exports.hello1=function () {
 
 class.js
 
-```text
+```
 var x = require("./class1.js");
 
 function hello() {
@@ -41,11 +39,11 @@ hello();
 x.hello1();
 ```
 
-## 3.module.exports
+# 3.module.exports
 
 class1.js
 
-```text
+```
 module.exports = function () {
     console.log('Hello Hello Hello World!');
 };
@@ -53,7 +51,7 @@ module.exports = function () {
 
 class.js
 
-```text
+```
 var x = require("./class1.js");
 
 function hello() {
@@ -64,11 +62,11 @@ hello();
 x();
 ```
 
-## 4.一個模組中的JS代碼僅在模組第一次被使用時執行一次，並在執行過程中初始化模組的導出對像。之後，緩存起來的導出對像被重複利用。
+# 4.一個模組中的JS代碼僅在模組第一次被使用時執行一次，並在執行過程中初始化模組的導出對像。之後，緩存起來的導出對像被重複利用。
 
 class1.js
 
-```text
+```
 var i = 0;
 
 function count() {
@@ -80,7 +78,7 @@ exports.count = count;
 
 class.js
 
-```text
+```
 var counter1 = require('./class1.js');
 var counter2 = require('./class1.js');
 
@@ -89,11 +87,11 @@ console.log(counter2.count());
 console.log(counter2.count());
 ```
 
-## 5.預設載入路徑\(如給予相對路徑沒/\)
+# 5.預設載入路徑\(如給予相對路徑沒/\)
 
 class.js
 
-```text
+```
 var counter1 = require('class1.js');
 ```
 
@@ -103,7 +101,7 @@ var counter1 = require('class1.js');
 
 NodeJS定義了一個特殊的node\_modules目錄用於存放模塊。例如某個模塊的絕對路徑是/home/user/hello.js，在該模塊中使用require\('foo/bar'\)方式加載模塊時，則NodeJS依次嘗試使用以下路徑。
 
-```text
+```
  /home/user/node_modules/foo/bar
  /home/node_modules/foo/bar
  /node_modules/foo/bar
@@ -111,19 +109,20 @@ NodeJS定義了一個特殊的node\_modules目錄用於存放模塊。例如某�
 
 6.手動設定預設加載模組路徑
 
-1. 將以下放在require前
+1.  
+將以下放在require前
 
-```text
+```
 module.paths.push("./as", "one/more/path");
 ```
 
 2.直接更改系統環境變數
 
 7.一次加載\(require\)在資料夾下的js檔案  
-1.第一種方式，將檔案改名為index.js  
-創建一個as資料夾下面創一個index.js
+ 1.第一種方式，將檔案改名為index.js  
+ 創建一個as資料夾下面創一個index.js
 
-```text
+```
  module.exports = function () {
     console.log('Hello Hello Hello World!');
 };
@@ -131,7 +130,7 @@ module.paths.push("./as", "one/more/path");
 
 在外面創一個class.js
 
-```text
+```
 var counter1 = require('./as');
  counter1();
 ```
@@ -139,9 +138,9 @@ var counter1 = require('./as');
 名稱一定要為index.js才可將路徑指定為其上之資料夾，而非檔案
 
 8.使用package.json  
-在as資料夾裡面新增package.json檔案
+ 在as資料夾裡面新增package.json檔案
 
-```text
+```
  {
     "name": "As you want",
     "main": "class1.js"
@@ -152,7 +151,7 @@ var counter1 = require('./as');
 
 9.指定require資料夾路徑但其下需載入多個js檔
 
-```text
+```
  使用require將每個js擋在入口js內載入即可
 ```
 
@@ -162,26 +161,26 @@ var counter1 = require('./as');
 
 [http://www.ruanyifeng.com/blog/2015/05/command-line-with-node.html](http://www.ruanyifeng.com/blog/2015/05/command-line-with-node.html)
 
-## 11. process.env
+# 11. process.env
 
 用來定義執行時期的參數，  
-建議寫在script的最前面
+ 建議寫在script的最前面
 
 package.json
 
-```text
+```
  "serve": "API_HOST=http://localhost:3001 nodemon  src/server/index.js  --ignore src/containers --ignore src/components --ignore src/redux  ",
 ```
 
 讀取
 
-```text
+```
 console.log(process.env.API_HOST)
 ```
 
-## 12. 使用 Export
+# 12. 使用 Export
 
-```text
+```
 Step #1:
 
 npm i esm
@@ -191,4 +190,6 @@ Step #2:
 
 node -r esm yourApp.js
 ```
+
+
 

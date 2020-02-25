@@ -1,10 +1,8 @@
-# KeyboardAvoidingView
+以時輸入框要輸入時  彈出的鍵盤會擋到輸入框   所以我們要讓畫面自動上移
 
-以時輸入框要輸入時 彈出的鍵盤會擋到輸入框 所以我們要讓畫面自動上移
-
-```javascript
+```js
   import { KeyboardAvoidingView } from 'react-native';
-
+  
   <KeyboardAvoidingView behavior="padding" style={styles.container}>
                 <View style={{flexDirection: 'row', marginTop: 60, alignSelf: 'center'}}>
                   <Text>已經有帳號了嗎?</Text>  
@@ -12,4 +10,8 @@
                 </View>      
   </KeyboardAvoidingView>
 ```
+
+
+
+
 

@@ -1,12 +1,10 @@
 # react-navigation套件
 
-## react-navigation套件
-
 [https://reactnavigation.org/docs/en/navigating.html](https://reactnavigation.org/docs/en/getting-started.html)
 
 > 隱藏Header，於各router 的 component
 >
-> ```javascript
+> ```js
 > class .....
 >   static navigationOptions = {
 >     header: null,
@@ -19,11 +17,11 @@
 >
 > 使用createStackNavigator來初始化該路由，然後用createBottomTabNavigator建立底部導航
 
-## 或是直接貼上以下Code即可
+# 或是直接貼上以下Code即可
 
 [https://snack.expo.io/@react-navigation/going-back-v2](https://snack.expo.io/@react-navigation/going-back-v2)
 
-```javascript
+```js
 import React from 'react';
 import { Button, View, Text } from 'react-native';
 import { StackNavigator } from 'react-navigation'; // Version can be specified in package.json
@@ -85,13 +83,13 @@ export default class App extends React.Component {
 }
 ```
 
-## 監聽Router Change
+# 監聽Router Change
 
 > react-navigation listen on router change
 
 1.
 
-```javascript
+```js
 import { NavigationEvents } from "react-navigation";
 
   render() {
@@ -108,10 +106,12 @@ import { NavigationEvents } from "react-navigation";
 
 使用NavigationEvents即可。
 
-> ```text
+> ```
 > onWillFocus={payload => console.log("will focus", payload)}
 > onDidFocus={payload => console.log("did focus", payload)}
 >
 > 這兩個有時要同時加才有反應
 > ```
+
+
 

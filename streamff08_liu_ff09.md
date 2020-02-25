@@ -1,12 +1,10 @@
 # Stream（流）
 
-## Stream（流）
-
 具有readable、writable、drain、data、end、close等事件
 
 一個讀檔案的簡單server為例
 
-```text
+```
 var http = require('http');
 var fs = require('fs');
 
@@ -24,7 +22,7 @@ server.listen(8000);
 
 如果改成以下這樣
 
-```text
+```
 var http = require('http');
 var fs = require('fs');
 
@@ -43,7 +41,7 @@ server.listen(8000);
 
 Readable
 
-```text
+```
 var Readable = require('stream').Readable;
 
 var rs = new Readable;
@@ -59,7 +57,7 @@ rs.push\(null\); 告訴Readable要結束了
 
 或使用
 
-```text
+```
 var Readable = require('stream').Readable;
 
 var rs = new Readable;
@@ -79,7 +77,7 @@ rs.on('data', function(chunk) {
 
 但只讀到buffer，如何轉為字串?
 
-```text
+```
 var Readable = require('stream').Readable;
 
 var rs = new Readable;
@@ -100,7 +98,7 @@ rs.on('data', function(chunk) {
 
 監聽end
 
-```text
+```
 var Readable = require('stream').Readable;
 var aa;
 var rs = new Readable;
@@ -124,7 +122,7 @@ aa+=chunk;
 
 pause\(\);
 
-```text
+```
 var Readable = require('stream').Readable;
 var aa;
 var rs = new Readable;
@@ -149,25 +147,25 @@ rs.pause();
 
 如何確認是不是暫停?
 
-```text
+```
 console.log(rs.isPaused());
 ```
 
 暫停後如何繼續?
 
-```text
+```
 rs.resume();
 ```
 
 讀進buffer後如何寫出?
 
-```text
+```
 fs.writeFile(filename, data, [encoding], [callback])
 ```
 
 範例
 
-```text
+```
 var Readable = require('stream').Readable;
 var fs = require('fs');
 
@@ -186,7 +184,7 @@ rs.on('data', function(chunk) {
 
 使用write的stream方法
 
-```text
+```
 var Readable = require('stream').Readable;
 var fs = require('fs');
 
@@ -203,33 +201,37 @@ rs.on('data', function(chunk) {
 
 將
 
-```text
+```
 fs.createWriteStream('./class1.js').write(chunk);
 ```
 
 改成
 
-```text
+```
 console.log(fs.createWriteStream('./class1.js').write(chunk))
 ```
 
 猜看看會出現什麼?
 
+---
+
 如何控制寫入?
 
-```text
+```
 write()
 end()
 ```
 
-## Pipe
+# Pipe
 
 慢慢寫太慢了，直接用管子讓他快速流過去
 
 前提:read和write的實例要繼承stream
 
-```text
+```
 pipe()
 unpipe()
 ```
+
+
 

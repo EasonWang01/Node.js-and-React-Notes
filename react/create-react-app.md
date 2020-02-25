@@ -1,14 +1,12 @@
-# create-react-app
-
-## Create-react-app
+# Create-react-app
 
 > 為一個快速建立React 模板的工具
 
-### 更改預設PORT
+## 更改預設PORT
 
 1.新增 `.env`
 
-```text
+```
 PORT=8002
 ```
 
@@ -16,26 +14,26 @@ PORT=8002
 
 3.如果要讓Node.js 檔案也可以讀.env檔案可以使用以下模組
 
-```text
+```
 yarn add dotenv
 ```
 
 然後
 
-```text
+```
 require('dotenv').load();
 console.log(process.env)
 ```
 
-## 設定多個.env
+# 設定多個.env
 
 創建一個目錄結構如下
 
-![](../.gitbook/assets/d32.png)
+![](/assets/d32.png)
 
 將env.js改為如下
 
-```javascript
+```js
 'use strict';
 
 const fs = require('fs');
@@ -128,7 +126,7 @@ module.exports = getClientEnvironment;
 
 其中以下部分可以下後端的process.env傳到前端。
 
-```javascript
+```js
 Object.assign({
         NODE_ENV: process.env.NODE_ENV || 'development',
         PUBLIC_URL: publicUrl
@@ -137,10 +135,12 @@ Object.assign({
 
 package.json中的 script 如下
 
-```javascript
+```json
 "scripts": {
     "dev": "cross-env stage=dev concurrently --kill-others \"yarn start\" \"yarn runProxy\"",
     "sit": "cross-env stage=sit concurrently --kill-others \"yarn start\" \"yarn runProxy\""
   },
 ```
+
+
 

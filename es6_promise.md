@@ -1,18 +1,14 @@
 # ES6 Promise
 
-## ES6 Promise
-
 1.Promise為構造函數，使用new生成
-
-```text
+```
 promise = new Promise(function(){})
 ```
 
 2.Promise可以傳入一個為函數的參數，該函數擁有兩個參數
 
-3.這兩個參數均為函數，分別為resolve\(\)和reject\(\)
-
-```text
+3.這兩個參數均為函數，分別為resolve()和reject()
+```
 var promise = new Promise(function(resolve, reject) {
   //first execute 
 
@@ -24,11 +20,10 @@ var promise = new Promise(function(resolve, reject) {
 });
 ```
 
-4.使用resolve\(\)代表成功，使用reject\(\)代表promise function沒成功
+4.使用resolve()代表成功，使用reject()代表promise function沒成功
 
 5.promise生成後可用then，執行成功或失敗鎖要執行的東西
-
-```text
+```
 promise.then(function(value) {
   // success//接收到resolve後會執行
 }, function(value) {
@@ -36,28 +31,29 @@ promise.then(function(value) {
 });
 ```
 
-## 自己創造Promise函式
+----
+#自己創造Promise函式
 
 使用new Promise，裡面參數放入想要async處理的function。
 
-將new Promise放在一個之後會調用then 的function名稱的return中
+將new Promise放在一個之後會調用then  的function名稱的return中
 
-```text
+```
 function get(url) {
 
   return new Promise(function(resolve, reject) {
-
+   
     var req = new XMLHttpRequest();
     req.open('GET', url);
 
     req.onload = function() {
-
+     
       if (req.status == 200) {
-
+       
         resolve(req.response);
       }
       else {
-
+      
         reject(Error(req.statusText));
       }
     };
@@ -70,14 +66,11 @@ function get(url) {
   });
 }
 ```
-
 調用方法
-
-```text
+```
 get('story.json').then(function(response) {
   return JSON.parse(response);
 }).then(function(response) {
   console.log("Yey JSON!", response);
 });
 ```
-

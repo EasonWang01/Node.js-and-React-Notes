@@ -1,24 +1,22 @@
 # ESLint
 
-## ESLint
-
 [https://wohugb.gitbooks.io/javascript/content/tool/lintmd.html](https://wohugb.gitbooks.io/javascript/content/tool/lintmd.html)
 
-### 用處:用來檢查code的語法
+## 用處:用來檢查code的語法
 
 1.安裝
 
-```text
+```
 npm install -g eslint
 ```
 
 2.配置
 
-```text
+```
 於根目錄新增   .eslintrc.json
 ```
 
-```text
+```
 {
   "globals": {
     // Put things like jQuery, etc
@@ -41,25 +39,25 @@ npm install -g eslint
 
 看到上面的rules的數字，對照下表，以上面為例，意思是對所有出現quotes\(引號\)的地方要使用double\(兩個引號\)，強制性為1\(只產生警告訊息\)
 
-```text
+```
 0 - Disable the rule
 1 - Warn about the rule
 2 - Throw error about the rule
 ```
 
-### 其他rules可參考官網
+## 其他rules可參考官網
 
 [http://eslint.org/docs/rules/](http://eslint.org/docs/rules/)
 
 3.使用parser去解析ES6
 
-```text
+```
 npm install babel-eslint
 ```
 
 之後在.eslintrc.json加上
 
-```text
+```
 {
   "parser": "babel-eslint",
   "rules": {
@@ -68,15 +66,15 @@ npm install babel-eslint
 }
 ```
 
-## 如何執行?
+# 如何執行?
 
-```text
+```
 eslint 檔案名稱.js
 ```
 
-### 其他規則
+## 其他規則
 
-```text
+```
 {  
   "env": {  
     "browser": true,  
@@ -336,24 +334,26 @@ eslint 檔案名稱.js
 }
 ```
 
-## 使用sublime+ESLint
+# 使用sublime+ESLint
 
 進入sublime的package manage\(需先安裝\)
 
 輸入
 
-```text
+```
 SublimeLinter-eslint
 ```
 
 參考至  
 [http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/](http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/)
 
-## Eslint React
+# Eslint React
 
 如果在vscode React 沒有顯示 syntax error線，可安裝
 
-```text
+```
 yarn add eslint-plugin-react
 ```
+
+
 

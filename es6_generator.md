@@ -1,12 +1,10 @@
 # ES6 Generator
 
-## ES6 Generator
-
-## function接上\*即是
+# function接上\*即是
 
 開啟REPL
 
-```text
+```
 function* Fruit() {
   yield 'apple';
   yield 'banana';
@@ -18,21 +16,21 @@ var a = Fruit();
 
 執行
 
-```text
+```
 a.next()
 ```
 
 另外試試
 
-```text
+```
 Fruit().next()
 ```
 
 發現如直接對函式下next指令會無法往下遍歷
 
-## 如沒加上yield
+# 如沒加上yield
 
-```text
+```
 function* f() {
   console.log('執行！');
   console.log('執行！');
@@ -44,15 +42,15 @@ var a = f()
 
 執行
 
-```text
+```
 a.next()
 ```
 
 發現函式一次執行完畢
 
-## yield不可放在沒有\*的function中
+# yield不可放在沒有\*的function中
 
-```text
+```
 (function (){
   yield 1;
 })()
@@ -60,9 +58,9 @@ a.next()
 
 執行會錯誤
 
-## generator函式執行時不會改變內部變數的值\(yield應該放在每行的前面\)
+# generator函式執行時不會改變內部變數的值\(yield應該放在每行的前面\)
 
-```text
+```
 function* foo(x) {
   var y = 2 * (yield (x + 1));
   var z = yield (y / 3);
@@ -74,7 +72,7 @@ var a = foo(10);
 
 執行
 
-```text
+```
 a.next();
 ```
 
@@ -82,7 +80,7 @@ a.next();
 
 所以要改成
 
-```text
+```
 b.next()
 a.next(22/3) 
 a.next(10+(22/3)+22)
@@ -92,7 +90,7 @@ a.next(10+(22/3)+22)
 
 如何讀取上次yield的變數?
 
-```text
+```
 function* foo(x) {
   yield y = 2 * ( x + 1);
   yield z =  (y / 3);
@@ -102,7 +100,7 @@ function* foo(x) {
 var a = foo(10);
 ```
 
-```text
+```
 a.next();//執行三次
 ```
 
@@ -110,13 +108,13 @@ a.next();//執行三次
 
 但y跟z變全域，因為yield後接var會出錯，而javascript預設也是在function執行完後釋放區域變數，所以本來的設定是yield後如果要變數保存，就必須設他為全域
 
-```text
+```
 yield var y = 2 * ( x + 1);
 ```
 
-## 使用for of
+# 使用for of
 
-```text
+```
 function *foo() {
   yield 1;
   yield 2;
@@ -127,7 +125,7 @@ function *foo() {
 }
 ```
 
-```text
+```
 for (let v of foo()) {
   console.log(v);
 }
@@ -135,9 +133,9 @@ for (let v of foo()) {
 
 執行for of後發現chrome告知只有在strict才可執行
 
-## 如何在chrome dev 加入strict mode?
+# 如何在chrome dev 加入strict mode?
 
-```text
+```
 (function() { "use strict"; 
 
 //放入你要執行的東西
@@ -146,7 +144,7 @@ for (let v of foo()) {
 
 所以我們改成
 
-```text
+```
 (function() { "use strict"; 
 
 for (let v of foo()) {
@@ -158,12 +156,12 @@ for (let v of foo()) {
 
 即可順利遍歷\*foo\(\)
 
-## yield\*
+# yield\*
 
 在generator函式中插入另一個generator函式時  
 用到
 
-```text
+```
 function* foo() {
   yield 'a';
   yield 'b';
@@ -182,7 +180,7 @@ for (let v of bar()){
 
 印出x,y
 
-```text
+```
 function* foo() {
   yield 'a';
   yield 'b';
@@ -201,9 +199,9 @@ for (let v of bar()){
 
 印出x,a,b,y
 
-### yield\*類似for of
+## yield\*類似for of
 
-```text
+```
 function* foo() {
   yield 'a';
   yield 'b';
@@ -226,7 +224,7 @@ for (let v of bar()){
 
 原本
 
-```text
+```
 step1(function (value1) {
   step2(value1, function(value2) {
     step3(value2, function(value3) {
@@ -241,7 +239,7 @@ step1(function (value1) {
 
 使用generator
 
-```text
+```
 function* longRunningTask() {
   try {
     var value1 = yield step1();
@@ -257,27 +255,27 @@ function* longRunningTask() {
 
 為任意對象加入Iterator後即可用next\(\)
 
-```text
+```
 var arry = ["a","b"]
 ```
 
-```text
+```
 var hi = arry[Symbol.iterator](); //S記得大寫
 ```
 
-```text
+```
 hi.next();
 ```
 
-### 測試一個物件對象
+## 測試一個物件對象
 
-```text
+```
 var car = {type:"sport", model:"500", color:"white"};
 ```
 
 接著輸入
 
-```text
+```
 for(v of car){console.log(v)}
 ```
 
@@ -285,7 +283,7 @@ for(v of car){console.log(v)}
 
 於是我們再輸入，幫他加入iterator
 
-```text
+```
 car[Symbol.iterator] = function* () {
     yield 1;
     yield 2;
@@ -295,13 +293,13 @@ car[Symbol.iterator] = function* () {
 
 這時輸入
 
-```text
+```
 for(v of car){console.log(v)}
 ```
 
 以及
 
-```text
+```
 [...car]
 ```
 
@@ -309,19 +307,19 @@ for(v of car){console.log(v)}
 
 但輸入next還是不行
 
-```text
+```
 car.next()
 ```
 
 所以我們生成一個b
 
-```text
+```
 var b = car[Symbol.iterator]()
 ```
 
 之輸入b.next\(\)，即可順利印出
 
-```text
+```
 b.next()
 Object {value: 1, done: false}
 b.next()
@@ -332,13 +330,13 @@ Object {value: 3, done: false}
 
 但如果改成
 
-```text
+```
 var b = car[Symbol.iterator]
 ```
 
 之後輸入
 
-```text
+```
 b().next()
 Object {value: 1, done: false}
 b().next()
@@ -349,9 +347,9 @@ Object {value: 1, done: false}
 
 發現第一個完後即無法在往下
 
-## 查看一個數組有沒有iterator
+# 查看一個數組有沒有iterator
 
-```text
+```
 Set.prototype[Symbol.iterator]
 
 Array.prototype[Symbol.iterator]
@@ -361,15 +359,15 @@ Map.prototype[Symbol.iterator]
 Object.prototype[Symbol.iterator]
 ```
 
-## 有\[Symbol.iterator\]的方法都可用\[...名字\]去遍歷
+# 有\[Symbol.iterator\]的方法都可用\[...名字\]去遍歷
 
 只有object無法
 
-## yield 實用方法
+# yield 實用方法
 
 在Promise中我們會在async function call的完成狀態\(onSuccess\)調用`resolve(要傳下去的值)`，而在Generator中我們會調用`g.next(要傳下去的值);`其中next裡面放的是接下來要繼續處理的值
 
-```text
+```
 var g = gen(); // 建立函數物件
 g.next(); // 開始執行到第一個 yield
 

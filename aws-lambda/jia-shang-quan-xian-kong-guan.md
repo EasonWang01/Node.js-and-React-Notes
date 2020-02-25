@@ -1,8 +1,6 @@
-# 加上權限控管
+# API Gateway 結合 Lambda 之權限管理
 
-## API Gateway 結合 Lambda 之權限管理
-
-## 文件與文章
+# 文件與文章
 
 [https://docs.aws.amazon.com/zh\_cn/apigateway/latest/developerguide/api-gateway-custom-authorizer-output.html](https://docs.aws.amazon.com/zh_cn/apigateway/latest/developerguide/api-gateway-custom-authorizer-output.html)
 
@@ -12,7 +10,7 @@
 
 > Auth0的文章最詳細。
 
-## 流程
+# 流程
 
 當我們發出Request後給API gateway會想要讓認證過的使用者才能繼續執行程式。
 
@@ -24,7 +22,7 @@ API Gateway的Authorizers可以讓該API gateway接收請求時也接受一個To
 
 Lambda 範例:
 
-```javascript
+```js
 const AWS = require('aws-sdk');
 const jwt = require('jsonwebtoken');
 const jwtPass = "yicheng";
@@ -74,23 +72,25 @@ var generatePolicy = function(principalId, effect, resource) {
 
 > 下面範例在之後會接受一個名為token的Header
 
-![](../.gitbook/assets/004.png)
+![](/assets/004.png)
 
 創建後可以點選測試
 
-![](../.gitbook/assets/004-1.png)
+![](/assets/004-1.png)
 
 最後記得要再到Resources中點長方形，然後點選[Method Request](https://us-west-1.console.aws.amazon.com/apigateway/home?region=us-west-1#)長方形。
 
 並且設定Authorization為剛才創建的Authorizers，並把Request Validator設定。
 
-![](../.gitbook/assets/005.png)
+![](/assets/005.png)
 
 之後調用該API時如果沒有傳Header的Token會顯示如下:
 
-```javascript
+```json
 {
     "message": "Unauthorized"
 }
 ```
+
+
 

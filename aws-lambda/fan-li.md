@@ -1,12 +1,10 @@
-# 範例
-
 > 使用event.headers 可取得 Header
 >
 > event.body 可取得body
 
-## 註冊使用者
+# 註冊使用者
 
-```javascript
+```js
     const AWS = require('aws-sdk');
     const uuid = require('uuid');
     const crypto = require('crypto');
@@ -87,11 +85,11 @@
     };
 ```
 
-## 登入使用者
+# 登入使用者
 
 > 這邊使用到第三方模組，所以要先在本地安裝好後打包成ZIP檔案上傳Lambda。
 
-```javascript
+```js
 const AWS = require('aws-sdk');
 const crypto = require('crypto');
 const documentClient = new AWS.DynamoDB.DocumentClient();
@@ -106,10 +104,10 @@ exports.handler = function index(event, context) {
             .digest('hex');
         return hash;
     }
-
+    
     var account = event.account;
     var hashed_password = HMAC_sha256(event.password.toString());
-
+    
     var params = {
         TableName: "market_user",
         Key: {
@@ -136,5 +134,8 @@ exports.handler = function index(event, context) {
         }
     }});
 };
+
 ```
+
+
 

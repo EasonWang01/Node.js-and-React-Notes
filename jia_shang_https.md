@@ -1,6 +1,4 @@
-# 加上https
-
-## 使用Let's encrypt
+# 使用Let's encrypt
 
 1.先到此網站
 
@@ -36,11 +34,11 @@ ubuntu路徑如下
 
 \(如閒置太久點下一步時會產生錯誤，需重來\)
 
-#### 接著是重點
+### 接著是重點
 
 5.它會給你三個框框，裡面分別為
 
-```text
+```
 ca_bundle.crt 
 private.key 
 certificate.crt
@@ -52,7 +50,7 @@ certificate.crt
 
 另外要輸入以下指令，將兩個crt合成一個bundle
 
-```text
+```
 sudo bash -c 'cat certificate.crt ca_bundle.crt >> bundle.crt'
 ```
 
@@ -68,7 +66,7 @@ ubuntu路徑如下
 
 把它如下\(如果說private.key not match ，把ssl\_certificate 的bundle.crt改為certificate.crt試試\)
 
-```text
+```
 server {        
   listen 80;        
   server_name sakatu.com  www.sakatu.com;
@@ -87,17 +85,17 @@ server {
 
 之後
 
-```text
+```
 1.sudo service nginx stop
 
 2.sudo nginx
 ```
 
-#### 注意
+### 注意
 
 這裡可能出現一些key或bundle的https錯誤，最常見的是說begin或end之類，記得每個檔案要有
 
-```text
+```
 -----BEGIN CERTIFICATE-----
 
 ....
@@ -107,15 +105,15 @@ server {
 
 這不是註解
 
-### 最後在你的網域前加上`https://`即可
+## 最後在你的網域前加上`https://`即可
 
 參考至:[https://free.com.tw/ssl-for-free/](https://free.com.tw/ssl-for-free/)
 
-## 完整nginx config
+# 完整nginx config
 
 完整範例:
 
-```text
+```
 server {        
   listen 80;        
   server_name sakatu.com  www.sakatu.com;
@@ -132,11 +130,11 @@ server {
   }}
 ```
 
-## 附錄：上Node.js裝上https，不使用nginx
+# 附錄：上Node.js裝上https，不使用nginx
 
 範例如下
 
-```text
+```
 var fs = require('fs');
 var https = require('https');
 var app = require('express')();
@@ -159,21 +157,21 @@ https.createServer(options, app).listen(3000, function () {
 參考  
 [https://www.sitepoint.com/how-to-use-ssltls-with-node-js/](https://www.sitepoint.com/how-to-use-ssltls-with-node-js/)
 
-## 方法2
+# 方法2
 
 使用cloudflare，可參考web basic的cloudflare章節。
 
-## 自動轉址到https
+# 自動轉址到https
 
 一個是在nginx做轉址
 
-```text
+```
 rewrite ^/(.*) https://sakatu.com/$1 permanent;
 ```
 
 一個是在前端頁面做轉址
 
-```text
+```
 <script type="text/javascript">
     var host = "class.sakatu.com";
     if ((host == window.location.host) && (window.location.protocol != "https:"))
@@ -181,7 +179,7 @@ rewrite ^/(.*) https://sakatu.com/$1 permanent;
 </script>
 ```
 
-## 自動使用腳本加上
+# 自動使用腳本加上
 
 > 可參考 [https://blog.hellojcc.tw/2018/05/02/setup-https-with-letsencrypt-on-nginx/](https://blog.hellojcc.tw/2018/05/02/setup-https-with-letsencrypt-on-nginx/)
 >
@@ -189,7 +187,7 @@ rewrite ^/(.*) https://sakatu.com/$1 permanent;
 
 步驟1
 
-```text
+```
 sudo apt-get update
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:certbot/certbot # 載入 certbot 的 ppa
@@ -201,7 +199,7 @@ sudo apt-get install python-certbot-nginx # 安裝 python 的 certbot for nginx
 
 > 在 -d 後面加上網域名稱
 
-```text
+```
 sudo certbot --nginx -d <輸入網域名稱>
 ```
 
@@ -211,11 +209,11 @@ sudo certbot --nginx -d <輸入網域名稱>
 
 最後記得打開虛擬主機防火牆。
 
-## 新增Submain Domain
+# 新增Submain Domain
 
 1.之後有新增subdomain時只要先加入如下在nginx
 
-> ```text
+> ```
 > server {
 >   server_name api.domain.com;
 >   location / {
@@ -228,9 +226,11 @@ sudo certbot --nginx -d <輸入網域名稱>
 
 3.然後再重複第二步驟即可。
 
-```text
+```
 sudo certbot --nginx -d <輸入網域名稱>
 ```
 
 > 如果沒有先設定A紀錄，則在第三步驟會出錯。
+
+
 

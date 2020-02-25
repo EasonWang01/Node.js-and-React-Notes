@@ -1,18 +1,14 @@
 # imgur API
 
-## imgur API
-
-先去註冊[https://api.imgur.com/oauth2/addclient](https://api.imgur.com/oauth2/addclient)
+先去註冊https://api.imgur.com/oauth2/addclient
 
 如果不用oauth2可直接使用client ID發request
 
 注意：如果是傳base64需把前面data部分去除
 
-## browser
-
+#browser
 參考以下範例
-
-```text
+```
 <!DOCTYPE html>
 <html>
   <head>
@@ -54,9 +50,8 @@
   </script>
 </body>
 </html>
+
+
 ```
-
-## Node.js
-
-[https://github.com/kaimallea/node-imgur/blob/master/lib/imgur.js](https://github.com/kaimallea/node-imgur/blob/master/lib/imgur.js)
-
+#Node.js
+https://github.com/kaimallea/node-imgur/blob/master/lib/imgur.js

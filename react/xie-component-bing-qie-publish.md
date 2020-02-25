@@ -1,6 +1,4 @@
-# 寫component並且publish
-
-## 作法
+# 作法
 
 1.因為React的jsx無法被模組化直接使用，所以要先將jsx轉為js
 
@@ -10,9 +8,9 @@
 
 > css 不用 compile 也可以，因為通常專案在compile 後的 jsx 有 require css，這時會被專案的 webpack loader compile。
 
-## 使用babel compile
+# 使用babel compile
 
-```text
+```
 babel src -d dist --presets es2015,stage-2,react --copy-files
 ```
 
@@ -29,7 +27,7 @@ gi線上compile
 
 EX:
 
-```text
+```
 class Modal extends Component {
   render() {
     return (
@@ -49,7 +47,7 @@ class Modal extends Component {
 
 compile 後
 
-```text
+```
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -94,7 +92,7 @@ var Modal = function (_Component) {
 }(Component);
 ```
 
-## 測試元件
+# 測試元件
 
 1.把元件放到create-react-app 的 src folder測試
 

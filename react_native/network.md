@@ -1,6 +1,6 @@
 # Network
 
-```javascript
+```js
     fetch(network.API_ENDPOINT, {
       method: 'POST',
       headers: {
@@ -24,7 +24,11 @@
 >
 > 改為如下即可
 >
-> ```text
+> ```
 > http://10.0.3.2:8085
 > ```
+
+
+
+
 

@@ -1,14 +1,12 @@
-# Animation
-
-## React Native Animation
+# React Native Animation
 
 有四種 component可以加上動畫 `View`,`Text`,`image` , `scrollView`
 
 如果要擴展到其他 component 可以使用 `Animated.createAnimatedComponent()`
 
-### 使用
+## 使用
 
-```javascript
+```js
 import { Animated, LayoutAnimation  } from 'react-native';
 ```
 
@@ -18,7 +16,7 @@ import { Animated, LayoutAnimation  } from 'react-native';
 
 #### 範例：
 
-```javascript
+```js
 class FadeInView extends React.Component {
   state = {
     fadeAnim: new Animated.Value(0),  // Initial value for opacity: 0
@@ -53,19 +51,19 @@ class FadeInView extends React.Component {
 
 之後即可使用
 
-```javascript
+```js
 <FadeInView style={{width: 250, height: 50, backgroundColor: 'powderblue'}}>
   <Text style={{fontSize: 28, textAlign: 'center', margin: 10}}>Fading in</Text>
 </FadeInView>
 ```
 
-## 文件
+# 文件
 
 除了 `Animated.timing` 外共有三種可以使用。
 
-[https://facebook.github.io/react-native/docs/animated\#methods-1](https://facebook.github.io/react-native/docs/animated#methods-1)![](../.gitbook/assets/ying-mu-kuai-zhao-20190618-xia-wu-3.50.22.png)
+[https://facebook.github.io/react-native/docs/animated\#methods-1](https://facebook.github.io/react-native/docs/animated#methods-1)![](/assets/螢幕快照 2019-06-18 下午3.50.22.png)
 
-## 相關模組
+# 相關模組
 
 [https://github.com/oblador/react-native-animatable](https://github.com/oblador/react-native-animatable)
 

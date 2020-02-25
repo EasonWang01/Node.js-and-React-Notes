@@ -1,26 +1,24 @@
-# config
-
-## server\_name
+# server\_name
 
 server\_name對應到網域名稱。
 
-## try\_file
+# try\_file
 
-有關try\_file，他會找目錄下的文件，有時寫了 location ，但路由總是只有\可以執行，可以看看是不是try\_file沒有刪掉，因為他會優先執行然後沒找到就回傳404，另外可能不經意把自己的源碼給露出了
+有關try\_file，他會找目錄下的文件，有時寫了 location  ，但路由總是只有\可以執行，可以看看是不是try\_file沒有刪掉，因為他會優先執行然後沒找到就回傳404，另外可能不經意把自己的源碼給露出了
 
 ex:
 
-```text
+```
 try_files $uri $uri/ =404;
 ```
 
 [https://servers.ustclug.org/2014/09/nginx-try\_files-fallacy/](https://servers.ustclug.org/2014/09/nginx-try_files-fallacy/)
 
-## Underscore header
+# Underscore header
 
 有時我們幫header取名時有\_，ex: access\_\_token這時會被nginx預設擋下，我們需加上
 
-```text
+```
 underscores_in_headers on;
 ```
 

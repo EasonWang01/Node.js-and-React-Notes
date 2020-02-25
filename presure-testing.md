@@ -1,18 +1,16 @@
-# Web壓力測試
-
 可參考[http://www.epooll.com/archives/768/](http://www.epooll.com/archives/768/)
 
 先增加file operator
 
-```text
+```
 sudo sh -c "ulimit -n 65535 && exec su $LOGNAME"
 ```
 
-## 1.使用Webbench
+# 1.使用Webbench
 
 [https://github.com/EZLippi/WebBench](https://github.com/EZLippi/WebBench)
 
-```text
+```
 wget http://blog.zyan.cc/soft/linux/webbench/webbench-1.5.tar.gz
 tar zxvf webbench-1.5.tar.gz
 cd webbench-1.5
@@ -21,23 +19,23 @@ sudo make &&sudo make install
 
 使用
 
-```text
+```
 webbench -c 5000 -t 120 <url>
 ```
 
-## 2.使用Apache Benchmark\(ab\)
+# 2.使用Apache Benchmark\(ab\)
 
 文件: [https://httpd.apache.org/docs/2.4/programs/ab.html](https://httpd.apache.org/docs/2.4/programs/ab.html)
 
 下載: [https://httpd.apache.org/download.cgi](https://httpd.apache.org/download.cgi)
 
-```text
+```
  sudo apt-get install apache2-utils
 ```
 
 使用:
 
-```text
+```
 ab -k -n 50000 -c 9000 -r <url>
 ```
 
@@ -49,19 +47,19 @@ ab -k -n 50000 -c 9000 -r <url>
 
 如果用ip當url錯誤，在後面加`/`即可
 
-```text
+```
 ab -c 19000 -n 220000 -r 114.28.22.129/
 ```
 
 如出現too many open files可輸入
 
-```text
+```
 ulimit -n 60000
 ```
 
 出現Cannot assign requested address
 
-```text
+```
 sysctl -w net.ipv4.tcp_timestamps=1  
 sysctl -w net.ipv4.tcp_tw_recycle=1
 ```
@@ -70,11 +68,11 @@ sysctl -w net.ipv4.tcp_tw_recycle=1
 
 EX:
 
-```text
+```
 ab -k -r -n 600000 -c 20000 -H "Host: yourip.com" www.target.com.tw/
 ```
 
-## 3.使用hey\(written in Golang\)
+# 3.使用hey\(written in Golang\)
 
 優點:可直接打https
 
@@ -84,11 +82,11 @@ ab -k -r -n 600000 -c 20000 -H "Host: yourip.com" www.target.com.tw/
 
 之後hey會在go資料夾裡面的bin內
 
-## 4.Siege
+# 4.Siege
 
 安裝:
 
-```text
+```
 apt-get install siege
 ```
 
@@ -98,13 +96,15 @@ apt-get install siege
 
 修改config，輸入以下
 
-```text
+```
 siege.config
 ```
 
-## 5.autocannon
+# 5.autocannon
 
 使用node.js撰寫
 
-[https://github.com/mcollina/autocannon](https://github.com/mcollina/autocannon)
+https://github.com/mcollina/autocannon
+
+
 

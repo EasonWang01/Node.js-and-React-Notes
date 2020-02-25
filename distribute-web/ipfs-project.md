@@ -1,18 +1,16 @@
-# IPFS project
-
-## IPFS 教學
+# IPFS 教學
 
 Tutorial
 
 [https://github.com/ipfs/js-ipfs/tree/master/examples](https://github.com/ipfs/js-ipfs/tree/master/examples)
 
-### 安裝
+#### 安裝
 
 [https://ipfs.io/docs/install/](https://ipfs.io/docs/install/)
 
-Linux [https://gist.github.com/MiguelBel/b3b5f711aa8d9362afa5f16e4e972461](https://gist.github.com/MiguelBel/b3b5f711aa8d9362afa5f16e4e972461)
+Linux  [https://gist.github.com/MiguelBel/b3b5f711aa8d9362afa5f16e4e972461](https://gist.github.com/MiguelBel/b3b5f711aa8d9362afa5f16e4e972461)
 
-```text
+```
 sudo apt-get update
 sudo apt-get install golang-go -y
 wget https://dist.ipfs.io/go-ipfs/v0.4.10/go-ipfs_v0.4.10_linux-386.tar.gz
@@ -20,16 +18,16 @@ tar xvfz go-ipfs_v0.4.10_linux-386.tar.gz
 sudo mv go-ipfs/ipfs /usr/local/bin/ipfs
 ```
 
-### 初始化
+#### 初始化
 
-```text
+```
 ipfs init
 ipfs daemon
 ```
 
 上傳
 
-```text
+```
 // 檔案
 ipfs add <file path>
 
@@ -39,23 +37,23 @@ ipfs add -r ./
 
 下載
 
-```text
+```
 ipfs get <file hash>
 ```
 
 也可在以下網站查看
 
-```text
+```
 https://ipfs.io/ipfs/檔案Hash
 ```
 
 可以輸入以下進入節點資訊頁面
 
-```text
+```
 localhost:5001/webui
 ```
 
-## JS-IPFS
+# JS-IPFS
 
 js 版本的IPFS
 
@@ -63,7 +61,7 @@ js 版本的IPFS
 
 上傳
 
-```javascript
+```js
 const IPFS = require('ipfs')
 const fs = require('fs');
 
@@ -83,7 +81,7 @@ node.on('ready', () => {
 
 下載
 
-```javascript
+```js
 const IPFS = require('ipfs');
 
 const multihashStr  = 'QmT4sfBdFcEiNbRh2FZfyX8jmFBr41qzKLkL75xYXG36aC';
@@ -106,13 +104,13 @@ node.files.get(multihashStr, function (err, stream) {
 
 記得要寫上以下 抓取錯誤
 
-```javascript
+```js
 node.on('error', (err) => {console.log(err)})
 ```
 
 有時會出現以下錯誤
 
-```text
+```
 Error: can't lock file /home/.jsipfs/repo.lock: has non-zero size
 ```
 
