@@ -141,27 +141,33 @@ npm install react-stripe-checkout --save
 ```
 
 ```js
-import StripeCheckout from 'react-stripe-checkout';
-
-....
-
-<StripeCheckout
-  stripeKey=<填入pub key>
-  token={this.onToken}
-/>
-```
-
-```js
-  onToken = (res) => {
-    axios.post(`${window.API_HOST}/stripepay`, res)
-      .then((response) => {
-        window.alert('成功', '', 'success');
+import React from "react";
+import "./App.css";
+import axios from 'axios';
+import StripeCheckout from "react-stripe-checkout";
+function App() {
+  const onToken = token => {
+    axios
+      .post(`http://localhost:8081/stripepay`, token)
+      .then(response => {
+        window.alert("成功", "", "success");
       })
       .catch(err => {
-        window.alert('失敗，請重試');
-      })
-  }
+        console.log(err)
+        window.alert("失敗，請重試");
+      });
+  };
+  return (
+    <div className="App">
+        <StripeCheckout stripeKey={"填入public key"} token={(token) => onToken(token)} />
+    </div>
+  );
+}
+
+export default App;
 ```
+
+
 
 Server.js
 
