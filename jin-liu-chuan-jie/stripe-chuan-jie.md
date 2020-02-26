@@ -166,25 +166,34 @@ import StripeCheckout from 'react-stripe-checkout';
 Server.js
 
 ```js
-app.post("/stripepay", (req, res) => {
-    const stripe = require("stripe")("sk_test_LtpwSuF1PsGKLLv3rlVCTZlN");
-    let amount = 500;
-    stripe.customers.create({
-       email: req.body.email,
-      source: req.body.id
-    })
-    .then(customer =>
-      stripe.charges.create({
-        amount,
-        description: "Sample Charge",
-           currency: "usd",
-           customer: customer.id
-      }))
-    .then(charge => {
-      console.log(charge)
-      res.end('ok');
-    });
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors')
+
+// create application/json parser
+app.use(bodyParser.json());
+// create application/x-www-form-urlencoded parser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors())
+
+app.post("/stripepay", async (req, res) => {
+  console.log(req.body)
+  const stripe = require("stripe")("sk_test_LtpwSuF1PsGKLLv3rlVCTZlN");
+  let amount = 550;
+  const paymentIntent = await stripe.paymentIntents.create({
+    amount,
+    currency: 'sgd',
+    payment_method_types: ['card'],
+    metadata: {
+      order_id: 6735,
+    },
+  });
+  console.log(paymentIntent)
+  res.end(JSON.stringify(paymentIntent))
 });
+
+app.listen(8081, () => console.log('app start'));
 ```
 
 # 客製化按鈕
