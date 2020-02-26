@@ -146,7 +146,7 @@ import StripeCheckout from 'react-stripe-checkout';
 ....
 
 <StripeCheckout
-  stripeKey="pubkey"
+  stripeKey=<填入pub key>
   token={this.onToken}
 />
 ```
@@ -189,7 +189,5 @@ app.post("/stripepay", (req, res) => {
 
 # 客製化按鈕
 
-https://github.com/stripe/elements-examples
-
-
+[https://github.com/stripe/elements-examples](https://github.com/stripe/elements-examples)
 
