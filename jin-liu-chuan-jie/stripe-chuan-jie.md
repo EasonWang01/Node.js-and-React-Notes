@@ -167,8 +167,6 @@ function App() {
 export default App;
 ```
 
-
-
 Server.js
 
 ```js
@@ -205,4 +203,6 @@ app.listen(8081, () => console.log('app start'));
 # 客製化按鈕
 
 [https://github.com/stripe/elements-examples](https://github.com/stripe/elements-examples)
+
+[https://stripe.com/docs/stripe-js](https://stripe.com/docs/stripe-js)
 
