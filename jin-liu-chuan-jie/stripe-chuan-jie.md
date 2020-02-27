@@ -136,6 +136,8 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 [https://github.com/stripe/react-stripe-js](https://github.com/stripe/react-stripe-js)
 
+文件：[https://stripe.com/docs/stripe-js/react](https://stripe.com/docs/stripe-js/react)
+
 > 測試用信用卡：4242 4242 4242 4242
 >
 > 測試用的key也不同
