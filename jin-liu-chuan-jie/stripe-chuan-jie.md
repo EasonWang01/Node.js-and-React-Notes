@@ -200,6 +200,16 @@ app.post("/stripepay", async (req, res) => {
 app.listen(8081, () => console.log('app start'));
 ```
 
+# 確認付款狀態
+
+使用`stripe.paymentIntents.create` 回傳的client secret 並丟給前端，然後前端使用`stripe.confirmCardPayment(clientSecret) `
+
+來判斷
+
+[https://stripe.com/docs/payments/payment-intents/verifying-status](https://stripe.com/docs/payments/payment-intents/verifying-status)
+
+
+
 # 客製化按鈕
 
 [https://github.com/stripe/elements-examples](https://github.com/stripe/elements-examples)
