@@ -152,29 +152,86 @@ yarn add @stripe/react-stripe-js
 
 ```js
 import React from "react";
-import "./App.css";
-import axios from 'axios';
-import StripeCheckout from "react-stripe-checkout";
-function App() {
-  const onToken = token => {
-    axios
-      .post(`http://localhost:8081/stripepay`, token)
-      .then(response => {
-        window.alert("成功", "", "success");
-      })
-      .catch(err => {
-        console.log(err)
-        window.alert("失敗，請重試");
-      });
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+import {
+  CardElement,
+  Elements,
+  ElementsConsumer
+} from "@stripe/react-stripe-js";
+
+class CheckoutForm extends React.Component {
+  handleSubmit = async event => {
+    const billing_details = {
+      email: "Jenny@gmail.com",
+      name: "Jenny Rosen"
+    };
+    event.preventDefault();
+    const { stripe, elements } = this.props;
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: "card",
+      card: elements.getElement(CardElement),
+      billing_details,
+    });
+    if (!error) {
+      axios
+        .post(`http://localhost:8081/stripepay`, paymentMethod)
+        .then(async response => {
+          const { client_secret } = response.data;
+          if (client_secret) {
+            const result = await stripe.confirmCardPayment(client_secret, {
+              payment_method: {
+                card: elements.getElement(CardElement),
+                billing_details,
+              }
+            });
+            if (result.paymentIntent.status === "succeeded") {
+              window.alert("成功", "", "success");
+              //TODO send another request to update backend customer status
+            } else {
+              window.alert("付款失敗");
+            }
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } else {
+      console.log(error);
+    }
   };
-  return (
-    <div className="App">
-        <StripeCheckout stripeKey={"填入public key"} token={(token) => onToken(token)} />
-    </div>
-  );
+
+  render() {
+    const { stripe } = this.props;
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <CardElement />
+        <button type="submit" disabled={!stripe}>
+          Pay
+        </button>
+      </form>
+    );
+  }
 }
 
+const InjectedCheckoutForm = () => (
+  <ElementsConsumer>
+    {({ stripe, elements }) => (
+      <CheckoutForm stripe={stripe} elements={elements} />
+    )}
+  </ElementsConsumer>
+);
+
+const stripePromise = loadStripe("pk_test_....");
+
+const App = () => (
+  <Elements stripe={stripePromise}>
+    <InjectedCheckoutForm />
+  </Elements>
+);
+
 export default App;
+
 ```
 
 Server.js
@@ -193,18 +250,20 @@ app.use(cors())
 
 app.post("/stripepay", async (req, res) => {
   console.log(req.body)
-  const stripe = require("stripe")("sk_test_LtpwSuF1PsGKLLv3rlVCTZlN");
-  let amount = 550;
+  const stripe = require("stripe")("sk_test_....");
+  let amount = 1700;
   const paymentIntent = await stripe.paymentIntents.create({
     amount,
-    currency: 'sgd',
+    description: 'Im description',
+    currency: 'twd',
     payment_method_types: ['card'],
     metadata: {
       order_id: 6735,
     },
   });
-  console.log(paymentIntent)
-  res.end(JSON.stringify(paymentIntent))
+  res.end(JSON.stringify({
+    client_secret: paymentIntent.client_secret,
+  }))
 });
 
 app.listen(8081, () => console.log('app start'));
