@@ -136,6 +136,10 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 [https://github.com/stripe/react-stripe-js](https://github.com/stripe/react-stripe-js)
 
+> 測試用信用卡：4242 4242 4242 4242
+>
+> 測試用的key也不同
+
 #### 流程：
 
 1.使用官方的元件輸入信用卡號碼與資訊，然後前端呼叫`stripe.createPaymentMethod` 傳給後端
@@ -231,7 +235,6 @@ const App = () => (
 );
 
 export default App;
-
 ```
 
 Server.js
