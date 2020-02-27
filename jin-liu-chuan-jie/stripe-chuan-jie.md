@@ -136,6 +136,8 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 [https://github.com/azmenak/react-stripe-checkout](https://github.com/azmenak/react-stripe-checkout)
 
+[https://github.com/stripe/react-stripe-js](https://github.com/stripe/react-stripe-js)
+
 ```
 npm install react-stripe-checkout --save
 ```
@@ -202,13 +204,11 @@ app.listen(8081, () => console.log('app start'));
 
 # 確認付款狀態
 
-使用`stripe.paymentIntents.create` 回傳的client secret 並丟給前端，然後前端使用`stripe.confirmCardPayment(clientSecret) `
+使用`stripe.paymentIntents.create` 回傳的client secret 並丟給前端，然後前端使用`stripe.confirmCardPayment(clientSecret)`
 
 來判斷
 
 [https://stripe.com/docs/payments/payment-intents/verifying-status](https://stripe.com/docs/payments/payment-intents/verifying-status)
-
-
 
 # 客製化按鈕
 
