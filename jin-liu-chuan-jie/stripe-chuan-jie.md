@@ -151,7 +151,7 @@ h2 You successfully paid <strong>$5.00</strong>!
 4.成功後再發一個request給後端更新使用者購買狀態
 
 ```
-yarn add @stripe/react-stripe-js
+yarn add @stripe/react-stripe-js @stripe/stripe-js
 ```
 
 ```js
