@@ -142,7 +142,7 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 2.後端呼叫並產生`stripe.paymentIntents` 然後將`paymentIntent.client_secret` 傳給前端
 
-3. 前端使用`stripe.confirmCardPayment` 加上剛才的`paymentIntent.client_secret`確認交易
+3.前端使用`stripe.confirmCardPayment` 加上剛才的`paymentIntent.client_secret`確認交易
 
 4.成功後再發一個request給後端更新使用者購買狀態
 
