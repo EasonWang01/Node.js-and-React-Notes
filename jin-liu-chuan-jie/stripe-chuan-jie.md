@@ -134,12 +134,20 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 可使用此模組：
 
-[https://github.com/azmenak/react-stripe-checkout](https://github.com/azmenak/react-stripe-checkout)
-
 [https://github.com/stripe/react-stripe-js](https://github.com/stripe/react-stripe-js)
 
+#### 流程：
+
+1.使用官方的元件輸入信用卡號碼與資訊，然後前端呼叫`stripe.createPaymentMethod` 傳給後端
+
+2.後端呼叫並產生`stripe.paymentIntents` 然後將`paymentIntent.client_secret` 傳給前端
+
+3. 前端使用`stripe.confirmCardPayment` 加上剛才的`paymentIntent.client_secret`確認交易
+
+4.成功後再發一個request給後端更新使用者購買狀態
+
 ```
-npm install react-stripe-checkout --save
+yarn add @stripe/react-stripe-js
 ```
 
 ```js
@@ -202,7 +210,7 @@ app.post("/stripepay", async (req, res) => {
 app.listen(8081, () => console.log('app start'));
 ```
 
-# 確認付款狀態
+# 確認付款
 
 使用`stripe.paymentIntents.create` 回傳的client secret 並丟給前端，然後前端使用`stripe.confirmCardPayment(clientSecret)`
 
