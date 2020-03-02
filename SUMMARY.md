@@ -11,7 +11,6 @@
 * [assert \(自訂拋出的錯誤\)](assert_zi_ding_pao_chu_de_cuo_8aa429.md)
 * [Cluster and Child\_process](cluster-and-childprocess.md)
 * [Process \(進程\)](process_jin_7a0b29.md)
-* [repl\(自訂命令列\)](repl-zi-ding-ming-ling-lie.md)
 * [http](http/README.md)
   * [TCP](http/tcp.md)
   * [HTTPS原理](http/httpsyuan-li.md)
