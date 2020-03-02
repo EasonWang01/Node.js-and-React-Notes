@@ -186,7 +186,6 @@
 * [OS](os-1.md)
 * [瀏覽器快取與緩存（Etag, If-None-Match）](liu-lan-qi-kuai-qu-yu-huan-cun.md)
 * [瀏覽器快取與緩存（Expires, Last-modified, Cache-Control）](liu-lan-qi-kuai-qu-yu-huan-cun-ff08-expires-last-modified.md)
-* [ES6 ES7 ES8](es6-es7-es8-1.md)
 * [Node.js 第三方模組](node.js-di-san-fang-mo-zu/README.md)
   * [OpenCV](node.js-di-san-fang-mo-zu/opencv.md)
 * [Kubernetes](kubernetes/README.md)
