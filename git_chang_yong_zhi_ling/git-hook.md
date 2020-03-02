@@ -1,14 +1,16 @@
-# Git Hooks
+# Git hook
+
+## Git Hooks
 
 [https://git-scm.com/book/zh-tw/v1/Git-客製化-Git-Hooks](https://git-scm.com/book/zh-tw/v1/Git-客製化-Git-Hooks)
 
 在git的專案的目錄下有一個隱藏資料夾為`.git`
 
-進入後可看到如下![](/assets/sdfsdf.png)
+進入後可看到如下![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/sdfsdf.png)
 
 進入到hooks資料夾可看到一些包含
 
-```
+```text
 pre-commit 
 post-commit
 ```
@@ -19,7 +21,7 @@ post-commit
 
 > 使用第一行的\#!決定要用哪一種方式解譯，如果更改檔案副檔名則無效
 
-```
+```text
 #!/usr/bin/env node
 
 console.log(6678);
@@ -31,7 +33,7 @@ console.log(6678);
 
 如果要寫shell script可以改為
 
-```
+```text
 #!/bin/sh
 
 echo 123;
@@ -39,19 +41,17 @@ echo 123;
 # exit 1;  加上後會取消commit
 ```
 
-# 
-
-# Link hook file
+## Link hook file
 
 > 但之後改完因為.git無法加入commit，我們必須使用link file的方式讓別人執行，然後加入到git hook
 
 新增如下檔案結構
 
-![](/assets/asx.png)
+![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/asx.png)
 
 link.js
 
-```js
+```javascript
 var fs = require("fs");
 var path = require("path");
 
@@ -73,7 +73,7 @@ var path = require("path");
 
 pre-commit
 
-```js
+```javascript
 #!/usr/bin/env node
 
 const { exec } = require('child_process');
@@ -87,18 +87,14 @@ exec('git diff --cached --name-only', (error, stdout, stderr) => {
   }
 
   if(stdout.indexOf('/dist') !== -1) { // 修改了dist資料夾內的檔案
-	  console.log(`您修改了包含/dist檔案內的資料，所以被禁止commit!!`)
-	  console.log(stdout);
+      console.log(`您修改了包含/dist檔案內的資料，所以被禁止commit!!`)
+      console.log(stdout);
       process.exit(1);
   }
 });
 ```
 
 之後執行該link.js檔案即可讓兩隻檔案連結起來，互相複製內容，改動其中一隻另外一個檔案也會被改變。
-
-
-
-
 
 其他可參考:
 

@@ -1,17 +1,19 @@
 # js trick
 
-# 1.替換input type＝"file"標籤為客製化按鈕
+## js trick
+
+## 1.替換input type＝"file"標籤為客製化按鈕
 
 因為label規定不可放button在內，所以我們使用click\(\)的方法，如下
 
-```
+```text
 <div>
 <button onClick={() => this.fileBtn()} style={style.picBtn} />
 <input style={style.fileInput} id="file-upload" ref="fileInput" type='file' />
 </div>
 ```
 
-```
+```text
    fileBtn() {
     findDOMNode(this.refs.fileInput).click();
   }
@@ -19,7 +21,7 @@
 
 style
 
-```
+```text
    picBtn: {
     background: 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+aWNfcGljXzhmOGY4ZjwvdGl0bGU+PGcgZmlsbD0iIzhGOEY4RiIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTUuOTg4IDEyYTQgNCAwIDEgMCAwIDggNCA0IDAgMCAwIDAtOCIvPjxwYXRoIGQ9Ik00MC4wNjggMjQuNzA0bC02LjM3My01LjkyOC05LjM1IDkuNTc1LTUuNDUyLTUuNTg2TDggMzMuMzQyVjE0LjAwNUE2LjAxMiA2LjAxMiAwIDAgMSAxNC4wMDUgOGgyMC4wNThhNi4wMTIgNi4wMTIgMCAwIDEgNi4wMDUgNi4wMDV2MTAuNjk5ek0zNC4wNjMgNkgxNC4wMDVBOC4wMDkgOC4wMDkgMCAwIDAgNiAxNC4wMDV2MjAuMDU4YTguMDA5IDguMDA5IDAgMCAwIDguMDA1IDguMDA1aDIwLjA1OGE4LjAwOSA4LjAwOSAwIDAgMCA4LjAwNS04LjAwNVYxNC4wMDVBOC4wMDkgOC4wMDkgMCAwIDAgMzQuMDYzIDZ6Ii8+PC9nPjwvc3ZnPg==) no-repeat',
     backgroundSize: 'cover',
@@ -36,17 +38,17 @@ style
   }
 ```
 
-# 2.轉為boolean
+## 2.轉為boolean
 
 `!!`
 
-# 3.除與二的次方
+## 3.除與二的次方
 
 `>>>`
 
-# 4.複製到剪貼版
+## 4.複製到剪貼版
 
-```js
+```javascript
 <input id="pageHideInput"/> 
 //新增一個隱藏的Input，但記得如果使用display:none會無法使用select() 所以建議把它用absolute然後width:0px; height: 0px; top: -1200px
 <div id="textToCopy"></div> 
@@ -64,17 +66,17 @@ document.getElementById('pageHideInput').blur(); //避免手機彈起鍵盤
 
 [https://codepen.io/anon/pen/EbJBjP](https://codepen.io/anon/pen/EbJBjP)
 
-```
+```text
 記得clipboard.js的new Clipboard參數要填入id或是class，例如: new Clipboard('#' + ele.id);
 ```
 
-# 倒數計時
+## 倒數計時
 
-```
+```text
 <div id="timer"></div>
 ```
 
-```js
+```javascript
 /**
  * 設定畫面倒數計時
  * 
@@ -114,7 +116,7 @@ function setUITimer(element, time, callback) {
 
 版本2
 
-```js
+```javascript
   function timer(intDiff) {
 
       var intDiff = parseInt(intDiff);
@@ -146,19 +148,19 @@ function setUITimer(element, time, callback) {
 
 如果想設定倒數結束的開始時間：
 
-```js
+```javascript
 // 結束日期為2018, 5, 22 要用5-1的原因是JS date的一月是0
 let elapsed = Math.floor(Date.now() / 1000) - Math.floor(new Date(2018, 5 - 1, 20).getTime() / 1000);
 timer(60 * 60 * 24 - elapsed);
 ```
 
-# 角子老虎機捲動效果
+## 角子老虎機捲動效果
 
 [https://codepen.io/EasonWang01/pen/VxNzXz](https://codepen.io/EasonWang01/pen/VxNzXz)
 
 主要是創造兩階層的0-9個數字，然後在0接到9時位置跳回開頭。
 
-```js
+```javascript
   componentDidMount() {
     var c = "";
     for (let i = 0; i <= 8; i++) {
@@ -196,11 +198,11 @@ timer(60 * 60 * 24 - elapsed);
   }
 ```
 
-# 移除畫面上的事件綁定
+## 移除畫面上的事件綁定
 
 有時如果畫面更新但元素沒更新時，造成重複綁定事件，可用以下方法更新元素，移除舊事件。
 
-```js
+```javascript
 var old_element = document.getElementById("btn");
 var new_element = old_element.cloneNode(true);
 old_element.parentNode.replaceChild(new_element, old_element);
@@ -208,7 +210,7 @@ old_element.parentNode.replaceChild(new_element, old_element);
 
 例如
 
-```js
+```javascript
 element.addEventListener('click', function () {
   scanPayDepositApplication(element)
   var old_element = element;
@@ -219,13 +221,13 @@ element.addEventListener('click', function () {
 
 [https://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element](https://stackoverflow.com/questions/9251837/how-to-remove-all-listeners-in-an-element)
 
-# 取得所有可能的字串組合
+## 取得所有可能的字串組合
 
 假設四個字母組成字串，要印出所有可能組合
 
 > 4 \*\* 4 = 256 種組合
 
-```js
+```javascript
 c = []
 ca = ["A", "B", "C", "D"];
 for(let i = 0; i < 4; i ++){
@@ -243,11 +245,11 @@ for(let i = 0; i < 4; i ++){
 }
 ```
 
-# 解析QueryString
+## 解析QueryString
 
 先使用location.search取得QueryString
 
-```js
+```javascript
 function parseQuerystring(s) {
   var urlParams = {};
   var match,
@@ -266,23 +268,23 @@ function parseQuerystring(s) {
 
 使用
 
-```
+```text
 parseQuerystring(location.search)
 ```
 
 > 或是可使用官方ＡＰＩ
 >
-> ```js
+> ```javascript
 > var urlParams = new URLSearchParams(window.location.search);
 >
 > console.log(urlParams.has('post')); // true
 > ```
 
-## Promise cancel
+### Promise cancel
 
 拋出error當timeout，中斷所有其他promise
 
-```js
+```javascript
 function timeoutPromise(delay) {
     return new Promise(function(resolve, reject) {
       setTimeout(function() {
@@ -307,6 +309,4 @@ Promise.race([winnerPromise, loserPromise, timeoutPromise(1000)]).then(function 
   console.log(err)
 });
 ```
-
-
 

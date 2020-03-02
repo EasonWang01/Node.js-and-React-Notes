@@ -1,4 +1,6 @@
-# Stripe
+# Stripe 串接
+
+## Stripe
 
 stripe為一個金流串接服務提供者，其特點在於串接簡單。
 
@@ -13,13 +15,13 @@ stripe為一個金流串接服務提供者，其特點在於串接簡單。
 
 > 建立商店後會可以進入一個Dashboard介面，在左下方把Test打開即可進入測試模式。
 >
-> ![](/assets/Screen Shot 2018-08-17 at 3.13.45 PM.png)
+> ![](../.gitbook/assets/screen-shot-2018-08-17-at-3.13.45-pm.png)
 
 #### 3.程式範例：
 
 Server.js
 
-```js
+```javascript
 const keyPublishable = process.env.PUBLISHABLE_KEY;
 const keySecret = process.env.SECRET_KEY;
 
@@ -58,7 +60,7 @@ app.listen(4567);
 
 views/index.pug
 
-```pug
+```text
 <html>
 <head>
 <script src="https://checkout.stripe.com/v2/checkout.js"></script></head>
@@ -75,17 +77,17 @@ views/index.pug
 
 views/charge.pug
 
-```html
+```markup
 h2 You successfully paid <strong>$5.00</strong>!
 ```
 
-## 原理：
+### 原理：
 
 要求客戶付款的都在checkout文件：[https://stripe.com/docs/checkout](https://stripe.com/docs/checkout)
 
 #### 1.引入stripe的官方script後，加入一個元件
 
-```html
+```markup
     <form action="/charge" method="post">
         <article><label>Amount: $5.00</label></article>
         <script class="stripe-button" data-key="pk_test_nk4UQNZM8NWjfvmhKjfZnWav" src="//checkout.stripe.com/v2/checkout.js" data-locale="auto" data-description="Sample Charge" data-amount="500"></script>
@@ -96,7 +98,7 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 #### 2.之後點擊按鈕後會要求填入信用卡資訊與email
 
-![](/assets/Screen Shot 2018-08-17 at 3.22.28 PM.png)
+![](../.gitbook/assets/screen-shot-2018-08-17-at-3.22.28-pm.png)
 
 #### 3.送出後會發送Request給stripe
 
@@ -104,7 +106,7 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 #### 4.接著我們後端App.js接到後會執行
 
-```js
+```javascript
   stripe.customers.create({
      email: req.body.stripeEmail,
     source: req.body.stripeToken
@@ -113,9 +115,9 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 產生如下請求
 
-#### ![](/assets/Screen Shot 2018-08-17 at 3.20.39 PM.png)5.最後前一個請求返回後會進行確認請求
+#### ![](../.gitbook/assets/screen-shot-2018-08-17-at-3.20.39-pm.png)5.最後前一個請求返回後會進行確認請求
 
-```js
+```javascript
     stripe.charges.create({
       amount,
       description: "Sample Charge",
@@ -124,13 +126,13 @@ h2 You successfully paid <strong>$5.00</strong>!
     })
 ```
 
-![](/assets/Screen Shot 2018-08-17 at 3.26.43 PM.png)
+![](../.gitbook/assets/screen-shot-2018-08-17-at-3.26.43-pm.png)
 
 > 以上的請求詳細內容都可以在左側log tab看到
 >
-> ![](/assets/Screen Shot 2018-08-17 at 3.27.20 PM.png)
+> ![](../.gitbook/assets/screen-shot-2018-08-17-at-3.27.20-pm.png)
 
-# 使用React
+## 使用React
 
 可使用此模組：
 
@@ -152,11 +154,11 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 4.成功後再發一個request給後端更新使用者購買狀態
 
-```
+```text
 yarn add @stripe/react-stripe-js @stripe/stripe-js
 ```
 
-```js
+```javascript
 import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
@@ -241,7 +243,7 @@ export default App;
 
 Server.js
 
-```js
+```javascript
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -274,7 +276,7 @@ app.post("/stripepay", async (req, res) => {
 app.listen(8081, () => console.log('app start'));
 ```
 
-# 確認付款
+## 確認付款
 
 使用`stripe.paymentIntents.create` 回傳的client secret 並丟給前端，然後前端使用`stripe.confirmCardPayment(clientSecret)`
 
@@ -282,7 +284,7 @@ app.listen(8081, () => console.log('app start'));
 
 [https://stripe.com/docs/payments/payment-intents/verifying-status](https://stripe.com/docs/payments/payment-intents/verifying-status)
 
-# 客製化按鈕
+## 客製化按鈕
 
 [https://github.com/stripe/elements-examples](https://github.com/stripe/elements-examples)
 
@@ -302,11 +304,11 @@ input,
 }
 ```
 
-# 前端完整版範例:
+## 前端完整版範例:
 
 App.js
 
-```js
+```javascript
 import React, { useMemo } from "react";
 import {
   useStripe,
@@ -465,7 +467,6 @@ const App = () => (
 );
 
 export default App;
-
 ```
 
 App.css
@@ -595,8 +596,7 @@ input:focus,
   transform: translateY(-1px);
   box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 }
-
 ```
 
-![](/assets/螢幕快照 2020-03-02 上午10.48.00.png)
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200302-shang-wu-10.48.00.png)
 

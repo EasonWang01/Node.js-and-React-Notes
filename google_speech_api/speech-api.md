@@ -1,11 +1,10 @@
-# Speech API
+# speech api
 
-```
+```text
 var msg = new SpeechSynthesisUtterance();
 ```
 
-```
-
+```text
 msg.text = 'Hello World';
 
 var voices = window.speechSynthesis.getVoices();

@@ -4,7 +4,7 @@ indexedDB 為 大量資料的前端儲存方案，因為 localstorage 與 cookie
 
 ## 文件：
 
-```
+```text
 https://developer.mozilla.org/zh-TW/docs/Web/API/IndexedDB_API/Using_IndexedDB
 https://developers.google.com/web/ilt/pwa/working-with-indexeddb
 ```
@@ -15,7 +15,7 @@ https://developers.google.com/web/ilt/pwa/working-with-indexeddb
 
 indexDB.js
 
-```js
+```javascript
 export default class indexDB {
   constructor(dbName) {
     this.dbName = dbName;
@@ -84,7 +84,7 @@ export default class indexDB {
 
 app.js
 
-```js
+```javascript
 import indexDB from './indexDB';
 const databaseName = 'projectDB';
     const projectsStoreName = 'projects';
@@ -126,13 +126,13 @@ const databaseName = 'projectDB';
 
 ## 執行後可看到如下畫面：
 
-> ![](/assets/螢幕快照 2019-12-16 下午4.25.52.png)key 為 1是因為使用了 auto-increment
+> ![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-12-16%20下午4.25.52.png)key 為 1是因為使用了 auto-increment
 
 ## HTML 範例：
 
 [https://gist.github.com/jdiamond/3734629](https://gist.github.com/jdiamond/3734629)
 
-```html
+```markup
 <!DOCTYPE html>
 <html>
 <head>
@@ -343,13 +343,11 @@ const databaseName = 'projectDB';
 
 ## 清空Table
 
-```js
+```javascript
   clear(collection) {
     return this.write([collection], tx => {
       tx.objectStore(collection).clear();
     });
   }
 ```
-
-
 

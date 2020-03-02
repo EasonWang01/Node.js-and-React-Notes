@@ -1,19 +1,24 @@
 # ES6 Arrow function
 
-```
+## ES6 Arrow function
+
+```text
 var s = 5
 ```
-```
+
+```text
 ()=> s  //相同於function(){return s};
 ```
 
-```
+```text
 (()=> s)()
 ```
-##return is implicit under some circumstances
-###(return在箭頭函數內有時可省略)
 
-```
+### return is implicit under some circumstances
+
+#### \(return在箭頭函數內有時可省略\)
+
+```text
 // returns: undefined
 // explanation: an empty block with an implicit return
 ((name) => {})() 
@@ -41,12 +46,14 @@ var s = 5
 
 // returns: {id: 'Jess'}
 // explanation: explicit return inside block returns object
-((name) => {return {id: name}})('Jess') 
+((name) => {return {id: name}})('Jess')
 ```
-#注意
 
-如果使用()=>{}加上了{}則箭頭函數不會auto return
-```
+## 注意
+
+如果使用\(\)=&gt;{}加上了{}則箭頭函數不會auto return
+
+```text
 var a = () => {12}
 undefined
 a()
@@ -55,8 +62,7 @@ var a = () => 12
 undefined
 a()
 12
-
 ```
 
+來源:[http://stackoverflow.com/questions/28889450/when-should-i-use-return-in-es6-arrow-functions](http://stackoverflow.com/questions/28889450/when-should-i-use-return-in-es6-arrow-functions)
 
-來源:http://stackoverflow.com/questions/28889450/when-should-i-use-return-in-es6-arrow-functions
