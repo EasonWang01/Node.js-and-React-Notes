@@ -288,3 +288,315 @@ app.listen(8081, () => console.log('app start'));
 
 [https://stripe.com/docs/stripe-js](https://stripe.com/docs/stripe-js)
 
+可直接加上css
+
+```css
+input, 
+.StripeElement {
+  display: block;
+  margin: 10px 0 20px 0;
+}
+
+.StripeElement.PaymentRequestButton {
+  height: 40px;
+}
+```
+
+# 前端完整版範例:
+
+App.js
+
+```js
+import React, { useMemo } from "react";
+import {
+  useStripe,
+  useElements,
+  ElementsConsumer,
+  Elements,
+  CardNumberElement,
+  CardCvcElement,
+  CardExpiryElement
+} from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import "./App.css";
+import axios from "axios";
+
+const useOptions = () => {
+  const options = useMemo(() => ({
+    style: {
+      base: {
+        color: "#424770",
+        letterSpacing: "0.025em",
+        fontFamily: "Source Code Pro, monospace",
+        "::placeholder": {
+          color: "#aab7c4"
+        }
+      },
+      invalid: {
+        color: "#9e2146"
+      }
+    }
+  }));
+
+  return options;
+};
+
+const SplitForm = () => {
+  const stripe = useStripe();
+  const elements = useElements();
+  const options = useOptions();
+
+  const handleSubmit = async event => {
+    const billing_details = {
+      email: "Jenny@gmail.com",
+      name: "Jenny Rosen"
+    };
+    event.preventDefault();
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: "card",
+      card: elements.getElement(CardNumberElement),
+      billing_details
+    });
+    if (!error) {
+      axios
+        .post(`http://localhost:8081/stripepay`, paymentMethod)
+        .then(async response => {
+          const { client_secret } = response.data;
+          if (client_secret) {
+            const result = await stripe.confirmCardPayment(client_secret, {
+              payment_method: {
+                card: elements.getElement(CardNumberElement),
+                billing_details
+              }
+            });
+            if (result.paymentIntent.status === "succeeded") {
+              window.alert("成功", "", "success");
+              //TODO send another request to update backend customer status
+            } else {
+              window.alert("付款失敗");
+            }
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    } else {
+      console.log(error);
+    }
+  };
+  return (
+    <form className="StripeForm" onSubmit={handleSubmit}>
+      <label>
+        Card number
+        <CardNumberElement
+          options={options}
+          onReady={() => {
+            console.log("CardNumberElement [ready]");
+          }}
+          onChange={event => {
+            console.log("CardNumberElement [change]", event);
+          }}
+          onBlur={() => {
+            console.log("CardNumberElement [blur]");
+          }}
+          onFocus={() => {
+            console.log("CardNumberElement [focus]");
+          }}
+        />
+      </label>
+      <label>
+        Expiration date
+        <CardExpiryElement
+          options={options}
+          onReady={() => {
+            console.log("CardNumberElement [ready]");
+          }}
+          onChange={event => {
+            console.log("CardNumberElement [change]", event);
+          }}
+          onBlur={() => {
+            console.log("CardNumberElement [blur]");
+          }}
+          onFocus={() => {
+            console.log("CardNumberElement [focus]");
+          }}
+        />
+      </label>
+      <label>
+        CVC
+        <CardCvcElement
+          options={options}
+          onReady={() => {
+            console.log("CardNumberElement [ready]");
+          }}
+          onChange={event => {
+            console.log(event);
+            console.log("CardNumberElement [change]", event);
+          }}
+          onBlur={() => {
+            console.log("CardNumberElement [blur]");
+          }}
+          onFocus={() => {
+            console.log("CardNumberElement [focus]");
+          }}
+        />
+      </label>
+      <button type="submit" disabled={!stripe}>
+        Pay
+      </button>
+    </form>
+  );
+};
+
+const InjectedCheckoutForm = () => (
+  <ElementsConsumer>
+    {({ stripe, elements }) => (
+      <SplitForm stripe={stripe} elements={elements} />
+    )}
+  </ElementsConsumer>
+);
+
+const stripePromise = loadStripe("pk_test_");
+
+const App = () => (
+  <Elements stripe={stripePromise}>
+    <InjectedCheckoutForm />
+  </Elements>
+);
+
+export default App;
+
+```
+
+App.css
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: #f6f9fc;
+  font-size: 18px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+.DemoPickerWrapper {
+  padding: 0 12px;
+  font-family: "Source Code Pro", monospace;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  background: white;
+  margin: 24px 0 48px;
+  width: 100%;
+}
+
+.DemoPicker {
+  font-size: 18px;
+  border-radius: 3px;
+  background-color: white;
+  height: 48px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  border: 0;
+  width: 100%;
+  color: #6772e5;
+  outline: none;
+}
+
+.DemoWrapper {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.Demo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 40%;
+}
+
+label {
+  color: #6b7c93;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+}
+
+input,
+.StripeElement {
+  display: block;
+  margin: 10px 0 20px 0;
+  max-width: 500px;
+  padding: 10px 14px;
+  font-size: 1em;
+  font-family: "Source Code Pro", monospace;
+  box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
+    rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  background: white;
+}
+
+input::placeholder {
+  color: #aab7c4;
+}
+
+input:focus,
+.StripeElement--focus {
+  box-shadow: rgba(50, 50, 93, 0.109804) 0px 4px 6px,
+    rgba(0, 0, 0, 0.0784314) 0px 1px 3px;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+
+.StripeElement.IdealBankElement,
+.StripeElement.FpxBankElement,
+.StripeElement.PaymentRequestButton {
+  padding: 0;
+}
+
+.StripeElement.PaymentRequestButton {
+  height: 40px;
+}
+
+.StripeForm button {
+  white-space: nowrap;
+  border: 0;
+  outline: 0;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 14px;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  background-color: #6772e5;
+  text-decoration: none;
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+  margin-top: 10px;
+}
+
+.StripeForm button:hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: #7795f8;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+```
+
+![](/assets/螢幕快照 2020-03-02 上午10.48.00.png)
+
