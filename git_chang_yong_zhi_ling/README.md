@@ -171,6 +171,13 @@ squash 27f6ed6 test2
 
 > squash 可改為 fixup 可以移除commit訊息
 
+## 把最新的master內容更新到feature branch
+
+```javascript
+git checkout <feature branch>
+git pull origin master --rebase
+```
+
 ## 有關submodule
 
 [https://blog.wu-boy.com/2011/09/introduction-to-git-submodule/](https://blog.wu-boy.com/2011/09/introduction-to-git-submodule/)
