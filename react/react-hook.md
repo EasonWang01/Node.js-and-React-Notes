@@ -25,6 +25,13 @@ function Example() {
 }
 ```
 
+> tip: 多個boolean狀態管理在同個object
+
+```javascript
+const [studyListOpen, setStudyListOpen] = React.useState({});
+setStudyListOpen({ ...studyListOpen, [id]: !studyListOpen[id] || false });
+```
+
 ### ComponentDidMount
 
 ```javascript
