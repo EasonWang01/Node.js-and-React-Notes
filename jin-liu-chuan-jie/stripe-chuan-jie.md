@@ -579,7 +579,58 @@ input:focus,
 
 {% embed url="https://stripe.com/docs/billing/subscriptions/set-up-subscription" %}
 
-## 存入卡片資料
+## 存入卡片資料供後續使用
+
+#### 1.在前端使用`createPaymentMethod` 並發請求給後端之後在後端使用
+
+server.js
+
+```javascript
+const customer = await stripe.customers.create();
+// 記得把 customer.id 存入 DB 
+
+// 並且在paymentIntent加入custom id 欄位
+
+  const paymentIntent = await stripe.paymentIntents.create({
+    // .....,
+    customer: customer.id,
+  });
+```
+
+web.js
+
+```javascript
+// 新增 setup_future_usage 欄位在confirmCardPayment
+const result = await stripe.confirmCardPayment(client_secret, {
+  // .....,
+ setup_future_usage: 'off_session'
+});
+```
+
+之後客戶成功刷卡後的付款資訊就會存入stripe
+
+#### 2. 讀取先前存入的付款資訊
+
+```javascript
+  const customerId = // 從DB讀取先前 stripe.customers.create 並付款的使用者ID
+  const paymentMethods = await stripe.paymentMethods.list({
+    customer: customerId,
+    type: 'card',
+  });
+  const paymentIntentSaved = await stripe.paymentIntents.create({
+    amount: 1200,
+    currency: 'sgd',
+    customer: customerId,
+    payment_method: paymentMethods.data[0].id,
+    off_session: true,
+    confirm: true,
+  });
+  // sending paymentIntentSaved's client_secret to frontend
+```
+
+最後把 `paymentIntentSaved` 中的 `client_secret` 給前端然後 `confirmPayment` 即可
+
+
 
 [https://stripe.com/docs/payments/save-during-payment](https://stripe.com/docs/payments/save-during-payment)
 
