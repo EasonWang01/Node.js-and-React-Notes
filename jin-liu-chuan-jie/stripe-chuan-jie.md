@@ -494,35 +494,6 @@ html {
   width: 100%;
 }
 
-.DemoPicker {
-  font-size: 18px;
-  border-radius: 3px;
-  background-color: white;
-  height: 48px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  border: 0;
-  width: 100%;
-  color: #6772e5;
-  outline: none;
-}
-
-.DemoWrapper {
-  margin: 0 auto;
-  max-width: 500px;
-  padding: 0 24px;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-.Demo {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-bottom: 40%;
-}
-
 label {
   color: #6b7c93;
   font-weight: 300;
@@ -599,4 +570,14 @@ input:focus,
 ```
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20200302-shang-wu-10.48.00.png)
+
+
+
+## 訂閱機制
+
+{% embed url="https://stripe.com/docs/billing/subscriptions/set-up-subscription" %}
+
+## 存入卡片資料
+
+[https://stripe.com/docs/saving-cards](https://stripe.com/docs/saving-cards)
 
