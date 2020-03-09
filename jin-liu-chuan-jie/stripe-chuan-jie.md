@@ -4,6 +4,8 @@
 
 stripe為一個金流串接服務提供者，其特點在於串接簡單。
 
+API文件：[https://stripe.com/docs/api](https://stripe.com/docs/api)
+
 #### 1.先到其網站註冊帳號：[https://stripe.com](https://stripe.com)
 
 > 需要具有其許可國家內的銀行帳號與手機。
