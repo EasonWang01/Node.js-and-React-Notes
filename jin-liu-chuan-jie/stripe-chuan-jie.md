@@ -586,7 +586,10 @@ input:focus,
 server.js
 
 ```javascript
-const customer = await stripe.customers.create();
+  const customer = await stripe.customers.create({
+    name: 'Jenny',
+    email: 'Jenny@gmail.com'
+  });
 // 記得把 customer.id 存入 DB 
 
 // 並且在paymentIntent加入custom id 欄位
