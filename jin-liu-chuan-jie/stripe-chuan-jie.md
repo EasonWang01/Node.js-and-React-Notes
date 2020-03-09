@@ -579,5 +579,5 @@ input:focus,
 
 ## 存入卡片資料
 
-[https://stripe.com/docs/saving-cards](https://stripe.com/docs/saving-cards)
+[https://stripe.com/docs/payments/save-during-payment](https://stripe.com/docs/payments/save-during-payment)
 
