@@ -363,6 +363,7 @@ yarn add eslint-plugin-react
 
 解法：
 
-1. 假設你有server跟frontend folder則開啟vscode時先進入client folder再開啟vscode，這樣才找得到路徑[https://github.com/microsoft/vscode-eslint/issues/759\#issuecomment-534958665](https://github.com/microsoft/vscode-eslint/issues/759#issuecomment-534958665)
+1. 假設你有server跟frontend folder 開啟vscode時先進入client folder再開啟vscode，這樣才找得到路徑[https://github.com/microsoft/vscode-eslint/issues/759\#issuecomment-534958665](https://github.com/microsoft/vscode-eslint/issues/759#issuecomment-534958665)
 2. 不要同時在local跟client都裝eslint 跟plugin
+3. 如果是mono repo 進入到你要做的專案在開啟VSCode
 
