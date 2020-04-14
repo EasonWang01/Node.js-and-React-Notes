@@ -357,3 +357,7 @@ SublimeLinter-eslint
 yarn add eslint-plugin-react
 ```
 
+如果還是在editor沒顯示紅線，則可開啟output查看錯誤
+
+![](.gitbook/assets/ying-mu-kuai-zhao-20200414-xia-wu-5.15.02.png)
+
