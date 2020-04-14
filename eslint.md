@@ -361,3 +361,8 @@ yarn add eslint-plugin-react
 
 ![](.gitbook/assets/ying-mu-kuai-zhao-20200414-xia-wu-5.15.02.png)
 
+解法：
+
+1. 假設你有server跟frontend folder則開啟vscode時先進入client folder再開啟vscode，這樣才找得到路徑[https://github.com/microsoft/vscode-eslint/issues/759\#issuecomment-534958665](https://github.com/microsoft/vscode-eslint/issues/759#issuecomment-534958665)
+2. 不要同時在local跟client都裝eslint 跟plugin
+
