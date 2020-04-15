@@ -83,6 +83,34 @@ window.URL.createObjectURL(superBuffer)
 
 4. 之後有了mediaSource API
 
+```javascript
+    const video = document.querySelector("#clientVideo");
+    var mediaSource = new MediaSource();
+    var mediaBuffer;
+    video.src = window.URL.createObjectURL(mediaSource);
+    
+    mediaSource.addEventListener(
+      "sourceopen",
+      function (e) {
+        mediaBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"');
+        mediaBuffer.addEventListener("update", function () {
+          // wait for mediaBuffer update to fire before setting the new duration
+        });
+      },
+      false
+    );
+    
+    websocket.onmessage = (msg) => {
+       (msg.data).arrayBuffer().then(buffer => {
+       // 這裡必須用filereader or blob.arrayBuffer() 將 buffer 轉換
+       //https://stackoverflow.com/questions/15341912/how-to-go-from-blob-to-arraybuffer
+          mediaBuffer.appendBuffer(buffer);
+        });
+    }
+```
+
+但接著會出現以下問題
+
 [https://stackoverflow.com/questions/24102075/mediasource-error-this-sourcebuffer-has-been-removed-from-the-parent-media-sour](https://stackoverflow.com/questions/24102075/mediasource-error-this-sourcebuffer-has-been-removed-from-the-parent-media-sour)
 
 ## WebRTC串流
