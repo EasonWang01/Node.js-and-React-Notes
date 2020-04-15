@@ -22,10 +22,6 @@ Restful API 文件:[https://developer.webex.com/docs/api/v1/](https://developer.
 
 Widge文件：[https://code.s4d.io/widget-demo/production/index.html](https://code.s4d.io/widget-demo/production/index.html)
 
-React Widget: [https://github.com/webex/react-widgets](https://github.com/webex/react-widgets)
-
-> 使用React Widget demo local 會有錯誤，要輸入 `npm rebuild node-sass` 與使用`Node.js v10.16.0`
-
 ## 開發
 
 1.創建 access token: 註冊帳號後到此拉下去一點即可看到 [https://developer.webex.com/docs/api/getting-started](https://developer.webex.com/docs/api/getting-started)
@@ -88,6 +84,22 @@ module.exports = {
 ## 測試
 
 1. 可以開啟webex teams APP，如果有人打過去，不論是用email 或是 房間ID 都會在APP顯示
+
+
+
+
+
+## React Widget
+
+ [https://github.com/webex/react-widgets](https://github.com/webex/react-widgets)
+
+> 使用React Widget demo local 會有錯誤，要輸入 `npm rebuild node-sass` 與使用`Node.js v10.16.0`
+
+包含space widget \(右\) 與 Recents Widget \(左\)
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200415-xia-wu-9.42.01.png)
+
+
 
 
 
