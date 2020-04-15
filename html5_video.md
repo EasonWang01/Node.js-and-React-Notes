@@ -265,7 +265,19 @@ export default App;
 
 但接著會出現以下問題
 
-[https://stackoverflow.com/questions/24102075/mediasource-error-this-sourcebuffer-has-been-removed-from-the-parent-media-sour](https://stackoverflow.com/questions/24102075/mediasource-error-this-sourcebuffer-has-been-removed-from-the-parent-media-sour)
+{% embed url="https://stackoverflow.com/questions/24102075/mediasource-error-this-sourcebuffer-has-been-removed-from-the-parent-media-sour" %}
+
+> 問題在於使用
+>
+> ```text
+> video/webm; codecs="vp8"
+>
+> 將其改為
+>
+> video/mp4; codecs="avc1.64001E"
+>
+> 就不會有錯誤
+> ```
 
 ## WebRTC串流
 
