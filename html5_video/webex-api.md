@@ -20,6 +20,12 @@ webex meeting 目前 API 許久沒維護，所以以下教學以 webex Teams 為
 
 Restful API 文件:[https://developer.webex.com/docs/api/v1/](https://developer.webex.com/docs/api/v1/)
 
+Widge文件：[https://code.s4d.io/widget-demo/production/index.html](https://code.s4d.io/widget-demo/production/index.html)
+
+React Widget: [https://github.com/webex/react-widgets](https://github.com/webex/react-widgets)
+
+> 使用React Widget demo local 會有錯誤，要輸入 `npm rebuild node-sass` 與使用`Node.js v10.16.0`
+
 ## 開發
 
 1.創建 access token: 註冊帳號後到此拉下去一點即可看到 [https://developer.webex.com/docs/api/getting-started](https://developer.webex.com/docs/api/getting-started)
