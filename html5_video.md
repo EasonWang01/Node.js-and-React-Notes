@@ -77,7 +77,95 @@ window.URL.createObjectURL(superBuffer)
 
 3.後來想到可以使用將影片擷取10秒一格並分開連續傳送給client達到串流的效果，但一樣因為最後要在前端將video.srcObject 改為blob，只要更改video src都會造成畫面閃爍
 
+client
 
+```javascript
+import React, { useEffect } from "react";
+import MediaStreamRecorder from "msr";
+import "./App.css";
+
+const ws = new WebSocket("ws://localhost:3003");
+
+function App() {
+  useEffect(() => {
+    const video = document.querySelector("#clientVideo");
+    video.onloadedmetadata = function (e) {
+      video.play();
+    };
+    video.src = window.URL.createObjectURL(mediaSource); //msg.data//new Blob(new Uint8Array(msg.data));
+    ws.onopen = () => {
+      console.log("open");
+    };
+    ws.onmessage = (msg) => {
+      if (msg.data instanceof Blob) {
+        const video = document.querySelector("#clientVideo");
+        video.src = window.URL.createObjectURL(msg.data);
+      }
+    };
+  });
+  const send = () => {
+    var constraints = { audio: true, video: { width: 400, height: 200 } };
+
+    navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then((mediaStream) => {
+        const video = document.querySelector("#localVideo");
+        video.srcObject = mediaStream;
+        video.onloadedmetadata = function (e) {
+          video.play();
+        };
+
+        var multiStreamRecorder = new MediaStreamRecorder.MultiStreamRecorder(
+          mediaStream
+        );
+        multiStreamRecorder.ondataavailable = function (blob) {
+          // POST/PUT "Blob" using FormData/XHR2
+          ws.send(blob.video);
+        };
+        multiStreamRecorder.start(7000);
+      })
+      .catch(function (err) {
+        console.log(err.name + ": " + err.message);
+      });
+  };
+  return (
+    <div className="App">
+      <video id="localVideo"></video>
+      <button onClick={() => send()}>send stream</button>
+      <div style={{ width: 400, border: "1px solid black", margin: "0 auto" }}>
+        <div>client</div>
+        <video id="clientVideo" autoPlay></video>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+server
+
+```javascript
+const WebSocket = require('ws');
+
+const wss = new WebSocket.Server({ port: 3003 });
+
+wss.on('connection', function connection(ws) {
+  ws.on('message', (message) => {
+    try {
+      console.log(message);
+      console.log(Buffer.isBuffer(message))
+      ws.send(message);
+    } catch(err) {
+      console.log(err)
+    }
+  });
+  ws.send('something');
+});
+```
+
+> 但因為video src 每次更新後畫面會閃爍
 
 
 
