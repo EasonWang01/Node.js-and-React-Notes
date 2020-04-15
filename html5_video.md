@@ -77,6 +77,14 @@ window.URL.createObjectURL(superBuffer)
 
 3.後來想到可以使用將影片擷取10秒一格並分開連續傳送給client達到串流的效果，但一樣因為最後要在前端將video.srcObject 改為blob，只要更改video src都會造成畫面閃爍
 
+
+
+
+
+4. 之後有了mediaSource API
+
+[https://stackoverflow.com/questions/24102075/mediasource-error-this-sourcebuffer-has-been-removed-from-the-parent-media-sour](https://stackoverflow.com/questions/24102075/mediasource-error-this-sourcebuffer-has-been-removed-from-the-parent-media-sour)
+
 ## WebRTC串流
 
 ![](.gitbook/assets/ying-mu-kuai-zhao-20180720-xia-wu-3.14.32.png)
