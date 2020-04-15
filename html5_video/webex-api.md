@@ -79,3 +79,7 @@ module.exports = {
 };
 ```
 
+## 測試
+
+1. 可以開啟webex teams APP，如果有人打過去，不論是用email 或是 房間ID 都會在APP顯示
+
