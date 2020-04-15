@@ -23,12 +23,44 @@ Source code
 
 而MediaRecorder接到資料後要存入blob
 
-```text
-  recorder.ondataavailable = e => {
-    console.log(e);
-    blob1.push(e.data);
-  }
-  //這裡記得要推入的是e.data
+```javascript
+const haveLoadedMetadata = stream => {
+      const video = document.querySelector("#localVideo");
+      video.srcObject = stream;
+      video.play();
+      return new Promise(resolve => video.onloadedmetadata = () => resolve(stream)); 
+    };
+    var constraints = { audio: true, video: { width: 400, height: 200 } };
+
+    navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then(mediaStream => haveLoadedMetadata(mediaStream))
+      .then((mediaStream) => {
+          var options = { mimeType: "video/webm; codecs=vp9" };
+          const recorder = new MediaRecorder(mediaStream, options);
+          recorder.ondataavailable = (e) => {
+            console.log(e) //這裡記得要呼叫 recorder.stop() 才會有  ondataavailable
+          }
+          recorder.start();
+      setTimeout(() => {
+        recorder.stop()
+      }, 2000);
+     })
+    .catch(function (err) {
+      console.log(err.name + ": " + err.message);
+    });
+    
+    
+//或是可以用第三方模組 msr
+import MediaStreamRecorder from "msr";
+var multiStreamRecorder = new MediaStreamRecorder.MultiStreamRecorder(
+   mediaStream // from getUserMedia
+);
+multiStreamRecorder.ondataavailable = function (blob) {
+  // POST/PUT "Blob" using FormData/XHR2
+  ws.send(blob.video);
+};
+multiStreamRecorder.start(3000);
 ```
 
 之後再把blob轉格式
@@ -43,7 +75,7 @@ window.URL.createObjectURL(superBuffer)
 
 把他放到video的src即可
 
-3.後來想到可以使用將影片擷取10秒一格並分開連續傳送給client達到串流的效果
+3.後來想到可以使用將影片擷取10秒一格並分開連續傳送給client達到串流的效果，但一樣因為最後要在前端將video.srcObject 改為blob，只要更改video src都會造成畫面閃爍
 
 ## WebRTC串流
 
