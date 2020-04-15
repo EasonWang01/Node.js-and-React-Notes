@@ -2,14 +2,14 @@
 
 ## HTML5 Video
 
-1.有關串流
+### 1.有關canvas串流
 
 參考此  
 [https://github.com/EasonWang01/Node.js-stream-video/tree/master/Desktop/Node.js-stream-video-master](https://github.com/EasonWang01/Node.js-stream-video/tree/master/Desktop/Node.js-stream-video-master)
 
 但其原理為使用canvas擷取影像，並使用websocket傳遞canvas資料，所以只有影像，這種做法client端用來顯示的 dataURL會持續改變，所以雖然是串流，但畫面會有閃爍問題
 
-2.從HTML5錄製影片並下載
+### 2.從HTML5錄製影片並下載
 
 教學
 
@@ -75,7 +75,9 @@ window.URL.createObjectURL(superBuffer)
 
 把他放到video的src即可
 
-3.後來想到可以使用將影片擷取10秒一格並分開連續傳送給client達到串流的效果，但一樣因為最後要在前端將video.srcObject 改為blob，只要更改video src都會造成畫面閃爍
+### 3. getUserMedia streaming with WebSocket
+
+後來想到可以使用將影片擷取10秒一格並分開連續傳送給client達到串流的效果，但一樣因為最後要在前端將video.srcObject 改為blob，只要更改video src都會造成畫面閃爍
 
 client
 
@@ -168,7 +170,7 @@ wss.on('connection', function connection(ws) {
 
 
 
-4. 之後有了mediaSource API
+### 4. 之後有了mediaSource API
 
 ```javascript
     const video = document.querySelector("#clientVideo");
