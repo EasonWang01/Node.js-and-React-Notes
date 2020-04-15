@@ -173,29 +173,94 @@ wss.on('connection', function connection(ws) {
 ### 4. 之後有了mediaSource API
 
 ```javascript
+import React, { useEffect } from "react";
+import MediaStreamRecorder from "msr";
+import "./App.css";
+
+const ws = new WebSocket("ws://localhost:3003");
+
+function App() {
+  useEffect(() => {
     const video = document.querySelector("#clientVideo");
+    video.onloadedmetadata = function (e) {
+      video.play();
+    };
     var mediaSource = new MediaSource();
     var mediaBuffer;
+    var queue = [];
     video.src = window.URL.createObjectURL(mediaSource);
-    
+
     mediaSource.addEventListener(
       "sourceopen",
       function (e) {
-        mediaBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"');
+        mediaBuffer = mediaSource.addSourceBuffer('video/mp4; codecs="avc1.64001E"');
         mediaBuffer.addEventListener("update", function () {
           // wait for mediaBuffer update to fire before setting the new duration
+          if (queue.length > 0 && !mediaBuffer.updating) {
+            mediaBuffer.appendBuffer(queue.shift());
+          }
         });
       },
       false
     );
-    
-    websocket.onmessage = (msg) => {
-       (msg.data).arrayBuffer().then(buffer => {
-       // 這裡必須用filereader or blob.arrayBuffer() 將 buffer 轉換
-       //https://stackoverflow.com/questions/15341912/how-to-go-from-blob-to-arraybuffer
-          mediaBuffer.appendBuffer(buffer);
-        });
-    }
+
+    ws.onopen = () => {
+      console.log("open");
+    };
+    ws.onmessage = (msg) => {
+      if (msg.data instanceof Blob) {
+        if (mediaBuffer.updating || queue.length > 0) {
+          (msg.data).arrayBuffer().then((buffer) => {
+            queue.push(buffer);
+          });
+        } else {
+          (msg.data).arrayBuffer().then((buffer) => {
+            console.log(buffer)
+            mediaBuffer.appendBuffer(buffer);
+          });
+        }
+      }
+    };
+  });
+  const send = () => {
+    var constraints = { audio: true, video: { width: 400, height: 200 } };
+
+    navigator.mediaDevices
+      .getUserMedia(constraints)
+      .then((mediaStream) => {
+        const video = document.querySelector("#localVideo");
+        video.srcObject = mediaStream;
+        video.onloadedmetadata = function (e) {
+          video.play();
+        };
+
+        var multiStreamRecorder = new MediaStreamRecorder.MultiStreamRecorder(
+          mediaStream
+        );
+        multiStreamRecorder.ondataavailable = function (blob) {
+          // POST/PUT "Blob" using FormData/XHR2
+          ws.send(blob.video);
+        };
+        multiStreamRecorder.start(7000);
+      })
+      .catch(function (err) {
+        console.log(err.name + ": " + err.message);
+      });
+  };
+  return (
+    <div className="App">
+      <video id="localVideo"></video>
+      <button onClick={() => send()}>send stream</button>
+      <div style={{ width: 400, border: "1px solid black", margin: "0 auto" }}>
+        <div>client</div>
+        <video id="clientVideo" autoPlay></video>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
 ```
 
 但接著會出現以下問題
