@@ -75,6 +75,10 @@ window.URL.createObjectURL(superBuffer)
 
 把他放到video的src即可
 
+> 可參考mediaSource 模式：
+>
+> [https://github.com/webrtc/samples/blob/gh-pages/src/content/getusermedia/record/js/main.js](https://github.com/webrtc/samples/blob/gh-pages/src/content/getusermedia/record/js/main.js)
+
 ### 3. getUserMedia streaming with WebSocket
 
 後來想到可以使用將影片擷取10秒一格並分開連續傳送給client達到串流的效果，但一樣因為最後要在前端將video.srcObject 改為blob，只要更改video src都會造成畫面閃爍
