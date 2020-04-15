@@ -87,6 +87,8 @@ module.exports = {
 
 ## 可能錯誤
 
+1. API 錯誤
+
 ```text
 1.Unhandled Rejection (BadRequest): (6400007) incompatible device: reasons are received invalid message type 'ANSWER' in state 'ROAP_STATE_INIT'
 
@@ -98,4 +100,8 @@ module.exports = {
 ```
 
 > 以上錯誤都建議先更換guest issuer token 試試，第四個錯誤官方建議清除session [https://idbroker.webex.com/idb/profile\#/tokens](https://idbroker.webex.com/idb/profile#/tokens) 不過測試後無效
+
+2. 開發頁面登入 session錯誤
+
+時常登入使用者後又說頁面找不到404，或是使用者重登後卻沒有更新的情況，建議 瀏覽器硬加載
 
