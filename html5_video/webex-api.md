@@ -83,3 +83,19 @@ module.exports = {
 
 1. 可以開啟webex teams APP，如果有人打過去，不論是用email 或是 房間ID 都會在APP顯示
 
+
+
+## 可能錯誤
+
+```text
+1.Unhandled Rejection (BadRequest): (6400007) incompatible device: reasons are received invalid message type 'ANSWER' in state 'ROAP_STATE_INIT'
+
+2.state: LEFT invalid for current operation.
+
+3.Unhandled Rejection (Conflict): Conflict PUT
+
+4.User has excessive device registrations POST
+```
+
+> 以上錯誤都建議先更換guest issuer token 試試，第四個錯誤官方建議清除session [https://idbroker.webex.com/idb/profile\#/tokens](https://idbroker.webex.com/idb/profile#/tokens) 不過測試後無效
+
