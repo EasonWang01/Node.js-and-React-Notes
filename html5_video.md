@@ -92,7 +92,6 @@ function App() {
     video.onloadedmetadata = function (e) {
       video.play();
     };
-    video.src = window.URL.createObjectURL(mediaSource); //msg.data//new Blob(new Uint8Array(msg.data));
     ws.onopen = () => {
       console.log("open");
     };
