@@ -176,6 +176,8 @@ wss.on('connection', function connection(ws) {
 
 ### 4. 之後有了mediaSource API
 
+[https://developer.mozilla.org/zh-TW/docs/Web/API/MediaSource](https://developer.mozilla.org/zh-TW/docs/Web/API/MediaSource)
+
 ```javascript
 import React, { useEffect } from "react";
 import MediaStreamRecorder from "msr";
