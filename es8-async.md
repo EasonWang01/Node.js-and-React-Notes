@@ -34,3 +34,40 @@ async function sleep() {
 }
 ```
 
+## Async 後的 function 也會變promise 化
+
+```javascript
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(() => {
+    resolve();
+  }, ms));
+}
+async function sleep() {
+    await timeout(3000);
+    console.log(123)
+}
+
+await sleep()
+console.log('end')
+```
+
+## Async function內的return等同於resolve
+
+`reject`則為 `throw error`
+
+```javascript
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(() => {
+    resolve();
+  }, ms));
+}
+async function sleep() {
+    await timeout(3000);
+    console.log(123)
+    return 'sleep'
+}
+
+const c = await sleep()
+console.log(c)
+```
+

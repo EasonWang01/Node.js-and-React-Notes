@@ -176,6 +176,7 @@ squash 27f6ed6 test2
 ```javascript
 git checkout <feature branch>
 git pull origin master --rebase
+// 如果有conflict，修完conflict後git add，然後git rebase --continue
 ```
 
 ## 有關submodule

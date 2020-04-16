@@ -176,8 +176,6 @@ wss.on('connection', function connection(ws) {
 
 ### 4. 之後有了mediaSource API
 
-[https://developer.mozilla.org/zh-TW/docs/Web/API/MediaSource](https://developer.mozilla.org/zh-TW/docs/Web/API/MediaSource)
-
 ```javascript
 import React, { useEffect } from "react";
 import MediaStreamRecorder from "msr";
@@ -341,10 +339,4 @@ wss.broadcast = function(data) {
   });
 };
 ```
-
-## video.src vs srcObject
-
-> Older versions of the Media Source specification required using [`createObjectURL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL) to create an object URL then setting [`src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/src) to that URL. Now you can just set `srcObject` to the [`MediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) directly.
->
-> [https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject)
 
