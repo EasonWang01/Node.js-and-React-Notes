@@ -1,0 +1,40 @@
+# Twilio
+
+美國上市公司，提供 SMS 與 Voice phone call服務，你可以在上面申請實體美國電話號碼。
+
+##  建立 Trial account
+
+在 twilio 建立帳號後綁定一個你的手機號碼之後，可以申請一個trial number
+
+[https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account\#trial-account-restrictions-and-limitations](https://www.twilio.com/docs/usage/tutorials/how-to-use-your-free-trial-account#trial-account-restrictions-and-limitations)
+
+> If you don’t use your phone number for more than 30 days, we’ll remove it from your trial project. If you decide to return, you can always pick a new phone number.
+>
+> 30 天內沒使用trial account 內的號碼會被清除
+
+之後你可以用 trial number 發送簡訊或打電話\(使用API\)，或是你也可以發送簡訊到這個number，可以從console裡面去查看log。
+
+![](.gitbook/assets/ying-mu-kuai-zhao-20200417-xia-wu-12.10.19.png)
+
+
+
+## 連結
+
+voice console: [https://www.twilio.com/console/voice/dashboard](https://www.twilio.com/console/voice/dashboard)
+
+
+
+## 使用
+
+#### 撥打電話
+
+curl
+
+```text
+curl -X POST https://api.twilio.com/2010-04-01/Accounts/AC1ef3aaf7dd7bfd622fd53b8c2bd5b8de/Calls.json \
+--data-urlencode "Url=http://demo.twilio.com/docs/voice.xml" \
+--data-urlencode "To=+886987928157" \
+--data-urlencode "From=+14157411853" \
+-u AC1ef3aaf7dd7bfd622fd53b8c2bd5b8de:<API key>
+```
+
