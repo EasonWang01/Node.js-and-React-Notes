@@ -22,9 +22,15 @@
 
 voice console: [https://www.twilio.com/console/voice/dashboard](https://www.twilio.com/console/voice/dashboard)
 
+sms doc: [https://www.twilio.com/docs/sms](https://www.twilio.com/docs/sms)
+
 
 
 ## 使用
+
+#### 取得 access token
+
+![](.gitbook/assets/ying-mu-kuai-zhao-20200417-xia-wu-12.13.55.png)
 
 #### 撥打電話
 
@@ -33,8 +39,21 @@ curl
 ```text
 curl -X POST https://api.twilio.com/2010-04-01/Accounts/AC1ef3aaf7dd7bfd622fd53b8c2bd5b8de/Calls.json \
 --data-urlencode "Url=http://demo.twilio.com/docs/voice.xml" \
---data-urlencode "To=+886987928157" \
+--data-urlencode "To=+886911928157" \
 --data-urlencode "From=+14157411853" \
--u AC1ef3aaf7dd7bfd622fd53b8c2bd5b8de:<API key>
+-u AC1ef3aaf7dd7bfd622fd53b8c2bd5b8de:<your_auth_token>
+```
+
+#### 發送簡訊
+
+curl
+
+```text
+EXCLAMATION_MARK='!'
+curl -X POST https://api.twilio.com/2010-04-01/Accounts/AC1ef3aaf7dd7bfd622fd53b8c2bd5b8de/Messages.json \
+--data-urlencode "Body=Hi there$EXCLAMATION_MARK" \
+--data-urlencode "From=+14157411853" \
+--data-urlencode "To=+886911928157" \
+-u AC1ef3aaf7dd7bfd622fd53b8c2bd5b8de:<your_auth_token>
 ```
 
