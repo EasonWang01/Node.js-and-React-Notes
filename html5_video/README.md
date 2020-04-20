@@ -293,23 +293,28 @@ export default App;
 
 {% embed url="https://jsfiddle.net/02t5Luy9/" %}
 
-簡化版:
+Async & 加上 websocket 版本:
 
 ```javascript
 import React, { useEffect } from "react";
 import "./App.css";
+const ws = new WebSocket("ws://localhost:3003");
 
-// TODO  sourceBuffer not defined
 function App() {
   const start = () => {
-    const main = async(function* main() {
-      const logging = true;
-      let tasks = Promise.resolve();
-
-      const devices = yield navigator.mediaDevices.enumerateDevices();
+    ws.onopen = () => {
+      console.log("open");
+    };
+    ws.onmessage = async (msg) => {
+      console.log(msg.data)
+      const remoteBuf = await msg.data.arrayBuffer();
+      // TODO receive remoteBuf
+    };
+    (async function() {
+      const devices = await navigator.mediaDevices.enumerateDevices();
       console.table(devices);
 
-      const stream = yield navigator.mediaDevices.getUserMedia({
+      const stream = await navigator.mediaDevices.getUserMedia({
         video: true,
         audio: true,
       });
@@ -327,72 +332,40 @@ function App() {
       video.volume = 0;
       video.controls = true;
       video.autoplay = true;
-      document.body.appendChild(video);
 
-      yield new Promise((resolve, reject) => {
+      await new Promise((resolve, reject) => {
         ms.addEventListener("sourceopen", () => resolve(), { once: true });
       });
 
       const sb = ms.addSourceBuffer(rec.mimeType);
 
-      let i = 0;
       rec.ondataavailable = ({ data }) => {
-        tasks = tasks.then(
-          async(function* () {
-            console.group("" + i);
-
-            try {
-              if (logging) {
-                console.log("dataavailable", "size:", data.size);
-              }
-
-              if (data.size === 0) {
-                console.warn("empty recorder data");
-                throw new Error("empty recorder data");
-              }
-
-              const buf = yield data.arrayBuffer();
-
-              sb.appendBuffer(buf);
-
-              if (video.buffered.length > 1) {
-                console.warn("MSE buffered has a gap!");
-                throw new Error("MSE buffered has a gap!");
-              }
-            } catch (err) {
-              console.error(err);
+        (async function () {
+          try {
+            if (data.size === 0) {
+              console.warn("empty recorder data");
+              throw new Error("empty recorder data");
             }
-          })
-        );
+
+            const buf = await data.arrayBuffer();
+            sb.appendBuffer(buf);
+            ws.send(buf);
+
+            if (video.buffered.length > 1) {
+              console.warn("MSE buffered has a gap!");
+              throw new Error("MSE buffered has a gap!");
+            }
+          } catch (err) {
+            console.error(err);
+          }
+        })();
       };
 
       rec.start(1000);
       console.info("start");
-    });
-
-    function sleep(ms) {
-      return new Promise((resolve) => setTimeout(() => resolve(ms), ms));
-    }
-
-    function async(generatorFunc) {
-      return function (arg) {
-        const generator = generatorFunc(arg);
-        return next(null);
-        function next(arg) {
-          const result = generator.next(arg);
-          if (result.done) {
-            return result.value;
-          } else if (result.value instanceof Promise) {
-            return result.value.then(next);
-          } else {
-            return Promise.resolve(result.value);
-          }
-        }
-      };
-    }
-    main();
+    })();
   };
-  
+
   return (
     <div id="container">
       <video id="video"></video>
@@ -402,6 +375,7 @@ function App() {
 }
 
 export default App;
+
 
 ```
 
