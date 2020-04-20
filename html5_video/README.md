@@ -285,100 +285,6 @@ export default App;
 > 就不會有錯誤
 > ```
 
-## MediaSource 串流範例
-
-> `video.src = URL.createObjectURL(mediaSource);` 後`mediaSource.addEventListener("sourceopen")` 才會觸發
-
-[https://stackoverflow.com/a/52379544](https://stackoverflow.com/a/52379544)
-
-{% embed url="https://jsfiddle.net/02t5Luy9/" %}
-
-Async & 加上 websocket 版本:
-
-```javascript
-import React, { useEffect } from "react";
-import "./App.css";
-const ws = new WebSocket("ws://localhost:3003");
-
-function App() {
-  const start = () => {
-    ws.onopen = () => {
-      console.log("open");
-    };
-    ws.onmessage = async (msg) => {
-      console.log(msg.data)
-      const remoteBuf = await msg.data.arrayBuffer();
-      // TODO receive remoteBuf
-    };
-    (async function() {
-      const devices = await navigator.mediaDevices.enumerateDevices();
-      console.table(devices);
-
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: true,
-        audio: true,
-      });
-
-      const rec = new MediaRecorder(stream, {
-        mimeType: 'video/webm; codecs="opus,vp8"',
-      });
-
-      const ms = new MediaSource();
-
-      const video = document.querySelector("#video");
-
-      //video.srcObject = ms;
-      video.src = URL.createObjectURL(ms);
-      video.volume = 0;
-      video.controls = true;
-      video.autoplay = true;
-
-      await new Promise((resolve, reject) => {
-        ms.addEventListener("sourceopen", () => resolve(), { once: true });
-      });
-
-      const sb = ms.addSourceBuffer(rec.mimeType);
-
-      rec.ondataavailable = ({ data }) => {
-        (async function () {
-          try {
-            if (data.size === 0) {
-              console.warn("empty recorder data");
-              throw new Error("empty recorder data");
-            }
-
-            const buf = await data.arrayBuffer();
-            sb.appendBuffer(buf);
-            ws.send(buf);
-
-            if (video.buffered.length > 1) {
-              console.warn("MSE buffered has a gap!");
-              throw new Error("MSE buffered has a gap!");
-            }
-          } catch (err) {
-            console.error(err);
-          }
-        })();
-      };
-
-      rec.start(1000);
-      console.info("start");
-    })();
-  };
-
-  return (
-    <div id="container">
-      <video id="video"></video>
-      <button onClick={() => start()}>start</button>
-    </div>
-  );
-}
-
-export default App;
-
-
-```
-
 ## WebRTC串流
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20180720-xia-wu-3.14.32.png)
@@ -441,14 +347,4 @@ wss.broadcast = function(data) {
 > Older versions of the Media Source specification required using [`createObjectURL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL) to create an object URL then setting [`src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/src) to that URL. Now you can just set `srcObject` to the [`MediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) directly.
 >
 > [https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject)
-
-## Video 屬性
-
-1. video.autoplay = true; 等同於
-
-```text
-    video.onloadedmetadata = function (e) {
-      video.play();
-    };
-```
 
