@@ -287,6 +287,8 @@ export default App;
 
 ## MediaSource 串流範例
 
+> `video.src = URL.createObjectURL(mediaSource);` 後`mediaSource.addEventListener("sourceopen")` 才會觸發
+
 [https://stackoverflow.com/a/52379544](https://stackoverflow.com/a/52379544)
 
 {% embed url="https://jsfiddle.net/02t5Luy9/" %}
@@ -465,4 +467,14 @@ wss.broadcast = function(data) {
 > Older versions of the Media Source specification required using [`createObjectURL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL) to create an object URL then setting [`src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/src) to that URL. Now you can just set `srcObject` to the [`MediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) directly.
 >
 > [https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/srcObject)
+
+## Video 屬性
+
+1. video.autoplay = true; 等同於
+
+```text
+    video.onloadedmetadata = function (e) {
+      video.play();
+    };
+```
 
