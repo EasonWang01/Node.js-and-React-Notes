@@ -287,9 +287,121 @@ export default App;
 
 ## MediaSource 串流範例
 
+[https://stackoverflow.com/a/52379544](https://stackoverflow.com/a/52379544)
+
 {% embed url="https://jsfiddle.net/02t5Luy9/" %}
 
+簡化版:
 
+```javascript
+import React, { useEffect } from "react";
+import "./App.css";
+
+// TODO  sourceBuffer not defined
+function App() {
+  const start = () => {
+    const main = async(function* main() {
+      const logging = true;
+      let tasks = Promise.resolve();
+
+      const devices = yield navigator.mediaDevices.enumerateDevices();
+      console.table(devices);
+
+      const stream = yield navigator.mediaDevices.getUserMedia({
+        video: true,
+        audio: true,
+      });
+
+      const rec = new MediaRecorder(stream, {
+        mimeType: 'video/webm; codecs="opus,vp8"',
+      });
+
+      const ms = new MediaSource();
+
+      const video = document.querySelector("#video");
+
+      //video.srcObject = ms;
+      video.src = URL.createObjectURL(ms);
+      video.volume = 0;
+      video.controls = true;
+      video.autoplay = true;
+      document.body.appendChild(video);
+
+      yield new Promise((resolve, reject) => {
+        ms.addEventListener("sourceopen", () => resolve(), { once: true });
+      });
+
+      const sb = ms.addSourceBuffer(rec.mimeType);
+
+      let i = 0;
+      rec.ondataavailable = ({ data }) => {
+        tasks = tasks.then(
+          async(function* () {
+            console.group("" + i);
+
+            try {
+              if (logging) {
+                console.log("dataavailable", "size:", data.size);
+              }
+
+              if (data.size === 0) {
+                console.warn("empty recorder data");
+                throw new Error("empty recorder data");
+              }
+
+              const buf = yield data.arrayBuffer();
+
+              sb.appendBuffer(buf);
+
+              if (video.buffered.length > 1) {
+                console.warn("MSE buffered has a gap!");
+                throw new Error("MSE buffered has a gap!");
+              }
+            } catch (err) {
+              console.error(err);
+            }
+          })
+        );
+      };
+
+      rec.start(1000);
+      console.info("start");
+    });
+
+    function sleep(ms) {
+      return new Promise((resolve) => setTimeout(() => resolve(ms), ms));
+    }
+
+    function async(generatorFunc) {
+      return function (arg) {
+        const generator = generatorFunc(arg);
+        return next(null);
+        function next(arg) {
+          const result = generator.next(arg);
+          if (result.done) {
+            return result.value;
+          } else if (result.value instanceof Promise) {
+            return result.value.then(next);
+          } else {
+            return Promise.resolve(result.value);
+          }
+        }
+      };
+    }
+    main();
+  };
+  
+  return (
+    <div id="container">
+      <video id="video"></video>
+      <button onClick={() => start()}>start</button>
+    </div>
+  );
+}
+
+export default App;
+
+```
 
 ## WebRTC串流
 
