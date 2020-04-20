@@ -39,9 +39,5 @@ Drawer.js
 
 ## Passing child red to parent
 
-{% embed url="https://stackoverflow.com/questions/42980402/react-passing-ref-from-dumb-componentchild-to-smart-componentparent" %}
-
-現在新的 hook 方法要參考：
-
-[https://stackoverflow.com/questions/37949981/call-child-method-from-parent](https://stackoverflow.com/questions/37949981/call-child-method-from-parent)
+[https://stackoverflow.com/questions/42980402/react-passing-ref-from-dumb-componentchild-to-smart-componentparent](https://stackoverflow.com/questions/42980402/react-passing-ref-from-dumb-componentchild-to-smart-componentparent)
 
