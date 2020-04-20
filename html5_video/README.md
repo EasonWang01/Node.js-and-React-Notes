@@ -285,6 +285,12 @@ export default App;
 > 就不會有錯誤
 > ```
 
+## MediaSource 串流範例
+
+{% embed url="https://jsfiddle.net/02t5Luy9/" %}
+
+
+
 ## WebRTC串流
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20180720-xia-wu-3.14.32.png)
