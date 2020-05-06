@@ -175,7 +175,15 @@ describe('SectionDisplay component', () => {
 
 可以打開coverage folder查看他生成的網頁：
 
-![](/assets/Screen%20Shot%202018-11-23%20at%2011.33.33%20AM.png)上面會清楚的告訴你哪些部分還沒測試到
+上面會清楚的告訴你哪些部分還沒測試到
+
+### 測試單一檔案
+
+記得如果又加上了`collectCoverageFrom`那麼最後不會產生出 coverage file
+
+```javascript
+yarn jest src/components/Agreement/index.test.js -- -u --coverage  --coverageDirectory=coverage --env=jsdom
+```
 
 ![](/assets/Screen%20Shot%202018-11-23%20at%2011.52.31%20AM.png)
 
