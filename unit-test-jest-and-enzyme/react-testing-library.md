@@ -52,3 +52,16 @@ test('Match snapshot', () => {
 
 ```
 
+### 測試 useHistory, useRouteMatch
+
+[https://stackoverflow.com/questions/58392815/how-to-mock-usehistory-hook-in-jest](https://stackoverflow.com/questions/58392815/how-to-mock-usehistory-hook-in-jest)
+
+```javascript
+jest.mock('react-router-dom', () => ({
+  useHistory: () => ({
+    push: jest.fn(),
+  }),
+  useRouteMatch: () => ({ url: '' }),
+}));
+```
+
