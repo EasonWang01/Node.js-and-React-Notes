@@ -448,3 +448,24 @@ sudo /etc/init.d/apache2 start
 mysql -u root -p
 ```
 
+## Docker mysql
+
+### 安裝
+
+```text
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
+```
+
+### 進入docker
+
+```text
+docker exec -it <docker id> bash
+```
+
+### 進入 mysql cli
+
+```text
+mysql -u root -p
+之後輸入密碼 my-secret-pw
+```
+
