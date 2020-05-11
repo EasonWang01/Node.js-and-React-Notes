@@ -469,3 +469,38 @@ mysql -u root -p
 之後輸入密碼 my-secret-pw
 ```
 
+### 從外面連入 docker 進入 mysql shell
+
+```text
+docker exec some-mysql sh -c 'mysql -u root -p"my-secret-pw"'
+```
+
+> 不過這時會收到警告 mysql: \[Warning\] Using a password on the command line interface can be insecure.
+
+所以可以到 \`**/etc/mysql/my.cnf**\` 設置使用者
+
+### 使用 docker-compose 搭配 GUI\(adminer\)
+
+```text
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+```
+
+> 帳號為 root 密碼為 example
+
