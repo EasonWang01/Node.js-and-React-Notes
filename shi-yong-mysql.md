@@ -490,6 +490,7 @@ services:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
+    volumes: ["/Users/yicheng/server/database:/db"]
     ports:
       - 3306:3306
     environment:
