@@ -92,3 +92,13 @@ test('Matching snapshot', () => {
 
 ```
 
+### Mock 某個 import 的 module
+
+```javascript
+jest.mock('axios', () => ({
+  post: () => ({
+    ....
+  })
+}));
+```
+
