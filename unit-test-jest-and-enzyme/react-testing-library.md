@@ -65,3 +65,30 @@ jest.mock('react-router-dom', () => ({
 }));
 ```
 
+## Invariant Violation: You should not use &lt;Route&gt; or withRouter\(\) outside a &lt;Router&gt;
+
+```javascript
+import { MemoryRouter as Router } from 'react-router-dom';
+
+// 解法是把他包著Router即可
+
+test('Matching snapshot', () => {
+  const { asFragment } = render(
+    <Provider store={store}>
+      <Router>
+        <Auth
+          history={{ replace: jest.fn() }}
+          location={{ search: '' }}
+          signInSuccessUrl=""
+          userSignIn={jest.fn()}
+          error=""
+          login={{ loading: false }}
+        />
+      </Router>
+    </Provider>,
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
+```
+
