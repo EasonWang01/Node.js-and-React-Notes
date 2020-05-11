@@ -505,3 +505,11 @@ services:
 
 > 帳號為 root 密碼為 example
 
+### 執行 SQL 檔案
+
+```text
+mysql -uroot -pexample < ./user.sql
+```
+
+> -u -p 後面接的是帳號和密碼
+
