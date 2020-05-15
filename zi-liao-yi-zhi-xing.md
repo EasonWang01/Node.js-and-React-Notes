@@ -10,5 +10,9 @@
 
 ## MVCC
 
-[https://juejin.im/post/5c68a4056fb9a049e063e0ab](https://juejin.im/post/5c68a4056fb9a049e063e0ab)
+{% embed url="https://juejin.im/post/5c68a4056fb9a049e063e0ab" %}
+
+## ACID
+
+[https://vladmihalcea.com/a-beginners-guide-to-acid-and-database-transactions/](https://vladmihalcea.com/a-beginners-guide-to-acid-and-database-transactions/)
 
