@@ -65,3 +65,19 @@ func2 ball mystery
 sudo vim test2.sh
 ```
 
+## grep
+
+> 用來查找字串，記得他匹配到就會把整行回傳
+
+####  用法
+
+```text
+grep 關鍵字 檔案1 檔案2 ...
+```
+
+查找所有相關檔案
+
+```text
+grep words.. /etc/*.conf
+```
+
