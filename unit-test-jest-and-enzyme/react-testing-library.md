@@ -102,3 +102,47 @@ jest.mock('axios', () => ({
 }));
 ```
 
+## Uncaught \[Invariant Violation: Element type is invalid: expected a string \(for built-in components\) or a class/function \(for composite components\) but got: undefined.
+
+有可能是包了 router 在 component外，然後又 mock 了 react-router-dom。
+
+## 傳入 i18n 
+
+已 i18n-next 為例
+
+```javascript
+import { Translation } from 'react-i18next';
+import i18n from '@/i18n'; // i18n init file
+
+<Translation ns="agreements" i18n={i18n}>
+  {t => (
+     <..Component..
+       t={t}
+     />
+  )}
+</Translation>
+```
+
+## 傳入 Material-UI theme
+
+```javascript
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import theme from '@/constants/theme'; 
+const muiTheme = createMuiTheme(theme);
+
+test('Matching snapshot', () => {
+  const { asFragment } = render(
+    <MuiThemeProvider theme={muiTheme}>
+      <ThemeProvider theme={muiTheme}>
+        <Provider store={store}>
+          <StatisticsChart data={[{}, {}]} theme={muiTheme} />
+        </Provider>
+      </ThemeProvider>
+    </MuiThemeProvider>,
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
+```
+

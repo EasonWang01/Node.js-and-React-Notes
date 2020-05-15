@@ -501,6 +501,14 @@ git rm --cached -r .
 
 > 創建新的branch原本檔案內容會帶過來，需要主動 discard
 
+## GIt commit 後只有一個檔案
+
+裡面只有hash
+
+這個問題原因是多個資料夾內有sub folder，然後你進去sub folder 做了`rm -rf .git`
+
+這時只有先單獨commit subfolder內的單個檔案然後 force push，之後才commit 其他的即可
+
 ## Git 自訂快捷鍵
 
 > 把以下加在~/.zshrc 內 之後可以用 gac ... 直接取代 `git add . && git commit -m '....'`
