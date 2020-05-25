@@ -310,3 +310,39 @@ Promise.race([winnerPromise, loserPromise, timeoutPromise(1000)]).then(function 
 });
 ```
 
+## Closure
+
+```javascript
+a = ['s', 'ss','sss']; obj = {}
+
+function setValue(obj, a) {
+  if (a.length > 0) {
+    var n = a.shift()
+    if (!(n in obj)) obj[n] = {}
+    obj = obj[n]
+    setValue(obj, a)
+  }
+}
+
+setValue(obj, a)
+console.log(obj)
+```
+
+上面將等同於 \(上面較易理解\) 來源：[https://stackoverflow.com/a/20240290](https://stackoverflow.com/a/20240290)
+
+```javascript
+a = ['s', 'ss','sss']; obj = {}
+
+function setValue(obj, a) {
+  var o = obj
+  while (a.length - 0) {
+    var n = a.shift()
+    if (!(n in o)) o[n] = {}
+    o = o[n] // 等同於閉包，將 o 的 context 改為o[n]
+  }
+}
+
+setValue(obj, a)
+console.log(obj)
+```
+
