@@ -1,4 +1,4 @@
-# 文件操作
+# fs 文件操作
 
 ## 文件操作
 
@@ -431,5 +431,44 @@ The 同步 version of fs.appendFile.
 
 其他可參考下面文章
 
-[https://www.shellhacks.com/fake-file-access-modify-change-timestamps-linux/](https://www.shellhacks.com/fake-file-access-modify-change-timestamps-linux/)
+{% embed url="https://www.shellhacks.com/fake-file-access-modify-change-timestamps-linux/" %}
+
+## 讀取出所有資料夾內的資料夾
+
+```javascript
+const fs = require("fs");
+
+let result = [];
+
+const isDirectory = path => (
+  fs.lstatSync(path).isDirectory()
+)
+
+const isBlockList = dirName => {
+  const blackList = ['__snapshots__', 'test']
+  return blackList.some(name => name === dirName);
+}
+
+const readDeepDir = (path) => {
+  if(!isDirectory(path)) {
+    return
+  }
+
+  const dir = fs.readdirSync(path);
+  if (dir.length > 1) {
+    dir.forEach(_dir => {
+      const absolutePath = path + '/' + _dir;
+      if(isDirectory(absolutePath) && !isBlockList(_dir)) {
+        result.push(absolutePath);
+      }
+      readDeepDir(absolutePath);
+    });
+  }
+  return result;
+};
+
+const dir = readDeepDir('../../aip/src/web/console/src/components');
+console.log(dir)
+
+```
 
