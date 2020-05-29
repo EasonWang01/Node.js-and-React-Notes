@@ -2,6 +2,27 @@
 
 ## 有關繼承
 
+```javascript
+function Graph() {
+  this.vertices = [];
+  this.edges = [];
+}
+
+const g = new Graph();
+
+g.hasOwnProperty('edges')
+// true
+
+Graph.prototype.c = 123
+
+// 繼承父親的屬性會在 __proto__ 顯示
+g.hasOwnProperty('c')
+// false
+
+g.__proto__.hasOwnProperty('c')
+// true
+```
+
 似乎將
 
 ```text
@@ -26,8 +47,7 @@ function Dog(name) {
 }
 
 Dog.prototype.__proto__ = EventEmitter.prototype;
-// 另一种写法
-// Dog.prototype = Object.create(EventEmitter.prototype);
+//等同於 Dog.prototype = Object.create(EventEmitter.prototype);
 
 var simon = new Dog('simon');
 
