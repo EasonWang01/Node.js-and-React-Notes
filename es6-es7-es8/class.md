@@ -66,7 +66,7 @@ console.log(cc) // human { height: 178, weight: 67 }
 
 ## 繼承父 class
 
-> 如果是 function名稱相同會繼承，但也可以直接在子類別覆蓋
+> 如果class內 function名稱相同會繼承，但也可以直接在子類別覆蓋
 
 ```javascript
 function Animal (name) {
@@ -85,5 +85,21 @@ class Dog extends Animal {
 
 var d = new Dog('Mitzie');
 d.speak(); // Mitzie barks.
+```
+
+## class 換成 function
+
+```javascript
+class Animal {
+  constructor(name){
+    this.name = name
+  }
+}
+
+// 等同於
+
+function Animal (name) {
+  this.name = name;  
+}
 ```
 
