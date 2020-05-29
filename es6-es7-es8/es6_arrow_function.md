@@ -1,17 +1,17 @@
 # ES6 Arrow function
 
+## 1.箭頭函式的內部沒有自己的 [arguments](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Functions/arguments)、[super](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/super)、[new.target](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/new.target) 等語法
+
+## 2. 箭頭函式 this 綁定到其寫的時候所在的範圍
+
+而傳統函式的 this 依呼叫的時候存在的範圍而定
+
 ## ES6 Arrow function
 
-```text
-var s = 5
-```
-
-```text
-()=> s  //相同於function(){return s};
-```
-
-```text
-(()=> s)()
+```javascript
+const s = 5
+() => s  // 相同於function(){return s};
+(() => s)()
 ```
 
 ### return is implicit under some circumstances
