@@ -64,3 +64,26 @@ cc = a.c();
 console.log(cc) // human { height: 178, weight: 67 }
 ```
 
+## 繼承父 class
+
+> 如果是 function名稱相同會繼承，但也可以直接在子類別覆蓋
+
+```javascript
+function Animal (name) {
+  this.name = name;  
+}
+
+Animal.prototype.speak = function () {
+  console.log(this.name + ' makes a noise.');
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(this.name + ' barks.');
+  }
+}
+
+var d = new Dog('Mitzie');
+d.speak(); // Mitzie barks.
+```
+
