@@ -40,6 +40,13 @@ console.log(<Dialog c={123} />)
 npx babel-node test.js
 ```
 
+## babel-node
+
+只會執行以下條件的編譯
+
+* Rooted at the current working directory
+* Not inside `node_modules` in the current working directory
+
 ## `babel-core/register`
 
 > 1.我們在webpack寫入babel後可使用es6功能，但在entry file外就無法使用es6功能
