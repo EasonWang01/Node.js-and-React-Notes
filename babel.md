@@ -17,7 +17,7 @@ description: 為 js 的第三方編譯工具
 然後安裝
 
 ```text
-yarn add @babel/cli @babel/core @babel/node @babel/preset-env -D
+yarn add @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-react -D
 ```
 
 > preset-env 整合了原本 es2015 等plugin，然後preset-react 用來轉 jsx 為 React.createElement
