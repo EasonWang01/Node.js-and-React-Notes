@@ -1,9 +1,49 @@
+---
+description: 為 js 的第三方編譯工具
+---
+
 # 使用Babel
 
-2\# Babel
+## 在 Node.js 使用 import 並讀取 React component
 
-> 前言:1.我們在webpack寫入babel後可使用es6功能，但在entry file外就無法使用es6功能
+新增 .babelrc
+
+```javascript
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+```
+
+然後安裝
+
+```text
+yarn add @babel/cli @babel/core @babel/node @babel/preset-env -D
+```
+
+> preset-env 整合了原本 es2015 等plugin，然後preset-react 用來轉 jsx 為 React.createElement
 >
+> babel-node 類似 babel-cli 不過 前者預先在執行前 compile presets and plugins
+
+之後即可如下使用
+
+test.js
+
+```javascript
+import React from 'react';
+import Dialog from './component/Dialog';
+console.log(<Dialog c={123} />)
+```
+
+執行
+
+```javascript
+npx babel-node test.js
+```
+
+## `babel-core/register`
+
+> 1.我們在webpack寫入babel後可使用es6功能，但在entry file外就無法使用es6功能
+
 > 2.Node.js的--harmony不包含module功能
 
 1. 所以要在Node.js使用ES6 的export default 須另外寫一個.babelrc檔案
