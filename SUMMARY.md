@@ -47,6 +47,7 @@
 * [React router](react-router/README.md)
   * [自己寫一個Router](react-router/zi-ji-xie-yi-ge-router.md)
 * [Redux](redux/README.md)
+  * [小技巧](redux/xiao-ji-qiao.md)
   * [Redux sagas](redux/redux-sagas.md)
   * [compose](redux/compose.md)
 * [React webpack 部署](react-webpack-bu-shu.md)
