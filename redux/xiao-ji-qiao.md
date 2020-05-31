@@ -14,3 +14,5 @@
 
 然後到 browser console 輸入 `copy(reduxStore)`
 
+或是使用 redux devtool 點 raw 也可以
+
