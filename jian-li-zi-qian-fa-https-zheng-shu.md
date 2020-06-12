@@ -85,5 +85,13 @@ https
 
 ## 申請加入 root CA
 
-[https://sites.google.com/a/chromium.org/dev/Home/chromium-security/root-ca-policy?overridemobile=true](https://sites.google.com/a/chromium.org/dev/Home/chromium-security/root-ca-policy?overridemobile=true)
+Chrome 是會去找電腦OS內的預設
+
+{% embed url="https://sites.google.com/a/chromium.org/dev/Home/chromium-security/root-ca-policy?overridemobile=true" %}
+
+Ｍozilla 是自己有一套trust root CA列表
+
+[https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/](https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/)
+
+
 
