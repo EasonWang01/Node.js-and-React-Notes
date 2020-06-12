@@ -2,6 +2,10 @@
 
 以下會包含建立自己的 Root Certificate Authority 並且簽發證書後給瀏覽器使用。
 
+每個 OS 在作業系統安裝時會自帶一系列的 root 憑證：
+
+[https://support.apple.com/en-us/HT202858](https://support.apple.com/en-us/HT202858) 
+
 ## 原理
 
 **憑證中心** \( certificate authority \)，也稱為 CA，來幫公鑰做認證。**憑證中心**用自己的私鑰，對 A 的公鑰和一些相關資訊一起加密，生成**數位憑證**（Digital Certificate），之後 A 在傳遞訊息時需要同時附上此**數位憑證**。
