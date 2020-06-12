@@ -77,5 +77,13 @@ https
 
 ## 參考資料:
 
-[https://stackoverflow.com/questions/7580508/getting-chrome-to-accept-self-signed-localhost-certificate](https://stackoverflow.com/questions/7580508/getting-chrome-to-accept-self-signed-localhost-certificate)
+{% embed url="https://stackoverflow.com/questions/7580508/getting-chrome-to-accept-self-signed-localhost-certificate" %}
+
+## Chain of Trust
+
+{% embed url="https://medium.com/@clu1022/%E9%82%A3%E4%BA%9B%E9%97%9C%E6%96%BCssl-tls%E7%9A%84%E4%BA%8C%E4%B8%89%E4%BA%8B-%E5%8D%81%E4%BA%8C-chain-of-trust-f00da1f2cc15" %}
+
+## 申請加入 root CA
+
+[https://sites.google.com/a/chromium.org/dev/Home/chromium-security/root-ca-policy?overridemobile=true](https://sites.google.com/a/chromium.org/dev/Home/chromium-security/root-ca-policy?overridemobile=true)
 
