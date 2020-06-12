@@ -70,6 +70,8 @@ this.$refs.input
 
 ## 綁定 dom 觸發事件
 
+> v-on:click 可改為 @click
+
 ```javascript
 <button v-on:click="addTodo">addTodo</button>
 
