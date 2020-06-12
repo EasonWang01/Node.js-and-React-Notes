@@ -85,3 +85,18 @@ export default {
 </script>
 ```
 
+## Render List \(類似 react map render\)
+
+```javascript
+<div v-for="item in items" :key="item.id">{{ item.message }}</div>
+
+<script>
+export default {
+  name: "App",
+  data: () => ({
+    items: [{ message: "Foo" }, { message: "Bar" }]
+  })
+};
+</script>
+```
+
