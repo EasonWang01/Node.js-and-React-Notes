@@ -1,4 +1,15 @@
+---
+description: 類似於 React.js 或 Angular 之前端框架
+---
+
 # Vue
+
+## 建立專案
+
+```text
+yarn global add @vue/cli
+vue create my-project
+```
 
 ## 基本結構
 
