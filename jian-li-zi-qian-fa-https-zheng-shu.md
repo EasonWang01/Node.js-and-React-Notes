@@ -69,5 +69,9 @@ https
 
 因為 macOS 的憑證限制為 825 天，所以簽發證書時要注意
 
-[https://support.apple.com/en-us/HT210176](https://support.apple.com/en-us/HT210176)
+{% embed url="https://support.apple.com/en-us/HT210176" %}
+
+## 參考資料:
+
+[https://stackoverflow.com/questions/7580508/getting-chrome-to-accept-self-signed-localhost-certificate](https://stackoverflow.com/questions/7580508/getting-chrome-to-accept-self-signed-localhost-certificate)
 
