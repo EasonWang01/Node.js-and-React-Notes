@@ -1,2 +1,87 @@
 # Vue
 
+## 基本結構
+
+App.vue
+
+```javascript
+<template>
+  ...html
+</template>
+
+<script>
+export default {
+  name: "App", // component 的名稱
+  methods: {
+    //onclick 之類 dom 觸發的方法都寫這
+  },
+  data: () => ({
+    //類似於 react state
+  })
+};
+</script>
+
+<style>
+  #app {
+    // style 寫這 
+  }
+</style>
+```
+
+main.js 寫一些 初始化的行為
+
+```javascript
+import Vue from 'vue'
+import App from '@/App.vue'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+Vue.config.productionTip = false
+Vue.use(ElementUI);
+
+const routes = [
+  { path: '/', component: App },
+]
+const router = new VueRouter({
+  mode: 'history',
+  routes 
+})
+new Vue({
+  router,
+}).$mount('#app')
+
+```
+
+## Ref
+
+存取某個元素時使用
+
+```javascript
+<input ref="input">
+```
+
+之後用以下存取
+
+```javascript
+this.$refs.input
+```
+
+## 綁定 dom 觸發事件
+
+```javascript
+<button v-on:click="addTodo">addTodo</button>
+
+<script>
+export default {
+  name: "test",
+  methods: {
+    addTodo() {
+      ...
+    }
+  }
+};
+</script>
+```
+

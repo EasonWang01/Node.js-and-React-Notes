@@ -34,3 +34,27 @@ new Vue({
 
 ```
 
+4. 點擊換頁面
+
+```javascript
+<template id="test">
+  <div>
+    <button v-on:click="gotoHome">test</button>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "test",
+  mounted: () => {
+    console.log("test mounted");
+  },
+  methods: {
+    gotoHome() { // 不能用 arrow function
+      this.$router.push("/");
+    }
+  }
+};
+</script>
+```
+
