@@ -13,6 +13,54 @@ http.createServer(function (request, response){
 console.log('Server running on port 3000.');
 ```
 
+### 純 Node.js 接收 POST request
+
+```javascript
+const http = require('http');
+
+const setCORS = () => {
+  const headers = {};
+  headers["Access-Control-Allow-Origin"] = "*";
+  headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";
+  headers["Access-Control-Allow-Credentials"] = false;
+  headers["Access-Control-Max-Age"] = '86400'; // 24 hours
+  headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
+  return headers
+}
+
+const parseBody = (req, callback) => {
+  let body = '';
+  req.on('data', chunk => {
+    body += chunk.toString();
+  });
+  req.on('end', () => {
+    callback(body);
+  });
+}
+
+http.createServer(function (req, res) {
+  if (req.method === 'OPTIONS') {
+    const headers = setCORS();
+    res.writeHead(200, headers);
+    res.end();
+  }
+  if (req.url === '/') {
+    if (req.method === "POST") {
+      parseBody(req, (body) => {
+        console.log(JSON.parse(body));
+        const headers = setCORS();
+        res.writeHead(200, headers);
+        res.end(JSON.stringify({result: 'ok'}));
+      })
+    }
+  }
+}).listen(5000);
+
+console.log('Server running on port 5000.');
+```
+
+### 
+
 ### 包含路由與讀取Body
 
 ```javascript
