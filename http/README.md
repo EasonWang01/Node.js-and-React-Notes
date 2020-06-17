@@ -29,6 +29,16 @@ const parseBody = (req, callback) => {
 }
 
 http.createServer(function (req, res) {
+    if (req.method === 'OPTIONS') {
+        var headers = {};
+        headers["Access-Control-Allow-Origin"] = "*";
+        headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";
+        headers["Access-Control-Allow-Credentials"] = false;
+        headers["Access-Control-Max-Age"] = '86400'; // 24 hours
+        headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
+        res.writeHead(200, headers);
+        res.end();
+    }
   if (req.url === '/') {
     if (req.method === "POST") {
       parseBody(req, (body) => {
@@ -40,6 +50,21 @@ http.createServer(function (req, res) {
 }).listen(3000);
 
 console.log('Server running on port 3000.');
+```
+
+### 因為 POST request 會先有一個 options 請求，所以要先回覆
+
+```javascript
+    if (req.method === 'OPTIONS') {
+        var headers = {};
+        headers["Access-Control-Allow-Origin"] = "*";
+        headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";
+        headers["Access-Control-Allow-Credentials"] = false;
+        headers["Access-Control-Max-Age"] = '86400'; // 24 hours
+        headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
+        res.writeHead(200, headers);
+        res.end();
+    }
 ```
 
 讀檔案
