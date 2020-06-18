@@ -15,6 +15,13 @@ a=$(du -sh ./Images)
 echo $a
 ```
 
+如果裡面有包含多可指令
+
+```text
+name=$(basename `pwd`)
+echo $name
+```
+
 ## 3.等於之後不可有空格
 
 ```text
