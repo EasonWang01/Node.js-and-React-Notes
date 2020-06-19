@@ -470,3 +470,28 @@ fs.createReadStream(file.path)
 
 將其轉為 stream 然後上傳到 minio 或 S3 之類地方。
 
+## 將檔案從server 傳到 client
+
+1.可用 express 之 res.download\('檔案路徑'\)
+
+或是使用
+
+```javascript
+  const fileName = 'template.csv';
+  const fileContents = Buffer.from(file);
+
+  const readStream = new stream.PassThrough();
+  readStream.end(fileContents);
+
+  res.set('Content-disposition', 'attachment; filename=' + fileName);
+  res.set('Content-Type', 'text/plain');
+
+  readStream.pipe(const);
+```
+
+在前端部分可以如下下載檔案
+
+```javascript
+window.open(toFullUrl('api/download/template'));
+```
+
