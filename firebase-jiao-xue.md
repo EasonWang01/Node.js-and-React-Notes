@@ -17,3 +17,11 @@
 4. 最後可使用 firebase deploy 部署
 ```
 
+## Firestore
+
+現在 firebase 有兩種資料庫版本，以前的 realtime db 跟新的 Firestore
+
+Firestore使用方法可參考：
+
+[https://firebase.google.com/docs/firestore/quickstart\#web\_1](https://firebase.google.com/docs/firestore/quickstart#web_1)
+
