@@ -32,7 +32,20 @@ openssl req -x509 -new -nodes -key myCA.key -sha256 -days 825 -out myCA.pem
 
 ![](.gitbook/assets/ying-mu-kuai-zhao-20200612-shang-wu-11.46.18.png)
 
-4.新增 Subject Alternative Name \(SAN\) extension
+3.5
+
+產生另一組 private key 與 csr
+
+```text
+openssl genrsa -out localhost.key 2048
+openssl req -new -key localhost.key -out localhost.csr
+```
+
+
+
+4.新增 Subject Alternative Name \(SAN\) extension  
+
+localhost.ext
 
 ```text
 authorityKeyIdentifier=keyid,issuer
@@ -43,7 +56,7 @@ subjectAltName = @alt_names
 DNS.1 = localhost
 ```
 
-5.產生 certificate
+5.產生簽發過的 certificate
 
 ```text
 openssl x509 -req -in localhost.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial \
@@ -68,6 +81,26 @@ https
 ```
 
 即可看到瀏覽器不會再跳出不安全的警告。
+
+## 完整的 script
+
+```bash
+#!/bin/sh
+
+openssl genrsa -des3 -out myCA.key 2048
+[ -s ./myCA.key ] && echo "Generate pem from key\n" && openssl req -x509 -new -nodes -key myCA.key -sha256 -days 825 -out myCA.pem
+echo "Adding cert to keychain\nPlease type in computer password" && sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ./myCA.pem
+echo "authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = localhost" >> localhost.ext
+echo "Generate client key\n" && openssl genrsa -out localhost.key 2048
+echo "Gererate csr from key\n" && openssl req -new -key localhost.key -out localhost.csr
+echo "Generate signed certficate\n" && openssl x509 -req -in localhost.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial \
+-out localhost.crt -days 825 -sha256 -extfile localhost.ext
+```
 
 ## 注意事項
 
