@@ -78,26 +78,17 @@ Redisclient.get("short",function (err, reply) {
 開完後記得先到`ElastiCache dashboard`上方點選Modify，並選擇和你EC2相同之security group，之後回到`EC2 dashboard`把security group的Inbound加上 6379的PORT
 
 ####連線:
-ssh到EC2後使用`telnet`
-```
-
+ssh到EC2後使用 `telnet`
 telnet test.aq9nab.ng.0001.apne1.cache.amazonaws.com 6379
-
-```text
-####開放從電腦本機連線到AWS Redis
-
-利用轉傳規則
 ```
 
-ssh  -f -N -L6379::6379
-
 ```text
-ex:
+#開放從電腦本機連線到AWS Redis
+
+利用轉傳規則 ssh -f -N -L6379::6379
 ```
 
-sudo ssh -i ~/Downloads/1129new.pem ubuntu@ec2-52-193-84-195.ap-northeast-1.compute.amazonaws.com -f -N -L6379:test.aq9nab.ng.0001.apne1.cache.amazonaws.com:6379
-
-\`\`\` 之後即可本機端和EC2共用同一個Redis 伺服器
+之後即可本機端和EC2共用同一個Redis 伺服器
 
 再輸入`redis-cli`即可使用
 
