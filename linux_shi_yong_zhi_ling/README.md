@@ -310,3 +310,14 @@ sudo chmod -R 777 /Users//...
 
 > -R可開啟該資料夾底下所有檔案權限
 
+## 查詢網路傳送封包路徑與掉包
+
+```text
+brew install mtr
+sudo mtr google.com
+```
+
+> 記得要用sudo
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200630-xia-wu-3.34.20.png)
+
