@@ -1,6 +1,8 @@
 # unix 實用指令
 
-## Unix 實用指令
+## 推薦閱讀：
+
+[https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md)
 
 ## 移除包含檔案的目錄
 
