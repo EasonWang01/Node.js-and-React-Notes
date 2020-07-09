@@ -32,6 +32,12 @@ const [studyListOpen, setStudyListOpen] = React.useState({});
 setStudyListOpen({ ...studyListOpen, [id]: !studyListOpen[id] || false });
 ```
 
+> 更新 array 可以如下，如果用push的會沒作用
+
+```javascript
+setArray([...arr, {obj}])
+```
+
 ### ComponentDidMount
 
 ```javascript
