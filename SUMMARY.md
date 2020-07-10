@@ -92,7 +92,7 @@
 * [facebook oauth](facebook_oauth/README.md)
   * [facebook like ,share](facebook_oauth/facebook-like-share.md)
   * [react native FB login](facebook_oauth/react-native-fb-login.md)
-* [redis](redis.md)
+* [Redis](redis.md)
 * [做一個簡單的markdown editor](zuo-yi-ge-jian-dan-de-markdown-editor.md)
 * [websocket](websocket.md)
 * [Sublime 安裝套件](sublime-an-zhuang-tao-jian.md)

@@ -1,4 +1,4 @@
-# redis
+# Redis
 
 ## Redis
 
@@ -93,4 +93,14 @@ telnet test.aq9nab.ng.0001.apne1.cache.amazonaws.com 6379
 再輸入`redis-cli`即可使用
 
 [http://stackoverflow.com/questions/21917661/can-you-connect-to-amazon-elasticache-redis-outside-of-amazon](http://stackoverflow.com/questions/21917661/can-you-connect-to-amazon-elasticache-redis-outside-of-amazon)
+
+## 可用資料結構
+
+```text
+String (SET GET)
+Hash (HSET HGET HDEL HGETALL)
+List (LPUSH LPOP RPUSH RPOP)
+Set (SADD SPOP)
+Sorted Set (ZADD ZRANGE)
+```
 
