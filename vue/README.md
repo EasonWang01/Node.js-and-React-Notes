@@ -113,3 +113,14 @@ export default {
 </script>
 ```
 
+## Watch prop
+
+```javascript
+    props: ['project_id'],
+    watch: { 
+      project_id: function(newVal, oldVal) {
+        console.log(newVal, oldVal)
+      }
+    },
+```
+
