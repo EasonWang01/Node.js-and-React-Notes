@@ -50,14 +50,18 @@ mysql -u root -pexample < employees.sql
 
 ![](.gitbook/assets/ying-mu-kuai-zhao-20200724-xia-wu-4.18.53.png)
 
-## 使用MYSQL
+## 使用遠端 MYSQL 免費服務
 
 臨時免費信箱:[http://www.yopmail.com/zh/](http://www.yopmail.com/zh/)
 
 測試用免費mysql:[https://www.db4free.net/signup.php](https://www.db4free.net/signup.php)  
 \(預設一個資料庫，不可再增加或修改\)
 
-1.申請好mysql hosting後使用npm安裝mysql
+## Node.js 操作 MySQL
+
+> golang 請參考 [https://app.gitbook.com/@easonwang/s/golang/databasecao-zuo/mysql](https://app.gitbook.com/@easonwang/s/golang/databasecao-zuo/mysql)
+
+1.npm 安裝 mysql
 
 ```text
 npm install mysql --save
