@@ -14,6 +14,10 @@ services:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
+    ports:
+      - 3306:3306
+    volumes: 
+      - "./test_db:/test_db"  
     environment:
       MYSQL_ROOT_PASSWORD: example
 
@@ -27,6 +31,20 @@ services:
 之後輸入 `docker-compose -f stack.yml up`
 
 然後可進入 localhost:8070 查看 adminer 視覺化 GUI 操作資料庫
+
+### 讀入範例資料
+
+先在剛才外面 git clone [https://github.com/datacharmer/test\_db](https://github.com/datacharmer/test_db)
+
+> 記得看 yaml 的 volumn 位置
+
+然後進到 docker 執行 sql import
+
+```text
+docker exec -it <image id> sh
+cd test_db
+mysql -u root -pexample < employees.sql
+```
 
 ## 使用MYSQL
 
