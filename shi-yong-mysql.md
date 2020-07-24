@@ -1,6 +1,32 @@
 # 使用MySQL
 
+### Docker 執行 MySQL
 
+stack.yml
+
+```yaml
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8070:8080
+```
+
+之後輸入 `docker-compose -f stack.yml up`
+
+然後可進入 localhost:8070 查看 adminer 視覺化 GUI 操作資料庫
 
 ## 使用MYSQL
 
