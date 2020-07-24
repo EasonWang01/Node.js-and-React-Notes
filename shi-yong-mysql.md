@@ -70,10 +70,9 @@ npm install mysql --save
 2.測試連線
 
 ```text
-var express = require('express');
+cosnt express = require('express');
 
-////
-var mysql      = require('mysql');
+const mysql      = require('mysql');
 
 var connection = mysql.createConnection({
   host     : 'db4free.net',
@@ -89,12 +88,10 @@ connection.connect(function(err) {
 
   console.log('connected as id ' + connection.threadId);
 });
-////
-var app = express();
+
+const app = express();
 
 app.use(express.static(__dirname + '/public'));/* 將預設路徑設在public*/
-
-
 
 
 app.listen(8080);
