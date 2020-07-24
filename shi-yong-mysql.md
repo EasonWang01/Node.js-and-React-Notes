@@ -46,6 +46,10 @@ cd test_db
 mysql -u root -pexample < employees.sql
 ```
 
+之後回到 adminer 網頁，點選重新載入。即可看到多了 employees 資料庫
+
+![](.gitbook/assets/ying-mu-kuai-zhao-20200724-xia-wu-4.18.53.png)
+
 ## 使用MYSQL
 
 臨時免費信箱:[http://www.yopmail.com/zh/](http://www.yopmail.com/zh/)
