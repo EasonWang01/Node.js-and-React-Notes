@@ -45,5 +45,23 @@ from titles
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20200727-shang-wu-10.51.16.png)
 
+## 合併查詢兩張表的同欄位資料
+
+union 或 union all \(union 預設為 distinct\)
+
+```sql
+select emp_no
+from salaries
+where emp_no < 10002
+union all
+select emp_no
+from titles
+where emp_no < 10002
+```
+
+> 兩個表 select 的欄位數量要相同，名稱可以不同
+
+
+
 
 
