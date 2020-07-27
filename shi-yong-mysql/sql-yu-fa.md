@@ -6,7 +6,9 @@
 
 [https://github.com/datacharmer/test\_db](https://github.com/datacharmer/test_db)
 
-## INNER JOIN
+## 合併兩表
+
+#### INNER JOIN
 
 將兩個表合併，並且row只回傳符合on 的資料列
 
@@ -20,19 +22,28 @@ where titles.emp_no < 10100
 
 > where 記得要放在最後面，然後使用 where 要指定哪個表
 
-## LEFT OUTER JOIN
+#### LEFT OUTER JOIN
 
 將兩個表合併，回傳左邊表所有資料（沒有的欄位資料顯示為 NULL），但右邊只回傳符合 on 的資料列
 
-\*\*\*\*
-
-## **RIGHT OUTER JOIN**
+#### **RIGHT OUTER JOIN**
 
 將兩個表合併，回傳右邊表所有資料（沒有的欄位資料顯示為 NULL），但左邊只回傳符合 on 的資料列
 
-## Full **OUTER JOIN**
+#### Full **OUTER JOIN**
 
 **回傳所有列資料，沒有欄位的資料顯示為 NULL**
+
+## 選擇不重複資料
+
+假設我們想查看一個公司包含哪些職位
+
+```sql
+select distinct title
+from titles
+```
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200727-shang-wu-10.51.16.png)
 
 
 
