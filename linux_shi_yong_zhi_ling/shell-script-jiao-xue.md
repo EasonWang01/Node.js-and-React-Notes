@@ -72,6 +72,30 @@ func2 ball mystery
 sudo vim test2.sh
 ```
 
+## function 參數
+
+file.sh
+
+```bash
+test() {
+  echo $0
+  echo $1
+  echo $2
+}
+
+test 123 234
+```
+
+執行 `./file.sh`
+
+回傳 
+
+```text
+./file.sh
+123
+234
+```
+
 ## grep
 
 > 用來查找字串，記得他匹配到就會把整行回傳
