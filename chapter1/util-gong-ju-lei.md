@@ -7,13 +7,17 @@
 將 function 轉為 promise
 
 ```javascript
- util.promisify(doSomething);
+ util.promisify((arg, resolve, reject) => {
+   doSomething(foo, resolve);
+ });
+ // 原本假設 doSomething 要執行第二個參數當作 
+ //  callback 時就會去執行 resolve
 ```
 
-doSomething 如果有參數會等同於
+或是可以單純這樣寫
 
 ```javascript
-doSomething(foo, resolve, reject);
+ util.promisify(fs.stat);
 ```
 
 ## util.inherits\(\)
