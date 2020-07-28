@@ -1,16 +1,22 @@
 # util \(工具類\)
 
-
-
-## util \(工具類\)
-
 這是一個輔助的類別，常可幫助簡化程式碼
 
-1.
+## util.promisify\(\)
 
-上一章用到的
+將 function 轉為 promise
 
-## util.inherits\(,\)
+```javascript
+ util.promisify(doSomething);
+```
+
+doSomething 如果有參數會等同於
+
+```javascript
+doSomething(foo, resolve, reject);
+```
+
+## util.inherits\(\)
 
 但要注意它只會繼承 父類別之後 在原型 _prototype_ 註冊的  _**函數**_
 
@@ -36,10 +42,6 @@ console.log(dd.showName);
 console.log(Sub.prototype.sayHello);
 ```
 
-目前感覺不是太好用
-
-2.
-
 ## util.inspect
 
 檢測一個物件的屬性，可以是function 或object
@@ -62,7 +64,7 @@ console.log(util.inspect(as));
 console.log(util.inspect(Person,true));  //如果沒有true只會顯示他是個function
 ```
 
-3.
+
 
 ## util.isArray\(object\)
 
@@ -78,7 +80,7 @@ console.log(util.isArray(new Array));
 console.log(util.isArray({}));
 ```
 
-4.
+
 
 ## util.isRegExp\(object\)
 
@@ -94,7 +96,7 @@ console.log(util.isRegExp(new RegExp('another regexp')));
 console.log(util.isRegExp({}));
 ```
 
-5.
+
 
 ## util.isDate\(object\)
 
@@ -110,7 +112,7 @@ console.log(util.isDate(Date())); //沒有new會返回字串
 console.log(util.isDate({}));
 ```
 
-6.
+
 
 ## util.isError\(object\)
 
