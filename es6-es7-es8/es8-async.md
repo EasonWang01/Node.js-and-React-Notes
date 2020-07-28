@@ -71,3 +71,28 @@ const c = await sleep()
 console.log(c)
 ```
 
+## JS Map Async
+
+因為 map 內有 await 不會按照原本的想法走，所以要用如下
+
+```javascript
+const arr = [1, 2, 3];
+
+const asyncRes = await Promise.all(arr.map(async (i) => {
+	await sleep(10);
+	return i + 1;
+}));
+
+console.log(asyncRes);
+```
+
+## JS ForEach Async
+
+```javascript
+async function asyncForEach(array, callback) {
+    for (let index = 0; index < array.length; index++) {
+        await callback(array[index], index, array);
+    }
+}
+```
+
