@@ -88,11 +88,15 @@ console.log(asyncRes);
 
 ## JS ForEach Async
 
+因為 ForEach 內有 await 不會按照原本的想法走，所以要用如下
+
 ```javascript
 async function asyncForEach(array, callback) {
-    for (let index = 0; index < array.length; index++) {
-        await callback(array[index], index, array);
-    }
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array);
+  }
 }
+
+asyncForEach(arr, doSomething)
 ```
 
