@@ -72,7 +72,7 @@ func2 ball mystery
 sudo vim test2.sh
 ```
 
-## function 參數
+## 6. function 參數
 
 file.sh
 
@@ -95,6 +95,27 @@ test 123 234
 123
 234
 ```
+
+## 7. for loop
+
+```text
+projects=( 
+    "test1" 
+    "test2" 
+)
+
+for i in "${projects[@]}"
+do
+   echo $i
+done
+```
+
+> 回傳 
+>
+> ```text
+> test1
+> test2
+> ```
 
 ## grep
 
