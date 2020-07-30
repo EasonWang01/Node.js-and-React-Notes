@@ -33,3 +33,44 @@ server.listen(8124, () => {
 });
 ```
 
+## IPC server
+
+```javascript
+const net = require('net');
+const path = require('path');
+const server = net.createServer((socket) => {
+  socket.on('data', data => {
+    console.log(data.toString())
+    socket.end('hi')
+  })
+}).on('error', (err) => {
+  // Handle errors here.
+  throw err;
+});
+
+const port = '/tmp/unix.sock3';
+// Grab an arbitrary unused port.
+server.listen(port, () => {
+  console.log('opened server on', port);
+});
+```
+
+client
+
+```javascript
+const net = require('net');
+const port = '/tmp/unix.sock3';
+const client = net.createConnection(port, () => {
+  // 'connect' listener.
+  console.log('connected to server!');
+  client.write('world!\r\n');
+});
+client.on('data', (data) => {
+  console.log(data.toString());
+  client.end();
+});
+client.on('end', () => {
+  console.log('disconnected from server');
+});
+```
+
