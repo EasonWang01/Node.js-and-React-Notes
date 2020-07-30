@@ -35,6 +35,8 @@ server.listen(8124, () => {
 
 ## IPC server
 
+> 通常會指定 /tmp
+
 ```javascript
 const net = require('net');
 const path = require('path');
