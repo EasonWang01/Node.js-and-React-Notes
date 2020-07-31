@@ -26,3 +26,7 @@ docker-compose up
 
 > 之後也可輸入 email 創建 user，不過不會收到 email
 
+如果想要忘記密碼等傳送email功能需要設定 SMTP server
+
+[https://docs.gitlab.com/omnibus/settings/smtp.html](https://docs.gitlab.com/omnibus/settings/smtp.html)
+
