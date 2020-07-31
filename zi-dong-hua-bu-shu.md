@@ -70,5 +70,7 @@ services:
 
 之後連入 drone url 會自動導到 gitLab 連結 drone 畫面，點選 authorize 即會導入到 drone 頁面
 
+![](.gitbook/assets/ying-mu-kuai-zhao-20200731-shang-wu-11.18.58.png)
+
 
 
