@@ -14,3 +14,11 @@ docker-compose up
 >
 > > sameersbn/gitlab:latest
 
+安裝好輸入 docker ps 確認
+
+![](.gitbook/assets/ying-mu-kuai-zhao-20200731-shang-wu-10.03.27.png)
+
+進入 `localhost:10080`
+
+![](.gitbook/assets/ying-mu-kuai-zhao-20200731-shang-wu-10.03.31.png)
+
