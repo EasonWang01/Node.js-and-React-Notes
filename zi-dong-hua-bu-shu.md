@@ -45,6 +45,8 @@ docker-compose up
 3.新增 docker-compose.yml
 
 > 這邊如果 GitLab 或 Drone 用 localhost ，之後再 gitLab 連結 drone 時會產生錯誤
+>
+> Login Failed. Post "[http://localhost:10080/oauth/token](http://localhost:10080/oauth/token)": dial tcp 127.0.0.1:10080: connect: connection refused\`
 
 ```text
 version: '2.3'
