@@ -32,6 +32,8 @@ docker-compose up
 
 ## 安裝 Drone CI
 
+> 這邊如果還沒綁定 domain，建議先把 localhost 的 GitLab 與等下會用的 drone 的 port 都用 ngrok 產生 domain ，這樣才能正常使用
+
 {% embed url="https://docs.drone.io/server/provider/gitlab/" %}
 
 1.先去新增 OAuth Application : [http://localhost:10080/profile/applications](http://localhost:10080/profile/applications)
