@@ -1,4 +1,4 @@
-# 自動化部屬
+# GitLab 與 Drone
 
 安裝 GitLab
 
@@ -70,11 +70,23 @@ services:
       - DRONE_GITLAB_CLIENT_SECRET=9b7e8f676137598590efbbf4081e0bedb949c6df6b2ca29be40b3bfb56bb419a
       - DRONE_LOGS_PRETTY=true
       - DRONE_LOGS_COLOR=true
+
+  drone-runner:
+    image: drone/drone-runner-docker:1
+    restart: always
+    depends_on:
+      - drone-server
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_RPC_HOST=66934108131d.ngrok.io
+      - DRONE_RPC_PROTO=http
+      - DRONE_RPC_SECRET=131f7e1a919158e42dfdfc74d5552ec3
 ```
 
 之後連入 drone url 會自動導到 gitLab 連結 drone 畫面，點選 authorize 即會導入到 drone 頁面
 
 ![](.gitbook/assets/ying-mu-kuai-zhao-20200731-shang-wu-11.18.58.png)
 
-
+4. 剛才看到 docker-compose 下方的 runner 為用來執行 pipeline的
 

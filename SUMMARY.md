@@ -213,5 +213,5 @@
   * [Vuex](vue/vuex.md)
   * [Vue router](vue/vue-router.md)
 * [相關網路協議](xiang-guan-wang-lu-xie-yi.md)
-* [自動化部屬](zi-dong-hua-bu-shu.md)
+* [GitLab 與 Drone](zi-dong-hua-bu-shu.md)
 
