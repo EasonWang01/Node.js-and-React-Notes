@@ -22,3 +22,7 @@ docker-compose up
 
 ![](.gitbook/assets/ying-mu-kuai-zhao-20200731-shang-wu-10.03.31.png)
 
+預設會先請你輸入密碼，使用者名稱為 root
+
+> 之後也可輸入 email 創建 user，不過不會收到 email
+
