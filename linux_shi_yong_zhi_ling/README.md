@@ -97,6 +97,14 @@ C:\Users\username>taskkill /F /PID 3116
 sudo cp -R  ~/Desktop/um1215-webclient/ ./um1215-webclient
 ```
 
+### 創建多個路徑下的資料夾
+
+如果不存在都會創建
+
+```text
+mkdir -p
+```
+
 ### 打開當前資料夾
 
 ```text
