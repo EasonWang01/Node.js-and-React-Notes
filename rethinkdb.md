@@ -1,4 +1,4 @@
-# rethinkdb
+# RethinkDB
 
 ## RethinkDB\(使用ReQL 為query language\)
 

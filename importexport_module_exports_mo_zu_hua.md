@@ -1,4 +1,4 @@
-# import\_export\_module.exports 模組化
+# JS 模組化
 
 ## import\_export\_module.exports 模組化
 
