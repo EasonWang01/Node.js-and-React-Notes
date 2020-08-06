@@ -279,6 +279,16 @@ git reset --hard HEAD^  //HEAD^指的是前一次  HEAD^^前兩次  以此類推
 git reset --hard ORIG_HEAD  //返回reset前的內容
 ```
 
+或是可用 git reflog 查看之前的git 記錄，然後用 `git reset --hard HEAD@{n}`
+
+## ORIG\_HEAD
+
+記錄操作的前一個狀態，例如想回到 rebase 或  reset --hard 之前都可以用
+
+```text
+git reset ORIG_HEAD --hard
+```
+
 ## Git cherry-pick
 
 把以前的commit檔案內容加入到現在的內容
