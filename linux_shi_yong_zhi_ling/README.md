@@ -348,10 +348,18 @@ less 可以上下滾動，並且不會修改到檔案
 less <filename>
 ```
 
-## xargs
+## 取得參數 xargs 
+
+將前面的參數用 pipeline 傳給 xargs，然後用 less 查看
 
 ```text
-<filepath> | xargs less
+echo ./test.txt | xargs less
+```
+
+或是
+
+```text
+echo a b c d e f | xargs
 ```
 
 ## 查詢網路傳送封包路徑與掉包
