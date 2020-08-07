@@ -2,9 +2,7 @@
 
 ## 推薦閱讀：
 
-{% embed url="https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md" %}
-
-[https://www.tecmint.com/10-most-dangerous-commands-you-should-never-execute-on-linux/](https://www.tecmint.com/10-most-dangerous-commands-you-should-never-execute-on-linux/)
+[https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md)
 
 ## 移除包含檔案的目錄
 
@@ -14,7 +12,8 @@
 無法使用cat組合檔案內容，產生permission deny時
 
 ```text
-sudo bash -c 'cat certificate.crt ca_bundle.crt >> bundle.crt'
+sudo bash -c 'cat 
+ certificate.crt ca_bundle.crt >> bundle.crt'
 ```
 
 ## Debian相關筆記
@@ -29,7 +28,7 @@ apt-get update 之 url 位置： vim  /etc/apt/sources.list
 dns位置  vim /etc/resolv.conf  範例:nameserver  192.168.0.1
 
 
-----------------
+
 
 apt-get update後出現public key問題
 
@@ -42,7 +41,6 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
 
 目前nginx無法安裝  但可安裝apache2  (apt-get apache2)
 
-----------------
 
 使用git:
 
@@ -176,7 +174,7 @@ export PATH=/usr/local/bin:/usr/local/sbin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X
 
 2.輸入`~/.bashrc` 在開頭寫`export`空一格把剛才的貼上，最後加上`:`然後加上你要加上的路徑及可
 
-e.g.
+E.g.
 
 ```text
 export PATH=/home/eason/bin:/home/eason/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/eason/Desktop/bitcoin-0.14.1/bin
@@ -321,46 +319,6 @@ sudo chmod -R 777 /Users//...
 ```
 
 > -R可開啟該資料夾底下所有檔案權限
-
-## 查看持續更新的 log 
-
-> -f 參數會持續更新顯示畫面
-
-```text
-tail -f filename
-```
-
-{% embed url="https://www.runoob.com/linux/linux-comm-tail.html" %}
-
-## 建立別名
-
-```text
-alias c='echo cc'
-```
-
-> 之後輸入 c 就會執行 `echo cc`
-
-## 查看檔案 LESS
-
-less 可以上下滾動，並且不會修改到檔案
-
-```text
-less <filename>
-```
-
-## 取得參數 xargs 
-
-將前面的參數用 pipeline 傳給 xargs，然後用 less 查看
-
-```text
-echo ./test.txt | xargs less
-```
-
-或是
-
-```text
-echo a b c d e f | xargs
-```
 
 ## 查詢網路傳送封包路徑與掉包
 
