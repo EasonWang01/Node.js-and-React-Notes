@@ -26,6 +26,13 @@ dig +trace https://www.webnode.tw/
 2. TLDs Server
 3. Authoritative name server
 
+過程
+
+* local ISP's DNS server will send a query to the root server. The root servers won’t have information on a specific IP address for www.securitytrails.com, but it will know where the name servers that serve that TLD\(.com\) are.
+* Root servers will return the list of TLD servers so the provider or configured server can again send a query, this time to a TLD server.
+* The TLD server will then return the authoritative name server where the desired domain is stored.
+* Once the request has reached the authoritative server, it will respond to the requesting server with the IP address
+
 ## Resource Record \(RR\)
 
 例如 NS; A; AAAA; PTR; CNAME; MX. SOA等。
