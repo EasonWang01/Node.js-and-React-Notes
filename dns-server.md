@@ -8,7 +8,7 @@
 
 3.目前台灣大多是 Hinet 中華電信的 DNS server `168.95.1.1` 他會再去查詢
 
-4.假設找不到的話他會去找 **root name server \( 被** ICANN 旗下的 IANA 管轄**，全世界共有 13 個 root name server \)**
+4.假設找不到的話他會去找 **root name server \( 被** ICANN 旗下的 IANA 管轄**，全世界共有 13 個 root name server，各自又被不同的組織所營運\)**
 
 > [https://zh.wikipedia.org/wiki/%E6%A0%B9%E7%B6%B2%E5%9F%9F%E5%90%8D%E7%A8%B1%E4%BC%BA%E6%9C%8D%E5%99%A8](https://zh.wikipedia.org/wiki/%E6%A0%B9%E7%B6%B2%E5%9F%9F%E5%90%8D%E7%A8%B1%E4%BC%BA%E6%9C%8D%E5%99%A8)
 >
@@ -86,6 +86,14 @@ cloudflare 提供的 DNS server
 {% embed url="https://1.1.1.1/zh-Hant/dns/" %}
 
 
+
+## 13 個 Root DNS Server
+
+為什麼是 13 個?
+
+> It’s because of the limitations of the original DNS infrastructure, which used only IPv4[¹](https://securitytrails.com/blog/dns-root-servers#reference-1) containing 32 bytes. The IP addresses needed to fit into a single packet, which was limited to 512 bytes at that time. So, each of the IPv4 addresses is 32 bits, and 13 of them come to 416 bytes, leaving the remaining 96 bytes for protocol information.
+>
+> [https://securitytrails.com/blog/dns-root-servers](https://securitytrails.com/blog/dns-root-servers)
 
 ## 推薦閱讀
 
