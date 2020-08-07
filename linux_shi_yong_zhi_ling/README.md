@@ -4,7 +4,7 @@
 
 {% embed url="https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md" %}
 
-[https://blog.gtwang.org/linux/most-dangerous-commands-you-should-never-execute-on-linux/](https://blog.gtwang.org/linux/most-dangerous-commands-you-should-never-execute-on-linux/)
+[https://www.tecmint.com/10-most-dangerous-commands-you-should-never-execute-on-linux/](https://www.tecmint.com/10-most-dangerous-commands-you-should-never-execute-on-linux/)
 
 ## 移除包含檔案的目錄
 
