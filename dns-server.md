@@ -95,6 +95,14 @@ cloudflare 提供的 DNS server
 >
 > [https://securitytrails.com/blog/dns-root-servers](https://securitytrails.com/blog/dns-root-servers)
 
+## 查詢 subdomain
+
+推薦以下不錯網站
+
+{% embed url="https://securitytrails.com/" %}
+
+![](.gitbook/assets/ying-mu-kuai-zhao-20200807-xia-wu-5.21.52.png)
+
 ## 推薦閱讀
 
 [https://www.cloudflare.com/zh-tw/learning/](https://www.cloudflare.com/zh-tw/learning/)
