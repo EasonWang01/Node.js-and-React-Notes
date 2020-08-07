@@ -70,5 +70,11 @@ dig +short NS stackoverflow.com
 
 ## TSIG、RNDC
 
-[http://dns-learning.twnic.net.tw/bind/security.html](http://dns-learning.twnic.net.tw/bind/security.html)
+{% embed url="http://dns-learning.twnic.net.tw/bind/security.html" %}
+
+## 1.1.1.1
+
+cloudflare 提供的 DNS server
+
+[https://1.1.1.1/zh-Hant/dns/](https://1.1.1.1/zh-Hant/dns/)
 
