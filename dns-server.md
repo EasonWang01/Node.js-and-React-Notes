@@ -44,7 +44,12 @@ NS record 通常會有多個 DNS server 用來表示有哪些 DNS Server 可供�
 
 ```bash
 nslookup -type=soa stackoverflow.com
+或是
+dig +short SOA stackoverflow.com
+
 nslookup -type=ns stackoverflow.com
+或是
+dig +short NS stackoverflow.com
 ```
 
 > NS records are used to redirect DNS resolver to the next DNS server that is hosting the next level zone. And, SOA record is used by cluster of DNS servers to sync latest changes from the master to secondary servers
