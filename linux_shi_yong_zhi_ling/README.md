@@ -338,6 +338,14 @@ alias c='echo cc'
 
 > 之後輸入 c 就會執行 `echo cc`
 
+## 查看檔案 LESS
+
+less 可以上下滾動，並且不會修改到檔案
+
+```text
+less <filename>
+```
+
 ## 查詢網路傳送封包路徑與掉包
 
 ```text
