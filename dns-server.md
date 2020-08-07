@@ -76,5 +76,11 @@ dig +short NS stackoverflow.com
 
 cloudflare 提供的 DNS server
 
-[https://1.1.1.1/zh-Hant/dns/](https://1.1.1.1/zh-Hant/dns/)
+{% embed url="https://1.1.1.1/zh-Hant/dns/" %}
+
+
+
+## 推薦閱讀
+
+[https://www.cloudflare.com/zh-tw/learning/](https://www.cloudflare.com/zh-tw/learning/)
 
