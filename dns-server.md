@@ -36,6 +36,8 @@ dig +trace https://www.webnode.tw/
 
 {% embed url="http://www.cc.ntu.edu.tw/chinese/epaper/0022/20120920\_2206.html" %}
 
+[https://www.ithome.com.tw/tech/92685](https://www.ithome.com.tw/tech/92685)
+
 ## NS vs SOA
 
 NS record 通常會有多個 DNS server 用來表示有哪些 DNS Server 可供查詢，SOA record 通常只有一個，指向 Master DNS Server，可讓其他 Slave DNS Server Sync 資料，並且 SOA record 後面會跟著一些數字代表 Master 與 Slave 的資料同步策略。
