@@ -348,6 +348,12 @@ less 可以上下滾動，並且不會修改到檔案
 less <filename>
 ```
 
+## xargs
+
+```text
+<filepath> | xargs less
+```
+
 ## 查詢網路傳送封包路徑與掉包
 
 ```text
