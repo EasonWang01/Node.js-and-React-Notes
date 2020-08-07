@@ -80,5 +80,7 @@ imap.gmail.com
 
 {% embed url="https://github.com/mscdex/node-imap" %}
 
+## DKIM
 
+[https://securitytrails.com/blog/what-is-dkim](https://securitytrails.com/blog/what-is-dkim)
 
