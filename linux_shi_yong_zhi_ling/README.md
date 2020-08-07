@@ -2,7 +2,9 @@
 
 ## 推薦閱讀：
 
-[https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md)
+{% embed url="https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh-Hant.md" %}
+
+[https://blog.gtwang.org/linux/most-dangerous-commands-you-should-never-execute-on-linux/](https://blog.gtwang.org/linux/most-dangerous-commands-you-should-never-execute-on-linux/)
 
 ## 移除包含檔案的目錄
 
