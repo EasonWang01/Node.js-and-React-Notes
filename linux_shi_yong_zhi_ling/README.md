@@ -328,7 +328,15 @@ sudo chmod -R 777 /Users//...
 tail -f filename
 ```
 
-[https://www.runoob.com/linux/linux-comm-tail.html](https://www.runoob.com/linux/linux-comm-tail.html)
+{% embed url="https://www.runoob.com/linux/linux-comm-tail.html" %}
+
+## 建立別名
+
+```text
+alias c='echo cc'
+```
+
+> 之後輸入 c 就會執行 `echo cc`
 
 ## 查詢網路傳送封包路徑與掉包
 
