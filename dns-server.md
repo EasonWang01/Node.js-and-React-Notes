@@ -1,4 +1,6 @@
-# DNS server
+# DNS
+
+## DNS 解析
 
 1.我們可以在電腦更改 `/etc/hosts`直接指定哪個 domain 要對應哪個 IP。
 
@@ -17,6 +19,14 @@
 ```
 dig +trace https://www.webnode.tw/
 ```
+
+## DNS Server 種類
+
+1. Root Name server
+2. TLDs Server
+3. Authoritative name server
+
+[https://www.cloudflare.com/zh-tw/learning/dns/dns-server-types/](https://www.cloudflare.com/zh-tw/learning/dns/dns-server-types/)
 
 
 

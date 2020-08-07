@@ -214,5 +214,5 @@
   * [Vue router](vue/vue-router.md)
 * [相關網路協議](xiang-guan-wang-lu-xie-yi.md)
 * [GitLab 與 Drone](zi-dong-hua-bu-shu.md)
-* [DNS server](dns-server.md)
+* [DNS](dns-server.md)
 
