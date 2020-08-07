@@ -26,11 +26,25 @@ dig +trace https://www.webnode.tw/
 2. TLDs Server
 3. Authoritative name server
 
+## Resource Record \(RR\)
+
+例如 NS; A; AAAA; PTR; CNAME; MX. SOA等。
+
 ## **DNSSEC**
 
 類似於 IPSec 都是用來增強相關安全性。
 
-[http://www.cc.ntu.edu.tw/chinese/epaper/0022/20120920\_2206.html](http://www.cc.ntu.edu.tw/chinese/epaper/0022/20120920_2206.html)
+{% embed url="http://www.cc.ntu.edu.tw/chinese/epaper/0022/20120920\_2206.html" %}
+
+## NS vs SOA
+
+NS record 通常會有多個 DNS server 用來表示有哪些 DNS Server 可供查詢，SOA record 通常只有一個，指向 Master DNS Server，可讓其他 Slave DNS Server Sync 資料，並且 SOA record 後面會跟著一些數字代表 Master 與 Slave 的資料同步策略。
+
+> NS records are used to redirect DNS resolver to the next DNS server that is hosting the next level zone. And, SOA record is used by cluster of DNS servers to sync latest changes from the master to secondary servers
+>
+> 可參考：
+>
+> [http://dns-learning.twnic.net.tw/bind/intro6.html\#bb](http://dns-learning.twnic.net.tw/bind/intro6.html#bb)
 
 
 
