@@ -50,6 +50,8 @@ NS record 通常會有多個 DNS server 用來表示有哪些 DNS Server 可供�
 
 為一套開放原始碼 DNS 軟體，現行的 DNS Server 大家都在用，實作了 TSIG 與 rndc 等功能。
 
+{% embed url="http://dns-learning.twnic.net.tw/bind/toc.html" %}
+
 {% embed url="https://zh.wikipedia.org/wiki/BIND" %}
 
 {% embed url="https://gitlab.isc.org/isc-projects/bind9" %}
