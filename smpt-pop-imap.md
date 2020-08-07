@@ -1,4 +1,4 @@
-# SMPT、POP、IMAP
+# SMTP、POP、IMAP
 
 這三個都是郵件相關協定。
 
@@ -19,6 +19,37 @@ smtp.gmail.com
 需要驗證：是
 安全資料傳輸層 (SSL) 通訊埠：465
 傳輸層安全性 (TLS)/STARTTLS 通訊埠：587
+```
+
+可以用Gmail 提供的服務然後搭配相關模組來傳送郵件。
+
+```javascript
+const nodemailer = require('nodemailer');
+const smtpTransport = require('nodemailer-smtp-transport');
+
+var transporter = nodemailer.createTransport(smtpTransport({
+  service: 'gmail',
+  host: 'smtp.gmail.com',
+  auth: {
+    user: 'somerealemail@gmail.com',
+    pass: 'realpasswordforaboveaccount'
+  }
+}));
+
+const mailOptions = {
+  from: 'somerealemail@gmail.com',
+  to: 'friendsgmailacc@gmail.com',
+  subject: 'Sending Email using Node.js[nodemailer]',
+  text: 'That was easy!'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});  
 ```
 
 ## POP
