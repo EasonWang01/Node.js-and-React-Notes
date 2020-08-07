@@ -42,6 +42,11 @@ dig +trace https://www.webnode.tw/
 
 NS record 通常會有多個 DNS server 用來表示有哪些 DNS Server 可供查詢，SOA record 通常只有一個，指向 Master DNS Server，可讓其他 Slave DNS Server Sync 資料，並且 SOA record 後面會跟著一些數字代表 Master 與 Slave 的資料同步策略。
 
+```bash
+nslookup -type=soa stackoverflow.com
+nslookup -type=ns stackoverflow.com
+```
+
 > NS records are used to redirect DNS resolver to the next DNS server that is hosting the next level zone. And, SOA record is used by cluster of DNS servers to sync latest changes from the master to secondary servers
 >
 > 可參考：
