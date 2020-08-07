@@ -26,7 +26,11 @@ dig +trace https://www.webnode.tw/
 2. TLDs Server
 3. Authoritative name server
 
-[https://www.cloudflare.com/zh-tw/learning/dns/dns-server-types/](https://www.cloudflare.com/zh-tw/learning/dns/dns-server-types/)
+## **DNSSEC**
+
+類似於 IPSec 都是用來增強相關安全性。
+
+[http://www.cc.ntu.edu.tw/chinese/epaper/0022/20120920\_2206.html](http://www.cc.ntu.edu.tw/chinese/epaper/0022/20120920_2206.html)
 
 
 
