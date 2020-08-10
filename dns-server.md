@@ -6,6 +6,8 @@
 
 2.但假設沒有指定的話就會到 `/etc/resolv.conf` 尋找裡面寫的 DNS server 做查詢。
 
+> /etc/nsswitch.conf 這個檔案可以決定使用 /etc/hosts 還是 /etc/resolv.conf
+
 3.目前台灣大多是 Hinet 中華電信的 DNS server `168.95.1.1` 他會再去查詢
 
 4.假設找不到的話他會去找 **root name server \( 被** ICANN 旗下的 IANA 管轄**，全世界共有 13 個 root name server，各自又被不同的組織所營運\)**
