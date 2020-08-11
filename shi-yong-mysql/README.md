@@ -32,6 +32,8 @@ services:
 
 然後可進入 localhost:8070 查看 adminer 視覺化 GUI 操作資料庫
 
+> 帳號為 root，密碼為example
+
 ### 讀入範例資料
 
 先在剛才外面 git clone [https://github.com/datacharmer/test\_db](https://github.com/datacharmer/test_db)
