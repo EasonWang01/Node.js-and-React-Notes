@@ -496,3 +496,20 @@ fs.createReadStream(file.path)
 window.open(toFullUrl('api/download/template'));
 ```
 
+## 前端取得上傳檔案進度
+
+```javascript
+
+const request = new XMLHttpRequest();
+request.open("POST", "http://localhost:3923/file");
+request.upload.addEventListener(
+  "progress",
+  function(evt) {
+    if (evt.lengthComputable) {
+    var percentComplete = evt.loaded / evt.total;
+    console.log(percentComplete);
+  }
+},false);
+request.send(formData);
+```
+
