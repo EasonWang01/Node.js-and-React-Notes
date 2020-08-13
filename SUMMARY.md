@@ -212,8 +212,9 @@
   * [Devtool](vue/devtool.md)
   * [Vuex](vue/vuex.md)
   * [Vue router](vue/vue-router.md)
-* [相關網路協議](xiang-guan-wang-lu-xie-yi.md)
+* [相關網路協議](xiang-guan-wang-lu-xie-yi/README.md)
+  * [IP](xiang-guan-wang-lu-xie-yi/ip.md)
+  * [DNS](xiang-guan-wang-lu-xie-yi/dns-server.md)
 * [GitLab 與 Drone](zi-dong-hua-bu-shu.md)
-* [DNS](dns-server.md)
 * [SMTP、POP、IMAP](smpt-pop-imap.md)
 
