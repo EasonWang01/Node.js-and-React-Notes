@@ -409,6 +409,7 @@ http.createServer(function (req, res) {
     if (req.method === "POST") {
       parseBody(req, (body) => {
         console.log(Utf8ArrayToStr(Object.values(JSON.parse(body).file)));
+        // Utf8ArrayToStr 換成用 Buffer.from 也可以
         const headers = setCORS();
         res.writeHead(200, headers);
         res.end(JSON.stringify({ result: 'ok' }));
