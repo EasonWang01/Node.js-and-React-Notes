@@ -12,3 +12,5 @@ Network ID 為 140.112.0.0。
 
 假設台灣的某個大學被分配到的網段為 140.112 ，那 140.112.0.1到 140.112.255.254都是可以分配的 IP 位置。
 
+相關計算工具：[http://www.subnetmask.info/](http://www.subnetmask.info/)
+
