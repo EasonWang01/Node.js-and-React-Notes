@@ -164,3 +164,30 @@ buffer.writeUInt8(-1, i);
 
 [https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer](https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer)
 
+## UTF8、ASCII、Node.js Buffer
+
+ACSII table: http://www.asciitable.com/
+
+UTF-8 table: https://www.utf8-chartable.de/
+
+UTF-8, unicode 都是在擴充原本 ASCII 不夠的編碼。
+
+以下面為例，分別為 ascii 與 utf-8
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200814-shang-wu-9.26.58.png)
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200814-shang-wu-9.27.03.png)
+
+在原本 ascii 就有的編碼在utf-8也會是相同的 hex \(十六進位\), dec \(十進位\)
+
+### 接著以 Node.js Buffer 來看
+
+```javascript
+> Buffer.from('-')
+<Buffer 2d>
+> Buffer.from('-')[0]
+45
+```
+
+> 可以看到原本是以 16 進位表示，但最後把 buffer 單獨拿出來後會是以 10 進位
+
