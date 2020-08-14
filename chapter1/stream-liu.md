@@ -1,8 +1,6 @@
 # Stream（流）
 
-
-
-## Stream（流）
+Stream（流）
 
 具有readable、writable、drain、data、end、close等事件
 
@@ -243,6 +241,12 @@ Readable: streams from which data can be read (for example, fs.createReadStream(
 Duplex: streams that are both Readable and Writable (for example, net.Socket).
 Transform: Duplex streams that can modify or transform the data as it is written and read (for example, zlib.createDeflate()).
 ```
+
+## Stream backpresure
+
+當水管的入口大於水管的出口時，會讓多個水從水管口溢出
+
+[https://nodejs.org/es/docs/guides/backpressuring-in-streams/](https://nodejs.org/es/docs/guides/backpressuring-in-streams/)
 
 
 
