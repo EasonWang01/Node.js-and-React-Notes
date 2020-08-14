@@ -190,4 +190,8 @@ UTF-8, unicode 都是在擴充原本 ASCII 不夠的編碼。
 ```
 
 > 可以看到原本是以 16 進位表示，但最後把 buffer 單獨拿出來後會是以 10 進位
+>
+> formidable 在 parse form-data 時也是使用 buffer 方式處理
+>
+> [https://github.com/node-formidable/formidable/blob/master/src/parsers/Multipart.js](https://github.com/node-formidable/formidable/blob/master/src/parsers/Multipart.js)
 
