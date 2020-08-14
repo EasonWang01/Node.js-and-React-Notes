@@ -457,7 +457,7 @@ console.log('Server running on port 5000.');
 
 > 但之後會發現檔案太大還是會 browser crash，大約 4mb以上，所以還是要用form/data來傳，並用 formidable 解析，如果不用其他模組仍可解析，但要自己parse  ------WebKitFormBoundary 內的內容
 >
-> 因為 form/data 傳 file 會自動轉為 blob，如果要用 post 傳大檔案必須轉 blob 不然會 crash
+> 因為 form/data 可以直接傳入 file input 的 files\[0\] 類行為 blob，但如果要用 post 必須在 body 傳入 arraybuffer，如果太大會導致 browser crash
 
 ## 上傳 file 轉為 stream
 
