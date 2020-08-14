@@ -513,3 +513,18 @@ request.upload.addEventListener(
 request.send(formData);
 ```
 
+axios 取得上傳進度
+
+```javascript
+axios.post(toFullUrl('api/upload'), formData, {
+  onUploadProgress: (progressEvent) => {
+  const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total)
+  console.log(percentCompleted)
+}
+}).then(res => {
+...
+})
+```
+
+> Fetch API 目前還無法取得上傳進度
+
