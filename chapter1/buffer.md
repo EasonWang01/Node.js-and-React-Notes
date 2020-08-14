@@ -195,3 +195,9 @@ UTF-8, unicode 都是在擴充原本 ASCII 不夠的編碼。
 >
 > [https://github.com/node-formidable/formidable/blob/master/src/parsers/Multipart.js](https://github.com/node-formidable/formidable/blob/master/src/parsers/Multipart.js)
 
+## Form-data 換行字元
+
+CRLF hex 為 0d, 0a
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200814-shang-wu-10.25.04.png)
+
