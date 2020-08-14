@@ -244,7 +244,11 @@ Transform: Duplex streams that can modify or transform the data as it is written
 
 ## Stream backpresure
 
-當水管的入口大於水管的出口時，會讓多個水從水管口溢出
+當水管的入口大於水管的出口時，會讓多個水從水管口溢出，Node.js pipe 是雙工的，並且會處理相關 backpresure
+
+> In any scenario where the data buffer has exceeded the \[`highWaterMark`\]\[\] or the write queue is currently busy, \[`.write()`\]\[\] will return `false`.
+>
+> When a `false` value is returned, the backpressure system kicks in. It will pause the incoming \[`Readable`\]\[\] stream from sending any data and wait until the consumer is ready again. Once the data buffer is emptied, a \[`'drain'`\]\[\] event will be emitted and resume the incoming data flow.
 
 [https://nodejs.org/es/docs/guides/backpressuring-in-streams/](https://nodejs.org/es/docs/guides/backpressuring-in-streams/)
 
