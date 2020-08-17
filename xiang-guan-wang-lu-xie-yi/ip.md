@@ -46,7 +46,7 @@ Network ID 為 140.112.0.0。
 這四組IP已經變成保留IP無法使用
 ```
 
-
+推薦文章：[https://notes.andywu.tw/2018/ip%E7%AD%89%E7%B4%9A%E8%88%87%E5%AD%90%E7%B6%B2%E8%B7%AF%E9%81%AE%E7%BD%A9%E4%BB%8B%E7%B4%B9/](https://notes.andywu.tw/2018/ip%E7%AD%89%E7%B4%9A%E8%88%87%E5%AD%90%E7%B6%B2%E8%B7%AF%E9%81%AE%E7%BD%A9%E4%BB%8B%E7%B4%B9/)
 
 相關計算工具：[http://www.subnetmask.info/](http://www.subnetmask.info/)
 
