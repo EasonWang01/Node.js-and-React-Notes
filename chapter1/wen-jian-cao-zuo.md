@@ -530,3 +530,60 @@ axios.post(toFullUrl('api/upload'), formData, {
 
 > Fetch API 目前還無法取得上傳進度
 
+## 大檔案切片上傳
+
+在前端把檔案切分，分成多的請求上傳，然後在後端合併。
+
+{% embed url="https://github.com/23/resumable.js" %}
+
+clone 之後進入範例：`resumable.js/samples/Node.js`
+
+然後把這幾個部分改一下：
+
+前端
+
+```text
+var r = new Resumable({
+  target:'http://localhost:3000/upload',
+  chunkSize:1*1024*1024,
+  simultaneousUploads:4,
+  testChunks:false,
+  throttleProgressCallbacks:1
+});
+```
+
+後端
+
+_app.js_ has been tweaked to send `resumable` a directory where to save the file \(top most\).
+
+```text
+var resumable = require('./resumable-node.js')(__dirname + "/uploads");
+```
+
+tweaked _app.js_ to change the content of `app.post('/uploads',...)` see [gist](https://gist.github.com/rhamedy/9607ce395f3cb1b758eb).
+
+```text
+// Handle uploads through Resumable.js
+app.post('/upload', function(req, res){
+  resumable.post(req, function(status, filename, original_filename, identifier){
+    if (status === 'done') {
+      var stream = fs.createWriteStream('./uploads/' + filename);
+
+      //stich the chunks
+      resumable.write(identifier, stream);
+      stream.on('data', function(data){});
+      stream.on('end', function(){});
+
+      //delete chunks
+      resumable.clean(identifier);
+    }
+    res.send(status, {
+        // NOTE: Uncomment this funciton to enable cross-domain request.
+        //'Access-Control-Allow-Origin': '*'
+    });
+  });
+});
+```
+
+[https://stackoverflow.com/a/35137586/4622645](https://stackoverflow.com/a/35137586/4622645)
+
