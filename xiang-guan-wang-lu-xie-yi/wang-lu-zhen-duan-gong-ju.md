@@ -32,5 +32,11 @@ tcpdump -n udp port 14550
 
 [https://www.tcpdump.org/manpages/tcpdump.1.html](https://www.tcpdump.org/manpages/tcpdump.1.html)
 
-[https://askubuntu.com/questions/913393/sniff-udp-packets-on-a-local-port](https://askubuntu.com/questions/913393/sniff-udp-packets-on-a-local-port)
+{% embed url="https://askubuntu.com/questions/913393/sniff-udp-packets-on-a-local-port" %}
+
+## NMAP
+
+可以掃描一個主機有開哪些 PORT，或是某個網段有哪些 IP 可連線
+
+[https://blog.gtwang.org/linux/nmap-command-examples-tutorials/](https://blog.gtwang.org/linux/nmap-command-examples-tutorials/)
 
