@@ -19,4 +19,6 @@
 * [DHCP](https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E4%B8%BB%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%8D%8F%E8%AE%AE)（Dynamic Host Configuration Protocol，動態主機組態協定），動態組態IP位址。 
 
 > [https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F](https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F)
+>
+> [http://www.tsnien.idv.tw/Manager\_WebBook/NetworkManager.htm](http://www.tsnien.idv.tw/Manager_WebBook/NetworkManager.htm)
 
