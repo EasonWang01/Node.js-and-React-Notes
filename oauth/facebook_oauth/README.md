@@ -205,7 +205,7 @@ FB.login((response) => {
 
 ## \#新增其他Domain
 
-![](../.gitbook/assets/858.png)
+![](../../.gitbook/assets/858.png)
 
 ## \#注意事項：
 

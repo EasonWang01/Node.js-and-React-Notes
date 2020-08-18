@@ -4,11 +4,11 @@
 
 [https://developers.facebook.com/quickstarts/](https://developers.facebook.com/quickstarts/)
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20190530-xia-wu-5.55.50.png)
+![](../../.gitbook/assets/ying-mu-kuai-zhao-20190530-xia-wu-5.55.50.png)
 
 輸入相關名稱
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20190530-xia-wu-5.58.00.png)
+![](../../.gitbook/assets/ying-mu-kuai-zhao-20190530-xia-wu-5.58.00.png)
 
 2.照著以下教學調整專案
 
