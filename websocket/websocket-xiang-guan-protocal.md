@@ -1,4 +1,4 @@
-# WebSocket 相關 Protocal
+# WebSocket 相關 Protocol
 
 1. WebSockets 不受 CORS 限制
 2. 不一定要在 Browser 使用

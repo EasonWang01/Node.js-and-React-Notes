@@ -104,7 +104,7 @@
 * [Redis](redis.md)
 * [做一個簡單的markdown editor](zuo-yi-ge-jian-dan-de-markdown-editor.md)
 * [Websocket](websocket/README.md)
-  * [WebSocket 相關 Protocal](websocket/websocket-xiang-guan-protocal.md)
+  * [WebSocket 相關 Protocol](websocket/websocket-xiang-guan-protocal.md)
 * [Sublime 安裝套件](sublime-an-zhuang-tao-jian.md)
 * [Google  api](google_speech_api/README.md)
   * [speech api](google_speech_api/speech-api.md)
