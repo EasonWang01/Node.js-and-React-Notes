@@ -20,16 +20,14 @@
 
 3. 產生 server response
 4. ```text
-   GET /chat HTTP/1.1
-   Host: example.com:8000
+   TTP/1.1 101 Switching Protocols
    Upgrade: websocket
    Connection: Upgrade
-   Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
-   Sec-WebSocket-Version: 13
+   Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 
    ```
 
-5. 有關 Sec-Websocket-Key，在 client是隨意產生，但 Server 要以下面規則回覆 
+5. 有關 Sec-Websocket-Key，在 client是隨意產生的 base64 字串，但 Server 要以下面規則回覆 
 6. 將 client 的 Sec-WebSocket-Key 與 magic string: "258EAFA5-E914-47DA-95CA-C5AB0DC85B11" 串接，, 然後再做 SHA-1 hash 之後再進行 base64 encoding
 7. Server 最後要兩個 \r\n 來表示 Header 結束
 
