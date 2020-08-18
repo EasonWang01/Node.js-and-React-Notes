@@ -27,21 +27,24 @@
 
    ```
 
-5. 有關 Sec-Websocket-Key，在 client是隨意產生的 base64 字串，但 Server 要以下面規則回覆 
-6. 將 client 的 Sec-WebSocket-Key 與 magic string: "258EAFA5-E914-47DA-95CA-C5AB0DC85B11" 串接，, 然後再做 SHA-1 hash 之後再進行 base64 encoding
-7. Server 最後要兩個 \r\n 來表示 Header 結束
+5. 有關 Sec-Websocket-Key，在 client是隨意產生的 base64 字串 
+6. ```text
+   client-Sec-Websocket-Key = randomBytes(16).toString('base64')
+   ```
+7. 將 client 的 Sec-WebSocket-Key 與 magic string: "258EAFA5-E914-47DA-95CA-C5AB0DC85B11" 串接，, 然後再做 SHA-1 hash 之後再進行 base64 encoding
+8. Server 最後要兩個 \r\n 來表示 Header 結束
 
 ## 發送 Data 
 
-// 補充
+[https://github.com/websockets/ws/blob/master/lib/sender.js](https://github.com/websockets/ws/blob/master/lib/sender.js)
 
 ## 持續發送 heartBeat 保持連線
 
-// 補充
+> A ping or pong is just a regular frame, but it's a **control frame**. Pings have an opcode of `0x9`, and pongs have an opcode of `0xA`. When you get a ping, send back a pong with the exact same Payload Data as the ping \(for pings and pongs, the max payload length is 125\). You might also get a pong without ever sending a ping; ignore this if it happens.
 
 ## 結束連線
 
-// 補充
+[https://tools.ietf.org/html/rfc6455\#section-5.5.1](https://tools.ietf.org/html/rfc6455#section-5.5.1)
 
 ## 參考資料
 
