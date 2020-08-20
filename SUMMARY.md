@@ -2,10 +2,10 @@
 
 * [Introduction](README.md)
 * [Node.js基本](chapter1/README.md)
-  * [Worker Thread](chapter1/worker-thread.md)
   * [使用NPM](chapter1/shi-yong-npm/README.md)
     * [Yarn](chapter1/shi-yong-npm/yarn.md)
   * [開始Node](chapter1/kai_shi_node.md)
+  * [Worker Thread](chapter1/worker-thread.md)
   * [TCP](chapter1/tcp.md)
   * [path](chapter1/path.md)
   * [Cluster and Child\_process](chapter1/cluster-and-childprocess.md)
