@@ -85,3 +85,32 @@ parentPort.on("message", ({ data }) => {
 });
 ```
 
+但後來測試不用 worker 速度好像比較快
+
+```javascript
+const { Worker } = require("worker_threads");
+const path = require("path");
+
+const crypto = require("crypto");
+const sha256 = (s) => crypto.createHash("sha256").update(s).digest();
+
+console.time('data')
+let dataPool = [];
+
+for (let i = 0; i < 100; i++) {
+  const dataInstance = new Promise((resolve, reject) => {
+    const data = Array.from([1,2,3]).map((num) => sha256(String(num)))
+    resolve(data);
+  });
+  dataPool.push(dataInstance);
+}
+Promise.all(dataPool)
+  .then((values) => {
+    console.log(values);
+    console.timeEnd('data')
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+```
+
