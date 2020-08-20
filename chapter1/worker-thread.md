@@ -47,7 +47,7 @@ app.js
 ```javascript
 const { Worker } = require("worker_threads");
 const path = require("path");
-
+console.time('thread')
 let workerPool = [];
 for (let i = 0; i < 5; i++) {
   const workerInstance = new Promise((resolve, reject) => {
@@ -64,6 +64,7 @@ for (let i = 0; i < 5; i++) {
 Promise.all(workerPool)
   .then((values) => {
     console.log(values);
+    console.timeEnd('thread')
   })
   .catch((err) => {
     console.log(err);
@@ -85,7 +86,9 @@ parentPort.on("message", ({ data }) => {
 });
 ```
 
-但後來測試不用 worker 速度好像比較快
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200820-xia-wu-6.02.35.png)
+
+## 但後來測試不用 worker 速度好像比較快
 
 ```javascript
 const { Worker } = require("worker_threads");
@@ -113,4 +116,6 @@ Promise.all(dataPool)
     console.log(err);
   });
 ```
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200820-xia-wu-6.03.01.png)
 
