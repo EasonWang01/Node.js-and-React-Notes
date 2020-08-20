@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Node.js基本](chapter1/README.md)
+  * [Worker Thread](chapter1/worker-thread.md)
   * [使用NPM](chapter1/shi-yong-npm/README.md)
     * [Yarn](chapter1/shi-yong-npm/yarn.md)
   * [開始Node](chapter1/kai_shi_node.md)
@@ -59,6 +60,7 @@
   * [Redux sagas](redux/redux-sagas.md)
   * [compose](redux/compose.md)
 * [React Native](react-native/README.md)
+  * [react native FB login](react-native/react-native-fb-login.md)
   * [Expo](react-native/expo.md)
   * [router](react-native/router/README.md)
     * [react-navigation套件](react-native/router/reactnavigation-tao-jian.md)
@@ -100,7 +102,6 @@
 * [OAuth](oauth/README.md)
   * [facebook oauth](oauth/facebook_oauth/README.md)
     * [facebook like ,share](oauth/facebook_oauth/facebook-like-share.md)
-    * [react native FB login](oauth/facebook_oauth/react-native-fb-login.md)
   * [google oauth](oauth/google_oauth.md)
 * [Redis](redis.md)
 * [做一個簡單的markdown editor](zuo-yi-ge-jian-dan-de-markdown-editor.md)
