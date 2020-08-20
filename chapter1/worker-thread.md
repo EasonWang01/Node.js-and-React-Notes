@@ -78,7 +78,7 @@ const crypto = require("crypto");
 const sha256 = (s) => crypto.createHash("sha256").update(s).digest();
 
 parentPort.on("message", ({ data }) => {
-  const shaArray = Array.from(data).map(() => sha256(Math.random().toString()));
+  const shaArray = Array.from(data).map((num) => sha256(String(num)));
   parentPort.postMessage({
     data: shaArray,
   });
