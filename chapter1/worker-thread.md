@@ -204,7 +204,7 @@ parentPort.on("message", ({ arrayLength, shareMemory }) => {
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-5.12.55.png)
 
-### 假設換回原本 postMessage方式
+#### 假設換回原本 postMessage方式
 
 app.js
 
