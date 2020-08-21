@@ -255,5 +255,12 @@ parentPort.on("message", ({ arrayLength }) => {
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-5.17.30.png)
 
+#### 資料序列化的時間
 
+假設我們把原本 share memory 的 sharedArrayBuffer 轉為 array 可發現時間又變回 150ms 左右，可發現打大部分時先是花在資料的序列化。
+
+```javascript
+    const arr = Array.from(new Uint8Array(shareMemory[0]))
+    console.log(arr)
+```
 
