@@ -2,7 +2,7 @@
 
 {% embed url="https://nodejs.org/api/worker\_threads.html" %}
 
-多個 worker 不能同時存取主程式相同變數，所以不會有 race condition 問題，透過 `postMessage` 互相溝通。
+不能同時存取主程式相同變數，所以不會有 race condition 問題，透過 `postMessage` 互相溝通。
 
 假設是通過 postMessage 傳遞 Object ，建議先 JSON.stringify 然後 parse，速度會較快。
 
