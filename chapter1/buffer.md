@@ -20,16 +20,45 @@ Little Endian的系統：
 
 ## 操作
 
-buf會被分配隨機buffer
+JS ArrayBuffer 與 Node.js Buffer  不同之處在於後者不需要裝進 View 就可以操作
 
-```text
-buf = new Buffer(6)
+```javascript
+// 分別初始化 Buffer： JS ArrayBuffer 與 Node.js 專屬的 Buffer.alloc
+const arrayBuffer = new ArrayBuffer(24);
+const nodeBuffer = Buffer.alloc(24);
+
+arrayBuffer[0] = 23
+nodeBuffer[0] = 23
+
+console.log(arrayBuffer);
+console.log(nodeBuffer);
 ```
 
-我們自己初始化buffer
+可以看到如下
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-3.21.23.png)
+
+兩者都可以裝進 View 操作
+
+```javascript
+// 分別初始化 Buffer： JS ArrayBuffer 與 Node.js 專屬的 Buffer.alloc
+const arrayBuffer = new ArrayBuffer(24);
+const nodeBuffer = Buffer.alloc(24);
+
+const arrayBufferView = new Int8Array(arrayBuffer);
+const nodeBufferView = new Int8Array(nodeBuffer);
+
+arrayBufferView[0] = '23'
+nodeBufferView[0] = '23'
+
+console.log(arrayBufferView);
+console.log(nodeBufferView);
+```
+
+### 初始化buffer
 
 ```text
-buf = new Buffer([0,0,0,0,0,0])
+const buf = new Buffer([0,0,0,0,0,0])
 
 <Buffer 00 00 00 00 00 00>
 ```
