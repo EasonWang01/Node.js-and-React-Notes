@@ -222,4 +222,5 @@
   * [DNS](xiang-guan-wang-lu-xie-yi/dns-server.md)
 * [GitLab 與 Drone](zi-dong-hua-bu-shu.md)
 * [SMTP、POP、IMAP](smpt-pop-imap.md)
+* [IPC](ipc.md)
 
