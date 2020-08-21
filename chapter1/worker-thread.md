@@ -119,3 +119,43 @@ Promise.all(dataPool)
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20200820-xia-wu-6.03.01.png)
 
+## 使用 microjob module
+
+```javascript
+(async () => {
+  const { job, start, stop } = require("microjob");
+
+  try {
+    // start the worker pool
+    console.time('microjob')
+    await start();
+
+    // this function will be executed in another thread
+    const res = await job(() => {
+      let i = 0;
+      const result = [];
+      for (i = 0; i < 100; i++) {
+        // heavy CPU load ...
+        const crypto = require("crypto");
+        const sha256 = (s) => crypto.createHash("sha256").update(s).digest();
+        const shaArray = Array.from([1, 2, 3]).map((num) =>
+          sha256(String(num))
+        );
+        result.push(shaArray);
+      }
+      return result;
+    });
+
+    console.log(res);
+    console.timeEnd('microjob')
+  } catch (err) {
+    console.error(err);
+  } finally {
+    // shutdown worker pool
+    await stop();
+  }
+})();
+```
+
+稍微比自己寫的 worker\_thread 快一點，但還是比 single thread 慢。
+
