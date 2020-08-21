@@ -149,5 +149,111 @@ parentPort.on("message", ({ arrayLength }) => {
 
 發現比原本原生的更慢，可以查看issue: [https://github.com/wilk/microjob/issues/65](https://github.com/wilk/microjob/issues/65)
 
+## Share memory
+
+可以用 Share memory 的方法來傳遞參數，取代 postMessage，速度會比較快。
+
+app.js
+
+```javascript
+const { Worker } = require("worker_threads");
+const path = require("path");
+console.time('thread')
+let workerPool = [];
+const threadCount = 4;
+const totalDataLength = 2000000;
+const shareMemory = Array(threadCount).fill(new SharedArrayBuffer(totalDataLength / threadCount))
+
+for (let i = 0; i < threadCount; i++) {
+  const workerInstance = new Promise((resolve, reject) => {
+    const worker = new Worker(path.resolve("./worker.js"));
+    worker.on("message", () => {
+      resolve();
+    });
+    worker.postMessage({
+      shareMemory: shareMemory[i],
+      arrayLength: totalDataLength / threadCount,
+    });
+  });
+  workerPool.push(workerInstance);
+}
+Promise.all(workerPool)
+  .then(() => {
+    console.log(shareMemory)
+    console.timeEnd('thread')
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+```
+
+worker.js
+
+```javascript
+const { parentPort } = require("worker_threads");
+
+parentPort.on("message", ({ arrayLength, shareMemory }) => {
+  let uint8Arr = new Uint8Array(shareMemory);
+  const shaArray = Array.from(Array(arrayLength)).fill(1).map((num) => Number(num) * 2);
+  uint8Arr.set(new Uint8Array(shaArray))
+  parentPort.postMessage({});
+});
+```
+
+平均速度約 90ms
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-5.12.55.png)
+
+### 假設換回原本 postMessage方式
+
+app.js
+
+```javascript
+const { Worker } = require("worker_threads");
+const path = require("path");
+console.time('thread')
+let workerPool = [];
+const threadCount = 4;
+const totalDataLength = 2000000;
+
+for (let i = 0; i < threadCount; i++) {
+  const workerInstance = new Promise((resolve, reject) => {
+    const worker = new Worker(path.resolve("./worker.js"));
+    worker.on("message", (data) => {
+      resolve(data);
+    });
+    worker.postMessage({
+      arrayLength: totalDataLength / threadCount,
+    });
+  });
+  workerPool.push(workerInstance);
+}
+Promise.all(workerPool)
+  .then((data) => {
+    console.log(data)
+    console.timeEnd('thread')
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+```
+
+worker.js
+
+```javascript
+const { parentPort } = require("worker_threads");
+
+parentPort.on("message", ({ arrayLength }) => {
+  const shaArray = Array.from(Array(arrayLength)).fill(1).map((num) => Number(num) * 2);
+  parentPort.postMessage({
+    data: shaArray,
+  });
+});
+```
+
+可發現需要耗時 150ms 左右，約為 share memory 的兩倍。
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-5.17.30.png)
+
 
 
