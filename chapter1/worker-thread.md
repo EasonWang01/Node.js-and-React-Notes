@@ -123,11 +123,12 @@ parentPort.on("message", ({ arrayLength }) => {
       let i = 0;
       const result = [];
       const threadCount = 4;
+      const totalDataLength = 2000000;
       for (i = 0; i < threadCount; i++) {
         // heavy CPU load ...
         const crypto = require("crypto");
         const sha256 = (s) => crypto.createHash("sha256").update(s).digest();
-        const shaArray = Array.from(Array(2000000 / threadCount)).map((num) =>
+        const shaArray = Array.from(Array(totalDataLength / threadCount)).map((num) =>
           sha256(String(num))
         );
         result.push(shaArray);
@@ -144,8 +145,9 @@ parentPort.on("message", ({ arrayLength }) => {
     await stop();
   }
 })();
-
 ```
+
+發現比原本原生的更慢，可以查看issue: [https://github.com/wilk/microjob/issues/65](https://github.com/wilk/microjob/issues/65)
 
 
 
