@@ -61,13 +61,23 @@ console.log(nodeBufferView);
 
 Node.js Buffer 算是一種 TypedArray 的 instance，所以他才有 slice 與  set 等等方法。
 
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-5.07.55.png)
+
 {% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray" %}
-
-
 
 ### DataView
 
 算是比 TypedArray 更底層一點的，當你想設置 little-endian 或是 big-endian 時可以用
+
+```javascript
+const littleEndian = (function() {
+  const buffer = new ArrayBuffer(2);
+  new DataView(buffer).setInt16(0, 256, true /* littleEndian */);
+  // Int16Array uses the platform's endianness.
+  return new Int16Array(buffer)[0] === 256;
+})();
+console.log(littleEndian); // true or false
+```
 
 {% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/DataView" %}
 
