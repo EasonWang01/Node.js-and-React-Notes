@@ -18,7 +18,7 @@ Little Endian的系統：
 存到記憶體會變成 0x78 0x56 0x34 0x12，最低位元組在最低位元，最高位元組在最高位元，反序排列
 ```
 
-## 操作
+## ArrayBuffer vs Buffer 
 
 JS ArrayBuffer 與 Node.js Buffer  不同之處在於後者不需要裝進 View 就可以操作
 
@@ -40,6 +40,8 @@ console.log(nodeBuffer);
 
 兩者都可以裝進 View 操作
 
+> ArrayBuffer 裝進 view 後稱為 TypedArray
+
 ```javascript
 // 分別初始化 Buffer： JS ArrayBuffer 與 Node.js 專屬的 Buffer.alloc
 const arrayBuffer = new ArrayBuffer(24);
@@ -54,6 +56,24 @@ nodeBufferView[0] = '23'
 console.log(arrayBufferView);
 console.log(nodeBufferView);
 ```
+
+### TypedArray
+
+Node.js Buffer 算是一種 TypedArray 的 instance，所以他才有 slice 與  set 等等方法。
+
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray" %}
+
+
+
+### DataView
+
+算是比 TypedArray 更底層一點的，當你想設置 little-endian 或是 big-endian 時可以用
+
+{% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/DataView" %}
+
+~~---------------~~
+
+
 
 ### 初始化buffer
 
