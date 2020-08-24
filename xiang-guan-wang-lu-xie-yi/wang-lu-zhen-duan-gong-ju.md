@@ -38,5 +38,13 @@ tcpdump -n udp port 14550
 
 可以掃描一個主機有開哪些 PORT，或是某個網段有哪些 IP 可連線
 
-[https://blog.gtwang.org/linux/nmap-command-examples-tutorials/](https://blog.gtwang.org/linux/nmap-command-examples-tutorials/)
+{% embed url="https://blog.gtwang.org/linux/nmap-command-examples-tutorials/" %}
+
+## lsof -i
+
+lsof 可以查看系統上各行程所開啟的檔案，加上 -i 可以查找相關網路連線
+
+```text
+lsof -i tcp:80
+```
 
