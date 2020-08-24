@@ -2,7 +2,7 @@
 
 {% embed url="https://nodejs.org/api/worker\_threads.html" %}
 
-不能同時存取主程式相同變數，所以不會有 race condition 問題，透過 `postMessage` 互相溝通。
+多個 worker 不能同時存取主程式相同變數，所以不會有 race condition 問題，透過 `postMessage` 互相溝通。
 
 假設是通過 postMessage 傳遞 Object ，建議先 JSON.stringify 然後 parse，速度會較快。
 
@@ -264,5 +264,16 @@ parentPort.on("message", ({ arrayLength }) => {
 ```javascript
     const arr = Array.from(new Uint8Array(shareMemory[0]))
     console.log(arr)
+```
+
+## Atomics
+
+使用 share memory 時為了避免存取相同記憶體產生 race condition，可以使用
+
+```javascript
+Atomics.store
+Atomics.load
+Atomics.notify
+Atomics.wait
 ```
 
