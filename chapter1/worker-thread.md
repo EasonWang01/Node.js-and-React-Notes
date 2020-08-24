@@ -1,10 +1,14 @@
 # Worker Thread
 
+大部分 API 均與前端 web worker 相同，用來有效處理 CPU bound 的資料。
+
 {% embed url="https://nodejs.org/api/worker\_threads.html" %}
 
-多個 worker 不能同時存取主程式相同變數，所以不會有 race condition 問題，透過 `postMessage` 互相溝通。
+#### 相關特性
 
-假設是通過 postMessage 傳遞 Object ，建議先 JSON.stringify 然後 parse，速度會較快。
+1.多個 worker 不能同時存取主程式相同變數，所以不會有 race condition 問題，透過 `postMessage` 讓 worker 傳訊息給主程式。
+
+2.假設是通過 postMessage 傳遞 Object ，建議先 JSON.stringify 然後 parse，速度會較快。
 
 ### 範例
 
