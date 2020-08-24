@@ -48,3 +48,14 @@ lsof 可以查看系統上各行程所開啟的檔案，加上 -i 可以查找�
 lsof -i tcp:80
 ```
 
+## nslookup、dig
+
+兩者都可以查詢 DNS records
+
+```text
+nslookup google.com
+dig google.com
+```
+
+
+
