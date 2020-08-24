@@ -281,3 +281,9 @@ Atomics.notify
 Atomics.wait
 ```
 
+## Worker 間通訊
+
+```javascript
+new MessageChannel()
+```
+
