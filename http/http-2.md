@@ -6,6 +6,8 @@
 
 也同時可以減少 TCP 連線建立所需要的額外 RTT \(round trip time\)。
 
+> RTT: [https://www.cloudflare.com/learning/cdn/glossary/round-trip-time-rtt/](https://www.cloudflare.com/learning/cdn/glossary/round-trip-time-rtt/)
+
 ## Header 壓縮
 
 使用 HPACK 演算法來壓縮。
