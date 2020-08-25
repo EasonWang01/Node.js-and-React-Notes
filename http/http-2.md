@@ -4,6 +4,8 @@
 
 可透過單一 TCP 連線來發送多個請求，減少 HTTP層的 Head-of-Line blocking \(後面的請求被前面阻塞的請求所擋住\)，不過 HTTP/2 Head-of-Line blocking 還是出現在 TCP層。
 
+也同時可以減少 TCP 連線建立所需要的額外 RTT \(round trip time\)。
+
 ## Header 壓縮
 
 使用 HPACK 演算法來壓縮。
