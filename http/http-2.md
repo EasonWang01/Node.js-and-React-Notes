@@ -1,5 +1,15 @@
 # HTTP/2
 
+## Multiplexing
+
+可透過單一 TCP 連線來發送多個請求，減少 HTTP層的 Head-of-Line blocking \(後面的請求被前面阻塞的請求所擋住\)，不過 HTTP/2 Head-of-Line blocking 還是出現在 TCP層。
+
+## Header 壓縮
+
+使用 HPACK 演算法來壓縮。
+
+[https://blog.cloudflare.com/hpack-the-silent-killer-feature-of-http-2/](https://blog.cloudflare.com/hpack-the-silent-killer-feature-of-http-2/)
+
 ## Server Push
 
 預先推送靜態資源給前端使用，類似於原先瀏覽器的 &lt;Link preload&gt;。
