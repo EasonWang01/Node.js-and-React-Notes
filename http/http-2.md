@@ -1,5 +1,15 @@
 # HTTP/2
 
+## Binary 傳輸
+
+不同於 HTTP/1.1使用 ASCII 傳輸，HTTP/2使用二進位型態傳輸
+
+[https://stackoverflow.com/questions/818122/which-encoding-is-used-by-the-http-protocol](https://stackoverflow.com/questions/818122/which-encoding-is-used-by-the-http-protocol)
+
+並且封包分割為 header frame 和 data frame
+
+[https://developers.google.com/web/fundamentals/performance/http2\#binary\_framing\_layer](https://developers.google.com/web/fundamentals/performance/http2#binary_framing_layer)
+
 ## Multiplexing
 
 可透過單一 TCP 連線來發送多個請求，減少 HTTP層的 Head-of-Line blocking \(後面的請求被前面阻塞的請求所擋住\)，不過 HTTP/2 Head-of-Line blocking 還是出現在 TCP層。
