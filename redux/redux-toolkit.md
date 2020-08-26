@@ -75,11 +75,12 @@ export const doIncrement = (num) => async dispatch => {
 app.js
 
 ```javascript
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { doIncrement } from './store/user';
 
 const App = () => {
   const dispatch = useDispatch()
+  const { user } = useSelector(state => state.user)
   
   const handleSave = () => {
     dispatch(doIncrement(2))
