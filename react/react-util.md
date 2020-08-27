@@ -1,6 +1,83 @@
 # React util
 
+### React menu 
 
+採用遞迴做法把所有子清單都顯示出來
+
+config.js
+
+```javascript
+export default [
+  { label: 'Foobar', children: [{ label: 'Foo' }, { label: 'Bar' }] },
+  {
+    label: 'Joedoe',
+    children: [
+      { label: 'Joe' },
+      { label: 'Doe', children: [{ label: 'Hello, world!' }] },
+    ],
+  },
+  { label: 'Logout' },
+];
+```
+
+index.js
+
+```javascript
+import React, { useState } from 'react';
+import SubHeaderMenu from './SubHeaderMenu';
+import menus from './config';
+
+const SubHeader = () => {
+  const [showSubHeader, setShowSubHeader] = useState(false);
+  return (
+    <div
+      style={{ display: 'flex' }}
+      onMouseOver={() => setShowSubHeader(true)}
+      onMouseOut={() => setShowSubHeader(false)}
+    >
+      <h1>E</h1>
+      <SubHeaderMenu menus={menus} />
+    </div>
+  );
+};
+
+export default SubHeader;
+```
+
+SubHeaderMenu.js
+
+```javascript
+import React, { useState } from 'react';
+import styled from 'styled-components';
+
+const Menu = styled.div`
+  border: 1px solid grey;
+  background-color: white;
+  width: 200px;
+  padding: 8px;
+  overflow-y: hidden;
+`;
+
+const SubHeaderMenu = ({ menus }) => {
+  return (
+    <div style={{ marginTop: '30px' }}>
+      {menus.map((menu) => (
+        <div style={{ display: 'flex' }}>
+          <Menu>
+            {menu.label}
+            <span style={{ float: 'right' }}>{menu.children ? '>' : ''}</span>
+          </Menu>
+          {menu.children && <SubHeaderMenu menus={menu.children} />}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default SubHeaderMenu;
+```
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200827-xia-wu-3.31.38.png)
 
 ## React util
 

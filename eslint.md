@@ -351,7 +351,13 @@ SublimeLinter-eslint
 
 ## Eslint React
 
-如果在vscode React 沒有顯示 syntax error線，可安裝
+```text
+npx eslint init
+```
+
+然後安裝 vscode 的 eslint plugin
+
+如果在vscode React 還是沒有顯示 syntax error線，可安裝
 
 ```text
 yarn add eslint-plugin-react
