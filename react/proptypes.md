@@ -2,8 +2,6 @@
 
 寫在 React component 內，表示每個 prop 的型別，通常需要搭配 defaultProps
 
-> object 建議使用 shape ·不用 objectOf，不然 react 容易產生錯誤
-
 ```javascript
 import PropTypes from 'prop-types';
 
@@ -16,5 +14,18 @@ TableRow.propTypes = {
 };
 ```
 
-[https://zh-hant.reactjs.org/docs/typechecking-with-proptypes.html](https://zh-hant.reactjs.org/docs/typechecking-with-proptypes.html)
+{% embed url="https://zh-hant.reactjs.org/docs/typechecking-with-proptypes.html" %}
+
+### Object
+
+有兩種 objectOf 與 shape，PropTypes.objectOf 通常描述裡面的物件型別都相同，而 shape 內會包含多種不同型別。
+
+```javascript
+PropTypes.objectOf(PropTypes.number)
+PropTypes.shape({ name: PropTypes.string, age: PropTypes.number })
+```
+
+[https://stackoverflow.com/a/45764828/4622645](https://stackoverflow.com/a/45764828/4622645)
+
+
 
