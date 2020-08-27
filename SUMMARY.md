@@ -43,6 +43,7 @@
   * [SQL 基礎](shi-yong-postgresql/sql-ji-chu.md)
 * [RethinkDB](rethinkdb.md)
 * [React](react/README.md)
+  * [styled component](react/styled-component.md)
   * [propTypes](react/proptypes.md)
   * [React webpack 部署](react/react-webpack-bu-shu.md)
   * [React util](react/react-util.md)
