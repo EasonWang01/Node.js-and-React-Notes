@@ -22,3 +22,11 @@
 hexdump ./test.bin
 ```
 
+## xxd
+
+[http://manpages.ubuntu.com/manpages/trusty/zh\_TW/man1/xxd.1.html](http://manpages.ubuntu.com/manpages/trusty/zh_TW/man1/xxd.1.html)
+
+```text
+xxd ./test.bin
+```
+
