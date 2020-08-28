@@ -16,6 +16,7 @@
   * [fs 文件操作](chapter1/wen-jian-cao-zuo.md)
   * [Buffer](chapter1/buffer.md)
   * [查看 Binary 檔案內容](chapter1/cha-kan-binary-dang-an-nei-rong.md)
+  * [Binary Diff](chapter1/binary-diff.md)
 * [OS](os.md)
 * [Process \(進程\)](process_jin_7a0b29.md)
 * [TCP](tcp.md)
