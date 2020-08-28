@@ -14,3 +14,11 @@
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20200828-shang-wu-9.33.21.png)
 
+## Hexdump
+
+[https://man7.org/linux/man-pages/man1/hexdump.1.html](https://man7.org/linux/man-pages/man1/hexdump.1.html)
+
+```text
+hexdump ./test.bin
+```
+
