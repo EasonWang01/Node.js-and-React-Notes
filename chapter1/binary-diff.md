@@ -11,10 +11,17 @@
 2.編譯
 
 ```text
+cd ~/xdelta-3.1.0/xdelta3
 brew install automake
 autoreconf --install
 ./configure
 make
+```
+
+3.執行
+
+```text
+./xdelta3 --help
 ```
 
 
