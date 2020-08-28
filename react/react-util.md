@@ -8,12 +8,24 @@ config.js
 
 ```javascript
 export default [
-  { label: 'Foobar', children: [{ label: 'Foo' }, { label: 'Bar' }] },
+  {
+    label: 'Foobar',
+    children: [
+      { label: 'Foo', parentLabel: 'Foobar' },
+      { label: 'Bar', parentLabel: 'Foobar' },
+    ],
+  },
   {
     label: 'Joedoe',
     children: [
-      { label: 'Joe' },
-      { label: 'Doe', children: [{ label: 'Hello, world!' }] },
+      {
+        label: 'Joe',
+        children: [{ label: 'Hello' }],
+      },
+      {
+        label: 'Doe',
+        children: [{ label: 'world!' }],
+      },
     ],
   },
   { label: 'Logout' },
@@ -31,12 +43,14 @@ const SubHeader = () => {
   const [showSubHeader, setShowSubHeader] = useState(false);
   return (
     <div
-      style={{ display: 'flex' }}
+      style={{ display: 'inline-flex' }}
+      onFocus={() => setShowSubHeader(true)}
       onMouseOver={() => setShowSubHeader(true)}
-      onMouseOut={() => setShowSubHeader(false)}
     >
-      <h1>E</h1>
-      <SubHeaderMenu menus={menus} />
+      <h1>Menus</h1>
+      <div style={{ marginTop: '30px' }}>
+        {showSubHeader && <SubHeaderMenu menus={menus} />}
+      </div>
     </div>
   );
 };
@@ -49,6 +63,7 @@ SubHeaderMenu.js
 ```javascript
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Menu = styled.div`
   border: 1px solid grey;
@@ -59,22 +74,63 @@ const Menu = styled.div`
 `;
 
 const SubHeaderMenu = ({ menus }) => {
+  const [showSubHeader, setShowSubHeader] = useState(false);
+  const [nextChildren, setNextChildren] = useState({});
+  const handleMenuClick = (e, label) => {
+    e.stopPropagation();
+    // eslint-disable-next-line no-alert
+    alert(`Clicked at ${label}`);
+  };
+  const handleMouseOver = (children) => {
+    setShowSubHeader(true);
+    setNextChildren(children);
+  };
+  const handleMouseOut = () => {
+    // TODO
+    // setShowSubHeader(false);
+    // setNextChildren({});
+  };
   return (
-    <div style={{ marginTop: '30px' }}>
-      {menus.map((menu) => (
-        <div style={{ display: 'flex' }}>
-          <Menu>
-            {menu.label}
-            <span style={{ float: 'right' }}>{menu.children ? '>' : ''}</span>
-          </Menu>
-          {menu.children && <SubHeaderMenu menus={menu.children} />}
-        </div>
-      ))}
+    <div style={{ display: 'flex' }}>
+      <div>
+        {menus.map(({ label, children }) => (
+          <div
+            role='menuitem'
+            tabIndex={0}
+            key={label}
+            onClick={(e) => handleMenuClick(e, label)}
+            onKeyPress={(e) => handleMenuClick(e, label)}
+            onMouseOut={handleMouseOut}
+            onBlur={handleMouseOut}
+            style={{ display: 'flex' }}
+          >
+            <Menu>
+              {label}
+              <span
+                onMouseOver={() => handleMouseOver(children)}
+                onFocus={() => handleMouseOver(children)}
+                style={{ float: 'right' }}
+              >
+                {children ? '>' : ''}
+              </span>
+            </Menu>
+          </div>
+        ))}
+      </div>
+      {showSubHeader && <SubHeaderMenu menus={nextChildren} />}
     </div>
   );
 };
 
 export default SubHeaderMenu;
+
+SubHeaderMenu.defaultProps = {
+  menus: [{}]
+}
+
+SubHeaderMenu.propTypes = {
+  menus: PropTypes.arrayOf(PropTypes.object)
+}
 ```
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20200827-xia-wu-3.31.38.png)
