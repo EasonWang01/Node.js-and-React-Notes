@@ -34,6 +34,8 @@ where titles.emp_no < 10100
 
 **回傳所有列資料，沒有欄位的資料顯示為 NULL**
 
+\*\*\*\*[**https://www.itread01.com/content/1542036003.html**](https://www.itread01.com/content/1542036003.html)\*\*\*\*
+
 ## 選擇不重複資料
 
 假設我們想查看一個公司包含哪些職位

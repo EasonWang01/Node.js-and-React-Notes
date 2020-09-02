@@ -33,7 +33,7 @@ Ex: 以下可把rating\_my Array中的item物件中的\_id與req.body.item.\_id
 var c = new mongoose.Schema({
     status: String,   //物品承租階段狀態 eg,尋租中,已出租,已還租
     rented: Boolean, //是否已出租
-    renterInfo: Object, //承租者相關資訊，填表
+    renterInfo: Object,       //承租者相關資訊，填表
     lessee: String,  //承租者
     geometry: {
         type: {

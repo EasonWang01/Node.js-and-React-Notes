@@ -36,7 +36,7 @@ console.log(nodeBuffer);
 
 可以看到如下
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-3.21.23.png)
+![](../../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-3.21.23.png)
 
 兩者都可以裝進 View 操作
 
@@ -61,7 +61,7 @@ console.log(nodeBufferView);
 
 Node.js Buffer 算是一種 TypedArray 的 instance，所以他才有 slice 與  set 等等方法。
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-5.07.55.png)
+![](../../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-5.07.55.png)
 
 {% embed url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray" %}
 
@@ -233,9 +233,9 @@ UTF-8, unicode 都是在擴充原本 ASCII 不夠的編碼。
 
 以下面為例，分別為 ascii 與 utf-8
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200814-shang-wu-9.26.58.png)
+![](../../.gitbook/assets/ying-mu-kuai-zhao-20200814-shang-wu-9.26.58.png)
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200814-shang-wu-9.27.03.png)
+![](../../.gitbook/assets/ying-mu-kuai-zhao-20200814-shang-wu-9.27.03.png)
 
 在原本 ascii 就有的編碼在utf-8也會是相同的 hex \(十六進位\), dec \(十進位\)
 
@@ -258,5 +258,5 @@ UTF-8, unicode 都是在擴充原本 ASCII 不夠的編碼。
 
 CRLF hex 為 0d, 0a
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200814-shang-wu-10.25.04.png)
+![](../../.gitbook/assets/ying-mu-kuai-zhao-20200814-shang-wu-10.25.04.png)
 
