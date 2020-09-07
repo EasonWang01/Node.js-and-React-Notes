@@ -1,20 +1,18 @@
 # Docker 原理
 
-來源自 Linux 兩個功能`chroot, cgroup`
+Docker 把一些舊有的 Linux 核心功能包裝了起來，包含以下：
 
-## chroot
+* Namespace:  提供相關資源隔離功能
+* Cgroups: 分配相關 CPU 與 RAM 使用量等
+* Chroot: 更改執行環境的根目錄，達到檔案存取限制功能
+* Veth: 虛擬網路，提供相關網路轉導功能
+* UnionFS: 處理相關文件系統
 
-用來切分跟目錄環境
-
-## cgroups
-
-用來分群組
+[https://juejin.im/entry/6844903492734156807](https://juejin.im/entry/6844903492734156807)
 
 ## LXC \(Linux Container\)
 
-將上述兩個技術結合起來，為docker 前身
+為 docker 前身，目前 Docker 改為使用自行實作的 libContainer
 
-其他可參考:
-
-[https://joshhu.gitbooks.io/docker\_theory\_install/content/DockerBible/dotclouddocker.html](https://joshhu.gitbooks.io/docker_theory_install/content/DockerBible/dotclouddocker.html)[https://haojianxun.github.io/2017/11/05/%E5%AE%B9%E5%99%A8%E5%8F%91%E5%B1%95%E5%8F%B2%E5%92%8Cdocker%E5%AE%B9%E5%99%A8%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF--chroot%20,namespace%E5%92%8Ccgroups/](https://haojianxun.github.io/2017/11/05/%E5%AE%B9%E5%99%A8%E5%8F%91%E5%B1%95%E5%8F%B2%E5%92%8Cdocker%E5%AE%B9%E5%99%A8%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF--chroot%20,namespace%E5%92%8Ccgroups/)
+[https://github.com/opencontainers/runc/tree/master/libcontainer](https://github.com/opencontainers/runc/tree/master/libcontainer)
 
