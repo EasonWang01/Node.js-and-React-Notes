@@ -135,6 +135,14 @@ fi
 exit 1
 ```
 
+## 10. 查看檔案或資料夾是否存在
+
+```bash
+ [ -f "/path/to/dir/filename" ];
+ 
+ [ -d "/path/to/dir" ];
+```
+
 ## grep
 
 > 用來查找字串，記得他匹配到就會把整行回傳
