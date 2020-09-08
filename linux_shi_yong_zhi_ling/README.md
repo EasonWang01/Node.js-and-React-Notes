@@ -362,6 +362,10 @@ echo ./test.txt | xargs less
 echo a b c d e f | xargs
 ```
 
+## 設置資源限制 Cgroup
+
+[http://guildwar23.blogspot.com/2013/01/linux-control-group.html](http://guildwar23.blogspot.com/2013/01/linux-control-group.html)
+
 ## 查詢網路傳送封包路徑與掉包
 
 ```text
