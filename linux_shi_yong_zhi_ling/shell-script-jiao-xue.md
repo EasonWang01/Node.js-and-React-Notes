@@ -117,6 +117,24 @@ done
 > test2
 > ```
 
+## 8. If else
+
+```bash
+if echo "$name" | grep "playtable-discovery"
+then
+    goUpperDirectory
+else
+    echo "ERROR: Incorrect folder"
+    exit 1
+fi
+```
+
+## 9. 退出程式
+
+```bash
+exit 1
+```
+
 ## grep
 
 > 用來查找字串，記得他匹配到就會把整行回傳
