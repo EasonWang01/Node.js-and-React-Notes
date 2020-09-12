@@ -1,8 +1,6 @@
 # 基本環境操作
 
-
-
-## MongoDB 常用指令
+MongoDB 常用指令
 
 ## 基本啟動與終止
 
@@ -13,6 +11,8 @@ sudo service mongod start
 ```text
 sudo service mongod stop
 ```
+
+或是使用 mongod 並且可指定要用的 DB 位置
 
 ```text
 mkdir ./data/db1  
