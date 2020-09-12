@@ -182,3 +182,7 @@ use admin
 db.grantRolesToUser('admin',[{ role: "root", db: "admin" }])
 ```
 
+## 如果忘記密碼
+
+[https://dba.stackexchange.com/a/159525](https://dba.stackexchange.com/a/159525)
+
