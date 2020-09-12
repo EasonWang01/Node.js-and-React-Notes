@@ -196,3 +196,7 @@ db.grantRolesToUser('admin',[{ role: "root", db: "admin" }])
 
 把 Node.js server 重啟即可
 
+## 顯示相關 log
+
+[https://stackoverflow.com/q/15204341/4622645](https://stackoverflow.com/q/15204341/4622645)
+

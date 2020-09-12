@@ -362,17 +362,6 @@ echo ./test.txt | xargs less
 echo a b c d e f | xargs
 ```
 
-## 設置資源限制 Cgroup
-
-```text
-建立 high 群組，cpu share 設為 2048
-$ sudo mkdir /sys/fs/cgroup/cpu/high
-$ sudo chown behappy:users -R /sys/fs/cgroup/cpu/high
-$ echo 2048 > /sys/fs/cgroup/cpu/high/cpu.shares
-```
-
-[http://guildwar23.blogspot.com/2013/01/linux-control-group.html](http://guildwar23.blogspot.com/2013/01/linux-control-group.html)
-
 ## 查詢網路傳送封包路徑與掉包
 
 ```text
