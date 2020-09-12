@@ -22,6 +22,12 @@ mongod --dbpath ./data/db1 --shutdown
 
 mongo預設使用27017port，所以如果要使用robomongo連線EC2上的mongo要先開aws 的port然後記得要在mongo加上auth不然大家都可以連線，很不安全
 
+### 或是加上 logpath
+
+```text
+mongod --dbpath ./data/db2 --logpath "./log/mongolog-${date}" &
+```
+
 ## \# 創建使用者步驟
 
 依序輸入以下指令
@@ -184,5 +190,9 @@ db.grantRolesToUser('admin',[{ role: "root", db: "admin" }])
 
 ## 如果忘記密碼
 
-[https://dba.stackexchange.com/a/159525](https://dba.stackexchange.com/a/159525)
+{% embed url="https://dba.stackexchange.com/a/159525" %}
+
+## mongoerror-topology-was-destroyed
+
+把 Node.js server 重啟即可
 
