@@ -103,21 +103,3 @@ function Animal (name) {
 }
 ```
 
-## 不同class 傳遞參數
-
-假設其上層的 js
-
-```javascript
-  const infoBox = new InfoBox(data);
-  const worldMap = new Map(data, updateYear);
-  
-  // 這時當 worldMap 內執行了 this.updateYear 時會執行父層的 updateYear，
-  // 這時可存取 infoBox 並將直傳入
-  
-  const updateYear = (year) => {
-    // year 假設來自 worldMap
-    // infoBox 內有個 updateTextDescription function
-    infoBox.updateTextDescription({ activeYear: year });
-  };
-```
-
