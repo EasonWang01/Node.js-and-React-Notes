@@ -90,6 +90,26 @@ ws.on('message', function incoming(data) {
 });
 ```
 
+廣播範例：
+
+```javascript
+const WebSocket = require('ws');
+
+const wss = new WebSocket.Server({ port: 8080 });
+const connectionList = [];
+wss.on('connection', function connection(ws) {
+  connectionList.push({
+    ws
+  })
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+    connectionList.forEach(connection => {
+      connection.ws.send(message);
+    })
+  });
+});
+```
+
 ### **engine.io**
 
 **https://github.com/socketio/engine.io**
