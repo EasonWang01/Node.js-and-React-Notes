@@ -12,6 +12,8 @@ arr.sort((a, b) => a - b);
 
 ```javascript
 const sorted = [...arr].sort();
+// 或是
+const sorted = arr.slice(0).sort();
 ```
 
 ## Map
