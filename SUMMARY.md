@@ -91,6 +91,7 @@
 * [使用Babel](babel.md)
 * [JWT](jwt.md)
 * [ES6 ES7 ES8](es6-es7-es8/README.md)
+  * [Array method](es6-es7-es8/array-method.md)
   * [ES8 Async](es6-es7-es8/es8-async.md)
   * [ES6 Proxy](es6-es7-es8/es6-proxy.md)
   * [ES6 Object](es6-es7-es8/es6_object.md)
