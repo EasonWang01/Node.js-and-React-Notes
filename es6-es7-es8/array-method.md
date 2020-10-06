@@ -16,6 +16,8 @@ const sorted = [...arr].sort();
 const sorted = arr.slice(0).sort();
 ```
 
+[https://stackoverflow.com/questions/9592740/how-can-you-sort-an-array-without-mutating-the-original-array](https://stackoverflow.com/questions/9592740/how-can-you-sort-an-array-without-mutating-the-original-array)
+
 ## Map
 
 ## Reduce
