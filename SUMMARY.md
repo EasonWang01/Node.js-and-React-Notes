@@ -100,7 +100,7 @@
   * [ES6 Symbol](es6-es7-es8/es6_symbol.md)
   * [ES6 Generator](es6-es7-es8/es6_generator.md)
   * [ES6 Set,Map](es6-es7-es8/es6_set-map.md)
-  * [class](es6-es7-es8/class.md)
+  * [ES6 Class](es6-es7-es8/class.md)
 * [Handlebars.js](handlebarsjs.md)
 * [EJS](ejs.md)
 * [ESLint](eslint.md)
