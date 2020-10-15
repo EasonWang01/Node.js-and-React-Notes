@@ -25,7 +25,7 @@ services:
     image: adminer
     restart: always
     ports:
-      - 8070:8080
+      - 8080:8080
 ```
 
 之後輸入 `docker-compose -f stack.yml up`
