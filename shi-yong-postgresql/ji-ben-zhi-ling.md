@@ -2,7 +2,7 @@
 
 使用 docker-compose.yml
 
-> 一樣要建立 volumn
+> 一樣要建立 volumn 避免重啟後資料消失
 
 ```text
 # Use postgres/example user/password credentials
@@ -26,6 +26,8 @@ services:
     ports:
       - 8080:8080
 ```
+
+[https://hub.docker.com/\_/postgres](https://hub.docker.com/_/postgres)
 
 ## 進入psql後
 
