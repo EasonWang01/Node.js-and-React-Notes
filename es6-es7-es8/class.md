@@ -1,4 +1,4 @@
-# ES6 Class
+# class
 
 基本用法：
 
@@ -101,63 +101,5 @@ class Animal {
 function Animal (name) {
   this.name = name;  
 }
-```
-
-## 不同class 傳遞參數
-
-假設其上層的 js
-
-```javascript
-  const infoBox = new InfoBox(data);
-  const worldMap = new Map(data, updateYear);
-  
-  // 這時當 worldMap 內執行了 this.updateYear 時會執行父層的 updateYear，
-  // 這時可存取 infoBox 並將直傳入
-  
-  const updateYear = (year) => {
-    // year 假設來自 worldMap
-    // infoBox 內有個 updateTextDescription function
-    infoBox.updateTextDescription({ activeYear: year });
-  };
-```
-
-## 呼叫父類別方法
-
-```javascript
-class a {
-  constructor(cc, bb) {
-    console.log(cc, bb)
-  }
-  test() {
-    console.log('test')
-  }
-}
-```
-
-繼承
-
-```javascript
-class b extends a {
-  constructor(cc, bb) {
-    super(33, 44) // 傳入 a 的 constructor
-    console.log(222)
-    super.test()
-  }
-}
-
-c = new b
-
-// 3 33 44
-// 4 222
-// 6 test
-```
-
-或是
-
-```javascript
-b.prototype.cc()
-// test
-c.__proto__.test()
-// test
 ```
 
