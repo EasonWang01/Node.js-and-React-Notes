@@ -17,7 +17,7 @@ services:
     ports:
       - 3306:3306
     volumes: 
-      - "./test_db:/var/lib/mysql"  
+      - "./dbdata:/var/lib/mysql"  
     environment:
       MYSQL_ROOT_PASSWORD: example
 
