@@ -553,6 +553,8 @@ git fetch --all
 git checkout origin/master -- <file_path or folder>
 ```
 
+[https://stackoverflow.com/questions/28375418/git-how-to-pull-a-single-file-from-a-server-repository-in-git](https://stackoverflow.com/questions/28375418/git-how-to-pull-a-single-file-from-a-server-repository-in-git)
+
 ## 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
