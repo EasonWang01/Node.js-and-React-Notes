@@ -1,6 +1,31 @@
 # 基本指令
 
+使用 docker-compose.yml
 
+> 一樣要建立 volumn
+
+```text
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - "./dbdata:/var/lib/postgresql/data"
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+```
 
 ## 進入psql後
 
