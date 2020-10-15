@@ -90,9 +90,65 @@ ws.on('message', function incoming(data) {
 });
 ```
 
+廣播範例：
+
+```javascript
+const WebSocket = require('ws');
+
+const wss = new WebSocket.Server({ port: 8080 });
+const connectionList = [];
+wss.on('connection', function connection(ws) {
+  connectionList.push({
+    ws
+  })
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+    connectionList.forEach(connection => {
+      connection.ws.send(message);
+    })
+  });
+});
+```
+
+讓同個房間接受廣播
+
+```javascript
+const WebSocket = require('ws');
+const express = require('express')
+const app = express();
+
+const wss = new WebSocket.Server({ port: 8080 });
+const connectionList = [];
+wss.on('connection', function connection(ws, req) {
+  const roomId = req.url.replace('/ws/', '');
+  connectionList.push({
+    roomId,
+    ws
+  })
+  ws.on('message', function incoming(message) {
+    const sameRoomClient = connectionList.filter(connection => {
+      return connection.roomId === roomId;
+    })
+    sameRoomClient.forEach(connection => {
+      connection.ws.send(message)
+    })
+  });
+});
+
+app.use('/room/:id', (req, res, next) => {
+  return express.static('../public/index.html')(req, res, next);
+});
+
+app.listen('8081');
+```
+
+## 其他相關框架
+
 ### **engine.io**
 
-**https://github.com/socketio/engine.io**
+{% embed url="https://github.com/socketio/engine.io" %}
+
+### socket.io
 
 這裡我們使用socket.io當教學範例
 

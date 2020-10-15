@@ -125,7 +125,13 @@ package.json
   },
 ```
 
-[https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows](https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows)
+{% embed url="https://stackoverflow.com/questions/44446523/unable-to-load-script-from-assets-index-android-bundle-on-windows" %}
+
+### 11.Failed to install the following Android SDK packages as some licences have not been accepted
+
+到 android studio 安裝 SDK 版本
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20201015-xia-wu-4.06.49.png)
 
 ## 開發相關
 
