@@ -133,6 +133,17 @@ package.json
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20201015-xia-wu-4.06.49.png)
 
+#### 12.Could not determine artifacts for com.facebook.fresco:fresco:1.10.0: Skipped due to earlier error
+
+在 build.gradle 新增
+
+```markup
+dependencies {
+    ....
+    implementation "com.facebook.fresco:fresco:1.13.0"
+}
+```
+
 ## 開發相關
 
 ## 1.無法用e.target
