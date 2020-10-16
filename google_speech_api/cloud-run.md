@@ -2,6 +2,10 @@
 
 類似於 AWS lambda 的 serverless 架構。
 
+> 關於 cloud function, cloud run 比較可參考
+>
+> [https://cloud.google.com/serverless-options?hl=zh-tw](https://cloud.google.com/serverless-options?hl=zh-tw)
+
 {% embed url="https://console.cloud.google.com/run?hl=zh-tw" %}
 
 官方教學：[https://cloud.google.com/run/docs/quickstarts/build-and-deploy\#node.js\_1](https://cloud.google.com/run/docs/quickstarts/build-and-deploy#node.js_1)
