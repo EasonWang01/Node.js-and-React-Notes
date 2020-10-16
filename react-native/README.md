@@ -475,6 +475,8 @@ android {
 
 即可
 
+> 官網雖有更新，不過這個 build 流程 2020/10 確認還可用
+
 #### 6.確認與安裝
 
 在C:\Users\yicheng\reactNative2\android\app\build\outputs\apk
