@@ -30,7 +30,7 @@ services:
 
 之後輸入 `docker-compose -f stack.yml up`
 
-然後可進入 localhost:8070 查看 adminer 視覺化 GUI 操作資料庫
+然後可進入 localhost:8080 查看 adminer 視覺化 GUI 操作資料庫
 
 > 帳號為 root，密碼為example
 
