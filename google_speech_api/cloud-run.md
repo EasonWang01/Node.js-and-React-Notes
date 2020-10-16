@@ -10,6 +10,22 @@
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20201016-shang-wu-10.39.45.png)
 
+## 如何部署新版本
+
+每次 commit 並 push 到 github 雖然會自動啟用 cloud build ，但必須自己手動點擊 cloud run 套用新的版本並部署。
+
+1.點擊以下箭頭處
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20201016-shang-wu-10.49.06.png)
+
+2.選取剛 cloud build 好的新版本
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20201016-shang-wu-10.48.57.png)
+
+3.拉到最下方點選 “部署”
+
+![](../.gitbook/assets/ying-mu-kuai-zhao-20201016-shang-wu-10.49.28.png)
+
 ## 注意事項：
 
 1.dockerfile 不用寫 expose port，因為寫在介面上定義即可
