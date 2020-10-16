@@ -1,8 +1,6 @@
 # Network
 
-
-
-## Network
+範例
 
 ```javascript
     fetch(network.API_ENDPOINT, {
@@ -28,7 +26,17 @@
 >
 > 改為如下即可
 >
+> Genymotion
+>
 > ```text
-> http://10.0.3.2:8085
+> http://10.0.3.2
 > ```
+>
+> Android studio emulator
+>
+> ```text
+> http://10.0.2.2
+> ```
+>
+> [https://stackoverflow.com/questions/5528850/how-do-you-connect-localhost-in-the-android-emulator](https://stackoverflow.com/questions/5528850/how-do-you-connect-localhost-in-the-android-emulator)
 
