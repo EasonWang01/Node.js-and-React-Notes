@@ -8,7 +8,11 @@
 
 ```javascript
  <View style={{ flex: 1 }}>
-   <Modal transparent={true} animationType={"slide"} visible={true}>
+   <Modal 
+     onRequestClose={() => this.setState({})}
+     transparent={true} 
+     animationType={"slide"} 
+     visible={true}>
                 <View
                   style={{
                     flex: 1,
