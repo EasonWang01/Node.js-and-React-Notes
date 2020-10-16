@@ -4,6 +4,37 @@
 
 下載頁面:[http://www.enterprisedb.com/products-services-training/pgdownload](http://www.enterprisedb.com/products-services-training/pgdownload)
 
+## 目前建議用 docker 快速架設
+
+使用 docker-compose.yml
+
+> 一樣要建立 volumn 避免重啟後資料消失
+
+```text
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    volumes:
+      - "./dbdata:/var/lib/postgresql/data"
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+```
+
+[https://hub.docker.com/\_/postgres](https://hub.docker.com/_/postgres)
+
 ## 安裝
 
 [https://www.godaddy.com/garage/how-to-install-postgresql-on-ubuntu-14-04/](https://www.godaddy.com/garage/how-to-install-postgresql-on-ubuntu-14-04/)
