@@ -11,7 +11,7 @@
 可直接輸入以下指令
 
 ```text
-echo sdk.dir = "$HOME"/Library/Android/sdk >> local.properties
+echo sdk.dir = "$HOME"/Library/Android/sdk >> ./android/local.properties
 ```
 
 或是加入環境變量
