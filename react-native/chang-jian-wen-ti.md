@@ -150,7 +150,22 @@ dependencies {
 
 14. 您已經有一個 APK 或 Android App Bundle 使用版本代碼 1
 
-[http://snowsfox.blogspot.com/2017/05/apk\_38.html](http://snowsfox.blogspot.com/2017/05/apk_38.html)
+{% embed url="http://snowsfox.blogspot.com/2017/05/apk\_38.html" %}
+
+15. Google Play 64 位元規範
+
+build.gradle\(app\) 新增如下
+
+```text
+    defaultConfig {
+        ....
+        ndk {
+            abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
+        }
+    }
+```
+
+[https://developer.android.com/distribute/best-practices/develop/64-bit](https://developer.android.com/distribute/best-practices/develop/64-bit)
 
 ## 開發相關
 
