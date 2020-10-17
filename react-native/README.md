@@ -477,6 +477,10 @@ android {
 
 > 官網雖有更新，不過這個 build 流程 2020/10 確認還可用
 
+有關於 assembleRelease 與 bundleRelease 差別可參考以下：
+
+> [https://blog.swmansion.com/make-your-react-native-app-3x-smaller-44c993eda2c9](https://blog.swmansion.com/make-your-react-native-app-3x-smaller-44c993eda2c9)
+
 #### 6.確認與安裝
 
 在C:\Users\yicheng\reactNative2\android\app\build\outputs\apk
