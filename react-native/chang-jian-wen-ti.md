@@ -144,6 +144,14 @@ dependencies {
 }
 ```
 
+13. 上架時要求更改 package name
+
+{% embed url="http://hklifenote.blogspot.com/2015/06/android-studiopackage.html" %}
+
+14. 您已經有一個 APK 或 Android App Bundle 使用版本代碼 1
+
+[http://snowsfox.blogspot.com/2017/05/apk\_38.html](http://snowsfox.blogspot.com/2017/05/apk_38.html)
+
 ## 開發相關
 
 ## 1.無法用e.target
