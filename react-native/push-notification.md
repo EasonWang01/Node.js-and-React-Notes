@@ -354,7 +354,13 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 });
 ```
 
+成果如下
 
+![](../.gitbook/assets/jie-tu-20201018-xia-wu-11.25.41.png)
+
+左上角的灰色方形更改必須加上 ic\_notification
+
+[https://github.com/zo0r/react-native-push-notification/issues/730\#issuecomment-389545259](https://github.com/zo0r/react-native-push-notification/issues/730#issuecomment-389545259)
 
 
 
