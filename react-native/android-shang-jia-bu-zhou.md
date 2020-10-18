@@ -25,6 +25,8 @@
   package="com.yichengwang01">
 ```
 
+還有 setting.gradle 與 app.json 都要改
+
 ## 2.更換ICON
 
 用 Android Asset Studio 工具產生不同大小的圖片後 替換 mipmap 的四個目錄即可。
