@@ -36,3 +36,58 @@ android/app/src/main/res/values/strings.xml
 
 ![](../.gitbook/assets/jie-tu-20201018-shang-wu-11.33.25.png)
 
+## 4. 打包成 APK
+
+1.輸入以下產生金鑰，除了密碼外其他可以不用輸入直接按 enter
+
+```text
+keytool -genkeypair -v -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+```
+
+2.之後把剛才產生的金鑰放在 android/app 目錄下
+
+3.修改 android/gradle.properties ，新增以下，並把 \*\*\* 改為你剛輸入的密碼
+
+```text
+MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
+MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
+MYAPP_UPLOAD_STORE_PASSWORD=*****
+MYAPP_UPLOAD_KEY_PASSWORD=*****
+```
+
+4.修改 android/app/build.gradle
+
+```text
+android {
+    ...
+    defaultConfig { ... }
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            }
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+}
+```
+
+5. 打包
+
+```text
+cd android
+./gradlew bundleRelease
+```
+
+> 因為現在上架要求包含 32 與 64 位元版本，所以建議使用 bundleRelease 打包成 AAB \(Android App Bundle\)
+
+[https://reactnative.dev/docs/signed-apk-android](https://reactnative.dev/docs/signed-apk-android)
+
