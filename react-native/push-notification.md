@@ -80,7 +80,7 @@ PushNotification.localNotification({
 
 ### Remote notification
 
-要先設定 firebase init 
+要先設定 App firebase init 
 
 {% embed url="https://rnfirebase.io/" %}
 
@@ -187,5 +187,79 @@ PushNotification.configure({
 
 ![](../.gitbook/assets/jie-tu-20201018-xia-wu-10.35.37.png)
 
-[https://rnfirebase.io/messaging/usage](https://rnfirebase.io/messaging/usage)
+{% embed url="https://rnfirebase.io/messaging/usage" %}
+
+## 監聽 foreground message
+
+加上 onmessage 監聽前台訊息
+
+`yarn add @react-native-firebase/messaging`
+
+```javascript
+import messaging from '@react-native-firebase/messaging';
+
+componentDidMount() {
+    messaging().onMessage(async remoteMessage => {
+      Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
+    });
+    ...
+}   
+```
+
+{% embed url="https://rnfirebase.io/messaging/usage\#foreground-state-messages" %}
+
+7. server 加上推送
+
+要先初始化 server
+
+[https://firebase.google.com/docs/admin/setup](https://firebase.google.com/docs/admin/setup)
+
+```javascript
+yarn add firebase-admin
+```
+
+然後加上
+
+![](../.gitbook/assets/jie-tu-20201018-xia-wu-10.49.00.png)
+
+完整如下：
+
+```javascript
+const admin = require('firebase-admin');
+var serviceAccount = require("./driven-entity-firebase-adminsdk-d7oiu-47bf13bcf6.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://driven-entity-18909.firebaseio.com"
+});
+
+// 從 app init 出的 token
+const deviceToken = "u9Z8gEd:APA91bFTYl3avh2u96CfgWIz1_tjd57CFH9nDsBeaYbtPh_tbf7_gG3x36no0ck2S6kZ1c150x3AJ5niEH6mkRdf2JCdvC2ePvRq4pMapL6YkcVVAaGTFAoAke0Ory5oqbNS2WVxE8bT";
+var message = {
+  data: {
+    score: '850',
+    time: '2:45'
+  },
+  token: deviceToken
+};
+
+// registration token.
+admin.messaging().send(message)
+  .then((response) => {
+    // Response is a message ID string.
+    console.log('Successfully sent message:', response);
+  })
+  .catch((error) => {
+    console.log('Error sending message:', error);
+  });
+
+```
+
+![](../.gitbook/assets/jie-tu-20201018-xia-wu-10.52.31.png)
+
+有關 postman 發送訊息可參考
+
+[https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages/send](https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages/send)
+
+
 
