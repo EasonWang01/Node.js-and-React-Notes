@@ -18,7 +18,12 @@
 
 ![](../.gitbook/assets/jie-tu-20201018-shang-wu-11.28.30.png)
 
+4.更改 Androidmanifest package name
 
+```text
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.yichengwang01">
+```
 
 ## 2.更換ICON
 
