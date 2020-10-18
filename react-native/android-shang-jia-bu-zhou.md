@@ -89,5 +89,17 @@ cd android
 
 > 因為現在上架要求包含 32 與 64 位元版本，所以建議使用 bundleRelease 打包成 AAB \(Android App Bundle\)
 
-[https://reactnative.dev/docs/signed-apk-android](https://reactnative.dev/docs/signed-apk-android)
+打包完會看到如下檔案
+
+![](../.gitbook/assets/jie-tu-20201018-shang-wu-11.46.44.png)
+
+{% embed url="https://reactnative.dev/docs/signed-apk-android" %}
+
+6.去 Android developer console
+
+登入之後並點選建立新版本。
+
+> 如果登入後一直跳出另一個帳戶，記得把 cookie 清空後重新登入。
+
+![](../.gitbook/assets/jie-tu-20201018-shang-wu-11.52.24.png)
 
