@@ -80,14 +80,20 @@ android {
 }
 ```
 
-5. 打包
+5. 打包 成 aab file
 
 ```text
 cd android
 ./gradlew bundleRelease
 ```
 
-> 因為現在上架要求包含 32 與 64 位元版本，所以建議使用 bundleRelease 打包成 AAB \(Android App Bundle\)
+> 因為現在上架要求包含 32 與 64 位元版本，所以建議使用 bundleRelease 打包成 AAB \(Android App Bundle\)，但因為 aab 在手機無法測試，可以打包成 apk 先測試
+
+如果想打包成 apk 可用如下
+
+```text
+./gradlew assembleRelease
+```
 
 打包完會看到如下檔案
 
