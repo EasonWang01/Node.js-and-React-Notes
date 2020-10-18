@@ -259,7 +259,27 @@ admin.messaging().send(message)
 
 有關 postman 發送訊息可參考
 
-[https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages/send](https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages/send)
+{% embed url="https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages/send" %}
+
+## Background notification
+
+在最外層 index.js 加上如下即可
+
+> 不用去 Androidmanifest.xml 新增 permission
+
+```javascript
+import messaging from '@react-native-firebase/messaging';
+
+// Register background handler
+messaging().setBackgroundMessageHandler(async remoteMessage => {
+  console.log('Message handled in the background!', remoteMessage);
+});
+
+.... 
+AppRegistry.registerComponent(appName, () => App);
+```
+
+
 
 
 
