@@ -66,6 +66,7 @@
   * [Redux sagas](redux/redux-sagas.md)
   * [compose](redux/compose.md)
 * [React Native](react-native/README.md)
+  * [Android 上架步驟](react-native/android-shang-jia-bu-zhou.md)
   * [react native FB login](react-native/react-native-fb-login.md)
   * [Expo](react-native/expo.md)
   * [router](react-native/router/README.md)

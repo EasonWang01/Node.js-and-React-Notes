@@ -165,7 +165,22 @@ build.gradle\(app\) 新增如下
     }
 ```
 
-[https://developer.android.com/distribute/best-practices/develop/64-bit](https://developer.android.com/distribute/best-practices/develop/64-bit)
+> 不過目前測試完加上這樣會閃退，建議還是使用 bundleRelease 打包
+
+{% embed url="https://developer.android.com/distribute/best-practices/develop/64-bit" %}
+
+16. adb command not found
+
+加上以下環境變數，不過目前測試就算 adb comand 沒找到還是可以 run-android，但有時候使用最新的 react-native 創建專案卻可以沒有adb command 下執行
+
+```text
+export ANDROID_HOME="/Users/easonwang/Library/Android/sdk"
+export PATH="/Users/easonwang/Library/Android/sdk/platform-tools":$PATH
+```
+
+17. react version mismatch
+
+通常只要把所有監聽 8081 \(emulator\)的 port 刪除，或是關閉所有 terminal 重啟 emulator即可。
 
 ## 開發相關
 

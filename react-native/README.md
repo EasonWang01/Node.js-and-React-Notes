@@ -502,30 +502,5 @@ android {
 react-native run-android
 ```
 
-## 更換ICON
 
-[https://medium.com/@scottianstewart/react-native-add-app-icons-and-launch-screens-onto-ios-and-android-apps-3bfbc20b7d4c](https://medium.com/@scottianstewart/react-native-add-app-icons-and-launch-screens-onto-ios-and-android-apps-3bfbc20b7d4c)
-
-## 更改APP Name
-
-```text
-android/app/src/main/res/values/strings.xml
-```
-
-然後要改 `applicationId`
-
-build.gradle
-
-```text
-    defaultConfig {
-        applicationId "com.yichengwang01"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
-        }
-    }
-```
 
