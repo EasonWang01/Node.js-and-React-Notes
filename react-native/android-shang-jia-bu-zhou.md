@@ -106,9 +106,15 @@ cd android
 
 6.去 Android developer console
 
+[https://play.google.com/console/](https://play.google.com/console/)
+
 登入之後並點選建立新版本。
 
 > 如果登入後一直跳出另一個帳戶，記得把 cookie 清空後重新登入。
 
 ![](../.gitbook/assets/jie-tu-20201018-shang-wu-11.52.24.png)
+
+7.如果之前有發佈過，記得更改版本號
+
+![](../.gitbook/assets/jie-tu-20201018-xia-wu-12.26.14.png)
 
