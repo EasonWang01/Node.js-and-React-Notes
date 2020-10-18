@@ -78,3 +78,114 @@ PushNotification.localNotification({
     });
 ```
 
+### Remote notification
+
+要先設定 firebase init 
+
+{% embed url="https://rnfirebase.io/" %}
+
+1.安裝模組
+
+```text
+yarn add @react-native-firebase/app
+```
+
+2.建立專案並放入 google-services.json
+
+android/app/google-services.json
+
+3.
+
+In `android/build.gradle`
+
+```text
+buildscript {
+    ...
+    dependencies {
+        ...
+        classpath('com.google.gms:google-services:4.3.3')
+        ...
+    }
+}
+```
+
+In `android/app/build.gradle`
+
+```text
+dependencies {
+  ...
+  implementation 'com.google.firebase:firebase-analytics:17.3.0'
+  ...
+}
+
+apply plugin: 'com.google.gms.google-services'
+```
+
+4. 重啟後即可
+
+```text
+npx react-native run-android
+```
+
+5.新增 config code
+
+```javascript
+const PushNotification = require("react-native-push-notification");
+
+PushNotification.configure({
+  // (optional) Called when Token is generated (iOS and Android)
+  onRegister: function (token) {
+    console.log("TOKEN:", token);
+  },
+
+  // (required) Called when a remote is received or opened, or local notification is opened
+  onNotification: function (notification) {
+    console.log("NOTIFICATION:", notification);
+
+    // process the notification
+
+    // (required) Called when a remote is received or opened, or local notification is opened
+    notification.finish(PushNotificationIOS.FetchResult.NoData);
+  },
+
+  // (optional) Called when Registered Action is pressed and invokeApp is false, if true onNotification will be called (Android)
+  onAction: function (notification) {
+    console.log("ACTION:", notification.action);
+    console.log("NOTIFICATION:", notification);
+
+    // process the action
+  },
+
+  // (optional) Called when the user fails to register for remote notifications. Typically occurs when APNS is having issues, or the device is a simulator. (iOS)
+  onRegistrationError: function(err) {
+    console.error(err.message, err);
+  },
+
+  // IOS ONLY (optional): default: all - Permissions to register.
+  permissions: {
+    alert: true,
+    badge: true,
+    sound: true,
+  },
+
+  // Should the initial notification be popped automatically
+  // default: true
+  popInitialNotification: true,
+
+  /**
+   * (optional) default: true
+   * - Specified if permissions (ios) and token (android and ios) will requested or not,
+   * - if not, you must call PushNotificationsHandler.requestPermissions() later
+   * - if you are not using remote notification or do not have Firebase installed, use this:
+   *     requestPermissions: Platform.OS === 'ios'
+   */
+  requestPermissions: true,
+});
+```
+
+之後就會看到 token
+
+![](../.gitbook/assets/jie-tu-20201018-xia-wu-10.35.37.png)
+
+[https://rnfirebase.io/messaging/usage](https://rnfirebase.io/messaging/usage)
+

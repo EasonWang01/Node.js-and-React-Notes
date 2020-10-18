@@ -187,6 +187,10 @@ export PATH="/Users/easonwang/Library/Android/sdk/platform-tools":$PATH
 > 如果 network endpoint 指向 http 記得加上以下不然會無法連線  
 > [https://stackoverflow.com/a/56801525/4622645](https://stackoverflow.com/a/56801525/4622645)
 
+19.Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+這樣 app 不護更新畫面，需要把 app 從模擬器關閉後重新 run-android
+
 ## 開發相關
 
 ## 1.無法用e.target
