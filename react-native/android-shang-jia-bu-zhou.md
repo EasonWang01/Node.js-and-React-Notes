@@ -95,6 +95,9 @@ cd android
 ./gradlew assembleRelease
 ```
 
+> 如果 network endpoint 指向 http 記得加上以下不然會無法連線  
+> [https://stackoverflow.com/a/56801525/4622645](https://stackoverflow.com/a/56801525/4622645)
+
 打包完會看到如下檔案
 
 ![](../.gitbook/assets/jie-tu-20201018-shang-wu-11.46.44.png)

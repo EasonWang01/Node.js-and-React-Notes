@@ -182,6 +182,11 @@ export PATH="/Users/easonwang/Library/Android/sdk/platform-tools":$PATH
 
 通常只要把所有監聽 8081 \(emulator\)的 port 刪除，或是關閉所有 terminal 重啟 emulator即可。
 
+18.產生的apk 安裝後網路無法連線
+
+> 如果 network endpoint 指向 http 記得加上以下不然會無法連線  
+> [https://stackoverflow.com/a/56801525/4622645](https://stackoverflow.com/a/56801525/4622645)
+
 ## 開發相關
 
 ## 1.無法用e.target
