@@ -378,6 +378,8 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 
 2.然後使用放入對應的 mipmap-\*資料夾
 
+![](../.gitbook/assets/jie-tu-20201019-xia-wu-4.11.53.png)
+
 3.最後加入以下到 AndroidManifest
 
 ```text
