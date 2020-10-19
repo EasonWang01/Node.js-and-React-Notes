@@ -388,6 +388,8 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 
 {% embed url="https://github.com/zo0r/react-native-push-notification/issues/730\#issuecomment-389545259" %}
 
+![](../.gitbook/assets/jie-tu-20201019-xia-wu-4.13.22.png)
+
 ## 常見問題
 
 #### 1.local notification 沒反應
