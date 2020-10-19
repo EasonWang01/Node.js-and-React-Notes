@@ -1,3 +1,7 @@
+---
+description: 目前主流為使用免費的 FCM (firebase cloud message) 服務
+---
+
 # Push notification
 
 [https://github.com/zo0r/react-native-push-notification](https://github.com/zo0r/react-native-push-notification)
@@ -360,7 +364,17 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 
 左上角的灰色方形更改必須加上 ic\_notification
 
-[https://github.com/zo0r/react-native-push-notification/issues/730\#issuecomment-389545259](https://github.com/zo0r/react-native-push-notification/issues/730#issuecomment-389545259)
+{% embed url="https://github.com/zo0r/react-native-push-notification/issues/730\#issuecomment-389545259" %}
+
+## 常見問題
+
+#### 1.local notification 沒反應
+
+> 關掉模擬器，重啟即可
+
+#### 2. server 發出訊息後 device onMessage 沒反應
+
+> 曾經遇到過了十分鐘後連續跳出，發生在 android 模擬器上
 
 
 

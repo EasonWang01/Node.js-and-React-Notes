@@ -36,6 +36,7 @@
   * [基本環境操作](shi-yong-mongodb/ji-ben-huan-jing-cao-zuo.md)
   * [MongoDB Sharding](shi-yong-mongodb/mongodb-sharding.md)
 * [使用MySQL](shi-yong-mysql/README.md)
+  * [Schema 架構設計](shi-yong-mysql/schema-jia-gou-she-ji.md)
   * [SQL 語法](shi-yong-mysql/sql-yu-fa.md)
   * [Node.js 操作 MySQL](shi-yong-mysql/node.js-cao-zuo-mysql.md)
 * [使用PostgreSQL](shi-yong-postgresql/README.md)
