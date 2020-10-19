@@ -367,6 +367,12 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 1.可使用產生器：
 
 > 記得圖案必須是白色，然後透明底色
+>
+> 透明底色：[https://onlinepngtools.com/create-transparent-png](https://onlinepngtools.com/create-transparent-png)
+>
+> 轉為白色：[https://manytools.org/image/colorize-filter/](https://manytools.org/image/colorize-filter/)
+
+之後把圖片放入以下產生器產生不同尺寸的圖片：
 
 {% embed url="http://romannurik.github.io/AndroidAssetStudio/icons-notification.html" %}
 
