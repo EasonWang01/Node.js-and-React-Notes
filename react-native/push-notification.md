@@ -362,7 +362,9 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 
 ![](../.gitbook/assets/jie-tu-20201018-xia-wu-11.25.41.png)
 
-左上角的灰色方形更改必須加上 ic\_notification
+### 左上角的灰色方形更改必須加上 ic\_notification
+
+可使用產生器：[https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html)
 
 {% embed url="https://github.com/zo0r/react-native-push-notification/issues/730\#issuecomment-389545259" %}
 
