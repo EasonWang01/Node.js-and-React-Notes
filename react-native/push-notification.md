@@ -364,7 +364,19 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 
 ### 左上角的灰色方形更改必須加上 ic\_notification
 
-可使用產生器：[https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html)
+1.可使用產生器：
+
+> 記得圖案必須是白色，然後透明底色
+
+{% embed url="http://romannurik.github.io/AndroidAssetStudio/icons-notification.html" %}
+
+2.然後使用放入對應的 mipmap-\*資料夾
+
+3.最後加入以下到 AndroidManifest
+
+```text
+<meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@mipmap/ic_notification" />
+```
 
 {% embed url="https://github.com/zo0r/react-native-push-notification/issues/730\#issuecomment-389545259" %}
 
