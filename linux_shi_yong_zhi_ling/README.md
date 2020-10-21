@@ -400,3 +400,7 @@ ssh -NfD 1080 <遠端server ip>
 open --new -a "Google Chrome Canary" --args --proxy-server="socks5://localhost:1080" http://192.168.95.90:9090/
 ```
 
+> google chrome 正常版通常會阻擋 loopback ，建議用 canary 版本
+>
+> [https://superuser.com/questions/1441133/google-chrome-ignorning-localhost-for-socks5-proxy](https://superuser.com/questions/1441133/google-chrome-ignorning-localhost-for-socks5-proxy)
+
