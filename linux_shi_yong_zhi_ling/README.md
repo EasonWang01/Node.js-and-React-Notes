@@ -403,4 +403,12 @@ open --new -a "Google Chrome Canary" --args --proxy-server="socks5://localhost:1
 > google chrome 正常版通常會阻擋 loopback ，建議用 canary 版本
 >
 > [https://superuser.com/questions/1441133/google-chrome-ignorning-localhost-for-socks5-proxy](https://superuser.com/questions/1441133/google-chrome-ignorning-localhost-for-socks5-proxy)
+>
+> ```text
+> -N : 不執行任何指令
+> -f : 在背景執行
+> -L : 將 local port 轉向
+> -R : 將 remote port 轉向
+> -D : socks proxy
+> ```
 
