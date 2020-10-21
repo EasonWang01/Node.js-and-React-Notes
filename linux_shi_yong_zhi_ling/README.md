@@ -384,3 +384,19 @@ sudo mtr google.com
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20200630-xia-wu-3.34.20.png)
 
+## SSH tunnel
+
+當你想要連線檔遠端電腦網路環境下的其他內網主機時，可以用 tunnel
+
+以下假設想要連線到遠端電腦網域的  http://192.168.95.90:9090/ 為例子
+
+```text
+ssh -NfD 1080 <遠端server ip>
+```
+
+用chrome 開啟
+
+```text
+open --new -a "Google Chrome Canary" --args --proxy-server="socks5://localhost:1080" http://192.168.95.90:9090/
+```
+
