@@ -82,7 +82,7 @@
     * [Drawer](react-native/yuan-sheng-zu-jian/drawer.md)
     * [Image](react-native/yuan-sheng-zu-jian/image.md)
   * [限制螢幕垂直與水平](react-native/xian-zhi-ying-mu-chui-zhi-yu-shui-ping.md)
-  * [Facebook OAUTH](react-native/facebook-oauth.md)
+  * [Facebook OAuth](react-native/facebook-oauth.md)
   * [NativeBase UI](react-native/nativebase-ui.md)
   * [Debug](react-native/debug.md)
   * [常見問題](react-native/chang-jian-wen-ti.md)
@@ -242,4 +242,5 @@
 * [GitLab 與 Drone](zi-dong-hua-bu-shu.md)
 * [SMTP、POP、IMAP](smpt-pop-imap.md)
 * [IPC](ipc.md)
+* [Agora](agora.md)
 
