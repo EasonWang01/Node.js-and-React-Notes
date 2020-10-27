@@ -10,7 +10,7 @@ description: 一個提供第三方串流服務的供應商
 
 建立帳戶後去取得相關開發金鑰：
 
-![](.gitbook/assets/jie-tu-20201027-xia-wu-3.04.43.png)
+![](../.gitbook/assets/jie-tu-20201027-xia-wu-3.04.43.png)
 
 簡單一對一視訊範例：
 

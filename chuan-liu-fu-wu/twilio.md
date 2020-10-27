@@ -14,7 +14,7 @@
 
 之後你可以用 trial number 發送簡訊或打電話\(使用API\)，或是你也可以發送簡訊到這個number，可以從console裡面去查看log。
 
-![](.gitbook/assets/ying-mu-kuai-zhao-20200417-xia-wu-12.10.19.png)
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200417-xia-wu-12.10.19.png)
 
 
 
@@ -30,7 +30,7 @@ sms doc: [https://www.twilio.com/docs/sms](https://www.twilio.com/docs/sms)
 
 #### 取得 access token
 
-![](.gitbook/assets/ying-mu-kuai-zhao-20200417-xia-wu-12.13.55.png)
+![](../.gitbook/assets/ying-mu-kuai-zhao-20200417-xia-wu-12.13.55.png)
 
 #### 撥打電話
 
