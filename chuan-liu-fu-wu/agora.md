@@ -105,3 +105,15 @@ function App() {
 export default App;
 ```
 
+### 獲取可用相機與麥克風
+
+```javascript
+      const cameras = await client.getCameras();
+      const audios = await client.getRecordingDevices();
+      console.log(cameras, audios);
+      
+      // 設置
+      localStream.switchDevice("video", cameras.deviceId);
+      localStream.switchDevice("audio", audios.deviceId);
+```
+
