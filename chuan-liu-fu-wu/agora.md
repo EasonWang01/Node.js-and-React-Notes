@@ -55,6 +55,7 @@ function App() {
         streamID
       );
 
+      // Stream 加入後 必須要訂閱
       client.on("stream-added", function (evt) {        
         var remoteStream = evt.stream;
         var id = remoteStream.getId();
