@@ -4,9 +4,21 @@ description: 一個提供第三方串流服務的供應商
 
 # Agora
 
-文件：[https://docs.agora.io/](https://docs.agora.io/)
+### 文件：
 
-範例：[https://github.com/AgoraIO/Basic-Video-Call](https://github.com/AgoraIO/Basic-Video-Call)
+[https://docs.agora.io/](https://docs.agora.io/)
+
+### 收費方式：
+
+[https://docs.agora.io/cn/Video/billing\_rtc?platform=All%20Platforms](https://docs.agora.io/cn/Video/billing_rtc?platform=All%20Platforms)
+
+### Web API: 
+
+[https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html)
+
+### 範例：
+
+[https://github.com/AgoraIO/Basic-Video-Call](https://github.com/AgoraIO/Basic-Video-Call)
 
 建立帳戶後去取得相關開發金鑰：
 
