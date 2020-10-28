@@ -301,3 +301,11 @@ export default App;
 
 ```
 
+## 常見問題：
+
+目前 3.2 SDK 版本如果有給 streamID\(UID\) 則其他 client 也要給，不然會無法與對方連線到。
+
+如果都沒輸入則可以連線（自動隨機產生 ID）
+
+[https://docs.agora.io/en/faq/string\#introduction](https://docs.agora.io/en/faq/string#introduction)
+
