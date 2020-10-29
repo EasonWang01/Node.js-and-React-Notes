@@ -52,6 +52,10 @@ transporter.sendMail(mailOptions, function(error, info){
 });  
 ```
 
+> 如果用 Gmail 無法送信記得去設定
+
+![](.gitbook/assets/jie-tu-20201029-shang-wu-11.52.02.png)
+
 ## POP
 
 Gmail 為例：
