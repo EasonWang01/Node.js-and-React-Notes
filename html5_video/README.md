@@ -282,6 +282,10 @@ export default App;
 
 [https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介](https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介)
 
+## WebRTC 流程：
+
+[https://developer.mozilla.org/en-US/docs/Web/API/WebRTC\_API/Signaling\_and\_video\_calling](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling)
+
 ## 範例:
 
 [https://shanetully.com/2014/09/a-dead-simple-webrtc-example/](https://shanetully.com/2014/09/a-dead-simple-webrtc-example/)
