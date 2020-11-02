@@ -408,7 +408,11 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 
 > 如果在傳送時加上 notification 則可以再關閉 app 後也跳出通知，如果一並帶上 data 屬性則 onmessage也會觸發。
 
-[https://rnfirebase.io/messaging/notifications\#via-admin-sdks](https://rnfirebase.io/messaging/notifications#via-admin-sdks)
+{% embed url="https://rnfirebase.io/messaging/notifications\#via-admin-sdks" %}
+
+#### 4. admin message 可用方法
+
+[https://firebase.google.com/docs/reference/admin/node/admin.messaging.Messaging](https://firebase.google.com/docs/reference/admin/node/admin.messaging.Messaging)
 
 
 
