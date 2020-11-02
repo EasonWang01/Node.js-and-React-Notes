@@ -406,9 +406,25 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 
 #### 3. 關閉 app後沒收到通知
 
-> 如果在傳送時加上 notification 則可以再關閉 app 後也跳出通知，如果一並帶上 data 屬性則 onmessage也會觸發。
+> 如果在傳送時加上 notification payload 則可以再關閉 app 後也跳出通知，如果一並帶上 data 屬性則 onmessage也會觸發（如果不加 notification payload 只加上 apns 或 android priority 不會有作用，可以不用加上 android priority）。
 
 {% embed url="https://rnfirebase.io/messaging/notifications\#via-admin-sdks" %}
+
+Notification payload 可設定參數：[https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload](https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload)
+
+如果更改正方形 icon 可設定如下
+
+> 但記得只有 sendToDevice 等具有 **options: MessagingOptions 才可使用**[**https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload**](https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload)\*\*\*\*
+
+> **如果是 send 或** sendMulticast **必須參考** [**https://firebase.google.com/docs/reference/admin/node/admin.messaging.Notification**](https://firebase.google.com/docs/reference/admin/node/admin.messaging.Notification)\*\*\*\*
+
+![](../.gitbook/assets/jie-tu-20201102-xia-wu-2.24.09.png)
+
+或是直接去 androidmanifest.xml 設定，則可以不用傳送 icon 參數，但這樣 原本的 app icon 會消失
+
+![](../.gitbook/assets/jie-tu-20201102-xia-wu-2.33.45.png)
+
+
 
 #### 4. admin message 可用方法
 
