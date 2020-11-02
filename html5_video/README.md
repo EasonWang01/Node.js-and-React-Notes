@@ -280,7 +280,7 @@ export default App;
 
 ## 名詞:
 
-[https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介](https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介)
+{% embed url="https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介" %}
 
 ## WebRTC 流程：
 

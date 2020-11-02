@@ -12,6 +12,10 @@ description: 目前主流為使用免費的 FCM (firebase cloud message) 服務
 
 3.`npx react-native link react-native-push-notification`
 
+## `另一模組為：`
+
+`https://rnfirebase.io/`
+
 ## 範例
 
 ### Local notification
