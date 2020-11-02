@@ -14,7 +14,7 @@ description: 目前主流為使用免費的 FCM (firebase cloud message) 服務
 
 ## `另一模組為：`
 
-`https://rnfirebase.io/`
+{% embed url="https://rnfirebase.io/" %}
 
 ## 範例
 
@@ -403,6 +403,12 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 #### 2. server 發出訊息後 device onMessage 沒反應
 
 > 曾經遇到過了十分鐘後連續跳出，發生在 android 模擬器上
+
+#### 3. 關閉 app後沒收到通知
+
+> 如果在傳送時加上 notification 則可以再關閉 app 後也跳出通知，如果一並帶上 data 屬性則 onmessage也會觸發。
+
+[https://rnfirebase.io/messaging/notifications\#via-admin-sdks](https://rnfirebase.io/messaging/notifications#via-admin-sdks)
 
 
 
