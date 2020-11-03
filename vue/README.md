@@ -124,3 +124,17 @@ export default {
     },
 ```
 
+## Template
+
+類似於 react 的
+
+```javascript
+<> 
+ ...
+</>
+```
+
+可以當作空的 html tag
+
+[https://vuejs.org/v2/guide/list.html\#v-for-on-a-lt-template-gt](https://vuejs.org/v2/guide/list.html#v-for-on-a-lt-template-gt)
+
