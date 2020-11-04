@@ -349,7 +349,11 @@ if (signal.ice) {
 
 5. 接收到視訊：peerConnection.ontrack = gotRemoteStream
 
-6. 顯示遠端視訊： remoteVideo.srcObject = event.streams[0]
+6. 顯示遠端視訊： 
+
+function gotRemoteStream(event) {
+  remoteVideo.srcObject = event.streams[0];
+}
 ```
 
 Server
