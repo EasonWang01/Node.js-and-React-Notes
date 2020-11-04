@@ -296,12 +296,25 @@ export default App;
 
 Client 過程
 
-```text
+```javascript
 1. 初始化連線: 
-new RTCPeerConnection，並加入本地影像 peerConnection.addStream(localStream);
+```
+new RTCPeerConnection({
+  iceServers: [
+    { urls: "stun:stun.stunprotocol.org:3478" },
+    { urls: "stun:stun.l.google.com:19302" },
+  ]
+})
+```
+並加入本地影像 
+```
+peerConnection.addStream(localStream);
+```
 
 2. 發起人利用 createOffer 產生 description 後設定 setLocalDescription 後傳送 SDP 給其他人: 
+```
 peerConnection.createOffer().then(createdDescription);
+```
 
 ```
 function createdDescription(description) {
@@ -350,10 +363,11 @@ if (signal.ice) {
 5. 接收到視訊：peerConnection.ontrack = gotRemoteStream
 
 6. 顯示遠端視訊： 
-
+```
 function gotRemoteStream(event) {
   remoteVideo.srcObject = event.streams[0];
 }
+```
 ```
 
 Server
