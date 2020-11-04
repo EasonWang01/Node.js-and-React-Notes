@@ -297,14 +297,55 @@ export default App;
 Client 過程
 
 ```text
-1. 初始化連線: new RTCPeerConnection，並加入本地影像 peerConnection.addStream(localStream);
+1. 初始化連線: 
+new RTCPeerConnection，並加入本地影像 peerConnection.addStream(localStream);
 
-2. 設定SDP: peerConnection.setLocalDescription
+2. 發起人利用 createOffer 產生 description 後設定 setLocalDescription 後傳送 SDP 給其他人: 
+peerConnection.createOffer().then(createdDescription);
 
-3. 在本地蒐集到ice後傳送給另一個peer: onicecandidate 並且傳送 serverConnection.send
+```
+function createdDescription(description) {
+  peerConnection
+    .setLocalDescription(description)
+    .then(function () {
+      serverConnection.send(
+        JSON.stringify({ sdp: peerConnection.localDescription, uuid: uuid })
+      );
+    })
+}
+```
+
+3. 其他人收到對方的 sdp 後呼叫 setRemoteDescription，
+之後用 createAnswer 產生 description 後也用 createdDescription 傳給發起人
+```
+  if (signal.sdp) {
+    peerConnection
+      .setRemoteDescription(new RTCSessionDescription(signal.sdp))
+      .then(function () {
+        if (signal.sdp.type === "offer") {
+          peerConnection
+            .createAnswer()
+            .then(createdDescription)
+        }
+      })
+  }
+```  
+
+4. 在本地蒐集到ice後傳送給另一個peer: onicecandidate 並且傳送 serverConnection.send
 (ICE candidate可能接收到多個)
+https://developer.mozilla.org/en-US/docs/Web/API/RTCIceCandidate
+```
+peerConnection.onicecandidate = gotIceCandidate;
+serverConnection.send(JSON.stringify({ ice: event.candidate, uuid: uuid }));
+```
 
 4. 另一個peer接到ice後把ice加入： peerConnection.addIceCandidate
+```
+if (signal.ice) {
+    peerConnection
+      .addIceCandidate(new RTCIceCandidate(signal.ice))
+}
+```
 
 5. 接收到視訊：peerConnection.ontrack = gotRemoteStream
 
