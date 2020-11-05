@@ -280,7 +280,11 @@ export default App;
 
 ## WebRTC 可用範例：
 
-[https://webrtc.github.io/samples/](https://webrtc.github.io/samples/)
+{% embed url="https://webrtc.github.io/samples/" %}
+
+## Debug
+
+chrome://webrtc-internals
 
 ## 名詞:
 
