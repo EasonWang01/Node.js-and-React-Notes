@@ -421,3 +421,11 @@ io.on('connection', function(socket) {
 如果有時更新websocket的code卻發現emit還是只有舊的有反應，則可能是舊的socket連線沒斷開
 ```
 
+### ngrok
+
+記得要用 https url
+
+```text
+./ngrok http https://localhost:8443
+```
+
