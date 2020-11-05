@@ -278,6 +278,10 @@ export default App;
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20180720-xia-wu-3.14.32.png)
 
+## WebRTC 可用範例：
+
+[https://webrtc.github.io/samples/](https://webrtc.github.io/samples/)
+
 ## 名詞:
 
 {% embed url="https://blog.mozilla.com.tw/posts/3261/webrtc-相關縮寫名詞簡介" %}
