@@ -418,5 +418,7 @@ wss.broadcast = function(data) {
 
 ## WebRTC 錄製
 
-[https://github.com/muaz-khan/RecordRTC](https://github.com/muaz-khan/RecordRTC)
+{% embed url="https://github.com/muaz-khan/RecordRTC" %}
+
+[https://stackoverflow.com/questions/16571044/how-to-record-webcam-and-audio-using-webrtc-and-a-server-based-peer-connection](https://stackoverflow.com/questions/16571044/how-to-record-webcam-and-audio-using-webrtc-and-a-server-based-peer-connection)
 
