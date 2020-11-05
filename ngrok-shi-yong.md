@@ -30,3 +30,13 @@ echo $WEBHOOK_URL
 http://localhost:4040
 ```
 
+## HTTPS
+
+> 需要先註冊
+
+```javascript
+./ngrok http https://localhost:8443
+```
+
+[https://stackoverflow.com/a/62258776/4622645](https://stackoverflow.com/a/62258776/4622645)
+

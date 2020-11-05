@@ -1,9 +1,11 @@
 # AWS S3
 
 1. 申請IAM，取得access key 和 secret key
-2. 下載aws-sdk
+2. 下載 aws-sdk
 
-官方文件：[https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html\#createBucket-property](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#createBucket-property)
+官方文件：
+
+[https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html)
 
 ## 上傳到 S3 範例
 
