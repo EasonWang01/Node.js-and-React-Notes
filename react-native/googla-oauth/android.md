@@ -50,6 +50,8 @@ project(':react-native-google-signin').projectDir = new File(rootProject.project
 
 5.MainApplication.java
 
+> React Native 0.6 以後因為 Auto linking 不用此步驟
+
 ```java
         @Override
         protected List<ReactPackage> getPackages() {
@@ -60,5 +62,32 @@ project(':react-native-google-signin').projectDir = new File(rootProject.project
           packages.add(new RNGoogleSigninPackage());
           return packages;
         }
+```
+
+### 範例
+
+```javascript
+import {GoogleSignin, statusCodes} from '@react-native-community/google-signin';
+
+GoogleSignin.configure();
+
+const handleGoogleSignIn = async () => {
+    try {
+      await GoogleSignin.hasPlayServices();
+      const userInfo = await GoogleSignin.signIn();
+      console.log(userInfo)
+    } catch (error) {
+      console.log(error)
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        // user cancelled the login flow
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        // operation (e.g. sign in) is in progress already
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        // play services not available or outdated
+      } else {
+        // some other error happened
+      }
+    }
+  };
 ```
 
