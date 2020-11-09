@@ -36,3 +36,28 @@ AppDelegate.m 加上
 }                                                  
 ```
 
+## 常見問題
+
+[https://github.com/facebook/react-native-fbsdk\#troubleshooting](https://github.com/facebook/react-native-fbsdk#troubleshooting)
+
+### IOS:
+
+1.Undefined symbols for architecture x86\_64:
+
+{% embed url="https://github.com/facebook/react-native-fbsdk/issues/794\#issuecomment-695217977" %}
+
+![](../../.gitbook/assets/jie-tu-20201109-shang-wu-10.36.14.png)
+
+2.error No active iOS device found
+
+目前官方的 bug，建議可用系統監控程式除錯
+
+  
+
+
+![](../../.gitbook/assets/jie-tu-20201109-xia-wu-3.11.59.png)
+
+以及建議用 `console.error`
+
+![](../../.gitbook/assets/jie-tu-20201109-xia-wu-3.21.38.png)
+
