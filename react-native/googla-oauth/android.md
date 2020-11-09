@@ -48,3 +48,17 @@ include ':react-native-google-signin', ':app'
 project(':react-native-google-signin').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/google-signin/android')
 ```
 
+5.MainApplication.java
+
+```java
+        @Override
+        protected List<ReactPackage> getPackages() {
+          @SuppressWarnings("UnnecessaryLocalVariable")
+          List<ReactPackage> packages = new PackageList(this).getPackages();
+          // Packages that cannot be autolinked yet can be added manually here, for example:
+          // 加上下面這行
+          packages.add(new RNGoogleSigninPackage());
+          return packages;
+        }
+```
+
