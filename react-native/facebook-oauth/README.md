@@ -102,7 +102,7 @@ Undefined symbols for architecture x86\_64:
 
 {% embed url="https://github.com/facebook/react-native-fbsdk/issues/794\#issuecomment-695217977" %}
 
-![](../.gitbook/assets/jie-tu-20201109-shang-wu-10.36.14.png)
+![](../../.gitbook/assets/jie-tu-20201109-shang-wu-10.36.14.png)
 
 
 
