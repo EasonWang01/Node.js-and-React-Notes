@@ -80,6 +80,7 @@
   * [router](react-native/router/README.md)
     * [react-navigation套件](react-native/router/reactnavigation-tao-jian.md)
   * [原生組件](react-native/yuan-sheng-zu-jian/README.md)
+    * [RefreshControl](react-native/yuan-sheng-zu-jian/refreshcontrol.md)
     * [Modal](react-native/yuan-sheng-zu-jian/modal.md)
     * [Alert](react-native/yuan-sheng-zu-jian/alert.md)
     * [button](react-native/yuan-sheng-zu-jian/button.md)
