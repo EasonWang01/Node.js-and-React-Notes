@@ -420,6 +420,14 @@ AppRegistry.registerHeadlessTask(
 );
 ```
 
+方法2: 
+
+使用 admin message 傳入 click\_action
+
+> 但因為要給 intent filter ，所以在 react native 只能用上面的方法
+
+[https://firebase.google.com/docs/cloud-messaging/send-message\#example-notification-click-action](https://firebase.google.com/docs/cloud-messaging/send-message#example-notification-click-action)
+
 ## 常見問題
 
 #### 1.local notification 沒反應
