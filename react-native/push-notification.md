@@ -271,6 +271,8 @@ admin.messaging().send(message)
 
 ## Background notification
 
+> 如果關閉 app 後沒有跳通知可以把後端送的 notification payload 移除，或是不使用 setBackgroundMessageHandler 直接只加上 後端送的 notification payload 也會觸發背景與關閉 app 後的通知。
+
 [https://rnfirebase.io/messaging/usage\#background--quit-state-messages](https://rnfirebase.io/messaging/usage#background--quit-state-messages)
 
 在最外層 index.js 加上如下即可
@@ -393,6 +395,30 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 {% embed url="https://github.com/zo0r/react-native-push-notification/issues/730\#issuecomment-389545259" %}
 
 ![](../.gitbook/assets/jie-tu-20201019-xia-wu-4.13.22.png)
+
+## 點擊通知後跳轉到其他畫面
+
+```javascript
+// 點擊通知時跳轉進 APP 時觸發
+messaging()
+  .getInitialNotification()
+  .then((payload) => {
+    this.props.navigation.navigate('Mail');
+  });
+```
+
+記得要註冊
+
+```javascript
+const NotificationHandler = async (message) => {
+  console.warn('RNFirebaseBackgroundMessage1: ', message);
+  return Promise.resolve();
+};
+AppRegistry.registerHeadlessTask(
+  'ReactNativeFirebaseMessagingHeadlessTask',
+  () => NotificationHandler,
+);
+```
 
 ## 常見問題
 
