@@ -220,7 +220,9 @@ componentDidMount() {
 
 要先初始化 server
 
-[https://firebase.google.com/docs/admin/setup](https://firebase.google.com/docs/admin/setup)
+{% embed url="https://firebase.google.com/docs/admin/setup" %}
+
+完整文件：[https://firebase.google.com/docs/cloud-messaging/send-message](https://firebase.google.com/docs/cloud-messaging/send-message)
 
 ```javascript
 yarn add firebase-admin
