@@ -220,9 +220,7 @@ componentDidMount() {
 
 要先初始化 server
 
-{% embed url="https://firebase.google.com/docs/admin/setup" %}
-
-完整文件：[https://firebase.google.com/docs/cloud-messaging/send-message](https://firebase.google.com/docs/cloud-messaging/send-message)
+[https://firebase.google.com/docs/admin/setup](https://firebase.google.com/docs/admin/setup)
 
 ```javascript
 yarn add firebase-admin
@@ -421,14 +419,6 @@ AppRegistry.registerHeadlessTask(
   () => NotificationHandler,
 );
 ```
-
-方法2: 
-
-使用 admin message 傳入 click\_action
-
-> 但因為要給 intent filter ，所以在 react native 只能用上面的方法
-
-[https://firebase.google.com/docs/cloud-messaging/send-message\#example-notification-click-action](https://firebase.google.com/docs/cloud-messaging/send-message#example-notification-click-action)
 
 ## 常見問題
 
