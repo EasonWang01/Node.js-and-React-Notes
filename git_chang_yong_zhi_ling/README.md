@@ -536,8 +536,6 @@ gac() {
 
 打包 repo 為 bundle
 
-> 如果出現 unknown revision or path not in the working tree. 需要先commit
-
 ```text
 git bundle create repo.bundle HEAD master
 ```
