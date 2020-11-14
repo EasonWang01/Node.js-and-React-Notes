@@ -430,11 +430,3 @@ wss.broadcast = function(data) {
 
 [https://stackoverflow.com/questions/16571044/how-to-record-webcam-and-audio-using-webrtc-and-a-server-based-peer-connection](https://stackoverflow.com/questions/16571044/how-to-record-webcam-and-audio-using-webrtc-and-a-server-based-peer-connection)
 
-## React Native WebRTC
-
-[https://github.com/react-native-webrtc/react-native-webrtc](https://github.com/react-native-webrtc/react-native-webrtc)
-
-0.6 版本以後需要配置如下，不然 Android 啟動後會 crash
-
-[https://github.com/react-native-webrtc/react-native-webrtc/issues/885\#issuecomment-723116643](https://github.com/react-native-webrtc/react-native-webrtc/issues/885#issuecomment-723116643)
-

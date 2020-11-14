@@ -502,5 +502,19 @@ android {
 react-native run-android
 ```
 
+## 連接手機
+
+如果沒有 adb 可以去下載 android sdk
+
+```text
+/Users/easonwang/Library/Android/sdk/platform-tools/adb
+```
+
+然後連接手機後選取傳輸檔案，然後開放 USB 偵錯
+
+之後輸入 react-native run-android 即可
+
+> 可輸入 adb devices 確認只有一個裝置
+
 
 
