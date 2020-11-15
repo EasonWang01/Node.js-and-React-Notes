@@ -428,10 +428,6 @@ httpsServer.on("upgrade", function (request, socket, head) {
   //   socket.destroy();
   //   return;
   // }
-  // 如果沒加下面則 upgrade 不會完成
-  wss.handleUpgrade(request, socket, head, function (ws) {
-    wss.emit("connection", ws, request);
-  });
 });
 ```
 
