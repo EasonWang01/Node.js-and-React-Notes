@@ -148,7 +148,7 @@ app.listen('8081');
 
 {% embed url="https://github.com/socketio/engine.io" %}
 
-### socket.io
+
 
 這裡我們使用socket.io當教學範例
 
@@ -395,7 +395,7 @@ io.on('connection', function(socket){
 }
 ```
 
-#### 安全機制之token
+### Socket.io 模組之安全機制
 
 client端
 
@@ -414,6 +414,26 @@ io.on('connection', function(socket) {
 ```
 
 另外client端的cookie會在websocket連線時自動送到server
+
+## ws 模組之安全機制驗證
+
+[https://github.com/websockets/ws\#client-authentication](https://github.com/websockets/ws#client-authentication)
+
+```javascript
+const wss = new WebSocketServer({ server: httpsServer });
+httpsServer.on("upgrade", function (request, socket, head) {
+  // 用來驗證
+  // if (err) {
+  //   socket.write("HTTP/1.1 401 Unauthorized\r\n\r\n");
+  //   socket.destroy();
+  //   return;
+  // }
+  // 如果沒加下面則 upgrade 不會完成
+  wss.handleUpgrade(request, socket, head, function (ws) {
+    wss.emit("connection", ws, request);
+  });
+});
+```
 
 ## 注意事項
 
