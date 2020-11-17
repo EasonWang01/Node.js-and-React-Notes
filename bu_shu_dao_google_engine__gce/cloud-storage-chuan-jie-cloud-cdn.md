@@ -1,0 +1,48 @@
+# Cloud storage 串接 Cloud CDN
+
+## Cloud storage
+
+Cloud storage 為類似 S3 的服務，串接 Cloud CDN 後可做到檔案快取。
+
+上傳檔案後設定權限為 public 就會產生可下載的 URL
+
+![](../.gitbook/assets/jie-tu-20201117-xia-wu-5.32.40.png)
+
+
+
+## Cloud CDN
+
+{% embed url="https://cloud.google.com/cdn/docs/resources?hl=zh-tw" %}
+
+需要先建立 後端 bucket 與 load balancing
+
+![](../.gitbook/assets/jie-tu-20201117-xia-wu-5.03.37.png)
+
+然後
+
+![](../.gitbook/assets/jie-tu-20201117-xia-wu-5.03.44.png)
+
+之後會給你一個 IP
+
+![](../.gitbook/assets/jie-tu-20201117-xia-wu-5.05.26.png)
+
+原本 cloud storage 
+
+```text
+https://storage.googleapis.com/<bucket name>/<object name>
+```
+
+改為以下即可
+
+```text
+<cloud cdn ip>/<object name>
+```
+
+
+
+## 相關文章
+
+{% embed url="https://cloud.google.com/cdn/docs/setting-up-cdn-with-bucket" %}
+
+[https://medium.com/techintoo/serving-static-files-using-google-cloud-cdn-storage-bucket-db1287cb5e40](https://medium.com/techintoo/serving-static-files-using-google-cloud-cdn-storage-bucket-db1287cb5e40)
+

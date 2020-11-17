@@ -2,7 +2,17 @@
 
 [http://www.postgresqltutorial.com/](http://www.postgresqltutorial.com/)
 
-## 
+## 不選空值 NOT NULL AND EMPTY
+
+```sql
+SELECT device_token FROM users WHERE device_token IS NOT NULL AND device_token != '';
+```
+
+## 選不重複
+
+```sql
+SELECT DISTINCT ON device_token FROM users;
+```
 
 ## Data type
 

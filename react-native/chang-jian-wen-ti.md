@@ -191,6 +191,30 @@ export PATH="/Users/easonwang/Library/Android/sdk/platform-tools":$PATH
 
 這樣 app 不護更新畫面，需要把 app 從模擬器關閉後重新 run-android
 
+20. Execution failed for task ':app:mergeDexDebug'
+
+> When your app and the libraries it references exceed 65,536 methods, you encounter a build error that indicates your app has reached the limit of the Android build architecture
+
+加上以下即可
+
+```text
+android {
+    defaultConfig {
+        ...
+        minSdkVersion 15 
+        targetSdkVersion 28
+        multiDexEnabled true
+    }
+    ...
+}
+
+dependencies {
+  implementation 'com.android.support:multidex:1.0.3'
+}
+```
+
+[https://developer.android.com/studio/build/multidex](https://developer.android.com/studio/build/multidex)
+
 ## 開發相關
 
 ## 1.無法用e.target

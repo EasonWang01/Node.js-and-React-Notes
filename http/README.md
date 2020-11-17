@@ -1,6 +1,6 @@
 # HTTP
 
-## 程式範例
+## Server 程式範例
 
 ```text
 const http = require('http');
@@ -11,6 +11,54 @@ http.createServer(function (request, response){
 }).listen(3000);
 
 console.log('Server running on port 3000.');
+```
+
+### Request 程式範例
+
+> 以下也為解析 big5 網頁範例，記得使用 buffer 讀取，然後用 iconv 轉格式
+
+```javascript
+const http = require("http");
+const iconv = require("iconv-lite");
+const querystring = require("querystring");
+const requestBody = {
+  PG2: "&#160;6&#160;",
+  PgNo: 6,
+  s: 0,
+};
+
+const postData = querystring.stringify(requestBody);
+
+const options = {
+  hostname: "lotto.bestshop.com.tw",
+  path: "/649/where.asp",
+  method: "POST",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Content-Length": Buffer.byteLength(postData),
+  },
+};
+
+// 因為是要存 buffer 必須用 array
+const result = [];
+const req = http.request(options, (res) => {
+  console.log(`STATUS: ${res.statusCode}`);
+  console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
+  res.on("data", (chunk) => {
+    result.push(chunk);
+  });
+  res.on("end", () => {
+    const resp = iconv.decode(Buffer.concat(result), "big5");
+    console.log(resp);
+    console.log("No more data in response.");
+  });
+});
+req.on("error", (e) => {
+  console.error(`problem with request: ${e.message}`);
+});
+
+req.write(postData);
+req.end();
 ```
 
 ### 純 Node.js 接收 POST request

@@ -119,7 +119,7 @@ sudo service apache2 restart
 
 點選左上的選單然後點選網路
 
-![](.gitbook/assets/ying-mu-kuai-zhao-20170611-shang-wu-10.43.37.png)
+![](../.gitbook/assets/ying-mu-kuai-zhao-20170611-shang-wu-10.43.37.png)
 
 記得`目標標記 要輸入http-server 或是選擇apply to all也可`
 
@@ -127,7 +127,7 @@ sudo service apache2 restart
 
 0.0.0.0/0代表開放所有IP \(記得要有/0\)
 
-![](.gitbook/assets/ying-mu-kuai-zhao-20170611-shang-wu-10.43.50.png)
+![](../.gitbook/assets/ying-mu-kuai-zhao-20170611-shang-wu-10.43.50.png)
 
 ## \#gcloud
 
@@ -149,5 +149,5 @@ gcloud compute firewall-rules create cassandra-rule --allow="tcp:9042,tcp:9160" 
 
 \(點選ssh網頁右上方的齒輪\)
 
-![](.gitbook/assets/w3.png)
+![](../.gitbook/assets/w3.png)
 
