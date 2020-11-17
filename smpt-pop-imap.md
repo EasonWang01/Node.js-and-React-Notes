@@ -25,15 +25,16 @@ smtp.gmail.com
 
 ```javascript
 const nodemailer = require('nodemailer');
+const smtpTransport = require('nodemailer-smtp-transport');
 
-var transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport(smtpTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
   auth: {
     user: 'somerealemail@gmail.com',
     pass: 'realpasswordforaboveaccount'
   }
-});
+}));
 
 const mailOptions = {
   from: 'somerealemail@gmail.com',
@@ -51,9 +52,7 @@ transporter.sendMail(mailOptions, function(error, info){
 });  
 ```
 
-如果用 Gmail 無法送信記得去設定以下
-
-> 沒設定會說 credential 錯誤
+> 如果用 Gmail 無法送信記得去設定
 
 ![](.gitbook/assets/jie-tu-20201029-shang-wu-11.52.02.png)
 
@@ -87,9 +86,5 @@ imap.gmail.com
 
 ## DKIM
 
-{% embed url="https://securitytrails.com/blog/what-is-dkim" %}
-
-## 發送大量 Email
-
-[https://community.nodemailer.com/delivering-bulk-mail/](https://community.nodemailer.com/delivering-bulk-mail/)
+[https://securitytrails.com/blog/what-is-dkim](https://securitytrails.com/blog/what-is-dkim)
 
