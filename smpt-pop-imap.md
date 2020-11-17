@@ -87,5 +87,9 @@ imap.gmail.com
 
 ## DKIM
 
-[https://securitytrails.com/blog/what-is-dkim](https://securitytrails.com/blog/what-is-dkim)
+{% embed url="https://securitytrails.com/blog/what-is-dkim" %}
+
+## 發送大量 Email
+
+[https://community.nodemailer.com/delivering-bulk-mail/](https://community.nodemailer.com/delivering-bulk-mail/)
 
