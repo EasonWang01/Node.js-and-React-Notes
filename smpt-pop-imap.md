@@ -25,16 +25,15 @@ smtp.gmail.com
 
 ```javascript
 const nodemailer = require('nodemailer');
-const smtpTransport = require('nodemailer-smtp-transport');
 
-var transporter = nodemailer.createTransport(smtpTransport({
+var transporter = nodemailer.createTransport({
   service: 'gmail',
   host: 'smtp.gmail.com',
   auth: {
     user: 'somerealemail@gmail.com',
     pass: 'realpasswordforaboveaccount'
   }
-}));
+});
 
 const mailOptions = {
   from: 'somerealemail@gmail.com',
@@ -52,7 +51,9 @@ transporter.sendMail(mailOptions, function(error, info){
 });  
 ```
 
-> 如果用 Gmail 無法送信記得去設定
+如果用 Gmail 無法送信記得去設定以下
+
+> 沒設定會說 credential 錯誤
 
 ![](.gitbook/assets/jie-tu-20201029-shang-wu-11.52.02.png)
 
