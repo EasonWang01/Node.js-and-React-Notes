@@ -40,7 +40,9 @@ https://storage.googleapis.com/<bucket name>/<object name>
 
 > 如果直接設定 http load balancing 然後有打勾 cdn 之後也會出現在 cloud cdn 看到新增東西出來，但可能會連不上去，建議還是在cloud cdn 建立
 
+## 權限設定
 
+cloud storage 可以設定 domain 權限，或是也可以產生 sign URL 來讓特定權限的帳戶存取[https://cloud.google.com/cdn/docs/using-signed-urls](https://cloud.google.com/cdn/docs/using-signed-urls)
 
 ## 相關文章
 
