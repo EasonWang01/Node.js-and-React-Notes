@@ -103,3 +103,5 @@ imap.gmail.com
 
 ![](.gitbook/assets/jie-tu-20201118-xia-wu-5.25.39.png)
 
+> 記得用密件副本傳送！
+
