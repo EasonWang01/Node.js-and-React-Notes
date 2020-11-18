@@ -91,5 +91,11 @@ imap.gmail.com
 
 ## 發送大量 Email
 
-[https://community.nodemailer.com/delivering-bulk-mail/](https://community.nodemailer.com/delivering-bulk-mail/)
+{% embed url="https://community.nodemailer.com/delivering-bulk-mail/" %}
+
+## Gmail 傳送 html 技巧
+
+因為 gmail 現在 無法插入html，所以要用開啟網站後 ctrl + c 複製，之後直接貼在mail 內文。
+
+如果改變貼上去的大小，可以先把網頁縮小成你要的樣子（例如手機的比例）然後再複製
 
