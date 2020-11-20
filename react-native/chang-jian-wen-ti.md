@@ -228,6 +228,8 @@ project/build.gradle
         classpath("com.android.tools.build:gradle:4.0.1")
 ```
 
+[https://stackoverflow.com/a/62969918/4622645](https://stackoverflow.com/a/62969918/4622645)
+
 ## 開發相關
 
 ## 1.無法用e.target
