@@ -64,3 +64,33 @@ selectImage(){
 
 > 之後記得更新 gradle version
 
+簡單上傳 imgur 範例
+
+> 記得先去註冊 [https://api.imgur.com/oauth2/addclient](https://api.imgur.com/oauth2/addclient) 然後改 client ID
+
+```javascript
+const handlePicker = async () => {
+    try {
+      const selectedImage = await ImagePicker.openPicker({
+        width: 300,
+        height: 400,
+        cropping: true,
+      });
+      const imageBase64 = await ImgToBase64.getBase64String(selectedImage.path);
+      console.log(imageBase64);
+      const xhttp = new XMLHttpRequest();
+      xhttp.open('POST', 'https://api.imgur.com/3/image', true);
+      xhttp.setRequestHeader('Content-type', 'application/json');
+      xhttp.setRequestHeader('Authorization', 'Client-ID b50a7351eee91f');
+      xhttp.send(JSON.stringify({image: imageBase64}));
+      xhttp.onreadystatechange = function () {
+        if (xhttp.readyState === 4 && xhttp.status === 200) {
+          console.log(JSON.parse(xhttp.responseText));
+        }
+      };
+    } catch (err) {
+      console.log(err);
+    }
+  };
+```
+
