@@ -213,7 +213,20 @@ dependencies {
 }
 ```
 
-[https://developer.android.com/studio/build/multidex](https://developer.android.com/studio/build/multidex)
+{% embed url="https://developer.android.com/studio/build/multidex" %}
+
+21.
+
+> Execution failed for task ':app:processDebugResources'.  AAPT: error: unexpected element &lt;queries&gt; found in &lt;manifest&gt;
+
+更新 gradle 版本：
+
+project/build.gradle
+
+```javascript
+    dependencies {
+        classpath("com.android.tools.build:gradle:4.0.1")
+```
 
 ## 開發相關
 

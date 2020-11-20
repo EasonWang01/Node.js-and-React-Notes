@@ -1,7 +1,5 @@
 # 相機與圖片庫存取
 
-
-
 ## React Native 相機與圖片庫存取
 
 [https://github.com/react-community/react-native-image-picker](https://github.com/react-community/react-native-image-picker)
@@ -59,4 +57,10 @@ selectImage(){
     });
   }
 ```
+
+## 可以裁的 image picker
+
+[https://github.com/ivpusic/react-native-image-crop-picker](https://github.com/ivpusic/react-native-image-crop-picker)
+
+> 之後記得更新 gradle version
 
