@@ -72,12 +72,14 @@ selectImage(){
 const handlePicker = async () => {
     try {
       const selectedImage = await ImagePicker.openPicker({
-        width: 300,
-        height: 400,
+        width: 550,
+        height: 500,
+        cropperCircleOverlay: true,
         cropping: true,
+        freeStyleCropEnabled: true,
+        includeBase64: true,
       });
-      const imageBase64 = await ImgToBase64.getBase64String(selectedImage.path);
-      console.log(imageBase64);
+      const imageBase64 = selectedImage.data;
       const xhttp = new XMLHttpRequest();
       xhttp.open('POST', 'https://api.imgur.com/3/image', true);
       xhttp.setRequestHeader('Content-type', 'application/json');
@@ -93,4 +95,6 @@ const handlePicker = async () => {
     }
   };
 ```
+
+這邊出來的圖形大小就是參數設定的寬與高，如果要圓形可以在顯示的時候再處理。
 
