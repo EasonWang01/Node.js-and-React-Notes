@@ -38,3 +38,20 @@ Server可使用此模組
 2. Client擁有public key，使用public key確認JWT Token，驗證是從正確的Server 私鑰簽發的。
 3. Client發送請求時，帶上JWT Token，Server接到後使用對應client 的 公鑰驗證 Token。
 
+## JWT 的內容是沒有加密的
+
+只有單純用 base64URL 編碼，最後面的字段才是加密過的，但只是用來驗證，包含 encode 時的 secret 
+
+可以用如下解析 token：
+
+```javascript
+        function parseJwt (token) {
+            var base64Url = token.split('.')[1];
+            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        };
+```
+
