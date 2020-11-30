@@ -68,6 +68,7 @@
   * [Redux sagas](redux/redux-sagas.md)
   * [compose](redux/compose.md)
 * [React Native](react-native/README.md)
+  * [Splash screen](react-native/splash-screen.md)
   * [Websocket](react-native/websocket.md)
   * [Googla OAuth](react-native/googla-oauth/README.md)
     * [iOS](react-native/googla-oauth/ios.md)
