@@ -69,6 +69,38 @@ const browserWSEndpoint = 'ws://127.0.0.1:9222/devtools/browser/15d59f55-f1c9-4c
 })();
 ```
 
+### 將 dom 傳送到 nodejs 端處理
+
+> 在 evaluate 後 return 出來即可
+
+```javascript
+
+const puppeteer = require("puppeteer");
+puppeteer.launch({ headless: false }).then(function (browser) {
+  browser.newPage().then(function (page) {
+    page.goto("http://www.cwl.gov.cn/kjxx/ssq/kjgg/").then(async function () {
+      const pageData = await page.evaluate(async () => {
+        function delay(time) {
+          return new Promise(function (resolve) {
+            setTimeout(resolve, time);
+          });
+        }
+        document.querySelector(".zdy").click(); //2013001 // 2020120
+        document.querySelectorAll("Strong")[1].click();
+        document.querySelector(".inpQa").value = "2013001";
+        document.querySelector(".inpQz").value = "2020120";
+        document.querySelector(".anKs.aQzQ").click();
+        await delay(500);
+        return document.querySelector("body").innerHTML
+      });
+      console.log(pageData)
+    });
+  });
+});
+```
+
+[https://stackoverflow.com/questions/46202985/getting-dom-node-text-with-puppeteer-and-headless-chrome](https://stackoverflow.com/questions/46202985/getting-dom-node-text-with-puppeteer-and-headless-chrome)
+
 ## Puppeteer-firefox
 
 [https://github.com/GoogleChrome/puppeteer/tree/master/experimental/puppeteer-firefox](https://github.com/GoogleChrome/puppeteer/tree/master/experimental/puppeteer-firefox)goo
