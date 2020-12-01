@@ -257,4 +257,5 @@
 * [串流服務](chuan-liu-fu-wu/README.md)
   * [Twilio](chuan-liu-fu-wu/twilio.md)
   * [Agora](chuan-liu-fu-wu/agora.md)
+* [其他資源](qi-ta-zi-yuan.md)
 
