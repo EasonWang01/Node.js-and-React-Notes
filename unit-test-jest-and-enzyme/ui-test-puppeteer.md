@@ -99,7 +99,33 @@ puppeteer.launch({ headless: false }).then(function (browser) {
 });
 ```
 
-[https://stackoverflow.com/questions/46202985/getting-dom-node-text-with-puppeteer-and-headless-chrome](https://stackoverflow.com/questions/46202985/getting-dom-node-text-with-puppeteer-and-headless-chrome)
+{% embed url="https://stackoverflow.com/questions/46202985/getting-dom-node-text-with-puppeteer-and-headless-chrome" %}
+
+### 傳遞參數到 evaluate
+
+> 因為 evaluate 預設執行環境是瀏覽器，變數抓不到 node 的
+
+```javascript
+let name = 'test';
+
+await page.evaluate(({name}) => {
+
+    console.log(name);
+    console.log(age);
+    console.log(location);
+
+},{name});
+```
+
+[https://stackoverflow.com/a/47598159/4622645](https://stackoverflow.com/a/47598159/4622645)
+
+傳遞 function
+
+```javascript
+await page.exposeFunction("myFunc", myFunc);
+```
+
+[https://stackoverflow.com/a/61336937/4622645](https://stackoverflow.com/a/61336937/4622645)
 
 ## Puppeteer-firefox
 
