@@ -8,8 +8,6 @@
 
 [https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Your\_own\_automation\_environment](https://developer.mozilla.org/zh-TW/docs/Learn/Tools_and_testing/Cross_browser_testing/Your_own_automation_environment)
 
-## 
-
 ## [GoogleChrome](https://github.com/GoogleChrome) / [**puppeteer**](https://github.com/GoogleChrome/puppeteer)
 
 安裝:[https://github.com/GoogleChrome/puppeteer](https://github.com/GoogleChrome/puppeteer)
