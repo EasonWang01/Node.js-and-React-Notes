@@ -10,54 +10,30 @@ description: 當 APP 載入時會有空白頁面等待，所以需要一個畫�
 
 2.新增/res/drawable 目錄，裡面放入 launch\_screen.png
 
-3.App.js 搭配 react-navigation 配置如下
+3.新增一個 component 如下，並且設置此為 initial Route
 
 ```javascript
 import React from 'react';
-import Login from './pages/Login/';
-import Main from './pages/Main/';
-import 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {View} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import {getItem} from './util/storage';
-const Stack = createStackNavigator();
+import {getItem} from '../../util/storage.js';
 
-export default class App extends React.Component {
-  state = {
-    hasToken: false,
-    loadFinish: false,
+export default class Splash extends React.Component {
+  static navigationOptions = {
+    header: null,
   };
   componentDidMount() {
+    SplashScreen.hide();
     getItem('access_token', (token) => {
       if (!token) {
-        this.setState({hasToken: false}, () => {
-          this.setState({loadFinish: true});
-          SplashScreen.hide();
-        });
+        this.props.navigation.navigate('Login');
       } else {
-        this.setState({hasToken: true}, () => {
-          this.setState({loadFinish: true});
-          SplashScreen.hide();
-        });
+        this.props.navigation.navigate('Main');
       }
     });
   }
   render() {
-    return this.state.loadFinish ? (
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName={this.state.hasToken ? 'Main' : 'Login'}
-          screenOptions={{
-            headerShown: false,
-          }}>
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Main" component={Main} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    ) : (
-      <></>
-    );
+    return <View></View>;
   }
 }
 

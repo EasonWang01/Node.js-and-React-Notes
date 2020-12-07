@@ -124,7 +124,11 @@ Chrome 是會去找電腦OS內的預設
 
 Ｍozilla 是自己有一套trust root CA列表
 
-[https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/](https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/)
+{% embed url="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/" %}
+
+## Websocket ERR\_CERT\_AUTHORITY\_INVALID
+
+先用瀏覽器開啟 https 的 URL 然後點選不安全下面的繼續前往，之後該 wss URL 就可以正常使用。
 
 
 
