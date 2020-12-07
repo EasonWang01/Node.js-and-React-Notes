@@ -3,11 +3,17 @@
 ## 串流中關閉與開啟視訊
 
 ```javascript
-  let localVideoEnabled = false;
+  let localVideoEnabled = true;
+  let localAudioEnabled = true;
   
-  function handleDisconnect() {
+  function handleVideoDisconnect() {
     localVideoEnabled = !localVideoEnabled;
-    localStream.getTracks().forEach((track) => track.enabled = localVideoEnabled);
+    localStream.getTracks()[1].enabled = localVideoEnabled;
+  }
+  
+  function handleAudioDisconnect() {
+    localAudioEnabled = !localAudioEnabled;
+    localStream.getTracks()[0].enabled = localAudioEnabled;
   }
   
   // 如果用 track.stop() 會永久關閉
