@@ -13,3 +13,7 @@
   // 如果用 track.stop() 會永久關閉
 ```
 
+> 可選擇關音訊或視訊。
+
+![](../.gitbook/assets/jie-tu-20201207-xia-wu-5.03.06.png)
+
