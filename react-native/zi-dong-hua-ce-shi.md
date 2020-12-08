@@ -20,5 +20,19 @@ npx detox init -r jest
 3. e2e/enviroment.js
 4. firstTest.e2e.js
 
+於 Android 目錄下輸入 `./gradlew assembleAndroidTese`
+
+然後去修改 .detoxrc.json 中的 binarypath 與 avdName 類似如下
+
+```text
+    "android": {
+      "type": "android.emulator",
+      "binaryPath": "/Users/easonwang/MySampleApp/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "device": {
+        "avdName": "Pixel_XL_API_30"
+      }
+    }
+```
+
 
 
