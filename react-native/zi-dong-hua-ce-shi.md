@@ -27,7 +27,7 @@ npx detox init -r jest
 ```text
     "android": {
       "type": "android.emulator",
-      "binaryPath": "/Users/easonwang/MySampleApp/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "binaryPath": "/Users/easonwang/MySampleApp/android/app/build/outputs/apk/androidTest/debug",
       "device": {
         "avdName": "Pixel_XL_API_30"
       }
