@@ -34,5 +34,6 @@ npx detox init -r jest
     }
 ```
 
-> 但目前 React Native 0.63 還是無法執行，會有 timeout 情況
+> 但目前 React Native 0.63 還是無法執行，會有 timeout 情況  
+> [https://stackoverflow.com/questions/61050417/detoxruntimeerror-failed-to-run-application-on-the-device-android](https://stackoverflow.com/questions/61050417/detoxruntimeerror-failed-to-run-application-on-the-device-android)
 
