@@ -20,19 +20,19 @@ npx detox init -r jest
 3. e2e/enviroment.js
 4. firstTest.e2e.js
 
-於 Android 目錄下輸入 `./gradlew assembleAndroidTese`
+於 Android 目錄下輸入 `./gradlew assembleDebug`
 
 然後去修改 .detoxrc.json 中的 binarypath 與 avdName 類似如下
 
 ```text
     "android": {
       "type": "android.emulator",
-      "binaryPath": "/Users/easonwang/MySampleApp/android/app/build/outputs/apk/androidTest/debug",
+      "binaryPath": "/Users/easonwang/MySampleApp/android/app/build/outputs/apk/debug/app-debug.apk",
       "device": {
         "avdName": "Pixel_XL_API_30"
       }
     }
 ```
 
-
+> 但目前 React Native 0.63 還是無法執行，會有 timeout 情況
 
