@@ -9,7 +9,7 @@
 {% embed url="https://github.com/wix/Detox/blob/master/docs/Guide.Jest.md" %}
 
 ```text
-yarn jest jest-circus --dev
+yarn add jest jest-circus detox --dev
 npx detox init -r jest
 ```
 
@@ -36,4 +36,8 @@ npx detox init -r jest
 
 > 但目前 React Native 0.63 還是無法執行，會有 timeout 情況  
 > [https://stackoverflow.com/questions/61050417/detoxruntimeerror-failed-to-run-application-on-the-device-android](https://stackoverflow.com/questions/61050417/detoxruntimeerror-failed-to-run-application-on-the-device-android)
+
+## Android 記得去設定 emulator
+
+[https://github.com/wix/Detox/blob/master/docs/Introduction.AndroidDevEnv.md](https://github.com/wix/Detox/blob/master/docs/Introduction.AndroidDevEnv.md)
 
