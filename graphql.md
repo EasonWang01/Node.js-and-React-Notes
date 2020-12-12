@@ -123,6 +123,58 @@ const Users = () => {
 export default Users;
 ```
 
+{% embed url="https://www.apollographql.com/docs/react/get-started/" %}
+
+### Mutation
+
+{% embed url="https://www.apollographql.com/docs/react/data/mutations/" %}
+
+example: 
+
+```javascript
+import React from "react";
+import { useQuery, useMutation, gql } from "@apollo/client";
+
+const getUsersQuery = gql`
+  {
+    users {
+      id
+      name
+      age
+    }
+  }
+`;
+
+const mutationUsers = gql`
+  mutation {
+    addUser(id: 12, name: "test", age: 15) {
+      id
+      name
+      age
+    }
+  }
+`;
+
+const Users = () => {
+  const { loading, error, data } = useQuery(getUsersQuery);
+  const [addUser, { data: _data }] = useMutation(mutationUsers);
+
+  const handleAddUser = () => {
+    addUser();
+    console.log(data)
+  };
+  return (
+    <div>
+      <button onClick={handleAddUser}>Add</button>
+      <button onClick={() => console.log(_data)}>Add</button>
+      <div>{data && data.users[0].name}</div>;
+    </div>
+  );
+};
+export default Users;
+
+```
+
 ## typeDefs
 
 1. 回傳 array 就用 \[\] 把其他 type 包住
