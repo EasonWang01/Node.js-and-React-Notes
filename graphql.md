@@ -123,11 +123,11 @@ parse gql string to AST \( 在 apollo-boost 內也有 \)
 
 {% embed url="https://github.com/apollographql/graphql-tag" %}
 
-#### apollo-boost 
+#### @apollo/client
 
-提供 react 相關的 graphql 功能
+取代了 react-apollo, apollo-boost 等，將一些 client 要用到的在 Apollo Client 3.0 都包含了進去。
 
-[https://www.npmjs.com/package/apollo-boost](https://www.npmjs.com/package/apollo-boost)
+[https://www.apollographql.com/docs/react/migrating/apollo-client-3-migration/](https://www.apollographql.com/docs/react/migrating/apollo-client-3-migration/)
 
 
 
