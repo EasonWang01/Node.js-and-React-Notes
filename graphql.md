@@ -111,9 +111,15 @@ context: 存取傳進 Apollo Server 初始化時 context 的資料
 
 ## 其他工具
 
-[Prisma](https://www.prisma.io/)
+#### [Prisma](https://www.prisma.io/)
 
 GraphQL 後端專用的 ORM，方便資料庫溝通
 
 ![](.gitbook/assets/jie-tu-20201212-xia-wu-2.46.31.png)
+
+#### Graphql-tag
+
+parse gql string to AST
+
+[https://github.com/apollographql/graphql-tag](https://github.com/apollographql/graphql-tag)
 
