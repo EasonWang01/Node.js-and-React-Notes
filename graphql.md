@@ -87,5 +87,11 @@ context: 存取傳進 Apollo Server 初始化時 context 的資料
 >
 > [https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a](https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a)
 
+## 其他工具
 
+[Prisma](https://www.prisma.io/)
+
+GraphQL 後端專用的 ORM，方便資料庫溝通
+
+![](.gitbook/assets/jie-tu-20201212-xia-wu-2.46.31.png)
 
