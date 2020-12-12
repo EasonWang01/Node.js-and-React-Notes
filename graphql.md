@@ -119,7 +119,15 @@ GraphQL 後端專用的 ORM，方便資料庫溝通
 
 #### Graphql-tag
 
-parse gql string to AST
+parse gql string to AST \( 在 apollo-boost 內也有 \)
 
-[https://github.com/apollographql/graphql-tag](https://github.com/apollographql/graphql-tag)
+{% embed url="https://github.com/apollographql/graphql-tag" %}
+
+#### apollo-boost 
+
+提供 react 相關的 graphql 功能
+
+[https://www.npmjs.com/package/apollo-boost](https://www.npmjs.com/package/apollo-boost)
+
+
 
