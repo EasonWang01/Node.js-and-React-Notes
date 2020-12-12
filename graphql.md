@@ -95,7 +95,33 @@ context 讓 server 可以傳遞訊息讓 resolvers 第三個參數接收
     }
 ```
 
-[https://stackoverflow.com/a/34185655/4622645](https://stackoverflow.com/a/34185655/4622645)
+{% embed url="https://stackoverflow.com/a/34185655/4622645" %}
+
+React 範例：
+
+> 記得要寫在 ApolloProvider 裡面的 component 內，如果直接在 ApolloProvider 同個 component 使用 useQuery 會無法
+
+```javascript
+import React from "react";
+import { useQuery, gql } from "@apollo/client";
+
+const getUsersQuery = gql`
+  {
+    users {
+      id
+      name
+      age
+    }
+  }
+`;
+
+const Users = () => {
+  const { loading, error, data } = useQuery(getUsersQuery);
+  return <div>{data && data.users[0].name}</div>;
+};
+
+export default Users;
+```
 
 ## typeDefs
 
