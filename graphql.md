@@ -75,6 +75,28 @@ resolvers 用來處理當接收到 query 或 mutation 或 subscribe 時要做的
 
 context 讓 server 可以傳遞訊息讓 resolvers 第三個參數接收
 
+## Query
+
+```javascript
+  query user{
+    user {
+      id
+      name
+      age
+    }
+  }
+  
+  等同於
+  
+    user {
+      id
+      name
+      age
+    }
+```
+
+[https://stackoverflow.com/a/34185655/4622645](https://stackoverflow.com/a/34185655/4622645)
+
 ## typeDefs
 
 1. 回傳 array 就用 \[\] 把其他 type 包住
