@@ -75,6 +75,22 @@ resolvers 用來處理當接收到 query 或 mutation 或 subscribe 時要做的
 
 context 讓 server 可以傳遞訊息讓 resolvers 第三個參數接收
 
+## typeDefs
+
+1. 回傳 array 就用 \[\] 把其他 type 包住
+2. 直接在名稱上方可寫註解
+3. ! 代表必填參數 `post(id: ID!): Post`
+
+#### 預設 types
+
+![](.gitbook/assets/jie-tu-20201212-xia-wu-2.54.54.png)
+
+{% embed url="https://graphql.org/learn/schema/" %}
+
+#### 自定義 scalar type
+
+[https://ithelp.ithome.com.tw/articles/10206366](https://ithelp.ithome.com.tw/articles/10206366)
+
 ## resolvers
 
 parent: 使用參數可以存取client 下指令時的function 上一層資料，但只能存取最多上一層，無法使用 `parent.parent`
@@ -86,6 +102,10 @@ context: 存取傳進 Apollo Server 初始化時 context 的資料
 > 還有第四個參數叫 info 但因為不常用，可以查看：
 >
 > [https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a](https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a)
+
+## Authorization
+
+[https://ithelp.ithome.com.tw/articles/10205426](https://ithelp.ithome.com.tw/articles/10205426)
 
 ## 其他工具
 
