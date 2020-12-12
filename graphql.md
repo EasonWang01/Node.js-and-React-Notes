@@ -89,6 +89,8 @@ context 讓 server 可以傳遞訊息讓 resolvers 第三個參數接收
 
 #### 自定義 scalar type
 
+> 也是寫在 resolver 然後使用 `new GraphQLScalarType()`
+
 [https://ithelp.ithome.com.tw/articles/10206366](https://ithelp.ithome.com.tw/articles/10206366)
 
 ## resolvers
