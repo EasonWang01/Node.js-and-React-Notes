@@ -77,9 +77,11 @@ context 讓 server 可以傳遞訊息讓 resolvers 第三個參數接收
 
 ## resolvers
 
-parent 參數只能存取最多上一層，無法使用 `parent.parent`
+parent: 使用參數可以存取client 下指令時的function 上一層資料，但只能存取最多上一層，無法使用 `parent.parent`
 
-args 可存取使用者在 client 下指令時 function 後的參數
+args: 可存取使用者在 client 下指令時 function 後的參數
+
+context: 存取傳進 Apollo Server 初始化時 context 的資料
 
 
 
