@@ -83,5 +83,9 @@ args: 可存取使用者在 client 下指令時 function 後的參數
 
 context: 存取傳進 Apollo Server 初始化時 context 的資料
 
+> 還有第四個參數叫 info 但因為不常用，可以查看：
+>
+> [https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a](https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a)
+
 
 
