@@ -175,6 +175,12 @@ export default Users;
 
 ```
 
+### Subscription
+
+Server: [https://www.apollographql.com/docs/apollo-server/data/subscriptions/](https://www.apollographql.com/docs/apollo-server/data/subscriptions/)
+
+React: [https://www.apollographql.com/docs/react/data/subscriptions/](https://www.apollographql.com/docs/react/data/subscriptions/)
+
 ## typeDefs
 
 1. 回傳 array 就用 \[\] 把其他 type 包住
