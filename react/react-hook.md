@@ -154,8 +154,10 @@ const Parent = () => {
 ## UseMemo, UseCallback, React.memo 區別
 
 1. 父元件的狀態被改變了，但是傳給子元件 props 的沒有變，子元件仍然會被重新渲染，所以要用 React.memo
-2. 但假設使用了 React.memo 如果傳入的 prop 是 object 還是會重新渲染，所以可以在該prop 包成 useCallback function 回傳 object
-3. 如果要避免重新渲染時執行某段 function 可以使用 UseMemo
+2. 但假設使用了 React.memo 如果傳入的 prop 是 function 或 object 還是會重新渲染，所以可以在該prop 包成 useCallback 或 UseMemo
+3. 如果傳入的 prop 是 function 就在父層用 useCallback，如果傳入 prop 是 Object 就用 useMemo
+
+[https://medium.com/starbugs/react-%E9%97%9C%E6%96%BC-component-%E6%95%88%E8%83%BD%E5%84%AA%E5%8C%96%E7%9A%84%E9%82%A3%E4%BB%B6%E5%B0%8F%E4%BA%8B-68e6e5ecc4d6](https://medium.com/starbugs/react-%E9%97%9C%E6%96%BC-component-%E6%95%88%E8%83%BD%E5%84%AA%E5%8C%96%E7%9A%84%E9%82%A3%E4%BB%B6%E5%B0%8F%E4%BA%8B-68e6e5ecc4d6)
 
 [https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/react-optimize-performance-using-memo-usecallback-usememo-a76b6b272df3](https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/react-optimize-performance-using-memo-usecallback-usememo-a76b6b272df3)
 
