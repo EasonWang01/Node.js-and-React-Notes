@@ -125,6 +125,38 @@ export default Users;
 
 {% embed url="https://www.apollographql.com/docs/react/get-started/" %}
 
+### Fragment
+
+把 client 寫 query 時的結構拆出來，讓他可以重複使用
+
+```javascript
+const getUsersQuery = gql`
+  {
+    users {
+      id
+      name
+      age
+    }
+  }
+`;
+
+
+// 等同於
+
+const getUsersQuery = gql`
+  {
+    users {
+      ...userInfo
+      age
+    }
+  }
+  fragment userInfo on User {
+    id
+    name
+  }
+`;
+```
+
 ### Mutation
 
 {% embed url="https://www.apollographql.com/docs/react/data/mutations/" %}
