@@ -1,4 +1,12 @@
+---
+description: 讓 JS 加上 TYPE 功能，類似於 FLOW
+---
+
 # Typescript
+
+## Basic Types
+
+[https://www.typescriptlang.org/docs/handbook/basic-types.html](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 
 ## Cheatsheet
 
