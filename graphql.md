@@ -215,6 +215,30 @@ context: 存取傳進 Apollo Server 初始化時 context 的資料
 >
 > [https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a](https://www.prisma.io/blog/graphql-server-basics-demystifying-the-info-argument-in-graphql-resolvers-6f26249f613a)
 
+### Subscribe
+
+> 1.很重要一點是必須要把 client 端 ws link 與 http link 分開，不然會沒有資料回傳給 subscribe
+
+> 2.server 的 resolver 一定要放以下格式，包含 Subscription, subscribe 與 asyncIterator
+>
+> ```javascript
+> Subscription: {
+>  .... : {
+>    subscribe: pubsub.asyncIterator(...)
+>  }
+> } 
+> ```
+
+> 3. server resolver  mutation 裡面記得要放
+>
+> ```text
+>       pubsub.publish(..., {
+>         ...
+>       });
+> ```
+
+完整範例：[https://gist.github.com/EasonWang01/4c1a803b5680bfc76b5c71756ebc6df4](https://gist.github.com/EasonWang01/4c1a803b5680bfc76b5c71756ebc6df4)
+
 ## Authorization
 
 [https://ithelp.ithome.com.tw/articles/10205426](https://ithelp.ithome.com.tw/articles/10205426)
