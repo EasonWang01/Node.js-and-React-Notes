@@ -157,7 +157,7 @@ const mutationUsers = gql`
 `;
 
 const Users = () => {
-  const { loading, error, data } = useQuery(getUsersQuery);
+  const { loading, error, data, refetch } = useQuery(getUsersQuery);
   const [addUser, { data: _data }] = useMutation(mutationUsers, {
     variables: {
       id: (Math.floor(Math.random() * 100)).toString(),
@@ -166,6 +166,7 @@ const Users = () => {
   
   const handleAddUser = () => {
     addUser();
+    refetch(); // 再 query 一次新資料
   };
   return (
     <div>
