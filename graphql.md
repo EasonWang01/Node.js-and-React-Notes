@@ -145,9 +145,10 @@ const getUsersQuery = gql`
   }
 `;
 
+// $ 為變數用法，useMutation 可在 option 傳入 variable
 const mutationUsers = gql`
-  mutation {
-    addUser(id: 12, name: "test", age: 15) {
+  mutation AddUser($id: ID!) {
+    addUser(id: $id, name: "test", age: 15) {
       id
       name
       age
@@ -157,17 +158,19 @@ const mutationUsers = gql`
 
 const Users = () => {
   const { loading, error, data } = useQuery(getUsersQuery);
-  const [addUser, { data: _data }] = useMutation(mutationUsers);
-
+  const [addUser, { data: _data }] = useMutation(mutationUsers, {
+    variables: {
+      id: (Math.floor(Math.random() * 100)).toString(),
+    },
+  });
+  
   const handleAddUser = () => {
     addUser();
-    console.log(data)
   };
   return (
     <div>
       <button onClick={handleAddUser}>Add</button>
-      <button onClick={() => console.log(_data)}>Add</button>
-      <div>{data && data.users[0].name}</div>;
+      {data && data.users.map((user, idx) => <div key={idx}>{user.name}</div>)}
     </div>
   );
 };
