@@ -312,7 +312,7 @@ export default WebexVideo;
 
 包含space widget \(右\) 與 Recents Widget \(左\)
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200415-xia-wu-9.42.01.png)
+![](../../.gitbook/assets/ying-mu-kuai-zhao-20200415-xia-wu-9.42.01.png)
 
 
 

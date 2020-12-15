@@ -276,7 +276,7 @@ export default App;
 
 ## WebRTC串流
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20180720-xia-wu-3.14.32.png)
+![](../../.gitbook/assets/ying-mu-kuai-zhao-20180720-xia-wu-3.14.32.png)
 
 ## WebRTC 可用範例：
 
