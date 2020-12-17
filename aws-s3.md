@@ -91,6 +91,8 @@ http.createServer(function(req, res) {
 
 > 在createBucket的params的參數key前面加上路徑/test/test.png 則會自動在S3新增test資料夾
 
+> 如果是一些中文檔案名稱記得用 encodeURI 再 putObject 然後下載時也是
+
 ## 開啟CORS
 
 到下圖中設定
