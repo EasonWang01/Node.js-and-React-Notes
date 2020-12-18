@@ -220,6 +220,7 @@
   * [spgateway智富通](jin-liu-chuan-jie/spgatewayzhi-fu-tong.md)
   * [Stripe 串接](jin-liu-chuan-jie/stripe-chuan-jie.md)
 * [有關Log](you-guan-log.md)
+* [設定 feature flag](she-ding-feature-flag.md)
 * [Azure](azure/README.md)
   * [Face API](azure/face-api.md)
   * [Image Analyze API](azure/image-analyze-api.md)
