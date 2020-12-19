@@ -48,7 +48,7 @@ mongod --dbpath ./data/db2 --logpath "./log/mongolog-${date}" &
 
 ```text
 1.mongod --dbpath ./data/db1 --shutdown
-2.mongod --dbpath ./data/db1 --auth  &
+2.mongod --dbpath ./data/db2 --logpath "./log/mongolog-${date}" --auth &
 3.mongo
 4.use admin   // 選擇使用的資料庫
 5.db.auth('admin','密碼')  // 登入資料庫使用者

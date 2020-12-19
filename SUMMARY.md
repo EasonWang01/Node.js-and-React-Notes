@@ -159,6 +159,7 @@
 * [使用nginx](shi-yong-nginx/README.md)
   * [config](shi-yong-nginx/config.md)
 * [Unix 實用指令](linux_shi_yong_zhi_ling/README.md)
+  * [新 VPS 安裝流程](linux_shi_yong_zhi_ling/xin-vps-an-zhuang-liu-cheng.md)
   * [Shell Script 教學](linux_shi_yong_zhi_ling/shell-script-jiao-xue.md)
 * [Git 實用指令](git_chang_yong_zhi_ling/README.md)
   * [Git hook](git_chang_yong_zhi_ling/git-hook.md)
