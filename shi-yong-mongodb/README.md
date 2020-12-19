@@ -31,5 +31,5 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
 ```
 
-> mongo-express 為網頁視覺 DB 資料介面
+> mongo-express 為網頁視覺 DB 資料介面，但其預設沒提供帳號登入的頁面
 
