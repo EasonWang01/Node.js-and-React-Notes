@@ -196,6 +196,16 @@ git pull origin master --rebase
  git submodule update
 ```
 
+## git Subtree
+
+可以單獨推送某個資料夾下的內容到專案分支
+
+```text
+git subtree push --prefix dist origin gh-pages
+```
+
+
+
 ## 修改上一次commit 的說明
 
 ```text
