@@ -567,6 +567,15 @@ git checkout origin/master -- <file_path or folder>
 
 [https://stackoverflow.com/questions/28375418/git-how-to-pull-a-single-file-from-a-server-repository-in-git](https://stackoverflow.com/questions/28375418/git-how-to-pull-a-single-file-from-a-server-repository-in-git)
 
+## 從 master build 完推送 build folder 到 gh-pages
+
+```bash
+yarn;
+yarn build;
+git add build && git commit -m "Initial dist subtree commit";
+git subtree push --prefix build origin1 gh-pages;
+```
+
 ## 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
