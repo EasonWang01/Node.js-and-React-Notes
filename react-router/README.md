@@ -274,7 +274,13 @@ app.get('*', function (req, res) {
 
 ## React router Version 4, 5 用法
 
-[https://github.com/ReactTraining/react-router/issues/4928](https://github.com/ReactTraining/react-router/issues/4928)
+{% embed url="https://github.com/ReactTraining/react-router/issues/4928" %}
+
+雖然現在推薦直接使用 react-route-dom 模組，但是原本的 `browserHistory.push` 還是可以在
+
+[https://www.npmjs.com/package/react-router](https://www.npmjs.com/package/react-router) 模組安裝使用。
+
+
 
 > 記得要在/的前面加上exact，不然所有路由都會顯示Lobby畫面。
 
