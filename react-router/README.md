@@ -310,3 +310,34 @@ this.props.history.listen((location, action) => {
 });
 ```
 
+## 巢狀路由
+
+有些 component 想共用 header, footer 有些不共用。
+
+> 記得把 / 放在最下面，不然 /fast 也會 match 到
+
+```javascript
+  <Router>
+    <Switch>
+      <Route path="/deposit" component={Deposit} />
+      <Route path="/fast" component={Fast} />
+      <Route path="/" render={() => <App />} />
+    </Switch>
+  </Router>
+```
+
+App.js
+
+> 這邊記得要在 / 加上 exact 不然 /post 也會讀取 Body component
+
+```javascript
+ <Header />
+    <Switch>
+      <Route exact path="/" component={Body} />
+      <Route path="/personalInfo/edit" component={PersonalInfo} />
+      <Route path="/post" component={PostItem} />
+      <Route path="/article" component={Body} />
+   </Switch>
+<Footer />
+```
+
