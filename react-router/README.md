@@ -314,7 +314,7 @@ this.props.history.listen((location, action) => {
 
 有些 component 想共用 header, footer 有些不共用。
 
-> 記得把 / 放在最下面，不然 /fast 也會 match 到
+> 記得把 / 放在最下面，不然 /fast 也會 match 到，另外記得不能在 / 加上 exact，不然 APP 下面的 component  route 會無法讀取
 
 ```javascript
   <Router>
