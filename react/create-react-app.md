@@ -152,3 +152,7 @@ package.json中的 script 如下
 yarn add typescript @types/node @types/react @types/react-dom @types/jest
 ```
 
+之後把 App.js to App.tsx
+
+然後重新啟動
+
