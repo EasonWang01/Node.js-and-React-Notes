@@ -113,3 +113,14 @@ export default App;
 />
 ```
 
+3.ErrorMessage
+
+```javascript
+<div style={{ color: 'red', marginBottom: '5px' }}>{errors.email && touched.email && errors.email}</div>
+
+<ErrorMessage 
+  name="email"
+  render={msg => <div style={{ color: 'red', marginBottom: '5px' }}>{msg}</div>} 
+/>
+```
+
