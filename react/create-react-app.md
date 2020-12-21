@@ -156,3 +156,29 @@ yarn add typescript @types/node @types/react @types/react-dom @types/jest
 
 然後重新啟動
 
+### EXAMPLE:
+
+```javascript
+export interface Props {
+  name: string;
+}
+
+const PrintName: React.FC<Props> = (props) => {
+  return (
+    <div>
+      <p>{props.name}</p>
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <div className="App">
+      <PrintName name="test" />
+    </div>
+  );
+}
+
+export default App;
+```
+
