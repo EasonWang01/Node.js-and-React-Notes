@@ -146,3 +146,9 @@ package.json中的 script 如下
   },
 ```
 
+## Adding typescript
+
+```text
+yarn add typescript @types/node @types/react @types/react-dom @types/jest
+```
+
