@@ -297,5 +297,13 @@ parse gql string to AST \( 在 apollo-boost 內也有 \)
 
 #### React hook
 
-[https://www.apollographql.com/docs/react/development-testing/static-typing/](https://www.apollographql.com/docs/react/development-testing/static-typing/)
+{% embed url="https://www.apollographql.com/docs/react/development-testing/static-typing/" %}
+
+## 常見問題
+
+1.執行 query 後出現 unexpect token &lt; 
+
+> 通常是 endpoint 後的 url 路徑不對
+
+[https://github.com/graphql-boilerplates/node-graphql-server/issues/274\#issuecomment-381910134](https://github.com/graphql-boilerplates/node-graphql-server/issues/274#issuecomment-381910134)
 
