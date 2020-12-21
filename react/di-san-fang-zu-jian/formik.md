@@ -124,3 +124,92 @@ export default App;
 />
 ```
 
+## 完整版：加上驗證 Yup
+
+```javascript
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+const initialValues = { email: '', password: '' };
+const Basic = () => (
+  <div>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={Yup.object({
+        password: Yup.string()
+          .min(5, 'Must be 5 characters')
+          .required('Required'),
+        email: Yup.string().email('Invalid email address').required('Required'),
+      })}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values));
+          setSubmitting(false);
+        }, 400);
+      }}
+    >
+      {({
+        isSubmitting,
+        /* and other goodies */
+      }) => (
+          <Form>
+            <Field
+              type="email"
+              name="email"
+            />
+            <ErrorMessage
+              name="email"
+              render={msg => <div style={{ color: 'red', marginBottom: '5px' }}>{msg}</div>}
+            />
+            <Field
+              type="password"
+              name="password"
+            />
+            <ErrorMessage
+              name="password"
+              render={msg => <div style={{ color: 'red', marginBottom: '5px' }}>{msg}</div>}
+            />
+            <button type="submit" disabled={isSubmitting}>
+              Submit
+          </button>
+            <button type="reset"> Reset</button>
+          </Form>
+        )}
+    </Formik>
+  </div>
+);
+
+function App() {
+  return (
+    <div className="App">
+      <Basic />
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+## 客製化 \(useField, useFormik\)
+
+```javascript
+ const MyCheckbox = ({ children, ...props }) => {
+   // React treats radios and checkbox inputs differently other input types, select, and textarea.
+   // Formik does this too! When you specify `type` to useField(), it will
+   // return the correct bag of props for you
+   const [field, meta] = useField({ ...props, type: 'checkbox' });
+   return (
+     <div>
+       <label className="checkbox">
+         <input type="checkbox" {...field} {...props} />
+         {children}
+       </label>
+       {meta.touched && meta.error ? (
+         <div className="error">{meta.error}</div>
+       ) : null}
+     </div>
+   );
+ };
+```
+
