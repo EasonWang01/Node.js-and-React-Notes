@@ -20,5 +20,11 @@ description: 讓 JS 加上 TYPE 功能，類似於 FLOW
 
 unknown vs any
 
-[https://stackoverflow.com/a/51439876/4622645](https://stackoverflow.com/a/51439876/4622645)
+{% embed url="https://stackoverflow.com/a/51439876/4622645" %}
+
+&lt;&gt; 泛型
+
+> 可用來讓型別成為變數，先不指定，但是可以協助讓參數與返回值的型別設為相同的型別
+
+[https://www.tslang.cn/docs/handbook/generics.html](https://www.tslang.cn/docs/handbook/generics.html)
 
