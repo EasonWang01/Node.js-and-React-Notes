@@ -167,9 +167,19 @@ squash 27f6ed6 test2
 
 記得第一個pick 要放在該feature 的前一個commit。
 
-![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202020-02-13%20上午10.56.00.png)
-
 > squash 可改為 fixup 可以移除commit訊息
+
+### 如果出現 `cannot 'fixup' without a previous commit`
+
+這時通常是因為我們使用 rebase -i 指定的 commit 是第一個 commit。這時可改用
+
+```text
+git rebase -i --root
+```
+
+![](../.gitbook/assets/jie-tu-20210104-shang-wu-10.08.36.png)
+
+之後會把 fixup 或 squash 的都合併到前面一個 pick 的 commit，越上面的越前面。
 
 ## 把最新的master內容更新到feature branch
 
