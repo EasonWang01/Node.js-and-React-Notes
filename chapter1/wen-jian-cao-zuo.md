@@ -587,3 +587,19 @@ app.post('/upload', function(req, res){
 
 [https://stackoverflow.com/a/35137586/4622645](https://stackoverflow.com/a/35137586/4622645)
 
+## 產生大檔案
+
+```javascript
+const fs = require('fs');
+
+const GB = 1;
+
+const byteSize = 1000 * 1000 * 1000 * GB;
+
+fs.writeFileSync('./bigfile.txt', Buffer.alloc(byteSize));
+```
+
+> 1024 or 1000 
+>
+> [https://stackoverflow.com/questions/8632269/displaying-file-size-1000b-1kb-or-1024b-1kb](https://stackoverflow.com/questions/8632269/displaying-file-size-1000b-1kb-or-1024b-1kb)
+
