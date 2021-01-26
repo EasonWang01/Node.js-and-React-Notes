@@ -153,6 +153,8 @@ const Parent = () => {
 
 ## UseMemo, UseCallback, React.memo 區別
 
+[https://github.com/facebook/react/issues/15156](https://github.com/facebook/react/issues/15156)
+
 1. 父元件的狀態被改變了，但是傳給子元件 props 的沒有變，子元件仍然會被重新渲染，所以要用 React.memo
 2. 但假設使用了 React.memo 如果傳入的 prop 是 function 或 object 還是會重新渲染，所以可以在該prop 包成 useCallback 或 UseMemo
 3. 如果傳入的 prop 是 function 就在父層用 useCallback，如果傳入 prop 是 Object 就用 useMemo
