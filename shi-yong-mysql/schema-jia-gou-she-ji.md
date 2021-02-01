@@ -2,15 +2,15 @@
 
 ## Messaging APP
 
-> User: 存入 conversion Id List（參與的對話列表）
+> User: 存入 conversation Id List（參與的對話列表）
 >
-> Messages: 存入每個對話的細節以及 conversion Id
+> Messages: 存入每個對話的細節以及 conversation Id
 >
-> Conversions: Key 為 conversion Id，存入該對話最後的傳輸人與時間
+> Conversions: Key 為 conversation Id，存入該對話最後的傳輸人與時間
 >
-> 使用：對話列表為查詢 User conversion Id List 對應出的 Conversions Table 內容
+> 使用：對話列表為查詢 User conversation Id List 對應出的 Conversations Table 內容
 
-> ，點進去則查詢 conversion Id 對應的所有 messages
+> ，點進去則查詢 conversation Id 對應的所有 messages
 
 {% embed url="https://stackoverflow.com/questions/6033062/messaging-system-database-schema" %}
 
