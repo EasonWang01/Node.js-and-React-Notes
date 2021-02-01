@@ -6,7 +6,7 @@
 >
 > Messages: 存入每個對話的細節以及 conversation Id
 >
-> Conversions: Key 為 conversation Id，存入該對話最後的傳輸人與時間
+> Conversations: Key 為 conversation Id，存入該對話最後的傳輸人與時間
 >
 > 使用：對話列表為查詢 User conversation Id List 對應出的 Conversations Table 內容
 
