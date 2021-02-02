@@ -86,3 +86,44 @@ const init = () => {
   };
 ```
 
+## Data channel 傳送訊息
+
+1. 建立 channel
+
+```javascript
+    let sendChannel;
+    let receiveChannel;
+    
+    if (_isCaller) {
+      sendChannel = peerConnection.createDataChannel("sendDataChannel");
+
+      sendChannel.onopen = (e) => {
+        console.log('send channel open')
+      }
+      sendChannel.onmessage = onChannelMessage;
+      ....
+```
+
+> 只用建立一個 channel 即可，撥打方建立，然後 createOffer 後會把 channel 送給遠端
+
+2. 之後監聽接收 channel
+
+```javascript
+    peerConnection.ondatachannel = (e) => {
+      receiveChannel = e.channel;
+      receiveChannel.onmessage = onChannelMessage;
+    }
+```
+
+3. 發送訊息到 channel
+
+```javascript
+  const handleSendMessage = (value) => {
+    if(receiveChannel) {
+      receiveChannel.send(value);
+    } else {
+      sendChannel.send(value);
+    }
+  }
+```
+
