@@ -102,6 +102,11 @@ const init = () => {
       }
       sendChannel.onmessage = onChannelMessage;
       ....
+    }
+    
+  const onChannelMessage = (e) => {
+    console.log(`on channel message: ${e.data}`)
+  }  
 ```
 
 > 只用建立一個 channel 即可，撥打方建立，然後 createOffer 後會把 channel 送給遠端
