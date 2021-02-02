@@ -137,3 +137,5 @@ const init = () => {
   }
 ```
 
+可參考：[https://webrtc.github.io/samples/src/content/datachannel/basic/js/main.js](https://webrtc.github.io/samples/src/content/datachannel/basic/js/main.js)
+
