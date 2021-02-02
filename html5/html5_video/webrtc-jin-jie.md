@@ -91,19 +91,24 @@ const init = () => {
 1. 建立 channel
 
 ```javascript
-    let sendChannel;
-    let receiveChannel;
-    
+  let sendChannel;
+  let receiveChannel;
+  
+  const handleConnect = (_isCaller) => {
     if (_isCaller) {
+      ....
       sendChannel = peerConnection.createDataChannel("sendDataChannel");
 
       sendChannel.onopen = (e) => {
         console.log('send channel open')
       }
+      
       sendChannel.onmessage = onChannelMessage;
+      peerConnection.addStream(localStream);
+      peerConnection.createOffer().then(createdDescription).catch(errorHandler);
       ....
     }
-    
+  }    
   const onChannelMessage = (e) => {
     console.log(`on channel message: ${e.data}`)
   }  
