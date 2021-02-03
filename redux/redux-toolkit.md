@@ -80,7 +80,7 @@ import { doIncrement } from './store/user';
 
 const App = () => {
   const dispatch = useDispatch()
-  const { user } = useSelector(state => state.user)
+  const user = useSelector(state => state.user)
   
   const handleSave = () => {
     dispatch(doIncrement(2))
