@@ -2,7 +2,7 @@
 description: 為 js 的第三方編譯工具
 ---
 
-# 使用Babel
+# 使用 Babel
 
 ## 在 Node.js 使用 import 並讀取 React component
 

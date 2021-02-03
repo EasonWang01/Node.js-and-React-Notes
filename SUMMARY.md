@@ -109,7 +109,7 @@
   * [Animation](react-native/animation.md)
 * [JS 模組化](importexport_module_exports_mo_zu_hua.md)
 * [使用 Webpack](shi-yong-webpack.md)
-* [使用Babel](babel.md)
+* [使用 Babel](babel.md)
 * [JWT](jwt.md)
 * [ES6 ES7 ES8](es6-es7-es8/README.md)
   * [Array method](es6-es7-es8/array-method.md)
