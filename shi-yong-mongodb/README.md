@@ -37,5 +37,7 @@ services:
 
 > 500GB FREE
 
-[https://cloud.mongodb.com/](https://cloud.mongodb.com/)
+{% embed url="https://cloud.mongodb.com/" %}
+
+教學：[https://docs.mongodb.com/drivers/node/quick-start](https://docs.mongodb.com/drivers/node/quick-start)
 
