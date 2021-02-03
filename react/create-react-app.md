@@ -1,5 +1,7 @@
 # create-react-app
 
+
+
 ## Create-react-app
 
 > 為一個快速建立React 模板的工具
@@ -178,40 +180,5 @@ function App() {
 }
 
 export default App;
-```
-
-## 修改 Webpack config
-
-不 eject 的情況可以使用：
-
-{% embed url="https://github.com/timarney/react-app-rewired" %}
-
-1.安裝 react-app-rewire
-
-```text
-yarn add 
-```
-
-2. 新增 config-overrides.js，類似如下
-
-```javascript
-const {alias} = require('react-app-rewire-alias')
-
-module.exports = function override(config) {
-  return alias({
-    '~common': '../common',
-  })(config)
-}
-```
-
-3. 修改 package.json
-
-```text
-  "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    ....
-   } 
 ```
 

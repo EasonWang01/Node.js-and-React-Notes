@@ -1,6 +1,6 @@
 # 使用MongoDB
 
-目前建議用 docker 快速設環境
+## docker 快速設環境
 
 docker-compose.yml
 
@@ -32,4 +32,10 @@ services:
 ```
 
 > mongo-express 為網頁視覺 DB 資料介面，但其預設沒提供帳號登入的頁面
+
+## 使用 cloud mongo
+
+> 500GB FREE
+
+[https://cloud.mongodb.com/](https://cloud.mongodb.com/)
 
