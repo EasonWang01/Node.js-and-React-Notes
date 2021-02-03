@@ -86,3 +86,56 @@ const init = () => {
   };
 ```
 
+## Data channel 傳送訊息
+
+1. 建立 channel
+
+```javascript
+  let sendChannel;
+  let receiveChannel;
+  
+  const handleConnect = (_isCaller) => {
+    if (_isCaller) {
+      ....
+      sendChannel = peerConnection.createDataChannel("sendDataChannel");
+
+      sendChannel.onopen = (e) => {
+        console.log('send channel open')
+      }
+      
+      sendChannel.onmessage = onChannelMessage;
+      peerConnection.addStream(localStream);
+      peerConnection.createOffer().then(createdDescription).catch(errorHandler);
+      ....
+    }
+  }    
+  const onChannelMessage = (e) => {
+    console.log(`on channel message: ${e.data}`)
+  }  
+```
+
+> 只用建立一個 channel 即可，撥打方建立，然後 createOffer 後會把 channel 送給遠端
+
+2. 之後監聽接收 channel
+
+```javascript
+    peerConnection.ondatachannel = (e) => {
+      receiveChannel = e.channel;
+      receiveChannel.onmessage = onChannelMessage;
+    }
+```
+
+3. 發送訊息到 channel
+
+```javascript
+  const handleSendMessage = (value) => {
+    if(receiveChannel) {
+      receiveChannel.send(value);
+    } else {
+      sendChannel.send(value);
+    }
+  }
+```
+
+可參考：[https://webrtc.github.io/samples/src/content/datachannel/basic/js/main.js](https://webrtc.github.io/samples/src/content/datachannel/basic/js/main.js)
+
