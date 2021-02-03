@@ -1,10 +1,18 @@
-# Redux toolkit
+---
+description: 前言：如果還不太了解 Redux 概念可以看上一篇
+---
+
+# Redux Toolkit
 
 可以省去部分步驟，簡單地設定 Redux
+
+## 安裝
 
 ```text
 yarn add react-redux redux @reduxjs/toolkit
 ```
+
+## 使用步驟
 
 1.設定 provider
 
@@ -47,7 +55,7 @@ export default store;
 
 /store/user.js
 
-> 這邊記得 export default reducer 不是 reducers
+> 這邊記得 `export default slice.reducer` 不是 `slice.reducers`
 
 ```javascript
 import { createSlice } from '@reduxjs/toolkit'
@@ -70,7 +78,7 @@ export const doIncrement = (num) => async dispatch => {
 }
 ```
 
-從 component 發送 action
+4.從 component 發送 action
 
 app.js
 
