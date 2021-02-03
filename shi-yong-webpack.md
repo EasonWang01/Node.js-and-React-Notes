@@ -1,10 +1,6 @@
-# 使用webpack
+# 使用 Webpack
 
-
-
-## 
-
-## \#Webpack
+## Webpack
 
 目前有出第二版也就是webpack2，但目前性能與社群比較起來還是暫時先用一會比較適當，所以以下教學將以官方教學介紹webpack
 
