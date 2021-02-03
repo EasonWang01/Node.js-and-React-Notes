@@ -8,7 +8,3 @@
 
 > 測試在 wss 同個內網的192.168.x.x 會連線後但不觸發 onopen，但 server 使用 ngork 後正常
 
-## 相關專案
-
-[https://github.com/wesbos/websocket-canvas-draw](https://github.com/wesbos/websocket-canvas-draw)
-
