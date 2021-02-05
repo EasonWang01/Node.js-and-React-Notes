@@ -345,3 +345,68 @@ https_request(username, '?__a=1').then(data => {
 
 3.2019年之後\`?\_\_a=1\` request要加上cookie才可
 
+## 從 userid 獲得資料
+
+```javascript
+var https = require("https");
+const fs = require("fs");
+const accounts = ['8'];
+const promises = [];
+// https://i.instagram.com/api/v1/users/{user_id}/info/
+const doRequest = (account) => {
+  const result = new Promise((resolve, reject) => {
+    let chunk = "";
+    var options = {
+      host: "i.instagram.com",
+      port: 443,
+      path: `/api/v1/users/${account}/info/`,
+      method: "GET",
+      headers: {
+        cookie: `ig_did=CEDC32AA-9FF4-4A94-B2C3-5833EE96BE87; mid=X5kwfQAEAAFmGSa00xLy_QF0z8dv; ig_nrcb=1; fbm_124024574287414=base_domain=.instagram.com; fbsr_124024574287414=alcLEmDcis8uHix2t39oJKFeAnWICvOYIkoI8LuybD0.eyJ1c2VyX2lkIjoiMTAwMDE0NzI0Mjc2MDc1IiwiY29kZSI6IkFRQ1ZXc0pqbzhZZ3FhbmVPUmU2bThDVzdNelFOSXU4c3NVV1JleW5uZnJhbFBQS2MzUU9mQ0lPZmZ6OWFqQ2NQdWVmUHA0MzRlVWJSYU1Yc3N2NlJfY1daaUkwUzZYdjdoOVhmUnlfTG1MdVZBVUxWODJuR1d0V2VWTDRrMVVNaWFNcmJXck8xT0dlT0NKa1ZDakMxaU9FSXNFODYyWkhjdWZhQ0w4a0NQTUdRVHAwWl92MS1SbzA2YVZCSkc2ZWM0U3NwLS1CeWFPc1A1Z3RxZktfV1k5c3BvLTFDbm9LbVd1VVlLN2FnaVdEMzllTDI5UWh6dTZDa1pxaXlzT3ItcTB0VUNCSllEZzJpdzRFUFYzY09ZekI5eHI2YUhtSHhUbW1WSTZUeEpPc3NUQXBwRGx4ZlROV1h2eVh4QjZEUE1zemlxb0d1ZmNBUFRuejU3SEtLbEhJIiwib2F1dGhfdG9rZW4iOiJFQUFCd3pMaXhuallCQUoyTzdHeFpDczRTckptR09oRXo1Z2lXbkhNN3cybDV6RW9ucTJJdFdtcHpWbEFaQjA4clhnMUpvelR5ZExRb2JCWVJHOGRuNENsUmd2emd5NGt3WEJsT3pHQVVaQUkxb2ltb0gzUGV4MDB4Q1ZUQndjeVdjRXRhbUYwS0gzMDlRa2t4RXpNcUFRWkF5QmRqNjdCMWQ2VTJpWXdGSFljUVlaQlpBSGU2b0siLCJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImlzc3VlZF9hdCI6MTYxMjQ4OTc3MH0; csrftoken=XtzdIhOjSR0ZTlGJS1ZeTTzxWkemduLQ; ds_user_id=45331647121; sessionid=45331647121:1wHNFGMdrml5No:8; rur=FTW`,
+        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60 Instagram 12.0.0.16.90 (iPhone9,4; iOS 10_3_3; en_US; en-US; scale=2.61; gamut=wide; 1080x1920)'
+      },
+    };
+
+    var req = https.request(options, function (res) {
+      //console.log("STATUS: " + res.statusCode);
+      //console.log('HEADERS: ' + JSON.stringify(res.headers));
+      res.setEncoding("utf8");
+      res.on("data", function (data) {
+        chunk += data;
+      });
+      res.on("end", function () {
+        console.log(chunk)
+        const data = JSON.parse(chunk);
+        console.log(data)
+        resolve();
+      });
+    });
+
+    req.on("error", function (e) {
+      console.log("problem with request: " + e.message);
+      reject();
+    });
+
+    // write data to request body
+    req.write("data\n");
+    req.write("data\n");
+    req.end();
+  });
+  promises.push(result);
+};
+
+accounts.forEach((account) => {
+  console.log(account);
+  try {
+    doRequest(account);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+Promise.all(promises).then(() => {
+  console.log('finish')
+})
+
+```
+
