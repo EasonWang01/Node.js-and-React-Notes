@@ -31,3 +31,15 @@ req.write('data\n');
 req.end();
 ```
 
+## OpenSSL
+
+開放原始碼的 SSL library。
+
+[https://www.openssl.org/](https://www.openssl.org/)
+
+## BoringSSL
+
+google 開發的 SSL library 用來取代 OpenSSL。
+
+[https://boringssl.googlesource.com/boringssl/](https://boringssl.googlesource.com/boringssl/)
+
