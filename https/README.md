@@ -43,7 +43,5 @@ google 開發的 SSL library 用來取代 OpenSSL。
 
 {% embed url="https://boringssl.googlesource.com/boringssl/" %}
 
-## 解析 iOS HTTPS traffic
 
-[https://andydavies.me/blog/2019/12/12/capturing-and-decrypting-https-traffic-from-ios-apps/](https://andydavies.me/blog/2019/12/12/capturing-and-decrypting-https-traffic-from-ios-apps/)
 
