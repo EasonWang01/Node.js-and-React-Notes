@@ -79,6 +79,7 @@
     * [Android](react-native/googla-oauth/android.md)
   * [IOS](react-native/ios.md)
   * [第三方組件](react-native/di-san-fang-zu-jian/README.md)
+    * [onboarding screen](react-native/di-san-fang-zu-jian/onboarding-screen.md)
     * [Toast](react-native/di-san-fang-zu-jian/toast.md)
   * [ESlint](react-native/eslint.md)
   * [Push notification](react-native/push-notification.md)
