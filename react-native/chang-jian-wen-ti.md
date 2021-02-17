@@ -1,6 +1,6 @@
 # 常見問題
 
-## 環境相關
+## Android 環境相關
 
 **0.**
 
@@ -255,4 +255,20 @@ project/build.gradle
 **3. Genymotion 存取跟電腦相同的 VPN**
 
 設定Adapter 2 的網路為 NAT 即可。 ![](/assets/Screen%20Shot%202019-01-03%20at%204.07.16%20PM.png)
+
+## iOS 環境相關
+
+#### Could not find the following native modules
+
+```text
+rm -rf ios/Pods && rm -rf ios/build && cd ios && pod install && cd ../
+
+rm -rf node_modules && rm yarn.lock && yarn install
+```
+
+#### Pod version 不夠
+
+```text
+sudo gem install cocoapods
+```
 
