@@ -1,6 +1,6 @@
 # 常見問題
 
-## Android 環境相關
+## 環境相關
 
 **0.**
 
@@ -228,13 +228,7 @@ project/build.gradle
         classpath("com.android.tools.build:gradle:4.0.1")
 ```
 
-{% embed url="https://stackoverflow.com/a/62969918/4622645" %}
-
-22.No non-density apk found
-
-```text
-cd android && ./gradlew clean
-```
+[https://stackoverflow.com/a/62969918/4622645](https://stackoverflow.com/a/62969918/4622645)
 
 ## 開發相關
 
@@ -261,24 +255,4 @@ cd android && ./gradlew clean
 **3. Genymotion 存取跟電腦相同的 VPN**
 
 設定Adapter 2 的網路為 NAT 即可。 ![](/assets/Screen%20Shot%202019-01-03%20at%204.07.16%20PM.png)
-
-## iOS 環境相關
-
-#### Could not find the following native modules
-
-```text
-rm -rf ios/Pods && rm -rf ios/build && cd ios && pod install && cd ../
-
-rm -rf node_modules && rm yarn.lock && yarn install
-```
-
-#### Pod version 不夠
-
-```text
-sudo gem install cocoapods
-```
-
-#### 如果出現    CompileC /Users/Library/Developer/Xcode/DerivedData/rnVideoChat-glonxrdqrszkjpegwxeamdfiunvm/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/react-native-webrtc.build/Objects-normal/x86\_64/VideoCaptureController.o /Users/easonwang/rnVideoChat/node\_modules/react-native-webrtc/ios/RCTWebRTC/VideoCaptureController.m normal x86\_64 objective-c com.apple.compilers.llvm.clang.1\_0.compiler
-
-> 重新 npm 安裝該模組，升級他的版本即可
 
