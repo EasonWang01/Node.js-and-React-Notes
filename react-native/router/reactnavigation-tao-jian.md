@@ -1,9 +1,5 @@
 # react-navigation套件
 
-
-
-## react-navigation套件
-
 [https://reactnavigation.org/docs/en/navigating.html](https://reactnavigation.org/docs/en/getting-started.html)
 
 #### 1.隱藏Header，於各router 的 component
