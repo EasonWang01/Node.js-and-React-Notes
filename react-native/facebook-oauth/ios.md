@@ -1,4 +1,4 @@
-# iOS
+# IOS
 
 info.plist 加上
 

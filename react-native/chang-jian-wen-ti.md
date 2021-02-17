@@ -272,3 +272,7 @@ rm -rf node_modules && rm yarn.lock && yarn install
 sudo gem install cocoapods
 ```
 
+#### 如果出現    CompileC /Users/Library/Developer/Xcode/DerivedData/rnVideoChat-glonxrdqrszkjpegwxeamdfiunvm/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/react-native-webrtc.build/Objects-normal/x86\_64/VideoCaptureController.o /Users/easonwang/rnVideoChat/node\_modules/react-native-webrtc/ios/RCTWebRTC/VideoCaptureController.m normal x86\_64 objective-c com.apple.compilers.llvm.clang.1\_0.compiler
+
+> 重新 npm 安裝該模組，升級他的版本即可
+
