@@ -302,6 +302,17 @@ export default withRouter(aa);
 this.props.history.push("/some/Path");
 ```
 
+### hook 版本
+
+```javascript
+  let history = useHistory();
+
+  function handleClick() {
+    history.push("/home");
+  }
+
+```
+
 **2.監聽路由**
 
 ```javascript

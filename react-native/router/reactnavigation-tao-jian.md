@@ -1,9 +1,13 @@
 # react-navigation套件
 
+
+
+## react-navigation套件
+
 [https://reactnavigation.org/docs/en/navigating.html](https://reactnavigation.org/docs/en/getting-started.html)
 
-#### 1.隱藏Header，於各router 的 component
-
+> 隱藏Header，於各router 的 component
+>
 > ```javascript
 > class .....
 >   static navigationOptions = {
@@ -13,33 +17,11 @@
 > }
 > ```
 >
-> [https://stackoverflow.com/questions/44701245/hide-header-in-stack-navigator-react-navigation](https://stackoverflow.com/questions/44701245/hide-header-in-stack-navigator-react-navigation)
-
-v5: 
-
-```javascript
- <Stack.Navigator
-     screenOptions={{
-       headerShown: false,
-     }}
- ...
-```
-
-#### 2.進行導航
-
-使用`this.props.navigation.navigate('Main')` 
-
+> 使用`this.props.navigation.navigate('Main')` 進行導航
+>
 > 使用createStackNavigator來初始化該路由，然後用createBottomTabNavigator建立底部導航
 
-v5:
-
-```javascript
-const Login = ({ navigation }) => {
-  navigation.navigate('Main');
-}
-```
-
-## 範例：
+## 或是直接貼上以下Code即可
 
 [https://snack.expo.io/@react-navigation/going-back-v2](https://snack.expo.io/@react-navigation/going-back-v2)
 
