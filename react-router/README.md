@@ -1,9 +1,5 @@
 # React router
 
-
-
-## React router
-
 延續上一章
 
 先`npm install react-router`
