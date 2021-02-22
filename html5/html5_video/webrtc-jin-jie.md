@@ -139,3 +139,48 @@ const init = () => {
 
 可參考：[https://webrtc.github.io/samples/src/content/datachannel/basic/js/main.js](https://webrtc.github.io/samples/src/content/datachannel/basic/js/main.js)
 
+## ShareScreen
+
+### 獲取畫面並重新設定 addStream 然後傳給對方
+
+重新發起 createOffer
+
+```javascript
+async function handleShareScreen() {
+    try {
+      captureStream = await navigator.mediaDevices.getDisplayMedia({
+        video: true,
+        audio: true,
+      });
+      captureStream.getVideoTracks()[0].onended = () => { // Click on browser UI stop sharing button
+        console.info("ScreenShare has ended");
+        // Switch to camera stream
+        localVideo.current.srcObject = localStream;
+        peerConnection.removeStream(captureStream);
+        peerConnection.addStream(localStream);
+        peerConnection.createOffer().then(sendDescription).catch(errorHandler);
+      };
+    } catch (err) {
+      console.error("Error: " + err);
+    }
+    // Switch to shareScreen stream
+    localVideo.current.srcObject = captureStream;
+    peerConnection.removeStream(localStream);
+    peerConnection.addStream(captureStream);
+    peerConnection.createOffer().then(sendDescription).catch(errorHandler);
+  }
+  
+  function sendDescription(description) {
+    console.log("got description");
+    console.log(description);
+    peerConnection
+      .setLocalDescription(description)
+      .then(function () {
+        serverConnection.send(
+          JSON.stringify({ sdp: peerConnection.localDescription, uuid })
+        );
+      })
+      .catch(errorHandler);
+  }
+```
+
