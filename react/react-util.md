@@ -501,3 +501,68 @@ ICON: [https://material.io/icons/\#ic\_swap\_horiz](https://material.io/icons/#i
 const throttled = useCallback(throttle(newValue => console.log(newValue), 1000), []);
 ```
 
+e.g.
+
+```javascript
+import React, { useState, useCallback } from 'react';
+import classnames from 'classnames';
+// you should import `lodash` as a whole module
+import _ from 'lodash';
+import axios from 'axios';
+
+const ITEMS_API_URL = 'https://example.com/api/items';
+const DEBOUNCE_DELAY = 500;
+
+// the exported component can be either a function or a class
+
+export default function Autocomplete({ onSelectItem }) {
+  const [inputValue, setInputValue] = useState();
+  const [listValues, setListValues] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const initListValue = () => {
+    setListValues([]);
+  }
+  const fetchList = async (value) => {
+    const { data } = await axios.get(`${ITEMS_API_URL}?q=${value}`);
+    return data
+  }
+  const handleInputChange = async (e) => {
+      debounce(e.target.value);
+  }
+  const debounce = useCallback(_.debounce(async newValue => {
+      console.log(newValue)
+      try {
+        setIsLoading(true);
+          initListValue();
+          const value = newValue
+          if(!value) {
+              setIsLoading(false);
+              return 
+          }
+          const data = await fetchList(value);
+          setListValues(data);
+          setIsLoading(false);
+      } catch(err) {
+          console.error(err);
+      } 
+  }, 500), []);
+  return (
+    <div className="wrapper">
+      <div className={classnames("control", isLoading && 'is-loading')}>
+        <input onChange={handleInputChange} type="text" className="input" />
+      </div>
+      {
+          listValues.length > 0 && (
+            <div className="list is-hoverable">
+                {listValues.map(item => (
+                    <a onClick={() => onSelectItem(item)} class="list-item" key={item}>{item}</a>
+                ))}
+            </div>
+          )
+      }
+    </div>
+  );
+}
+
+```
+
