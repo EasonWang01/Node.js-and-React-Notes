@@ -495,3 +495,9 @@ ICON: [https://material.io/icons/\#ic\_swap\_horiz](https://material.io/icons/#i
 
 > 而 [https://github.com/formatjs/react-intl](https://github.com/formatjs/react-intl) 需要且defineMessage與defaultMessage較為繁瑣。
 
+### React hook with lodash Debounce
+
+```javascript
+const throttled = useCallback(throttle(newValue => console.log(newValue), 1000), []);
+```
+
