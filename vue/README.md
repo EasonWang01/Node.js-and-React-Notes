@@ -79,6 +79,8 @@ new Vue({
 this.$refs.input
 ```
 
+> 也可以在 child compoent 加上 ref，之後用 this.$refs 存取到後可改變 child 內的 state 或 call child function
+
 ## 綁定 dom 觸發事件
 
 > v-on:click 可改為 @click

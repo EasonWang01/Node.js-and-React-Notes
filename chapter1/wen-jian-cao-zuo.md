@@ -480,16 +480,16 @@ fs.createReadStream(file.path)
 或是使用
 
 ```javascript
-async function get (req, res) {
-  const fileName = 'model-sample-1.1_new.json';
+  const fileName = 'template.csv';
+  const fileContents = Buffer.from(file);
+
   const readStream = new stream.PassThrough();
-  const file = fs.readFileSync(`${__dirname}/${fileName}`);
-  readStream.end(Buffer.from(file));
+  readStream.end(fileContents);
 
   res.set('Content-disposition', 'attachment; filename=' + fileName);
+  res.set('Content-Type', 'text/plain');
 
-  readStream.pipe(res);
-}
+  readStream.pipe(const);
 ```
 
 在前端部分可以如下下載檔案
