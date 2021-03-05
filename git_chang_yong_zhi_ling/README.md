@@ -598,6 +598,8 @@ git subtree push --prefix build origin1 gh-pages;
 
 ![](../.gitbook/assets/jie-tu-20210305-xia-wu-2.23.34.png)
 
+[https://stackoverflow.com/questions/25409700/using-gitlab-token-to-clone-without-authentication](https://stackoverflow.com/questions/25409700/using-gitlab-token-to-clone-without-authentication)
+
 ## 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
