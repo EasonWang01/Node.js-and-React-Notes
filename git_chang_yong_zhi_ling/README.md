@@ -586,6 +586,18 @@ git add build && git commit -m "Initial dist subtree commit";
 git subtree push --prefix build origin1 gh-pages;
 ```
 
+## 部署的時候使用 access token
+
+假設使用 https 的方式 clone repo，這樣每次部署拉新 code 時都會需要輸入帳號密碼，解決方式為使用 access token
+
+![](../.gitbook/assets/jie-tu-20210305-xia-wu-2.25.40.png)
+
+然後進到 repo 內的 .git/config，修改 url 為 `https://oath2:${access token }...`
+
+ 
+
+![](../.gitbook/assets/jie-tu-20210305-xia-wu-2.23.34.png)
+
 ## 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
