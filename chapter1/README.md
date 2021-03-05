@@ -1,5 +1,17 @@
 # Node.js基本
 
+## 安裝
+
+```text
+# Using Ubuntu
+curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -fsSL https://deb.nodesource.com/setup_12.x | bash -
+apt-get install -y nodejs
+```
+
 ## 1.下載Node.js
 
 使用sublime，atom或任何編輯器創造如下檔案

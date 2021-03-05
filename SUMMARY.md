@@ -109,6 +109,7 @@
     * [相機與圖片庫存取](react-native/ying-ti-cao-zuo/xiang-ji-yu-tu-pian-ku-cun-qu.md)
   * [Async Storage](react-native/async-storage.md)
   * [Animation](react-native/animation.md)
+  * [Admob](react-native/admob.md)
 * [JS 模組化](importexport_module_exports_mo_zu_hua.md)
 * [使用 Webpack](shi-yong-webpack.md)
 * [使用 Babel](babel.md)
