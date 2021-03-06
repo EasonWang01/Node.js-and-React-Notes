@@ -1,19 +1,20 @@
+---
+description: Redux is a predictable state container for JavaScript apps.
+---
+
 # Redux
 
+[https://github.com/reduxjs/redux](https://github.com/reduxjs/redux)
 
-
-## Redux
-
-source code  
 [https://cdnjs.cloudflare.com/ajax/libs/redux/3.3.1/redux.js](https://cdnjs.cloudflare.com/ajax/libs/redux/3.3.1/redux.js)
 
 ## 概念
 
-views點擊=&gt;action =&gt; reducer =&gt; store =&gt;回傳state給views
+view 點擊 =&gt; action =&gt; reducer =&gt; store =&gt; 回傳 state 給 view
 
-1.state統一由store保存，任何更新state都要告知store
+1.state 統一由 store 保存，任何更新 state 都要告知 store
 
-2.讓views得到store中state的方法
+2.讓 views 得到 store 中 state的方法
 
 ```text
 1.使用connect讓最上層元件取得Provider中的store，再用props傳下去
@@ -46,7 +47,6 @@ views點擊=&gt;action =&gt; reducer =&gt; store =&gt;回傳state給views
 
 ```text
  <script>
-
       var store = Redux.createStore(counter)
       var valueEl = document.getElementById('value')
       function render() {
@@ -54,8 +54,7 @@ views點擊=&gt;action =&gt; reducer =&gt; store =&gt;回傳state給views
       }
       render()
       store.subscribe(render)
-
-    </script>
+</script>
 ```
 
 Reducer
@@ -1386,7 +1385,7 @@ const rootReducer = combineReducers({
 
 > 在多人合作中，我們會把reducer每個function放在不同檔案，最後再import到rootReducer來減少多人一起開發功能時的conflict
 
-## 中間件BindActionCreator
+## 中間件 BindActionCreator
 
 將store 的dispatch 包住action 成為function 可直接使用 不用再dispatch\(someaction\)
 
