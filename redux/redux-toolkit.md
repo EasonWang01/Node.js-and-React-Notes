@@ -35,7 +35,7 @@ ReactDOM.render(
 
 2.新增 store
 
-/store/index.js
+`/store/index.js`
 
 ```javascript
 import { configureStore } from '@reduxjs/toolkit';
@@ -53,7 +53,7 @@ export default store;
 
 3.新增 redux-toolkit 版本的簡化 reducer
 
-/store/user.js
+`/store/user.js`
 
 > 這邊記得 `export default slice.reducer` 不是 `slice.reducers`
 
@@ -80,7 +80,7 @@ export const doIncrement = (num) => async dispatch => {
 
 4.從 component 發送 action
 
-app.js
+`App.js`
 
 ```javascript
 import { useDispatch, useSelector } from 'react-redux'
@@ -96,7 +96,17 @@ const App = () => {
   .....省略
 ```
 
+> 如果用 Class component 可以使用 connect 接入 store state 與 dispatch
 
+```javascript
+import { connect } from 'react-redux'
+
+class App extends React.Component {
+  // this.props.dispatch
+  // this.props.user
+}
+export default connect((state) => state)(App);
+```
 
 {% embed url="https://www.softkraft.co/how-to-setup-redux-with-redux-toolkit/" %}
 
