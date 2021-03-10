@@ -36,6 +36,10 @@ where titles.emp_no < 10100
 
 \*\*\*\*[**https://www.itread01.com/content/1542036003.html**](https://www.itread01.com/content/1542036003.html)\*\*\*\*
 
+#### **Cross JOIN**
+
+\*\*\*\*[**https://stackoverflow.com/questions/17759687/cross-join-vs-inner-join-in-sql**](https://stackoverflow.com/questions/17759687/cross-join-vs-inner-join-in-sql)\*\*\*\*
+
 ## 選擇不重複資料
 
 假設我們想查看一個公司包含哪些職位
