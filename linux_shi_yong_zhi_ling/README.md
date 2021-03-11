@@ -419,3 +419,9 @@ brew install hudochenkov/sshpass/sshpass
 sshpass -p my_password ssh m_username@hostname
 ```
 
+### 在本機下遠端指令
+
+```text
+sshpass -p testpass ssh admin@192.168.4.125 "cd testt && git pull origin master && pm2 restart all"
+```
+
