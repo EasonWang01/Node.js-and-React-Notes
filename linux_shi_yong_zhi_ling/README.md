@@ -412,3 +412,10 @@ open --new -a "Google Chrome Canary" --args --proxy-server="socks5://localhost:1
 > -D : socks proxy
 > ```
 
+### SSH 自動輸入密碼
+
+```text
+brew install hudochenkov/sshpass/sshpass
+sshpass -p my_password ssh m_username@hostname
+```
+

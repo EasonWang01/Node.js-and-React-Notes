@@ -13,8 +13,7 @@
 將兩個表合併，並且row只回傳符合on 的資料列
 
 ```text
-select * 
-from titles 
+select * from titles 
 inner join employees 
 on titles.emp_no=employees.emp_no
 where titles.emp_no < 10100
