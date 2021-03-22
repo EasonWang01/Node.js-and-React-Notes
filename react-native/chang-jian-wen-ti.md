@@ -262,6 +262,14 @@ cd android && ./gradlew clean
 
 設定Adapter 2 的網路為 NAT 即可。 ![](/assets/Screen%20Shot%202019-01-03%20at%204.07.16%20PM.png)
 
+4.重置 ios 或 android 專案
+
+```text
+rm -rf ./ios
+yarn add react-native-eject
+npx react-native eject
+```
+
 ## iOS 環境相關
 
 #### Could not find the following native modules

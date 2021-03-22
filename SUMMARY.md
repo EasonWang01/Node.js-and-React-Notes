@@ -71,6 +71,7 @@
   * [Redux sagas](redux/redux-sagas.md)
   * [compose](redux/compose.md)
 * [React Native](react-native/README.md)
+  * [Firebase](react-native/firebase.md)
   * [自動化測試](react-native/zi-dong-hua-ce-shi.md)
   * [Splash screen](react-native/splash-screen.md)
   * [Websocket](react-native/websocket.md)
