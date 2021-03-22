@@ -12,5 +12,7 @@ Firebase 提供推播與 Phone auth 等好用功能。
 
 ![](../.gitbook/assets/jie-tu-20210322-shang-wu-10.01.43.png)
 
-[https://rnfirebase.io/\#configure-firebase-with-ios-credentials](https://rnfirebase.io/#configure-firebase-with-ios-credentials)
+{% embed url="https://rnfirebase.io/\#configure-firebase-with-ios-credentials" %}
+
+> 記得 Googleservice-info.plist 要從 xcode 新增。然後記得 xcode 要最新版本。
 
