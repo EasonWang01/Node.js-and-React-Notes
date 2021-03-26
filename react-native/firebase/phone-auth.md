@@ -10,7 +10,7 @@ description: 每月可以免費寄送 100K 個認證簡訊。
 
 ![](../../.gitbook/assets/jie-tu-20210326-xia-wu-5.45.18.png)
 
-2.加入 [URL scheme](https://stackoverflow.com/questions/61514076/firebase-phone-auth-getting-ios-error-register-custom-url-scheme) 到 info.plist
+2.加入 [URL scheme](https://stackoverflow.com/questions/61514076/firebase-phone-auth-getting-ios-error-register-custom-url-scheme) 到 `info.plist`
 
 > open the GoogleService-Info.plist configuration file, and look for the REVERSED\_CLIENT\_ID key and add to info.plist
 
@@ -103,5 +103,7 @@ export default App;
 
 ```
 
-之後你的手機會收到簡訊
+之後你的手機會收到簡訊。
+
+![](../../.gitbook/assets/jie-tu-20210326-xia-wu-5.54.24.png)
 
