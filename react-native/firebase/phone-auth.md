@@ -1,10 +1,18 @@
+---
+description: 每月可以免費寄送 100K 個認證簡訊。
+---
+
 # Phone Auth
 
 {% embed url="https://rnfirebase.io/auth/phone-auth" %}
 
-記得先去 Firebase console 開啟 phone auth 服務。
+1.記得先去 Firebase console 開啟 phone auth 服務。
 
 ![](../../.gitbook/assets/jie-tu-20210326-xia-wu-5.45.18.png)
+
+2.可以到下方改變簡訊內容與
+
+![](../../.gitbook/assets/jie-tu-20210326-xia-wu-5.46.59.png)
 
 ### 範例：
 
