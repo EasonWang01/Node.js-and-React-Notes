@@ -290,3 +290,9 @@ sudo gem install cocoapods
 
 > 重新 npm 安裝該模組，升級他的版本即可
 
+### Build fail code 65
+
+這時可以去 xcode 查看相關錯誤，或是先更新 xcode。
+
+例如：[https://stackoverflow.com/questions/50718018/xcode-10-error-multiple-commands-produce](https://stackoverflow.com/questions/50718018/xcode-10-error-multiple-commands-produce)
+
