@@ -107,3 +107,9 @@ export default App;
 
 ![](../../.gitbook/assets/jie-tu-20210326-xia-wu-5.54.24.png)
 
+Tip: 另外也可以新增測試用號碼，避免重複發送多次後被暫停使用
+
+![](../../.gitbook/assets/jie-tu-20210326-xia-wu-6.15.22.png)
+
+
+
