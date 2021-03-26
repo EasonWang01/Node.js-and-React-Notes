@@ -4,6 +4,8 @@
 
 記得先去 Firebase console 開啟 phone auth 服務。
 
+![](../../.gitbook/assets/jie-tu-20210326-xia-wu-5.45.18.png)
+
 ### 範例：
 
 ```javascript
