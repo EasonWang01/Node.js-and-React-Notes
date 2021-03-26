@@ -1,5 +1,5 @@
 ---
-description: 每月可以免費寄送 100K 個認證簡訊。
+description: 每月可以免費寄送一萬個認證簡訊。
 ---
 
 # Phone Auth
