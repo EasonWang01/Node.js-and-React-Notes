@@ -10,7 +10,31 @@ description: 每月可以免費寄送 100K 個認證簡訊。
 
 ![](../../.gitbook/assets/jie-tu-20210326-xia-wu-5.45.18.png)
 
-2.可以到下方改變簡訊內容與
+2.加入 [URL scheme](https://stackoverflow.com/questions/61514076/firebase-phone-auth-getting-ios-error-register-custom-url-scheme) 到 info.plist
+
+> open the GoogleService-Info.plist configuration file, and look for the REVERSED\_CLIENT\_ID key and add to info.plist
+
+例如:
+
+```text
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps....-...</string>
+			</array>
+		</dict>
+	</array>
+```
+
+[https://stackoverflow.com/questions/61514076/firebase-phone-auth-getting-ios-error-register-custom-url-scheme](https://stackoverflow.com/questions/61514076/firebase-phone-auth-getting-ios-error-register-custom-url-scheme)
+
+3.可以到下方改變簡訊內容 \(非必要\)
 
 ![](../../.gitbook/assets/jie-tu-20210326-xia-wu-5.46.59.png)
 
