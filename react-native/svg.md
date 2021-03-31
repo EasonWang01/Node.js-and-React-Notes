@@ -21,18 +21,23 @@ const HEIGHT = Dimensions.get('screen').height;
 const Login = () => {
   return (
     <View>
-      <Svg height={HEIGHT} width={WIDTH}>
-        <Path
-          d="M -17.5 378.5 C 87 -6 93 292 259 148 C 617 -105 400 610 524 673 H 0 C 0 644 -66.5 724.5 -27 445 Z" // put your path here
-          fill="#6427d1"
-        />
-      </Svg>
+      <View style={{top: HEIGHT * 0.2}}>
+        <Svg height={HEIGHT} width={WIDTH}>
+          <Path
+            d="M -116 358 C 87 -6 93 292 259 148 C 617 -105 400 610 524 939 H -84 C -155 637 -101 886 -137 447 Z" // put your path here
+            fill="#6427d1"
+          />
+        </Svg>
+      </View>
     </View>
   );
 };
 
 export default Login;
+
 ```
+
+![](../.gitbook/assets/jie-tu-20210331-shang-wu-11.11.31.png)
 
 ## 改路徑
 
