@@ -2,6 +2,8 @@
 
 [https://github.com/oblador/react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 
+在此搜尋圖案：[https://oblador.github.io/react-native-vector-icons/](https://oblador.github.io/react-native-vector-icons/)
+
 ## iOS 安裝
 
 > 記得要 manual 設定，有時 auto linking 會失效
