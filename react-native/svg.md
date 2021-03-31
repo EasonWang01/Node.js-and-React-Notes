@@ -45,13 +45,5 @@ export default Login;
 
 貼到裡面，然後修改後貼回去
 
-{% embed url="https://yqnn.github.io/svg-path-editor/" %}
-
-## 在 SVG 裡面增加元素
-
-記得使用: 
-
-`position: absolute`
-
-`top: ...`
+[https://yqnn.github.io/svg-path-editor/](https://yqnn.github.io/svg-path-editor/)
 

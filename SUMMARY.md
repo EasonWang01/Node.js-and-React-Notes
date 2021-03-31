@@ -71,6 +71,7 @@
   * [Redux sagas](redux/redux-sagas.md)
   * [compose](redux/compose.md)
 * [React Native](react-native/README.md)
+  * [Icon](react-native/icon.md)
   * [SVG](react-native/svg.md)
   * [Firebase](react-native/firebase/README.md)
     * [Phone Auth](react-native/firebase/phone-auth.md)
