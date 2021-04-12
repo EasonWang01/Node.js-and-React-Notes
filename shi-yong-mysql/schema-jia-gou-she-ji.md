@@ -2,7 +2,9 @@
 
 ## 實用工具
 
-[https://my.vertabelo.com/](https://my.vertabelo.com/)
+{% embed url="https://my.vertabelo.com/" %}
+
+> 設計後可以自動產生 schema
 
 ![](../.gitbook/assets/jie-tu-20210412-shang-wu-11.57.32.png)
 
