@@ -1,6 +1,8 @@
 # 簡單範例
 
-## 簡單範例
+## 專案架構可參考：
+
+[https://node-postgres.com/guides/async-express](https://node-postgres.com/guides/async-express)
 
 ## 使用表單post傳送資料
 
