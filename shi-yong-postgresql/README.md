@@ -24,6 +24,7 @@ services:
     ports:
       - 5432:5432
     environment:
+      POSTGRES_USER: superuser
       POSTGRES_PASSWORD: example
 
   adminer:
