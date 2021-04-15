@@ -101,3 +101,20 @@ async function query(exec_query, data, callback) {
 >
 > [https://node-postgres.com/features/pooling](https://node-postgres.com/features/pooling)
 
+現在可以直接
+
+```javascript
+const pool = new Pool()
+pool.query
+```
+
+## 存入 timestamp
+
+```text
+let values = [(Date.now() + 1000 * 60 * 60 * 8) / 1000.0]
+
+然後 query 使用
+
+to_timestamp($1)
+```
+
