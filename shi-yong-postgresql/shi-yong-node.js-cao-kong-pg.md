@@ -129,3 +129,9 @@ create extension earthdistance;
 select (point(-0.1277,51.5073) <@> point(-74.006,40.7144)) as distance;
 ```
 
+[https://stackoverflow.com/a/25140461](https://stackoverflow.com/a/25140461)
+
+![&#x8A18;&#x5F97;&#x4F7F;&#x7528; point &#x985E;&#x578B;](../.gitbook/assets/jie-tu-20210415-xia-wu-3.25.59.png)
+
+
+
