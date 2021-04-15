@@ -361,3 +361,7 @@ const generateRandomUser = () => {
 };
 ```
 
+## 隨機產生圖片
+
+[https://picsum.photos/200/300](https://picsum.photos/200/300)
+
