@@ -346,3 +346,18 @@ setValue(obj, a)
 console.log(obj)
 ```
 
+## 隨機產生人物資料
+
+```javascript
+const generateRandomUser = () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const resp = await axios.get('https://randomuser.me/api/');
+      resolve(resp.data);
+    } catch (err) {
+      reject(err);
+    }
+  });
+};
+```
+
