@@ -26,5 +26,11 @@ ALTER TABLE <Table名稱> ALTER COLUMN <column名稱> SET DEFAULT <預設值>;
 
 或是建表時設定
 
-[https://www.postgresql.org/docs/9.3/static/ddl-default.html](https://www.postgresql.org/docs/9.3/static/ddl-default.html)
+{% embed url="https://www.postgresql.org/docs/9.3/static/ddl-default.html" %}
+
+## 使用變數
+
+可以使用 with as，後面一定要接著 select 語句
+
+[https://stackoverflow.com/a/18010878/4622645](https://stackoverflow.com/a/18010878/4622645)
 
