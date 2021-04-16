@@ -32,5 +32,13 @@ ALTER TABLE <Table名稱> ALTER COLUMN <column名稱> SET DEFAULT <預設值>;
 
 可以使用 with as，後面一定要接著 select 語句
 
-[https://stackoverflow.com/a/18010878/4622645](https://stackoverflow.com/a/18010878/4622645)
+{% embed url="https://stackoverflow.com/a/18010878/4622645" %}
+
+## 計算經緯度的距離
+
+[https://www.postgresql.org/docs/current/earthdistance.html](https://www.postgresql.org/docs/current/earthdistance.html)
+
+完整範例：
+
+[https://stackoverflow.com/questions/67118067/calculating-distance-then-finding-people-within-specific-range-of-given-latitude/67122368\#67122368](https://stackoverflow.com/questions/67118067/calculating-distance-then-finding-people-within-specific-range-of-given-latitude/67122368#67122368)
 
