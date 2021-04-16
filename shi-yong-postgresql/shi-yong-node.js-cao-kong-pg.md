@@ -118,34 +118,5 @@ let values = [(Date.now() + 1000 * 60 * 60 * 8) / 1000.0]
 to_timestamp($1)
 ```
 
-## 地理位置距離計算
-
-```sql
-// 先在 SQL 輸入以下，安裝插件
-create extension cube;
-create extension earthdistance;
-
-// 搜尋範例
-select (point(-0.1277,51.5073) <@> point(-74.006,40.7144)) as distance;
-```
-
-[https://stackoverflow.com/a/25140461](https://stackoverflow.com/a/25140461)
-
-![&#x8A18;&#x5F97;&#x4F7F;&#x7528; point &#x985E;&#x578B;](../.gitbook/assets/jie-tu-20210415-xia-wu-3.25.59.png)
-
-搜尋兩人距離範例：
-
-```sql
-select (
-  point(
-    (select latlng from user_account where first_name = 'Manel')
-  ) 
-<@> 
-  point(
-    (select latlng from user_account where first_name = 'Ben')
-  )
-) as distance
-```
-
 
 

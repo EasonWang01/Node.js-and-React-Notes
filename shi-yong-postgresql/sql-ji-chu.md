@@ -34,9 +34,40 @@ ALTER TABLE <Table名稱> ALTER COLUMN <column名稱> SET DEFAULT <預設值>;
 
 {% embed url="https://stackoverflow.com/a/18010878/4622645" %}
 
-## 計算經緯度的距離
+## 地理位置距離計算
 
-[https://www.postgresql.org/docs/current/earthdistance.html](https://www.postgresql.org/docs/current/earthdistance.html)
+{% embed url="https://www.postgresql.org/docs/current/earthdistance.html" %}
+
+> 也可參考 postGIS [https://postgis.net/](https://postgis.net/)
+
+```sql
+// 先在 SQL 輸入以下，安裝插件
+create extension cube;
+create extension earthdistance;
+
+// 搜尋範例
+select (point(-0.1277,51.5073) <@> point(-74.006,40.7144)) as distance;
+```
+
+[https://stackoverflow.com/a/25140461](https://stackoverflow.com/a/25140461)
+
+![&#x8A18;&#x5F97;&#x4F7F;&#x7528; point &#x985E;&#x578B;](../.gitbook/assets/jie-tu-20210415-xia-wu-3.25.59.png)
+
+搜尋兩人距離範例：
+
+```sql
+select (
+  point(
+    (select latlng from user_account where first_name = 'Manel')
+  ) 
+<@> 
+  point(
+    (select latlng from user_account where first_name = 'Ben')
+  )
+) as distance
+```
+
+## 計算與每個人的經緯度的距離
 
 完整範例：
 
