@@ -236,6 +236,12 @@ project/build.gradle
 cd android && ./gradlew clean
 ```
 
+23.Error type 3 Error: Activity class {} does not exist.
+
+```text
+adb uninstall PACKAGE_NAME
+```
+
 ## 開發相關
 
 ## 1.無法用e.target
