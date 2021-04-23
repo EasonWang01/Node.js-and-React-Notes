@@ -44,6 +44,27 @@ yarn add react-native-iap
 npx react-native run-android --variant=release
 ```
 
+7. 將範例改為自己的 product id
+
+> 在 developer console 輸入什麼 product id 這邊就輸入什麼
+
+```text
+const itemSkus = Platform.select({
+  ios: [
+    'com.cooni.point1000',
+    'com.cooni.point5000',
+  ],
+  android: [
+    'com.yicheng.paper',
+    'android.test.canceled',
+    'android.test.refunded',
+    'android.test.item_unavailable',
+  ],
+});
+```
+
+> 之後即可開啟實體設備測試，通常遇到的問題都是回應 code 5，並且沒有詳細錯誤訊息，個人當時是沒有新增 License account 所導致
+
 #### 其他問題可參考：
 
 {% embed url="https://stackoverflow.com/questions/11068686/this-version-of-the-application-is-not-configured-for-billing-through-google-pla" %}
