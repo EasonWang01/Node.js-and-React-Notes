@@ -73,5 +73,7 @@ const itemSkus = Platform.select({
 
 {% embed url="https://github.com/dooboolab/react-native-iap/issues/1308" %}
 
+#### 如果要切換 inapp purchase account 必須要把手機內的 google 帳號移除
 
+[https://android.stackexchange.com/questions/70215/change-gmail-account-to-make-in-app-purchase](https://android.stackexchange.com/questions/70215/change-gmail-account-to-make-in-app-purchase)
 
