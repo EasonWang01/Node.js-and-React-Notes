@@ -2,7 +2,18 @@
 
 使用此模組：
 
-[https://github.com/dooboolab/react-native-iap/](https://github.com/dooboolab/react-native-iap/blob/master/IapExample/package.json)
+{% embed url="https://github.com/dooboolab/react-native-iap/" %}
+
+> 必須使用真實設備測試
+
+### Android
+
+```text
+1. 連上後選擇檔案傳輸，並在手機設定開啟 USB debug
+2. 電腦 terminal 輸入： adb devices
+3. 執行： npx react-native run-android --variant=release
+4. 移除 app: adb uninstall <app 套件名稱 com 開頭>
+```
 
 官方範例：
 
