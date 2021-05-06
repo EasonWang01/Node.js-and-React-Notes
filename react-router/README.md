@@ -301,6 +301,8 @@ this.props.history.push("/some/Path");
 ### hook 版本
 
 ```javascript
+  import { useHistory } from "react-router-dom";
+  
   let history = useHistory();
 
   function handleClick() {
