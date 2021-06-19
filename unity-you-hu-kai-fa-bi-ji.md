@@ -52,8 +52,9 @@ https://answers.unity.com/questions/412117/do-something-while-key-is-pressed-and
 
 ![](.gitbook/assets/jie-tu-20210619-shang-wu-10.12.04.png)
 
-  
+### UI 字體模糊:
 
+### [http://answers.unity.com/answers/1399750/view.html](http://answers.unity.com/answers/1399750/view.html) 
 
 ### UI 元件 canvas 沒顯示： 
 
