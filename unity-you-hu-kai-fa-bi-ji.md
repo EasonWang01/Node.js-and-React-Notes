@@ -48,3 +48,7 @@ https://answers.unity.com/questions/412117/do-something-while-key-is-pressed-and
 
 > 如果不小心在手機上直接刪除了測試中的 app 可以用 adb 移除套件或是改變 product name 也可以
 
+4. 如果只有改程式碼可以勾選 development build 之後下面會出現 script only build 然後點選 patch and run
+
+![](.gitbook/assets/jie-tu-20210619-shang-wu-10.12.04.png)
+
