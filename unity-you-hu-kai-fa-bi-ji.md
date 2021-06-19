@@ -52,3 +52,32 @@ https://answers.unity.com/questions/412117/do-something-while-key-is-pressed-and
 
 ![](.gitbook/assets/jie-tu-20210619-shang-wu-10.12.04.png)
 
+  
+
+
+### UI 元件 canvas 沒顯示： 
+
+重新到 build setting 選擇 Build and Run 即可。另外可查看是否大小需要調整。
+
+### 重置場景：
+
+```java
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
+
+public class ResetBtn : MonoBehaviour {
+	public Button yourButton;
+
+	void Start () {
+		Button btn = GetComponent<Button>();
+		btn.onClick.AddListener(TaskOnClick);
+	}
+
+	void TaskOnClick(){
+    SceneManager.LoadScene(SceneManager.GetActiveScene().name)
+	}
+}
+```
+
