@@ -71,5 +71,23 @@ select (
 
 完整範例：
 
-[https://stackoverflow.com/questions/67118067/calculating-distance-then-finding-people-within-specific-range-of-given-latitude/67122368\#67122368](https://stackoverflow.com/questions/67118067/calculating-distance-then-finding-people-within-specific-range-of-given-latitude/67122368#67122368)
+{% embed url="https://stackoverflow.com/questions/67118067/calculating-distance-then-finding-people-within-specific-range-of-given-latitude/67122368\#67122368" %}
+
+## DISTINCE 與 ORDER BY 一起使用
+
+```text
+SELECT *
+FROM  (
+    SELECT DISTINCT ON (address_id) *
+    FROM   purchases
+    WHERE  product_id = 1
+    ) p
+ORDER  BY purchased_at DESC;
+```
+
+[https://stackoverflow.com/a/9796104/4622645](https://stackoverflow.com/a/9796104/4622645)
+
+##  使用 TRANSACTION
+
+[https://stackoverflow.com/questions/43351168/node-postgres-transactions-with-callbacks-or-async-await](https://stackoverflow.com/questions/43351168/node-postgres-transactions-with-callbacks-or-async-await)
 

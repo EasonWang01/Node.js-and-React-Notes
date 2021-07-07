@@ -118,7 +118,7 @@ let values = [(Date.now() + 1000 * 60 * 60 * 8) / 1000.0]
 to_timestamp($1)
 ```
 
-## 如果出現 error: syntax error at or near
+## 如果出現 error: syntax error at or near 或是 column \_ not exist
 
- 注意 table 名稱不要取到 SQL 保留字
+ 注意 table 名稱不要取到 SQL 保留字，例如 user 改為 users, order 要改為 orders
 
