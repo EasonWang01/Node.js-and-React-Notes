@@ -1,42 +1,40 @@
 # 新 VPS 安裝流程
 
 ```bash
-
 # Node.js
 
-sudo curl -sL https://deb.nodesource.com/setup_12.x | bash -
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 curl -L https://npmjs.org/install.sh | sudo sh
 sudo chown -R $(whoami) ~/.npm
-npm install yarn -g
+sudo npm install yarn -g
 
 # Docker
 
 sudo apt-get update
+curl -fsSL get.docker.com | CHANNEL=stable sh
 
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common
-
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
-
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/debian \
-   $(lsb_release -cs) \
-   stable"
 
 # Docker compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
 
 # Nginx
 
 sudo apt update && sudo apt install nginx
 sudo systemctl start nginx
 vim /etc/nginx/sites-available/default
+
+(React setting)
+
+location / {
+  root …./build
+  try_files $uri /index.html;
+}
+
 
 # SSL using cloudflare
 
@@ -65,7 +63,7 @@ sudo systemctl status mongod
 mkdir ./db && mkdir ./log
 mongod --dbpath ./db --logpath "./log/mongolog-${date}" &
 
-db.createUser({ user: "admin", pwd: "jason2911", roles: [{ role: "userAdminAnyDatabase", db: "admin" }] })
+db.createUser({ user: "admin", pwd: "...", roles: [{ role: "userAdminAnyDatabase", db: "admin" }] })
 
 // 使用 —auth 重新啟動
 
@@ -79,9 +77,9 @@ db.auth('admin','密碼')  // 登入資料庫使用者
 use sharehandi
 db.createUser(
 {
-user: "yicheng",
-pwd: "密碼",
-roles: [ { role: "readWrite", db: "此資料庫名稱" }]
+  user: "yicheng",
+  pwd: "....",
+  roles: [ { role: "readWrite", db: "此資料庫名稱" }]
 }
 )
 
@@ -89,8 +87,25 @@ roles: [ { role: "readWrite", db: "此資料庫名稱" }]
 
 mongo;
 use sharehandi;
-db.auth('yicheng', '密碼');
-db.sharehandi.insert({"name":"tutorials point"}); # 要新增資料後才算創建 DB
+db.auth( "yicheng", "...")
+
+
+
+server {
+  listen 443; 
+  server_name api.puipi.com;
+  gzip on;
+  ssl on;
+        ssl_certificate /home/yichengww/Web-WebRTC/credentials/cert.pem;
+        ssl_certificate_key /home/yichengww/Web-WebRTC/credentials/key.pem;
+underscores_in_headers on;
+location / {
+limit_req zone=req_zone burst=10 nodelay;
+proxy_pass http://localhost:8443;
+}
+}
+
+
 
 ```
 
