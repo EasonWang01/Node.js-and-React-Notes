@@ -73,7 +73,9 @@ select (
 
 {% embed url="https://stackoverflow.com/questions/67118067/calculating-distance-then-finding-people-within-specific-range-of-given-latitude/67122368\#67122368" %}
 
-## DISTINCE 與 ORDER BY 一起使用
+## DISTINCT 與 ORDER BY 一起使用
+
+> DISTINCT ON 只有 postgres 有， MySQL 要使用 group by，另外 postgres 的 group by 不能單獨選擇特定對象，必須要包含在 select 裡面
 
 ```text
 SELECT *
@@ -86,6 +88,20 @@ ORDER  BY purchased_at DESC;
 ```
 
 [https://stackoverflow.com/a/9796104/4622645](https://stackoverflow.com/a/9796104/4622645)
+
+## DISTINCT ON 並選擇要從重複的選擇哪些
+
+如果 A 有多筆資料，想要 DISTINCT A 中最新的，之後把選出來的 A, B, C 再依照時間排序
+
+```sql
+SELECT *
+    FROM  (
+        SELECT DISTINCT ON (customer_name) *
+        FROM orders
+        ORDER BY customer_name, create_time DESC
+        ) p
+    ORDER BY create_time DESC;
+```
 
 ##  使用 TRANSACTION
 
