@@ -130,5 +130,27 @@ Chrome 是會去找電腦OS內的預設
 
 先用瀏覽器開啟 https 的 URL 然後點選不安全下面的繼續前往，之後該 wss URL 就可以正常使用。
 
+## 瀏覽器安全憑證設定
 
+開發的時候如果我們用自行簽發的憑證有時會被瀏覽器擋住，包含 wss 會出現無法連線。
+
+例如：ERR\_CERT\_AUTHORITY\_INVALID 之錯誤，可以依照以下步驟解決。
+
+1.瀏覽器設定點選右下角管理憑證。
+
+![](../.gitbook/assets/jie-tu-20210811-xia-wu-2.02.40.png)
+
+2.跳出鑰匙圈之後點選憑證，然後把自行簽發的憑證拉到裡面
+
+![](../.gitbook/assets/jie-tu-20210811-xia-wu-2.02.57.png)
+
+![](../.gitbook/assets/jie-tu-20210811-xia-wu-2.02.47.png)
+
+3. 把信任選項改成永遠信任
+
+![](../.gitbook/assets/jie-tu-20210811-xia-wu-2.06.04.png)
+
+4.之後再到瀏覽器上點選繼續前往即可。
+
+![](../.gitbook/assets/jie-tu-20210811-xia-wu-2.03.03.png)
 
