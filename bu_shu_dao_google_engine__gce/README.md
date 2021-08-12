@@ -115,7 +115,7 @@ sudo service apache2 restart
 
 [http://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode](http://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode)
 
-## \#開啟其他PORT
+## 開啟其他PORT
 
 點選左上的選單然後點選網路
 
@@ -129,7 +129,7 @@ sudo service apache2 restart
 
 ![](../.gitbook/assets/ying-mu-kuai-zhao-20170611-shang-wu-10.43.50.png)
 
-## \#gcloud
+## gcloud
 
 VPS內的命令 可以操控VPS
 
@@ -145,9 +145,17 @@ gcloud auth login
 gcloud compute firewall-rules create cassandra-rule --allow="tcp:9042,tcp:9160" --network="default" --description="Allow external Cassandra Thrift/CQL connections"
 ```
 
-#### \#可以方便上傳下載檔案
+#### 可以方便上傳下載檔案
 
 \(點選ssh網頁右上方的齒輪\)
 
 ![](../.gitbook/assets/w3.png)
+
+## 查看收費詳細內容
+
+![](../.gitbook/assets/jie-tu-20210812-xia-wu-5.43.02.png)
+
+## 收費方面的客服
+
+> esupport@google.com
 
