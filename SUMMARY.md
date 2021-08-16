@@ -6,6 +6,7 @@
     * [Yarn](chapter1/shi-yong-npm/yarn.md)
   * [開始Node](chapter1/kai_shi_node.md)
   * [Worker Thread](chapter1/worker-thread.md)
+  * [REPL](chapter1/repl.md)
   * [TCP](chapter1/tcp.md)
   * [path](chapter1/path.md)
   * [Cluster and Child\_process](chapter1/cluster-and-childprocess.md)
