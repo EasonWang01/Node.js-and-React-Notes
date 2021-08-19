@@ -36,7 +36,7 @@ docker ps -a
 輸入
 
 ```text
-docker stats
+docker status
 ```
 
 會顯示類似如下
