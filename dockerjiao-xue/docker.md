@@ -82,7 +82,7 @@ docker exec -it ede59484d5cd bash
 
 可用來保存容器內的資料或是共通資料，named Volume 或 Host Volume。
 
-> 記得使用host volume 時 路徑要用全命 
+> 記得使用host volume 時 路徑要用全名 
 >
 > 之後更改host 或 docker 上 volume資料夾內的檔案後另一端也會跟著改變
 
