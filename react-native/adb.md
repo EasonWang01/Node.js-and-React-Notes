@@ -22,6 +22,12 @@ adb uninstall <套件名稱 com.>
 adb devices
 ```
 
+#### 指定 react native連接設備
+
+```text
+npx react-native run-android --variant=release --deviceId=<設備 ID>
+```
+
 #### 如何開啟 adb
 
 需要先開啟 USB 偵錯 debugging
