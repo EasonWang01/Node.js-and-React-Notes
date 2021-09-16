@@ -98,9 +98,5 @@ test.html
 
 ## 如果是 expressjs server 已經實作了 304 回應![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-07-03%20下午3.30.17.png)
 
-{% embed url="https://stackoverflow.com/a/67929691/4622645" %}
-
-[https://github.com/expressjs/express/blob/508936853a6e311099c9985d4c11a4b1b8f6af07/lib/request.js](https://github.com/expressjs/express/blob/508936853a6e311099c9985d4c11a4b1b8f6af07/lib/request.js)
-
 ![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-07-03%20下午3.31.07.png)
 

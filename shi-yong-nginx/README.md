@@ -1,9 +1,5 @@
 # 使用nginx
 
-
-
-使用nginx
-
 可參考此篇安裝
 
 [http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/](http://blog.hellojcc.tw/2015/12/07/nginx-beginner-tutorial/)
@@ -28,7 +24,12 @@ var/www/html
 
 ### nginx的config 檔案路徑
 
+會先經過 nginx.conf 之後才會去 sites-available/default
+
+[https://stackoverflow.com/a/43644053/4622645](https://stackoverflow.com/a/43644053/4622645)
+
 ```text
+/etc/nginx/nginx.conf 
 /etc/nginx/sites-available/default
 ```
 
