@@ -278,6 +278,12 @@ server {
 
 > 記得root不可寫`~`
 
+## 配置優化
+
+優化 production 部署的 server 效率
+
+[https://imququ.com/post/my-nginx-conf-for-wpo.html](https://imququ.com/post/my-nginx-conf-for-wpo.html)
+
 ## 注意事項
 
 **1.有時如果以下指令出現"nginx.pid" failed**

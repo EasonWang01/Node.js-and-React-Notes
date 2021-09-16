@@ -15,6 +15,8 @@
 4. 移除 app: adb uninstall <app 套件名稱 com 開頭>
 ```
 
+> 安裝完 release 版本後下次要安裝 dev 版本必須先移除 release 版本
+
 官方範例：
 
 {% embed url="https://github.com/dooboolab/react-native-iap/blob/master/IapExample/" %}

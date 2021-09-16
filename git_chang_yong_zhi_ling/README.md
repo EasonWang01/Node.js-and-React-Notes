@@ -600,6 +600,28 @@ git add build && git commit -m "Initial dist subtree commit";
 git subtree push --prefix build origin1 gh-pages;
 ```
 
+## Git tag
+
+當發佈新的 Release 時可以新增 tag
+
+```text
+git tag <要取名的版本號碼>
+```
+
+列出所有版本
+
+```text
+git tag -l
+```
+
+推送本地標籤到遠端
+
+```text
+git push origin <取名的版本號碼>
+```
+
+![](../.gitbook/assets/jie-tu-20210916-xia-wu-6.14.06.png)
+
 ## 部署的時候使用 access token
 
 假設使用 https 的方式 clone repo，這樣每次部署拉新 code 時都會需要輸入帳號密碼，解決方式為使用 access token

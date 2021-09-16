@@ -275,6 +275,22 @@ admin.messaging().send(message)
 
 > 如果關閉 app 後沒有跳通知可以把後端送的 notification payload 移除，或是不使用 setBackgroundMessageHandler 直接只加上 後端送的 notification payload 也會觸發背景與關閉 app 後的通知。
 
+```javascript
+.sendToDevice(device_token, {
+   data: {
+     from_person,
+     content,
+     timestamp: Date.now().toString(),
+   },
+   // notification: { // 如果有這個的話前端一定會接到 push notification，
+   // 所以如果要手動控制是否開啟，必須移除此處，並且在前端加上 setBackgroundMessageHandler
+   //   title: from_person, 
+   //   body: content,
+   //   icon: 'ic_notification',
+   // },
+})
+```
+
 [https://rnfirebase.io/messaging/usage\#background--quit-state-messages](https://rnfirebase.io/messaging/usage#background--quit-state-messages)
 
 在最外層 index.js 加上如下即可

@@ -4,6 +4,8 @@
 
 在此搜尋圖案：[https://oblador.github.io/react-native-vector-icons/](https://oblador.github.io/react-native-vector-icons/)
 
+> Native base icon 要搜尋 Ionicons
+
 ## iOS 安裝
 
 > 記得要 manual 設定，有時 auto linking 會失效
