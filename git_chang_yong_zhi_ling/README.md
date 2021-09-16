@@ -305,6 +305,8 @@ git reset --hard ORIG_HEAD  //返回reset前的內容
 
 可以看到詳細的操作記錄， reset hard 後也可復原\(除了還沒 commit 的紀錄\)
 
+> 只會存在本地 local
+
 ## 移除 reflog 內的紀錄
 
 ```text
