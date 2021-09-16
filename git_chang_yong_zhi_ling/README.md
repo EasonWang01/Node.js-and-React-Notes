@@ -301,6 +301,16 @@ git reset --hard ORIG_HEAD  //返回reset前的內容
 
 或是可用 git reflog 查看之前的git 記錄，然後用 `git reset --hard HEAD@{n}`
 
+## Git Reflog
+
+可以看到詳細的操作記錄， reset hard 後也可復原\(除了還沒 commit 的紀錄\)
+
+## 移除 reflog 內的紀錄
+
+```text
+git reflog delete HEAD@{2} // 後面數字可改變
+```
+
 ## ORIG\_HEAD
 
 記錄操作的前一個狀態，例如想回到 rebase 或  reset --hard 之前都可以用

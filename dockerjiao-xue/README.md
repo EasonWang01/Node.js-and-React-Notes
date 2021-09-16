@@ -182,9 +182,3 @@ docker push yourhubusername/repositoryName
 
 [https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html](https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html)
 
-## 減少 Build 後 Image 檔案大小
-
-使用 multistage build
-
-[https://docs.docker.com/develop/develop-images/multistage-build/](https://docs.docker.com/develop/develop-images/multistage-build/)
-
