@@ -20,3 +20,15 @@ app.get('/user/:id', function (req, res, next) {
 });
 ```
 
+## 增加 Request logger
+
+```javascript
+const logger = require('morgan');
+const fs = require('fs');
+
+logger.token('body', (req) => {
+  return JSON.stringify(req.body)
+})
+app.use(logger(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :body', {stream: fs.createWriteStream('./access.log', {flags: 'a'})}))
+```
+
