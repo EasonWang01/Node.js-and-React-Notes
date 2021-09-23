@@ -32,5 +32,7 @@ SSL pinning: 將服務器的公鑰進行 sha256 雜湊與 base64 encoding 後產
 
 #### 其他資料
 
-[https://github.com/joeferner/node-http-mitm-proxy](https://github.com/joeferner/node-http-mitm-proxy)
+{% embed url="https://github.com/joeferner/node-http-mitm-proxy" %}
+
+[https://zhuanlan.zhihu.com/p/43789231](https://zhuanlan.zhihu.com/p/43789231)
 
