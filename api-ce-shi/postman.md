@@ -20,6 +20,8 @@
 
 5. 創建環境變數
 
+> collection export 時環境變數需要另外單獨 export，並且在同個 workplace 都會共用環境變數。
+
 之後可以使用 {{變數名稱}} 來快速切換 
 
 ![](../.gitbook/assets/jie-tu-20210923-shang-wu-11.27.18.png)
