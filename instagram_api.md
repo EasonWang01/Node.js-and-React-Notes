@@ -236,7 +236,7 @@ function https_request(path, querystring) {
   })  
 }  
 
-https_request('yicheng71248', '?__a=1').then(data => {
+https_request('test001', '?__a=1').then(data => {
   userID = JSON.parse(data).graphql.user.id
   userArticleCount = JSON.parse(data).graphql.user.edge_owner_to_timeline_media.count
 }).then(() => {
