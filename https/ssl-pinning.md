@@ -1,7 +1,7 @@
 ---
 description: >-
   簡單說就是：一般的瀏覽器與手機會信任被機構簽發的證書，因為預設手機就存了一百多個， 所以 root certificate，許多家發的都會信任。
-  所以如果有個 proxy server 做 MITM 就很容易讀取封包。而 SSL pinning 將證書或公鑰加密後寫在應用程式，當server
+  所以如果有個 proxy server 做 MITM 就很容易讀取封包。而 SSL pinning 將證書或公鑰 ha後寫在應用程式，當server
   要把公鑰傳給 app 端時會因為該公鑰無法產生跟一開始寫在 app 時的 hash 相同，於是拒絕連線。
 ---
 
