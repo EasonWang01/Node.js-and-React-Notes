@@ -18,7 +18,7 @@ npm install pg --save
 >
 > [https://node-postgres.com/features/pooling](https://node-postgres.com/features/pooling)
 
-### 這邊預設 Pool connection 數量只有 10
+### 這邊預設 Pool connection 數量預設只有 10
 
 建議修改增大，不然一次發出許多 query 會被中斷，並且 server 無法與 DB 連線，並且沒有顯示錯誤訊息。
 
