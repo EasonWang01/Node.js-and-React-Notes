@@ -1,12 +1,10 @@
 # React hook
 
-
-
 ## React hook 教學
 
-可以讓functional component也擁有 ref, state, 生命週期等方法。
+可以讓 functional component 也擁有 ref, state, 生命週期等方法。
 
-### State
+### 1. useState
 
 > 1.set state 會進行淺比較，如果兩次傳入的參數相同則不會進行 re-render
 >
@@ -42,7 +40,9 @@ setStudyListOpen({ ...studyListOpen, [id]: !studyListOpen[id] || false });
 setArray([...arr, {obj}])
 ```
 
-### ComponentDidMount
+### 2. useEffect
+
+當第二個參數的 array 中有 state 改變時會觸發 useEffect 內的 function，為異步的
 
 ```javascript
 import React, { useEffect } from 'react';
@@ -68,7 +68,9 @@ function Example() {
 >
 > [https://reactjs.org/docs/hooks-reference.html\#conditionally-firing-an-effect](https://reactjs.org/docs/hooks-reference.html#conditionally-firing-an-effect)
 
-### ComponentWillMount
+### 3. UseLayoutEffect
+
+為同步的，在 dom 更新後但在畫面渲染前觸發，會比 useEffect 早觸發。
 
 [https://reactjs.org/docs/hooks-reference.html\#uselayouteffect](https://reactjs.org/docs/hooks-reference.html#uselayouteffect)
 
@@ -78,7 +80,7 @@ useLayoutEffect(()=> {
 },[]);
 ```
 
-### Ref
+### 4. Ref
 
 > ref 除了可用來存取元素外，另一個好處是可以用來存值，並且每次 re-render 後會保存，並且使用 ref.current 後改變值並不會造成 re-render
 
@@ -98,16 +100,16 @@ export default Map;
 
 > 之後用`mapEle.current` 即可存取
 
-**Memo**
+### **5. Memo**
 
 memo只能用在stateless component
 
-功能類似pure component
+功能類似 pure component
 
-> 當父元素重新 render 時子元素預設都會重新渲染，所以可以使用 memo 來讓子元件監測到只有 prop 改變時才重新渲染（以前的做法是用 shouldComponentUpdate）
+> 當父元素重新 render 時子元素預設都會重新渲染，所以可以使用 memo 來讓子元件監測到只有 prop 改變時才重新渲染（以前的做法是用 shouldComponentUpdate）一般為淺比較，
 
 ```javascript
-import React,{ memo } from 'react';
+import React, { memo } from 'react';
 
  const Test = memo(function Son(props){
     return (
@@ -117,9 +119,11 @@ import React,{ memo } from 'react';
 export default Test;
 ```
 
+可以傳入第二個參數，用來做深比較，第二個參數如果回傳為 true 則不會 re-render
 
+![](../.gitbook/assets/jie-tu-20211004-shang-wu-11.34.43.png)
 
-### forwardRef, useImperativeHandle
+### 6.forwardRef, useImperativeHandle
 
 用來將子元件的方法傳給父元件
 
@@ -164,8 +168,9 @@ const Parent = () => {
 [https://github.com/facebook/react/issues/15156](https://github.com/facebook/react/issues/15156)
 
 1. 父元件的狀態被改變了，但是傳給子元件 props 的沒有變，子元件仍然會被重新渲染，所以要用 React.memo
-2. 但假設使用了 React.memo 如果傳入的 prop 是 function 或 object 還是會重新渲染，所以可以在該prop 包成 useCallback 或 UseMemo
+2. 但假設使用了 React.memo 如果傳入的 prop 是 function 或 object 還是會重新渲染，所以可以在該 prop 包成 useCallback 或 UseMemo
 3. 如果傳入的 prop 是 function 就在父層用 useCallback，如果傳入 prop 是 Object 就用 useMemo
+4. useCallback 回傳 function、UseMemo 回傳 value
 
 [https://medium.com/starbugs/react-%E9%97%9C%E6%96%BC-component-%E6%95%88%E8%83%BD%E5%84%AA%E5%8C%96%E7%9A%84%E9%82%A3%E4%BB%B6%E5%B0%8F%E4%BA%8B-68e6e5ecc4d6](https://medium.com/starbugs/react-%E9%97%9C%E6%96%BC-component-%E6%95%88%E8%83%BD%E5%84%AA%E5%8C%96%E7%9A%84%E9%82%A3%E4%BB%B6%E5%B0%8F%E4%BA%8B-68e6e5ecc4d6)
 
