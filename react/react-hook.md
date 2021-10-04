@@ -8,6 +8,8 @@
 
 ### State
 
+> set state 會進行淺比較，如果兩次傳入的參數相同則不會進行 re-render
+
 ```javascript
 import React, { useState } from 'react';
 
