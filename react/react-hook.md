@@ -8,7 +8,9 @@
 
 ### State
 
-> set state 會進行淺比較，如果兩次傳入的參數相同則不會進行 re-render
+> 1.set state 會進行淺比較，如果兩次傳入的參數相同則不會進行 re-render
+>
+> 2. re-render 時不會使 state 重置，包含子組建的 state 也會保持狀態
 
 ```javascript
 import React, { useState } from 'react';
@@ -77,6 +79,8 @@ useLayoutEffect(()=> {
 ```
 
 ### Ref
+
+> ref 除了可用來存取元素外，另一個好處是可以用來存值，並且每次 re-render 後會保存，並且使用 ref.current 後改變值並不會造成 re-render
 
 ```javascript
 import React, { useState, useEffect, useRef } from 'react';
