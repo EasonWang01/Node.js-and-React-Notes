@@ -104,6 +104,8 @@ memo只能用在stateless component
 
 功能類似pure component
 
+> 當父元素重新 render 時子元素預設都會重新渲染，所以可以使用 memo 來讓子元件監測到只有 prop 改變時才重新渲染（以前的做法是用 shouldComponentUpdate）
+
 ```javascript
 import React,{ memo } from 'react';
 
