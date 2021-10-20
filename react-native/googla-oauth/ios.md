@@ -6,11 +6,11 @@
 
 1.加上 firebase 程式，然後跟著步驟
 
-![](../../.gitbook/assets/jie-tu-20201109-xia-wu-5.49.50.png)
+![](<../../.gitbook/assets/截圖 2020-11-09 下午5.49.50.png>)
 
-2.  podFile 加上
+2\.  podFile 加上
 
-```text
+```
 pod 'Firebase/Analytics'
 pod 'GoogleSignIn', '~> 5.0.2'
 ```
@@ -19,13 +19,13 @@ pod 'GoogleSignIn', '~> 5.0.2'
 
 3.修改 xcode
 
-![](../../.gitbook/assets/jie-tu-20201109-xia-wu-6.06.33.png)
+![](<../../.gitbook/assets/截圖 2020-11-09 下午6.06.33.png>)
 
-![](../../.gitbook/assets/jie-tu-20201109-xia-wu-6.06.38.png)
+![](<../../.gitbook/assets/截圖 2020-11-09 下午6.06.38.png>)
 
 4.修改 AppDelegate.m
 
-```text
+```
 // AppDelegate.m
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options {
   return [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url options:options] || [RNGoogleSignin application:application openURL:url options:options];
@@ -44,4 +44,3 @@ GoogleSignin.configure({
 // <key>CLIENT_ID</key>
 // <string>.....</string>
 ```
-

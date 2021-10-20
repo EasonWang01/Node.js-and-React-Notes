@@ -2,14 +2,14 @@
 
 
 
-## \#1.操作Mongo的Array
+## #1.操作Mongo的Array
 
-[https://docs.mongodb.com/manual/reference/operator/update/pull/\#up.\_S\_pull](https://docs.mongodb.com/manual/reference/operator/update/pull/#up._S_pull)
+[https://docs.mongodb.com/manual/reference/operator/update/pull/#up.\_S\_pull](https://docs.mongodb.com/manual/reference/operator/update/pull/#up.\_S\_pull)
 
-Ex: 以下可把rating\_my Array中的item物件中的\_id與req.body.item.\_id  
+Ex: 以下可把rating\_my Array中的item物件中的\_id與req.body.item.\_id\
 值相同的所有欄位移除
 
-```text
+```
     User.update({_id: req.token.data._id}, {$pull: {  //先把舊的移除
       rating_my: {
         "item._id": req.body.item._id
@@ -17,11 +17,11 @@ Ex: 以下可把rating\_my Array中的item物件中的\_id與req.body.item.\_id
     }})
 ```
 
-## \#2.分頁快速query
+## #2.分頁快速query
 
 [http://stackoverflow.com/questions/7228169/slow-pagination-over-tons-of-records-in-mongo](http://stackoverflow.com/questions/7228169/slow-pagination-over-tons-of-records-in-mongo)
 
-## \#3.使用Geo search
+## #3.使用Geo search
 
 [https://docs.mongodb.com/manual/reference/operator/query-geospatial/](https://docs.mongodb.com/manual/reference/operator/query-geospatial/)
 
@@ -29,7 +29,7 @@ Ex: 以下可把rating\_my Array中的item物件中的\_id與req.body.item.\_id
 
 1.先在schema建立index
 
-```text
+```
 var c = new mongoose.Schema({
     status: String,   //物品承租階段狀態 eg,尋租中,已出租,已還租
     rented: Boolean, //是否已出租
@@ -51,12 +51,12 @@ c.index({geometry: '2dsphere'});
 exports.Test = mongoose.model('test', c)
 ```
 
-建立後可以查看到index  
-![](/assets/螢幕快照%202017-05-11%20下午5.44.50.png)
+建立後可以查看到index\
+
 
 2.之後即可搜尋
 
-```text
+```
     Test.find({geometry:
       { $near :
         {
@@ -77,7 +77,7 @@ exports.Test = mongoose.model('test', c)
 
 3.另外要記得coordinates 是先放Longitude才放Latitude,跟一般google地圖相反
 
-```text
+```
 $minDistance: 0,
 $maxDistance: 50
 ```
@@ -88,7 +88,7 @@ $maxDistance: 50
 
 新增欄位的意思為在每個document新增一筆資料。
 
-```text
+```
 db.your_collection.update(
   {},
   { $set: {"new_field": 1} },
@@ -99,7 +99,7 @@ db.your_collection.update(
 
 後面兩個參數分別為：
 
-```text
+```
 Upsert: If set to true, creates a new document when no document matches the query criteria.
 
 Multi: If set to true, updates multiple documents that meet the query criteria. If set to false, updates one document.
@@ -109,10 +109,9 @@ Multi: If set to true, updates multiple documents that meet the query criteria. 
 
 ## 5.刪除 DB 資料
 
-```text
+```
 use DB名稱
 db.dropDatabase();
 ```
 
 > 不會刪除 DB內的 USER
-

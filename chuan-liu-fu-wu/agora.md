@@ -6,13 +6,13 @@ description: 一個提供第三方串流服務的供應商
 
 ### 文件：
 
-[https://docs.agora.io/](https://docs.agora.io/)
+[https://docs.agora.io/](https://docs.agora.io)
 
 ### 收費方式：
 
-[https://docs.agora.io/cn/Video/billing\_rtc?platform=All%20Platforms](https://docs.agora.io/cn/Video/billing_rtc?platform=All%20Platforms)
+[https://docs.agora.io/cn/Video/billing\_rtc?platform=All%20Platforms](https://docs.agora.io/cn/Video/billing\_rtc?platform=All%20Platforms)
 
-### Web API: 
+### Web API:&#x20;
 
 [https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html)
 
@@ -22,7 +22,7 @@ description: 一個提供第三方串流服務的供應商
 
 建立帳戶後去取得相關開發金鑰：
 
-![](../.gitbook/assets/jie-tu-20201027-xia-wu-3.04.43.png)
+![](<../.gitbook/assets/截圖 2020-10-27 下午3.04.43.png>)
 
 簡單一對一視訊範例：
 
@@ -303,9 +303,8 @@ export default App;
 
 ## 常見問題：
 
-目前 3.2 SDK 版本如果有給 streamID\(UID\) 則其他 client 也要給，不然會無法與對方連線到。
+目前 3.2 SDK 版本如果有給 streamID(UID) 則其他 client 也要給，不然會無法與對方連線到。
 
 如果都沒輸入則可以連線（自動隨機產生 ID）
 
-[https://docs.agora.io/en/faq/string\#introduction](https://docs.agora.io/en/faq/string#introduction)
-
+[https://docs.agora.io/en/faq/string#introduction](https://docs.agora.io/en/faq/string#introduction)

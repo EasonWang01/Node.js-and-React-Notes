@@ -18,9 +18,7 @@ Server可使用此模組
 
 ## 加密方法：ES256、HS256等
 
-專門給JSON Web Algorithms \(JWA\) 所使用。
-
-![](/assets/Screen%20Shot%202018-10-05%20at%2011.10.04%20AM.png)
+專門給JSON Web Algorithms (JWA) 所使用。
 
 [http://self-issued.info/docs/draft-ietf-jose-json-web-algorithms-00.html](http://self-issued.info/docs/draft-ietf-jose-json-web-algorithms-00.html)
 
@@ -40,7 +38,7 @@ Server可使用此模組
 
 ## JWT 的內容是沒有加密的
 
-只有單純用 base64URL 編碼，最後面的字段才是加密過的，但只是用來驗證，包含 encode 時的 secret 
+只有單純用 base64URL 編碼，最後面的字段才是加密過的，但只是用來驗證，包含 encode 時的 secret&#x20;
 
 可以用如下解析 token：
 
@@ -54,4 +52,3 @@ Server可使用此模組
             return JSON.parse(jsonPayload);
         };
 ```
-

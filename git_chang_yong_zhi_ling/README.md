@@ -4,25 +4,25 @@
 
 #### GUI
 
-```text
+```
 gitk --all
 ```
 
 or
 
-```text
+```
 npm install ungit -g
 ```
 
 #### 查看特定檔案的修改紀錄
 
-```text
+```
 gitk --follow [filename]
 ```
 
 #### 取消git add .
 
-```text
+```
 git reset
 ```
 
@@ -30,7 +30,7 @@ git reset
 
 > 記得該分支不可是Default branch
 
-```text
+```
 git push origin :the_remote_branch
 或是
 git push origin --delete the_remote_branch
@@ -38,13 +38,13 @@ git push origin --delete the_remote_branch
 
 #### 移除本地分支
 
-```text
+```
 git branch -D <分支名稱>
 ```
 
-#### 移除遠端的目錄\(不包含本地\)
+#### 移除遠端的目錄(不包含本地)
 
-```text
+```
 git rm -r --cached FolderName
 git commit -m "Removed folder from repository"
 git push origin master
@@ -52,7 +52,7 @@ git push origin master
 
 #### 將一個分支的所有內容推送到另一分支
 
-```text
+```
 git push origin <原分枝>:<新增之分枝>
 ```
 
@@ -60,7 +60,7 @@ git push origin <原分枝>:<新增之分枝>
 
 可使用`git pull origin master --allow-unrelated-histories`
 
-```text
+```
 $git pull
 
 fatal: refusing to merge unrelated histories
@@ -83,15 +83,15 @@ ok
 
 ### 移除遠端上一次的push
 
-\(但記得這樣會直接退回到你上次的HEAD^ 如果你還沒pull則會把別人的push一起移除\)
+(但記得這樣會直接退回到你上次的HEAD^ 如果你還沒pull則會把別人的push一起移除)
 
-```text
+```
 git push -f origin HEAD^:master
 ```
 
 或是使用以下，然後把commit註解掉
 
-```text
+```
 git rebase -i HEAD~2
 ```
 
@@ -99,7 +99,7 @@ git rebase -i HEAD~2
 
 ### 取消上次commit且維持檔案內容
 
-```text
+```
 git reset HEAD~
 ```
 
@@ -107,13 +107,13 @@ git reset HEAD~
 
 ### 回到上次commit的檔案狀態，刪除檔案內容
 
-```text
+```
 git reset --hard HEAD~1
 ```
 
 ### 回到上次commit檔案狀態，刪除檔案內容，但把檔案內容先儲存
 
-```text
+```
 git stash
 git stash list //列出曾經stash過的東西
 git stash pop //把最近的stash套用 並從list刪除
@@ -122,13 +122,13 @@ git stash clear // 清空stash list
 
 說明：你會發現跟reset hard類似，但他會把你的改變先儲存，之後可用`$ git stash apply`回復
 
-[https://git-scm.com/book/zh-tw/v1/Git-工具-儲藏-Stashing](https://git-scm.com/book/zh-tw/v1/Git-工具-儲藏-Stashing)
+[https://git-scm.com/book/zh-tw/v1/Git-工具-儲藏-Stashing](https://git-scm.com/book/zh-tw/v1/Git-%E5%B7%A5%E5%85%B7-%E5%84%B2%E8%97%8F-Stashing)
 
 > 有關Bitbucket因為會在url產生一個隨機hash，所以每次push上去後重新整理看不到更新，必須重新進入repo一次才看得到更新，但github重新整理即可看到
 
 ### 把別人遠端新開的分支fetch到你的電腦
 
-```text
+```
 git fetch
 git checkout 分支名稱
 ```
@@ -139,7 +139,7 @@ git checkout 分支名稱
 >
 > 只要使用git pull --rebase即可解決
 
-```text
+```
 git:(feature/branch) git pull --rebase origin master
 git:(feature/branch) 修改衝突
 git:(feature/branch) git add .
@@ -153,13 +153,13 @@ git:(feature/branch) git push origin <feature/branch> -f
 
 ## 使用 Git rebase 來 squash commit
 
-```text
+```
 git rebase -i <feature 第一個commit之前的前一個 commit>
 ```
 
 當合併分枝時想乾淨一點，可以用squash
 
-```text
+```
 pick 2bab3e7 test1
 squash 27f6ed6 test2
 // 例如此例 27f6ed6 會合併進去 2bab3e7
@@ -173,11 +173,11 @@ squash 27f6ed6 test2
 
 這時通常是因為我們使用 rebase -i 指定的 commit 是第一個 commit。這時可改用
 
-```text
+```
 git rebase -i --root
 ```
 
-![](../.gitbook/assets/jie-tu-20210104-shang-wu-10.08.36.png)
+![](<../.gitbook/assets/截圖 2021-01-04 上午10.08.36.png>)
 
 之後會把 fixup 或 squash 的都合併到前面一個 pick 的 commit，越上面的越前面。
 
@@ -201,7 +201,7 @@ git pull origin master --rebase
 
 或是可以之後輸入
 
-```text
+```
  git submodule init
  git submodule update
 ```
@@ -210,7 +210,7 @@ git pull origin master --rebase
 
 可以單獨推送某個資料夾下的內容到專案分支
 
-```text
+```
 git subtree push --prefix dist origin gh-pages
 ```
 
@@ -218,7 +218,7 @@ git subtree push --prefix dist origin gh-pages
 
 ## 修改上一次commit 的說明
 
-```text
+```
 git commit --amend
 ```
 
@@ -226,13 +226,13 @@ git commit --amend
 
 [https://help.github.com/articles/changing-a-commit-message/](https://help.github.com/articles/changing-a-commit-message/)
 
-[https://git-scm.com/book/zh-tw/v1/Git-工具-重寫歷史](https://git-scm.com/book/zh-tw/v1/Git-工具-重寫歷史)
+[https://git-scm.com/book/zh-tw/v1/Git-工具-重寫歷史](https://git-scm.com/book/zh-tw/v1/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E5%AF%AB%E6%AD%B7%E5%8F%B2)
 
-```text
+```
 git rebase -i HEAD~3
 ```
 
-```text
+```
 //之後會進入vim如下
 
 pick e499d89 Delete CNAME
@@ -244,15 +244,15 @@ reword f7fde4a Change the commit message but push the same commit.
 
 ## 移除以前的commit
 
-```text
+```
 git rebase -i HEAD~4
 ```
 
-```text
+```
 之後會產生列表，把你不要的移除或註解掉即可，如下。
 ```
 
-```text
+```
 pick 2f05aba ... #will be preserved
 #pick 3371cec ... #will be deleted
 #pick daed25c ... #will be deleted
@@ -263,7 +263,7 @@ pick e2b2a84 ... #will be preserved
 
 > 如果要更改遠端Repo必須要Force Push
 >
-> 如果要移除最後一次commit 則至少要到HEAD~2 `git rebase -i HEAD~2` 然後把最後一次commit註解掉
+> 如果要移除最後一次commit 則至少要到HEAD\~2 `git rebase -i HEAD~2` 然後把最後一次commit註解掉
 
 ## 重置歷史commit
 
@@ -271,13 +271,13 @@ pick e2b2a84 ... #will be preserved
 
 先checkout新的orphan branch
 
-```text
+```
 git checkout --orphan mainsource01
 ```
 
 然後移除舊的branch
 
-```text
+```
 git push origin --delete mainsource -f
 ```
 
@@ -291,7 +291,7 @@ git push origin --delete mainsource -f
 
 ## Git Reset
 
-```text
+```
 // 把之前的commit紀錄刪除 並且倒回為之前檔案狀態
 
 git reset --hard HEAD^  //HEAD^指的是前一次  HEAD^^前兩次  以此類推
@@ -305,13 +305,13 @@ git reset --hard ORIG_HEAD  //返回reset前的內容
 
 [https://git-scm.com/docs/git-reflog](https://git-scm.com/docs/git-reflog)
 
-可以看到詳細的操作記錄， reset hard 後也可復原\(除了還沒 commit 的紀錄\)
+可以看到詳細的操作記錄， reset hard 後也可復原(除了還沒 commit 的紀錄)
 
-> 只會存在本地 local
+> 只會存在本地 local&#x20;
 
 ## 移除 reflog 內的紀錄
 
-```text
+```
 git reflog delete HEAD@{2} // 後面數字可改變
 ```
 
@@ -319,7 +319,7 @@ git reflog delete HEAD@{2} // 後面數字可改變
 
 記錄操作的前一個狀態，例如想回到 rebase 或  reset --hard 之前都可以用
 
-```text
+```
 git reset ORIG_HEAD --hard
 ```
 
@@ -327,19 +327,19 @@ git reset ORIG_HEAD --hard
 
 把以前的commit檔案內容加入到現在的內容
 
-```text
+```
 git cherry-pick <sha1 hash>
 ```
 
 一次pick多個commit
 
-[https://stackoverflow.com/questions/1994463/how-to-cherry-pick-a-range-of-commits-and-merge-into-another-branch/1994491\#1994491](https://stackoverflow.com/questions/1994463/how-to-cherry-pick-a-range-of-commits-and-merge-into-another-branch/1994491#1994491)
+[https://stackoverflow.com/questions/1994463/how-to-cherry-pick-a-range-of-commits-and-merge-into-another-branch/1994491#1994491](https://stackoverflow.com/questions/1994463/how-to-cherry-pick-a-range-of-commits-and-merge-into-another-branch/1994491#1994491)
 
 ## Git revert
 
 可以返回上一次的提交 並且需要commit一次
 
-```text
+```
 git revert HEAD //返回至上一次的提交  並且commit
 ```
 
@@ -351,7 +351,7 @@ revert 用來取消以前的Commit，取消後會產生出新的commit，可參�
 
 讓merge後 ，圖表不顯示分支紀錄，並且可用來移除以前的Commit。
 
-```text
+```
 // 加上 -i 為進入互動式模式
 
 git rebase master
@@ -362,9 +362,9 @@ git rebase --continue
 
 > 查看每行code是誰commit的
 
-## Git format-patch\(打包以前的commit\)
+## Git format-patch(打包以前的commit)
 
-```text
+```
 因為merge以前的commit通常會認為歷史一樣 所以要用別的方法
 可用cherry-pick或是format-patch打包舊的commit再apply(am)
 ```
@@ -375,17 +375,17 @@ git rebase --continue
 
 只把特定深度數字內的commit一起clone到本地
 
-```text
+```
 使用git clone --depth <深度 num> <url>
 ```
 
 [https://www.perforce.com/blog/git-beyond-basics-using-shallow-clones](https://www.perforce.com/blog/git-beyond-basics-using-shallow-clones)
 
-## 假設最新的不再master branch 在其他HEAD\(ex: bc50ed4\)但想把master更新為bc50ed4
+## 假設最新的不再master branch 在其他HEAD(ex: bc50ed4)但想把master更新為bc50ed4
 
 [https://stackoverflow.com/questions/2763006/make-the-current-git-branch-a-master-branch](https://stackoverflow.com/questions/2763006/make-the-current-git-branch-a-master-branch)
 
-```text
+```
 git checkout master
 
 git reset --hard bc50ed4
@@ -400,25 +400,25 @@ git push -f origin master
 
 可使用以下指令
 
-```text
+```
 git rm -r --cached .
 git add .
 git commit -m "fixed untracked files"
 ```
 
-\(但這樣會在遠端刪除該cached檔案\)
+(但這樣會在遠端刪除該cached檔案)
 
 [https://stackoverflow.com/questions/11451535/gitignore-is-not-working](https://stackoverflow.com/questions/11451535/gitignore-is-not-working)
 
 ## 查看目前修改過但還沒add的檔案
 
-```text
+```
 git diff --stat
 ```
 
 ## 查看目前已add 但還沒commit的檔案
 
-```text
+```
 git diff --cached --name-only
 ```
 
@@ -428,7 +428,7 @@ git diff --cached --name-only
 
 ## 查看目前已commit還沒push的檔案
 
-```text
+```
  git show –name-only {commit hash}
 ```
 
@@ -436,7 +436,7 @@ git diff --cached --name-only
 
 如果Rebase完了要Merge，不讓你checkout到原本的branch，可以使用如下
 
-```text
+```
 git reset --merge
 ```
 
@@ -444,20 +444,20 @@ git reset --merge
 
 ## Checkout 先前 commit 後 merge
 
-```text
+```
 git checkout a59867a8b0
 ```
 
 > 如果有時想回到先前的commit 內容，可以checkout 回以前的 commit hash，但如果之後又在此commit上改東西後，想讓當前內容變為最新的內容的話可以用如下
 
-```text
+```
 git checkout <Branch name>
 git merge a59867a8b0
 ```
 
 ## 回復以前commit的內容，並覆蓋develop
 
-```text
+```
 git branch -f develop <git commit hash>
 ```
 
@@ -465,13 +465,13 @@ git branch -f develop <git commit hash>
 
 全部檔案套用遠端的
 
-```text
+```
 grep -lr '<<<<<<<' . | xargs git checkout --theirs
 ```
 
 全部檔案套用本地的
 
-```text
+```
 grep -lr '<<<<<<<' . | xargs git checkout --ours
 ```
 
@@ -479,7 +479,7 @@ grep -lr '<<<<<<<' . | xargs git checkout --ours
 
 ## 快速更改上次commit的作者
 
-```text
+```
 git commit --amend --author="yicheng.wang <yicheng.wang@ccc.com>"
 git push origin master --force
 ```
@@ -490,7 +490,7 @@ git push origin master --force
 
 ## 直接給予權限
 
-```text
+```
 git remote set-url origin https://<username>:<password>@github.com/....git
 ```
 
@@ -500,13 +500,13 @@ git remote set-url origin https://<username>:<password>@github.com/....git
 
 改完後要記得用以下方法改git內的暫存檔名，會自動stage
 
-```text
+```
 git mv --force Myclass.java MyClass.java
 ```
 
 ## 把某個pull request直接加到local
 
-```text
+```
 git pull origin pull/<request號碼>/head
 ```
 
@@ -514,23 +514,23 @@ git pull origin pull/<request號碼>/head
 
 ## Merge時省略特定檔案
 
-[https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes\#\_merge\_strategies](https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes#_merge_strategies)
+[https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes#\_merge\_strategies](https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes#\_merge\_strategies)
 
 輸入
 
-```text
+```
 git config --global merge.ours.driver true
 ```
 
 之後 `vim $HOME/.gitconfig` 會顯示如下
 
-![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202019-08-13%20下午4.07.31.png)
+![](https://github.com/easonwang01/web\_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202019-08-13%20%E4%B8%8B%E5%8D%884.07.31.png)
 
 然後於專案內輸入`vim .gitattributes`
 
 新增以下內容
 
-```text
+```
 <要省略的檔案名稱> merge=ours
 ```
 
@@ -538,7 +538,7 @@ git config --global merge.ours.driver true
 
 ## 創建空的branch
 
-```text
+```
 git checkout --orphan <分支名稱>
 git rm --cached -r .
 ```
@@ -555,9 +555,9 @@ git rm --cached -r .
 
 ## Git 自訂快捷鍵
 
-> 把以下加在~/.zshrc 內 之後可以用 gac ... 直接取代 `git add . && git commit -m '....'`
+> 把以下加在\~/.zshrc 內 之後可以用 gac ... 直接取代 `git add . && git commit -m '....'`
 
-```text
+```
 gac() {
     string=""
     for i in "$@"; do string+=" $i"; done;
@@ -572,13 +572,13 @@ gac() {
 
 > 如果出現 unknown revision or path not in the working tree. 需要先commit
 
-```text
+```
 git bundle create repo.bundle HEAD master
 ```
 
 解開
 
-```text
+```
 git clone repo.bundle -b master
 ```
 
@@ -604,39 +604,38 @@ git subtree push --prefix build origin1 gh-pages;
 
 當發佈新的 Release 時可以新增 tag
 
-```text
+```
 git tag <要取名的版本號碼>
 ```
 
 列出所有版本
 
-```text
+```
 git tag -l
 ```
 
 推送本地標籤到遠端
 
-```text
+```
 git push origin <取名的版本號碼>
 ```
 
-![](../.gitbook/assets/jie-tu-20210916-xia-wu-6.14.06.png)
+![](<../.gitbook/assets/截圖 2021-09-16 下午6.14.06.png>)
 
 ## 部署的時候使用 access token
 
 假設使用 https 的方式 clone repo，這樣每次部署拉新 code 時都會需要輸入帳號密碼，解決方式為使用 access token
 
-![](../.gitbook/assets/jie-tu-20210305-xia-wu-2.25.40.png)
+![](<../.gitbook/assets/截圖 2021-03-05 下午2.25.40.png>)
 
 然後進到 repo 內的 .git/config，修改 url 為 `https://oath2:${access token }...`
 
- 
+&#x20;
 
-![](../.gitbook/assets/jie-tu-20210305-xia-wu-2.23.34.png)
+![](<../.gitbook/assets/截圖 2021-03-05 下午2.23.34.png>)
 
 [https://stackoverflow.com/questions/25409700/using-gitlab-token-to-clone-without-authentication](https://stackoverflow.com/questions/25409700/using-gitlab-token-to-clone-without-authentication)
 
 ## 其他不錯文章
 
 [http://www.techug.com/post/10-tips-git-next-level.html](http://www.techug.com/post/10-tips-git-next-level.html)
-

@@ -1,8 +1,8 @@
-# util \(工具類\)
+# util (工具類)
 
 這是一個輔助的類別，常可幫助簡化程式碼
 
-## util.promisify\(\)
+## util.promisify()
 
 將 function 轉為 promise
 
@@ -20,11 +20,11 @@
  util.promisify(fs.stat);
 ```
 
-## util.inherits\(\)
+## util.inherits()
 
-但要注意它只會繼承 父類別之後 在原型 _prototype_ 註冊的  _**函數**_
+但要注意它只會繼承 父類別之後 在原型 _prototype_ 註冊的 _ **函數**_
 
-```text
+```
 var util = require('util'); 
 function Base() { 
 
@@ -50,7 +50,7 @@ console.log(Sub.prototype.sayHello);
 
 檢測一個物件的屬性，可以是function 或object
 
-```text
+```
 var util = require('util'); 
 function Person() { 
     this.name = 'byvoid'; 
@@ -70,11 +70,11 @@ console.log(util.inspect(Person,true));  //如果沒有true只會顯示他是個
 
 
 
-## util.isArray\(object\)
+## util.isArray(object)
 
 查看是不是陣列
 
-```text
+```
 var util = require('util');
 
 console.log(util.isArray([]));
@@ -86,11 +86,11 @@ console.log(util.isArray({}));
 
 
 
-## util.isRegExp\(object\)
+## util.isRegExp(object)
 
 查看是不是正規表達式
 
-```text
+```
 var util = require('util');
 
 console.log(util.isRegExp(/some regexp/));
@@ -102,11 +102,11 @@ console.log(util.isRegExp({}));
 
 
 
-## util.isDate\(object\)
+## util.isDate(object)
 
 查看是不是日期格式
 
-```text
+```
 var util = require('util');
 
 console.log(util.isDate(new Date()));
@@ -118,11 +118,11 @@ console.log(util.isDate({}));
 
 
 
-## util.isError\(object\)
+## util.isError(object)
 
 查看是不是錯誤對象
 
-```text
+```
 var util = require('util');
 
 util.isError(new Error())
@@ -132,4 +132,3 @@ util.isError(new TypeError())
 util.isError({ name: 'Error', message: 'an error occurred' })
   // false
 ```
-

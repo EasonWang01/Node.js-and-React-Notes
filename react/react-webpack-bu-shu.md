@@ -6,13 +6,13 @@
 
 package.json
 
-```text
+```
 "build": "NODE_ENV=production API_HOST=http://rdpc.git4u.net:2650/ babel-node client/startProd.js",
 ```
 
 start.prod
 
-```text
+```
 import path from 'path';
 import webpack from 'webpack';
 import _debug from 'debug';
@@ -74,7 +74,7 @@ startProd即為webpack會打包成bundle.js的指令檔案
 
 在此案例中我們在檔案內寫output為
 
-```text
+```
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
@@ -90,13 +90,13 @@ startProd即為webpack會打包成bundle.js的指令檔案
 
 mac預設路徑
 
-```text
+```
  /usr/local/etc/nginx/
 ```
 
 ex:
 
-```text
+```
 http {
 server {
   listen 8081 default_server;
@@ -121,11 +121,11 @@ include servers/*;
 
 以上面這份config為例，我們會在root也就是電腦根目錄，下面的var資料夾下創建www資料夾．
 
-```text
+```
 /var/www/um1215-webclient/
 ```
 
-之後裡面放入um1215-webclient資料夾\(隨意取名\)，然後再把我們剛build產生出的build資料夾放入
+之後裡面放入um1215-webclient資料夾(隨意取名)，然後再把我們剛build產生出的build資料夾放入
 
 > 注意事項：build資料夾內要把index.html檔案放入，並且index.html內要有bundle.js的script引入
 
@@ -133,7 +133,7 @@ include servers/*;
 
 mac
 
-```text
+```
 sudo nginx -s stop && sudo nginx
 ```
 
@@ -141,7 +141,7 @@ sudo nginx -s stop && sudo nginx
 
 nginx config
 
-```text
+```
 location / {
     try_files $uri $uri/ /index.html;
 }
@@ -149,7 +149,7 @@ location / {
 
 靜態文件
 
-```text
+```
 location ^~ /static/ {
     root /webroot/static/;
 }
@@ -158,7 +158,7 @@ location ~* \.(gif|jpg|jpeg|png|css|js|ico)$ {
 }
 ```
 
-## \#Server render 的部署
+## #Server render 的部署
 
 因為我們要在nginx下再架一個nodejs server
 
@@ -170,7 +170,7 @@ location ~* \.(gif|jpg|jpeg|png|css|js|ico)$ {
 
 之後把client的code build一份bundle.js
 
-```text
+```
 在webpack.config.js同層使用`sudo webpack`
 ```
 
@@ -178,17 +178,17 @@ location ~* \.(gif|jpg|jpeg|png|css|js|ico)$ {
 
 之後把bundle.js放到`express.static`的目錄下即可
 
-## \#如果使用pm2更新server檔案後要記得restart
+## #如果使用pm2更新server檔案後要記得restart
 
-```text
+```
 pm2 restart all
 ```
 
 ## 使用Create-react-app 部署
 
-1.
+1\.
 
-```text
+```
 yarn build
 ```
 
@@ -196,12 +196,11 @@ yarn build
 
 2.設定nginx config
 
-```text
+```
  root /home/ubuntu/sharehandi_web/build;
  location / {
    try_files $uri /index.html;
  }
 ```
 
-加上以上兩個即可\(記得root要是完整路徑\)可用\`pwd指令\`查看
-
+加上以上兩個即可(記得root要是完整路徑)可用\`pwd指令\`查看

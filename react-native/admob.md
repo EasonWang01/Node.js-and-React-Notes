@@ -6,11 +6,11 @@
 
 1. 申請好 admob 帳號後新增應用程式，然後新增廣告單元，之後會取得 App ID 與 Ad ID
 
-![](../.gitbook/assets/jie-tu-20210304-xia-wu-5.19.09.png)
+![](<../.gitbook/assets/截圖 2021-03-04 下午5.19.09.png>)
 
 2.在專案根目錄新增 firebase.json
 
-```text
+```
 {
   "react-native": {
     "admob_android_app_id": "ca-app-pub-xxxxxxxx~xxxxxxxx",
@@ -19,7 +19,7 @@
 }
 ```
 
-3. 初始化
+3\. 初始化
 
 ```javascript
 import admob, { MaxAdContentRating } from '@react-native-firebase/admob';
@@ -73,4 +73,3 @@ handleShowAd() {
     <Text>觀看</Text>
 </Button>
 ```
-

@@ -36,13 +36,13 @@ services:
 
 ### 讀入範例資料
 
-先在剛才外面 git clone [https://github.com/datacharmer/test\_db](https://github.com/datacharmer/test_db)
+先在剛才外面 git clone [https://github.com/datacharmer/test\_db](https://github.com/datacharmer/test\_db)
 
 > 記得看 yaml 的 volumn 位置
 
 然後進到 docker 執行 sql import
 
-```text
+```
 docker exec -it <image id> sh
 cd test_db
 mysql -u root -pexample < employees.sql
@@ -50,14 +50,14 @@ mysql -u root -pexample < employees.sql
 
 之後回到 adminer 網頁，點選重新載入。即可看到多了 employees 資料庫
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200724-xia-wu-4.18.53.png)
+![](<../.gitbook/assets/螢幕快照 2020-07-24 下午4.18.53.png>)
 
 ## 使用遠端 MYSQL 免費服務
 
 臨時免費信箱:[http://www.yopmail.com/zh/](http://www.yopmail.com/zh/)
 
-測試用免費mysql:[https://www.db4free.net/signup.php](https://www.db4free.net/signup.php)  
-\(預設一個資料庫，不可再增加或修改\)
+測試用免費mysql:[https://www.db4free.net/signup.php](https://www.db4free.net/signup.php)\
+(預設一個資料庫，不可再增加或修改)
 
 ## 於Linux安裝的MySQL
 
@@ -65,13 +65,13 @@ mysql -u root -pexample < employees.sql
 
 停止
 
-```text
+```
 /etc/init.d/apache2 start
 ```
 
 開啟
 
-```text
+```
 sudo /etc/init.d/apache2 start
 ```
 
@@ -79,7 +79,7 @@ sudo /etc/init.d/apache2 start
 
 如在terminal輸入mysql後告知沒有權限，可輸入以下
 
-```text
+```
 mysql -u root -p
 ```
 
@@ -87,36 +87,36 @@ mysql -u root -p
 
 ### 安裝
 
-```text
+```
 docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
 ```
 
 ### 進入docker
 
-```text
+```
 docker exec -it <docker id> bash
 ```
 
 ### 進入 mysql cli
 
-```text
+```
 mysql -u root -p
 之後輸入密碼 my-secret-pw
 ```
 
 ### 從外面連入 docker 進入 mysql shell
 
-```text
+```
 docker exec some-mysql sh -c 'mysql -u root -p"my-secret-pw"'
 ```
 
-> 不過這時會收到警告 mysql: \[Warning\] Using a password on the command line interface can be insecure.
+> 不過這時會收到警告 mysql: \[Warning] Using a password on the command line interface can be insecure.
 
 所以可以到 \`**/etc/mysql/my.cnf**\` 設置使用者
 
-### 使用 docker-compose 搭配 GUI\(adminer\)
+### 使用 docker-compose 搭配 GUI(adminer)
 
-```text
+```
 version: '3.1'
 
 services:
@@ -142,9 +142,8 @@ services:
 
 ### 執行 SQL 檔案
 
-```text
+```
 mysql -uroot -pexample < ./user.sql
 ```
 
-> -u -p 後面接的是帳號和密碼
-
+> \-u -p 後面接的是帳號和密碼

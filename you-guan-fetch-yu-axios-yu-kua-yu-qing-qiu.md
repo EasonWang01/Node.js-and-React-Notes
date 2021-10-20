@@ -4,19 +4,19 @@
 
 ## 有關Fetch
 
-[https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch\_API/Using\_Fetch](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch)
+[https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch\_API/Using\_Fetch](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch\_API/Using\_Fetch)
 
 以前用xmlHttprequest但寫法太多，fetch為比較簡潔的寫法，並且有then可使用
 
 注意事項:
 
-1.使用json\(\)轉換or其他型態轉換回傳資料e.g. text\(\), blob\(\) ...[https://developer.mozilla.org/en-US/docs/Web/API/Body](https://developer.mozilla.org/en-US/docs/Web/API/Body)
+1.使用json()轉換or其他型態轉換回傳資料e.g. text(), blob() ...[https://developer.mozilla.org/en-US/docs/Web/API/Body](https://developer.mozilla.org/en-US/docs/Web/API/Body)
 
 2.第二個then才拿得到資料，第一個then只是一個promise結果
 
-3.cookie要手動在header加入\(第二個參數\)
+3.cookie要手動在header加入(第二個參數)
 
-```text
+```
      fetch('http://localhost:3001/getArticle',{
            method: 'GET',
        })
@@ -38,11 +38,11 @@
        })
 ```
 
-[https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch\_why\_does\_this\_return/](https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch_why_does_this_return/)
+[https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch\_why\_does\_this\_return/](https://www.reddit.com/r/learnprogramming/comments/3ydnmn/javascriptnodejswhatwgfetch\_why\_does\_this\_return/)
 
 使用POST
 
-```text
+```
 fetch('http://localhost:3016/login', {
     method: 'POST',
     headers: {'Content-Type':'application/x-www-form-urlencoded'},
@@ -65,7 +65,7 @@ fetch('http://localhost:3000/info', {
 
 ## 如果要傳JSON要先stringify
 
-```text
+```
 fetch('http://localhost:3016/we6/api/login', {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
@@ -75,7 +75,7 @@ fetch('http://localhost:3016/we6/api/login', {
 
 ### Fetch 取得 server 錯誤訊息
 
-[https://github.com/github/fetch/issues/203\#issuecomment-335786498](https://github.com/github/fetch/issues/203#issuecomment-335786498)
+[https://github.com/github/fetch/issues/203#issuecomment-335786498](https://github.com/github/fetch/issues/203#issuecomment-335786498)
 
 ```javascript
 fetch(`${HOST}`, {
@@ -108,7 +108,7 @@ fetch(`${HOST}`, {
 
 也是一個可發request的套件
 
-```text
+```
 axios.post(API_HOST+'/api/Member/GetQAList',
      {
       LocalLang: "string",
@@ -131,7 +131,7 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 如果要抓取error message要使用如下
 
-```text
+```
   .catch(err => {
     console.log(err)
      if (err.response) {
@@ -142,7 +142,7 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 [https://github.com/mzabriskie/axios/issues/376](https://github.com/mzabriskie/axios/issues/376)
 
-**\#Get 範例**
+**#Get 範例**
 
 ```javascript
     axios.get('http://localhost:10001/test',{
@@ -161,7 +161,7 @@ axios.post(API_HOST+'/api/Member/GetQAList',
     });
 ```
 
-**\#POST x-www-form-urlencoded範例**
+**#POST x-www-form-urlencoded範例**
 
 ```javascript
    import qs from 'querystring';
@@ -184,7 +184,7 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 如果是要發送cookie記得要加上 withCredentials: `true`
 
-```text
+```
   axios({
     method,
     url: `${API_HOST}/${url}`,
@@ -205,13 +205,13 @@ axios.post(API_HOST+'/api/Member/GetQAList',
 
 或是直接寫為default
 
-```text
+```
 axios.defaults.withCredentials = true;
 ```
 
 然後server的Cross domain要設定
 
-```text
+```
 app.use('*', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3012');
   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
@@ -225,13 +225,11 @@ app.use('*', function (req, res, next) {
 
 不然會顯示如下訊息.
 
-![](/assets/asca.png)
-
-## \#瀏覽器跨域請求
+## #瀏覽器跨域請求
 
 因為瀏覽器發出的請求會被限制同網域 不像後端server或是chrome plugin可以對其他網域請求
 
-所以我們可以用[https://crossorigin.me這類的proxy服務](https://crossorigin.me這類的proxy服務)
+所以我們可以用[https://crossorigin.me這類的proxy服務](https://crossorigin.xn--meproxy-zx1lq51m8k6ai2zd3zua)
 
 > 如果是要往自己的server發request可以參考JSONP或在server設定CORS
 >
@@ -294,4 +292,3 @@ axios.post('https://test/export/file', {},
         saveByteArray([d.data], 'example.xlsx');
       }).catch(err => { console.log(err) })
 ```
-

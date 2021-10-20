@@ -10,13 +10,13 @@ description: Redux is a predictable state container for JavaScript apps.
 
 ## 概念
 
-view 點擊 =&gt; action =&gt; reducer =&gt; store =&gt; 回傳 state 給 view
+view 點擊 => action => reducer => store => 回傳 state 給 view
 
 1.state 統一由 store 保存，任何更新 state 都要告知 store
 
 2.讓 views 得到 store 中 state的方法
 
-```text
+```
 1.使用connect讓最上層元件取得Provider中的store，再用props傳下去
 
 2.使用store.getState
@@ -24,7 +24,7 @@ view 點擊 =&gt; action =&gt; reducer =&gt; store =&gt; 回傳 state 給 view
 
 ## 簡單範例
 
-```text
+```
 <!DOCTYPE html>
 <html>
   <head>
@@ -45,7 +45,7 @@ view 點擊 =&gt; action =&gt; reducer =&gt; store =&gt; 回傳 state 給 view
 </html>
 ```
 
-```text
+```
  <script>
       var store = Redux.createStore(counter)
       var valueEl = document.getElementById('value')
@@ -59,7 +59,7 @@ view 點擊 =&gt; action =&gt; reducer =&gt; store =&gt; 回傳 state 給 view
 
 Reducer
 
-```text
+```
   function counter(state, action) {
         if (typeof state === 'undefined') {
           return 0
@@ -75,7 +75,7 @@ Reducer
       }
 ```
 
-```text
+```
  document.getElementById('increment')
         .addEventListener('click', function () {
           store.dispatch({ type: 'INCREMENT' })
@@ -102,9 +102,9 @@ Reducer
 
 [https://github.com/reactjs/redux/tree/master/examples/counter](https://github.com/reactjs/redux/tree/master/examples/counter)
 
-建立counter的元件\(原本的HTML\)
+建立counter的元件(原本的HTML)
 
-```text
+```
 import React, { Component, PropTypes } from 'react'
 
 class Counter extends Component {
@@ -161,7 +161,7 @@ export default Counter
 
 render到html
 
-```text
+```
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
@@ -188,7 +188,7 @@ store.subscribe(render)
 
 最後定義reducer
 
-```text
+```
 export default function counter(state = 0, action) {
   switch (action.type) {
     case 'INCREMENT':
@@ -207,14 +207,14 @@ export default function counter(state = 0, action) {
 
 我們可改寫成
 
-```text
+```
       onIncrement={() => store.dispatch(increment(text))}
       onDecrement={() => store.dispatch(decrement(text))}
 ```
 
 action.js
 
-```text
+```
 function increment(text) {
   return {
     type: INCREMENT,
@@ -233,7 +233,7 @@ function decrement(text) {
 
 #### 流程:
 
-```text
+```
 1.定義一個action物件
 
 
@@ -251,11 +251,11 @@ function decrement(text) {
 
 ### 實做:
 
-1.
+1\.
 
 package.json
 
-```text
+```
 {
   "name": "react-todo-list",
   "version": "1.0.0",
@@ -289,11 +289,11 @@ package.json
 
 新增後輸入`npm install`
 
-2.
+2\.
 
 webpack.config.js
 
-```text
+```
 var webpack = require('webpack');
 
 module.exports = {
@@ -327,11 +327,11 @@ module.exports = {
 }
 ```
 
-3.
+3\.
 
 新增server 資料夾，裡面放入server.js
 
-```text
+```
 var express = require('express');
 var path = require('path');
 var config = require('../webpack.config.js');
@@ -360,11 +360,11 @@ app.listen(port, function(error) {
 });
 ```
 
-4.
+4\.
 
 新client資料夾，裡面放入index.html
 
-```text
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -380,7 +380,7 @@ app.listen(port, function(error) {
 
 以及，client.js
 
-```text
+```
 import React from 'react'
 import { render } from 'react-dom'
 import App from '../components/App'
@@ -407,7 +407,7 @@ render(
 
 Provider用來連結react即redux的store
 
-5.
+5\.
 
 新增redux資料夾
 
@@ -417,7 +417,7 @@ Provider用來連結react即redux的store
 
 store.js
 
-```text
+```
 import {applyMiddleware,compose,createStore} from "redux"
 import reducer from './reducer'
 import logger from 'redux-logger'
@@ -438,7 +438,7 @@ export default function configureStore(initialState = { todos:[]}){
 
 action.js
 
-```text
+```
 let  actions ={ 
     addTodo:(text)=>{
         return ({
@@ -453,7 +453,7 @@ export default actions
 
 reducer.js
 
-```text
+```
 let getId = 1 ;
 
 export default function reducer(state,action){
@@ -483,7 +483,7 @@ export default function reducer(state,action){
 
 App.js
 
-```text
+```
 import React, { Component } from 'react'
 import TodoInput from './TodoInput.js'
 import TodoList from './TodoList.js'
@@ -516,7 +516,7 @@ App元件可以接到從store來的state且轉成他的props
 
 TodoInput.js
 
-```text
+```
 import React, { Component } from 'react'
 import action from '../redux/actions.js'
 class TodoInput extends Component {
@@ -561,7 +561,7 @@ export default TodoInput
 
 TodoList.js
 
-```text
+```
 import React, { Component } from 'react'
 
 class TodoList extends Component {
@@ -584,7 +584,7 @@ class TodoList extends Component {
 export default TodoList
 ```
 
-完整版:\(於master branch\)
+完整版:(於master branch)
 
 [https://github.com/EasonWang01/Redux-tutorial](https://github.com/EasonWang01/Redux-tutorial)
 
@@ -594,7 +594,7 @@ export default TodoList
 
 1.先在action.js
 
-```text
+```
 let  actions ={ 
     addTodo:(text)=>{
         return ({
@@ -616,7 +616,7 @@ export default actions
 
 2.reducer.js
 
-```text
+```
 let getId = 1 ;
 
 export default function reducer(state,action){
@@ -659,7 +659,7 @@ export default function reducer(state,action){
 
 最後在TodoList.js
 
-```text
+```
 import React, { Component } from 'react'
 import action from '../redux/actions.js'
 import store from '../redux/store'
@@ -714,7 +714,7 @@ export default TodoList
 
 1.新增FilterLink.js
 
-```text
+```
 import React, { Component } from 'react'
 import action from '../redux/actions.js'
 import store from '../redux/store'
@@ -745,7 +745,7 @@ export default FliterLink
 
 2.將他加入TodoList.js
 
-```text
+```
 import React, { Component } from 'react'
 import action from '../redux/actions.js'
 import store from '../redux/store'
@@ -816,7 +816,7 @@ export default TodoList
 
 更改action.js
 
-```text
+```
 let  actions ={ 
     addTodo:(text)=>{
         return ({
@@ -845,7 +845,7 @@ export default actions
 
 以及reducer.js
 
-```text
+```
 let getId = 1 ;
 
 export default function reducer(state,action){
@@ -888,15 +888,15 @@ export default function reducer(state,action){
 }
 ```
 
-\(此時多了三個選項，且點擊會發出action\)
+(此時多了三個選項，且點擊會發出action)
 
 3.接著我們幫他加入發出action後所要做的事
 
 我們會使用array的filter方法，過濾出state.todos中completed為false的方法
 
-\(給點擊active按鈕用\)反之為給completed按鈕用
+(給點擊active按鈕用)反之為給completed按鈕用
 
-```text
+```
 var filtered = (this.props.todos).filter(function(state){
   return state.completed==false
 
@@ -904,8 +904,8 @@ var filtered = (this.props.todos).filter(function(state){
 console.log(filtered)
 ```
 
-\(filter\(\)讓array中每個元素接受一個function的運算且return一個值，為true或false\)  
-\(如果為true則繼續保留在array\)
+(filter()讓array中每個元素接受一個function的運算且return一個值，為true或false)\
+(如果為true則繼續保留在array)
 
 但
 
@@ -913,7 +913,7 @@ console.log(filtered)
 
 我們先幫reducer加上一個狀態
 
-```text
+```
 let getId = 1 ;
 
 export default function reducer(state,action){
@@ -958,7 +958,7 @@ export default function reducer(state,action){
 
 接著將App.js改為
 
-```text
+```
 import React, { Component } from 'react'
 import TodoInput from './TodoInput.js'
 import TodoList from './TodoList.js'
@@ -991,15 +991,15 @@ function  mapStateToProp(state){
 export default connect(mapStateToProp)(App)
 ```
 
-\(因為我們現在state裡不只一個state，所以先傳入整包，於子代再做取出\)
+(因為我們現在state裡不只一個state，所以先傳入整包，於子代再做取出)
 
 最後
 
-\(把原本傳入最後return要map的物件先做過濾\)
+(把原本傳入最後return要map的物件先做過濾)
 
 TodoList.js
 
-```text
+```
 import React, { Component } from 'react'
 import action from '../redux/actions.js'
 import store from '../redux/store'
@@ -1101,7 +1101,7 @@ export default TodoList
 
 所以先幫FilterLink加上一個props
 
-```text
+```
 import React, { Component } from 'react'
 import action from '../redux/actions.js'
 import store from '../redux/store'
@@ -1205,7 +1205,7 @@ export default TodoList
 
 之後點擊link後去偵測，這個link的filter props和當前store的filter屬性如符合的話，則只回傳普通的文字
 
-```text
+```
 import React, { Component } from 'react'
 import action from '../redux/actions.js'
 import store from '../redux/store'
@@ -1303,7 +1303,7 @@ function reducer (state,action){
 export default reducer
 ```
 
-\(上面，我們將reducer寫成兩個function\)
+(上面，我們將reducer寫成兩個function)
 
 combined reducer即是這個概念，所以我們把reducer.js 改為如下
 
@@ -1367,7 +1367,7 @@ export default rootReducer
 
 兩個重點
 
-```text
+```
 1. combineReducers 沒有丟預設state進去所以，我們要用ES6的寫法幫function寫上預設參數(Line 4 and 35)
 2. function內一開始傳進去的的不再是整個state而是取key後的state，所以裡面也須更改(Line 13. 27.17.43)
 ```
@@ -1376,7 +1376,7 @@ export default rootReducer
 
 所以寫成
 
-```text
+```
 const rootReducer = combineReducers({
   visbility,
   todos,
@@ -1387,16 +1387,16 @@ const rootReducer = combineReducers({
 
 ## 中間件 BindActionCreator
 
-將store 的dispatch 包住action 成為function 可直接使用 不用再dispatch\(someaction\)
+將store 的dispatch 包住action 成為function 可直接使用 不用再dispatch(someaction)
 
 App.js加上
 
-```text
+```
 import { bindActionCreators } from 'redux';
 import actions from '../redux/actions.js'
 ```
 
-```text
+```
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(actions, dispatch)
@@ -1408,15 +1408,15 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 即可發現點選React devtool中App的props的dispatch變為actions物件
 
-1.
+1\.
 
 原本父元件使用`this.props.dispatch`將dispatch方法傳下去，現在改為用`this.props.actions`
 
-2.
+2\.
 
 而VIEW發送ACTION的方式從
 
-```text
+```
   handleSubmit(event) {
     event.preventDefault()
     this.props.dispatch(actions.addTodo(this.state.inputText))
@@ -1425,7 +1425,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 改為
 
-```text
+```
   handleSubmit(event) {
     event.preventDefault()
     this.props.addTodo(this.state.inputText)
@@ -1440,7 +1440,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 [https://egghead.io/lessons/javascript-redux-using-mapdispatchtoprops-shorthand-notation](https://egghead.io/lessons/javascript-redux-using-mapdispatchtoprops-shorthand-notation)
 
-```text
+```
 //直接把action轉為function使用，因react-redux 幫你把dispatch包在裡面了
 
 export default connect(mapStateToProp,{
@@ -1448,7 +1448,7 @@ export default connect(mapStateToProp,{
 })(Login)
 ```
 
-## 操作非同步動作\(Async\)
+## 操作非同步動作(Async)
 
 例如:
 
@@ -1460,7 +1460,7 @@ export default connect(mapStateToProp,{
 
 將store.js改為
 
-```text
+```
 import {applyMiddleware,compose,createStore} from "redux"
 import reducer from './reducer'
 import logger from 'redux-logger'
@@ -1497,7 +1497,7 @@ export default store
 
 例如:
 
-```text
+```
     FilterTodo:(filter)=>{
         return({
          type:'SET_VISBILITY_FILTER',
@@ -1515,19 +1515,19 @@ export default store
 
 PS:
 
-在action.js內可以直接調用store的所有方法，因為我們action是由store發出的  
+在action.js內可以直接調用store的所有方法，因為我們action是由store發出的\
 ex:`store.dispatch(action.toggleTodo(a.id));`
 
 ## React-router-redux
 
 > 用途:將Redux結合react-router
 
-安裝  
+安裝\
 `npm install --save react-router-redux`
 
 1.在使用combind reducer的地方加上
 
-```text
+```
 import {routerReducer} from 'react-router-redux'
 
 
@@ -1540,7 +1540,7 @@ const rootReducer = combineReducers({
 
 2.將client.js加上
 
-```text
+```
 import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore} from 'react-router-redux'
 
@@ -1549,7 +1549,7 @@ const history = syncHistoryWithStore(browserHistory, store)
 
 完整版
 
-```text
+```
 import React from 'react'
 import { render } from 'react-dom'
 import App from '../components/App'
@@ -1577,7 +1577,7 @@ render(
 
 最後將App.js改為
 
-```text
+```
 import React, { Component } from 'react'
 import TodoInput from './TodoInput.js'
 import TodoList from './TodoList.js'
@@ -1612,16 +1612,16 @@ export default connect(mapStateToProp)(App)
 
 #### 記得加條件限制
 
-但是，如果url為[http://localhost:3000/](http://localhost:3000/)
+但是，如果url為[http://localhost:3000/](http://localhost:3000)
 
-這時  
+這時\
 `{React.cloneElement(this.props.children, { todos:this.props })}`
 
 中的`this.props.children`為null，所以會報錯
 
 須改為
 
-```text
+```
 import React, { Component } from 'react'
 import TodoInput from './TodoInput.js'
 import TodoList from './TodoList.js'
@@ -1666,7 +1666,7 @@ export default connect(mapStateToProp)(App)
 
 2.在程式的store.js中改為如下
 
-```text
+```
 let finalCreateStore = compose(
     applyMiddleware(thunk,logger()),window.devToolsExtension ? window.devToolsExtension() : f => f
     )(createStore)
@@ -1685,18 +1685,18 @@ export default store
 
 ## stateless function components
 
-## \(可將class改為const\)
+## (可將class改為const)
 
 ## 官方推薦使用
 
-[https://facebook.github.io/react/docs/reusable-components.html\#stateless-functions](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions)
+[https://facebook.github.io/react/docs/reusable-components.html#stateless-functions](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions)
 
-[https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d\#.nyhbdhy1j](https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.nyhbdhy1j)
+[https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.nyhbdhy1j](https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.nyhbdhy1j)
 
-因為Redux 的state統一存在store中，所以符合stateless function components之條件，  
+因為Redux 的state統一存在store中，所以符合stateless function components之條件，\
 可改用const來寫component
 
-```text
+```
 const ListOfNumbers = props => (
   <ol className={props.className}>
     {
@@ -1717,17 +1717,17 @@ ListOfNumbers.propTypes = {
 
 ## 從store 給到元件
 
-1.
+1\.
 
-```text
+```
 const mapStateToProp = (state) => ({
   userInfo: state.userInfo
 })
 ```
 
-2.
+2\.
 
-```text
+```
 <TextField
   hintText=""
   type="date"
@@ -1739,9 +1739,9 @@ const mapStateToProp = (state) => ({
 />
 ```
 
-3.
+3\.
 
-```text
+```
   componentWillReceiveProps(nextProps) {//重新整理使用，因componentWillMount時的this.props還沒抓到
     if (nextProps.userInfo !== 'undefined'){
       this.setState({ date: nextProps.userInfo.birthday})
@@ -1751,4 +1751,3 @@ const mapStateToProp = (state) => ({
       this.setState({ date: this.props.userInfo.birthday})
   }
 ```
-

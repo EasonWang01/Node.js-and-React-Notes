@@ -4,7 +4,7 @@
 
 1.先安裝package manger
 
-``按ctrl+```  根據這個網址填入 [https://packagecontrol.io/installation\#st2](https://packagecontrol.io/installation#st2)
+``按ctrl+` `` 根據這個網址填入 [https://packagecontrol.io/installation#st2](https://packagecontrol.io/installation#st2)
 
 2.按`ctrl + shift+ p`後點選install package
 
@@ -24,15 +24,15 @@
 
 再安裝`npm install babel-eslint -g`
 
-之後在view--syntax--Babel--javscript\(Babel\)即可
+之後在view--syntax--Babel--javscript(Babel)即可
 
 ### 安裝Emmet
 
-安裝後於Package-setting=&gt;Emmet=&gt;Setting-User 輸入設定檔案
+安裝後於Package-setting=>Emmet=>Setting-User 輸入設定檔案
 
 範例:
 
-```text
+```
  {
 
 "snippets":{
@@ -57,7 +57,7 @@
 
 如果要用多行
 
-```text
+```
 \　：區隔"
 \n ：斷行
 \t ：向後空一格
@@ -67,15 +67,14 @@
 
 ### 安裝LiveStyle
 
-\(不用儲存檔案即可及時看css效果\)
+(不用儲存檔案即可及時看css效果)
 
 1.於sublime安裝LiveStyle
 
 2.於Chrome的dev tool安裝LiveStyle
 
-3.新增一個css檔案於html中\(不是用於inline style\)
+3.新增一個css檔案於html中(不是用於inline style)
 
 4.開啟chrome dev tool並點選LiveStyle查看是否載入
 
 5.記得，開著chrome dev tool 才可使用
-

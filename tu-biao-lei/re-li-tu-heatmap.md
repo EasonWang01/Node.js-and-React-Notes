@@ -16,7 +16,7 @@ import h337 from 'heatmap.js';
 
 新增兩個div，一個加上absolute，一個用來顯示canvas
 
-```text
+```
 <div className={styles.heatmapCanvasContainer}>
   <div className={styles.heatmapCanvas} ref={heatMapEle}></div>
 </div>
@@ -48,7 +48,7 @@ h337.create({
 });
 ```
 
-> data 格式： `[{x: <num>, y: <num>, value: <num>}, ....]`
+> data 格式：` [{x: <num>, y: <num>, value: <num>}, ....]`
 
 清除：
 
@@ -57,4 +57,3 @@ h337.create({
       heatMapEle.current.innerHTML = "";
     }
 ```
-

@@ -12,11 +12,11 @@ webex meeting 目前 API 許久沒維護，所以以下教學以 webex Teams 為
 
 網頁版teams: [https://teams.webex.com/signin](https://teams.webex.com/signin)
 
-開發者頁面:[https://developer.webex.com/](https://developer.webex.com/)
+開發者頁面:[https://developer.webex.com/](https://developer.webex.com)
 
 互動式教學:[https://developer.cisco.com/learning/](https://developer.cisco.com/learning/)
 
-詳細 JS SDK 文件:[https://github.com/webex/webex-js-sdk/blob/master/packages/node\_modules/%40webex/plugin-meetings/README.md](https://github.com/webex/webex-js-sdk/blob/master/packages/node_modules/%40webex/plugin-meetings/README.md)
+詳細 JS SDK 文件:[https://github.com/webex/webex-js-sdk/blob/master/packages/node\_modules/%40webex/plugin-meetings/README.md](https://github.com/webex/webex-js-sdk/blob/master/packages/node\_modules/%40webex/plugin-meetings/README.md)
 
 Restful API 文件:[https://developer.webex.com/docs/api/v1/](https://developer.webex.com/docs/api/v1/)
 
@@ -306,13 +306,13 @@ export default WebexVideo;
 
 ## React Widget
 
- [https://github.com/webex/react-widgets](https://github.com/webex/react-widgets)
+&#x20;[https://github.com/webex/react-widgets](https://github.com/webex/react-widgets)
 
 > 使用React Widget demo local 會有錯誤，要輸入 `npm rebuild node-sass` 與使用`Node.js v10.16.0`
 
-包含space widget \(右\) 與 Recents Widget \(左\)
+包含space widget (右) 與 Recents Widget (左)
 
-![](../../.gitbook/assets/ying-mu-kuai-zhao-20200415-xia-wu-9.42.01.png)
+![](<../../.gitbook/assets/螢幕快照 2020-04-15 下午9.42.01.png>)
 
 
 
@@ -322,7 +322,7 @@ export default WebexVideo;
 
 1. API 錯誤
 
-```text
+```
 1.Unhandled Rejection (BadRequest): (6400007) incompatible device: reasons are received invalid message type 'ANSWER' in state 'ROAP_STATE_INIT'
 
 2.state: LEFT invalid for current operation.
@@ -332,11 +332,10 @@ export default WebexVideo;
 4.User has excessive device registrations POST
 ```
 
-> 以上錯誤都建議先更換guest issuer token 試試，第四個錯誤官方建議清除session [https://idbroker.webex.com/idb/profile\#/tokens](https://idbroker.webex.com/idb/profile#/tokens) 不過測試後無效
+> 以上錯誤都建議先更換guest issuer token 試試，第四個錯誤官方建議清除session [https://idbroker.webex.com/idb/profile#/tokens](https://idbroker.webex.com/idb/profile#/tokens) 不過測試後無效
 
-2. 開發頁面登入 session錯誤
+2\. 開發頁面登入 session錯誤
 
 時常登入使用者後又說頁面找不到404，或是使用者重登後卻沒有更新的情況，建議 瀏覽器硬加載
 
-3. 出現 user must admitted first，使用房間管理員到介面把guest加入meeting
-
+3\. 出現 user must admitted first，使用房間管理員到介面把guest加入meeting

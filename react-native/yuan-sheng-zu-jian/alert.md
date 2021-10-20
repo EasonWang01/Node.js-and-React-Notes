@@ -18,6 +18,3 @@ Alert.alert(
   { cancelable: false }
 )
 ```
-
-![](/assets/Screen%20Shot%202018-10-04%20at%202.39.51%20PM.png)
-

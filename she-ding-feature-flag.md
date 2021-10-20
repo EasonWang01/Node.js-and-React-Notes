@@ -4,11 +4,10 @@
 
 {% embed url="https://docs.launchdarkly.com/sdk/client-side/javascript" %}
 
-![](.gitbook/assets/jie-tu-20201218-shang-wu-10.54.38.png)
+![](<.gitbook/assets/截圖 2020-12-18 上午10.54.38.png>)
 
 設定好之後記得要 SDK 打勾
 
-![](.gitbook/assets/jie-tu-20201218-shang-wu-10.52.48.png)
+![](<.gitbook/assets/截圖 2020-12-18 上午10.52.48.png>)
 
 之後再平台的 flag 設置開關後網頁顯示也會跟著改變。
-

@@ -6,7 +6,7 @@
 
 > 設計後可以自動產生 schema
 
-![](../.gitbook/assets/jie-tu-20210412-shang-wu-11.57.32.png)
+![](<../.gitbook/assets/截圖 2021-04-12 上午11.57.32.png>)
 
 範例：
 
@@ -197,4 +197,3 @@ ALTER TABLE user_photo ADD CONSTRAINT user_photo_user_account
 {% embed url="https://stackoverflow.com/questions/6420264/creating-a-threaded-private-messaging-system-like-facebook-and-gmail" %}
 
 [https://stackoverflow.com/questions/6541302/thread-messaging-system-database-schema-design](https://stackoverflow.com/questions/6541302/thread-messaging-system-database-schema-design)
-

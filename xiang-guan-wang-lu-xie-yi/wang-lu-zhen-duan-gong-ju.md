@@ -6,7 +6,7 @@
 
 > sudo mtr google.com
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200817-shang-wu-10.03.35.png)
+![](<../.gitbook/assets/螢幕快照 2020-08-17 上午10.03.35.png>)
 
 [http://www.bitwizard.nl/mtr/](http://www.bitwizard.nl/mtr/)
 
@@ -16,9 +16,9 @@
 
 監聽相關封包
 
-#### TCP localhost 
+#### TCP localhost&#x20;
 
-```text
+```
 sudo tcpdump -i lo0
 ```
 
@@ -26,7 +26,7 @@ sudo tcpdump -i lo0
 
 #### UDP
 
-```text
+```
 tcpdump -n udp port 14550
 ```
 
@@ -44,7 +44,7 @@ tcpdump -n udp port 14550
 
 lsof 可以查看系統上各行程所開啟的檔案，加上 -i 可以查找相關網路連線
 
-```text
+```
 lsof -i tcp:80
 ```
 
@@ -52,10 +52,8 @@ lsof -i tcp:80
 
 兩者都可以查詢 DNS records
 
-```text
+```
 nslookup google.com
 dig google.com
 ```
-
-
 

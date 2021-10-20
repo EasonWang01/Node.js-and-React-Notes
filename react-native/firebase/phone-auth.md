@@ -8,7 +8,7 @@ description: 每月可以免費寄送一萬個認證簡訊。
 
 1.記得先去 Firebase console 開啟 phone auth 服務。
 
-![](../../.gitbook/assets/jie-tu-20210326-xia-wu-5.45.18.png)
+![](<../../.gitbook/assets/截圖 2021-03-26 下午5.45.18.png>)
 
 2.加入 [URL scheme](https://stackoverflow.com/questions/61514076/firebase-phone-auth-getting-ios-error-register-custom-url-scheme) 到 `info.plist`
 
@@ -16,7 +16,7 @@ description: 每月可以免費寄送一萬個認證簡訊。
 
 例如:
 
-```text
+```
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -34,9 +34,9 @@ description: 每月可以免費寄送一萬個認證簡訊。
 
 [https://stackoverflow.com/questions/61514076/firebase-phone-auth-getting-ios-error-register-custom-url-scheme](https://stackoverflow.com/questions/61514076/firebase-phone-auth-getting-ios-error-register-custom-url-scheme)
 
-3.可以到下方改變簡訊內容 \(非必要\)
+3.可以到下方改變簡訊內容 (非必要)
 
-![](../../.gitbook/assets/jie-tu-20210326-xia-wu-5.46.59.png)
+![](<../../.gitbook/assets/截圖 2021-03-26 下午5.46.59.png>)
 
 ### 範例：
 
@@ -105,11 +105,9 @@ export default App;
 
 之後你的手機會收到簡訊。
 
-![](../../.gitbook/assets/jie-tu-20210326-xia-wu-5.54.24.png)
+![](<../../.gitbook/assets/截圖 2021-03-26 下午5.54.24.png>)
 
 Tip: 另外也可以新增測試用號碼，避免重複發送多次後被暫停使用
 
-![](../../.gitbook/assets/jie-tu-20210326-xia-wu-6.15.22.png)
-
-
+![](<../../.gitbook/assets/截圖 2021-03-26 下午6.15.22.png>)
 

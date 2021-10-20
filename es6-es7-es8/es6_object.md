@@ -4,9 +4,9 @@
 
 ### 1.Object.assign
 
-#### \(功能:淺層融合object\)
+#### (功能:淺層融合object)
 
-```text
+```
 a={"v":12}
 Object.assign(a,{"v":13})
 Object.assign({},a,{"v":14})
@@ -20,7 +20,7 @@ Object.assign({},a,{"v":14})
 
 ### 預設參數屬性
 
-```text
+```
 function todoApp(state = initialState, action) {}
 //有了 = 符號
 //如果沒有傳入state參數(第一個參數)，則會字動找initialState變數指定給function 內的state變數
@@ -28,9 +28,9 @@ function todoApp(state = initialState, action) {}
 
 ## Object 解構賦值
 
-1.
+1\.
 
-```text
+```
 要保證key值匹配。
 
 let obj = {x: 1, y: 2}; let {x, y} = obj; // x = 1, y = 2
@@ -40,7 +40,7 @@ let obj = {x: 1, y: 2}; let {x, y} = obj; // x = 1, y = 2
 
 2.當函式的參數為物件，名稱與值相同時
 
-```text
+```
 const sendLoginRequest = ({username, password}) => dispatch(loginRequest({username, password}))
 
 
@@ -52,4 +52,3 @@ const sendLoginRequest = ({username, password}) => dispatch(loginRequest({userna
 [https://read01.com/oE8Q.html](https://read01.com/oE8Q.html)
 
 [http://www.html5cn.org/article-9274-1.html](http://www.html5cn.org/article-9274-1.html)
-

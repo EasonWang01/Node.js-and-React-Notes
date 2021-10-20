@@ -2,9 +2,9 @@
 
 存取權限有分兩種，選擇一種加入即可：
 
-![](../../.gitbook/assets/jie-tu-20201026-shang-wu-10.58.09.png)
+![](<../../.gitbook/assets/截圖 2020-10-26 上午10.58.09.png>)
 
-{% embed url="https://developers.google.com/maps/documentation/android-sdk/location?hl=zh-tw\#location\_permissions" %}
+{% embed url="https://developers.google.com/maps/documentation/android-sdk/location?hl=zh-tw#location_permissions" %}
 
 ### 使用：[https://github.com/Agontuk/react-native-geolocation-service](https://github.com/Agontuk/react-native-geolocation-service)
 
@@ -29,4 +29,3 @@
     }
   }
 ```
-

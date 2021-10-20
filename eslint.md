@@ -8,17 +8,17 @@
 
 1.安裝
 
-```text
+```
 npm install -g eslint
 ```
 
 2.配置
 
-```text
+```
 於根目錄新增   .eslintrc.json
 ```
 
-```text
+```
 {
   "globals": {
     // Put things like jQuery, etc
@@ -39,9 +39,9 @@ npm install -g eslint
 }
 ```
 
-看到上面的rules的數字，對照下表，以上面為例，意思是對所有出現quotes\(引號\)的地方要使用double\(兩個引號\)，強制性為1\(只產生警告訊息\)
+看到上面的rules的數字，對照下表，以上面為例，意思是對所有出現quotes(引號)的地方要使用double(兩個引號)，強制性為1(只產生警告訊息)
 
-```text
+```
 0 - Disable the rule
 1 - Warn about the rule
 2 - Throw error about the rule
@@ -53,13 +53,13 @@ npm install -g eslint
 
 3.使用parser去解析ES6
 
-```text
+```
 npm install babel-eslint
 ```
 
 之後在.eslintrc.json加上
 
-```text
+```
 {
   "parser": "babel-eslint",
   "rules": {
@@ -70,13 +70,13 @@ npm install babel-eslint
 
 ## 如何執行?
 
-```text
+```
 eslint 檔案名稱.js
 ```
 
 ### 其他規則
 
-```text
+```
 {  
   "env": {  
     "browser": true,  
@@ -338,20 +338,20 @@ eslint 檔案名稱.js
 
 ## 使用sublime+ESLint
 
-進入sublime的package manage\(需先安裝\)
+進入sublime的package manage(需先安裝)
 
 輸入
 
-```text
+```
 SublimeLinter-eslint
 ```
 
-參考至  
+參考至\
 [http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/](http://jonathancreamer.com/setup-eslint-with-es6-in-sublime-text/)
 
 ## Eslint React
 
-```text
+```
 npx eslint init
 ```
 
@@ -359,17 +359,16 @@ npx eslint init
 
 如果在vscode React 還是沒有顯示 syntax error線，可安裝
 
-```text
+```
 yarn add eslint-plugin-react
 ```
 
 如果還是在editor沒顯示紅線，則可開啟output查看錯誤
 
-![](.gitbook/assets/ying-mu-kuai-zhao-20200414-xia-wu-5.15.02.png)
+![](<.gitbook/assets/螢幕快照 2020-04-14 下午5.15.02.png>)
 
 解法：
 
-1. 假設你有server跟frontend folder 開啟vscode時先進入client folder再開啟vscode，這樣才找得到路徑[https://github.com/microsoft/vscode-eslint/issues/759\#issuecomment-534958665](https://github.com/microsoft/vscode-eslint/issues/759#issuecomment-534958665)
+1. 假設你有server跟frontend folder 開啟vscode時先進入client folder再開啟vscode，這樣才找得到路徑[https://github.com/microsoft/vscode-eslint/issues/759#issuecomment-534958665](https://github.com/microsoft/vscode-eslint/issues/759#issuecomment-534958665)
 2. 不要同時在local跟client都裝eslint 跟plugin
 3. 如果是mono repo 進入到你要做的專案在開啟VSCode
-

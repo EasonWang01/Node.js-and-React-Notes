@@ -88,15 +88,15 @@ function App() {
 export default App;
 ```
 
-1. &lt;Form /&gt; 可以讓 onSubmit 省略 
+1.  \<Form /> 可以讓 onSubmit 省略&#x20;
 
-   ```javascript
-   <form onSubmit={handleSubmit}>
+    ```javascript
+    <form onSubmit={handleSubmit}>
 
-   <Form />
-   ```
+    <Form />
+    ```
 
-   2. &lt;Field /&gt; 可以省略 onChange, onBlur, value
+    2\. \<Field /> 可以省略 onChange, onBlur, value
 
 ```javascript
 <input
@@ -191,7 +191,7 @@ export default App;
 
 ```
 
-## 客製化 \(useField, useFormik\)
+## 客製化 (useField, useFormik)
 
 ```javascript
  const MyCheckbox = ({ children, ...props }) => {
@@ -212,4 +212,3 @@ export default App;
    );
  };
 ```
-

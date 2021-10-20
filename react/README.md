@@ -2,7 +2,8 @@
 
 ## React
 
-1. 建議react 和react-dom相同版本才比較不會有問 [https://github.com/facebook/react/issues/8588\#issuecomment-267596448](https://github.com/facebook/react/issues/8588#issuecomment-267596448)
+1. 建議react 和react-dom相同版本才比較不會有問\
+   [https://github.com/facebook/react/issues/8588#issuecomment-267596448](https://github.com/facebook/react/issues/8588#issuecomment-267596448)
 2. 如果使用`create-react-app`，如果套件在index.html引入須在使用套件時加上`window`
 
 基礎
@@ -31,7 +32,7 @@
 </html>
 ```
 
-```text
+```
 var HelloMessage = React.createClass({
   render: function() {
     return <div>Hello {this.props.name}</div>;
@@ -43,7 +44,7 @@ ReactDOM.render(<HelloMessage name="John" />, mountNode);
 
 使用ES6
 
-```text
+```
 class HelloMessage extends React.Component {
   render() {
     return <div>Hello {this.props.name}</div>;
@@ -55,7 +56,7 @@ ReactDOM.render(<HelloMessage name="Sebastian"/>, mountNode);
 
 其他方法之簡單整理
 
-```text
+```
 class baseComponent extends React.Component{
     // 建構子
     constructor(props){
@@ -104,15 +105,15 @@ class App extends baseComponent{
 }
 ```
 
-更多有關ES5 react to ES6 or ES7  
+更多有關ES5 react to ES6 or ES7\
 [http://cheng.logdown.com/posts/2015/09/29/converting-es5-react-to-es6](http://cheng.logdown.com/posts/2015/09/29/converting-es5-react-to-es6)
 
-[http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8](http://bbs.reactnative.cn/topic/15/react-react-native-的es5-es6写法对照表)
+[http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8](http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8)
 
-有關class用法  
+有關class用法\
 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
-[http://es6.ruanyifeng.com/\#docs/class](http://es6.ruanyifeng.com/#docs/class)
+[http://es6.ruanyifeng.com/#docs/class](http://es6.ruanyifeng.com/#docs/class)
 
 [https://gist.github.com/sebmarkbage/d7bce729f38730399d28](https://gist.github.com/sebmarkbage/d7bce729f38730399d28)
 
@@ -122,12 +123,12 @@ class App extends baseComponent{
 
 npm install webpack -g
 
-npm install nodemon -g  
-\(在更改程式時自動執行server，而forever為遇到錯誤也不會停止\)
+npm install nodemon -g\
+(在更改程式時自動執行server，而forever為遇到錯誤也不會停止)
 
 1.裡面放入package.json
 
-```text
+```
 {
   "name": "react-todo-list",
   "version": "1.0.0",
@@ -159,7 +160,7 @@ npm install nodemon -g
 
 在根目錄下新建三個目錄
 
-```text
+```
 forclass
     --client
     --components
@@ -169,7 +170,7 @@ forclass
 
 2.接著在server目錄下新增server.js
 
-```text
+```
 var express = require('express');
 var path = require('path');
 
@@ -191,7 +192,7 @@ app.listen(port, function(error) {
 
 3.在client資料夾內加入index.html
 
-```text
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -208,7 +209,7 @@ app.listen(port, function(error) {
 
 4.新增webpack 配置文件webpack.config.js
 
-```text
+```
 module.exports = {
   devtool: 'inline-source-map',
   entry: ['./client/client.js'],
@@ -234,12 +235,12 @@ module.exports = {
 
 什麼是source map
 
-可以看chrome dev tool 裡的setting即有此選項  
-[http://www.ruanyifeng.com/blog/2013/01/javascript\_source\_map.html](http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
+可以看chrome dev tool 裡的setting即有此選項\
+[http://www.ruanyifeng.com/blog/2013/01/javascript\_source\_map.html](http://www.ruanyifeng.com/blog/2013/01/javascript\_source\_map.html)
 
 5.在client資料夾中新增client.js
 
-```text
+```
 import React from 'react'
 import { render } from 'react-dom'
 import App from '../components/App'
@@ -256,7 +257,7 @@ render(
 
 此即為我們第一個react元件
 
-```text
+```
 import React, { Component } from 'react'
 
 class App extends Component {
@@ -270,38 +271,38 @@ class App extends Component {
 export default App
 ```
 
-輸入`webpack --config webpack.config.js`  
+輸入`webpack --config webpack.config.js`\
 會自動產生dist資料夾，裡面包含bundle.js檔案
 
-之後即可重新啟動伺服器，並觀看改變  
-`npm run serve`\(寫在package.json中的scripts內\)
+之後即可重新啟動伺服器，並觀看改變\
+`npm run serve`(寫在package.json中的scripts內)
 
 ### 讓我們不用重新整理網頁
 
 在package.json內加入
 
-1.不用重新整理網頁  
-\(讓我們不用使用webpack-dev-server也有-hot的指令\)
+1.不用重新整理網頁\
+(讓我們不用使用webpack-dev-server也有-hot的指令)
 
-```text
+```
 "webpack-hot-middleware": "^2.6.4"
 ```
 
 2.讓hot middleware知道react的class
 
-```text
+```
 "babel-preset-react-hmre": "^1.1.0",
 ```
 
 以及上webpack跑在我們架設的express server上
 
-```text
+```
 "webpack-dev-middleware": "^1.5.1"
 ```
 
 完整版
 
-```text
+```
 {
   "name": "react-todo-list",
   "version": "1.0.0",
@@ -336,7 +337,7 @@ npm install後
 
 接著更改剛才server資料夾下的 server.js
 
-```text
+```
 var express = require('express');
 var path = require('path');
 var config = require('../webpack.config.js');
@@ -371,7 +372,7 @@ app.listen(port, function(error) {
 
 webpack.config.js
 
-```text
+```
 var webpack = require('webpack');
 
 module.exports = {
@@ -405,7 +406,7 @@ module.exports = {
 }
 ```
 
-現在執行  
+現在執行\
 `npm run serve`
 
 再去更改app.js內的字，可以看到不用重新啟動伺服器，也不用按網頁的重新整理，即可更新
@@ -414,10 +415,10 @@ module.exports = {
 
 開始新增其他react元件
 
-在components下，新增一個檔案  
+在components下，新增一個檔案\
 `TextDisplay.js`
 
-```text
+```
 import React, {Component} from 'react'
 
 class TextDisplay extend Component{
@@ -431,7 +432,7 @@ export default TextDisplay
 
 接著我們要在class內寫入東西
 
-```text
+```
 import React, {Component} from 'react'
 //JSX要看到import了React 才可以編譯 
 class TextDisplay extends Component{
@@ -454,7 +455,7 @@ export default TextDisplay
 
 之後讓原來的App.js引用他
 
-```text
+```
 import React, { Component } from 'react'
 
 class App extends Component {
@@ -475,7 +476,7 @@ export default App
 
 TextDisplay.js
 
-```text
+```
 import React, { Component } from 'react'
 
 
@@ -509,11 +510,11 @@ class TextInput extends Component {
 export default TextInput
 ```
 
-**!!記得重新整理網頁，才會作用\(因為這裡是constructor\)**
+**!!記得重新整理網頁，才會作用(因為這裡是constructor)**
 
 ## 為元件加入方法
 
-```text
+```
 import React, { Component } from 'react'
 
 
@@ -551,9 +552,9 @@ export default TextInput
 
 ### 在class中的方法如果有this的話他會不知道this是什麼，所以要在class 的constructor中把該方法綁進來
 
-1.
+1\.
 
-```text
+```
 import React, { Component } from 'react'
 
 
@@ -594,21 +595,21 @@ export default TextInput
 
 2.所以另一種寫法，是直接在DOM 的onchange中綁，但官方推薦綁在constructor
 
-```text
+```
 onChange={this.handleChange.bind(this)}
 ```
 
 接著在render上面寫
 
-```text
+```
 handleChange(){
  ...
 }
 ```
 
-3.第三種寫法\(ES6的箭頭函數，最方便，因為會直接幫你綁定\)
+3.第三種寫法(ES6的箭頭函數，最方便，因為會直接幫你綁定)
 
-```text
+```
 send = () => {
     console.log(this.inputFiled.value)
     let text = this.inputFiled.value;
@@ -619,9 +620,9 @@ send = () => {
  <button onClick={()=>this.handleSubmit()}>Submit</button>
 ```
 
-如要傳入事件，記得兩邊\(\)都要傳入
+如要傳入事件，記得兩邊()都要傳入
 
-```text
+```
 <form onSubmit={(e)=>this.handleSubmit(e)}>
 ```
 
@@ -637,7 +638,7 @@ send = () => {
 
 container
 
-```text
+```
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import actions from '../redux/actions/todoActions.js'
@@ -680,7 +681,7 @@ export default connect(mapStateToProp,mapDispatchToProps)(TodoList)
 
 component
 
-```text
+```
 import React from 'react'
 const List = (props) => {
  let todos = Array.from(props.list.todos);
@@ -698,10 +699,10 @@ export default List;
 
 ## 2.在class內所有的this都是指到那個class
 
-所以要取得onchange時input內的value必須用e.target  
+所以要取得onchange時input內的value必須用e.target\
 ，因為這裡不是DOM
 
-```text
+```
 import React, { Component } from 'react'
 
 
@@ -741,7 +742,7 @@ export default TextInput
 
 1.新增一個元件為Propest.js
 
-```text
+```
 import React, { Component } from 'react'
 
 class Proptest extends Component {
@@ -754,7 +755,7 @@ export default Proptest
 
 TextDisplay.js
 
-```text
+```
 import React, { Component } from 'react'
 import Proptest from "./Proptest"
 
@@ -795,7 +796,7 @@ export default TextInput
 
 Proptest.js
 
-```text
+```
 import React, { Component } from 'react'
 
 class Proptest extends Component {
@@ -820,7 +821,7 @@ export default Proptest
 
 TestDisplay.js
 
-```text
+```
 import React, { Component } from 'react'
 import Proptest from "./Proptest"
 
@@ -859,9 +860,9 @@ class TextInput extends Component {
 export default TextInput
 ```
 
-進階\(點擊button更改state\)
+進階(點擊button更改state)
 
-```text
+```
 import React, { Component } from 'react'
 import Proptest from "./Proptest"
 
@@ -902,7 +903,7 @@ class TextInput extends Component {
 export default TextInput
 ```
 
-```text
+```
 import React, { Component } from 'react'
 
 class Proptest extends Component {
@@ -928,7 +929,7 @@ export default Proptest
 
 ## 在元件內使用條件判斷
 
-```text
+```
 import React, { Component } from 'react'
 import Proptest from "./Proptest"
 
@@ -991,15 +992,15 @@ export default TextInput
 
 1.先在server.js加上app.post的路徑
 
-```text
+```
 app.post('/hi',function(req,res){
     res.end("hi");
 });
 ```
 
-2.
+2\.
 
-```text
+```
 import React, { Component } from 'react'
 import Proptest from "./Proptest"
 
@@ -1088,7 +1089,7 @@ clone後到branch master開始進行
 
 改為下面，看是否仍正常啟動
 
-```text
+```
 import React from 'react'
 import { render } from 'react-dom'
 import App from '../components/App'
@@ -1103,7 +1104,7 @@ render((
 
 再改為下面看看
 
-```text
+```
 import React from 'react'
 import { render } from 'react-dom'
 import App from '../components/App'
@@ -1118,12 +1119,12 @@ render((
   ),document.getElementById('app'))
 ```
 
-到路徑[http://localhost:3000/\#/about](http://localhost:3000/#/about)
+到路徑[http://localhost:3000/#/about](http://localhost:3000/#/about)
 
 即可看到，元件的切換
 
-\(發現頁面切換元件很快速，我們以前要做到這樣必須用AJAX，或模板引擎內的動態compile\(一樣是AJAX加載\)，  
-但React沒用到ajax，完全都在client端計算更改的virtual DOM後更新到DOM上\)
+(發現頁面切換元件很快速，我們以前要做到這樣必須用AJAX，或模板引擎內的動態compile(一樣是AJAX加載)，\
+但React沒用到ajax，完全都在client端計算更改的virtual DOM後更新到DOM上)
 
 接著可到webpack那章，加上commonchunk plugin，加速我們每次網頁重新整理的速度
 
@@ -1141,7 +1142,7 @@ render((
 
 5.引入到index.html
 
-```text
+```
 <link rel=stylesheet type="text/css" href="../style.css">
 ```
 
@@ -1151,7 +1152,7 @@ render((
 
 在client.js加上
 
-```text
+```
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 ```
 
@@ -1171,7 +1172,7 @@ render((
 
 `<input ref="myInput" />`
 
-```text
+```
 var input = this.refs.myInput;
 var inputValue = input.value;
 ```
@@ -1182,7 +1183,7 @@ Style React
 
 把style放在物件裡面
 
-```text
+```
 <button style={style.submit} onClick={()=>this.handleSubmit()}>Submit</button>
 
   var style = {
@@ -1194,7 +1195,7 @@ Style React
 
 #### 1.Radium
 
-```text
+```
 1.import Radium from 'radium'
 
 2.export default Radium(TodoInput) //class名稱
@@ -1216,19 +1217,19 @@ Style React
 
 都是個別引入
 
-```text
+```
 import RaisedButton from 'material-ui/lib/raised-button';
 
  <RaisedButton label="Submit"onClick={()=>this.handleSubmit()} />
 ```
 
-[http://www.material-ui.com/\#/customization/inline-styles](http://www.material-ui.com/#/customization/inline-styles)
+[http://www.material-ui.com/#/customization/inline-styles](http://www.material-ui.com/#/customization/inline-styles)
 
 **PS:如果使用click相關的元件沒反應的話**
 
 `npm install react-tap-event-plugin`
 
-```text
+```
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
   constructor(props) {
@@ -1238,15 +1239,15 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
   }
 ```
 
-參考:[https://github.com/callemall/material-ui\#react-tap-event-plugin](https://github.com/callemall/material-ui#react-tap-event-plugin)
+參考:[https://github.com/callemall/material-ui#react-tap-event-plugin](https://github.com/callemall/material-ui#react-tap-event-plugin)
 
 ## Material UI 現在0.15後需如下使用
 
 1.加入Mui 的context
 
-2.injectTapEventPlugin\(\);
+2.injectTapEventPlugin();
 
-```text
+```
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from 'react-dom'
@@ -1274,7 +1275,7 @@ ReactDOM.render(
 
 一樣加入context和injectTapEventPlugin
 
-```text
+```
 var express = require('express');
 var path = require('path');
 var config = require('../../webpack.config.js');
@@ -1380,7 +1381,7 @@ app.listen(port, function(error) {
 
 1
 
-```text
+```
 <div className={"flipper" + (this.props.flipped ? " flipped" : "")}>
 ```
 
@@ -1388,7 +1389,7 @@ app.listen(port, function(error) {
 
 之後其父組件使用state來設定其他子組件的prop
 
-```text
+```
 render: function() {
         return <div>
             <Flipper flipped={this.state.flipped} orientation="horizontal" />
@@ -1402,7 +1403,7 @@ render: function() {
 
 所以點擊時會觸發下面這個函式
 
-```text
+```
 flip: function() {
         this.setState({ flipped: !this.state.flipped });
     },
@@ -1412,7 +1413,7 @@ flip: function() {
 
 ex:
 
-```text
+```
 render (){
 <div>
   {addth}
@@ -1426,7 +1427,7 @@ render (){
 
 2.或是把每個dom element放入array中
 
-```text
+```
 ['<th>some<th>','<th>some<th>']
 ```
 
@@ -1438,11 +1439,11 @@ render (){
 
 可如下使用findDOMNode
 
-```text
+```
 findDOMNode(this.refs.chart)
 ```
 
-## Server side rendering\(使用Express\)
+## Server side rendering(使用Express)
 
 參考此repo
 
@@ -1456,12 +1457,12 @@ findDOMNode(this.refs.chart)
 
 需要props傳入
 
-使用ref需於parent的class用div寫上ref在於其內引入stateless component  
-，之後再用this.refs.cir1.children\[0\]方式取得子節點
+使用ref需於parent的class用div寫上ref在於其內引入stateless component\
+，之後再用this.refs.cir1.children\[0]方式取得子節點
 
 範例:
 
-```text
+```
 clickCircle = (e) => {
     this.refs.cir1.children[0].style.background='red';
   }
@@ -1473,7 +1474,7 @@ clickCircle = (e) => {
   </div>
 ```
 
-## \#有關dangersetInnerHTML
+## #有關dangersetInnerHTML
 
 `dangerouslySetInnerHTML={{__html: }}`
 
@@ -1481,7 +1482,7 @@ clickCircle = (e) => {
 
 ex:
 
-```text
+```
 decodeEntities = () => {
   // this prevents any overhead from creating the object each time
   var element = document.createElement('div');
@@ -1505,7 +1506,7 @@ decodeEntities = () => {
 
 之後再用
 
-```text
+```
 <div dangerouslySetInnerHTML={{__html: (this.decodeEntities())(this.state.msgContent)}} style={styles.p1}></div>
 ```
 
@@ -1515,15 +1516,15 @@ decodeEntities = () => {
 
 所以如果需要用到css要如下寫，注意不可用import因為會出現impoort必須在top的錯誤
 
-```text
+```
 if(typeof document !== 'undefined') {
   require ('./index.css');
 }
 ```
 
-## &lt;input /&gt; 裡面的defaultValue如不顯示時 在屬性加個跟著value變動的key即可
+## \<input /> 裡面的defaultValue如不顯示時 在屬性加個跟著value變動的key即可
 
-```text
+```
 <input key={this.state.detailName} defaultValue={this.state.detailName} className="descInput" />
 ```
 
@@ -1540,4 +1541,3 @@ if(typeof document !== 'undefined') {
 ```
 
 [https://reactjs.org/docs/refs-and-the-dom.html](https://reactjs.org/docs/refs-and-the-dom.html)
-

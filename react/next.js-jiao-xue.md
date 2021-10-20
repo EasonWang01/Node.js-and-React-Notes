@@ -2,20 +2,20 @@
 
 ## Next.js 教學
 
-[https://nextjs.org/](https://nextjs.org/)
+[https://nextjs.org/](https://nextjs.org)
 
 ### 1.建立專案
 
 1.開一個新資料夾，然後cd進去後輸入以下指令。
 
-```text
+```
 npm init -y
 npm install --save react react-dom next
 ```
 
 2.在package.json的script內加入以下
 
-```text
+```
 {
   "scripts": {
     "dev": "next"
@@ -23,9 +23,9 @@ npm install --save react react-dom next
 }
 ```
 
-3.
+3\.
 
-```text
+```
 npm run dev
 ```
 
@@ -72,13 +72,13 @@ const Index = () => (
 export default Index
 ```
 
-> route的文件：[https://github.com/zeit/next.js\#routing](https://github.com/zeit/next.js#routing)
+> route的文件：[https://github.com/zeit/next.js#routing](https://github.com/zeit/next.js#routing)
 
 ### 3.新增共用layout component
 
 [https://nextjs.org/learn/basics/using-shared-components/the-layout-component](https://nextjs.org/learn/basics/using-shared-components/the-layout-component)
 
-## 4.引入&lt;script&gt;或是其他html tag
+## 4.引入\<script>或是其他html tag
 
 ```javascript
 import Layout from '../components/MyLayout.js'
@@ -173,7 +173,7 @@ app.prepare()
 })
 ```
 
-[https://github.com/zeit/next.js\#custom-server-and-routing](https://github.com/zeit/next.js#custom-server-and-routing)
+[https://github.com/zeit/next.js#custom-server-and-routing](https://github.com/zeit/next.js#custom-server-and-routing)
 
 ## 8.使用Fetch獲取Data
 
@@ -274,7 +274,7 @@ module.exports = withCSS()
 
 新增以下這兩行在 package.json 的 script 中。
 
-```text
+```
 "build": "next build",
 "start": "next start -p 8000",
 ```
@@ -283,7 +283,7 @@ module.exports = withCSS()
 
 > 加上NODE\_ENV=production即可，自訂的Server為上面第七點的Server
 
-```text
+```
 "serve": "NODE_ENV=production node server.js"
 ```
 
@@ -308,24 +308,24 @@ location / {
 }
 ```
 
-\[\[\[\[[https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)\)\]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29%29\)\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29%29]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29%29%29\)\)
+\[\[\[\[[https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy)\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy))\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\]%28https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy%29%29)\\](https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)\)]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy]\(https://github.com/zeit/next.js/wiki/Deployment-on-Nginx's-reverse-proxy\)\)\)/))
 
 **可以使用pm2**
 
 > 到next專案下輸入如下：
 >
-> ```text
+> ```
 > next build
 > pm2 start npm --name "next" -- start
 > ```
 
 ## 11. 部署到 Now
 
-Now 為一個 [https://zeit.co/](https://zeit.co/) 所出的雲端快速建置服務，使用Heroku
+Now 為一個 [https://zeit.co/](https://zeit.co) 所出的雲端快速建置服務，使用Heroku
 
 安裝：
 
-```text
+```
 npm i -g --unsafe-perm now
 ```
 
@@ -335,9 +335,7 @@ npm i -g --unsafe-perm now
 
 部署後會看到如下（會給你分配一個 now.sh 的子網域）：
 
-![](/assets/Screen%20Shot%202018-08-20%20at%202.51.29%20PM.png)之後回到Zeit.co網站也可查看部署過的項目。
-
-![](/assets/Screen%20Shot%202018-08-20%20at%202.54.46%20PM.png)
+之後回到Zeit.co網站也可查看部署過的項目。
 
 ## 額外功能
 
@@ -364,7 +362,7 @@ module.exports = {
 
 之後輸入以下即可
 
-```text
+```
 next export
 ```
 
@@ -372,11 +370,10 @@ next export
 
 > 可以使用Serve模組測試
 >
-> ```text
+> ```
 > npm install serve -g
 > cd out
 > serve -p 8080
 > ```
 
 如果想要部署到 Now上，進入 out 資料夾後輸入 `now` 即可。
-

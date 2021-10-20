@@ -6,19 +6,19 @@
 
 重啟指令
 
-```text
+```
 sudo nginx -s stop && sudo nginx
 ```
 
 ### 在Linux ubuntu 下的default webpage 路徑為
 
-```text
+```
 var/www/html
 ```
 
 或
 
-```text
+```
 /usr/share/nginx/html
 ```
 
@@ -28,14 +28,14 @@ var/www/html
 
 [https://stackoverflow.com/a/43644053/4622645](https://stackoverflow.com/a/43644053/4622645)
 
-```text
+```
 /etc/nginx/nginx.conf 
 /etc/nginx/sites-available/default
 ```
 
 ### 使用reverse proxy
 
-```text
+```
 location / {
     proxy_pass http://localhost:3000;
   }
@@ -49,7 +49,7 @@ location / {
 
 完整範例:
 
-```text
+```
 server {        
   listen 80;        
   server_name sakatu.com  www.sakatu.com;
@@ -68,7 +68,7 @@ server {
 
 ### 設定靜態目錄
 
-```text
+```
 server {
         listen 80 default_server;
         listen [::]:80 default_server;
@@ -84,7 +84,7 @@ server {
 
 加入以下配置
 
-```text
+```
 location / {
   ...
   proxy_http_version 1.1;
@@ -96,12 +96,12 @@ location / {
 
 ## 注意事項
 
-```text
+```
 使用AWS或其他VPS記得開防火牆的inbound記得開443PORT
 ```
 
-設置可參考一篇不錯的文章  
-[https://www.linode.com/docs/websites/nginx/how-to-configure-nginx\#start-stop-reload](https://www.linode.com/docs/websites/nginx/how-to-configure-nginx#start-stop-reload)
+設置可參考一篇不錯的文章\
+[https://www.linode.com/docs/websites/nginx/how-to-configure-nginx#start-stop-reload](https://www.linode.com/docs/websites/nginx/how-to-configure-nginx#start-stop-reload)
 
 有關使用cloudflare與nginx配置之SSL可參考web\_Basic之cloudflare章節
 
@@ -117,7 +117,7 @@ location / {
 
 EX:
 
-```text
+```
 limit_req_zone $binary_remote_addr zone=req_zone:10m rate=5r/s;
 server {
         listen 443;
@@ -133,6 +133,12 @@ server {
         }
 }
 ```
+
+> 記得要加上 burst （幾秒內的容許值） 與 nodelay （同時發送請求時一起執行），不然會使用平均秒數法自動幫你計算，只發兩個請求卻超過上面設置的 5r/s，產生 Nginx 503 error。
+>
+> ```
+>  limit_req zone=.. burst=5 nodelay;
+> ```
 
 ### 配置Load Balance
 
@@ -154,7 +160,7 @@ http {
 }
 ```
 
-### 
+###
 
 ### 可能錯誤
 
@@ -162,7 +168,7 @@ http {
 
 解決方法
 
-```text
+```
  ps -ef |grep nginx
    會顯示如下
     www-data 16751     1  0 Jun19 ?        00:00:07 nginx: worker process
@@ -178,9 +184,9 @@ http {
   sudo nginx
 ```
 
-EXAMPLE 1: \(WEB\)
+EXAMPLE 1: (WEB)
 
-```text
+```
 server {
  listen 80;
   server_name sakatu.com;
@@ -243,9 +249,9 @@ server {
 }
 ```
 
-EXAMPLE 2: \(API\)
+EXAMPLE 2: (API)
 
-```text
+```
 limit_req_zone $binary_remote_addr zone=req_zone:10m rate=5r/s;
 server {
         listen 443;
@@ -288,27 +294,26 @@ server {
 
 **1.有時如果以下指令出現"nginx.pid" failed**
 
-```text
+```
 nginx -s reload
 ```
 
 可替換為
 
-```text
+```
 sudo service nginx restart
 ```
 
-#### 2.nginx: \[emerg\] open\(\) "/usr/local/Cellar/nginx/1.15.0/logs/error.log" failed \(2: No such file or directory\)
+#### 2.nginx: \[emerg] open() "/usr/local/Cellar/nginx/1.15.0/logs/error.log" failed (2: No such file or directory)
 
 可以創建一個error.log檔案即可
 
-```text
+```
 mkdir /usr/local/Cellar/nginx/1.15.0/logs && echo > error.log
 ```
 
-**3.nginx: \[emerg\] bind\(\) to 0.0.0.0:82 failed \(13: Permission denied\)**
+**3.nginx: \[emerg] bind() to 0.0.0.0:82 failed (13: Permission denied)**
 
-```text
+```
 使用sudo nginx 即可
 ```
-

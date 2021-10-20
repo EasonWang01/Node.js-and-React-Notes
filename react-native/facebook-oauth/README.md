@@ -10,7 +10,7 @@
 
 新增權限
 
-```text
+```
 <LoginButton
   publishPermissions={["email", "user_friends", "user_photos"]}
 ....
@@ -18,12 +18,12 @@
 
 但是要注意現在許多權限都要審核並申請。
 
-![](/assets/螢幕快照%202019-05-31%20下午1.47.31.png)  
+\
 [https://developers.facebook.com/apps/350004755369462/app-review/permissions/](https://developers.facebook.com/apps/350004755369462/app-review/permissions/)
 
 ## 使用
 
-```text
+```
 import { LoginButton, AccessToken, LoginManager } from 'react-native-fbsdk';
 ```
 
@@ -95,4 +95,3 @@ FBLoginTrigger() {
 
 
 範例：[https://github.com/EasonWang01/RN-FB-Google-WebRTC](https://github.com/EasonWang01/RN-FB-Google-WebRTC)
-

@@ -6,13 +6,13 @@
 
 [http://www.2ality.com/2014/09/es6-modules-final.html](http://www.2ality.com/2014/09/es6-modules-final.html)
 
-[http://es6.ruanyifeng.com/\#docs/module](http://es6.ruanyifeng.com/#docs/module)
+[http://es6.ruanyifeng.com/#docs/module](http://es6.ruanyifeng.com/#docs/module)
 
 在webpack中可混用，一起用
 
 ## ES6 module
 
-```text
+```
  //------ lib.js ------
     export sqrt = Math.sqrt;
 
@@ -22,13 +22,13 @@
 
 想一次import所有export過的東西
 
-```text
+```
  import * as lib from 'lib';
 ```
 
 舉例:
 
-```text
+```
 export function addTodo(text) {
   return {
     type: 'ADD_TODO',
@@ -46,7 +46,7 @@ export function removeTodo(id) {
 
 傳回的東西是一個物件
 
-```text
+```
 import * as TodoActionCreators from './TodoActionCreators';
 console.log(TodoActionCreators);
 // {
@@ -57,7 +57,7 @@ console.log(TodoActionCreators);
 
 ## CommonJS
 
-```text
+```
 exports.foo = function () { ... };
 
 module.exports = config;
@@ -67,24 +67,24 @@ var a = require('a');
 
 ## 使用import的格式
 
-```text
+```
 import {Hello} from './component.jsx';
 ```
 
 但為什麼react在webpack可以用?
 
-```text
+```
 import React from 'react';
 import ReactDOM from 'react-dom';
 ```
 
-\(因為react是用 module.exports 進行輸出\)
+(因為react是用 module.exports 進行輸出)
 
 ## 結論
 
-1.
+1\.
 
-```text
+```
 module.exports = class Hello extends React.Component {
   render() {
     return <h1 style={style1}>Hello world,{this.props.name}</h1>;
@@ -94,7 +94,7 @@ module.exports = class Hello extends React.Component {
 
 or
 
-```text
+```
 export default class extends React.Component {
   render() {
     return <h1 style={style1}>Hello world,{this.props.name}</h1>;
@@ -103,13 +103,13 @@ export default class extends React.Component {
 
 配上
 
-```text
+```
 import Hello from './component.jsx';
 ```
 
-2.
+2\.
 
-```text
+```
 exports.Hello = class Hello extends React.Component {
   render() {
     return <h1 style={style1}>Hello world,{this.props.name}</h1>;
@@ -118,7 +118,7 @@ exports.Hello = class Hello extends React.Component {
 
 or
 
-```text
+```
 export class Hello extends React.Component {
   render() {
     return <h1 style={style1}>Hello world,{this.props.name}</h1>;
@@ -127,20 +127,20 @@ export class Hello extends React.Component {
 
 配上
 
-```text
+```
 import {Hello} from './component.jsx';
 ```
 
 ## 使用require
 
-```text
+```
 module.exports = class Hello extends React.Component {
   render() {
     return <h1 style={style1}>Hello world,{this.props.name}</h1>;
   }
 ```
 
-```text
+```
 var Helloo = require('./component.jsx');
 function main() {
     ReactDOM.render(<Helloo />, document.getElementById('app'));
@@ -151,7 +151,7 @@ function main() {
 
 使用commonjs的寫法require時
 
-```text
+```
 function main() {
     ReactDOM.render(<Hllo />, document.getElementById('app'));
 }
@@ -159,7 +159,7 @@ function main() {
 
 其中是指向
 
-```text
+```
 var hllo = require('aaa.jsx')
 ```
 
@@ -169,7 +169,7 @@ var hllo = require('aaa.jsx')
 
 ### 所以推薦使用ES6的import，下面hllo直接指到目標檔案的元件名稱，所以可以在一個jsx檔案內放多個元件
 
-```text
+```
  import {Hllo} from './component.jsx';
 
 main();
@@ -179,7 +179,7 @@ function main() {
 }
 ```
 
-```text
+```
 export class Hello extends React.Component {
   render() {
     return <h1 style={style1}>Hello world,{this.props.name}</h1>;
@@ -202,7 +202,7 @@ export class Hllo extends React.Component {
 
 ## 或是使用ES6 的exports 記得 require後加上  ".屬性"
 
-```text
+```
 import React from 'react';
 
 var style1 = {
@@ -221,7 +221,7 @@ exports.b =  class Hello extends React.Component {
 };
 ```
 
-```text
+```
 import React from 'react';
 import ReactDOM from 'react-dom';
 var Hello = require('./component.jsx').b;
@@ -231,4 +231,3 @@ function main() {
     ReactDOM.render(<Hello />, document.getElementById('app'));
 }
 ```
-

@@ -8,7 +8,7 @@
 
 1.新增 `.env`
 
-```text
+```
 PORT=8002
 ```
 
@@ -16,13 +16,13 @@ PORT=8002
 
 3.如果要讓Node.js 檔案也可以讀.env檔案可以使用以下模組
 
-```text
+```
 yarn add dotenv
 ```
 
 然後
 
-```text
+```
 require('dotenv').load();
 console.log(process.env)
 ```
@@ -30,8 +30,6 @@ console.log(process.env)
 ## 設定多個.env
 
 創建一個目錄結構如下
-
-![](/assets/d32.png)
 
 將env.js改為如下
 
@@ -146,7 +144,7 @@ package.json中的 script 如下
 
 ## Adding typescript
 
-```text
+```
 yarn add typescript @types/node @types/react @types/react-dom @types/jest
 ```
 
@@ -188,11 +186,11 @@ export default App;
 
 1.安裝 react-app-rewire
 
-```text
+```
 yarn add 
 ```
 
-2. 新增 config-overrides.js，類似如下
+2\. 新增 config-overrides.js，類似如下
 
 ```javascript
 const {alias} = require('react-app-rewire-alias')
@@ -204,9 +202,9 @@ module.exports = function override(config) {
 }
 ```
 
-3. 修改 package.json
+3\. 修改 package.json
 
-```text
+```
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
@@ -214,4 +212,3 @@ module.exports = function override(config) {
     ....
    } 
 ```
-

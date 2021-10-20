@@ -88,13 +88,13 @@ PushNotification.localNotification({
 
 ### Remote notification
 
-要先設定 App firebase init 
+要先設定 App firebase init&#x20;
 
 {% embed url="https://rnfirebase.io/" %}
 
 1.安裝模組
 
-```text
+```
 yarn add @react-native-firebase/app
 ```
 
@@ -102,11 +102,11 @@ yarn add @react-native-firebase/app
 
 android/app/google-services.json
 
-3.
+3\.
 
 In `android/build.gradle`
 
-```text
+```
 buildscript {
     ...
     dependencies {
@@ -119,7 +119,7 @@ buildscript {
 
 In `android/app/build.gradle`
 
-```text
+```
 dependencies {
   ...
   implementation 'com.google.firebase:firebase-analytics:17.3.0'
@@ -129,9 +129,9 @@ dependencies {
 apply plugin: 'com.google.gms.google-services'
 ```
 
-4. 重啟後即可
+4\. 重啟後即可
 
-```text
+```
 npx react-native run-android
 ```
 
@@ -193,7 +193,7 @@ PushNotification.configure({
 
 之後就會看到 token
 
-![](../.gitbook/assets/jie-tu-20201018-xia-wu-10.35.37.png)
+![](<../.gitbook/assets/截圖 2020-10-18 下午10.35.37.png>)
 
 {% embed url="https://rnfirebase.io/messaging/usage" %}
 
@@ -214,9 +214,9 @@ componentDidMount() {
 }   
 ```
 
-{% embed url="https://rnfirebase.io/messaging/usage\#foreground-state-messages" %}
+{% embed url="https://rnfirebase.io/messaging/usage#foreground-state-messages" %}
 
-7. server 加上推送
+7\. server 加上推送
 
 要先初始化 server
 
@@ -230,7 +230,7 @@ yarn add firebase-admin
 
 然後加上
 
-![](../.gitbook/assets/jie-tu-20201018-xia-wu-10.49.00.png)
+![](<../.gitbook/assets/截圖 2020-10-18 下午10.49.00.png>)
 
 完整如下：
 
@@ -265,7 +265,7 @@ admin.messaging().send(message)
 
 ```
 
-![](../.gitbook/assets/jie-tu-20201018-xia-wu-10.52.31.png)
+![](<../.gitbook/assets/截圖 2020-10-18 下午10.52.31.png>)
 
 有關 postman 發送訊息可參考
 
@@ -291,7 +291,7 @@ admin.messaging().send(message)
 })
 ```
 
-[https://rnfirebase.io/messaging/usage\#background--quit-state-messages](https://rnfirebase.io/messaging/usage#background--quit-state-messages)
+[https://rnfirebase.io/messaging/usage#background--quit-state-messages](https://rnfirebase.io/messaging/usage#background--quit-state-messages)
 
 在最外層 index.js 加上如下即可
 
@@ -384,7 +384,7 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 
 成果如下
 
-![](../.gitbook/assets/jie-tu-20201018-xia-wu-11.25.41.png)
+![](<../.gitbook/assets/截圖 2020-10-18 下午11.25.41.png>)
 
 ### 左上角的灰色方形更改必須加上 ic\_notification
 
@@ -402,17 +402,17 @@ messaging().setBackgroundMessageHandler(async remoteMessage => {
 
 2.然後使用放入對應的 mipmap-\*資料夾
 
-![](../.gitbook/assets/jie-tu-20201019-xia-wu-4.11.53.png)
+![](<../.gitbook/assets/截圖 2020-10-19 下午4.11.53.png>)
 
 3.最後加入以下到 AndroidManifest
 
-```text
+```
 <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@mipmap/ic_notification" />
 ```
 
-{% embed url="https://github.com/zo0r/react-native-push-notification/issues/730\#issuecomment-389545259" %}
+{% embed url="https://github.com/zo0r/react-native-push-notification/issues/730#issuecomment-389545259" %}
 
-![](../.gitbook/assets/jie-tu-20201019-xia-wu-4.13.22.png)
+![](<../.gitbook/assets/截圖 2020-10-19 下午4.13.22.png>)
 
 ## 點擊通知後跳轉到其他畫面
 
@@ -437,13 +437,13 @@ AppRegistry.registerHeadlessTask(
 );
 ```
 
-方法2: 
+方法2:&#x20;
 
 使用 admin message 傳入 click\_action
 
 > 但因為要給 intent filter ，所以在 react native 只能用上面的方法
 
-[https://firebase.google.com/docs/cloud-messaging/send-message\#example-notification-click-action](https://firebase.google.com/docs/cloud-messaging/send-message#example-notification-click-action)
+[https://firebase.google.com/docs/cloud-messaging/send-message#example-notification-click-action](https://firebase.google.com/docs/cloud-messaging/send-message#example-notification-click-action)
 
 ## 常見問題
 
@@ -459,27 +459,25 @@ AppRegistry.registerHeadlessTask(
 
 > 如果在傳送時加上 notification payload 則可以再關閉 app 後也跳出通知，如果一並帶上 data 屬性則 onmessage也會觸發（如果不加 notification payload 只加上 apns 或 android priority 不會有作用，可以不用加上 android priority）。
 
-{% embed url="https://rnfirebase.io/messaging/notifications\#via-admin-sdks" %}
+{% embed url="https://rnfirebase.io/messaging/notifications#via-admin-sdks" %}
 
 Notification payload 可設定參數：[https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload](https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload)
 
 如果更改正方形 icon 可設定如下
 
-> 但記得只有 sendToDevice 等具有 **options: MessagingOptions 才可使用**[**https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload**](https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload)\*\*\*\*
+> 但記得只有 sendToDevice 等具有 **options: MessagingOptions 才可使用**[**https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload**](https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload)****
 
-> **如果是 send 或** sendMulticast **必須參考** [**https://firebase.google.com/docs/reference/admin/node/admin.messaging.Notification**](https://firebase.google.com/docs/reference/admin/node/admin.messaging.Notification)\*\*\*\*
+> **如果是 send 或 **sendMulticast **必須參考 **[**https://firebase.google.com/docs/reference/admin/node/admin.messaging.Notification**](https://firebase.google.com/docs/reference/admin/node/admin.messaging.Notification)****
 
-![](../.gitbook/assets/jie-tu-20201102-xia-wu-2.24.09.png)
+![](<../.gitbook/assets/截圖 2020-11-02 下午2.24.09.png>)
 
 或是直接去 androidmanifest.xml 設定，則可以不用傳送 icon 參數，但這樣 原本的 app icon 會消失
 
-![](../.gitbook/assets/jie-tu-20201102-xia-wu-2.33.45.png)
+![](<../.gitbook/assets/截圖 2020-11-02 下午2.33.45.png>)
 
 
 
 #### 4. admin message 可用方法
 
 [https://firebase.google.com/docs/reference/admin/node/admin.messaging.Messaging](https://firebase.google.com/docs/reference/admin/node/admin.messaging.Messaging)
-
-
 

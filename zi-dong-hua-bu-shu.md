@@ -2,7 +2,7 @@
 
 安裝 GitLab
 
-```text
+```
 mkdir GitLab && cd GitLab
 curl https://raw.githubusercontent.com/sameersbn/docker-gitlab/master/docker-compose.yml -O
 docker-compose up
@@ -10,17 +10,17 @@ docker-compose up
 
 > 如果出現 ERROR: manifest for sameersbn/gitlab:13.0.7 not found:
 >
->  把 docker-compose.yml 的gitlab image 版本改為 
+> &#x20;把 docker-compose.yml 的gitlab image 版本改為&#x20;
 >
 > > sameersbn/gitlab:latest
 
 安裝好輸入 docker ps 確認
 
-![](.gitbook/assets/ying-mu-kuai-zhao-20200731-shang-wu-10.03.27.png)
+![](<.gitbook/assets/螢幕快照 2020-07-31 上午10.03.27.png>)
 
 進入 `localhost:10080`
 
-![](.gitbook/assets/ying-mu-kuai-zhao-20200731-shang-wu-10.03.31.png)
+![](<.gitbook/assets/螢幕快照 2020-07-31 上午10.03.31.png>)
 
 預設會先請你輸入密碼，使用者名稱為 root
 
@@ -48,7 +48,7 @@ docker-compose up
 >
 > Login Failed. Post "[http://localhost:10080/oauth/token](http://localhost:10080/oauth/token)": dial tcp 127.0.0.1:10080: connect: connection refused\`
 
-```text
+```
 version: '2.3'
 
 services:
@@ -86,7 +86,6 @@ services:
 
 之後連入 drone url 會自動導到 gitLab 連結 drone 畫面，點選 authorize 即會導入到 drone 頁面
 
-![](.gitbook/assets/ying-mu-kuai-zhao-20200731-shang-wu-11.18.58.png)
+![](<.gitbook/assets/螢幕快照 2020-07-31 上午11.18.58.png>)
 
-4. 剛才看到 docker-compose 下方的 runner 為用來執行 pipeline的
-
+4\. 剛才看到 docker-compose 下方的 runner 為用來執行 pipeline的

@@ -4,7 +4,7 @@
 
 ### 安裝
 
-```text
+```
 brew install kubectl && brew install minikube
 rm /usr/local/bin/kubectl
 brew link --overwrite kubernetes-cli
@@ -14,25 +14,25 @@ brew link --overwrite kubernetes-cli
 
 ### 執行
 
-```text
+```
 minikube start --vm-driver=virtualbox
 ```
 
 之後可以顯示dashboard
 
-```text
+```
 minikube dashboard
 ```
 
 ## 啟動Pod
 
-```text
+```
 kubectl apply -f https://k8s.io/examples/application/deployment.yaml
 ```
 
 [https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/](https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/)
 
-```text
+```
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
@@ -58,9 +58,9 @@ spec:
 
 要先用 `kubectl get pods` 找到 pod 名稱
 
-> 因為 yaml 寫兩個 replicas 所以會有兩個pod![](../.gitbook/assets/ying-mu-kuai-zhao-20191109-xia-wu-1.28.13.png)
+> 因為 yaml 寫兩個 replicas 所以會有兩個pod![](<../.gitbook/assets/螢幕快照 2019-11-09 下午1.28.13.png>)
 
-```text
+```
 kubectl port-forward nginx-deployment-54f57cf6bf-ds6sl 3009:80
 ```
 
@@ -68,7 +68,6 @@ kubectl port-forward nginx-deployment-54f57cf6bf-ds6sl 3009:80
 
 ## 移除 Pod
 
-```text
+```
 kubectl delete deployment nginx-deployment
 ```
-

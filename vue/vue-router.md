@@ -9,7 +9,7 @@
     </div>
 ```
 
-3. main.js
+3\. main.js
 
 ```javascript
 import Vue from 'vue'
@@ -34,7 +34,7 @@ new Vue({
 
 ```
 
-4. 點擊換頁面
+4\. 點擊換頁面
 
 ```javascript
 <template id="test">
@@ -57,4 +57,3 @@ export default {
 };
 </script>
 ```
-

@@ -6,9 +6,8 @@
 
 {% embed url="https://stackoverflow.com/a/59626981/4622645" %}
 
-![](../.gitbook/assets/jie-tu-20201109-xia-wu-3.11.59%20%281%29.png)
+![](<../.gitbook/assets/截圖 2020-11-09 下午3.11.59.png>)
 
 ## code 65
 
 先更新 xcode
-

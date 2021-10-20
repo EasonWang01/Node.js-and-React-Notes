@@ -77,5 +77,4 @@ const styles = {
 };
 ```
 
-![](../../.gitbook/assets/jie-tu-20210331-xia-wu-6.12.05.png)
-
+![](<../../.gitbook/assets/截圖 2021-03-31 下午6.12.05.png>)

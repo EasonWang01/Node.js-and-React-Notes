@@ -4,7 +4,7 @@
 
 這邊我們使用範例資料來進行操作：
 
-[https://github.com/datacharmer/test\_db](https://github.com/datacharmer/test_db)
+[https://github.com/datacharmer/test\_db](https://github.com/datacharmer/test\_db)
 
 ## 合併兩表
 
@@ -12,7 +12,7 @@
 
 將兩個表合併，並且row只回傳符合on 的資料列
 
-```text
+```
 select * from titles 
 inner join employees 
 on titles.emp_no=employees.emp_no
@@ -33,11 +33,11 @@ where titles.emp_no < 10100
 
 **回傳所有列資料，沒有欄位的資料顯示為 NULL**
 
-\*\*\*\*[**https://www.itread01.com/content/1542036003.html**](https://www.itread01.com/content/1542036003.html)\*\*\*\*
+****[**https://www.itread01.com/content/1542036003.html**](https://www.itread01.com/content/1542036003.html)****
 
 #### **Cross JOIN**
 
-\*\*\*\*[**https://stackoverflow.com/questions/17759687/cross-join-vs-inner-join-in-sql**](https://stackoverflow.com/questions/17759687/cross-join-vs-inner-join-in-sql)\*\*\*\*
+****[**https://stackoverflow.com/questions/17759687/cross-join-vs-inner-join-in-sql**](https://stackoverflow.com/questions/17759687/cross-join-vs-inner-join-in-sql)****
 
 ## 選擇不重複資料
 
@@ -48,11 +48,11 @@ select distinct title
 from titles
 ```
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200727-shang-wu-10.51.16.png)
+![](<../.gitbook/assets/螢幕快照 2020-07-27 上午10.51.16.png>)
 
 ## 合併查詢兩張表的同欄位資料
 
-union 或 union all \(union 預設為 distinct\)
+union 或 union all (union 預設為 distinct)
 
 ```sql
 select emp_no
@@ -65,8 +65,6 @@ where emp_no < 10002
 ```
 
 > 兩個表 select 的欄位數量要相同，名稱可以不同
-
-
 
 
 

@@ -8,15 +8,15 @@
 
 [https://stackoverflow.com/questions/15727912/sha-1-fingerprint-of-keystore-certificate](https://stackoverflow.com/questions/15727912/sha-1-fingerprint-of-keystore-certificate)
 
-![](../../.gitbook/assets/jie-tu-20201109-xia-wu-3.55.00.png)
+![](<../../.gitbook/assets/截圖 2020-11-09 下午3.55.00.png>)
 
-![](../../.gitbook/assets/jie-tu-20201109-xia-wu-3.54.45.png)
+![](<../../.gitbook/assets/截圖 2020-11-09 下午3.54.45.png>)
 
 之後按下一步加上必要的 build.gradle 參數。
 
 2.app/build.gradle
 
-```text
+```
 dependencies {
     implementation platform('com.google.firebase:firebase-bom:26.0.0')
     implementation 'com.google.firebase:firebase-analytics'
@@ -26,7 +26,7 @@ dependencies {
 
 3.外層的 project/build.gradle
 
-```text
+```
     ext {
         ...
         googlePlayServicesAuthVersion = "16.0.1"
@@ -41,9 +41,9 @@ dependencies {
         classpath 'com.google.gms:google-services:4.3.4'
 ```
 
-4. setting.gradle 加上
+4\. setting.gradle 加上
 
-```text
+```
 include ':react-native-google-signin', ':app'
 project(':react-native-google-signin').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-community/google-signin/android')
 ```
@@ -90,4 +90,3 @@ const handleGoogleSignIn = async () => {
     }
   };
 ```
-

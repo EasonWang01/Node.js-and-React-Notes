@@ -12,7 +12,7 @@
 
 Gmail為例:
 
-```text
+```
 smtp.gmail.com
 需要安全資料傳輸層 (SSL)：是
 需要傳輸層安全性 (TLS)：是 (如果可用)
@@ -55,13 +55,13 @@ transporter.sendMail(mailOptions, function(error, info){
 
 > 沒設定會說 credential 錯誤
 
-![](.gitbook/assets/jie-tu-20201029-shang-wu-11.52.02.png)
+![](<.gitbook/assets/截圖 2020-10-29 上午11.52.02.png>)
 
 ## POP
 
 Gmail 為例：
 
-```text
+```
 pop.gmail.com
 需要安全資料傳輸層 (SSL)：是
 通訊埠：995
@@ -75,7 +75,7 @@ pop.gmail.com
 
 Gmail 為例:
 
-```text
+```
 imap.gmail.com
 需要安全資料傳輸層 (SSL)：是
 通訊埠：993
@@ -97,11 +97,10 @@ imap.gmail.com
 
 因為 gmail 現在 無法插入html，所以要用開啟網站後 ctrl + c 複製，之後直接貼在mail 內文。
 
-如果改變貼上去的大小，可以先把網頁縮小成你要的樣子（例如手機的比例）然後再複製。 
+如果改變貼上去的大小，可以先把網頁縮小成你要的樣子（例如手機的比例）然後再複製。&#x20;
 
-> 如果想要大量傳送信件可以從 db query 出來後點選匯出，之後整個複製貼到 gmail 收件人上面 \(用空格分隔\)，這樣的好處是可以一次寄 500 封，如果用程式只能一次送 100 封
+> 如果想要大量傳送信件可以從 db query 出來後點選匯出，之後整個複製貼到 gmail 收件人上面 (用空格分隔)，這樣的好處是可以一次寄 500 封，如果用程式只能一次送 100 封
 
-![](.gitbook/assets/jie-tu-20201118-xia-wu-5.25.39.png)
+![](<.gitbook/assets/截圖 2020-11-18 下午5.25.39.png>)
 
 > 記得用密件副本傳送！
-

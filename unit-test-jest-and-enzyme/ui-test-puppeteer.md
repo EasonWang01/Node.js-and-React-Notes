@@ -1,24 +1,24 @@
-# UI Test \(puppeteer\)
+# UI Test (puppeteer)
 
 ## 跨平台測試
 
 [https://saucelabs.com/beta/dashboard/manual](https://saucelabs.com/beta/dashboard/manual)
 
-[https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Automated\_testing](https://developer.mozilla.org/zh-TW/docs/Learn/Tools_and_testing/Cross_browser_testing/Automated_testing)
+[https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Automated\_testing](https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Automated\_testing)
 
-[https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Your\_own\_automation\_environment](https://developer.mozilla.org/zh-TW/docs/Learn/Tools_and_testing/Cross_browser_testing/Your_own_automation_environment)
+[https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Your\_own\_automation\_environment](https://developer.mozilla.org/zh-TW/docs/Learn/Tools\_and\_testing/Cross\_browser\_testing/Your\_own\_automation\_environment)
 
 ## [GoogleChrome](https://github.com/GoogleChrome) / [**puppeteer**](https://github.com/GoogleChrome/puppeteer)
 
 安裝:[https://github.com/GoogleChrome/puppeteer](https://github.com/GoogleChrome/puppeteer)
 
-文件:[https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md\#pageclickselector-options](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageclickselector-options)
+文件:[https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageclickselector-options](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageclickselector-options)
 
 安裝時他會安裝最新版本的Chromium 所以安裝會比較久
 
 > 記得加上headless: false 才會打開瀏覽器
 
-```text
+```
 const browser = await puppeteer.launch({headless: false});
 ```
 
@@ -45,11 +45,11 @@ const puppeteer = require('puppeteer');
 
 使用以下方式開啟chrome
 
-```text
+```
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --no-first-run --no-default-browser-check --user-data-dir=$(mktemp -d -t 'chrome-remote_data_dir')
 ```
 
-之後將以下擷取下來![](/assets/螢幕快照%202019-05-29%20下午5.05.31.png)之後用如下方式
+之後將以下擷取下來之後用如下方式
 
 ```javascript
 const puppeteer = require('puppeteer');
@@ -131,7 +131,7 @@ await page.exposeFunction("myFunc", myFunc);
 
 ## WebDriver.io
 
-[http://webdriver.io/](http://webdriver.io/)
+[http://webdriver.io/](http://webdriver.io)
 
 ## selenium-webdriver
 
@@ -139,7 +139,7 @@ await page.exposeFunction("myFunc", myFunc);
 
 ## nightmare
 
-\(使用electron當作介面\)
+(使用electron當作介面)
 
 [https://github.com/segmentio/nightmare](https://github.com/segmentio/nightmare)
 
@@ -230,5 +230,4 @@ describe('test duckduckgo search results', () => {
 
 ## casper.js
 
-[http://casperjs.org/](http://casperjs.org/)
-
+[http://casperjs.org/](http://casperjs.org)

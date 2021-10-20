@@ -15,7 +15,7 @@ res.end('123');
 
 只要 Expires 後面的參數是未來的時間都會進行緩存。（disk cache）
 
-![](.gitbook/assets/ying-mu-kuai-zhao-20190703-xia-wu-6.19.27.png)
+![](<.gitbook/assets/螢幕快照 2019-07-03 下午6.19.27.png>)
 
 ## Last-modified
 
@@ -31,16 +31,15 @@ res.setHeader("Last-modified", new Date("2005-02-10").toUTCString())
 
 max-age 單位為秒。
 
-```text
+```
 res.setHeader('Cache-Control', 'public, max-age=3');
 ```
 
 超過三秒後要重新去取資料，所以可以一直按重新整理網頁，可以發現三秒後會重新要資料。
 
-> ```text
+> ```
 > private cache (瀏覽器快取)
 > public cache (CDN )
 > ```
 
 [https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-tw](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-tw)
-

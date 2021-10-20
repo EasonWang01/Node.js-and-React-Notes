@@ -39,7 +39,7 @@ export default Login;
 
 ```
 
-![](../.gitbook/assets/jie-tu-20210331-shang-wu-11.11.31.png)
+![](<../.gitbook/assets/截圖 2021-03-31 上午11.11.31.png>)
 
 ## 改路徑
 
@@ -49,9 +49,8 @@ export default Login;
 
 ## 在 SVG 裡面增加元素
 
-記得使用: 
+記得使用:&#x20;
 
 `position: absolute`
 
 `top: ...`
-

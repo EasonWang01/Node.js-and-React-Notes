@@ -2,7 +2,7 @@
 
 ## 文件操作
 
-```text
+```
 require("fs");
 ```
 
@@ -12,7 +12,7 @@ require("fs");
 
 在class.js輸入:
 
-```text
+```
 fs = require("fs");
 
 function copy(src, target) {
@@ -28,7 +28,7 @@ copy("./class1.js","./class2.js");
 
 class.js
 
-```text
+```
   fs = require("fs");
 
 function copy(src, target) {
@@ -39,7 +39,7 @@ copy("./class1.js","./class2.js");
 
 2.同步讀取文件
 
-```text
+```
  fs = require("fs");
 
 fileName ="./class1.js";
@@ -51,7 +51,7 @@ console.log(text);
 
 3.同步寫入文件
 
-```text
+```
  fs = require("fs");
 
 fileName ="./class2.js";
@@ -66,7 +66,7 @@ console.log(text);
 
 改為appendFileSync
 
-```text
+```
  fs = require("fs");
 
 fileName ="./class2.js";
@@ -79,9 +79,9 @@ console.log(text);
 
 4.判斷路徑是否存在
 
-exists\(path, callback\)
+exists(path, callback)
 
-```text
+```
  fs = require("fs");
 
 fileName ="./class2.js";
@@ -94,7 +94,7 @@ fs.exists(fileName, function (exists) {
 
 先新建一個class3.js
 
-```text
+```
 var fs = require('fs');
 var filePath = "./class3.js" ; 
 fs.unlinkSync(filePath);
@@ -106,7 +106,7 @@ fs.unlinkSync(filePath);
 
 先新建一個名為class3的資料夾
 
-```text
+```
 var fs = require('fs');
 var filePath = "./class3" ; 
 fs.rmdir(filePath);
@@ -114,7 +114,7 @@ fs.rmdir(filePath);
 
 7.創建資料夾
 
-```text
+```
 var fs = require('fs');
 
 fs.mkdir('./IamDir',0777, function (err) {
@@ -126,7 +126,7 @@ fs.mkdir('./IamDir',0777, function (err) {
 
 下面講一下檔案權限
 
-```text
+```
 讀取 Read = R = 4
 寫入 Write = W = 2
 執行 eXecute = X = 1
@@ -155,7 +155,7 @@ Other (訪客) = 4 + 0 + 1 = 5
 
 8.readFile是異步的
 
-```text
+```
 var fs = require('fs');
 
 fs.readFile('./class1.js','UTF-8' ,function (err, data) {
@@ -172,16 +172,16 @@ fs.readFile('./class3.js','UTF-8' ,function (err, data) {
 });
 ```
 
-多嘗試幾次，發現console的讀取順序不固定  
+多嘗試幾次，發現console的讀取順序不固定\
 9.同步讀取
 
-```text
+```
 mkdirSync()，writeFileSync()，readFileSync()
 ```
 
 10.讀取目錄內檔案
 
-```text
+```
 var fs = require('fs');
 
 dir="./as";
@@ -201,9 +201,9 @@ fs.readdir(dir, function (err, files) {
 
 11.查看檔案詳細資訊
 
-fs.stat\(path, callback\)
+fs.stat(path, callback)
 
-```text
+```
 var fs = require('fs');
 
 dir="./as";
@@ -227,9 +227,9 @@ fs.readdir(dir, function (err, files) {
 
 12.監聽文件
 
-watchfile\(\)，unwatchfile\(\)
+watchfile()，unwatchfile()
 
-```text
+```
 var fs = require('fs');
 
 fs.watchFile('./class1.js', function (curr, prev) {
@@ -244,7 +244,7 @@ fs.watchFile('./class1.js', function (curr, prev) {
 
 createReadStream方法往往用於打開大型的文本文件，創建一個讀取操作的數據流。所謂大型文本文件，指的是文本文件的體積很大，讀取操作的緩存裝不下，只能分成幾次發送，每次發送會觸發一個data事件，發送結束會觸發end事件。
 
-```text
+```
 var fs = require('fs');
 
 var input = fs.createReadStream('./class1.js');
@@ -257,7 +257,7 @@ console.log(data);
 
 會發現得到的是一個buffer
 
-```text
+```
 console.log(data.toString());
 ```
 
@@ -265,7 +265,7 @@ console.log(data.toString());
 
 另外
 
-```text
+```
 data.toString(); 
 
 //還可以指定字元集，預設utf-8
@@ -280,13 +280,13 @@ data.toString('utf-8',0,10);
 
 為什麼要有buffer?
 
-```text
+```
 電腦裡有很多檔案其實不是文字檔案來的。實際上，大部分我們開啟的檔案都是二進制檔案，例如圖片檔案，音訊檔案，簡報等，所有檔案裡的資料其實都是以二進制表示的。所以我們就用Buffer物件去表示檔案的內容，和方便我們閱讀檔案資料的每個位元組。
 ```
 
 ## fs.utimes
 
-```text
+```
 修改檔案的atime與mtime，
 ```
 
@@ -457,15 +457,15 @@ console.log('Server running on port 5000.');
 
 > 但之後會發現檔案太大還是會 browser crash，大約 4mb以上，所以還是要用form/data來傳，並用 formidable 解析，如果不用其他模組仍可解析，但要自己parse  ------WebKitFormBoundary 內的內容
 >
-> 因為 form/data 可以直接傳入 file input 的 files\[0\] 類行為 blob，但如果要用 post 必須在 body 傳入 arraybuffer，如果太大會導致 browser crash
+> 因為 form/data 可以直接傳入 file input 的 files\[0] 類行為 blob，但如果要用 post 必須在 body 傳入 arraybuffer，如果太大會導致 browser crash
 
 ## 上傳 file 轉為 stream
 
 假設檔案長這樣
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200619-shang-wu-9.29.05.png)
+![](<../.gitbook/assets/螢幕快照 2020-06-19 上午9.29.05.png>)
 
-此時可用 
+此時可用&#x20;
 
 ```javascript
 fs.createReadStream(file.path)
@@ -475,7 +475,7 @@ fs.createReadStream(file.path)
 
 ## 將檔案從server 傳到 client
 
-1.可用 express 之 res.download\('檔案路徑'\)
+1.可用 express 之 res.download('檔案路徑')
 
 或是使用
 
@@ -542,7 +542,7 @@ clone 之後進入範例：`resumable.js/samples/Node.js`
 
 前端
 
-```text
+```
 var r = new Resumable({
   target:'http://localhost:3000/upload',
   chunkSize:1*1024*1024,
@@ -554,15 +554,15 @@ var r = new Resumable({
 
 後端
 
-_app.js_ has been tweaked to send `resumable` a directory where to save the file \(top most\).
+_app.js_ has been tweaked to send `resumable` a directory where to save the file (top most).
 
-```text
+```
 var resumable = require('./resumable-node.js')(__dirname + "/uploads");
 ```
 
 tweaked _app.js_ to change the content of `app.post('/uploads',...)` see [gist](https://gist.github.com/rhamedy/9607ce395f3cb1b758eb).
 
-```text
+```
 // Handle uploads through Resumable.js
 app.post('/upload', function(req, res){
   resumable.post(req, function(status, filename, original_filename, identifier){
@@ -599,7 +599,6 @@ const byteSize = 1000 * 1000 * 1000 * GB;
 fs.writeFileSync('./bigfile.txt', Buffer.alloc(byteSize));
 ```
 
-> 1024 or 1000 
+> 1024 or 1000&#x20;
 >
 > [https://stackoverflow.com/questions/8632269/displaying-file-size-1000b-1kb-or-1024b-1kb](https://stackoverflow.com/questions/8632269/displaying-file-size-1000b-1kb-or-1024b-1kb)
-

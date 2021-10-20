@@ -10,7 +10,7 @@
 
 3.目前台灣大多是 Hinet 中華電信的 DNS server `168.95.1.1` 他會再去查詢
 
-4.假設找不到的話他會去找 **root name server \( 被** ICANN 旗下的 IANA 管轄**，全世界共有 13 個 root name server，各自又被不同的組織所營運\)**
+4.假設找不到的話他會去找 **root name server ( 被 **ICANN 旗下的 IANA 管轄**，全世界共有 13 個 root name server，各自又被不同的組織所營運)**
 
 > [https://zh.wikipedia.org/wiki/%E6%A0%B9%E7%B6%B2%E5%9F%9F%E5%90%8D%E7%A8%B1%E4%BC%BA%E6%9C%8D%E5%99%A8](https://zh.wikipedia.org/wiki/%E6%A0%B9%E7%B6%B2%E5%9F%9F%E5%90%8D%E7%A8%B1%E4%BC%BA%E6%9C%8D%E5%99%A8)
 >
@@ -30,12 +30,12 @@ dig +trace https://www.webnode.tw/
 
 過程
 
-* local ISP's DNS server will send a query to the root server. The root servers won’t have information on a specific IP address for www.securitytrails.com, but it will know where the name servers that serve that TLD\(.com\) are.
+* local ISP's DNS server will send a query to the root server. The root servers won’t have information on a specific IP address for www.securitytrails.com, but it will know where the name servers that serve that TLD(.com) are.
 * Root servers will return the list of TLD servers so the provider or configured server can again send a query, this time to a TLD server.
 * The TLD server will then return the authoritative name server where the desired domain is stored.
 * Once the request has reached the authoritative server, it will respond to the requesting server with the IP address
 
-## Resource Record \(RR\)
+## Resource Record (RR)
 
 例如 NS; A; AAAA; PTR; CNAME; MX. SOA等。
 
@@ -43,7 +43,7 @@ dig +trace https://www.webnode.tw/
 
 類似於 IPSec 都是用來增強相關安全性。
 
-{% embed url="http://www.cc.ntu.edu.tw/chinese/epaper/0022/20120920\_2206.html" %}
+{% embed url="http://www.cc.ntu.edu.tw/chinese/epaper/0022/20120920_2206.html" %}
 
 [https://www.ithome.com.tw/tech/92685](https://www.ithome.com.tw/tech/92685)
 
@@ -65,7 +65,7 @@ dig +short NS stackoverflow.com
 >
 > 可參考：
 >
-> [http://dns-learning.twnic.net.tw/bind/intro6.html\#bb](http://dns-learning.twnic.net.tw/bind/intro6.html#bb)
+> [http://dns-learning.twnic.net.tw/bind/intro6.html#bb](http://dns-learning.twnic.net.tw/bind/intro6.html#bb)
 
 ## BIND
 
@@ -103,9 +103,8 @@ cloudflare 提供的 DNS server
 
 {% embed url="https://securitytrails.com/" %}
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200807-xia-wu-5.21.52.png)
+![](<../.gitbook/assets/螢幕快照 2020-08-07 下午5.21.52.png>)
 
 ## 推薦閱讀
 
 [https://www.cloudflare.com/zh-tw/learning/](https://www.cloudflare.com/zh-tw/learning/)
-

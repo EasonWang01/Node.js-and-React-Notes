@@ -6,9 +6,9 @@
 
 ### 1. useState
 
-> 1.set state 會進行淺比較，如果兩次傳入的參數相同則不會進行 re-render
+> &#x20;1.set state 會進行淺比較，如果兩次傳入的參數相同則不會進行 re-render
 >
-> 2. re-render 時不會使 state 重置，包含子組建的 state 也會保持狀態
+> 2\. re-render 時不會使 state 重置，包含子組建的 state 也會保持狀態
 
 ```javascript
 import React, { useState } from 'react';
@@ -66,15 +66,15 @@ function Example() {
 
 > 用 useEffect 有個雷要注意，記得傳第二個參數，否則會發現怎麼一直重複render
 >
-> [https://reactjs.org/docs/hooks-reference.html\#conditionally-firing-an-effect](https://reactjs.org/docs/hooks-reference.html#conditionally-firing-an-effect)
+> [https://reactjs.org/docs/hooks-reference.html#conditionally-firing-an-effect](https://reactjs.org/docs/hooks-reference.html#conditionally-firing-an-effect)
 
 ### 3. UseLayoutEffect
 
 為同步的，在 dom 更新後但在畫面渲染前觸發，會比 useEffect 早觸發。
 
-[https://reactjs.org/docs/hooks-reference.html\#uselayouteffect](https://reactjs.org/docs/hooks-reference.html#uselayouteffect)
+[https://reactjs.org/docs/hooks-reference.html#uselayouteffect](https://reactjs.org/docs/hooks-reference.html#uselayouteffect)
 
-```text
+```
 useLayoutEffect(()=> {
   console.log('I am about to render!');
 },[]);
@@ -121,7 +121,7 @@ export default Test;
 
 可以傳入第二個參數，用來做深比較，第二個參數如果回傳為 true 則不會 re-render
 
-![](../.gitbook/assets/jie-tu-20211004-shang-wu-11.34.43.png)
+![](<../.gitbook/assets/截圖 2021-10-04 上午11.34.43.png>)
 
 ### 6.forwardRef, useImperativeHandle
 
@@ -163,16 +163,40 @@ const Parent = () => {
 };
 ```
 
+### 7. useCallback
+
+當今天傳入子元素的參數是一個 function，這時要避免子元素 re-render 在子元素寫了 memo 會失效，所以除了 memo 外，還要在父元素的 function 包一個 useCallback。
+
+```javascript
+  .....
+ const doSet = useCallback(() => {
+    seta({c: 'aas'})
+  }, [])
+  return (
+    <div className="App">
+      <Counter doSet={doSet}></Counter>
+    </div>
+  );
+  ....
+```
+
+### 8. useMemo
+
+useMemo 跟子元素比較沒關係，單純是在該元素內記憶比較複雜的運算，避免 re-render，但通常裡面都是放沒有 side effect 的東西，如果有 side effect 的計算請放到 useEffect。
+
+useMemo 其實跟 useEffect 類似，如果第二個參數是空的 \[] 則只有第一次 render 時會執行。
+
+或是第二個參數裡面的 state 改變時才會再次執行。
+
 ## UseMemo, UseCallback, React.memo 區別
 
 [https://github.com/facebook/react/issues/15156](https://github.com/facebook/react/issues/15156)
 
 1. 父元件的狀態被改變了，但是傳給子元件 props 的沒有變，子元件仍然會被重新渲染，所以要用 React.memo
 2. 但假設使用了 React.memo 如果傳入的 prop 是 function 或 object 還是會重新渲染，所以可以在該 prop 包成 useCallback 或 UseMemo
-3. 如果傳入的 prop 是 function 就在父層用 useCallback，如果傳入 prop 是 Object 就用 useMemo
+3. useMemo 跟子元素比較沒關係，單純是在該元素內記憶比較複雜的運算，避免 re-render，但通常裡面都是放沒有 side effect 的東西，如果有 side effect 的計算請放到 useEffect
 4. useCallback 回傳 function、UseMemo 回傳 value
 
 [https://medium.com/starbugs/react-%E9%97%9C%E6%96%BC-component-%E6%95%88%E8%83%BD%E5%84%AA%E5%8C%96%E7%9A%84%E9%82%A3%E4%BB%B6%E5%B0%8F%E4%BA%8B-68e6e5ecc4d6](https://medium.com/starbugs/react-%E9%97%9C%E6%96%BC-component-%E6%95%88%E8%83%BD%E5%84%AA%E5%8C%96%E7%9A%84%E9%82%A3%E4%BB%B6%E5%B0%8F%E4%BA%8B-68e6e5ecc4d6)
 
 [https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/react-optimize-performance-using-memo-usecallback-usememo-a76b6b272df3](https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/react-optimize-performance-using-memo-usecallback-usememo-a76b6b272df3)
-

@@ -9,21 +9,21 @@
 
 npm install
 
-npm install -g \(使用後可在cmd的任何路徑輸入package名稱執行，但如果是想在js檔內直接使用require的話，要再把環境變數加上才行\)\(如此即可不用在每個專案資料夾個別安裝package\)\)  
-\(記得名稱要是NODE\_PATH\)
+npm install -g (使用後可在cmd的任何路徑輸入package名稱執行，但如果是想在js檔內直接使用require的話，要再把環境變數加上才行)(如此即可不用在每個專案資料夾個別安裝package))\
+(記得名稱要是NODE\_PATH)
 
 **所以共有兩個環境變數:**
 
-1. 一個是NODE\_PATH =&gt; 安裝全域包後給js檔案require用
+1. 一個是NODE\_PATH => 安裝全域包後給js檔案require用
 
 > NODE\_PATH `C:\Program Files\nodejs\node_modules`
 >
-> Mac 使用 require global package 可用  
+> Mac 使用 require global package 可用\
 > export NODE\_PATH=/usr/local/lib/node\_modules
 >
 > 如果不知道路徑是什麼可以先試著安裝-g 模組 然後看一下他print出來的安裝路徑
 >
-> ![](/assets/a.png)
+>
 
 2.另一個是`C:\Users\Jason\AppData\Roaming\npm`給在cmd直接輸入module名稱用
 
@@ -31,8 +31,7 @@ npm install -g \(使用後可在cmd的任何路徑輸入package名稱執行，�
 >
 > 預設 安裝Node.js會自動幫你加上
 
-```text
-
+```
 ```
 
 npm install --save
@@ -55,27 +54,27 @@ npm update
 
 一開始開發時將套件安裝到devDependencies
 
-```text
+```
 npm install --save-dev  //記得save跟dev要用-連再一起
 ```
 
 部屬時安裝
 
-```text
+```
 npm install --production
 ```
 
-> 當npm install出現一些版本錯誤，而無法安裝，這是記得先更新本地端`npm install -g`\(更新global的package\)  
-> 更多可參考  
-> [https://docs.npmjs.com/](https://docs.npmjs.com/)
+> 當npm install出現一些版本錯誤，而無法安裝，這是記得先更新本地端`npm install -g`(更新global的package)\
+> 更多可參考\
+> [https://docs.npmjs.com/](https://docs.npmjs.com)
 
 ## package.json教學
 
-1. `"main"`表示require\('模組名稱'\)所預設加載的文件。
+1. `"main"`表示require('模組名稱')所預設加載的文件。
 
 2.如下的寫法可用`npm run start`輸入此即會執行`node index.js`
 
-```text
+```
 "scripts": {
   "start": "node index.js"
 },
@@ -83,22 +82,22 @@ npm install --production
 
 1. config用來設定環境變量，如下
 
-```text
+```
 "config": { "port" : "8080" }
 ```
 
-可在程式中使用  
+可在程式中使用\
 `process.env.npm_package_config_port`讀取到
 
 比較常用設定環境變量的方法為
 
-```text
+```
 console.log(process.env.PORT)
 ```
 
 然後執行
 
-```text
+```
 PORT=8000 node test1.js //mac
 ```
 
@@ -106,7 +105,7 @@ PORT=8000 node test1.js //mac
 
 nodemon可用類似如下
 
-```text
+```
 set PORT=8080 && nodemon test.js
 ```
 
@@ -114,17 +113,17 @@ set PORT=8080 && nodemon test.js
 
 使用shrinkwrap
 
-[http://syshen.cc/post/18425250521/npm-shrinkwrap-解決-nodejs-套件複雜的關連性問題](http://syshen.cc/post/18425250521/npm-shrinkwrap-解決-nodejs-套件複雜的關連性問題)
+[http://syshen.cc/post/18425250521/npm-shrinkwrap-解決-nodejs-套件複雜的關連性問題](http://syshen.cc/post/18425250521/npm-shrinkwrap-%E8%A7%A3%E6%B1%BA-nodejs-%E5%A5%97%E4%BB%B6%E8%A4%87%E9%9B%9C%E7%9A%84%E9%97%9C%E9%80%A3%E6%80%A7%E5%95%8F%E9%A1%8C)
 
 ## 更新npm
 
-```text
+```
 npm install npm@latest -g
 ```
 
 ## 發佈npm package
 
-```text
+```
 npm adduser
 npm publish
 ```
@@ -151,7 +150,7 @@ npm publish
 
 2.之後因為是global所以加入bin的欄位到package.json檔案裏面
 
-```text
+```
   "bin": {
     "gendoc": "./index.js"
   },
@@ -163,9 +162,9 @@ npm publish
 
 ## 更新或復原npm版本
 
-\(把數字改為你要的版本即可\)
+(把數字改為你要的版本即可)
 
-```text
+```
 npm install npm@4.6.1
 ```
 
@@ -173,26 +172,26 @@ npm install npm@4.6.1
 
 **n**
 
-```text
+```
 n use <version>
 ```
 
 **nvm**
 
-\(windows可能無法使用n,所以可以用nvm安裝檔\)
+(windows可能無法使用n,所以可以用nvm安裝檔)
 
 下載點:[https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases)
 
 然後
 
-```text
+```
 nvm install <version>
 nvm use <version>
 ```
 
 ## 查看套件以前發布過的版本
 
-```text
+```
 npm view <套件名稱>
 ```
 
@@ -202,13 +201,12 @@ npm view <套件名稱>
 
 有時如果安裝的套件是使用C++然後用node-gyp編譯的話，需要預先安裝如下
 
-```text
+```
 npm install -g node-gyp
 ```
 
 > 如果是ubuntu還需要安裝build-essential
 >
-> ```text
+> ```
 > sudo apt-get install build-essential
 > ```
-

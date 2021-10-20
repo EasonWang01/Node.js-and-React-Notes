@@ -1,4 +1,4 @@
-# Unit Test \(Jest & enzyme\)
+# Unit Test (Jest & enzyme)
 
 
 
@@ -41,7 +41,7 @@ describe('<test />', () => {
 
 **jest.fn, jest.mock, jest.spyOn 差異**
 
-```text
+```
 jest.fn 可模擬 function 名稱，但邏輯為空，並根據function名字追蹤是否被呼叫
 jest.mock 可模擬整個模組內所有function 為 jest.fn()
 jest.spyOn 會實際模擬 function 內邏輯
@@ -85,7 +85,7 @@ describe('<HomePage />', () => {
 
 > 如果是包過compose 的話可以單獨把compoent export 然後傳給 test
 >
-> ```text
+> ```
 > export { Application };
 > ```
 
@@ -135,13 +135,13 @@ describe('homeReducer', () => {
 
 以下先安裝
 
-```text
+```
 npm install jest-cli -g
 ```
 
 下面會每次檔案更動都跑test
 
-```text
+```
 "test:watch": "cross-env NODE_ENV=test jest --watchAll",
 ```
 
@@ -167,7 +167,7 @@ describe('SectionDisplay component', () => {
 
 ## Test coverage
 
-```text
+```
 --coverage
 ```
 
@@ -185,9 +185,7 @@ describe('SectionDisplay component', () => {
 yarn jest src/components/Agreement/index.test.js -- -u --coverage  --coverageDirectory=coverage --env=jsdom
 ```
 
-![](/assets/Screen%20Shot%202018-11-23%20at%2011.52.31%20AM.png)
-
-通常只要在render的元素加上snapshot與所有事件上 \(onClick...\) 加上測試即可
+通常只要在render的元素加上snapshot與所有事件上 (onClick...) 加上測試即可
 
 ```javascript
   test('call getCurrentLocation function', () => {
@@ -289,7 +287,7 @@ describe('ToLocalStorage', () => {
 
 > Reset先前的function call可用
 >
-> ```text
+> ```
 > beforeEach(() => {
 >   localStorage.setItem.mockClear();
 >   localStorage.getItem.mockClear();
@@ -326,7 +324,7 @@ test('initMap', () => {
 
 ## 測試Module
 
-[https://jestjs.io/docs/en/mock-functions\#mocking-modules](https://jestjs.io/docs/en/mock-functions#mocking-modules)
+[https://jestjs.io/docs/en/mock-functions#mocking-modules](https://jestjs.io/docs/en/mock-functions#mocking-modules)
 
 ```javascript
 // users.test.js
@@ -441,12 +439,12 @@ Barcharts.defaultProps.onBarClick();
 
 > 注意:
 >
-> 1. find\(''\#123"\) or find\(".342"\) 數字開頭的都會出現錯誤
+> 1. find(''#123") or find(".342") 數字開頭的都會出現錯誤
 > 2. 不管有沒有成功找到console.log都會顯示 ShallowWrapper {} 所以可以用.length來查看有沒有找到
 
 ## 設定 window 相關變數
 
-設定所有有關window.&lt;&gt;
+設定所有有關window.<>
 
 ```javascript
 global.appConfig = {
@@ -467,4 +465,3 @@ const wrapper = mount(<Login />);
 const useEffect = jest.spyOn(React, "useEffect");
 wrapper.unmount();
 ```
-

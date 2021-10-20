@@ -1,6 +1,6 @@
 # React util
 
-### React menu 
+### React menu&#x20;
 
 採用遞迴做法把所有子清單都顯示出來
 
@@ -133,7 +133,7 @@ SubHeaderMenu.propTypes = {
 }
 ```
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200827-xia-wu-3.31.38.png)
+![](<../.gitbook/assets/螢幕快照 2020-08-27 下午3.31.38.png>)
 
 ## React util
 
@@ -141,11 +141,11 @@ SubHeaderMenu.propTypes = {
 
 不要於component的style 寫上如
 
-```text
+```
 Object.assign(props.style,style.item)
 ```
 
-這樣共用元素的頁面會互相覆蓋style  
+這樣共用元素的頁面會互相覆蓋style\
 因為react不會重新render元素
 
 ### 2.使用Rich Editor
@@ -162,7 +162,7 @@ Object.assign(props.style,style.item)
 
 1.先新增RichEditor.js
 
-```text
+```
 import React, { Component, PropTypes as T } from 'react';
 import { connect } from 'react-redux';
 import radium from 'radium';
@@ -370,7 +370,7 @@ export default connect(mapStateToProps, {
 
 Draft.css
 
-```text
+```
 /**
  * Draft v0.9.0
  *
@@ -386,7 +386,7 @@ Draft.css
 
 RichEditor.css
 
-```text
+```
 .RichEditor-root {
   background: #fff;
   border: 1px solid #ddd;
@@ -456,13 +456,11 @@ RichEditor.css
 
 即可看到如下畫面
 
-![](螢幕快照%202016-11-09%20下午5.46.00.png)
-
 接著因為我們要將其存成immutable的markdown轉為html，須使用如下模組
 
 [https://github.com/sstur/draft-js-export-html](https://github.com/sstur/draft-js-export-html)
 
-```text
+```
   constructor(props) {
     super(props);
     this.state = { editorState: EditorState.createEmpty() };
@@ -483,9 +481,9 @@ RichEditor.css
 
 為原本的Materialize css包成的套件。
 
-[http://www.material-ui.com/\#/components/list](http://www.material-ui.com/#/components/list)
+[http://www.material-ui.com/#/components/list](http://www.material-ui.com/#/components/list)
 
-ICON: [https://material.io/icons/\#ic\_swap\_horiz](https://material.io/icons/#ic_swap_horiz)
+ICON: [https://material.io/icons/#ic\_swap\_horiz](https://material.io/icons/#ic\_swap\_horiz)
 
 ## 使用 I18N
 
@@ -565,4 +563,3 @@ export default function Autocomplete({ onSelectItem }) {
 }
 
 ```
-

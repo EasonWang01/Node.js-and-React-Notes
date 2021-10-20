@@ -10,13 +10,13 @@
 
 可直接輸入以下指令
 
-```text
+```
 echo sdk.dir = "$HOME"/Library/Android/sdk >> ./android/local.properties
 ```
 
 或是加入環境變量
 
-```text
+```
 export ANDROID_HOME = <SDK位置>
 ```
 
@@ -28,13 +28,11 @@ export ANDROID_HOME = <SDK位置>
 
 之後更改react-native 的 android folder內的build.gradle ，更改buildToolsVersion
 
-![](/assets/螢幕快照%202018-09-03%20上午9.52.22.png)
-
 #### 2.
 
 > Failed to find Platform SDK with path: platforms;
 
-到SDK頁面把版本號碼，填入剛才build.gradle的SDK版本位置即可。![](/assets/螢幕快照%202018-09-03%20上午9.51.54.png)
+到SDK頁面把版本號碼，填入剛才build.gradle的SDK版本位置即可。
 
 **3.**
 
@@ -42,7 +40,7 @@ export ANDROID_HOME = <SDK位置>
 
 解法：加上sudo
 
-```text
+```
 sudo react-native run-android
 ```
 
@@ -52,11 +50,11 @@ sudo react-native run-android
 >
 > 或是
 >
-> adb server version \(40\) doesn't match this client \(39\);
+> adb server version (40) doesn't match this client (39);
 
 這時通常輸入`adb start-server` 也會無法執行，通常是因為有兩個版本，所以只要把`/sdk/platform-tools/adb` 複製到`/usr/local/bin`即可
 
-解法：[https://github.com/facebook/react-native/issues/8401\#issuecomment-344628512](https://github.com/facebook/react-native/issues/8401#issuecomment-344628512)
+解法：[https://github.com/facebook/react-native/issues/8401#issuecomment-344628512](https://github.com/facebook/react-native/issues/8401#issuecomment-344628512)
 
 **5.Development Server response 500**
 
@@ -64,7 +62,7 @@ sudo react-native run-android
 
 重新啟動專案或重建都一樣時可輸入以下指令：
 
-```text
+```
 npm start -- --reset-cache
 ```
 
@@ -72,7 +70,7 @@ npm start -- --reset-cache
 
 不穩定，有時跳出錯誤訊息，有時又沒有
 
-```text
+```
 建議關閉 hot-reload 功能。
 ```
 
@@ -82,7 +80,7 @@ npm start -- --reset-cache
 
 輸入以下即可。
 
-```text
+```
 npm start -- reset-cache
 ```
 
@@ -131,7 +129,7 @@ package.json
 
 到 android studio 安裝 SDK 版本
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20201015-xia-wu-4.06.49.png)
+![](<../.gitbook/assets/螢幕快照 2020-10-15 下午4.06.49.png>)
 
 #### 12.Could not determine artifacts for com.facebook.fresco:fresco:1.10.0: Skipped due to earlier error
 
@@ -144,19 +142,19 @@ dependencies {
 }
 ```
 
-13. 上架時要求更改 package name
+13\. 上架時要求更改 package name
 
 {% embed url="http://hklifenote.blogspot.com/2015/06/android-studiopackage.html" %}
 
-14. 您已經有一個 APK 或 Android App Bundle 使用版本代碼 1
+14\. 您已經有一個 APK 或 Android App Bundle 使用版本代碼 1
 
-{% embed url="http://snowsfox.blogspot.com/2017/05/apk\_38.html" %}
+{% embed url="http://snowsfox.blogspot.com/2017/05/apk_38.html" %}
 
-15. Google Play 64 位元規範
+15\. Google Play 64 位元規範
 
-build.gradle\(app\) 新增如下
+build.gradle(app) 新增如下
 
-```text
+```
     defaultConfig {
         ....
         ndk {
@@ -169,35 +167,35 @@ build.gradle\(app\) 新增如下
 
 {% embed url="https://developer.android.com/distribute/best-practices/develop/64-bit" %}
 
-16. adb command not found
+16\. adb command not found
 
 加上以下環境變數，不過目前測試就算 adb comand 沒找到還是可以 run-android，但有時候使用最新的 react-native 創建專案卻可以沒有adb command 下執行
 
-```text
+```
 export ANDROID_HOME="/Users/easonwang/Library/Android/sdk"
 export PATH="/Users/easonwang/Library/Android/sdk/platform-tools":$PATH
 ```
 
-17. react version mismatch
+17\. react version mismatch
 
-通常只要把所有監聽 8081 \(emulator\)的 port 刪除，或是關閉所有 terminal 重啟 emulator即可。
+通常只要把所有監聽 8081 (emulator)的 port 刪除，或是關閉所有 terminal 重啟 emulator即可。
 
 18.產生的apk 安裝後網路無法連線
 
-> 如果 network endpoint 指向 http 記得加上以下不然會無法連線  
+> 如果 network endpoint 指向 http 記得加上以下不然會無法連線\
 > [https://stackoverflow.com/a/56801525/4622645](https://stackoverflow.com/a/56801525/4622645)
 
 19.Warning: Activity not started, intent has been delivered to currently running top-most instance.
 
 這樣 app 不護更新畫面，需要把 app 從模擬器關閉後重新 run-android
 
-20. Execution failed for task ':app:mergeDexDebug'
+20\. Execution failed for task ':app:mergeDexDebug'
 
 > When your app and the libraries it references exceed 65,536 methods, you encounter a build error that indicates your app has reached the limit of the Android build architecture
 
 加上以下即可
 
-```text
+```
 android {
     defaultConfig {
         ...
@@ -215,9 +213,9 @@ dependencies {
 
 {% embed url="https://developer.android.com/studio/build/multidex" %}
 
-21.
+21\.
 
-> Execution failed for task ':app:processDebugResources'.  AAPT: error: unexpected element &lt;queries&gt; found in &lt;manifest&gt;
+> Execution failed for task ':app:processDebugResources'.  AAPT: error: unexpected element \<queries> found in \<manifest>
 
 更新 gradle 版本：
 
@@ -232,13 +230,13 @@ project/build.gradle
 
 22.No non-density apk found
 
-```text
+```
 cd android && ./gradlew clean
 ```
 
 23.Error type 3 Error: Activity class {} does not exist.
 
-```text
+```
 adb uninstall PACKAGE_NAME
 ```
 
@@ -266,11 +264,11 @@ adb uninstall PACKAGE_NAME
 
 **3. Genymotion 存取跟電腦相同的 VPN**
 
-設定Adapter 2 的網路為 NAT 即可。 ![](/assets/Screen%20Shot%202019-01-03%20at%204.07.16%20PM.png)
+設定Adapter 2 的網路為 NAT 即可。&#x20;
 
 4.重置 ios 或 android 專案
 
-```text
+```
 rm -rf ./ios
 yarn add react-native-eject
 npx react-native eject
@@ -280,7 +278,7 @@ npx react-native eject
 
 #### Could not find the following native modules
 
-```text
+```
 rm -rf ios/Pods && rm -rf ios/build && cd ios && pod install && cd ../
 
 rm -rf node_modules && rm yarn.lock && yarn install
@@ -288,7 +286,7 @@ rm -rf node_modules && rm yarn.lock && yarn install
 
 #### Pod version 不夠
 
-```text
+```
 sudo gem install cocoapods
 ```
 
@@ -301,4 +299,3 @@ sudo gem install cocoapods
 這時可以去 xcode 查看相關錯誤，或是先更新 xcode。
 
 例如：[https://stackoverflow.com/questions/50718018/xcode-10-error-multiple-commands-produce](https://stackoverflow.com/questions/50718018/xcode-10-error-multiple-commands-produce)
-

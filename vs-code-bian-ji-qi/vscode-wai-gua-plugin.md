@@ -4,9 +4,9 @@
 
 方便在VSCode 上查看網頁。
 
- 開啟 html 後點選 ctrl+shift+v
+&#x20;開啟 html 後點選 ctrl+shift+v
 
-![](../.gitbook/assets/jie-tu-20201023-shang-wu-9.58.24.png)
+![](<../.gitbook/assets/截圖 2020-10-23 上午9.58.24.png>)
 
 #### 2. GitLens
 
@@ -25,6 +25,4 @@
 選取後快速翻譯，點選 plugin setting 設定要翻譯哪個語言
 
 選擇字後按 shift+option+t
-
-
 

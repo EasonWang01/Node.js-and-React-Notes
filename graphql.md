@@ -2,7 +2,7 @@
 
 ## 與 RESTful、GRPC類似，均為 http 上層的後端與前端溝通方式
 
-## Server 用法 
+## Server 用法&#x20;
 
 ```javascript
 const typeDefs = gql`
@@ -71,7 +71,7 @@ const server = new ApolloServer({
 
 typeDefs 用來定義 type，內建有 query, mutation, subscribe 三種 type。
 
-resolvers 用來處理當接收到 query 或 mutation 或 subscribe 時要做的對應處理，resolvers 包含三個預設參數 \(parent, args, context\)
+resolvers 用來處理當接收到 query 或 mutation 或 subscribe 時要做的對應處理，resolvers 包含三個預設參數 (parent, args, context)
 
 context 讓 server 可以傳遞訊息讓 resolvers 第三個參數接收
 
@@ -161,7 +161,7 @@ const getUsersQuery = gql`
 
 {% embed url="https://www.apollographql.com/docs/react/data/mutations/" %}
 
-example: 
+example:&#x20;
 
 ```javascript
 import React from "react";
@@ -219,13 +219,13 @@ React: [https://www.apollographql.com/docs/react/data/subscriptions/](https://ww
 
 ## typeDefs
 
-1. 回傳 array 就用 \[\] 把其他 type 包住
+1. 回傳 array 就用 \[] 把其他 type 包住
 2. 直接在名稱上方可寫註解
 3. ! 代表必填參數 `post(id: ID!): Post`
 
 #### 預設 types
 
-![](.gitbook/assets/jie-tu-20201212-xia-wu-2.54.54.png)
+![](<.gitbook/assets/截圖 2020-12-12 下午2.54.54.png>)
 
 {% embed url="https://graphql.org/learn/schema/" %}
 
@@ -261,9 +261,9 @@ context: 存取傳進 Apollo Server 初始化時 context 的資料
 > } 
 > ```
 
-> 3. server resolver  mutation 裡面記得要放
+> 3\. server resolver  mutation 裡面記得要放
 >
-> ```text
+> ```
 >       pubsub.publish(..., {
 >         ...
 >       });
@@ -277,15 +277,15 @@ context: 存取傳進 Apollo Server 初始化時 context 的資料
 
 ## 其他工具
 
-#### [Prisma](https://www.prisma.io/)
+#### [Prisma](https://www.prisma.io)
 
 GraphQL 後端專用的 ORM，方便資料庫溝通
 
-![](.gitbook/assets/jie-tu-20201212-xia-wu-2.46.31.png)
+![](<.gitbook/assets/截圖 2020-12-12 下午2.46.31.png>)
 
 #### Graphql-tag
 
-parse gql string to AST \( 在 apollo-boost 內也有 \)
+parse gql string to AST ( 在 apollo-boost 內也有 )
 
 {% embed url="https://github.com/apollographql/graphql-tag" %}
 
@@ -301,9 +301,8 @@ parse gql string to AST \( 在 apollo-boost 內也有 \)
 
 ## 常見問題
 
-1.執行 query 後出現 unexpect token &lt; 
+1.執行 query 後出現 unexpect token <&#x20;
 
 > 通常是 endpoint 後的 url 路徑不對
 
-[https://github.com/graphql-boilerplates/node-graphql-server/issues/274\#issuecomment-381910134](https://github.com/graphql-boilerplates/node-graphql-server/issues/274#issuecomment-381910134)
-
+[https://github.com/graphql-boilerplates/node-graphql-server/issues/274#issuecomment-381910134](https://github.com/graphql-boilerplates/node-graphql-server/issues/274#issuecomment-381910134)

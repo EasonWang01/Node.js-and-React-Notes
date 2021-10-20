@@ -21,7 +21,7 @@
 
 > 可選擇關音訊或視訊。
 
-![](../../.gitbook/assets/jie-tu-20201207-xia-wu-5.03.06.png)
+![](<../../.gitbook/assets/截圖 2020-12-07 下午5.03.06.png>)
 
 ## 控制斷線重連
 
@@ -116,7 +116,7 @@ const init = () => {
 
 > 只用建立一個 channel 即可，撥打方建立，然後 createOffer 後會把 channel 送給遠端
 
-2. 之後監聽接收 channel
+2\. 之後監聽接收 channel
 
 ```javascript
     peerConnection.ondatachannel = (e) => {
@@ -125,7 +125,7 @@ const init = () => {
     }
 ```
 
-3. 發送訊息到 channel
+3\. 發送訊息到 channel
 
 ```javascript
   const handleSendMessage = (value) => {
@@ -189,4 +189,3 @@ async function handleShareScreen() {
 從後端與其他 peer 連線
 
 [https://github.com/node-webrtc/node-webrtc-examples](https://github.com/node-webrtc/node-webrtc-examples)
-

@@ -2,7 +2,7 @@
 
 大部分 API 均與前端 web worker 相同，用來有效處理 CPU bound 的資料。
 
-{% embed url="https://nodejs.org/api/worker\_threads.html" %}
+{% embed url="https://nodejs.org/api/worker_threads.html" %}
 
 #### 相關特性
 
@@ -39,7 +39,7 @@ parentPort.on('message', (message) => {
 
 之後執行 `node app.js`
 
-```text
+```
 worker got message: ping
 Main thread got message: pong
 ```
@@ -208,7 +208,7 @@ parentPort.on("message", ({ arrayLength, shareMemory }) => {
 
 平均速度約 90ms
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-5.12.55.png)
+![](<../.gitbook/assets/螢幕快照 2020-08-21 下午5.12.55.png>)
 
 #### 假設換回原本 postMessage方式
 
@@ -259,7 +259,7 @@ parentPort.on("message", ({ arrayLength }) => {
 
 可發現需要耗時 150ms 左右，約為 share memory 的兩倍。
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200821-xia-wu-5.17.30.png)
+![](<../.gitbook/assets/螢幕快照 2020-08-21 下午5.17.30.png>)
 
 #### 資料序列化的時間
 
@@ -286,4 +286,3 @@ Atomics.wait
 ```javascript
 new MessageChannel()
 ```
-

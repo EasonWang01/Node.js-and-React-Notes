@@ -17,7 +17,7 @@ API文件：[https://stripe.com/docs/api](https://stripe.com/docs/api)
 
 > 建立商店後會可以進入一個Dashboard介面，在左下方把Test打開即可進入測試模式。
 >
-> ![](../.gitbook/assets/screen-shot-2018-08-17-at-3.13.45-pm.png)
+> ![](<../.gitbook/assets/Screen Shot 2018-08-17 at 3.13.45 PM.png>)
 
 #### 3.程式範例：
 
@@ -62,7 +62,7 @@ app.listen(4567);
 
 views/index.pug
 
-```text
+```
 <html>
 <head>
 <script src="https://checkout.stripe.com/v2/checkout.js"></script></head>
@@ -100,7 +100,7 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 #### 2.之後點擊按鈕後會要求填入信用卡資訊與email
 
-![](../.gitbook/assets/screen-shot-2018-08-17-at-3.22.28-pm.png)
+![](<../.gitbook/assets/Screen Shot 2018-08-17 at 3.22.28 PM.png>)
 
 #### 3.送出後會發送Request給stripe
 
@@ -117,7 +117,7 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 產生如下請求
 
-#### ![](../.gitbook/assets/screen-shot-2018-08-17-at-3.20.39-pm.png)5.最後前一個請求返回後會進行確認請求
+#### ![](<../.gitbook/assets/Screen Shot 2018-08-17 at 3.20.39 PM.png>)5.最後前一個請求返回後會進行確認請求
 
 ```javascript
     stripe.charges.create({
@@ -128,11 +128,11 @@ h2 You successfully paid <strong>$5.00</strong>!
     })
 ```
 
-![](../.gitbook/assets/screen-shot-2018-08-17-at-3.26.43-pm.png)
+![](<../.gitbook/assets/Screen Shot 2018-08-17 at 3.26.43 PM.png>)
 
 > 以上的請求詳細內容都可以在左側log tab看到
 >
-> ![](../.gitbook/assets/screen-shot-2018-08-17-at-3.27.20-pm.png)
+> ![](<../.gitbook/assets/Screen Shot 2018-08-17 at 3.27.20 PM.png>)
 
 ## 使用React
 
@@ -156,7 +156,7 @@ h2 You successfully paid <strong>$5.00</strong>!
 
 4.成功後再發一個request給後端更新使用者購買狀態
 
-```text
+```
 yarn add @stripe/react-stripe-js @stripe/stripe-js
 ```
 
@@ -571,7 +571,7 @@ input:focus,
 }
 ```
 
-![](../.gitbook/assets/ying-mu-kuai-zhao-20200302-shang-wu-10.48.00.png)
+![](<../.gitbook/assets/螢幕快照 2020-03-02 上午10.48.00.png>)
 
 
 
@@ -636,4 +636,3 @@ const result = await stripe.confirmCardPayment(client_secret, {
 
 
 [https://stripe.com/docs/payments/save-during-payment](https://stripe.com/docs/payments/save-during-payment)
-

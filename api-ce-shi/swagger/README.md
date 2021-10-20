@@ -28,7 +28,7 @@ swagger有三個服務，editor,codegen,swagger ui
 
 [https://scotch.io/tutorials/document-your-already-existing-apis-with-swagger](https://scotch.io/tutorials/document-your-already-existing-apis-with-swagger)
 
-```text
+```
 1.下載並且安裝node.js 
 2. npm install -g http-server 
 3. 下載項目https://github.com/swagger-api/swagger-ui 並且解壓。 
@@ -38,7 +38,7 @@ swagger有三個服務，editor,codegen,swagger ui
 
 > 讀取不同的swagger json 只要加上 ?url 即可
 
-```text
+```
 http://127.0.0.1:8080/dist/?url=https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v2.0/json/api-with-examples.json
 ```
 
@@ -48,7 +48,7 @@ http://127.0.0.1:8080/dist/?url=https://raw.githubusercontent.com/OAI/OpenAPI-Sp
 
 因沒開啟的話，位於遠端網頁的 swagger editor 無法發送測試
 
-```text
+```
 app.use('*', function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
@@ -68,17 +68,17 @@ app.use('*', function(req, res, next) {
 
 2.或是使用swaggerhub直接線上編輯並可產生只可看的swagger ui
 
-## \#開始編寫yaml語言
+## #開始編寫yaml語言
 
 > yaml子項目會後退空兩格，陣列使用`-`表示
 
-先到[http://editor.swagger.io/\#/](http://editor.swagger.io/#/)
+先到[http://editor.swagger.io/#/](http://editor.swagger.io/#/)
 
 可以看到範例，接著我們把它清空，開始編寫自己的版本
 
 最基本的型態
 
-```text
+```
 swagger: '2.0'
 
 info:
@@ -100,7 +100,7 @@ paths:
 
 再來我們會開始往paths裡面寫api
 
-**\#寫paths的步驟**
+**#寫paths的步驟**
 
 1.路徑 `/test`
 
@@ -110,7 +110,7 @@ paths:
 
 4.在parameters下寫參數
 
-```text
+```
  -  name: pageSize
    in: query
    description: Number of persons returned
@@ -121,7 +121,7 @@ paths:
 
 6.每個response code下有回傳的東西
 
-```text
+```
 description: A Person
 schema:
    required:
@@ -139,7 +139,7 @@ schema:
 
 GET 簡單範本
 
-```text
+```
   /getUser:
     # This is a HTTP operation
     get:
@@ -164,7 +164,7 @@ GET 方法的完整範例
 
 server.js
 
-```text
+```
 var express = require('express')
 var app = express()
 
@@ -206,7 +206,7 @@ app.listen(3000, function () {
 
 yaml
 
-```text
+```
 swagger: '2.0'
 
 host: localhost:3000
@@ -263,27 +263,27 @@ paths:
 
 Post
 
-> 你可能看過$ref: '\#/definitions/test1'，之後把test1另外定義，但個人感覺此種寫法比較分散，於是此處不用此種寫法
+> 你可能看過$ref: '#/definitions/test1'，之後把test1另外定義，但個人感覺此種寫法比較分散，於是此處不用此種寫法
 
 ## 注意:修改yaml後記得把`Try this operation`重新開啟才會更新
 
 先定義post type
 
-```text
+```
 consumes:
   - application/x-www-form-urlencoded
 ```
 
 或是
 
-```text
+```
 consumes:
   - multipart/form-data
 ```
 
 路由
 
-```text
+```
   /register:         
 
     post:
@@ -309,7 +309,7 @@ consumes:
 
 server.js
 
-```text
+```
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
@@ -364,7 +364,7 @@ app.listen(3000, function () {
 
 server.js
 
-```text
+```
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
@@ -431,7 +431,7 @@ app.listen(3000, function () {
 
 yaml
 
-```text
+```
 swagger: '2.0'
 
 host: localhost:3000
@@ -558,7 +558,7 @@ paths:
 
 ## Request 參數
 
-```text
+```
 formData     POST Data
 path         parameters, such as /users/{id}
 query        parameters, such as /users?role=admin
@@ -577,19 +577,16 @@ array
 object
 ```
 
-[https://swagger.io/docs/specification/data-models/data-types/\#array](https://swagger.io/docs/specification/data-models/data-types/#array)
+[https://swagger.io/docs/specification/data-models/data-types/#array](https://swagger.io/docs/specification/data-models/data-types/#array)
 
 ## 切分區域
 
 用tags，即可將其加入子項目
 
-```text
+```
  * /amss1-login/:
  *   get:
  *     summary: Get ProjectRevisions
  *     tags:
  *       - Grid
 ```
-
-![](/assets/螢幕快照%202019-11-21%20下午1.56.42.png)
-

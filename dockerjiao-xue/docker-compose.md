@@ -10,7 +10,7 @@
 
 1. DockerFile
 
-```text
+```
 FROM node:10
 
 # Create app directory
@@ -32,16 +32,16 @@ EXPOSE 8081
 CMD [ "node", "server.js" ]
 ```
 
-2. .dockerignore
+2\. .dockerignore
 
-```text
+```
 node_modules
 npm-debug.log
 ```
 
 3.package.json
 
-```text
+```
 {
   "name": "docker_web_app",
   "version": "1.0.0",
@@ -57,7 +57,7 @@ npm-debug.log
 }
 ```
 
-4. server.js
+4\. server.js
 
 ```javascript
 const express = require('express');
@@ -76,7 +76,7 @@ app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
 ```
 
-5. ./src/index.html
+5\. ./src/index.html
 
 ```markup
 <!DOCTYPE html>
@@ -111,11 +111,11 @@ console.log(`Running on http://${HOST}:${PORT}`);
 </html>
 ```
 
-6. docker-compose.yml
+6\. docker-compose.yml
 
 > volumes 把現在資料夾的 src mapping 到 docker 內的 /usr/src/app/src ，讓我們更改外部時同時會改 docker 內部的檔案
 
-```text
+```
 version: '3' # 目前使用的版本，可以參考官網：
 services: # services 關鍵字後面列出 web, redis 兩項專案中的服務
   web:
@@ -128,9 +128,8 @@ services: # services 關鍵字後面列出 web, redis 兩項專案中的服務
 
 之後執行
 
-```text
+```
 docker-compose up
 ```
 
-然後 到 [http://localhost:49160/](http://localhost:49160/) 看到網頁後試著更改 ./src/index.html 即可看到改變。
-
+然後 到 [http://localhost:49160/](http://localhost:49160) 看到網頁後試著更改 ./src/index.html 即可看到改變。

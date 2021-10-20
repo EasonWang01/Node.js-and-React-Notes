@@ -15,7 +15,7 @@
 >
 > [https://stackoverflow.com/questions/44701245/hide-header-in-stack-navigator-react-navigation](https://stackoverflow.com/questions/44701245/hide-header-in-stack-navigator-react-navigation)
 
-v5: 
+v5:&#x20;
 
 ```javascript
  <Stack.Navigator
@@ -27,7 +27,7 @@ v5:
 
 #### 2.進行導航
 
-使用`this.props.navigation.navigate('Main')` 
+使用`this.props.navigation.navigate('Main')`&#x20;
 
 > 使用createStackNavigator來初始化該路由，然後用createBottomTabNavigator建立底部導航
 
@@ -109,7 +109,7 @@ export default class App extends React.Component {
 
 > react-navigation listen on router change
 
-1.
+1\.
 
 ```javascript
 import { NavigationEvents } from "react-navigation";
@@ -128,10 +128,9 @@ import { NavigationEvents } from "react-navigation";
 
 使用NavigationEvents即可。
 
-> ```text
+> ```
 > onWillFocus={payload => console.log("will focus", payload)}
 > onDidFocus={payload => console.log("did focus", payload)}
 >
 > 這兩個有時要同時加才有反應
 > ```
-

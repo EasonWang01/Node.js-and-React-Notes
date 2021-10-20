@@ -51,5 +51,4 @@ const styles = {
 
 ```
 
-![](../../.gitbook/assets/ying-mu-kuai-zhao-20201016-xia-wu-5.41.14.png)
-
+![](<../../.gitbook/assets/螢幕快照 2020-10-16 下午5.41.14.png>)

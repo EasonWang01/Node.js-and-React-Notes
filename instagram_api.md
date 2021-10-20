@@ -13,7 +13,7 @@
 
 2.其分為兩種存取API的方式
 
-```text
+```
 使用三階段(建議此種作法)
 client-ID-->code-->access-token
 
@@ -27,7 +27,7 @@ https://www.instagram.com/developer/authentication/
 
 ### 範例:
 
-```text
+```
 https://www.instagram.com/oauth/authorize?client_id=3b6d608eb019431ca90bde60c9178e21&redirect_uri=http://localhost:3000/users/auth/instagram/callback&response_type=token&scope=basic+public_content+follower_list+comments+relationships+likes
 ```
 
@@ -41,7 +41,7 @@ https://www.instagram.com/oauth/authorize?client_id=3b6d608eb019431ca90bde60c917
 
 GET
 
-```text
+```
 https://www.instagram.com/explore/tags/輸入欲查詢的TAG/?__a=1
 ```
 
@@ -49,7 +49,7 @@ https://www.instagram.com/explore/tags/輸入欲查詢的TAG/?__a=1
 
 GET
 
-```text
+```
 https://www.instagram.com/使用者帳號/?__a=1
 ```
 
@@ -57,7 +57,7 @@ https://www.instagram.com/使用者帳號/?__a=1
 
 ### 查詢使用者文章與動態
 
-```text
+```
 https://www.instagram.com/graphql/query/?query_hash=...&variables=...
 ```
 
@@ -65,20 +65,20 @@ https://www.instagram.com/graphql/query/?query_hash=...&variables=...
 
 instagram的XHR固定格式如下
 
-```text
+```
 https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 ```
 
-* query\_hash 為發送請求的種類 \( 例如請求加載使用者後續圖片的hash均為 `472f257a40c653c64c666ce877d59d2b`\)
+* query\_hash 為發送請求的種類 ( 例如請求加載使用者後續圖片的hash均為 `472f257a40c653c64c666ce877d59d2b`)
 * variables 為一個json經過urlEncode過的字串
 
 #### Querystring參數
 
 有兩個參數，query\_hash與variables
 
-**第一種：** 
+**第一種： **
 
-當query\_hash為`7e1e0c68bbe459cf48cbd5533ddee9d`時 \(加載使用者推薦好友相關的資訊\)
+當query\_hash為`7e1e0c68bbe459cf48cbd5533ddee9d`時 (加載使用者推薦好友相關的資訊)
 
 variables參數：
 
@@ -94,13 +94,13 @@ variables參數：
 
 e.g.
 
-```text
+```
 https://www.instagram.com/graphql/query/?query_hash=7e1e0c68bbe459cf48cbd5533ddee9d4&variables=%7B%22user_id%22%3A%22275237117%22%2C%22include_chaining%22%3Atrue%2C%22include_reel%22%3Atrue%2C%22include_suggested_users%22%3Afalse%2C%22include_logged_out_extras%22%3Afalse%7D
 ```
 
-**第二種：** 
+**第二種： **
 
-當query\_hash為 `472f257a40c653c64c666ce877d59d2b`時 \(加載使用者文章\)
+當query\_hash為 `472f257a40c653c64c666ce877d59d2b`時 (加載使用者文章)
 
 variables參數：
 
@@ -116,7 +116,7 @@ variables參數：
 >
 > after參數建議使用如下
 >
-> ```text
+> ```
 > AQBEU_pfdtAHWuxSKwtTEIYRnN8LIHtBASC8bAaQGgpD9r3ZaaVu0qMQzh_qArARwpdM2jt0tprfp35rtcX268DNOFUTBEH7yme7oC8R6mRAug
 > ```
 >
@@ -124,13 +124,13 @@ variables參數：
 
 e.g.
 
-```text
+```
 https://www.instagram.com/graphql/query/?query_hash=472f257a40c653c64c666ce877d59d2b&variables=%7B%22id%22%3A%22275237117%22%2C%22first%22%3A12%2C%22after%22%3A%22AQDgv0_xlXhuHI_YQW8deViqPYXPj7dim6ODe_tAbM6XLhqwbe-Xp4JPEHpLAJ5XGusu-nKdFoCYCVFcF7OkjSscKISMfCYIsEVs8zx9h2rWaQ%22%7D
 ```
 
 **第三種：**
 
-當query\_hash為 `bf41e22b1c4ba4c9f31b844ebb7d9056` 時 \(加載使用者動態影片\)
+當query\_hash為 `bf41e22b1c4ba4c9f31b844ebb7d9056` 時 (加載使用者動態影片)
 
 ```javascript
 query_hash: bf41e22b1c4ba4c9f31b844ebb7d9056
@@ -141,7 +141,7 @@ variables: {"reel_ids":["275237117"],"precomposed_overlay":false}
 
 e.g.
 
-```text
+```
 https://www.instagram.com/graphql/query/?query_hash=bf41e22b1c4ba4c9f31b844ebb7d9056&variables=%7B%22reel_ids%22%3A%5B%22275237117%22%5D%2C%22precomposed_overlay%22%3Afalse%7D
 ```
 
@@ -337,7 +337,7 @@ https_request(username, '?__a=1').then(data => {
 
 2.爬蟲執行過多次後會出現以下錯誤：
 
-```text
+```
 {"message": "rate limited", "status": "fail"}
 ```
 
@@ -409,4 +409,3 @@ Promise.all(promises).then(() => {
 })
 
 ```
-

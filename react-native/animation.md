@@ -63,9 +63,8 @@ class FadeInView extends React.Component {
 
 除了 `Animated.timing` 外共有三種可以使用。
 
-[https://facebook.github.io/react-native/docs/animated\#methods-1](https://facebook.github.io/react-native/docs/animated#methods-1)![](/assets/螢幕快照%202019-06-18%20下午3.50.22.png)
+[https://facebook.github.io/react-native/docs/animated#methods-1](https://facebook.github.io/react-native/docs/animated#methods-1)
 
 ## 相關模組
 
 [https://github.com/oblador/react-native-animatable](https://github.com/oblador/react-native-animatable)
-

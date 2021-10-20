@@ -4,7 +4,7 @@
 
 ### 1.有關canvas串流
 
-參考此  
+參考此\
 [https://github.com/EasonWang01/Node.js-stream-video/tree/master/Desktop/Node.js-stream-video-master](https://github.com/EasonWang01/Node.js-stream-video/tree/master/Desktop/Node.js-stream-video-master)
 
 但其原理為使用canvas擷取影像，並使用websocket傳遞canvas資料，所以只有影像，這種做法client端用來顯示的 dataURL會持續改變，所以雖然是串流，但畫面會有閃爍問題
@@ -69,7 +69,7 @@ multiStreamRecorder.start(3000);
 
 最後轉為可用在url的型態
 
-```text
+```
 window.URL.createObjectURL(superBuffer)
 ```
 
@@ -77,7 +77,7 @@ window.URL.createObjectURL(superBuffer)
 
 > 可參考mediaSource 模式：
 >
-> [https://github.com/webrtc/samples/blob/gh-pages/src/content/getusermedia/record/js/main.js](https://github.com/webrtc/samples/blob/gh-pages/src/content/getusermedia/record/js/main.js)
+> [https://github.com/webrtc/samples/blob/gh-pages/src/content/getusermedia/record/js/main.js](https://github.com/webrtc/samples/blob/gh-pages/src/content/getusermedia/record/js/main.js)&#x20;
 
 ### 3. getUserMedia streaming with WebSocket
 
@@ -276,7 +276,7 @@ export default App;
 
 ## WebRTC串流
 
-![](../../.gitbook/assets/ying-mu-kuai-zhao-20180720-xia-wu-3.14.32.png)
+![](<../../.gitbook/assets/螢幕快照 2018-07-20 下午3.14.32.png>)
 
 ## WebRTC 可用範例：
 
@@ -292,7 +292,7 @@ chrome://webrtc-internals
 
 ## WebRTC 流程：
 
-[https://developer.mozilla.org/en-US/docs/Web/API/WebRTC\_API/Signaling\_and\_video\_calling](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Signaling_and_video_calling)
+[https://developer.mozilla.org/en-US/docs/Web/API/WebRTC\_API/Signaling\_and\_video\_calling](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC\_API/Signaling\_and\_video\_calling)
 
 ## 範例:
 
@@ -304,7 +304,7 @@ chrome://webrtc-internals
 
 Client 過程
 
-```javascript
+````javascript
 1. 初始化連線: 
 ```
 new RTCPeerConnection({
@@ -376,7 +376,7 @@ function gotRemoteStream(event) {
   remoteVideo.srcObject = event.streams[0];
 }
 ```
-```
+````
 
 Server
 
@@ -412,13 +412,13 @@ wss.broadcast = function(data) {
 
 1. Failed to execute 'appendBuffer' on 'SourceBuffer': This SourceBuffer has been removed from the parent media source
 
-> 解法：將recorder.start\(2000\); 錄影間隔毫秒縮短即可
+> 解法：將recorder.start(2000); 錄影間隔毫秒縮短即可
 
 ## Video 屬性
 
 1. video.autoplay = true; 等同於
 
-```text
+```
     video.onloadedmetadata = function (e) {
       video.play();
     };
@@ -436,5 +436,4 @@ wss.broadcast = function(data) {
 
 0.6 版本以後需要配置如下，不然 Android 啟動後會 crash
 
-[https://github.com/react-native-webrtc/react-native-webrtc/issues/885\#issuecomment-723116643](https://github.com/react-native-webrtc/react-native-webrtc/issues/885#issuecomment-723116643)
-
+[https://github.com/react-native-webrtc/react-native-webrtc/issues/885#issuecomment-723116643](https://github.com/react-native-webrtc/react-native-webrtc/issues/885#issuecomment-723116643)
