@@ -2,17 +2,17 @@
 
 ## 進入psql後
 
-[https://www.tutorialspoint.com/postgresql/postgresql\_create\_database.htm](https://www.tutorialspoint.com/postgresql/postgresql_create_database.htm)
+[https://www.tutorialspoint.com/postgresql/postgresql\_create\_database.htm](https://www.tutorialspoint.com/postgresql/postgresql\_create\_database.htm)
 
 ### 建立DB
 
-```text
+```
 create database test;
 ```
 
 也可輸入
 
-```text
+```
 CREATE DATABASE dbname;
 ```
 
@@ -20,19 +20,19 @@ CREATE DATABASE dbname;
 
 ### 顯示目前所有DB列表。
 
-```text
+```
 \l
 ```
 
 ### 連線DB
 
-```text
+```
 \c <DB名稱>
 ```
 
 ### 建立Table
 
-```text
+```
 CREATE TABLE COMPANY(
    ID INT PRIMARY KEY     NOT NULL,
    NAME           TEXT    NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE COMPANY(
 
 與
 
-```text
+```
 CREATE TABLE DEPARTMENT(
    ID INT PRIMARY KEY      NOT NULL,
    DEPT           CHAR(50) NOT NULL,
@@ -56,13 +56,21 @@ CREATE TABLE DEPARTMENT(
 
 ### 列出所有Table
 
-```text
+```
 \d
 ```
 
 ### 檢視詳細Table schema
 
-```text
+```
 \d <Table名稱>
 ```
 
+### 更改密碼
+
+如果使用 docker 要如下更改：
+
+1. 進入容器 `sudo docker exec -it `\<container id> `/bin/sh`
+2. 更改當前使用者 `su - postgres`
+3. 更改密碼 `\password postgres`
+4. 之後輸入兩次新密碼後即可，Adminer 也會跟著更改

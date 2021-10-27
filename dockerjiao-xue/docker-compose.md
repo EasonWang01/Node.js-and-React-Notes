@@ -123,7 +123,7 @@ services: # services 關鍵字後面列出 web, redis 兩項專案中的服務
     ports:
       - "49160:8081" # 外部露出開放的 port 對應到 docker container 的 port
     volumes: 
-      - "./src:/usr/src/app/src"  
+      - "src:/usr/src/app/src"  
 ```
 
 之後執行
@@ -133,3 +133,23 @@ docker-compose up
 ```
 
 然後 到 [http://localhost:49160/](http://localhost:49160) 看到網頁後試著更改 ./src/index.html 即可看到改變。
+
+## 使用已經創建的 Volume
+
+{% embed url="https://docs.docker.com/compose/compose-file/compose-file-v3#external" %}
+
+```
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data:
+    external: true
+```
+
+\> data 可改為你的 volume 名稱
