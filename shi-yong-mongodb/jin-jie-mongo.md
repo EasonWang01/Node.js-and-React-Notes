@@ -1,8 +1,6 @@
 # 進階Mongo
 
-
-
-## #1.操作Mongo的Array
+## 1.操作Mongo的Array
 
 [https://docs.mongodb.com/manual/reference/operator/update/pull/#up.\_S\_pull](https://docs.mongodb.com/manual/reference/operator/update/pull/#up.\_S\_pull)
 
@@ -17,11 +15,11 @@ Ex: 以下可把rating\_my Array中的item物件中的\_id與req.body.item.\_id\
     }})
 ```
 
-## #2.分頁快速query
+## 2.分頁快速query
 
 [http://stackoverflow.com/questions/7228169/slow-pagination-over-tons-of-records-in-mongo](http://stackoverflow.com/questions/7228169/slow-pagination-over-tons-of-records-in-mongo)
 
-## #3.使用Geo search
+## 3.使用Geo search
 
 [https://docs.mongodb.com/manual/reference/operator/query-geospatial/](https://docs.mongodb.com/manual/reference/operator/query-geospatial/)
 
@@ -115,3 +113,55 @@ db.dropDatabase();
 ```
 
 > 不會刪除 DB內的 USER
+
+## 6. Aggregate
+
+用來進階版 query 資料的方法，可組合出許多進階技。
+
+{% embed url="https://docs.mongodb.com/manual/reference/operator/aggregation" %}
+
+範例： 取得某段時間內的資料累計 (範例資料以小時為單位)
+
+![](<../.gitbook/assets/截圖 2021-11-01 下午2.14.00.png>)
+
+```javascript
+const { MongoClient } = require("mongodb");
+const marketcap = require("./marketcap-data.js");
+// Replace the uri string with your MongoDB deployment's connection string.
+const uri = "mongodb://root:example@localhost:27017";
+const client = new MongoClient(uri);
+async function queryMarketCapData() {
+  try {
+    await client.connect();
+    const database = client.db("...");
+    const marketcapCollection = database.collection("market-cap");
+    const pipeline = [
+      {
+        $group: {
+          _id: { // 取得月度資料累計
+            year: { $year: "$timestamp" },
+            //week: { $week: "$timestamp" },
+            month: { $month: "$timestamp" },
+            //dayOfYear: { $dayOfYear: "$timestamp" },
+          },
+          value: { $sum: "$value" },
+        },
+      },
+      {
+        {
+          $sort: { "_id": 1 },
+        }
+      }
+    ];
+    const aggCursor = marketcapCollection.aggregate(pipeline);
+    for await (const doc of aggCursor) {
+      console.log(doc);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+queryMarketCapData();
+
+```
