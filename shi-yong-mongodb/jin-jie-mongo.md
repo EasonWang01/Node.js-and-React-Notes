@@ -165,3 +165,27 @@ async function queryMarketCapData() {
 queryMarketCapData();
 
 ```
+
+## 三個月為一組資料加總
+
+```javascript
+   const pipeline = [
+      {
+        $group: {
+          _id: {
+            year: { $year: "$timestamp" },
+            month: {
+              $subtract: [
+                { $month: "$timestamp" },
+                { $mod: [{ $month: "$timestamp" }, 3] },
+              ],
+            },
+          },
+          value: { $sum: "$value" },
+        },
+      },
+      {
+        $sort: { _id: 1 },
+      },
+    ];
+```
