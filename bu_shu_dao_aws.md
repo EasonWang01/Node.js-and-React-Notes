@@ -2,7 +2,7 @@
 
 ## 部署到AWS
 
-```text
+```
 記得開security group 來開port
 ```
 
@@ -20,24 +20,37 @@ GUI部分，在`window`可用WINSCP或FileZillz在`Mac`可用CyberDuck
 
 1.如果上傳檔案時沒有權限，但你覺得一個一個資料夾開權限太麻煩，於是在usr之類的大資料夾整個開權限後會出現整個sudo出現錯誤
 
-```text
+```
 sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 ```
 
-原因：：  
-[http://stackoverflow.com/questions/16682297/getting-message-sudo-must-be-setuid-root-but-sudo-is-already-owned-by-root/19306929\#19306929](http://stackoverflow.com/questions/16682297/getting-message-sudo-must-be-setuid-root-but-sudo-is-already-owned-by-root/19306929#19306929)  
+原因：：\
+[http://stackoverflow.com/questions/16682297/getting-message-sudo-must-be-setuid-root-but-sudo-is-already-owned-by-root/19306929#19306929](http://stackoverflow.com/questions/16682297/getting-message-sudo-must-be-setuid-root-but-sudo-is-already-owned-by-root/19306929#19306929)\
 目前還沒找到解法，網路上目前推薦重灌系統
 
 2.Elastic IP分配後如果把該機器刪掉，之後自開一台把同個Elastic IP分配，可能會產生錯誤，所以建議開新機器並分配新的Elastic IP
 
 3.如出現 以下可輸入`sudo chmod 400 ~/Downloads/Trading-Platform.pem`，並且ssh不要輸入sudo
 
-> Load key "/Users/eason.wang/Downloads/Trading-Platform.pem": bad permissions  
-> Permission denied \(publickey\).
+> Load key "/Users/eason.wang/Downloads/Trading-Platform.pem": bad permissions\
+> Permission denied (publickey).
 
-## \# 其他AWS服務說明
+## # 其他AWS服務說明
 
 > 可參考以下不錯文章
 
-[http://ch-tseng.blogspot.tw/2015/04/amazon-aws.html?m=1](http://ch-tseng.blogspot.tw/2015/04/amazon-aws.html?m=1)
+{% embed url="http://ch-tseng.blogspot.tw/2015/04/amazon-aws.html?m=1" %}
 
+## AWS ECR
+
+docker image 託管服務。
+
+1.如果遇到如下問題：is not authorized to perform: ecr-public:GetAuthorizationToken on resource: \* because no identity-based policy allows the ecr-public:GetAuthorizationToken action
+
+[https://stackoverflow.com/questions/65727113/aws-ecr-user-is-not-authorized-to-perform-ecr-publicgetauthorizationtoken-on-r](https://stackoverflow.com/questions/65727113/aws-ecr-user-is-not-authorized-to-perform-ecr-publicgetauthorizationtoken-on-r)
+
+```
+Private registry: AmazonEC2ContainerRegistryFullAccess
+
+Public registry: AmazonElasticContainerRegistryPublicFullAccess
+```

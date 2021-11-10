@@ -106,3 +106,11 @@ volumes: ["/Users/yicheng/server/database:/db"]
 docker volume inspect	"Display detailed information on one or more volumes"
 docker volume ls	"List volumes"
 ```
+
+### 11. 將 docker log 存成檔案
+
+mongo 之類的 docker image 產生的 log 也可以直接從 docker log 看到
+
+```
+docker logs containername >& logs/myFile.log
+```
