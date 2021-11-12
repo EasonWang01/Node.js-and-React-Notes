@@ -81,4 +81,10 @@ clip < ~/.ssh/id_rsa
 
 使用項目 repo 來產生 access key
 
-[https://docs.github.com/en/developers/overview/managing-deploy-keys#using-multiple-repositories-on-one-server](https://docs.github.com/en/developers/overview/managing-deploy-keys#using-multiple-repositories-on-one-server)
+{% embed url="https://docs.github.com/en/developers/overview/managing-deploy-keys#using-multiple-repositories-on-one-server" %}
+
+這邊要注意， git url 要改成如下，不可直接複製 github 上的 git url
+
+```
+git clone git@github.com-repo-1:OWNER/repo-1.git
+```
