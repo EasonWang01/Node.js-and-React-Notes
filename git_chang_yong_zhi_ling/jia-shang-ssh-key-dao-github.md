@@ -8,7 +8,7 @@
 
 輸入以下：
 
-```text
+```
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
@@ -22,7 +22,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 2.新增如下：
 
-```text
+```
 Host github.com
  AddKeysToAgent yes
  UseKeychain yes
@@ -33,7 +33,7 @@ Host github.com
 
 3.將私鑰加入 ssh-agent 與 keychain
 
-```text
+```
 ssh-add -K ~/.ssh/id_rsa_github
 ```
 
@@ -45,13 +45,13 @@ ssh-add -K ~/.ssh/id_rsa_github
 
 ### 3.複製電腦的公鑰到GitHub
 
-```text
+```
 pbcopy < ~/.ssh/公鑰名稱.pub
 ```
 
 然後貼到GitHub
 
-![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202018-10-27%20上午10.57.08.png)
+![](https://github.com/easonwang01/web\_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-27%20%E4%B8%8A%E5%8D%8810.57.08.png)
 
 ## 讓不同Github帳號有不同KEY
 
@@ -61,19 +61,24 @@ pbcopy < ~/.ssh/公鑰名稱.pub
 
 產生金鑰匙
 
-```text
+```
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
-```text
+```
 start-ssh-agent.cmd
 ssh-add ~/.ssh/id_rsa
 ```
 
 加到github
 
-```text
+```
 clip < ~/.ssh/id_rsa
 然後 https://github.com/settings/keys 貼上
 ```
 
+## Deploy Key
+
+使用項目 repo 來產生 access key
+
+[https://docs.github.com/en/developers/overview/managing-deploy-keys#using-multiple-repositories-on-one-server](https://docs.github.com/en/developers/overview/managing-deploy-keys#using-multiple-repositories-on-one-server)
