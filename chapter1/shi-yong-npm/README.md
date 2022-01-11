@@ -1,7 +1,5 @@
 # 使用NPM
 
-
-
 ## 使用NPM
 
 * 先安裝Node.js
@@ -159,6 +157,57 @@ npm publish
 之後別人使用-g安裝即可使用`gendoc` 指令
 
 > npm link 也可在發布前直接把他加到Local環境變數進行測試，但在windows會沒作用
+
+### 範例：
+
+robot.js
+
+```javascript
+#!/usr/bin/env node
+
+const robot = require("robotjs");
+
+// Speed up the mouse.
+robot.setMouseDelay(2);
+
+
+while (true) {
+    var twoPI = Math.PI * 2.0;
+    var screenSize = robot.getScreenSize();
+    var height = (screenSize.height / 2) - 10;
+    var width = screenSize.width;
+
+    for (var x = 0; x < width; x++) {
+        y = height * Math.sin((twoPI * x) / width) + height;
+        robot.moveMouse(x, y);
+    }
+}
+```
+
+package.json
+
+```json
+{
+  "name": "custom-toolkit",
+  "version": "1.0.0",
+  "description": "An awesome custom global module",
+  "main": "./lib/index.js",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "s": "./robot.js"
+  },
+  "dependencies": {
+    "robotjs": "^0.6.0"
+  },
+  "preferGlobal": true,
+  "author": "Eason",
+  "license": "MIT"
+}
+```
+
+之後 `npm install -g ~/資料夾名稱` 即可直接在 terminal 輸入 s ，會執行 robot.js 內容。
 
 ## 更新或復原npm版本
 
