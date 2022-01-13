@@ -625,7 +625,7 @@ git push origin <取名的版本號碼>
 ## 使用特定 ssh key 來執行 git 指令
 
 ```
- ssh-agent bash -c 'ssh-add ~/.ssh/id_ed25519; git clone git@github.com:.../....
+ ssh-agent bash -c 'ssh-add ~/.ssh/id_ed25519; git clone git@github.com:.../....'
 ```
 
 ## 部署的時候使用 access token
