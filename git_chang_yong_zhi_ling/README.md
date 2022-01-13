@@ -628,6 +628,12 @@ git push origin <取名的版本號碼>
  ssh-agent bash -c 'ssh-add ~/.ssh/id_ed25519; git clone git@github.com:.../....'
 ```
 
+clone 後再到該 repo 輸入以下，將之後在此 repo 的 push 與 pull 時都改為此 ssh key
+
+```
+git config core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o 'IdentitiesOnly yes'"
+```
+
 ## 部署的時候使用 access token
 
 假設使用 https 的方式 clone repo，這樣每次部署拉新 code 時都會需要輸入帳號密碼，解決方式為使用 access token
