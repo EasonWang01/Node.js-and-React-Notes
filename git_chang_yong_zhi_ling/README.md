@@ -622,6 +622,12 @@ git push origin <取名的版本號碼>
 
 ![](<../.gitbook/assets/截圖 2021-09-16 下午6.14.06.png>)
 
+## 使用特定 ssh key 來執行 git 指令
+
+```
+ ssh-agent bash -c 'ssh-add ~/.ssh/id_ed25519; git clone git@github.com:.../....
+```
+
 ## 部署的時候使用 access token
 
 假設使用 https 的方式 clone repo，這樣每次部署拉新 code 時都會需要輸入帳號密碼，解決方式為使用 access token
