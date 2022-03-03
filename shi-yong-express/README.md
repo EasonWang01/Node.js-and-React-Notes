@@ -30,10 +30,14 @@ logger.token('body', (req) => {
   return JSON.stringify(req.body)
 })
 logger.token('ip', (req) => {
-  return req.headers['x-forwarded-for'] || req.socket.remoteAddress 
+  return req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress 
 })
 app.use(logger(':ip :remote-user [:date[iso]] ":method :url HTTP/:http-version" :status :res[content-length] :body :user-agent :referrer :response-time', {stream: fs.createWriteStream('./logs/access.log', {flags: 'a'})}))
 ```
+
+> 假設使用 cloudflare 要用 cf-connecting-ip
+>
+> [https://stackoverflow.com/a/52026771/4622645](https://stackoverflow.com/a/52026771/4622645)
 
 ## 快速讀取 JSON 後回傳 API
 
