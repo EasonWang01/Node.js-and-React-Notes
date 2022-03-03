@@ -23,13 +23,16 @@ app.get('/user/:id', function (req, res, next) {
 ## 增加 Request logger
 
 ```javascript
-const logger = require('morgan');
 const fs = require('fs');
+const logger = require('morgan');
 
 logger.token('body', (req) => {
   return JSON.stringify(req.body)
 })
-app.use(logger(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :body', {stream: fs.createWriteStream('./access.log', {flags: 'a'})}))
+logger.token('ip', (req) => {
+  return req.headers['x-forwarded-for'] || req.socket.remoteAddress 
+})
+app.use(logger(':ip :remote-user [:date[iso]] ":method :url HTTP/:http-version" :status :res[content-length] :body :user-agent :referrer :response-time', {stream: fs.createWriteStream('./logs/access.log', {flags: 'a'})}))
 ```
 
 ## 快速讀取 JSON 後回傳 API
