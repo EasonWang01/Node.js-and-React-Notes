@@ -36,6 +36,7 @@
 * [使用express](shi-yong-express/README.md)
   * [簡單範例](shi-yong-express/jian\_dan\_fan\_li.md)
 * [使用MongoDB](shi-yong-mongodb/README.md)
+  * [Mongoose 框架](shi-yong-mongodb/mongoose-kuang-jia.md)
   * [進階Mongo](shi-yong-mongodb/jin-jie-mongo.md)
   * [基本環境操作](shi-yong-mongodb/ji-ben-huan-jing-cao-zuo.md)
   * [MongoDB Sharding](shi-yong-mongodb/mongodb-sharding.md)
