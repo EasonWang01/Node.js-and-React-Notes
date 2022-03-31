@@ -8,6 +8,52 @@ timedatectl list-timezones                 // 查看所有可設置的時區
 sudo timedatectl set-timezone Asia/Taipei  // 設置時區
 ```
 
+## 時間範圍區間檢測
+
+```javascript
+
+const phaseConfig = {
+  "phase-A": {
+      start: "2022-03-31 13:23:50",
+      end: "2022-04-30 19:00:00",
+  }
+}
+
+  const { start, end } = phaseConfig[phase];
+  const isWithinTime = withinTime(start, end);
+  if (!isWithinTime.success) {
+    return isWithinTime;
+  }
+
+
+function withinTime(start, end) {
+  const toTimestamp = (strDate) => {
+    var datum = Date.parse(strDate);
+    return datum / 1000;
+  };
+  const now = Date.now();
+  if (start && Number(`${toTimestamp(start)}000`) > now) {
+    return {
+      success: false,
+      date: [start, end],
+      message: "Not available yet",
+    };
+  }
+  if (end && Number(`${toTimestamp(end)}000`) < now) {
+    return {
+      success: false,
+      date: [start, end],
+      message: "Already expired",
+    };
+  }
+  return {
+    success: true,
+    date: [start, end],
+    message: "Within time",
+  };
+}
+```
+
 ## 有關日期
 
 ```
