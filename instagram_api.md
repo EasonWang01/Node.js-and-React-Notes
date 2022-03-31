@@ -76,7 +76,7 @@ https://www.instagram.com/graphql/query/?query_hash=....&variables=...
 
 有兩個參數，query\_hash與variables
 
-**第一種： **
+**第一種：**&#x20;
 
 當query\_hash為`7e1e0c68bbe459cf48cbd5533ddee9d`時 (加載使用者推薦好友相關的資訊)
 
@@ -98,7 +98,7 @@ e.g.
 https://www.instagram.com/graphql/query/?query_hash=7e1e0c68bbe459cf48cbd5533ddee9d4&variables=%7B%22user_id%22%3A%22275237117%22%2C%22include_chaining%22%3Atrue%2C%22include_reel%22%3Atrue%2C%22include_suggested_users%22%3Afalse%2C%22include_logged_out_extras%22%3Afalse%7D
 ```
 
-**第二種： **
+**第二種：**&#x20;
 
 當query\_hash為 `472f257a40c653c64c666ce877d59d2b`時 (加載使用者文章)
 

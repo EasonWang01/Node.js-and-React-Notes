@@ -467,7 +467,7 @@ Notification payload 可設定參數：[https://firebase.google.com/docs/referen
 
 > 但記得只有 sendToDevice 等具有 **options: MessagingOptions 才可使用**[**https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload**](https://firebase.google.com/docs/reference/admin/node/admin.messaging.NotificationMessagePayload)****
 
-> **如果是 send 或 **sendMulticast **必須參考 **[**https://firebase.google.com/docs/reference/admin/node/admin.messaging.Notification**](https://firebase.google.com/docs/reference/admin/node/admin.messaging.Notification)****
+> **如果是 send 或** sendMulticast **必須參考** [**https://firebase.google.com/docs/reference/admin/node/admin.messaging.Notification**](https://firebase.google.com/docs/reference/admin/node/admin.messaging.Notification)****
 
 ![](<../.gitbook/assets/截圖 2020-11-02 下午2.24.09.png>)
 
