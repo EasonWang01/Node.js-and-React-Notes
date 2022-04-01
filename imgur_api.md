@@ -12,7 +12,7 @@
 
 參考以下範例
 
-```text
+```
 <!DOCTYPE html>
 <html>
   <head>
@@ -59,4 +59,3 @@
 ## Node.js
 
 [https://github.com/kaimallea/node-imgur/blob/master/lib/imgur.js](https://github.com/kaimallea/node-imgur/blob/master/lib/imgur.js)
-
