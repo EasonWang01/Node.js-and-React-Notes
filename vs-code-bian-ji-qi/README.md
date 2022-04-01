@@ -83,3 +83,7 @@ control+`
 在plugin輸入`git blame` 下載插件。
 
 之後會在左下方即時顯時該行是誰commit的。
+
+#### 10.快速切換不同專案視窗
+
+Switch window：快捷鍵 `ctrl + w`
