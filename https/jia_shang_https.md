@@ -2,11 +2,13 @@
 
 ## 使用Let's encrypt
 
+> 目前推薦使用 certbot 工具，自動產生證書
+
 1.先到此網站
 
 [https://www.sslforfree.com](https://www.sslforfree.com)
 
-\(如果沒顯示，換個瀏覽器\)
+(如果沒顯示，換個瀏覽器)
 
 2.之後輸入你的網域名稱
 
@@ -34,13 +36,13 @@ ubuntu路徑如下
 
 之後就可以點下面綠色按鈕，往下一步
 
-\(如閒置太久點下一步時會產生錯誤，需重來\)
+(如閒置太久點下一步時會產生錯誤，需重來)
 
 #### 接著是重點
 
 5.它會給你三個框框，裡面分別為
 
-```text
+```
 ca_bundle.crt 
 private.key 
 certificate.crt
@@ -52,7 +54,7 @@ certificate.crt
 
 另外要輸入以下指令，將兩個crt合成一個bundle
 
-```text
+```
 sudo bash -c 'cat certificate.crt ca_bundle.crt >> bundle.crt'
 ```
 
@@ -66,16 +68,16 @@ ubuntu路徑如下
 
 開啟後如前面沒設定過，會都是藍色的註解
 
-把它如下\(如果說private.key not match ，把ssl\_certificate 的bundle.crt改為certificate.crt試試\)
+把它如下(如果說private.key not match ，把ssl\_certificate 的bundle.crt改為certificate.crt試試)
 
-```text
+```
 server {        
   listen 80;        
-  server_name sakatu.com  www.sakatu.com;
-  rewrite ^/(.*) https://sakatu.com/$1 permanent;
+  server_name domain.com  www.domain.com;
+  rewrite ^/(.*) https://domain.com/$1 permanent;
 }
 server {        
-  server_name sakatu.com;
+  server_name domain.com;
   listen 443;
   ssl on;
   ssl_certificate  /usr/share/nginx/sslcrt/bundle.crt;        
@@ -87,7 +89,7 @@ server {
 
 之後
 
-```text
+```
 1.sudo service nginx stop
 
 2.sudo nginx
@@ -97,7 +99,7 @@ server {
 
 這裡可能出現一些key或bundle的https錯誤，最常見的是說begin或end之類，記得每個檔案要有
 
-```text
+```
 -----BEGIN CERTIFICATE-----
 
 ....
@@ -115,14 +117,14 @@ server {
 
 完整範例:
 
-```text
+```
 server {        
   listen 80;        
-  server_name sakatu.com  www.sakatu.com;
-  rewrite ^/(.*) https://sakatu.com/$1 permanent;
+  server_name domain.com  www.domain.com;
+  rewrite ^/(.*) https://domain.com/$1 permanent;
 }
 server {        
-  server_name sakatu.com;
+  server_name domain.com;
   listen 443;
   ssl on;
   ssl_certificate  /usr/share/nginx/sslcrt/bundle.crt;        
@@ -136,7 +138,7 @@ server {
 
 範例如下
 
-```text
+```
 var fs = require('fs');
 var https = require('https');
 var app = require('express')();
@@ -156,7 +158,7 @@ https.createServer(options, app).listen(3000, function () {
 
 記得設定nginx的reverse proxy
 
-參考  
+參考\
 [https://www.sitepoint.com/how-to-use-ssltls-with-node-js/](https://www.sitepoint.com/how-to-use-ssltls-with-node-js/)
 
 ## 方法2
@@ -167,15 +169,15 @@ https.createServer(options, app).listen(3000, function () {
 
 一個是在nginx做轉址
 
-```text
-rewrite ^/(.*) https://sakatu.com/$1 permanent;
+```
+rewrite ^/(.*) https://domain.com/$1 permanent;
 ```
 
 一個是在前端頁面做轉址
 
-```text
+```
 <script type="text/javascript">
-    var host = "class.sakatu.com";
+    var host = "class.domain.com";
     if ((host == window.location.host) && (window.location.protocol != "https:"))
         window.location.protocol = "https";
 </script>
@@ -189,7 +191,7 @@ rewrite ^/(.*) https://sakatu.com/$1 permanent;
 
 步驟1
 
-```text
+```
 sudo apt-get update
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:certbot/certbot # 載入 certbot 的 ppa
@@ -201,7 +203,7 @@ sudo apt-get install python-certbot-nginx # 安裝 python 的 certbot for nginx
 
 > 在 -d 後面加上網域名稱
 
-```text
+```
 sudo certbot --nginx -d <輸入網域名稱>
 ```
 
@@ -215,7 +217,7 @@ sudo certbot --nginx -d <輸入網域名稱>
 
 1.之後有新增subdomain時只要先加入如下在nginx
 
-> ```text
+> ```
 > server {
 >   server_name api.domain.com;
 >   location / {
@@ -228,9 +230,8 @@ sudo certbot --nginx -d <輸入網域名稱>
 
 3.然後再重複第二步驟即可。
 
-```text
+```
 sudo certbot --nginx -d <輸入網域名稱>
 ```
 
 > 如果沒有先設定A紀錄，則在第三步驟會出錯。
-
