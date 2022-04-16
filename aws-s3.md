@@ -12,7 +12,7 @@
 > 以下程式開啟後會先當一個範例上傳網站，然後可以在此上傳檔案，之後會傳到S3，使用的上傳檔案模組為busboy
 
 ```javascript
-var http = require('http'),
+const http = require('http'),
     path = require('path'),
     os = require('os'),
     fs = require('fs');
@@ -93,21 +93,21 @@ http.createServer(function(req, res) {
 
 > 如果是一些中文檔案名稱記得用 encodeURI 再 putObject 然後下載時也是
 
-## 開啟CORS
+## 開啟 S3 CORS
 
 到下圖中設定
 
-![](https://github.com/easonwang01/web_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/螢幕快照%202018-04-18%20上午11.14.50.png)
+![](<.gitbook/assets/截圖 2022-04-16 下午9.56.07.png>)
 
-加上藍色那段
+加上類似如下
 
-```text
+```
 <AllowedMethod>HEAD</AllowedMethod>
 ```
 
 完整版為：
 
-```text
+```
 <!-- Sample policy -->
 <CORSConfiguration>
     <CORSRule>
@@ -119,4 +119,3 @@ http.createServer(function(req, res) {
     </CORSRule>
 </CORSConfiguration>
 ```
-
