@@ -1,7 +1,5 @@
 # 遠端寫程式
 
-## 遠端寫程式
-
 以下簡介三種方式
 
 ## 1. VSCode Remote Explorer
