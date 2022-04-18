@@ -3,7 +3,7 @@
 如果跟時間相關的，記得本地環境與雲端 server 獲取到的 Date.now 因為時區關係可能不同，部署後要去設置雲端 server 時區。
 
 ```
-data                                       // 查看當前 server 時間
+date                                       // 查看當前 server 時間
 timedatectl list-timezones                 // 查看所有可設置的時區
 sudo timedatectl set-timezone Asia/Taipei  // 設置時區
 ```
