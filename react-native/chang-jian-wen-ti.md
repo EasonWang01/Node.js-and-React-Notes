@@ -243,6 +243,7 @@ adb uninstall PACKAGE_NAME
 24.accessibilityinfo could not be found within the project
 
 ```
+watchman watch-del-all;
 rm rf ./node_modules;
 yarn;
 yarn start --reset-cache;
