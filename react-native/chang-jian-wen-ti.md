@@ -240,6 +240,15 @@ cd android && ./gradlew clean
 adb uninstall PACKAGE_NAME
 ```
 
+24.accessibilityinfo could not be found within the project
+
+```
+rm rf ./node_modules;
+yarn;
+yarn start --reset-cache;
+rm -rf /tmp/metro-*;
+```
+
 ## 開發相關
 
 ## 1.無法用e.target

@@ -510,8 +510,6 @@ react-native run-android
 
 然後連接手機後選取傳輸檔案，然後開放 USB 偵錯
 
-> 選擇手機是的 system > 多點幾下 build version 欄位 > 打開user debugging&#x20;
-
 之後輸入 react-native run-android 即可
 
 > 可輸入 adb devices 確認只有一個裝置
