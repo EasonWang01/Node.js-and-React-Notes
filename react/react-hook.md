@@ -188,6 +188,20 @@ useMemo 其實跟 useEffect 類似，如果第二個參數是空的 \[] 則只�
 
 或是第二個參數裡面的 state 改變時才會再次執行。
 
+### 9. Interval 寫法
+
+```javascript
+  const [counter, setCounter] = useState(0);
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setCounter(counter + 1);
+    }, 1000);
+    return () => {
+      clearTimeout(id);
+    };
+  }, [counter]);
+```
+
 ## UseMemo, UseCallback, React.memo 區別
 
 [https://github.com/facebook/react/issues/15156](https://github.com/facebook/react/issues/15156)
