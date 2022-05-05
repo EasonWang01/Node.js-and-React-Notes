@@ -10,6 +10,10 @@ description: 每月可以免費寄送一萬個認證簡訊。
 
 ![](<../../.gitbook/assets/截圖 2021-03-26 下午5.45.18.png>)
 
+> RN 跟 web 不同，不需要 initializeApp()
+
+## iOS
+
 2.加入 [URL scheme](https://stackoverflow.com/questions/61514076/firebase-phone-auth-getting-ios-error-register-custom-url-scheme) 到 `info.plist`
 
 > open the GoogleService-Info.plist configuration file, and look for the REVERSED\_CLIENT\_ID key and add to info.plist
@@ -111,3 +115,10 @@ Tip: 另外也可以新增測試用號碼，避免重複發送多次後被暫停
 
 ![](<../../.gitbook/assets/截圖 2021-03-26 下午6.15.22.png>)
 
+## Android
+
+2.加入相關 gradle script
+
+[https://rnfirebase.io/#configure-firebase-with-android-credentials](https://rnfirebase.io/#configure-firebase-with-android-credentials)
+
+3.加入 sha 指紋：[https://rnfirebase.io/#generating-android-credentials](https://rnfirebase.io/#generating-android-credentials)
