@@ -22,7 +22,7 @@
 
 ```
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.yichengwang01">
+  package="com.test">
 ```
 
 還有 setting.gradle 與 app.json 都要改
@@ -41,7 +41,7 @@
 android/app/src/main/res/values/strings.xml
 ```
 
-![](<../.gitbook/assets/截圖 2020-10-18 上午11.33.25.png>)
+![](<../.gitbook/assets/截圖 2022-05-06 上午11.33.44.png>)
 
 ## 4. 打包成 APK
 
@@ -123,4 +123,4 @@ cd android
 
 7.如果之前有發佈過，記得更改版本號
 
-![](<../.gitbook/assets/截圖 2020-10-18 下午12.26.14.png>)
+![](<../.gitbook/assets/截圖 2022-05-06 上午11.35.36.png>)
