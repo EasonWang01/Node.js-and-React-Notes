@@ -6,6 +6,8 @@ description: 每月可以免費寄送一萬個認證簡訊。
 
 {% embed url="https://rnfirebase.io/auth/phone-auth" %}
 
+{% embed url="https://v5.rnfirebase.io/docs/v5.x.x/auth/phone-auth" %}
+
 1.記得先去 Firebase console 開啟 phone auth 服務。
 
 ![](<../../.gitbook/assets/截圖 2021-03-26 下午5.45.18.png>)
