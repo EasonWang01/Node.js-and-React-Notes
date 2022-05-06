@@ -119,8 +119,40 @@ Tip: 另外也可以新增測試用號碼，避免重複發送多次後被暫停
 
 ## Android
 
-2.加入相關 gradle script
+> Androidn 流程稍微比較多
+
+1.加入相關 Gradle script (app/build.gradle)
+
+```javascript
+dependencies {
+    implementation 'androidx.browser:browser:1.3.0'
+    implementation 'com.google.android.gms:play-services-safetynet:18.0.1'
+    implementation platform('com.google.firebase:firebase-bom:29.3.1')
+    implementation 'com.google.firebase:firebase-analytics'
+```
 
 [https://rnfirebase.io/#configure-firebase-with-android-credentials](https://rnfirebase.io/#configure-firebase-with-android-credentials)
 
-3.加入 sha 指紋：[https://rnfirebase.io/#generating-android-credentials](https://rnfirebase.io/#generating-android-credentials)
+2.加入 sha 指紋：
+
+獲取 sha1, sha256 hash 後加入 firebase console
+
+```
+keytool -list -v -alias androiddebugkey -keystore ./android/app/debug.keystore
+```
+
+{% embed url="https://rnfirebase.io/#generating-android-credentials" %}
+
+3\. 加入測試用電話
+
+> 這邊加入後使用測試電話發簡訊時則不會實際收到簡訊，但如果沒加入測試電話每天只能發 50 個簡訊
+
+#### 可能錯誤
+
+1\.
+
+```
+Error: [auth/app-not-authorized] This app is not authorized to use Firebase Authentication. Please verify that the correct package name and SHA-1 are configured in the Firebase Console. [ A safety_net_token was passed, but no matching SHA-256 was registered in the Firebase console. Please make sure that this application’s packageName/SHA256 pair is registered in the Firebase Console. ]
+```
+
+這邊要確認下載 android/app 內的 debug.keystore 裡面的sha1, sha256 是不是就是這把 key的，有時會讀取到根目錄下的 \~/.android/debug.keystore
