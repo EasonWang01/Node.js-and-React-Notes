@@ -16,7 +16,7 @@
 
 3.也要更改 build.gradle (module:app) 的 applicationId
 
-![](<../.gitbook/assets/截圖 2020-10-18 上午11.28.30.png>)
+![](<../.gitbook/assets/截圖 2022-05-06 上午11.31.06.png>)
 
 4.更改 Androidmanifest package name
 
