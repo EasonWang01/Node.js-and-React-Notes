@@ -133,3 +133,32 @@ function App({
 
 export default App;
 ```
+
+## 動態 State 內容
+
+與 Redux 原本作法類似：
+
+```javascript
+import { createSlice } from '@reduxjs/toolkit'
+
+const slice = createSlice({
+  name: 'totalBalance',
+  initialState: {},
+  reducers: {
+    updateUserTotalBalance: (state, action) => ({
+      ...state,
+      [action.payload.protocolName]: state[action.payload.protocolName] 
+        ? state[action.payload.protocolName] + action.payload.num 
+        : action.payload.num
+    }),
+  }
+})
+
+export default slice.reducer
+
+const { updateUserTotalBalance } = slice.actions
+export const doUpdateUserTotalBalance = (num, protocolName) => async dispatch => {
+  // do some async fetch here
+  return dispatch(updateUserTotalBalance({ num, protocolName }))
+}
+```
