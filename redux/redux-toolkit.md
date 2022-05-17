@@ -8,7 +8,7 @@ description: 前言：如果還不太了解 Redux 概念可以看上一篇
 
 ## 安裝
 
-```text
+```
 yarn add react-redux redux @reduxjs/toolkit
 ```
 
@@ -110,5 +110,26 @@ export default connect((state) => state)(App);
 
 {% embed url="https://www.softkraft.co/how-to-setup-redux-with-redux-toolkit/" %}
 
+## Next.js 整合 redux toolkit&#x20;
 
+/pages/\_app.tsx
 
+> 主要增加 \_app.tsx 檔案，其他步驟與上述相同。
+
+```javascript
+import { Provider } from 'react-redux';
+import type { AppProps } from 'next/app';
+import store from '../store/index';
+
+function App({
+  Component, pageProps,
+}: AppProps) {
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
+}
+
+export default App;
+```
