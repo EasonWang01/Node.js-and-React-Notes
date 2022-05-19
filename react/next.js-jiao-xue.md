@@ -2,7 +2,7 @@
 
 ## Next.js 教學
 
-[https://nextjs.org/](https://nextjs.org/)
+[https://nextjs.org/](https://nextjs.org)
 
 ### 1.建立專案
 
@@ -215,29 +215,6 @@ Index.getInitialProps = async function() {
 export default Index
 ```
 
-更新版:
-
-> Next.js 9.3
->
-> [https://nextjs.org/docs/api-reference/data-fetching/get-initial-props](https://nextjs.org/docs/api-reference/data-fetching/get-initial-props)
-
-```javascript
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/}`)
-  const data = await res.json()
-  return {
-    props: {
-      data,
-    },
-  }
-}
-
-export default function Home({ data }) {
-  ...
-}
-```
-
 ## 9. Style JSX
 
 可以如下寫css
@@ -342,7 +319,7 @@ location / {
 
 ## 11. 部署到 Now
 
-Now 為一個 [https://zeit.co/](https://zeit.co/) 所出的雲端快速建置服務，使用Heroku
+Now 為一個 [https://zeit.co/](https://zeit.co) 所出的雲端快速建置服務，使用Heroku
 
 安裝：
 

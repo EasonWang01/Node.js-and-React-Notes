@@ -1,6 +1,6 @@
 # Table of contents
 
-* [開發筆記](README.md)
+* [本書簡介](README.md)
 * [Node.js基本](chapter1/README.md)
   * [使用NPM](chapter1/shi-yong-npm/README.md)
     * [Yarn](chapter1/shi-yong-npm/yarn.md)
