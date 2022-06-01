@@ -1,6 +1,6 @@
 # SQL 基礎
 
-[http://www.postgresqltutorial.com/](http://www.postgresqltutorial.com)
+[http://www.postgresqltutorial.com/](http://www.postgresqltutorial.com/)
 
 ## 不選空值 NOT NULL AND EMPTY
 
@@ -38,7 +38,7 @@ ALTER TABLE <Table名稱> ALTER COLUMN <column名稱> SET DEFAULT <預設值>;
 
 {% embed url="https://www.postgresql.org/docs/current/earthdistance.html" %}
 
-> 也可參考 postGIS [https://postgis.net/](https://postgis.net)
+> 也可參考 postGIS [https://postgis.net/](https://postgis.net/)
 
 ```sql
 // 先在 SQL 輸入以下，安裝插件

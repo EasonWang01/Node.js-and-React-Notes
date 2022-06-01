@@ -132,7 +132,7 @@ services: # services 關鍵字後面列出 web, redis 兩項專案中的服務
 docker-compose up
 ```
 
-然後 到 [http://localhost:49160/](http://localhost:49160) 看到網頁後試著更改 ./src/index.html 即可看到改變。
+然後 到 [http://localhost:49160/](http://localhost:49160/) 看到網頁後試著更改 ./src/index.html 即可看到改變。
 
 ## 使用已經創建的 Volume
 

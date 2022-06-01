@@ -2,7 +2,7 @@
 
 ## 部屬到OpenShift
 
-1.[https://www.openshift.com/](https://www.openshift.com) 先註冊帳號
+1.[https://www.openshift.com/](https://www.openshift.com/) 先註冊帳號
 
 2.將入口js檔案名稱改為server.js
 

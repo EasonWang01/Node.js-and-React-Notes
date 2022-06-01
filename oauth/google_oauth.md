@@ -1,5 +1,33 @@
 # google oauth
 
+## 2022 06更新
+
+```markup
+<html>
+  <body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div id="g_id_onload"
+         data-client_id=""
+         data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+  </body>
+  <script>
+    function handleCredentialResponse(e){
+      console.log(e)
+    }
+  </script>
+</html>
+```
+
+> 如果出現網域不再許可範圍內記得加入以下，並且加入沒有 port 的網域
+>
+> [https://console.cloud.google.com/apis/credentials/oauthclient/](https://console.cloud.google.com/apis/credentials/oauthclient/)
+
+![](<../.gitbook/assets/截圖 2022-06-01 下午1.58.03.png>)
+
+
+
 1.先到dev console申請帳號和註冊應用程式 [https://console.developers.google.com/project/\_/apiui/apis/library](https://console.developers.google.com/project/\_/apiui/apis/library)
 
 2.到api管理員-->憑證-->已授權的 JavaScript 來源 ，填入[http://localhost:3000](http://localhost:3000) (記得，下面的已授權的重新導向 URI不要填)

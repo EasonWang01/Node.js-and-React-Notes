@@ -64,7 +64,7 @@ npm install --production
 
 > 當npm install出現一些版本錯誤，而無法安裝，這是記得先更新本地端`npm install -g`(更新global的package)\
 > 更多可參考\
-> [https://docs.npmjs.com/](https://docs.npmjs.com)
+> [https://docs.npmjs.com/](https://docs.npmjs.com/)
 
 ## package.json教學
 

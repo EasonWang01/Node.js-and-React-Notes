@@ -250,6 +250,10 @@ yarn start --reset-cache;
 rm -rf /tmp/metro-*;
 ```
 
+25.重新安裝 debug.keystore file
+
+[https://stackoverflow.com/questions/57016236/keystore-file-project-folder-android-app-debug-keystore-not-found-for-signing](https://stackoverflow.com/questions/57016236/keystore-file-project-folder-android-app-debug-keystore-not-found-for-signing)
+
 ## 開發相關
 
 ## 1.無法用e.target

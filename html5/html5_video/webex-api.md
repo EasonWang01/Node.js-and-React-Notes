@@ -12,7 +12,7 @@ webex meeting 目前 API 許久沒維護，所以以下教學以 webex Teams 為
 
 網頁版teams: [https://teams.webex.com/signin](https://teams.webex.com/signin)
 
-開發者頁面:[https://developer.webex.com/](https://developer.webex.com)
+開發者頁面:[https://developer.webex.com/](https://developer.webex.com/)
 
 互動式教學:[https://developer.cisco.com/learning/](https://developer.cisco.com/learning/)
 

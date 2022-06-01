@@ -131,7 +131,7 @@ await page.exposeFunction("myFunc", myFunc);
 
 ## WebDriver.io
 
-[http://webdriver.io/](http://webdriver.io)
+[http://webdriver.io/](http://webdriver.io/)
 
 ## selenium-webdriver
 
@@ -230,4 +230,4 @@ describe('test duckduckgo search results', () => {
 
 ## casper.js
 
-[http://casperjs.org/](http://casperjs.org)
+[http://casperjs.org/](http://casperjs.org/)

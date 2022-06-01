@@ -6,7 +6,7 @@ description: 一個提供第三方串流服務的供應商
 
 ### 文件：
 
-[https://docs.agora.io/](https://docs.agora.io)
+[https://docs.agora.io/](https://docs.agora.io/)
 
 ### 收費方式：
 

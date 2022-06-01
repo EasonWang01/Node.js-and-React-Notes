@@ -107,7 +107,7 @@ AppRegistry.registerComponent('AwesomeProject', () => App);
 
 **4.flowconfig**
 
-[http://flowtype.org/](http://flowtype.org)\
+[http://flowtype.org/](http://flowtype.org/)\
 `Flow is not supported on Windows, so this integration is not yet available on that platform.`
 
 ## 3.Implement with Redux

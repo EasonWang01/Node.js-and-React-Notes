@@ -4,7 +4,7 @@
 
 > 目前推薦使用 certbot 工具，自動產生證書，且會三個月自動更新
 >
-> [https://certbot.eff.org/](https://certbot.eff.org)
+> [https://certbot.eff.org/](https://certbot.eff.org/)
 
 1.先到此網站
 

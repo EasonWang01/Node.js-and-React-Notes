@@ -1612,7 +1612,7 @@ export default connect(mapStateToProp)(App)
 
 #### 記得加條件限制
 
-但是，如果url為[http://localhost:3000/](http://localhost:3000)
+但是，如果url為[http://localhost:3000/](http://localhost:3000/)
 
 這時\
 `{React.cloneElement(this.props.children, { todos:this.props })}`

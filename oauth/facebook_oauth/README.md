@@ -47,7 +47,7 @@ window.fbAsyncInit = function() {
    }(document, 'script', 'facebook-jssdk'));
 ```
 
-在dashboard上填寫網域\[[http://localhost:3000\]與最下方(http://localhost:3000](http://localhost/:3000]%E8%88%87%E6%9C%80%E4%B8%8B%E6%96%B9\(http://localhost:3000))
+在dashboard上填寫網域\[[http://localhost:3000\]與最下方(http://localhost:3000](http://localhost/:3000]%E8%88%87%E6%9C%80%E4%B8%8B%E6%96%B9\(http:/localhost:3000))
 
 如果使用react記得在component加上`const FB = window.FB;`
 

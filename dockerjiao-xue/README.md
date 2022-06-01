@@ -6,7 +6,7 @@ OSX: [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/d
 
 > windows版本的docker建議可以使用kitemantic整合環境
 
-windows: [https://kitematic.com/](https://kitematic.com)
+windows: [https://kitematic.com/](https://kitematic.com/)
 
 [https://store.docker.com/search?type=edition\&offering=community](https://store.docker.com/search?type=edition\&offering=community)
 
@@ -152,7 +152,7 @@ docker save -o ./dockerImage test/node-web-app
 
 ## PUSH Image到Docker Hub
 
-1.先到[https://hub.docker.com/](https://hub.docker.com)註冊帳號
+1.先到[https://hub.docker.com/](https://hub.docker.com/)註冊帳號
 
 2.Create new repository
 
