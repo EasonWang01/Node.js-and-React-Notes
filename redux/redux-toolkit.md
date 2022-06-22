@@ -162,3 +162,30 @@ export const doUpdateUserTotalBalance = (num, protocolName) => async dispatch =>
   return dispatch(updateUserTotalBalance({ num, protocolName }))
 }
 ```
+
+## Redux toolkit 結合 localstorage
+
+存入 state 到 localstorage
+
+store.js
+
+```javascript
+import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers} from 'redux';
+import { save, load } from "redux-localstorage-simple"
+import user from './user.js';
+
+const reducer = combineReducers({
+  user
+})
+const store = configureStore({
+  reducer,
+  middleware: (getDefaultMiddleware) => [
+    ...getDefaultMiddleware(),
+    save(),
+  ],
+  preloadedState: load(),
+})
+
+export default store;
+```
