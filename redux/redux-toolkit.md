@@ -189,3 +189,7 @@ const store = configureStore({
 
 export default store;
 ```
+
+> 如果用 next.js 出現 Hydration failed because the initial UI does not match what was rendered on the server
+>
+> 可以參考：[https://github.com/vercel/next.js/discussions/35773#discussioncomment-2840696](https://github.com/vercel/next.js/discussions/35773#discussioncomment-2840696)
