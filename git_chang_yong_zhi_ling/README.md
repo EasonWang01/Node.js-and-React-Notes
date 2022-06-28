@@ -622,6 +622,12 @@ git push origin <取名的版本號碼>
 
 ![](<../.gitbook/assets/截圖 2021-09-16 下午6.14.06.png>)
 
+## 將其他 repo 的 commit cherry pick 進來
+
+使用 git format-patch
+
+[https://stackoverflow.com/a/9507417](https://stackoverflow.com/a/9507417)
+
 ## 使用特定 ssh key 來執行 git 指令
 
 ```
