@@ -18,6 +18,12 @@
 
 ![](<../.gitbook/assets/Screen Shot 2019-02-21 at 12.24.34 PM.png>)
 
+## 如果一直不 prompt password
+
+> 有時為 gpgagent 故障，可參考以下重啟
+
+[https://stackoverflow.com/a/66927472/4622645](https://stackoverflow.com/a/66927472/4622645)&#x20;
+
 ## 如果出現failed-to-sign-the-data
 
 於 \~/.zshrc 加上
