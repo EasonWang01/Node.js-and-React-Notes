@@ -8,6 +8,8 @@
 
 [https://help.github.com/articles/signing-commits/](https://help.github.com/articles/signing-commits/)
 
+[https://gist.github.com/Beneboe/3183a8a9eb53439dbee07c90b344c77e](https://gist.github.com/Beneboe/3183a8a9eb53439dbee07c90b344c77e)
+
 ### GitLab
 
 [https://docs.gitlab.com/ee/user/project/repository/gpg\_signed\_commits/](https://docs.gitlab.com/ee/user/project/repository/gpg\_signed\_commits/)
