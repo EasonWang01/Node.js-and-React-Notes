@@ -163,6 +163,27 @@ export const doUpdateUserTotalBalance = (num, protocolName) => async dispatch =>
 }
 ```
 
+## 加入 Typescript&#x20;
+
+如果出現 `(dispatch: any) => Promise` 可以加上如下
+
+1. store.ts 內新增
+
+```javascript
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
+export type AppDispatch = typeof store.dispatch
+```
+
+2.component 內 useDispatch 加上 type
+
+```javascript
+const dispatch = useDispatch<AppDispatch>();
+```
+
+[https://redux.js.org/usage/usage-with-typescript](https://redux.js.org/usage/usage-with-typescript)
+
 ## Redux toolkit 結合 localstorage
 
 存入 state 到 localstorage
