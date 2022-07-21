@@ -6,7 +6,7 @@
 
 使用DOM parser
 
-```
+```text
 var xmlString = "<div id='foo'><a href='#'>Link</a><span></span></div>"
   , parser = new DOMParser()
   , doc = parser.parseFromString(xmlString, "text/xml");
@@ -26,14 +26,5 @@ doc.firstChild.firstChild // => <a href="#">...
 
 `"asdf<div><br></div><div>dff</div>"`
 
-{% embed url="http://stackoverflow.com/questions/1580647/json-why-are-forward-slashes-escaped" %}
-
-## 3. Number to dollor
-
-```javascript
-Number.prototype.format = function(n, x) {
-  const re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
-  return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
-};
-```
+[http://stackoverflow.com/questions/1580647/json-why-are-forward-slashes-escaped](http://stackoverflow.com/questions/1580647/json-why-are-forward-slashes-escaped)
 

@@ -250,6 +250,14 @@ npm view <套件名稱>
 
 [https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package)
 
+安裝套件前要先登入：
+
+> password 記得使用 github 創建的 personal access token
+
+```
+npm login --registry=https://npm.pkg.github.com
+```
+
 ## 常見問題
 
 **1.node-gyp error**
