@@ -250,6 +250,8 @@ npm view <套件名稱>
 
 [https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package)
 
+![](<../../.gitbook/assets/截圖 2022-07-21 下午1.51.17.png>)
+
 安裝套件前要先登入：
 
 > password 記得使用 github 創建的 personal access token
