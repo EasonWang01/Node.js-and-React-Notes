@@ -244,6 +244,12 @@ nvm use <version>
 npm view <套件名稱>
 ```
 
+## GitHub registry
+
+可以發布 npm 包到 github host 的 registry，相較於預設的 npm registry 差別在於可以直接從 github 發布套件，並且集成 github action。
+
+[https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package)
+
 ## 常見問題
 
 **1.node-gyp error**
