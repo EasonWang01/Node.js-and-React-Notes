@@ -398,3 +398,23 @@ next export
 > ```
 
 如果想要部署到 Now上，進入 out 資料夾後輸入 `now` 即可。
+
+## Next.js 使用 antd (ant design)
+
+```
+yarn add antd
+```
+
+新增 pages/\_app.js
+
+> 引入 antd style
+
+```javascript
+import "antd/dist/antd.css";
+
+function App({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+export default App;
+```
