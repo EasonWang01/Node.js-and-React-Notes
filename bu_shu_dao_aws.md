@@ -49,7 +49,7 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ![](<.gitbook/assets/截圖 2022-08-08 下午7.48.27.png>)
 
-
+設置後用 DNS 名稱即可連線到 EC2 上的 web server。
 
 ## AWS ECR
 
