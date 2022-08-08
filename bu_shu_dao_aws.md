@@ -41,6 +41,16 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 {% embed url="http://ch-tseng.blogspot.tw/2015/04/amazon-aws.html?m=1" %}
 
+## AWS load balancer
+
+需要先設定好 target group (放入需要的 ec2 instance)，然後新增 load balancer，之後記得要去 LB 安全群組設置，不能用 default，不然會連線不到。
+
+<img src=".gitbook/assets/截圖 2022-08-08 下午7.46.32.png" alt="" data-size="original">
+
+![](<.gitbook/assets/截圖 2022-08-08 下午7.48.27.png>)
+
+
+
 ## AWS ECR
 
 docker image 託管服務。
