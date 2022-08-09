@@ -43,7 +43,11 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ## AWS load balancer
 
-需要先設定好 target group (放入需要的 ec2 instance)，然後新增 load balancer，之後記得要去 LB 安全群組設置，不能用 default，不然會連線不到。
+要先創建 Target group 且連結到 EC2，並且確認 health check 正常：
+
+![](<.gitbook/assets/截圖 2022-08-09 上午11.05.50.png>)
+
+需要先設定好 target group (放入需要的 ec2 instance)，然後新增 load bal ancer，之後記得要去 LB 安全群組設置，不能用 default，不然會連線不到。
 
 <img src=".gitbook/assets/截圖 2022-08-08 下午7.46.32.png" alt="" data-size="original">
 
