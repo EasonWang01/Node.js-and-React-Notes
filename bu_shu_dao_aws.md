@@ -67,6 +67,10 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 這邊記得備用網域設置要使用的 domain，且使用的 https 證書與 ELB相同即可。
 
+如果 ELB 可以直接設定為 A record 且連線正常，通常在 ELB 前面多串一個 cloudfront 然後把 A record 從 ELB 改為 cloudfront 也可以正常。
+
+> 設定後如果直接前往 cloudfront 給的網址會出現 502 錯誤，記得要先去 route53 設定好 A record 且指向 cloudfront，這樣前往要去的 domain 就可以了，但不要直接連到 cloudfront domain。
+
 ![](<.gitbook/assets/截圖 2022-08-09 上午10.35.10.png>)
 
 <img src=".gitbook/assets/截圖 2022-08-09 上午10.36.48.png" alt="" data-size="original">
