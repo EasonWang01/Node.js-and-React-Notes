@@ -51,6 +51,14 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 設置後用 DNS 名稱即可連線到 EC2 上的 web server。
 
+## ELB 設定 HTTPS
+
+記得去申請 acm 的 \*.domain 證書，可用在 api.domain 網域，然後串接上去 ELB listener&#x20;
+
+![](<.gitbook/assets/截圖 2022-08-09 上午9.44.24.png>)
+
+![](<.gitbook/assets/截圖 2022-08-09 上午9.43.47.png>)
+
 ## AWS ECR
 
 docker image 託管服務。
