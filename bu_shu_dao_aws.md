@@ -59,11 +59,23 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ![](<.gitbook/assets/截圖 2022-08-09 上午9.43.47.png>)
 
+最後到 Route53 新增 A 紀錄使用 ELB 即可
+
+![](<.gitbook/assets/截圖 2022-08-09 上午9.44.03.png>)
+
+## 串接 Cloudfront 與 ELB
+
+這邊記得備用網域設置要使用的 domain，且使用的 https 證書與 ELB相同即可。
+
+![](<.gitbook/assets/截圖 2022-08-09 上午10.35.10.png>)
+
+<img src=".gitbook/assets/截圖 2022-08-09 上午10.36.48.png" alt="" data-size="original">
+
 ## AWS ECR
 
 docker image 託管服務。
 
-1.如果遇到如下問題：is not authorized to perform: ecr-public:GetAuthorizationToken on resource: \* because no identity-based policy allows the ecr-public:GetAuthorizationToken action
+1.如果遇到如下問題：is not  authorized to perform: ecr-public:GetAuthorizationToken on resource: \* because no identity-based policy allows the ecr-public:GetAuthorizationToken action
 
 [https://stackoverflow.com/questions/65727113/aws-ecr-user-is-not-authorized-to-perform-ecr-publicgetauthorizationtoken-on-r](https://stackoverflow.com/questions/65727113/aws-ecr-user-is-not-authorized-to-perform-ecr-publicgetauthorizationtoken-on-r)
 
