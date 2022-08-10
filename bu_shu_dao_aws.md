@@ -43,7 +43,7 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ## AWS cloudfront 串接 S3
 
-創建好 S3 後上傳檔案， bucket 先設為 private，且不用開啟靜態 host，之後設置 cloudfront 後使用OAI 讓他更改 bucket policy
+創建好 S3 後上傳檔案， bucket 先設為 private，且不用開啟靜態 host，之後設置 cloudfront 後使用OAI 讓他更改 bucket policy，之後記得設置 cloudfront 預設根路徑為 index.html (S3 上的)
 
 ![](<.gitbook/assets/截圖 2022-08-10 下午1.42.34.png>)
 
