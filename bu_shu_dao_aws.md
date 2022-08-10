@@ -1,4 +1,4 @@
-# 部署到AWS
+# AWS Cloudfront、ELB
 
 ## 部署到AWS
 
@@ -35,11 +35,19 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 > Load key "/Users/eason.wang/Downloads/Trading-Platform.pem": bad permissions\
 > Permission denied (publickey).
 
-## # 其他AWS服務說明
+## 其他AWS服務說明
 
 > 可參考以下不錯文章
 
 {% embed url="http://ch-tseng.blogspot.tw/2015/04/amazon-aws.html?m=1" %}
+
+## AWS cloudfront 串接 S3
+
+創建好 S3 後上傳檔案， bucket 先設為 private，且不用開啟靜態 host，之後設置 cloudfront 後使用OAI 讓他更改 bucket policy
+
+![](<.gitbook/assets/截圖 2022-08-10 下午1.42.34.png>)
+
+
 
 ## AWS load balancer
 

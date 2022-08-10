@@ -191,7 +191,7 @@
   * [imgur API](imgur\_api.md)
 * [JS 格式轉換](js\_ge\_shi\_zhuan\_huan.md)
 * [js trick](js\_trick.md)
-* [部署到AWS](bu\_shu\_dao\_aws.md)
+* [AWS Cloudfront、ELB](bu\_shu\_dao\_aws.md)
 * [AWS lambda](aws-lambda/README.md)
   * [範例](aws-lambda/fan-li.md)
   * [加上權限控管](aws-lambda/jia-shang-quan-xian-kong-guan.md)
