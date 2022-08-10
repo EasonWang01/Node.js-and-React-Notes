@@ -81,6 +81,10 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ![](<.gitbook/assets/截圖 2022-08-09 上午10.36.43.png>)
 
+且記得設置
+
+![](<.gitbook/assets/截圖 2022-08-10 上午11.17.02.png>)
+
 ## AWS ECR
 
 docker image 託管服務。
