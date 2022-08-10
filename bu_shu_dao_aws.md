@@ -103,11 +103,19 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ![](<.gitbook/assets/截圖 2022-08-10 上午11.17.02.png>)
 
+## 清除 Cloudfront Cache
+
+如果用 API 或 static asset 更改內容後沒更新，需要使用 **Invalidation 更新。**
+
+****![](<.gitbook/assets/截圖 2022-08-10 下午8.23.33.png>)****
+
 ## AWS ECR
 
 docker image 託管服務。
 
-1.如果遇到如下問題：is not  authorized to perform: ecr-public:GetAuthorizationToken on resource: \* because no identity-based policy allows the ecr-public:GetAuthorizationToken action
+1.如果遇到如下問題：
+
+> is not authorized to perform: ecr-public:GetAuthorizationToken on resource: \* because no identity-based policy allows the ecr-public:GetAuthorizationToken action
 
 [https://stackoverflow.com/questions/65727113/aws-ecr-user-is-not-authorized-to-perform-ecr-publicgetauthorizationtoken-on-r](https://stackoverflow.com/questions/65727113/aws-ecr-user-is-not-authorized-to-perform-ecr-publicgetauthorizationtoken-on-r)
 
