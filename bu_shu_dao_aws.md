@@ -115,6 +115,12 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ![](<.gitbook/assets/截圖 2022-08-10 下午8.25.36.png>)
 
+## Cloudfront 預設不會傳 origin 的 Querystring 與 Header
+
+這邊要特別留意：
+
+[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy)
+
 ## AWS ECR
 
 docker image 託管服務。
