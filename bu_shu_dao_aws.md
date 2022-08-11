@@ -119,6 +119,10 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 這邊要特別留意：
 
+記得選擇 origin request policy
+
+![](<.gitbook/assets/截圖 2022-08-11 下午5.26.01.png>)
+
 [https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy)
 
 ## AWS ECR
