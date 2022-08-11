@@ -125,6 +125,14 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 [https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy)
 
+## 從現有 EC2 快速建立複製的 EC2
+
+包含內部應用程式內容。
+
+步驟：磁碟區->建立快照->快照建立 AMI->AMI建立 instance
+
+![](<.gitbook/assets/截圖 2022-08-11 下午6.42.05.png>)
+
 ## AWS ECR
 
 docker image 託管服務。
