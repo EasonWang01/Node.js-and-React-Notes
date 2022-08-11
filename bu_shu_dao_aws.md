@@ -105,6 +105,8 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ## 清除 Cloudfront Cache
 
+> Cloudfront 請求一次 API 後就會 cache 不會重複請求到 server，所以返回資料有改動的話要記得添加
+
 如果用 API 或 static asset 更改內容後沒更新，需要使用 **Invalidation 更新。**
 
 ****![](<.gitbook/assets/截圖 2022-08-10 下午8.23.33.png>)****
