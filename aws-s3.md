@@ -7,6 +7,37 @@
 
 [https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html)
 
+## S3 公開存取
+
+S3 有 host 靜態網站功能，但必須開啟公開讀取權限。
+
+`許可 -> 儲存貯體政策`，增加如下設置
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<更改為你的 Bucket-Name>/*"
+            ]
+        }
+    ]
+}
+```
+
+取消勾選封鎖存取
+
+![](<.gitbook/assets/截圖 2022-08-20 下午1.56.01.png>)
+
+[https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteAccessPermissionsReqd.html#bucket-policy-static-site](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteAccessPermissionsReqd.html#bucket-policy-static-site)
+
 ## 上傳到 S3 範例
 
 > 以下程式開啟後會先當一個範例上傳網站，然後可以在此上傳檔案，之後會傳到S3，使用的上傳檔案模組為busboy
