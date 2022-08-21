@@ -1,4 +1,4 @@
-# AWS Cloudfront、ELB
+# AWS Cloudfront、ELB、ACL
 
 ## 部署到AWS
 
@@ -132,6 +132,12 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 步驟：磁碟區->建立快照->快照建立 AMI->AMI建立 instance
 
 ![](<.gitbook/assets/截圖 2022-08-11 下午6.42.05.png>)
+
+## ACL 防護
+
+ACL 為類似 cloudflare DDos 防護的功能，能設置 RateLimit 等請求阻擋，搭配 cloudfront 使用。
+
+[https://docs.aws.amazon.com/waf/latest/developerguide/listing-managed-ips.html](https://docs.aws.amazon.com/waf/latest/developerguide/listing-managed-ips.html)
 
 ## AWS ECR
 
