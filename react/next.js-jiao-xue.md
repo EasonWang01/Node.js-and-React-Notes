@@ -418,3 +418,9 @@ function App({ Component, pageProps }) {
 
 export default App;
 ```
+
+## PM2 執行 Next.js
+
+```
+pm2 start npm --name <取名字> -- start
+```

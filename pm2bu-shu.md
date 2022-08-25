@@ -2,13 +2,13 @@
 
 [http://pm2.keymetrics.io/docs/usage/cluster-mode/](http://pm2.keymetrics.io/docs/usage/cluster-mode/)
 
-## PM2 教學
+## #PM2 教學
 
 ```
 npm install pm2 -g
 ```
 
-## 常用指令
+## #常用指令
 
 ```
 pm2 start app.js //啟動
@@ -20,7 +20,7 @@ pm2 reload  <name or id>和restart類似 但可以達到0downtime
 pm2 monit //啟動pm2的即時監控視窗
 ```
 
-## production
+## #production
 
 [http://pm2.keymetrics.io/docs/usage/application-declaration/](http://pm2.keymetrics.io/docs/usage/application-declaration/)
 
@@ -51,8 +51,3 @@ module.exports = {
   }]
 }
 ```
-
-## PM2 執行任何 package script
-
-[https://stackoverflow.com/a/64645078/4622645](https://stackoverflow.com/a/64645078/4622645)
-
