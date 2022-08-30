@@ -151,6 +151,18 @@ const name = 'Roger'
 const age = 8
 const result = await Dog.create({ name, age })
 console.log(result)
+
+Dog.findOne({
+  where: {name: "Roger"}, // where 條件
+  attribute: []  //指定回傳欄位
+}).then(function(object) {
+  console.log(object)
+  if(object) {
+    console.log("exist")
+  } else {
+    console.log("Not exist")
+  }
+})
 ```
 
 ## 如果出現 error: syntax error at or near 或是 column \_ not exist
