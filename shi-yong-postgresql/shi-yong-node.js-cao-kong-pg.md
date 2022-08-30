@@ -6,7 +6,7 @@
 
 可使用以下模組，與資料庫連線。
 
-```text
+```
 npm install pg --save
 ```
 
@@ -26,7 +26,7 @@ npm install pg --save
 
 ### 執行指令前輸入相關連線設定
 
-```text
+```
 $ PGUSER=dbuser \
   PGHOST=database.server.com \
   PGPASSWORD=secretpassword \
@@ -82,7 +82,7 @@ client.query(queryletter, data, (err, res) => {
 
 > 如果是直接寫，記得要是value單引號，不然會出現沒有該column name的錯誤
 >
-> ```text
+> ```
 >   const insertString = `INSERT INTO users (account, password, username) VALUES('${req.body.account}','${req.body.password}','${req.body.account}');`
 > ```
 
@@ -103,7 +103,7 @@ async function query(exec_query, data, callback) {
 }
 ```
 
-> 記得要release\(\) 不然程式會當掉
+> 記得要release() 不然程式會當掉
 >
 > [https://node-postgres.com/features/pooling](https://node-postgres.com/features/pooling)
 
@@ -116,7 +116,7 @@ pool.query
 
 ## 存入 timestamp
 
-```text
+```
 let values = [(Date.now() + 1000 * 60 * 60 * 8) / 1000.0]
 
 然後 query 使用
@@ -124,7 +124,35 @@ let values = [(Date.now() + 1000 * 60 * 60 * 8) / 1000.0]
 to_timestamp($1)
 ```
 
+## 使用 Sequelize
+
+```javascript
+import { Sequelize, Model, DataTypes } from 'sequelize'
+const sequelize = new Sequelize('postgres://superuser:example@localhost:5432/hotels') // Example for postgres
+
+class Dog extends Model {}
+
+Dog.init({
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  age: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  }
+}, {
+  sequelize,
+  modelName: 'dogs',
+  timestamps: false
+})
+
+const name = 'Roger'
+const age = 8
+const result = await Dog.create({ name, age })
+console.log(result)
+```
+
 ## 如果出現 error: syntax error at or near 或是 column \_ not exist
 
- 注意 table 名稱不要取到 SQL 保留字，例如 user 改為 users, order 要改為 orders
-
+&#x20;注意 table 名稱不要取到 SQL 保留字，例如 user 改為 users, order 要改為 orders
