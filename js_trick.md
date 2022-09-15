@@ -2,18 +2,40 @@
 
 ## js trick
 
+## Sort Array of number 時包含 NaN
+
+因為 NaN, Null 沒辦法被 sort&#x20;
+
+```javascript
+[1, NaN, 3, 5].sort((a, b) => b - a)
+// [1, NaN, 5, 3]
+```
+
+所以可以用如下方式
+
+```javascript
+function handleSort(eleA, eleB) {
+  if(isNaN(eleB)) {
+    eleB[1] = order === sortOrder.Ascend ? Number.MAX_SAFE_INTEGER : 0;
+  }
+  return order === sortOrder.Descend ? eleB - eleA : eleA - eleB
+}
+
+[....].sort(handleSort)
+```
+
 ## 1.替換input type＝"file"標籤為客製化按鈕
 
-因為label規定不可放button在內，所以我們使用click\(\)的方法，如下
+因為label規定不可放button在內，所以我們使用click()的方法，如下
 
-```text
+```
 <div>
 <button onClick={() => this.fileBtn()} style={style.picBtn} />
 <input style={style.fileInput} id="file-upload" ref="fileInput" type='file' />
 </div>
 ```
 
-```text
+```
    fileBtn() {
     findDOMNode(this.refs.fileInput).click();
   }
@@ -21,7 +43,7 @@
 
 style
 
-```text
+```
    picBtn: {
     background: 'url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+aWNfcGljXzhmOGY4ZjwvdGl0bGU+PGcgZmlsbD0iIzhGOEY4RiIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTUuOTg4IDEyYTQgNCAwIDEgMCAwIDggNCA0IDAgMCAwIDAtOCIvPjxwYXRoIGQ9Ik00MC4wNjggMjQuNzA0bC02LjM3My01LjkyOC05LjM1IDkuNTc1LTUuNDUyLTUuNTg2TDggMzMuMzQyVjE0LjAwNUE2LjAxMiA2LjAxMiAwIDAgMSAxNC4wMDUgOGgyMC4wNThhNi4wMTIgNi4wMTIgMCAwIDEgNi4wMDUgNi4wMDV2MTAuNjk5ek0zNC4wNjMgNkgxNC4wMDVBOC4wMDkgOC4wMDkgMCAwIDAgNiAxNC4wMDV2MjAuMDU4YTguMDA5IDguMDA5IDAgMCAwIDguMDA1IDguMDA1aDIwLjA1OGE4LjAwOSA4LjAwOSAwIDAgMCA4LjAwNS04LjAwNVYxNC4wMDVBOC4wMDkgOC4wMDkgMCAwIDAgMzQuMDYzIDZ6Ii8+PC9nPjwvc3ZnPg==) no-repeat',
     backgroundSize: 'cover',
@@ -66,13 +88,13 @@ document.getElementById('pageHideInput').blur(); //避免手機彈起鍵盤
 
 [https://codepen.io/anon/pen/EbJBjP](https://codepen.io/anon/pen/EbJBjP)
 
-```text
+```
 記得clipboard.js的new Clipboard參數要填入id或是class，例如: new Clipboard('#' + ele.id);
 ```
 
 ## 倒數計時
 
-```text
+```
 <div id="timer"></div>
 ```
 
@@ -268,7 +290,7 @@ function parseQuerystring(s) {
 
 使用
 
-```text
+```
 parseQuerystring(location.search)
 ```
 
@@ -328,7 +350,7 @@ setValue(obj, a)
 console.log(obj)
 ```
 
-上面將等同於 \(上面較易理解\) 來源：[https://stackoverflow.com/a/20240290](https://stackoverflow.com/a/20240290)
+上面將等同於 (上面較易理解) 來源：[https://stackoverflow.com/a/20240290](https://stackoverflow.com/a/20240290)
 
 ```javascript
 a = ['s', 'ss','sss']; obj = {}
@@ -364,4 +386,3 @@ const generateRandomUser = () => {
 ## 隨機產生圖片
 
 [https://picsum.photos/200/300](https://picsum.photos/200/300)
-
