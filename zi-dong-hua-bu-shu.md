@@ -30,6 +30,14 @@ docker-compose up
 
 {% embed url="https://docs.gitlab.com/omnibus/settings/smtp.html" %}
 
+## Gitlab clone 專案 with access token
+
+通常在部署主機上需要 clone 專案，但使用個人的 ssh key 權限過大，所以可以創建專案的 access token，之後如下 clone 專案。
+
+```
+git clone https://oauth2:ACCESS_TOKEN@domain.com/.../package.git
+```
+
 ## 安裝 Drone CI
 
 > 這邊如果還沒綁定 domain，建議先把 localhost 的 GitLab 與等下會用的 drone 的 port 都用 ngrok 產生 domain ，這樣才能正常使用
