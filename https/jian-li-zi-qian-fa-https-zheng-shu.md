@@ -116,6 +116,12 @@ echo "Generate signed certficate\n" && openssl x509 -req -in localhost.csr -CA m
 
 {% embed url="https://medium.com/@clu1022/%E9%82%A3%E4%BA%9B%E9%97%9C%E6%96%BCssl-tls%E7%9A%84%E4%BA%8C%E4%B8%89%E4%BA%8B-%E5%8D%81%E4%BA%8C-chain-of-trust-f00da1f2cc15" %}
 
+## 建立自己的 Cert Chain
+
+自己簽發 Root CA 與之後的 intermediate ca，並且驗正
+
+[https://blog.davy.tw/posts/use-openssl-to-sign-intermediate-ca/](https://blog.davy.tw/posts/use-openssl-to-sign-intermediate-ca/)
+
 ## 申請加入 root CA
 
 Chrome 是會去找電腦OS內的預設
