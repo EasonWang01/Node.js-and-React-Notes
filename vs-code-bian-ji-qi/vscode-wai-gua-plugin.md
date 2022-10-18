@@ -26,3 +26,11 @@
 
 選擇字後按 shift+option+t
 
+#### 6. Remote ssh
+
+![](<../.gitbook/assets/截圖 2022-10-18 上午10.16.24.png>)
+
+編輯 .ssh/config 檔案後會自動出現在列表中
+
+![](../.gitbook/assets/fdsfsdfsdf.png)
+
