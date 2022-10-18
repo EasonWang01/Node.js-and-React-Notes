@@ -34,3 +34,34 @@
 
 ![](../.gitbook/assets/fdsfsdfsdf.png)
 
+#### 7. 使用瀏覽器 ssh 進機器並且為 VSCode 介面
+
+Github: [https://github.com/coder/code-server](https://github.com/coder/code-server)
+
+Docker hub: [https://hub.docker.com/r/codercom/code-server](https://hub.docker.com/r/codercom/code-server)
+
+docker-compose 範例：
+
+```yaml
+version: "2.1"
+services:
+  code-server:
+    image: codercom/code-server:latest
+    container_name: code-server
+    user: root
+    environment:
+      - PASSWORD=password #optional
+      - HASHED_PASSWORD= #optional
+      - SUDO_PASSWORD=password #optional
+      - SUDO_PASSWORD_HASH= #optional
+    volumes:
+      - ~/.config:/config
+      - ~/project:/home/user/project
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+```
+
+其他 environment config 可參考：
+
+[https://github.com/coder/deploy-code-server/tree/main/deploy-container#environment-variables](https://github.com/coder/deploy-code-server/tree/main/deploy-container#environment-variables)
