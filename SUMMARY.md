@@ -222,7 +222,7 @@
   * [LXC LXD](dockerjiao-xue/lxc-lxd.md)
   * [Docker Compose](dockerjiao-xue/docker-compose.md)
   * [Docker 原理](dockerjiao-xue/docker-yuan-li.md)
-  * [Docker指令](dockerjiao-xue/docker.md)
+  * [Docker 指令](dockerjiao-xue/docker.md)
 * [Unit Test (Jest & enzyme)](unit-test-jest-and-enzyme/README.md)
   * [React Testing Library](unit-test-jest-and-enzyme/react-testing-library.md)
   * [UI Test (puppeteer)](unit-test-jest-and-enzyme/ui-test-puppeteer.md)

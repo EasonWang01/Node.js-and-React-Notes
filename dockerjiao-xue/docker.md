@@ -1,4 +1,4 @@
-# Docker指令
+# Docker 指令
 
 Ubuntu安裝部分可參考此
 
@@ -131,9 +131,42 @@ docker cp container_id:/foo.txt foo.txt
 
 {% embed url="https://stackoverflow.com/a/31971697/4622645" %}
 
-### 13. docker 之間使用 localhost 互相網路連通
+### 13. docker 網路互通使用 network gateway
 
-> &#x20;**docker run --network=host (docker 連得到 host (本機電腦) localhost 其他 port, 但電腦連不進 docker)**
+範例：
+
+```yaml
+version: '3'
+services:
+  mongo:
+    image: mongo:6.0.2-focal
+    restart: always
+    volumes:
+      - "./mongoData:/data/db"
+    networks:
+      web3-network:
+        ipv4_address: 10.5.0.6
+    ports:
+      - 27017:27017
+  web3:
+    image: server1:1.0.0
+    networks:
+      web3-network:
+        ipv4_address: 10.5.0.5
+    ports:
+      - 3130:3130
+networks:
+  web3-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
+```
+
+### 14. docker 之間使用 localhost 互相網路連通 (新方式，不用設置 network gateway)
+
+> **雖然可用 docker run --network=host ，但此做法 docker 連得到 host (本機電腦) localhost 其他 port， 但電腦連不進 docker)**
 
 只要將代碼內的 `localhost` 改為 `host.docker.internal` 則可以連到其他電腦localhost，電腦也連得到 docker
 
