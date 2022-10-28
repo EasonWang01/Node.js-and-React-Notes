@@ -114,3 +114,38 @@ mongo 之類的 docker image 產生的 log 也可以直接從 docker log 看到
 ```
 docker logs containername >& logs/myFile.log
 ```
+
+### 12. host 與 container 複製
+
+One specific file can be copied TO the container like:
+
+```
+docker cp foo.txt container_id:/foo.txt
+```
+
+One specific file can be copied FROM the container like:
+
+```
+docker cp container_id:/foo.txt foo.txt
+```
+
+{% embed url="https://stackoverflow.com/a/31971697/4622645" %}
+
+### 13. docker 之間使用 localhost 互相網路連通
+
+> &#x20;**docker run --network=host (docker 連得到 host (本機電腦) localhost 其他 port, 但電腦連不進 docker)**
+
+只要將代碼內的 `localhost` 改為 `host.docker.internal` 則可以連到其他電腦localhost，電腦也連得到 docker
+
+{% embed url="https://stackoverflow.com/a/63112795/4622645" %}
+
+> Linux 要記得加上 flag: `docker run -it --add-host=host.docker.internal:host-gateway ubuntu bash`
+
+docker-compose 要加上如下:
+
+```
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+```
+
+[https://stackoverflow.com/a/67158212/4622645](https://stackoverflow.com/a/67158212/4622645)
