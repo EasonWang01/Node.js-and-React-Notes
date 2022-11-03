@@ -64,4 +64,16 @@ services:
 
 其他 environment config 可參考：
 
-[https://github.com/coder/deploy-code-server/tree/main/deploy-container#environment-variables](https://github.com/coder/deploy-code-server/tree/main/deploy-container#environment-variables)
+{% embed url="https://github.com/coder/deploy-code-server/tree/main/deploy-container#environment-variables" %}
+
+#### 8. VsCode MongoDB playground
+
+類似 mongoDB compass, 並且可以在上面快速的更新資料，與使用 playground 測試 query
+
+{% embed url="https://code.visualstudio.com/docs/azure/mongodb" %}
+
+#### 9. VsCode 進入 Docker&#x20;
+
+![](<../.gitbook/assets/截圖 2022-11-03 下午6.10.49.png>)
+
+選擇 Containers 之後下面選一個 container，點選 Attach to container ，即可進入該 docker ，快速方便的改 container 內檔案
