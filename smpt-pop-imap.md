@@ -89,6 +89,12 @@ imap.gmail.com
 
 {% embed url="https://securitytrails.com/blog/what-is-dkim" %}
 
+##
+
+[https://www.richesinfo.com.tw/index.php/mxmail/mxmail-faq/267-dkim-dmarc](https://www.richesinfo.com.tw/index.php/mxmail/mxmail-faq/267-dkim-dmarc)
+
+
+
 ## 發送大量 Email
 
 {% embed url="https://community.nodemailer.com/delivering-bulk-mail/" %}

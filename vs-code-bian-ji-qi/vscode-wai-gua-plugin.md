@@ -77,3 +77,5 @@ services:
 ![](<../.gitbook/assets/截圖 2022-11-03 下午6.10.49.png>)
 
 選擇 Containers 之後下面選一個 container，點選 Attach to container ，即可進入該 docker ，快速方便的改 container 內檔案
+
+[https://code.visualstudio.com/blogs/2019/10/31/inspecting-containers](https://code.visualstudio.com/blogs/2019/10/31/inspecting-containers)
