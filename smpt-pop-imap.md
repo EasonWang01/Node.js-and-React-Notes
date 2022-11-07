@@ -89,13 +89,13 @@ imap.gmail.com
 
 {% embed url="https://securitytrails.com/blog/what-is-dkim" %}
 
-
+[https://support.google.com/a/answer/2466563?hl=zh-Hant#verify-txt-record](https://support.google.com/a/answer/2466563?hl=zh-Hant#verify-txt-record)
 
 > &#x20;setup dmarc, testing using [https://toolbox.googleapps.com/apps/dig/#TXT/](https://toolbox.googleapps.com/apps/dig/#TXT/)
 
 [https://www.richesinfo.com.tw/index.php/mxmail/mxmail-faq/267-dkim-dmarc](https://www.richesinfo.com.tw/index.php/mxmail/mxmail-faq/267-dkim-dmarc)
 
-
+[https://support.google.com/a/answer/2466563?hl=zh-Hant](https://support.google.com/a/answer/2466563?hl=zh-Hant)
 
 ## 發送大量 Email
 
