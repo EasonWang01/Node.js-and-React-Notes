@@ -4,9 +4,7 @@
 
 為一個Server，功能用來轉導流量，可用作監聽與控制流量的用途。
 
-## 監聽 APP 網路封包
-
-[https://tech-blog.cymetrics.io/posts/huli/android-apk-decompile-intro-3/](https://tech-blog.cymetrics.io/posts/huli/android-apk-decompile-intro-3/)
+## 監聽網路封包
 
 ### Postman Proxy
 

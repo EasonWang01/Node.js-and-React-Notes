@@ -95,7 +95,7 @@ imap.gmail.com
 
 [https://www.richesinfo.com.tw/index.php/mxmail/mxmail-faq/267-dkim-dmarc](https://www.richesinfo.com.tw/index.php/mxmail/mxmail-faq/267-dkim-dmarc)
 
-[https://support.google.com/a/answer/2466563?hl=zh-Hant](https://support.google.com/a/answer/2466563?hl=zh-Hant)
+
 
 ## 發送大量 Email
 
