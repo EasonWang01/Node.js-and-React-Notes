@@ -95,7 +95,9 @@ imap.gmail.com
 
 [https://www.richesinfo.com.tw/index.php/mxmail/mxmail-faq/267-dkim-dmarc](https://www.richesinfo.com.tw/index.php/mxmail/mxmail-faq/267-dkim-dmarc)
 
+[https://support.google.com/a/answer/2466563?hl=zh-Hant](https://support.google.com/a/answer/2466563?hl=zh-Hant)
 
+[https://tech-blog.cymetrics.io/posts/crystal/email-sec-settings-dkimdmarc/](https://tech-blog.cymetrics.io/posts/crystal/email-sec-settings-dkimdmarc/)
 
 ## 發送大量 Email
 
@@ -118,4 +120,4 @@ imap.gmail.com
 1. user 輸入帳密後需要輸入 email，之後發送驗證碼，輸入相同驗證碼 (email auth code) 後可登入
 2. server 接到 user 發送 email 認證的請求後，產生一個 auth hash: sha256(account + email auth code)
 3. server 隨機產生六個號碼，之後算出 auth hash，存 DB，對應到 user。(latestAuthHash 每次產生後覆蓋舊的)
-4. 之後寄給使用者 email 這六個號碼，然後 user 在頁面上輸入六個號碼後將號碼發回 server 算 auth hash，如果相同及回傳 auth token 給 user，之後即可登入。
+4. 之後寄給使用者 email 這六個號碼，然後 user 在頁面上輸入六個號碼後將號碼發回 server 算 auth hash，如果相同及回傳 auth token 給 user，之後即可登入隨機產生六個號碼，之後算出 auth hash  DB  。
