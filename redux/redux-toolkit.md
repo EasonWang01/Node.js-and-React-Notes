@@ -1,5 +1,5 @@
 ---
-description: 前言：如果還不太了解 Redux 概念可以看上一篇
+description: 前言：有關 Redux 基礎概念可以看上一篇
 ---
 
 # Redux Toolkit
@@ -186,7 +186,9 @@ const dispatch = useDispatch<AppDispatch>();
 
 ## Redux toolkit 結合 localstorage
 
-存入 state 到 localstorage
+[https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist](https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist)
+
+> 存入 state 到 localstorage
 
 store.js
 
