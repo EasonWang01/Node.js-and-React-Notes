@@ -186,8 +186,6 @@ const dispatch = useDispatch<AppDispatch>();
 
 ## Redux toolkit 結合 localstorage
 
-[https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist](https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist)
-
 > 存入 state 到 localstorage
 
 store.js
@@ -216,3 +214,5 @@ export default store;
 > 如果用 next.js 出現 Hydration failed because the initial UI does not match what was rendered on the server
 >
 > 可以參考：[https://github.com/vercel/next.js/discussions/35773#discussioncomment-2840696](https://github.com/vercel/next.js/discussions/35773#discussioncomment-2840696)
+
+persist [https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist](https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist)
