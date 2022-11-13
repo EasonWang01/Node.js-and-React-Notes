@@ -186,7 +186,7 @@ const dispatch = useDispatch<AppDispatch>();
 
 ## Redux toolkit 結合 localstorage
 
-> 存入 state 到 localstorage
+> 用途：存入 state 到 localstorage，使用 redux-localstorage-simple 套件
 
 store.js
 
@@ -215,4 +215,4 @@ export default store;
 >
 > 可以參考：[https://github.com/vercel/next.js/discussions/35773#discussioncomment-2840696](https://github.com/vercel/next.js/discussions/35773#discussioncomment-2840696)
 
-persist [https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist](https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist)
+persist 也可參考官方使用的另一個套件 redux-persist： [https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist](https://redux-toolkit.js.org/usage/usage-guide#use-with-redux-persist)
