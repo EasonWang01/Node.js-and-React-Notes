@@ -105,6 +105,14 @@ git reset HEAD~
 
 [http://stackoverflow.com/questions/927358/how-to-undo-last-commits-in-git](http://stackoverflow.com/questions/927358/how-to-undo-last-commits-in-git)
 
+### 取消 branch 初次 commit 且維持檔案內容
+
+> 因為第一次 commit 不能用 `git reset HEAD~`
+
+```
+git update-ref -d HEAD
+```
+
 ### 回到上次commit的檔案狀態，刪除檔案內容
 
 ```
