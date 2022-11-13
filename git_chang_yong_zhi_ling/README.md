@@ -656,9 +656,7 @@ git config core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o 'IdentitiesOnly yes'"
 
 然後進到 repo 內的 .git/config，修改 url 為 `https://oath2:${access token }...`
 
-&#x20;
-
-![](<../.gitbook/assets/截圖 2021-03-05 下午2.23.34.png>)
+&#x20;![](<../.gitbook/assets/截圖 2022-11-13 下午12.28.24.png>)
 
 [https://stackoverflow.com/questions/25409700/using-gitlab-token-to-clone-without-authentication](https://stackoverflow.com/questions/25409700/using-gitlab-token-to-clone-without-authentication)
 
