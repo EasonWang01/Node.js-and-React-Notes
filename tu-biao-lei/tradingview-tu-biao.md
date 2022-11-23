@@ -10,6 +10,8 @@ description: 圖表串接
 
 範例：
 
+<figure><img src="../.gitbook/assets/截圖 2022-11-23 上午10.33.00.png" alt=""><figcaption></figcaption></figure>
+
 ```javascript
 import { useEffect, useRef } from "react";
 import { createChart } from "lightweight-charts";
