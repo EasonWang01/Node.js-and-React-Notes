@@ -175,6 +175,7 @@
     * [WebEX API](html5/html5\_video/webex-api.md)
   * [HTML5 IndexedDB](html5/html5-indexeddb.md)
 * [Google Cloud Platform (GCP)](bu\_shu\_dao\_google\_engine\_\_gce/README.md)
+  * [Cloud Storage](bu\_shu\_dao\_google\_engine\_\_gce/cloud-storage.md)
   * [Cloud storage 串接 Cloud CDN](bu\_shu\_dao\_google\_engine\_\_gce/cloud-storage-chuan-jie-cloud-cdn.md)
 * [Vim 編輯器](vim-bian-ji-qi.md)
 * [使用nginx](shi-yong-nginx/README.md)
