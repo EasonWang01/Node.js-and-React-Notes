@@ -20,6 +20,7 @@ description: SAA, SAP 證照相關
 * Kineses
 * SQS
 * SNS
+* AWS KMS
 * Cloudfront
 * Route53
 * AWS DataSync
@@ -31,6 +32,8 @@ description: SAA, SAP 證照相關
 * Amazon MQ
 
 AWS 服務列表：[https://docs.aws.amazon.com/](https://docs.aws.amazon.com/)
+
+[https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate\_Sample-Questions.pdf](https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate\_Sample-Questions.pdf)
 
 SAA: [https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c03/view](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c03/view/19/)
 
