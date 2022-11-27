@@ -200,6 +200,7 @@
 * [AWS S3](aws-s3.md)
 * [AWS DynamoDB](aws-dynamodb/README.md)
   * [結合Lambda](aws-dynamodb/jie-he-lambda.md)
+* [AWS 證照相關](aws-zheng-zhao-xiang-guan.md)
 * [有關日期Date](you-guan-ri-qi-date.md)
 * [VS code 編輯器](vs-code-bian-ji-qi/README.md)
   * [VSCode 外掛 Plugin](vs-code-bian-ji-qi/vscode-wai-gua-plugin.md)
