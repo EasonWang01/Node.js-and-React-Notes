@@ -85,3 +85,17 @@ option = {
       }
 ....
 ```
+
+### 移除 Canvas 預設邊界 padding
+
+e-chart 預設會有空白邊界，可使用以下移除或是調整。
+
+<pre class="language-javascript"><code class="lang-javascript">option = {
+<strong>  grid: {
+</strong>    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0
+  },
+}
+</code></pre>
