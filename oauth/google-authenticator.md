@@ -1,3 +1,7 @@
+---
+description: TOPT ( Time-based One-Time Passwords) 2FA
+---
+
 # Google authenticator
 
 {% embed url="https://github.com/google/google-authenticator/wiki/Key-Uri-Format#issuer" %}
@@ -5,6 +9,8 @@
 {% embed url="https://rootprojects.org/authenticator/" %}
 
 {% embed url="https://git.coolaj86.com/coolaj86/browser-authenticator.js" %}
+
+{% embed url="https://github.com/yeojz/otplib" %}
 
 第三方：
 
@@ -33,7 +39,6 @@ qrcode.toDataURL(secret.otpauth_url, function (err, url) {
 
 ```javascript
 const speakeasy = require("speakeasy");
-const qrcode = require("qrcode");
 
 const verifyResult = speakeasy.totp.verify({
   secret: "<剛才的 secret>",
@@ -46,4 +51,8 @@ console.log('verifyResult', verifyResult)
 
 {% embed url="https://github.com/speakeasyjs/speakeasy#generateSecret" %}
 
-[https://www.youtube.com/watch?v=6mxA9Zp8600](https://www.youtube.com/watch?v=6mxA9Zp8600)
+{% embed url="https://www.youtube.com/watch?v=6mxA9Zp8600" %}
+
+## 演算法：
+
+[https://github.com/bellstrand/totp-generator/blob/master/index.js](https://github.com/bellstrand/totp-generator/blob/master/index.js)
