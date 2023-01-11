@@ -212,3 +212,35 @@ module.exports = function override(config) {
     ....
    } 
 ```
+
+## 在 CRA 使用 Crypto, Path, Stream 等 Node.js 模組
+
+CRA 後續版本因為使用 webpack ModuleScopePlugin 插件所以無法引入 craco 這類型覆蓋 webpack config 設置 module resolve 的從引 src 外入 module，可以配置如下。
+
+```
+yarn add @craco/craco crypto-browserify path-browserify stream-browserify -D
+```
+
+craco.config.js 範例配置
+
+```javascript
+module.exports = {
+  webpack: {
+    configure: webpackConfig => {
+      const scopePluginIndex = webpackConfig.resolve.plugins.findIndex(
+        ({ constructor }) => constructor && constructor.name === 'ModuleScopePlugin'
+      );
+
+      webpackConfig.resolve.plugins.splice(scopePluginIndex, 1);
+      webpackConfig['resolve'] = {
+        fallback: {
+          path: require.resolve("path-browserify"),
+          crypto: require.resolve("crypto-browserify"),
+          stream: require.resolve("stream-browserify"),
+        },
+      }
+      return webpackConfig;
+    },
+  },
+};
+```
