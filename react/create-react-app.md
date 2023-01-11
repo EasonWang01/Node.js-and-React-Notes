@@ -246,3 +246,9 @@ module.exports = {
   },
 };
 ```
+
+> 其他 polyfill 模組包含
+>
+> ```
+>  npm install --save-dev crypto-browserify stream-browserify assert stream-http https-browserify os-browserify url buffer process
+> ```
