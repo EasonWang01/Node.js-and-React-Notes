@@ -215,6 +215,8 @@ module.exports = function override(config) {
 
 ## 在 CRA 使用 Crypto, Path, Stream 等 Node.js 模組
 
+[https://github.com/facebook/create-react-app/issues/11756#issuecomment-1378461646](https://github.com/facebook/create-react-app/issues/11756#issuecomment-1378461646)
+
 CRA 後續版本因為使用 webpack ModuleScopePlugin 插件所以無法引入 craco 這類型覆蓋 webpack config 設置 module resolve 的從引 src 外入 module，可以配置如下。
 
 ```
