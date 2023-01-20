@@ -19,7 +19,7 @@ hdiutil mount ~/Downloads/Win11_22H2_Chinese_Traditional_x64v1.iso
 3\. 用 Rsync 指令複製檔案到 USB, 但不要複製到 `sources/install.wim`
 
 ```
-rsync -vha –exclude=sources/install.wim /Volumes/CCCOMA_X64FRE_ZH-TW_DV9/* /Volumes/32G-USB
+rsync -vha --exclude=sources/install.wim /Volumes/CCCOMA_X64FRE_ZH-TW_DV9/* /Volumes/32G-USB
 ```
 
 4\. 用 winlib 切分 install.win 然後單獨複製過去
