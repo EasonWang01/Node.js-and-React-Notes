@@ -1,4 +1,14 @@
+---
+description: TOPT ( Time-based One-Time Passwords) 2FA
+---
+
 # Google authenticator
+
+### 定義在 RFC-6238
+
+{% embed url="https://datatracker.ietf.org/doc/html/rfc6238" %}
+
+{% embed url="https://www.twilio.com/docs/glossary/totp" %}
 
 {% embed url="https://github.com/google/google-authenticator/wiki/Key-Uri-Format#issuer" %}
 
@@ -6,15 +16,17 @@
 
 {% embed url="https://git.coolaj86.com/coolaj86/browser-authenticator.js" %}
 
-第三方：
+第三方 Node.js 模組：
 
-Node.js 模組：[https://github.com/speakeasyjs/speakeasy](https://github.com/speakeasyjs/speakeasy)
+{% embed url="https://github.com/speakeasyjs/speakeasy" %}
+
+{% embed url="https://github.com/yeojz/otplib" %}
 
 {% embed url="https://authenticatorapi.com/" %}
 
 ## 程式範例
 
-產生 secret 與 qrcode，之後 secret 要記住在後端
+以下使用 `speakeasy` 模組，產生 secret 與 qrcode，之後 secret 要記住在後端
 
 ```javascript
 const speakeasy = require("speakeasy");
@@ -33,7 +45,6 @@ qrcode.toDataURL(secret.otpauth_url, function (err, url) {
 
 ```javascript
 const speakeasy = require("speakeasy");
-const qrcode = require("qrcode");
 
 const verifyResult = speakeasy.totp.verify({
   secret: "<剛才的 secret>",
@@ -46,4 +57,8 @@ console.log('verifyResult', verifyResult)
 
 {% embed url="https://github.com/speakeasyjs/speakeasy#generateSecret" %}
 
-[https://www.youtube.com/watch?v=6mxA9Zp8600](https://www.youtube.com/watch?v=6mxA9Zp8600)
+{% embed url="https://www.youtube.com/watch?v=6mxA9Zp8600" %}
+
+## 演算法：
+
+[https://github.com/bellstrand/totp-generator/blob/master/index.js](https://github.com/bellstrand/totp-generator/blob/master/index.js)
