@@ -203,7 +203,7 @@ export default function TradingViewWidget({ selectedPair }) {
 
   return (
     <div className='tradingview-widget-container'>
-      <div className={styles.widgetInnerContainer} id='tradingview_ff115' />
+      <div id='tradingview_ff115' />
       <div className="tradingview-widget-copyright">
         <a href="https://www.tradingview.com/symbols/BTCUSDT/?exchange=BITFINEX" rel="noopener" target="_blank"><span className="blue-text">BTCUSDT chart</span></a> by TradingView
       </div>
