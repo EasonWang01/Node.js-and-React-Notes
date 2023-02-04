@@ -72,7 +72,7 @@ server {
 server {
         listen 80 default_server;
         listen [::]:80 default_server;
-        root /home/lasih82ne/getuserInfo/front-end/build;
+        root /home/test/getuserInfo/front-end/build;
 
         index index.html index.htm index.nginx-debian.html; # 預設會先連到這些檔案
 
