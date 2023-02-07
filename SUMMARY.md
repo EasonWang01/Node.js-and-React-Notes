@@ -298,4 +298,4 @@
 * [FFmpeg](ffmpeg.md)
 * [Unity 遊戲開發筆記](unity-you-hu-kai-fa-bi-ji.md)
 * [Influx DB](influx-db.md)
-* [Windos 相關](windos-xiang-guan.md)
+* [Windows 相關](windows-xiang-guan.md)
