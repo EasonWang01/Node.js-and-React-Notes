@@ -10,17 +10,17 @@ server\_name對應到網域名稱。
 
 ex:
 
-```text
+```
 try_files $uri $uri/ =404;
 ```
 
-[https://servers.ustclug.org/2014/09/nginx-try\_files-fallacy/](https://servers.ustclug.org/2014/09/nginx-try_files-fallacy/)
+[https://servers.ustclug.org/2014/09/nginx-try\_files-fallacy/](https://servers.ustclug.org/2014/09/nginx-try\_files-fallacy/)
 
 ## Underscore header
 
 有時我們幫header取名時有\_，ex: access\_\_token這時會被nginx預設擋下，我們需加上
 
-```text
+```
 underscores_in_headers on;
 ```
 
@@ -30,7 +30,7 @@ underscores_in_headers on;
 
 Web
 
-```text
+```
 server {
 listen 80;
 server_name sakatu.com;
@@ -60,7 +60,7 @@ gzip_buffers 16 8k;
 gzip_http_version 1.1;
 gzip_min_length 256;
 gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;
-
+include /etc/nginx/mime.types;
 
  ssl on;
  ssl_certificate /usr/share/nginx/sslcrt/cert.pem;
@@ -99,7 +99,7 @@ proxy_set_header Host $host;
 
 API
 
-```text
+```
 limit_req_zone $binary_remote_addr zone=req_zone:10m rate=5r/s;
 server {
         listen 443;
@@ -117,4 +117,3 @@ server {
         }
 }
 ```
-

@@ -48,11 +48,11 @@ location / {
 ```
 server {        
   listen 80;        
-  server_name sakatu.com  www.sakatu.com;
-  rewrite ^/(.*) https://sakatu.com/$1 permanent;
+  server_name test.com  www.test.com;
+  rewrite ^/(.*) https://test.com/$1 permanent;
 }
 server {        
-  server_name sakatu.com;
+  server_name test.com;
   listen 443;
   ssl on;
   ssl_certificate  /usr/share/nginx/sslcrt/bundle.crt;        
@@ -211,7 +211,7 @@ server {
   gzip_http_version 1.1;
   gzip_min_length 256;
   gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon;
-
+  include /etc/nginx/mime.types;
  ssl on;
  ssl_certificate /usr/share/nginx/sslcrt/cert.pem;
  ssl_certificate_key /usr/share/nginx/sslcrt/private.key;
