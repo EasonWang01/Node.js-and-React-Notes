@@ -43,10 +43,6 @@ location / {
 
 ### 讓domain.com www.domain.com都導向https
 
-可參考下圖配置範例
-
-![sd](https://cloud.githubusercontent.com/assets/11001914/17406653/ed731d6c-5a96-11e6-971a-fabbde3a4a9f.png)
-
 完整範例:
 
 ```
