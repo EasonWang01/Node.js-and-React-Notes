@@ -45,7 +45,7 @@ pm2 ecosystem
 ```
 module.exports = {
   apps : [{
-    name   : "Light-NFT-backend",
+    name   : "backend",
     script : "./index.js",
     "log_date_format": "YYYY-MM-DD HH:mm Z",
   }]
