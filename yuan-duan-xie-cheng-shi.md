@@ -111,3 +111,11 @@ ex:
 ![](<.gitbook/assets/截圖 2023-07-19 上午11.02.36.png>)
 
 之後即可用本地的 moonlight 連線遠端搭建好 sunshine 的電腦。
+
+> router 重啟時電腦的區網ip 為重新配，記得要到 port forwarding重新設定新 target ip
+
+## 5.Chrome remote desktop
+
+> 好處為電腦處於鎖定畫面時也可以開啟
+
+[https://remotedesktop.google.com/access/](https://remotedesktop.google.com/access/)
