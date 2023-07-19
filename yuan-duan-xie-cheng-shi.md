@@ -93,3 +93,21 @@ ex:
 > 2.可在private key所在資料夾輸入 \[\[ $1 = /\* ]] && echo "$1" || echo "$PWD/${1#./}" 即會顯示絕對路徑
 >
 > 3.如果是用密碼登入不是用private則可以不用填privateKeyPath，而是要填password
+
+## 4. 使用 moonlight 搭配 sunshine
+
+此搭配也可用來遠端玩遊戲，原先使用 GeForce Experience 搭配 moonlight，但還是有一些 滑鼠 render 問題，所以後來改為 sunshine，sunshine 架在 host，client 用 moonlight 連線。
+
+> 如果有顯示問題可以關閉 host 端的硬體加速
+
+{% embed url="https://github.com/moonlight-stream/moonlight-qt/releases" %}
+
+{% embed url="https://github.com/LizardByte/Sunshine/releases" %}
+
+記得到 router 開啟 port forwarding，一般家用 router 介面為 ip: 192.168.0.1，進入後輸入預設帳密為 `admin, password`
+
+然後到 port forwarding 加入以下範圍
+
+![](<.gitbook/assets/截圖 2023-07-19 上午11.02.36.png>)
+
+之後即可用本地的 moonlight 連線遠端搭建好 sunshine 的電腦。

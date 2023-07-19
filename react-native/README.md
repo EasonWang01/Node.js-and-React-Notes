@@ -256,7 +256,7 @@ style中的`resizeMode:Image.resizeMode.contain`可讓圖片解析固定
 點擊時改變透明度
 ```
 
-****\
+\
 **2.TouchableHighlight**
 
 ```

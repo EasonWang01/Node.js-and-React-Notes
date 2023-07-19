@@ -22,7 +22,7 @@
 
 ## util.inherits()
 
-但要注意它只會繼承 父類別之後 在原型 _prototype_ 註冊的 _ **函數**_
+但要注意它只會繼承 父類別之後 在原型 _prototype_ 註冊的  _**函數**_
 
 ```
 var util = require('util'); 
