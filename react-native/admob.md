@@ -1,5 +1,17 @@
 # Admob
 
+\[2023 更新]
+
+因為 Google 把 admob 套件從 Firebase 移除，所以須改用 [React Native Google Mobile Ads](https://github.com/invertase/react-native-google-mobile-ads#react-native-google-mobile-ads)
+
+[https://github.com/invertase/react-native-firebase/issues/6124#issuecomment-1065953678](https://github.com/invertase/react-native-firebase/issues/6124#issuecomment-1065953678)
+
+\-----
+
+
+
+
+
 建議可用 firebase 出的模組。
 
 {% embed url="https://rnfirebase.io/admob/usage" %}
