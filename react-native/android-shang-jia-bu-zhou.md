@@ -27,13 +27,15 @@
 
 還有 setting.gradle 與 app.json 都要改
 
-## 2.更換ICON
+## 2.更換 Android APP Icon
 
-用 Android Asset Studio 工具產生不同大小的圖片後 替換 mipmap 的四個目錄即可。
-
-![](<../.gitbook/assets/截圖 2020-10-18 上午11.34.37.png>)
-
-[https://medium.com/@scottianstewart/react-native-add-app-icons-and-launch-screens-onto-ios-and-android-apps-3bfbc20b7d4c](https://medium.com/@scottianstewart/react-native-add-app-icons-and-launch-screens-onto-ios-and-android-apps-3bfbc20b7d4c)
+1. **前往 Android Asset Studio 網站**：首先，打開瀏覽器，前往 Android Asset Studio 網站[https://romannurik.github.io/AndroidAssetStudio](https://romannurik.github.io/AndroidAssetStudio/%EF%BC%89%E3%80%82)
+2. **選擇圖示類型**：在 Android Asset Studio 中，您可以選擇不同類型的圖示，例如應用程式圖示、圖示標籤等。選擇您要生成的圖示類型。
+3. **設置圖示參數**：根據您的需求，設置圖示的參數，如圖示顏色、背景形狀、大小等。可以根據不同分辨率需求生成不同大小的圖示。
+4. **生成圖示**：完成設置後，點擊生成圖示。Android Asset Studio 將生成所需大小和風格的圖示。
+5. **下載生成的圖示**：生成完成，下載壓縮文件，其中包含了各種不同分辨率的圖示。
+6. **解壓縮生成的圖示**：將下載的壓縮文件解壓縮到一個適當的位置，以便後續使用。
+7. **替換 mipmap 目錄**：現在，打開 Android 項目，導航到 res 目錄，有四個不同的 mipmap 目錄，通常分別是 mipmap-mdpi、mipmap-hdpi、mipmap-xhdpi 和 mipmap-xxhdpi。將生成的圖示文件複製到每個相應的目錄中。
 
 ## 3.更改APP Name
 
