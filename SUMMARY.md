@@ -190,7 +190,7 @@
   * [GPG簽名](git\_chang\_yong\_zhi\_ling/gpgqian-ming.md)
 * [有關Fetch與axios與跨域請求](you-guan-fetch-yu-axios-yu-kua-yu-qing-qiu.md)
 * [圖片上傳相關](tu-pian-shang-chuan-xiang-guan/README.md)
-  * [imgur API](imgur\_api.md)
+  * [imgur API](tu-pian-shang-chuan-xiang-guan/imgur\_api.md)
 * [JS 格式轉換](js\_ge\_shi\_zhuan\_huan.md)
 * [js trick](js\_trick.md)
 * [AWS Cloudfront、ELB、ACL](bu\_shu\_dao\_aws.md)

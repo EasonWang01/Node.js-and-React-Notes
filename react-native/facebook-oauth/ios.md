@@ -57,7 +57,7 @@ AppDelegate.m 加上
 \
 
 
-![](<../../.gitbook/assets/截圖 2020-11-09 下午3.11.59 (1).png>)
+![](<../../.gitbook/assets/截圖 2020-11-09 下午3.11.59.png>)
 
 以及建議用 `console.error`
 

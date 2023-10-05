@@ -6,7 +6,7 @@
 
 {% embed url="https://stackoverflow.com/a/59626981/4622645" %}
 
-![](<../.gitbook/assets/截圖 2020-11-09 下午3.11.59.png>)
+![](<../.gitbook/assets/截圖 2020-11-09 下午3.11.59 (1).png>)
 
 ## code 65
 
