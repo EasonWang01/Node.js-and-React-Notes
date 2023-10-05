@@ -1,8 +1,12 @@
+---
+description: Dalle3 是一個 OpenAI 推出的圖形生成程式，目前已經被整合到 Bing 與 ChatGPT 4
+---
+
 # DALL·E 3
 
-Dalle3 是一個 OpenAI 推出的圖形生成程式，目前已經被整合到 Bing 與 ChatGPT 4
+如果用 ChatGPT 上的 Dalle3 會自動幫你修飾並加強你的文字後再傳給 Dalle3 產生圖片。
 
-
+> DALL·E 3 is built natively on ChatGPT, which lets you use ChatGPT as a brainstorming partner and refiner of your prompts. Just ask ChatGPT what you want to see in anything from a simple sentence to a detailed paragraph.
 
 ### Bing 的 Dalle3 連結
 
