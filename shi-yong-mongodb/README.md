@@ -33,6 +33,34 @@ services:
 
 > mongo-express 為網頁視覺 DB 資料介面，但其預設沒提供帳號登入的頁面
 
+## 初始化資料庫
+
+mongo 的 docker image 預設執行所有在 docker-entrypoint-initdb.d 內的腳本
+
+```javascript
+Any files with a .sh extension will be executed as shell scripts.
+Any files with a .js extension will be executed as JavaScript files using the MongoDB shell.
+Any files with a .json extension will be imported into the database using mongoimport.
+```
+
+所以可以把腳本放在 ./mongodb 資料夾內，之後 image 啟動後都會被執行。
+
+```javascript
+dockercompose
+services:
+  # mongo:
+  #   image: mongo:4.4
+  #   ports:
+  #     - "27019:27017"
+  #   environment:
+  #     - MONGO_INITDB_DATABASE=eyedeal
+  #     - MONGO_INITDB_ROOT_USERNAME=root
+  #     - MONGO_INITDB_ROOT_PASSWORD=password
+  #   volumes:
+  #     - ./mongodb:/docker-entrypoint-initdb.d
+  #     - ./mongodb/data:/data/db
+```
+
 ## 使用 cloud mongo
 
 > 500GB FREE
@@ -40,4 +68,3 @@ services:
 {% embed url="https://cloud.mongodb.com/" %}
 
 教學：[https://docs.mongodb.com/drivers/node/quick-start](https://docs.mongodb.com/drivers/node/quick-start)
-
