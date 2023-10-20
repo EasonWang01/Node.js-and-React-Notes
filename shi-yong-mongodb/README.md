@@ -35,6 +35,8 @@ services:
 
 ## 初始化資料庫
 
+#### 方法 1
+
 mongo 的 docker image 預設執行所有在 docker-entrypoint-initdb.d 內的腳本
 
 ```javascript
@@ -59,6 +61,32 @@ services:
   #   volumes:
   #     - ./mongodb:/docker-entrypoint-initdb.d
   #     - ./mongodb/data:/data/db
+```
+
+#### 方法 2
+
+test-init.js
+
+```javascript
+db = db.getSiblingDB('testDB');
+db.createCollection('test1');
+
+db.shops.insertMany([
+  {
+    id: '1',
+    name: 'test1',
+  },
+  {
+    id: '2',
+    name: 'test2',
+  },
+]);
+```
+
+然後執行：
+
+```
+mongo < test-init.js
 ```
 
 ## 使用 cloud mongo
