@@ -1,6 +1,79 @@
-# JWT
+---
+description: JSON Web Token 一般用來做用戶驗證使用
+---
 
+# JWT Token
 
+> JWT token 的內容經過 base64 編碼，包含 header, payload, signature，使用 . 分隔，例如：
+>
+> eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV\_adQssw5c
+
+所以任何人拿到 token 後都可以 decode 出原本 payload 內容，但因為 encode jwt token 時會使用 private key，所以只有對應的公鑰持有人可以驗證（非對稱加密驗證）。
+
+## Encode 創建 RSA JWT Token 範例
+
+```javascript
+const fs = require('fs');
+const jwt = require('jsonwebtoken');
+
+// Replace these paths with your RSA private and public key files
+const privateKeyPath = 'path/to/private-key.pem';
+const publicKeyPath = 'path/to/public-key.pem';
+
+// Load the RSA private and public keys
+const privateKey = fs.readFileSync(privateKeyPath, 'utf8');
+const publicKey = fs.readFileSync(publicKeyPath, 'utf8');
+
+// Sample payload
+const payload = {
+  sub: '1234567890',
+  name: 'Eason Wang',
+  iat: Math.floor(Date.now() / 1000),
+};
+
+// Encode (Sign) a JWT Token
+const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
+console.log('Encoded Token:', token);
+
+// Decode (Verify) a JWT Token
+jwt.verify(token, publicKey, { algorithms: ['RS256'] }, (err, decoded) => {
+  if (err) {
+    console.error('JWT verification failed:', err.message);
+  } else {
+    console.log('Decoded Token:', decoded);
+  }
+});
+
+```
+
+## Decode 範例
+
+```javascript
+function decodeJwt(token) {
+  // Split the token into header, payload, and signature
+  const [headerB64, payloadB64] = token.split('.');
+
+  // Decode the base64-encoded header and payload
+  const header = JSON.parse(atob(headerB64));
+  const payload = JSON.parse(atob(payloadB64));
+
+  return {
+    header,
+    payload,
+  };
+}
+
+// Your JWT token
+const token = 'YOUR_JWT_TOKEN_HERE';
+
+// Decode the JWT token
+const decoded = decodeJwt(token);
+
+// Access the header and payload
+console.log('Decoded Header:', decoded.header);
+console.log('Decoded Payload:', decoded.payload);
+
+```
 
 ## JWT Token
 
