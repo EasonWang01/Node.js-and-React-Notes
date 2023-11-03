@@ -31,6 +31,20 @@ Line 2
 Line 3" > myfile.txt
 ```
 
+## 查看 sh 執行期間的 log (xtrace)
+
+> When `set -o xtrace` command in a shell script or shell session enables the "xtrace" option, which is also known as "set -x." When this option is enabled, the shell displays each command before it is executed, along with the values of variables and the results of command substitutions.
+
+```sh
+#!/bin/bash
+set -o xtrace
+
+# Your script commands go here
+
+# Disable xtrace when you no longer need it
+set +o xtrace
+```
+
 ## 移除包含檔案的目錄
 
 `sudo rm -rf folderName`\
