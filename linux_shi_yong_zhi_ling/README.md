@@ -45,6 +45,12 @@ set -o xtrace
 set +o xtrace
 ```
 
+## 讀取 Node.js 專案版本
+
+```bash
+VERSION=$(node -p "require('./package.json').version")
+```
+
 ## 移除包含檔案的目錄
 
 `sudo rm -rf folderName`\
