@@ -23,6 +23,14 @@ export IMAGE_NAME=$IMAGE_NAME
 EOF
 ```
 
+或使用
+
+```sh
+echo "Line 1
+Line 2
+Line 3" > myfile.txt
+```
+
 ## 移除包含檔案的目錄
 
 `sudo rm -rf folderName`\
