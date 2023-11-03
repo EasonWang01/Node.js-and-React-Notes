@@ -6,6 +6,23 @@
 
 [https://www.tecmint.com/10-most-dangerous-commands-you-should-never-execute-on-linux/](https://www.tecmint.com/10-most-dangerous-commands-you-should-never-execute-on-linux/)
 
+## Here document
+
+用來創建檔案，並且檔案內容為多行
+
+```sh
+cat <<EOF >> setup_env.sh
+#!/bin/bash
+
+export APP_NAME=$APP_NAME
+
+export ENVIRONMENT=$ENVIRONMENT
+
+export IMAGE_NAME=$IMAGE_NAME
+
+EOF
+```
+
 ## 移除包含檔案的目錄
 
 `sudo rm -rf folderName`\
