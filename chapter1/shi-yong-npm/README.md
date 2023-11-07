@@ -5,7 +5,7 @@
 * 先安裝Node.js
 * 以下為基本指令
 
-npm install
+### npm install
 
 npm install -g (使用後可在cmd的任何路徑輸入package名稱執行，但如果是想在js檔內直接使用require的話，要再把環境變數加上才行)(如此即可不用在每個專案資料夾個別安裝package))\
 (記得名稱要是NODE\_PATH)
@@ -30,23 +30,31 @@ npm install -g (使用後可在cmd的任何路徑輸入package名稱執行，但
 > 預設 安裝Node.js會自動幫你加上
 
 ```
+npm install --save
+npm uninstall
+npm search
+npm ls -g
+npm ls -gl
+npm ls -l
+npm update -g
+npm update
 ```
 
-npm install --save
+### NPM CI
 
-npm uninstall
+npm version 6 後的功能，通常會在 ci 流程中使用，跟 npm install 相似，但具有 dependency version 依賴檢查功能，安裝套件的同時不會自動幫你更新套件版本，提供更穩定的特性 。
 
-npm search
+```
+npm ci
+```
 
-npm ls -g
+1. **Dependency Resolution**: It installs the exact versions of dependencies as specified in the `package-lock.json` or `npm-shrinkwrap.json` file, ignoring the `package.json` if there are any differences. This ensures that every install results in the exact same file structure in `node_modules` across all machines.
+2. **Speed**: It can be faster than `npm install` because it skips certain user-oriented features. It is more efficient as it bypasses the package version resolution step since the exact dependency tree is already defined.
+3. **Clean Slate**: Before installing the new dependencies, `npm ci` will delete the existing `node_modules` folder, ensuring that there are no leftover artifacts from previous installations.
+4. **Strictness**: If there are discrepancies between the `package-lock.json` and the `package.json`, `npm ci` will throw an error and stop the installation process. This strictness ensures that the `package-lock.json` is up to date and has not been tampered with.
+5. **Non-Interactive**: It does not write to the `package.json` or `package-lock.json` files; any updates to dependencies must be done explicitly by the developer.
 
-npm ls -gl
-
-npm ls -l
-
-npm update -g
-
-npm update
+[https://docs.npmjs.com/cli/v8/commands/npm-ci](https://docs.npmjs.com/cli/v8/commands/npm-ci)
 
 ### 為了避免部屬後環境module過大，可不必安裝dev用的module
 
