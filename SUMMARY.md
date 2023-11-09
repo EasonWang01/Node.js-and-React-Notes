@@ -19,6 +19,7 @@
     * [Binary Diff](chapter1/buffer/binary-diff.md)
     * [查看 Binary 檔案內容](chapter1/buffer/cha-kan-binary-dang-an-nei-rong.md)
 * [OS](os.md)
+* [Async Hook](async-hook.md)
 * [Process (進程)](process\_jin\_7a0b29.md)
 * [TCP](tcp.md)
 * [HTTP](http/README.md)
