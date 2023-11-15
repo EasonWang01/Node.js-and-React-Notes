@@ -29,7 +29,7 @@ Host github.com
  IdentityFile ~/.ssh/id_rsa_github
 ```
 
-> 第二部驟不一定要做
+> 第二步驟不一定要做
 
 3.將私鑰加入 ssh-agent 與 keychain
 
