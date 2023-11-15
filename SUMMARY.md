@@ -148,6 +148,7 @@
 * [部屬到OpenShift](bu\_shu\_dao\_openshift.md)
 * [OpenStack](openstack.md)
 * [OAuth](oauth/README.md)
+  * [Twitter OAuth](oauth/twitter-oauth.md)
   * [Google authenticator](oauth/google-authenticator.md)
   * [facebook oauth](oauth/facebook\_oauth/README.md)
     * [facebook like ,share](oauth/facebook\_oauth/facebook-like-share.md)
