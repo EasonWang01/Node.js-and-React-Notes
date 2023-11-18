@@ -54,6 +54,7 @@
   * [基本指令](shi-yong-postgresql/ji-ben-zhi-ling.md)
   * [使用Node.js操控pg](shi-yong-postgresql/shi-yong-node.js-cao-kong-pg.md)
   * [SQL 基礎](shi-yong-postgresql/sql-ji-chu.md)
+* [使用TypeORM](shi-yong-typeorm.md)
 * [RethinkDB](rethinkdb.md)
 * [React](react/README.md)
   * [第三方組件](react/di-san-fang-zu-jian/README.md)
