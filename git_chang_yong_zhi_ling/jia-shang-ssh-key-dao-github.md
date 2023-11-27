@@ -51,8 +51,6 @@ pbcopy < ~/.ssh/公鑰名稱.pub
 
 然後貼到GitHub
 
-![](https://github.com/easonwang01/web\_advance/tree/1925ddcb36447378ab5377e38c84f5ccccca8136/assets/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202018-10-27%20%E4%B8%8A%E5%8D%8810.57.08.png)
-
 ## Windows 產生金鑰
 
 產生金鑰
@@ -73,7 +71,7 @@ clip < ~/.ssh/id_rsa
 然後 https://github.com/settings/keys 貼上
 ```
 
-## 讓不同Github帳號有不同KEY
+## 讓不同 Github帳號用不同 SSH Key
 
 ```
 # Default github account: test1
