@@ -29,7 +29,7 @@ Host github.com
  IdentityFile ~/.ssh/id_rsa_github
 ```
 
-> 第二步驟不一定要做，因為 ssh-agent 會自動找到可以使用的，繼續往下嘗試不同 key ，但假設你有多個 Github 帳戶時建議要加，不然 ssh-agent re-try 過程可能導致 Github authentication attempts 過多。
+> 第二步驟不一定要做，因為 ssh-agent 會自動找到可以使用的，繼續往下嘗試不同 key ，但假設你有多個 Github 帳戶時建議要加，不然 ssh-agent re-try 過程可能導致 Github authentication attempts 過多，無法 clone (參考下方第五點寫法)。
 
 3.將私鑰加入 ssh-agent 與 keychain
 
@@ -51,7 +51,7 @@ pbcopy < ~/.ssh/公鑰名稱.pub
 
 然後貼到GitHub
 
-## Windows 產生金鑰
+## 4. Windows 產生金鑰
 
 產生金鑰
 
@@ -71,7 +71,7 @@ clip < ~/.ssh/id_rsa
 然後 https://github.com/settings/keys 貼上
 ```
 
-## 讓不同 Github帳號用不同 SSH Key
+## 5. 讓不同 Github帳號用不同 SSH Key
 
 ```
 # Default github account: test1
