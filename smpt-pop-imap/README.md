@@ -55,7 +55,7 @@ transporter.sendMail(mailOptions, function(error, info){
 
 > 沒設定會說 credential 錯誤
 
-![](<.gitbook/assets/截圖 2020-10-29 上午11.52.02.png>)
+![](<../.gitbook/assets/截圖 2020-10-29 上午11.52.02.png>)
 
 ## POP
 
@@ -111,7 +111,7 @@ imap.gmail.com
 
 > 如果想要大量傳送信件可以從 db query 出來後點選匯出，之後整個複製貼到 gmail 收件人上面 (用空格分隔)，這樣的好處是可以一次寄 500 封，如果用程式只能一次送 100 封
 
-![](<.gitbook/assets/截圖 2020-11-18 下午5.25.39.png>)
+![](<../.gitbook/assets/截圖 2020-11-18 下午5.25.39.png>)
 
 > 記得用密件副本傳送！
 
