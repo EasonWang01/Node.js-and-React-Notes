@@ -44,6 +44,8 @@ SendGrid 只能串接 server 使用 webhook 來接收郵件。
 
 #### Node.js inbound email 接收範例
 
+> 記得要寄信到 mx 設置的 subdomain
+
 > 因為是 multipart/form-data 所以用 busboy 模組解析
 
 ```javascript
