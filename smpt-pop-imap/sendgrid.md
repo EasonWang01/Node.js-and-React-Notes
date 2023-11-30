@@ -4,7 +4,7 @@ description: Email 服務，可以用來綁定 domain 並發送與接收郵件
 
 # SendGrid
 
-> 因為目前 mailgun 免費版只有試用期間，之後都要付費，所以如果只是要測試暫時只能選擇 sendgrid
+> 因為目前 mailgun 免費版只有試用期間，之後都要付費，所以如果只是要測試暫時只能選擇 sendgrid，sendgrid 目前無提供 POP server 服務，所以無法使用 gmail 設置來收取綁定在 sendgrid 服務上的 domain 信件。
 
 設置完後要去域名服務那邊設置三個 CNAME ![](<../.gitbook/assets/截圖 2023-11-29 下午6.34.52.png>)
 
