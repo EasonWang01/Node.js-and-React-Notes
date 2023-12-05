@@ -1,7 +1,7 @@
 # Table of contents
 
 * [本書簡介](README.md)
-* [Node.js基本](chapter1/README.md)
+* [Node.js 部分](chapter1/README.md)
   * [使用NPM](chapter1/shi-yong-npm/README.md)
     * [Yarn](chapter1/shi-yong-npm/yarn.md)
   * [開始Node](chapter1/kai\_shi\_node.md)
@@ -18,7 +18,7 @@
   * [Buffer](chapter1/buffer/README.md)
     * [Binary Diff](chapter1/buffer/binary-diff.md)
     * [查看 Binary 檔案內容](chapter1/buffer/cha-kan-binary-dang-an-nei-rong.md)
-  * [Process (進程)](chapter1/process\_jin\_7a0b29.md)
+  * [Process (進程)](process\_jin\_7a0b29.md)
   * [錯誤處理](chapter1/cuo-wu-chu-li.md)
 * [OS](os.md)
 * [Async Hook](async-hook.md)

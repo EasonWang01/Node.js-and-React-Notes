@@ -1,22 +1,22 @@
-# Process \(進程\)
+# Process (進程)
 
-## Process \(進程\)
+## Process (進程)
 
 process.stdout和process.stdin都是stream的實例
 
-```text
+```
  process.stdout.write("test");
 ```
 
 等於
 
-```text
+```
 console.log("test")
 ```
 
 因為
 
-```text
+```
 console.log = function(d) {
   process.stdout.write(d + '\n');
 };
@@ -24,7 +24,7 @@ console.log = function(d) {
 
 讀取檔案輸出到terminal，pipe流動時會自動write
 
-```text
+```
  var fs = require('fs');
 
 fs.createReadStream('./class1.js')
@@ -33,7 +33,7 @@ fs.createReadStream('./class1.js')
 
 基本
 
-```text
+```
 process.stdin.on('data', function(chunk) {
 
     process.stdout.write('data: ' + chunk);
@@ -47,37 +47,37 @@ process.stdin.on('end', function() {
 
 使用流
 
-```text
+```
 process.stdin.pipe(process.stdout)
 ```
 
 設定編碼格式
 
-```text
+```
 process.stdin.setEncoding('utf8');
 ```
 
 取得檔案位置
 
-```text
+```
 console.log("argv: ",process.argv);
 ```
 
 如果在後面加上參數呢?
 
-```text
+```
 執行 node class 123
 ```
 
-返回一個陣列，參數從process.argv\[2\]開始
+返回一個陣列，參數從process.argv\[2]開始
 
 另外
 
-```text
+```
 console.log(process.execArgv);
 ```
 
-```text
+```
 執行 node --harmony class.js
 ```
 
@@ -87,13 +87,13 @@ console.log(process.execArgv);
 
 試試
 
-```text
+```
 console.log(process.env);
 ```
 
 以及
 
-```text
+```
 process.chdir()：切換工作目錄到指定目錄。
 process.cwd()：返回運行當前腳本的工作目錄的路徑。
 process.exit()：退出當前進程。
@@ -105,11 +105,11 @@ process.setgid()：指定當前進程的組，可以使用數字ID，也可以�
 process.setuid()：指定當前進程的用戶，可以使用數字ID，也可以使用字符串ID。
 ```
 
-## process.nextTick\(\)
+## process.nextTick()
 
 非同步的幫手 其類似
 
-```text
+```
 setTimeout(function () {
   console.log('沒有其他延遲的話我通常最後執行！');
 }, 0)
@@ -120,7 +120,7 @@ setTimeout(function () {
  console.log('執行！');
 ```
 
-```text
+```
 process.nextTick(function () {
   console.log('沒有其他延遲的話我通常最後執行！');
 }, 0)
@@ -134,7 +134,7 @@ process.nextTick(function () {
 
 如果nextTick跟setTimeout 放一起nextTick會先執行
 
-```text
+```
 setTimeout(function () {
   console.log('沒有其他延遲的話我通常最後執行setTimeout！');
 }, 0)
@@ -153,7 +153,7 @@ process.nextTick(function () {
 
 當前進程拋出一個沒有被catch的錯誤時，會觸發uncaughtException事件。
 
-```text
+```
 process.on('uncaughtException', function (err) {
   console.error('An uncaught error occurred!');
   console.error(err.stack);
@@ -165,7 +165,7 @@ process.on('uncaughtException', function (err) {
 
 改成下面
 
-```text
+```
 process.on('uncaughtException', function (err) {
   console.error('An uncaught error occurred!');
   console.error(err.stack);
@@ -175,5 +175,4 @@ process.on('uncaughtException', function (err) {
 throw new Error('something wrong');
 ```
 
-uncaughtException事件，是免於Node進程終止的最後措施，否則Node就要執行process.exit\(\)。
-
+uncaughtException事件，是免於Node進程終止的最後措施，否則Node就要執行process.exit()。

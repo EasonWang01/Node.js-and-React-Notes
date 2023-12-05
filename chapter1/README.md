@@ -1,4 +1,6 @@
-# Node.js基本
+# Node.js 部分
+
+> 以下內容為 2015 年內容，部分尚未更新
 
 ## 安裝
 
@@ -12,15 +14,15 @@ curl -fsSL https://deb.nodesource.com/setup_12.x | bash -
 apt-get install -y nodejs
 ```
 
-## 1.下載Node.js
+## 1. 下載Node.js
 
-使用sublime，atom或任何編輯器創造如下檔案
+使用 VSCode, Sublime, Atom. Nodepad 或任何編輯器創造如下檔案
 
 class.js
 
 ```javascript
 function hello() {
-    console.log('Hello World!');
+  console.log('Hello World!');
 }
 hello();
 ```
@@ -35,9 +37,9 @@ export
 
 新增一個class1.js
 
-```
-exports.hello1=function () {
-    console.log('Hello this is class1!');
+```js-extras
+exports.hello1 = function () {
+  console.log('Hello this is class1!');
 }
 ```
 
@@ -166,11 +168,9 @@ var counter1 = require('./as');
 
 ## 9.指定require資料夾路徑但其下需載入多個js檔
 
-```
- 使用require將每個js擋在入口js內載入即可
-```
+使用require將每個js擋在入口js內載入即可
 
-10.Build a command tool
+## 10.Build a command line tool
 
 [http://blog.npmjs.org/post/118810260230/building-a-simple-command-line-tool-with-npm](http://blog.npmjs.org/post/118810260230/building-a-simple-command-line-tool-with-npm)
 
