@@ -42,6 +42,7 @@
   * [簡單範例](shi-yong-express/jian\_dan\_fan\_li.md)
 * [使用 Nest.js](shi-yong-nest.js.md)
 * [使用MongoDB](shi-yong-mongodb/README.md)
+  * [設置帳戶登入權限](shi-yong-mongodb/she-zhi-zhang-hu-deng-ru-quan-xian.md)
   * [Mongoose 框架](shi-yong-mongodb/mongoose-kuang-jia.md)
   * [進階Mongo](shi-yong-mongodb/jin-jie-mongo.md)
   * [基本環境操作](shi-yong-mongodb/ji-ben-huan-jing-cao-zuo.md)
