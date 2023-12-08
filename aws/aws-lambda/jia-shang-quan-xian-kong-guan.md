@@ -4,9 +4,9 @@
 
 ## 文件與文章
 
-[https://docs.aws.amazon.com/zh\_cn/apigateway/latest/developerguide/api-gateway-custom-authorizer-output.html](https://docs.aws.amazon.com/zh_cn/apigateway/latest/developerguide/api-gateway-custom-authorizer-output.html)
+[https://docs.aws.amazon.com/zh\_cn/apigateway/latest/developerguide/api-gateway-custom-authorizer-output.html](https://docs.aws.amazon.com/zh\_cn/apigateway/latest/developerguide/api-gateway-custom-authorizer-output.html)
 
-[http://akuma1.pixnet.net/blog/post/321461539-（十一）​​​​​​​api-gateway-custom-authoriz](http://akuma1.pixnet.net/blog/post/321461539-（十一）​​​​​​​api-gateway-custom-authoriz)
+[http://akuma1.pixnet.net/blog/post/321461539-（十一）​​​​​​​api-gateway-custom-authoriz](http://akuma1.pixnet.net/blog/post/321461539-%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8Bapi-gateway-custom-authoriz)
 
 [https://auth0.com/docs/integrations/aws-api-gateway/custom-authorizers/part-3](https://auth0.com/docs/integrations/aws-api-gateway/custom-authorizers/part-3)
 
@@ -74,17 +74,17 @@ var generatePolicy = function(principalId, effect, resource) {
 
 > 下面範例在之後會接受一個名為token的Header
 
-![](../.gitbook/assets/004.png)
+![](../../.gitbook/assets/004.png)
 
 創建後可以點選測試
 
-![](../.gitbook/assets/004-1.png)
+![](../../.gitbook/assets/004-1.png)
 
-最後記得要再到Resources中點長方形，然後點選[Method Request](https://us-west-1.console.aws.amazon.com/apigateway/home?region=us-west-1#)長方形。
+最後記得要再到Resources中點長方形，然後點選[Method Request](https://us-west-1.console.aws.amazon.com/apigateway/home?region=us-west-1)長方形。
 
 並且設定Authorization為剛才創建的Authorizers，並把Request Validator設定。
 
-![](../.gitbook/assets/005.png)
+![](../../.gitbook/assets/005.png)
 
 之後調用該API時如果沒有傳Header的Token會顯示如下:
 
@@ -93,4 +93,3 @@ var generatePolicy = function(principalId, effect, resource) {
     "message": "Unauthorized"
 }
 ```
-

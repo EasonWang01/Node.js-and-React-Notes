@@ -34,7 +34,7 @@ S3 有 host 靜態網站功能，但必須開啟公開讀取權限。
 
 取消勾選封鎖存取
 
-![](<.gitbook/assets/截圖 2022-08-20 下午1.56.01.png>)
+![](<../.gitbook/assets/截圖 2022-08-20 下午1.56.01.png>)
 
 [https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteAccessPermissionsReqd.html#bucket-policy-static-site](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteAccessPermissionsReqd.html#bucket-policy-static-site)
 
@@ -128,7 +128,7 @@ http.createServer(function(req, res) {
 
 到下圖中設定
 
-![](<.gitbook/assets/截圖 2022-04-16 下午9.56.07.png>)
+![](<../.gitbook/assets/截圖 2022-04-16 下午9.56.07.png>)
 
 加上類似如下
 

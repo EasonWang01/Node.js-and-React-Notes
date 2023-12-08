@@ -45,7 +45,7 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 創建好 S3 後上傳檔案， bucket 先設為 private，且不用開啟靜態 host，之後設置 cloudfront 後使用OAI 讓他更改 bucket policy，之後記得設置 cloudfront 預設根路徑為 index.html (S3 上的)
 
-![](<.gitbook/assets/截圖 2022-08-10 下午1.42.34.png>)
+![](<../.gitbook/assets/截圖 2022-08-10 下午1.42.34.png>)
 
 
 
@@ -53,13 +53,13 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 要先創建 Target group 且連結到 EC2，並且確認 health check 正常：
 
-![](<.gitbook/assets/截圖 2022-08-09 上午11.05.50.png>)
+![](<../.gitbook/assets/截圖 2022-08-09 上午11.05.50.png>)
 
 需要先設定好 target group (放入需要的 ec2 instance)，然後新增 load bal ancer，之後記得要去 LB 安全群組設置，不能用 default，不然會連線不到。
 
-<img src=".gitbook/assets/截圖 2022-08-08 下午7.46.32.png" alt="" data-size="original">
+<img src="../.gitbook/assets/截圖 2022-08-08 下午7.46.32.png" alt="" data-size="original">
 
-![](<.gitbook/assets/截圖 2022-08-08 下午7.48.27.png>)
+![](<../.gitbook/assets/截圖 2022-08-08 下午7.48.27.png>)
 
 設置後用 DNS 名稱即可連線到 EC2 上的 web server。
 
@@ -67,13 +67,13 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 記得去申請 acm 的 \*.domain 證書，可用在 api.domain 網域，然後串接上去 ELB listener&#x20;
 
-![](<.gitbook/assets/截圖 2022-08-09 上午9.44.24.png>)
+![](<../.gitbook/assets/截圖 2022-08-09 上午9.44.24.png>)
 
-![](<.gitbook/assets/截圖 2022-08-09 上午9.43.47.png>)
+![](<../.gitbook/assets/截圖 2022-08-09 上午9.43.47.png>)
 
 最後到 Route53 新增 A 紀錄使用 ELB 即可
 
-![](<.gitbook/assets/截圖 2022-08-09 上午9.44.03.png>)
+![](<../.gitbook/assets/截圖 2022-08-09 上午9.44.03.png>)
 
 ## 串接 Cloudfront 與 ELB
 
@@ -93,15 +93,15 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 > 設定後如果直接前往 cloudfront 給的網址會出現 502 錯誤，記得要先去 route53 設定好 A record 且指向 cloudfront，這樣前往要去的 domain 就可以了，但不要直接連到 cloudfront domain。
 
-![](<.gitbook/assets/截圖 2022-08-09 上午10.35.10.png>)
+![](<../.gitbook/assets/截圖 2022-08-09 上午10.35.10.png>)
 
-<img src=".gitbook/assets/截圖 2022-08-09 上午10.36.48.png" alt="" data-size="original">
+<img src="../.gitbook/assets/截圖 2022-08-09 上午10.36.48.png" alt="" data-size="original">
 
-![](<.gitbook/assets/截圖 2022-08-09 上午10.36.43.png>)
+![](<../.gitbook/assets/截圖 2022-08-09 上午10.36.43.png>)
 
 且記得設置 "僅限 HTTP" 就好，讓流量從 cloudfront 後就從 HTTPS 轉為 HTTP，不然會有 server 502 ssl error。
 
-![](<.gitbook/assets/截圖 2022-08-10 上午11.17.02.png>)
+![](<../.gitbook/assets/截圖 2022-08-10 上午11.17.02.png>)
 
 ## 清除 Cloudfront Cache
 
@@ -109,11 +109,11 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 如果用 API 或 static asset 更改內容後沒更新，需要使用 **Invalidation 更新。**
 
-****![](<.gitbook/assets/截圖 2022-08-10 下午8.23.33.png>)****
+![](<../.gitbook/assets/截圖 2022-08-10 下午8.23.33.png>)
 
 輸入要重置的路徑
 
-![](<.gitbook/assets/截圖 2022-08-10 下午8.25.36.png>)
+![](<../.gitbook/assets/截圖 2022-08-10 下午8.25.36.png>)
 
 ## Cloudfront 預設不會傳 origin 的 Querystring 與 Header
 
@@ -121,7 +121,7 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 記得選擇 origin request policy
 
-![](<.gitbook/assets/截圖 2022-08-11 下午5.26.01.png>)
+![](<../.gitbook/assets/截圖 2022-08-11 下午5.26.01.png>)
 
 [https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy)
 
@@ -131,7 +131,7 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 步驟：磁碟區->建立快照->快照建立 AMI->AMI建立 instance
 
-![](<.gitbook/assets/截圖 2022-08-11 下午6.42.05.png>)
+![](<../.gitbook/assets/截圖 2022-08-11 下午6.42.05.png>)
 
 ## ACL 防護
 
