@@ -56,6 +56,12 @@ sudo mongod --config /path/to/mongod.conf --dbpath /usr/local/var/mongodb
 
 > 執行完上面命令後，通常不會看到任何 console 為正常，記得將 `/path/to/mongod.conf` 替換為配置文件的實際路徑。
 
+或是可以直接使用 --auth
+
+```
+sudo mongod --dbpath /usr/local/var/mongodb --auth
+```
+
 現在，每次連接到 MongoDB 時，都需要提供用戶名和密碼。例如，使用 MongoDB shell 連接時，可以使用以下命令：
 
 ```sh
