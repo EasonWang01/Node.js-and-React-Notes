@@ -37,7 +37,9 @@ function uploadFile(bucketName, filePath, destFileName) {
 
       const options = {
         destination: destFileName,
-        preconditionOpts: { ifGenerationMatch: 0 },
+        preconditionOpts: { ifGenerationMatch: 0 }, 
+        // ifGenerationMatch 0 時如果上傳的檔案重複，會出錯
+        // 因為 Cloud Storage 上名稱相同重複上傳會覆蓋
       };
 
       await storage.bucket(bucketName).upload(filePath, options);
