@@ -235,13 +235,21 @@ source ~/.bashrc
 
 ### 列出資料夾裡面的大容量檔案
 
-**Linux與macOS:**
+**Linux 與 macOS:**
+
+```
+sudo du -sh ./* | sort -h
+```
+
+或是
 
 ```
 du -a * | sort -r -n | head -10
 ```
 
 > 在mac中通常`~/Library/Caches/`會需刪除
+>
+> 以及刪除 docker images `docker system prune -a`
 
 **Windows :**
 
