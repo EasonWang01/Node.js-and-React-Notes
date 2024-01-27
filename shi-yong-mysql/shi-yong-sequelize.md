@@ -116,6 +116,33 @@ module.exports = {
     });
 ```
 
+## 使用 Transaction
+
+記得整段內的 find, create,update 等都要放入 transaction。
+
+最後使用 commit 確認，或用 rollback 回覆全部狀態。
+
+```javascript
+const sequelize = require("../database/connect");
+
+const func = () => {
+  const transaction = await sequelize.transaction();
+  quote.status = "COMPLETED";
+  await quote.save({ transaction });
+  
+  await userFBalance.save({ transaction });
+  await swapTx.save({ transaction });
+
+  await transaction.commit();
+  
+  return swapTx;
+} catch (error) {
+  await transaction.rollback();
+  throw error;
+}
+}
+```
+
 ## 注意事項
 
 1. const user = findOne() 後獲取到的 user，可以直接使用 user.name = ...，之後用 user.save()，但如果是數字不能用 user.num += ...
