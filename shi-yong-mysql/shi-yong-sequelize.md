@@ -115,3 +115,11 @@ module.exports = {
       },
     });
 ```
+
+## 注意事項
+
+1. const user = findOne() 後獲取到的 user，可以直接使用 user.name = ...，之後用 user.save()，但如果是數字不能用 user.num += ...
+2. decimal 型態取出為 string，但存入到 decimal 時可以使用 string or number
+3. decimal 建議指定長度，例如  `type: DataTypes.DECIMAL(40, 20)`
+4. 使用 transaction 時，會發生無法在 transaction 中途 create data 然後立即 access 的情況
+5. 使用 findOrCreate 獲取的 instance 無法使用 .save
