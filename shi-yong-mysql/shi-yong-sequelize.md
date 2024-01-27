@@ -109,7 +109,7 @@ module.exports = {
 
 ```javascript
     await User.findOrCreate({
-      where: { txId },
+      where: { user.id },
       defaults: {
         name: "..."
       },
