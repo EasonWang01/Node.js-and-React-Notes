@@ -51,6 +51,7 @@
   * [Schema 架構設計](shi-yong-mysql/schema-jia-gou-she-ji.md)
   * [SQL 語法](shi-yong-mysql/sql-yu-fa.md)
   * [Node.js 操作 MySQL](shi-yong-mysql/node.js-cao-zuo-mysql.md)
+  * [使用 Sequelize](shi-yong-mysql/shi-yong-sequelize.md)
 * [使用PostgreSQL](shi-yong-postgresql/README.md)
   * [replica](shi-yong-postgresql/replica.md)
   * [基本指令](shi-yong-postgresql/ji-ben-zhi-ling.md)
