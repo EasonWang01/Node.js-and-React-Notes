@@ -113,6 +113,10 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ![](<../.gitbook/assets/截圖 2022-08-10 上午11.17.02.png>)
 
+最後，綁定到 route53，記得紀錄類型下方開啟別名，才能選得到 cloudfront
+
+<figure><img src="../.gitbook/assets/截圖 2024-01-31 下午11.31.25.png" alt=""><figcaption></figcaption></figure>
+
 ## 清除 Cloudfront Cache
 
 > Cloudfront 請求一次 API 後就會 cache 不會重複請求到 server，所以返回資料有改動的話要記得添加
