@@ -202,6 +202,7 @@
 * [js trick](js\_trick.md)
 * [AWS](aws/README.md)
   * [AWS EBS](aws/aws-ebs.md)
+  * [AWS HTTPS 憑證](aws/aws-https-ping-zheng.md)
   * [AWS Cloudfront、ELB、ACL](aws/bu\_shu\_dao\_aws.md)
   * [AWS RDS](aws/aws-rds.md)
   * [AWS lambda](aws/aws-lambda/README.md)
