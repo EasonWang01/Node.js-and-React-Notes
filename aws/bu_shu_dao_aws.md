@@ -51,23 +51,29 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ## AWS load balancer
 
-要先創建 Target group 且連結到 EC2，在下方 Target 加入 EC2 目標，之後確認 health check 正常：
+要先點選左側創建 Target Group (目標群組) 且連結到 EC2，之後在下方 Target 加入 EC2 目標，並確認 health check 正常：
 
-![](<../.gitbook/assets/截圖 2022-08-09 上午11.05.50.png>)
+<figure><img src="../.gitbook/assets/截圖 2022-08-09 上午11.05.50.png" alt=""><figcaption></figcaption></figure>
 
-關於 health 設置，他會實際發送請求到 EC2 上。你可以在下面是設置請求路徑與 http or https。
+1.設置 Target
+
+<figure><img src="../.gitbook/assets/截圖 2024-01-31 下午11.03.52.png" alt=""><figcaption></figcaption></figure>
+
+2\. health 設置，他會實際發送請求到 EC2 上。你可以在下面是設置請求路徑與 http or https。
 
 <figure><img src="../.gitbook/assets/截圖 2024-01-31 下午10.49.02.png" alt=""><figcaption></figcaption></figure>
 
-之後記得要去 LB 安全群組設置，不能用 default，不然會連線不到。
+3.之後記得要去 LB 安全群組設置，不能用 default，不然會連線不到。
 
 <img src="../.gitbook/assets/截圖 2022-08-08 下午7.46.32.png" alt="" data-size="original">
 
-設置後用 ELB 創建後自動產生的 DNS 名稱即可連線到 EC2 上的 server。
+4.設置後用 ELB 創建後自動產生的 DNS 名稱即可連線到 EC2 上的 server。
 
 ![](<../.gitbook/assets/截圖 2022-08-08 下午7.48.27.png>)
 
 ## ELB 設定 HTTPS
+
+> 假設之後會把 cloudfront 綁定到 ELB 前方的話，這段不一定要做， ELB 保持 HTTP 即可
 
 記得去申請 acm 的 \*.domain 證書，可用在 api.domain 網域，然後串接上去 ELB listener&#x20;
 
@@ -81,7 +87,7 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ## 串接 Cloudfront 與 ELB
 
-這邊記得備用網域設置要使用的 domain，且使用的 https 證書與 ELB相同即可。
+這邊記得備用網域設置要使用的 domain，且使用的 https 證書與 ELB 相同即可。
 
 如果 ELB 可以直接設定為 A record 且連線正常，通常在 ELB 前面多串一個 cloudfront 然後把 A record 從 ELB 改為 cloudfront 也可以正常。
 
