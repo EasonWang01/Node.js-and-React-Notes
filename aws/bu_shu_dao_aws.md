@@ -55,13 +55,17 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 ![](<../.gitbook/assets/截圖 2022-08-09 上午11.05.50.png>)
 
-需要先設定好 target group (放入需要的 ec2 instance)，然後新增 load balancer，之後記得要去 LB 安全群組設置，不能用 default，不然會連線不到。
+關於 health 設置，他會實際發送請求到 EC2 上。你可以在下面是設置請求路徑與 http or https。
+
+<figure><img src="../.gitbook/assets/截圖 2024-01-31 下午10.49.02.png" alt=""><figcaption></figcaption></figure>
+
+之後記得要去 LB 安全群組設置，不能用 default，不然會連線不到。
 
 <img src="../.gitbook/assets/截圖 2022-08-08 下午7.46.32.png" alt="" data-size="original">
 
-![](<../.gitbook/assets/截圖 2022-08-08 下午7.48.27.png>)
+設置後用 ELB 創建後自動產生的 DNS 名稱即可連線到 EC2 上的 server。
 
-設置後用 DNS 名稱即可連線到 EC2 上的 web server。
+![](<../.gitbook/assets/截圖 2022-08-08 下午7.48.27.png>)
 
 ## ELB 設定 HTTPS
 
