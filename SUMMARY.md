@@ -204,6 +204,7 @@
   * [AWS EBS](aws/aws-ebs.md)
   * [AWS HTTPS 憑證](aws/aws-https-ping-zheng.md)
   * [AWS Cloudfront、ELB、ACL](aws/bu\_shu\_dao\_aws.md)
+  * [AWS CloudWatch、SNS](aws/aws-cloudwatch-sns.md)
   * [AWS RDS](aws/aws-rds.md)
   * [AWS lambda](aws/aws-lambda/README.md)
     * [範例](aws/aws-lambda/fan-li.md)
