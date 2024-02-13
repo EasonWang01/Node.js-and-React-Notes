@@ -72,12 +72,11 @@ mongod --dbpath ./db --logpath "./log/mongolog-${date}" --auth &
 mongo  
 use admin
 db.auth('admin','密碼')  // 登入資料庫使用者
-
 //創建資料庫與使用者
-use sharehandi
+use ...
 db.createUser(
 {
-  user: "yicheng",
+  user: "...",
   pwd: "....",
   roles: [ { role: "readWrite", db: "此資料庫名稱" }]
 }
@@ -85,27 +84,4 @@ db.createUser(
 
 之後退出 mongo cli 然後重新進來 (因為db.auth兩次會產生 logical session error)
 
-mongo;
-use sharehandi;
-db.auth( "yicheng", "...")
-
-
-
-server {
-  listen 443; 
-  server_name api.puipi.com;
-  gzip on;
-  ssl on;
-        ssl_certificate /home/yichengww/Web-WebRTC/credentials/cert.pem;
-        ssl_certificate_key /home/yichengww/Web-WebRTC/credentials/key.pem;
-underscores_in_headers on;
-location / {
-limit_req zone=req_zone burst=10 nodelay;
-proxy_pass http://localhost:8443;
-}
-}
-
-
-
 ```
-

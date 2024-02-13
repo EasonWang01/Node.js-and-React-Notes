@@ -190,6 +190,7 @@
   * [config](shi-yong-nginx/config.md)
 * [Unix 實用指令](linux\_shi\_yong\_zhi\_ling/README.md)
   * [新 VPS 安裝流程](linux\_shi\_yong\_zhi\_ling/xin-vps-an-zhuang-liu-cheng.md)
+  * [Ubuntu 22 安裝](linux\_shi\_yong\_zhi\_ling/ubuntu-22-an-zhuang.md)
   * [Shell Script 教學](linux\_shi\_yong\_zhi\_ling/shell-script-jiao-xue.md)
 * [Git 實用指令](git\_chang\_yong\_zhi\_ling/README.md)
   * [Git hook](git\_chang\_yong\_zhi\_ling/git-hook.md)
