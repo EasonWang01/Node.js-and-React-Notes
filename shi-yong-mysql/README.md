@@ -1,5 +1,15 @@
 # 使用MySQL
 
+### 遠端端口映射
+
+使本地可以直接用 localhost 連線到遠端 MySQL （以下為 AWS RDS 範例）
+
+> 通過一台跳板機的方式連線，前提是該台跳板機記得要與 AWS RDS 設定好 security group，讓該台跳板機已經可以連線到 RDS。
+
+```bash
+ssh -i "~/downloads/test.pem" -L 3306:test-database-1.cgkuzsy.ap-southeast-1.rds.amazonaws.com:3306 ubuntu@ec2-11-111-222-222.ap-southeast-1.compute.amazonaws.com
+```
+
 ### Docker 執行 MySQL
 
 stack.yml
@@ -147,3 +157,16 @@ mysql -uroot -pexample < ./user.sql
 ```
 
 > \-u -p 後面接的是帳號和密碼
+
+## 從 Dump 檔案 Restore DB
+
+> 在本地端連線 DB （通常會是在本地建立 tunnel 使本地 3306 映射到遠端 3306 port）
+
+```
+mysql -u admin -p'impassword' \
+        -h 127.0.0.1 -P 3306;
+
+USE test-db;
+
+source test.sql;
+```
