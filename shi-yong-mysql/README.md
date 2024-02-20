@@ -10,6 +10,17 @@
 ssh -i "~/downloads/test.pem" -L 3306:test-database-1.cgkuzsy.ap-southeast-1.rds.amazonaws.com:3306 ubuntu@ec2-11-111-222-222.ap-southeast-1.compute.amazonaws.com
 ```
 
+### 新增 DB 使用者
+
+新增後給予用戶權限
+
+> 例如 GRANT SELECT, GRANT UPDATE, GRANT INSERT, GRANT DELETE 等等
+
+```
+CREATE USER 'newusername'@'localhost' IDENTIFIED BY 'password';
+GRANT SELECT ON yourdatabase.* TO 'newusername'@'localhost';
+```
+
 ### Docker 執行 MySQL
 
 stack.yml
