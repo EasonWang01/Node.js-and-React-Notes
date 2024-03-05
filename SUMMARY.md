@@ -53,6 +53,7 @@
   * [Node.js 操作 MySQL](shi-yong-mysql/node.js-cao-zuo-mysql.md)
   * [使用 Sequelize](shi-yong-mysql/shi-yong-sequelize/README.md)
     * [DB Migration](shi-yong-mysql/shi-yong-sequelize/db-migration.md)
+    * [function](shi-yong-mysql/shi-yong-sequelize/function.md)
 * [使用PostgreSQL](shi-yong-postgresql/README.md)
   * [replica](shi-yong-postgresql/replica.md)
   * [基本指令](shi-yong-postgresql/ji-ben-zhi-ling.md)
