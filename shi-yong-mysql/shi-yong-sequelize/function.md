@@ -6,7 +6,7 @@
 
 範例：
 
-> 以下為 query by interval, 例如交易圖表 api，可以讓使用者選時間段，給不同的 candlebar 資料
+> 以下為 query by interval, 例如交易圖表 api，可以讓使用者選時間段，給不同的 candlestick 資料
 
 ```javascript
  const getIntervalCondition = (interval) => {
