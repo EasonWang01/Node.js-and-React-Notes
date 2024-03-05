@@ -53,8 +53,14 @@ BEGIN
     END WHILE;
 END$$
 
-DELIMITER ;
+ç
 
 CALL generateMockData();
 
 ```
+
+### 使用 DELIMITER
+
+因為 ; 被用在 sql proocedure 內部，所以外部要設置另一個終止符，上面範例為 \$$，然後最後記得在設置回來 `DELIMITER ;`&#x20;
+
+> Inside stored procedures and similar constructs, semicolons are used to end internal statements
