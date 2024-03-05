@@ -24,7 +24,7 @@ CALL [Procedure Name] ([Parameters]..)
 > 下面將在範圍區間隨機產生資料
 
 ```sql
-USE `db-name;
+USE `db-name`;
 SET FOREIGN_KEY_CHECKS=0;
 
 DELIMITER $$
