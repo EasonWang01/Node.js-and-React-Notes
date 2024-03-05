@@ -50,6 +50,7 @@
 * [使用MySQL](shi-yong-mysql/README.md)
   * [Schema 架構設計](shi-yong-mysql/schema-jia-gou-she-ji.md)
   * [SQL 語法](shi-yong-mysql/sql-yu-fa.md)
+  * [SQL Procedure](shi-yong-mysql/sql-procedure.md)
   * [Node.js 操作 MySQL](shi-yong-mysql/node.js-cao-zuo-mysql.md)
   * [使用 Sequelize](shi-yong-mysql/shi-yong-sequelize/README.md)
     * [DB Migration](shi-yong-mysql/shi-yong-sequelize/db-migration.md)
