@@ -53,8 +53,6 @@ BEGIN
     END WHILE;
 END$$
 
-ç
-
 CALL generateMockData();
 
 ```
