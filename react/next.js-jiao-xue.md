@@ -358,9 +358,17 @@ npm i -g --unsafe-perm now
 
 之後回到Zeit.co網站也可查看部署過的項目。
 
+## Next UI
+
+[https://nextui.org/docs/frameworks/nextjs](https://nextui.org/docs/frameworks/nextjs)
+
 ## 額外功能
 
 #### 1. 輸出靜態頁面
+
+> 更新：可參考以下連結快速配置
+>
+> [https://nextjs.org/docs/app/building-your-application/deploying/static-exports](https://nextjs.org/docs/app/building-your-application/deploying/static-exports)
 
 新增 next.config.js
 
