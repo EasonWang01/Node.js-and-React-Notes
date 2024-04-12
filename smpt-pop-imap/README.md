@@ -57,6 +57,14 @@ transporter.sendMail(mailOptions, function(error, info){
 
 ![](<../.gitbook/assets/截圖 2020-10-29 上午11.52.02.png>)
 
+2024 更新：
+
+現在需要去 app password 產生密碼，才能放在代碼的密碼欄位，不然會出現 `Username and Password not accepted`
+
+<figure><img src="../.gitbook/assets/截圖 2024-04-12 上午10.52.47.png" alt=""><figcaption></figcaption></figure>
+
+> 要用上方搜尋直接輸入，不然可能找不到
+
 ## POP
 
 Gmail 為例：
