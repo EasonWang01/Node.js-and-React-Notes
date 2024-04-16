@@ -216,6 +216,7 @@
   * [AWS S3](aws/aws-s3.md)
   * [AWS DynamoDB](aws/aws-dynamodb/README.md)
     * [結合Lambda](aws/aws-dynamodb/jie-he-lambda.md)
+  * [快速把 EC2 串上 AWS CDN](aws/kuai-su-ba-ec2-chuan-shang-aws-cdn.md)
   * [AWS 證照相關](aws/aws-zheng-zhao-xiang-guan.md)
 * [有關日期Date](you-guan-ri-qi-date.md)
 * [VS code 編輯器](vs-code-bian-ji-qi/README.md)

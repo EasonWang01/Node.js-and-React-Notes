@@ -1,0 +1,63 @@
+# 快速把 EC2 串上 AWS CDN
+
+## 1. 先在 EC2 架設好 server，聽 3000 PORT
+
+## &#x20;2. 設置 nginx
+
+```
+sudo apt update && sudo apt install nginx
+sudo systemctl start nginx
+vim /etc/nginx/sites-available/default
+```
+
+加上以下 config&#x20;
+
+```yaml
+server {
+    listen 80;
+    server_name example.com;  # Replace with your domain name or server IP
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+
+## 3. 接著在 AWS Load balancer 那邊新增 target group （目標群組）
+
+> 選擇使用 HTTP
+
+<figure><img src="../.gitbook/assets/截圖 2024-04-16 下午2.35.54.png" alt=""><figcaption></figcaption></figure>
+
+## 4. 建立附載均衡器
+
+點選新增負載均衡器，選擇 **Application Load Balancer**
+
+<figure><img src="../.gitbook/assets/截圖 2024-04-16 下午2.37.34.png" alt=""><figcaption></figcaption></figure>
+
+1.網路對應三個地區都勾選
+
+2.建立新的安全群組，並且放入 80 port (用原本給的 default 安全群組會無法連線)
+
+3.如下圖選擇剛才創建的目標群組
+
+<figure><img src="../.gitbook/assets/截圖 2024-04-16 下午2.39.13.png" alt=""><figcaption></figcaption></figure>
+
+4.點選建立
+
+## 5.申請 AWS HTTPS 證書
+
+[https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/request](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/request)
+
+這裡記得地區要先選擇 us-east-1，不然不能綁定到 CDN
+
+之後選擇用 DNS 驗證，之後在右上角直接選擇將它給你的 CNAME 加入按鈕，即可完成驗證，並發行證書。
+
+## 6.建設 CDN
+
+來到最後一步了。
