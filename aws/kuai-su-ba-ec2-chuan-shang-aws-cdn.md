@@ -1,5 +1,9 @@
 # 快速把 EC2 串上 AWS CDN
 
+整理流程為 server <- load balancer <- CDN <- client
+
+> 除了 client 到 CDN 為 HTTPS，從 CDN 到 load balancer 再到後面都是走 HTTP
+
 ## 1. 先在 EC2 架設好 server，聽 3000 PORT
 
 ## &#x20;2. 設置 nginx
@@ -48,7 +52,7 @@ server {
 
 <figure><img src="../.gitbook/assets/截圖 2024-04-16 下午2.39.13.png" alt=""><figcaption></figcaption></figure>
 
-4.點選建立
+4.點選建立即可
 
 ## 5.申請 AWS HTTPS 證書
 
@@ -61,3 +65,22 @@ server {
 ## 6.建設 CDN
 
 來到最後一步了。
+
+先到 aws cloudfront 頁面，照著以下設置即可
+
+#### 設定內容
+
+* Origin Domain Name: 選擇 ELB
+* Origin Path: 空白
+* Origin Protocol Policy: **HTTP Only （**CloudFront後面走 HTTP 即可）
+* Viewer Protocol Policy: **Redirect HTTP to HTTPS**
+* Allowed HTTP Methods: **GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE**
+* Alternate Domain Names: 設定你的網站網址 (api.domain....)
+* SSL Certificate: 使用 AWS Certification Manager 建立，將憑證建立在 (us-east-1) 才能使用。
+* `備用網域別名`記得設定跟要設置的網域相同，不然之後 route53 無法選擇到該 CDN
+
+## 7. Route53 設置 A 記錄到 CDN
+
+新增一個 A 紀錄，輸入你要的名稱（例如 api ) ，下方來源選擇`別名`，然後選擇剛才創建的 CDN 即可
+
+## 接著即可用剛才設置的 CDN 網域來存取 API Server
