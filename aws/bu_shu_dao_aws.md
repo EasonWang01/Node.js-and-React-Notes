@@ -100,6 +100,7 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 * Allowed HTTP Methods: **GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE**
 * Alternate Domain Names: 設定你的網站網址 (api.domain....)
 * SSL Certificate: 使用 AWS Certification Manager 建立，將憑證建立在 (us-east-1) 才能使用。
+* `備用網域別名`記得設定跟要設置的網域相同，不然之後 route53 無法選擇到該 CDN
 
 > 設定後如果直接前往 cloudfront 給的網址會出現 502 錯誤，記得要先去 route53 設定好 A record 且指向 cloudfront，這樣前往要去的 domain 就可以了，但不要直接連到 cloudfront domain。
 
