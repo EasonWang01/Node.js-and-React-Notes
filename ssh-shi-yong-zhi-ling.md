@@ -2,7 +2,7 @@
 
 ## SSH Agent Forwarding
 
-讓 A, B 兩台遠端主機互相傳送檔案
+> 讓 A, B 兩台遠端主機互相傳送檔案
 
 1.  **將兩台主機的私鑰都加入本機 SSH agent:**
 
@@ -41,4 +41,17 @@ ssh-add -l
 
 ```
 ssh-add -D 
+```
+
+## 設置 git push 嘗試多個  ssh key
+
+> 開啟：vim \~/.ssh/config
+
+```
+Host bitbucket.org
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/key1
+  IdentityFile ~/.ssh/key2
+  IdentityFile ~/.ssh/key3
 ```
