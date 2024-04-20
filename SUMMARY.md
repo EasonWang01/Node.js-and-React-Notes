@@ -199,6 +199,7 @@
   * [Git hook](git\_chang\_yong\_zhi\_ling/git-hook.md)
   * [加上 SSH-key 到 GitHub](git\_chang\_yong\_zhi\_ling/jia-shang-ssh-key-dao-github.md)
   * [GPG簽名](git\_chang\_yong\_zhi\_ling/gpgqian-ming.md)
+* [SSH 實用指令](ssh-shi-yong-zhi-ling.md)
 * [有關Fetch與axios與跨域請求](you-guan-fetch-yu-axios-yu-kua-yu-qing-qiu.md)
 * [圖片上傳相關](tu-pian-shang-chuan-xiang-guan/README.md)
   * [imgur API](tu-pian-shang-chuan-xiang-guan/imgur\_api.md)
