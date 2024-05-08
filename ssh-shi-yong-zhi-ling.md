@@ -23,6 +23,14 @@
 
 
 
+## SSH Tunnel
+
+讓本地端可以透過 EC2 連線到 AWS RDS (EC2 要先與 RDS 設定好 security group 可互相連線)
+
+```
+ ssh -i "~/ec2-ssh-key.pem" -N -L localhost:5432:RDS..southeast-1.rds.amazonaws.com:5432  ubuntu@ec2ip.ap-southeast-1.compute.amazonaws.com
+```
+
 ## 將 SSH key 加入 SSH Agent&#x20;
 
 ```
