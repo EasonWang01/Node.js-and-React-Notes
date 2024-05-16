@@ -2,6 +2,7 @@
 
 * [本書簡介](README.md)
 * [Node.js 部分](chapter1/README.md)
+  * [Node 版本管理](chapter1/node-ban-ben-guan-li.md)
   * [使用NPM](chapter1/shi-yong-npm/README.md)
     * [Yarn](chapter1/shi-yong-npm/yarn.md)
   * [開始Node](chapter1/kai\_shi\_node.md)
