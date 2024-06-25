@@ -155,6 +155,12 @@ ACL 為類似 cloudflare DDos 防護的功能，能設置 RateLimit 等請求阻
 
 [https://docs.aws.amazon.com/waf/latest/developerguide/listing-managed-ips.html](https://docs.aws.amazon.com/waf/latest/developerguide/listing-managed-ips.html)
 
+但可能會影響到正常功能，例如有時上傳檔案會被 ACL commonRuleSet 擋住
+
+<figure><img src="../.gitbook/assets/截圖 2024-06-25 下午12.35.07.png" alt=""><figcaption></figcaption></figure>
+
+[https://stackoverflow.com/questions/64853122/aws-waf-getting-403-forbidden-error-while-trying-to-upload-an-image](https://stackoverflow.com/questions/64853122/aws-waf-getting-403-forbidden-error-while-trying-to-upload-an-image)
+
 ## AWS ECR
 
 docker image 託管服務。
