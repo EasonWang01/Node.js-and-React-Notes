@@ -10,6 +10,10 @@
 
 <figure><img src="../.gitbook/assets/截圖 2024-07-14 上午9.52.23.png" alt=""><figcaption></figcaption></figure>
 
+以下分析每行功能：
+
+
+
 可將以下檔案導入 Wireshark 查看
 
 {% file src="../.gitbook/assets/https-flow.pcapng" %}
