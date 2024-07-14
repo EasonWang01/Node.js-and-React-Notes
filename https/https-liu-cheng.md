@@ -85,3 +85,49 @@ HTTPS 的交握步驟詳細如下：
      |                  |                               |
 
 ```
+
+### **自己當 CA 並幫其他網站簽發 HTTPS 證書之技術步驟**
+
+#### 1. 生成自己的 CA 的密鑰對
+
+```sh
+sh複製程式碼# 生成一個 2048 位的 RSA 私鑰，用於 CA
+openssl genpkey -algorithm RSA -out ca_private_key.pem -pkeyopt rsa_keygen_bits:2048
+
+# 從私鑰中提取公鑰，生成 CA 的公鑰證書
+openssl req -new -x509 -key ca_private_key.pem -out ca_cert.pem -days 3650 -subj "/CN=My CA"
+```
+
+這會生成一個 CA 的私鑰 `ca_private_key.pem` 和一個自簽名的 CA 公鑰證書 `ca_cert.pem`。
+
+#### 2. 幫其他伺服器生成密鑰對
+
+```sh
+# 生成一個 2048 位的 RSA 私鑰，用於伺服器
+openssl genpkey -algorithm RSA -out server_private_key.pem -pkeyopt rsa_keygen_bits:2048
+
+# 從私鑰中提取公鑰
+openssl rsa -pubout -in server_private_key.pem -out server_public_key.pem
+```
+
+#### 3. 創建為了簽發其他 HTTPS 伺服器證書的 CSR（Certificate Signing Request）
+
+CSR 包含伺服器的公鑰和身份信息，並用私鑰簽名。
+
+```sh
+openssl req -new -key server_private_key.pem -out server.csr -subj "/CN=www.example.com"
+```
+
+#### 4. 使用 CA 簽署伺服器的 CSR
+
+CA 驗證伺服器的身份後，簽署 CSR 並生成數字證書。
+
+```sh
+openssl x509 -req -in server.csr -CA ca_cert.pem -CAkey ca_private_key.pem -CAcreateserial -out server_cert.pem -days 365
+```
+
+即會生成伺服器的數字證書 `server_cert.pem`。
+
+#### 5. 配置伺服器
+
+將數字證書 `server_cert.pem` 和私鑰 `server_private_key.pem` 配置到伺服器，準備進行 SSL/TLS 。
