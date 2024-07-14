@@ -86,6 +86,10 @@ HTTPS 的交握步驟詳細如下：
 
 ```
 
+電腦預設會裝有 CA 憑證
+
+<figure><img src="../.gitbook/assets/截圖 2024-07-14 上午10.48.49.png" alt=""><figcaption></figcaption></figure>
+
 ### **自己當 CA 並幫其他網站簽發 HTTPS 證書之技術步驟**
 
 #### 1. 生成自己的 CA 的密鑰對
