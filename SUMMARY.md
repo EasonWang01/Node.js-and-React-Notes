@@ -59,6 +59,7 @@
     * [DB Migration](shi-yong-mysql/shi-yong-sequelize/db-migration.md)
     * [function](shi-yong-mysql/shi-yong-sequelize/function.md)
 * [使用PostgreSQL](shi-yong-postgresql/README.md)
+  * [常見問題](shi-yong-postgresql/chang-jian-wen-ti.md)
   * [replica](shi-yong-postgresql/replica.md)
   * [基本指令](shi-yong-postgresql/ji-ben-zhi-ling.md)
   * [使用Node.js操控pg](shi-yong-postgresql/shi-yong-node.js-cao-kong-pg.md)
