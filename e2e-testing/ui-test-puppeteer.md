@@ -1,4 +1,8 @@
-# UI Test (puppeteer)
+---
+description: 測試工具
+---
+
+# Puppeteer 與其他 UI 測試工具
 
 ## 跨平台測試
 
@@ -10,7 +14,9 @@
 
 ## [GoogleChrome](https://github.com/GoogleChrome) / [**puppeteer**](https://github.com/GoogleChrome/puppeteer)
 
-安裝:[https://github.com/GoogleChrome/puppeteer](https://github.com/GoogleChrome/puppeteer)
+安裝:&#x20;
+
+[https://github.com/GoogleChrome/puppeteer](https://github.com/GoogleChrome/puppeteer)
 
 文件:[https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageclickselector-options](https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#pageclickselector-options)
 

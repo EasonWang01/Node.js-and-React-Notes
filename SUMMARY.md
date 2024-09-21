@@ -251,7 +251,7 @@
   * [Docker 指令](dockerjiao-xue/docker.md)
 * [E2E Testing](e2e-testing/README.md)
   * [PlayWright](e2e-testing/playwright.md)
-  * [UI Test (puppeteer)](e2e-testing/ui-test-puppeteer.md)
+  * [Puppeteer 與其他 UI 測試工具](e2e-testing/ui-test-puppeteer.md)
 * [Unit Test (Jest & enzyme)](unit-test-jest-and-enzyme/README.md)
   * [React Testing Library](unit-test-jest-and-enzyme/react-testing-library.md)
   * [mocha](unit-test-jest-and-enzyme/mocha.md)
