@@ -250,6 +250,7 @@
   * [Docker 原理](dockerjiao-xue/docker-yuan-li.md)
   * [Docker 指令](dockerjiao-xue/docker.md)
 * [E2E Testing](e2e-testing/README.md)
+  * [Cypress](e2e-testing/cypress.md)
   * [PlayWright](e2e-testing/playwright.md)
   * [Puppeteer 與其他 UI 測試工具](e2e-testing/ui-test-puppeteer.md)
 * [Unit Test (Jest & enzyme)](unit-test-jest-and-enzyme/README.md)
