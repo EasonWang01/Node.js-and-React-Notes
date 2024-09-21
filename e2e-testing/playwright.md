@@ -4,7 +4,9 @@ description: https://playwright.dev/
 
 # PlayWright
 
-微軟推出的測試工具，包含錄製自動產生測試代碼與 trace 頁面查看測試的每個步驟與頁面結果，並且測試執行時間縮短為 cypress 的一半。
+以下為為 Microsoft PlayWright 測試工具教學。此為微軟推出的測試工具，包含錄製自動產生測試代碼與 trace 頁面查看測試的每個步驟與頁面結果，並且測試執行時間縮短為 cypress 的一半。
+
+PlayWright 為免費使用安裝的工具，很適合用來自動化測試或是和 CI 工具整合。
 
 ## 安裝
 
@@ -119,3 +121,28 @@ npx playwright show-trace ./test-results/tests-SampleComponent-Samp-xt-and-displ
 ```
 
 <figure><img src="../.gitbook/assets/截圖 2024-09-21 下午10.06.48.png" alt=""><figcaption></figcaption></figure>
+
+## HTML 測試報告
+
+```
+npx playwright test --reporter=html
+```
+
+<figure><img src="../.gitbook/assets/截圖 2024-09-21 下午10.16.40.png" alt=""><figcaption></figcaption></figure>
+
+## 使用內建 VS Code 工具
+
+安裝插件 ![](<../.gitbook/assets/截圖 2024-09-21 下午10.20.53.png>)
+
+之後記得把測試資料夾命名為 e2e，這個插件才能讀取到
+
+或是可以使用它的初始化命令：
+
+```
+npm init playwright@latest --yes -- --quiet --browser=chromium --browser=firefox --browser=webkit --lang=js
+```
+
+之後就可以直接從介面控制測試
+
+\
+![](<../.gitbook/assets/截圖 2024-09-21 下午10.22.56.png>)
