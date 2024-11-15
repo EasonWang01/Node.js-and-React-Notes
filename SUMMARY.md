@@ -294,6 +294,7 @@
 * [Kubernetes](kubernetes/README.md)
   * [本地測試 MiniKube](kubernetes/ben-di-ce-shi-minikube.md)
 * [Ngrok 使用](ngrok-shi-yong.md)
+* [Telegram MiniAPP 開發](telegram-miniapp-kai-fa.md)
 * [Firebase 教學](firebase-jiao-xue.md)
 * [演算法筆記](yan-suan-fa-bi-ji.md)
 * [圖表](tu-biao-lei/README.md)
