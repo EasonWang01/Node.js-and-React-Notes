@@ -103,4 +103,10 @@
   }
 ```
 
-[https://core.telegram.org/bots/webapps#validating-data-received-via-the-mini-app](https://core.telegram.org/bots/webapps#validating-data-received-via-the-mini-app)
+{% embed url="https://core.telegram.org/bots/webapps#validating-data-received-via-the-mini-app" %}
+
+## 其他工具
+
+手機端開發時的 console.log 工具 [https://github.com/liriliri/eruda](https://github.com/liriliri/eruda)
+
+> 會在右下角有按鈕，打開可以看到 log
