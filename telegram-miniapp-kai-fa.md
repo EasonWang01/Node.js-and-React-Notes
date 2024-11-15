@@ -103,3 +103,4 @@
   }
 ```
 
+[https://core.telegram.org/bots/webapps#validating-data-received-via-the-mini-app](https://core.telegram.org/bots/webapps#validating-data-received-via-the-mini-app)
