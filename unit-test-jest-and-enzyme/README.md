@@ -147,7 +147,7 @@ npm install jest-cli -g
 
 或是直接輸入jest跑一次test
 
-> 如果沒有過所有測試，則不會產生_snapshots_
+> 如果沒有過所有測試，則不會產&#x751F;_&#x73;napshots_
 
 ### 也可用react-test-renderer
 

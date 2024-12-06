@@ -10,7 +10,7 @@
 
 3.目前台灣大多是 Hinet 中華電信的 DNS server `168.95.1.1` 他會再去查詢
 
-4.假設找不到的話他會去找 **root name server ( 被** ICANN 旗下的 IANA 管轄**，全世界共有 13 個 root name server，各自又被不同的組織所營運)**
+4.假設找不到的話他會去找 **root name server ( 被** ICANN 旗下的 IANA 管&#x8F44;**，全世界共有 13 個 root name server，各自又被不同的組織所營運)**
 
 > [https://zh.wikipedia.org/wiki/%E6%A0%B9%E7%B6%B2%E5%9F%9F%E5%90%8D%E7%A8%B1%E4%BC%BA%E6%9C%8D%E5%99%A8](https://zh.wikipedia.org/wiki/%E6%A0%B9%E7%B6%B2%E5%9F%9F%E5%90%8D%E7%A8%B1%E4%BC%BA%E6%9C%8D%E5%99%A8)
 >

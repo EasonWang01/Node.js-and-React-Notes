@@ -95,7 +95,7 @@ sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set
 
 * Origin Domain Name: 選擇 ELB
 * Origin Path: 空白
-* Origin Protocol Policy: **HTTP Only （**CloudFront後面走 HTTP 即可）
+* Origin Protocol Policy: **HTTP Only （**&#x43;loudFront後面走 HTTP 即可）
 * Viewer Protocol Policy: **Redirect HTTP to HTTPS**
 * Allowed HTTP Methods: **GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE**
 * Alternate Domain Names: 設定你的網站網址 (api.domain....)

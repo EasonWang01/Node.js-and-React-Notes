@@ -1,4 +1,18 @@
-# 快速把 EC2 串上 AWS CDN
+# 快速把 EC2 串上 AWS Cloudfront CDN
+
+## 最簡易的流程
+
+EC2 URL 直接綁定到 Cloudfront ( Cloudfront Origin 直接填入 EC2 頁面上的 Public IPv4 DNS)
+
+<figure><img src="../.gitbook/assets/截圖 2024-12-06 下午1.54.02.png" alt=""><figcaption></figcaption></figure>
+
+記得下方填入網域名稱，與申請對應 https 證書即可
+
+<figure><img src="../.gitbook/assets/截圖 2024-12-06 下午1.55.31.png" alt=""><figcaption></figcaption></figure>
+
+***
+
+## 以下為加上 load balancer 之流程
 
 整理流程為 server <- load balancer <- CDN <- client
 
@@ -72,7 +86,7 @@ server {
 
 * Origin Domain Name: 選擇 ELB
 * Origin Path: 空白
-* Origin Protocol Policy: **HTTP Only （**CloudFront後面走 HTTP 即可）
+* Origin Protocol Policy: **HTTP Only （**&#x43;loudFront後面走 HTTP 即可）
 * Viewer Protocol Policy: **Redirect HTTP to HTTPS**
 * Allowed HTTP Methods: **GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE**
 * Alternate Domain Names: 設定你的網站網址 (api.domain....)
